@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.11.2.12. pyspark.mllib.regression.RDD &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="4.11. pyspark.mllib.regression" href="../pyspark.mllib.regression.html"/>
+        <link rel="next" title="4.11.2.12.1. pyspark.mllib.regression.RDD.context" href="pyspark.mllib.regression.RDD.context.html"/>
+        <link rel="prev" title="4.11.2.11.1. pyspark.mllib.regression.Loader.load" href="pyspark.mllib.regression.Loader.load.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.regression.html#functions">4.11.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.mllib.regression.html#classes">4.11.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.DStream.html">4.11.2.1. pyspark.mllib.regression.DStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.IsotonicRegression.html">4.11.2.2. pyspark.mllib.regression.IsotonicRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.IsotonicRegressionModel.html">4.11.2.3. pyspark.mllib.regression.IsotonicRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LabeledPoint.html">4.11.2.4. pyspark.mllib.regression.LabeledPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LassoModel.html">4.11.2.5. pyspark.mllib.regression.LassoModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LassoWithSGD.html">4.11.2.6. pyspark.mllib.regression.LassoWithSGD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LinearModel.html">4.11.2.7. pyspark.mllib.regression.LinearModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LinearRegressionModel.html">4.11.2.8. pyspark.mllib.regression.LinearRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LinearRegressionModelBase.html">4.11.2.9. pyspark.mllib.regression.LinearRegressionModelBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LinearRegressionWithSGD.html">4.11.2.10. pyspark.mllib.regression.LinearRegressionWithSGD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.Loader.html">4.11.2.11. pyspark.mllib.regression.Loader</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.11.2.12. pyspark.mllib.regression.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.RidgeRegressionModel.html">4.11.2.13. pyspark.mllib.regression.RidgeRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.RidgeRegressionWithSGD.html">4.11.2.14. pyspark.mllib.regression.RidgeRegressionWithSGD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.Saveable.html">4.11.2.15. pyspark.mllib.regression.Saveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.SparseVector.html">4.11.2.16. pyspark.mllib.regression.SparseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearAlgorithm.html">4.11.2.17. pyspark.mllib.regression.StreamingLinearAlgorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.html">4.11.2.18. pyspark.mllib.regression.StreamingLinearRegressionWithSGD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.Vectors.html">4.11.2.19. pyspark.mllib.regression.Vectors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a> &raquo;</li>
+        
+      <li>4.11.2.12. pyspark.mllib.regression.RDD</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.mllib.regression.RDD.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-mllib-regression-rdd">
+<h1>4.11.2.12. pyspark.mllib.regression.RDD<a class="headerlink" href="#pyspark-mllib-regression-rdd" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.mllib.regression.RDD">
+<em class="property">class </em><code class="descclassname">pyspark.mllib.regression.</code><code class="descname">RDD</code><span class="sig-paren">(</span><em>jrdd</em>, <em>ctx</em>, <em>jrdd_deserializer=AutoBatchedSerializer(PickleSerializer())</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/rdd.html#RDD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.regression.RDD" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.
+Represents an immutable, partitioned collection of elements that can be
+operated on in parallel.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.context.html#pyspark.mllib.regression.RDD.context" title="pyspark.mllib.regression.RDD.context"><code class="xref py py-obj docutils literal"><span class="pre">context</span></code></a></td>
+<td>The L{SparkContext} that this RDD was created on.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.aggregate.html#pyspark.mllib.regression.RDD.aggregate" title="pyspark.mllib.regression.RDD.aggregate"><code class="xref py py-obj docutils literal"><span class="pre">aggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp)</td>
+<td>Aggregate the elements of each partition, and then the results for all</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.aggregateByKey.html#pyspark.mllib.regression.RDD.aggregateByKey" title="pyspark.mllib.regression.RDD.aggregateByKey"><code class="xref py py-obj docutils literal"><span class="pre">aggregateByKey</span></code></a>(zeroValue,&nbsp;seqFunc,&nbsp;combFunc)</td>
+<td>Aggregate the values of each key, using given combine functions and a neutral &#8220;zero value&#8221;.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.cache.html#pyspark.mllib.regression.RDD.cache" title="pyspark.mllib.regression.RDD.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<td>Persist this RDD with the default storage level (C{MEMORY_ONLY}).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.cartesian.html#pyspark.mllib.regression.RDD.cartesian" title="pyspark.mllib.regression.RDD.cartesian"><code class="xref py py-obj docutils literal"><span class="pre">cartesian</span></code></a>(other)</td>
+<td>Return the Cartesian product of this RDD and another one, that is, the RDD of all pairs of elements C{(a, b)} where C{a} is in C{self} and C{b} is in C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.checkpoint.html#pyspark.mllib.regression.RDD.checkpoint" title="pyspark.mllib.regression.RDD.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>()</td>
+<td>Mark this RDD for checkpointing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.coalesce.html#pyspark.mllib.regression.RDD.coalesce" title="pyspark.mllib.regression.RDD.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(numPartitions[,&nbsp;shuffle])</td>
+<td>Return a new RDD that is reduced into <cite>numPartitions</cite> partitions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.cogroup.html#pyspark.mllib.regression.RDD.cogroup" title="pyspark.mllib.regression.RDD.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>For each key k in C{self} or C{other}, return a resulting RDD that contains a tuple with the list of values for that key in C{self} as well as C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.collect.html#pyspark.mllib.regression.RDD.collect" title="pyspark.mllib.regression.RDD.collect"><code class="xref py py-obj docutils literal"><span class="pre">collect</span></code></a>()</td>
+<td>Return a list that contains all of the elements in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.collectAsMap.html#pyspark.mllib.regression.RDD.collectAsMap" title="pyspark.mllib.regression.RDD.collectAsMap"><code class="xref py py-obj docutils literal"><span class="pre">collectAsMap</span></code></a>()</td>
+<td>Return the key-value pairs in this RDD to the master as a dictionary.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.combineByKey.html#pyspark.mllib.regression.RDD.combineByKey" title="pyspark.mllib.regression.RDD.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
+<td>Generic function to combine the elements for each key using a custom set of aggregation functions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.count.html#pyspark.mllib.regression.RDD.count" title="pyspark.mllib.regression.RDD.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<td>Return the number of elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.countApprox.html#pyspark.mllib.regression.RDD.countApprox" title="pyspark.mllib.regression.RDD.countApprox"><code class="xref py py-obj docutils literal"><span class="pre">countApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.countApproxDistinct.html#pyspark.mllib.regression.RDD.countApproxDistinct" title="pyspark.mllib.regression.RDD.countApproxDistinct"><code class="xref py py-obj docutils literal"><span class="pre">countApproxDistinct</span></code></a>([relativeSD])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.countByKey.html#pyspark.mllib.regression.RDD.countByKey" title="pyspark.mllib.regression.RDD.countByKey"><code class="xref py py-obj docutils literal"><span class="pre">countByKey</span></code></a>()</td>
+<td>Count the number of elements for each key, and return the result to the master as a dictionary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.countByValue.html#pyspark.mllib.regression.RDD.countByValue" title="pyspark.mllib.regression.RDD.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
+<td>Return the count of each unique value in this RDD as a dictionary of (value, count) pairs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.distinct.html#pyspark.mllib.regression.RDD.distinct" title="pyspark.mllib.regression.RDD.distinct"><code class="xref py py-obj docutils literal"><span class="pre">distinct</span></code></a>([numPartitions])</td>
+<td>Return a new RDD containing the distinct elements in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.filter.html#pyspark.mllib.regression.RDD.filter" title="pyspark.mllib.regression.RDD.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
+<td>Return a new RDD containing only the elements that satisfy a predicate.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.first.html#pyspark.mllib.regression.RDD.first" title="pyspark.mllib.regression.RDD.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>()</td>
+<td>Return the first element in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.flatMap.html#pyspark.mllib.regression.RDD.flatMap" title="pyspark.mllib.regression.RDD.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by first applying a function to all elements of this RDD, and then flattening the results.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.flatMapValues.html#pyspark.mllib.regression.RDD.flatMapValues" title="pyspark.mllib.regression.RDD.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
+<td>Pass each value in the key-value pair RDD through a flatMap function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.fold.html#pyspark.mllib.regression.RDD.fold" title="pyspark.mllib.regression.RDD.fold"><code class="xref py py-obj docutils literal"><span class="pre">fold</span></code></a>(zeroValue,&nbsp;op)</td>
+<td>Aggregate the elements of each partition, and then the results for all</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.foldByKey.html#pyspark.mllib.regression.RDD.foldByKey" title="pyspark.mllib.regression.RDD.foldByKey"><code class="xref py py-obj docutils literal"><span class="pre">foldByKey</span></code></a>(zeroValue,&nbsp;func[,&nbsp;numPartitions,&nbsp;...])</td>
+<td>Merge the values for each key using an associative function &#8220;func&#8221; and a neutral &#8220;zeroValue&#8221; which may be added to the result an arbitrary number of times, and must not change the result (e.g., 0 for addition, or 1 for multiplication.).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.foreach.html#pyspark.mllib.regression.RDD.foreach" title="pyspark.mllib.regression.RDD.foreach"><code class="xref py py-obj docutils literal"><span class="pre">foreach</span></code></a>(f)</td>
+<td>Applies a function to all elements of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.foreachPartition.html#pyspark.mllib.regression.RDD.foreachPartition" title="pyspark.mllib.regression.RDD.foreachPartition"><code class="xref py py-obj docutils literal"><span class="pre">foreachPartition</span></code></a>(f)</td>
+<td>Applies a function to each partition of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.fullOuterJoin.html#pyspark.mllib.regression.RDD.fullOuterJoin" title="pyspark.mllib.regression.RDD.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a right outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.getCheckpointFile.html#pyspark.mllib.regression.RDD.getCheckpointFile" title="pyspark.mllib.regression.RDD.getCheckpointFile"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointFile</span></code></a>()</td>
+<td>Gets the name of the file to which this RDD was checkpointed</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.getNumPartitions.html#pyspark.mllib.regression.RDD.getNumPartitions" title="pyspark.mllib.regression.RDD.getNumPartitions"><code class="xref py py-obj docutils literal"><span class="pre">getNumPartitions</span></code></a>()</td>
+<td>Returns the number of partitions in RDD</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.getStorageLevel.html#pyspark.mllib.regression.RDD.getStorageLevel" title="pyspark.mllib.regression.RDD.getStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">getStorageLevel</span></code></a>()</td>
+<td>Get the RDD&#8217;s current storage level.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.glom.html#pyspark.mllib.regression.RDD.glom" title="pyspark.mllib.regression.RDD.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
+<td>Return an RDD created by coalescing all elements within each partition into a list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.groupBy.html#pyspark.mllib.regression.RDD.groupBy" title="pyspark.mllib.regression.RDD.groupBy"><code class="xref py py-obj docutils literal"><span class="pre">groupBy</span></code></a>(f[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
+<td>Return an RDD of grouped items.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.groupByKey.html#pyspark.mllib.regression.RDD.groupByKey" title="pyspark.mllib.regression.RDD.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions,&nbsp;partitionFunc])</td>
+<td>Group the values for each key in the RDD into a single sequence.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.groupWith.html#pyspark.mllib.regression.RDD.groupWith" title="pyspark.mllib.regression.RDD.groupWith"><code class="xref py py-obj docutils literal"><span class="pre">groupWith</span></code></a>(other,&nbsp;*others)</td>
+<td>Alias for cogroup but with support for multiple RDDs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.histogram.html#pyspark.mllib.regression.RDD.histogram" title="pyspark.mllib.regression.RDD.histogram"><code class="xref py py-obj docutils literal"><span class="pre">histogram</span></code></a>(buckets)</td>
+<td>Compute a histogram using the provided buckets.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.id.html#pyspark.mllib.regression.RDD.id" title="pyspark.mllib.regression.RDD.id"><code class="xref py py-obj docutils literal"><span class="pre">id</span></code></a>()</td>
+<td>A unique ID for this RDD (within its SparkContext).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.intersection.html#pyspark.mllib.regression.RDD.intersection" title="pyspark.mllib.regression.RDD.intersection"><code class="xref py py-obj docutils literal"><span class="pre">intersection</span></code></a>(other)</td>
+<td>Return the intersection of this RDD and another one.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.isCheckpointed.html#pyspark.mllib.regression.RDD.isCheckpointed" title="pyspark.mllib.regression.RDD.isCheckpointed"><code class="xref py py-obj docutils literal"><span class="pre">isCheckpointed</span></code></a>()</td>
+<td>Return whether this RDD has been checkpointed or not</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.isEmpty.html#pyspark.mllib.regression.RDD.isEmpty" title="pyspark.mllib.regression.RDD.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<td>Returns true if and only if the RDD contains no elements at all.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.join.html#pyspark.mllib.regression.RDD.join" title="pyspark.mllib.regression.RDD.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return an RDD containing all pairs of elements with matching keys in C{self} and C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.keyBy.html#pyspark.mllib.regression.RDD.keyBy" title="pyspark.mllib.regression.RDD.keyBy"><code class="xref py py-obj docutils literal"><span class="pre">keyBy</span></code></a>(f)</td>
+<td>Creates tuples of the elements in this RDD by applying C{f}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.keys.html#pyspark.mllib.regression.RDD.keys" title="pyspark.mllib.regression.RDD.keys"><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code></a>()</td>
+<td>Return an RDD with the keys of each tuple.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.leftOuterJoin.html#pyspark.mllib.regression.RDD.leftOuterJoin" title="pyspark.mllib.regression.RDD.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a left outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.lookup.html#pyspark.mllib.regression.RDD.lookup" title="pyspark.mllib.regression.RDD.lookup"><code class="xref py py-obj docutils literal"><span class="pre">lookup</span></code></a>(key)</td>
+<td>Return the list of values in the RDD for key <cite>key</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.map.html#pyspark.mllib.regression.RDD.map" title="pyspark.mllib.regression.RDD.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by applying a function to each element of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.mapPartitions.html#pyspark.mllib.regression.RDD.mapPartitions" title="pyspark.mllib.regression.RDD.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by applying a function to each partition of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.mapPartitionsWithIndex.html#pyspark.mllib.regression.RDD.mapPartitionsWithIndex" title="pyspark.mllib.regression.RDD.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
+<td>Return a new RDD by applying a function to each partition of this RDD, while tracking the index of the original partition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.mapPartitionsWithSplit.html#pyspark.mllib.regression.RDD.mapPartitionsWithSplit" title="pyspark.mllib.regression.RDD.mapPartitionsWithSplit"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithSplit</span></code></a>(f[,&nbsp;...])</td>
+<td>Deprecated: use mapPartitionsWithIndex instead.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.mapValues.html#pyspark.mllib.regression.RDD.mapValues" title="pyspark.mllib.regression.RDD.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
+<td>Pass each value in the key-value pair RDD through a map function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.max.html#pyspark.mllib.regression.RDD.max" title="pyspark.mllib.regression.RDD.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a>([key])</td>
+<td>Find the maximum item in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.mean.html#pyspark.mllib.regression.RDD.mean" title="pyspark.mllib.regression.RDD.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a>()</td>
+<td>Compute the mean of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.meanApprox.html#pyspark.mllib.regression.RDD.meanApprox" title="pyspark.mllib.regression.RDD.meanApprox"><code class="xref py py-obj docutils literal"><span class="pre">meanApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.min.html#pyspark.mllib.regression.RDD.min" title="pyspark.mllib.regression.RDD.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a>([key])</td>
+<td>Find the minimum item in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.name.html#pyspark.mllib.regression.RDD.name" title="pyspark.mllib.regression.RDD.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a>()</td>
+<td>Return the name of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.partitionBy.html#pyspark.mllib.regression.RDD.partitionBy" title="pyspark.mllib.regression.RDD.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
+<td>Return a copy of the RDD partitioned using the specified partitioner.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.persist.html#pyspark.mllib.regression.RDD.persist" title="pyspark.mllib.regression.RDD.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>([storageLevel])</td>
+<td>Set this RDD&#8217;s storage level to persist its values across operations after the first time it is computed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.pipe.html#pyspark.mllib.regression.RDD.pipe" title="pyspark.mllib.regression.RDD.pipe"><code class="xref py py-obj docutils literal"><span class="pre">pipe</span></code></a>(command[,&nbsp;env,&nbsp;checkCode])</td>
+<td>Return an RDD created by piping elements to a forked external process.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.randomSplit.html#pyspark.mllib.regression.RDD.randomSplit" title="pyspark.mllib.regression.RDD.randomSplit"><code class="xref py py-obj docutils literal"><span class="pre">randomSplit</span></code></a>(weights[,&nbsp;seed])</td>
+<td>Randomly splits this RDD with the provided weights.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.reduce.html#pyspark.mllib.regression.RDD.reduce" title="pyspark.mllib.regression.RDD.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(f)</td>
+<td>Reduces the elements of this RDD using the specified commutative and associative binary operator.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.reduceByKey.html#pyspark.mllib.regression.RDD.reduceByKey" title="pyspark.mllib.regression.RDD.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
+<td>Merge the values for each key using an associative and commutative reduce function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.reduceByKeyLocally.html#pyspark.mllib.regression.RDD.reduceByKeyLocally" title="pyspark.mllib.regression.RDD.reduceByKeyLocally"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyLocally</span></code></a>(func)</td>
+<td>Merge the values for each key using an associative and commutative reduce function, but return the results immediately to the master as a dictionary.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.repartition.html#pyspark.mllib.regression.RDD.repartition" title="pyspark.mllib.regression.RDD.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
+<td>Return a new RDD that has exactly numPartitions partitions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.repartitionAndSortWithinPartitions.html#pyspark.mllib.regression.RDD.repartitionAndSortWithinPartitions" title="pyspark.mllib.regression.RDD.repartitionAndSortWithinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">repartitionAndSortWithinPartitions</span></code></a>([...])</td>
+<td>Repartition the RDD according to the given partitioner and, within each resulting partition, sort records by their keys.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.rightOuterJoin.html#pyspark.mllib.regression.RDD.rightOuterJoin" title="pyspark.mllib.regression.RDD.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a right outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sample.html#pyspark.mllib.regression.RDD.sample" title="pyspark.mllib.regression.RDD.sample"><code class="xref py py-obj docutils literal"><span class="pre">sample</span></code></a>(withReplacement,&nbsp;fraction[,&nbsp;seed])</td>
+<td>Return a sampled subset of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sampleByKey.html#pyspark.mllib.regression.RDD.sampleByKey" title="pyspark.mllib.regression.RDD.sampleByKey"><code class="xref py py-obj docutils literal"><span class="pre">sampleByKey</span></code></a>(withReplacement,&nbsp;fractions[,&nbsp;seed])</td>
+<td>Return a subset of this RDD sampled by key (via stratified sampling).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sampleStdev.html#pyspark.mllib.regression.RDD.sampleStdev" title="pyspark.mllib.regression.RDD.sampleStdev"><code class="xref py py-obj docutils literal"><span class="pre">sampleStdev</span></code></a>()</td>
+<td>Compute the sample standard deviation of this RDD&#8217;s elements (which corrects for bias in estimating the standard deviation by dividing by N-1 instead of N).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sampleVariance.html#pyspark.mllib.regression.RDD.sampleVariance" title="pyspark.mllib.regression.RDD.sampleVariance"><code class="xref py py-obj docutils literal"><span class="pre">sampleVariance</span></code></a>()</td>
+<td>Compute the sample variance of this RDD&#8217;s elements (which corrects for bias in estimating the variance by dividing by N-1 instead of N).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.saveAsHadoopDataset.html#pyspark.mllib.regression.RDD.saveAsHadoopDataset" title="pyspark.mllib.regression.RDD.saveAsHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopDataset</span></code></a>(conf[,&nbsp;keyConverter,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.saveAsHadoopFile.html#pyspark.mllib.regression.RDD.saveAsHadoopFile" title="pyspark.mllib.regression.RDD.saveAsHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopFile</span></code></a>(path,&nbsp;outputFormatClass[,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.saveAsNewAPIHadoopDataset.html#pyspark.mllib.regression.RDD.saveAsNewAPIHadoopDataset" title="pyspark.mllib.regression.RDD.saveAsNewAPIHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopDataset</span></code></a>(conf[,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.saveAsNewAPIHadoopFile.html#pyspark.mllib.regression.RDD.saveAsNewAPIHadoopFile" title="pyspark.mllib.regression.RDD.saveAsNewAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopFile</span></code></a>(path,&nbsp;outputFormatClass)</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.saveAsPickleFile.html#pyspark.mllib.regression.RDD.saveAsPickleFile" title="pyspark.mllib.regression.RDD.saveAsPickleFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsPickleFile</span></code></a>(path[,&nbsp;batchSize])</td>
+<td>Save this RDD as a SequenceFile of serialized objects.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.saveAsSequenceFile.html#pyspark.mllib.regression.RDD.saveAsSequenceFile" title="pyspark.mllib.regression.RDD.saveAsSequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsSequenceFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the L{org.apache.hadoop.io.Writable} types that we convert from the RDD&#8217;s key and value types.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.saveAsTextFile.html#pyspark.mllib.regression.RDD.saveAsTextFile" title="pyspark.mllib.regression.RDD.saveAsTextFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
+<td>Save this RDD as a text file, using string representations of elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.setName.html#pyspark.mllib.regression.RDD.setName" title="pyspark.mllib.regression.RDD.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<td>Assign a name to this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sortBy.html#pyspark.mllib.regression.RDD.sortBy" title="pyspark.mllib.regression.RDD.sortBy"><code class="xref py py-obj docutils literal"><span class="pre">sortBy</span></code></a>(keyfunc[,&nbsp;ascending,&nbsp;numPartitions])</td>
+<td>Sorts this RDD by the given keyfunc</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sortByKey.html#pyspark.mllib.regression.RDD.sortByKey" title="pyspark.mllib.regression.RDD.sortByKey"><code class="xref py py-obj docutils literal"><span class="pre">sortByKey</span></code></a>([ascending,&nbsp;numPartitions,&nbsp;keyfunc])</td>
+<td>Sorts this RDD, which is assumed to consist of (key, value) pairs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.stats.html#pyspark.mllib.regression.RDD.stats" title="pyspark.mllib.regression.RDD.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
+<td>Return a L{StatCounter} object that captures the mean, variance and count of the RDD&#8217;s elements in one operation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.stdev.html#pyspark.mllib.regression.RDD.stdev" title="pyspark.mllib.regression.RDD.stdev"><code class="xref py py-obj docutils literal"><span class="pre">stdev</span></code></a>()</td>
+<td>Compute the standard deviation of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.subtract.html#pyspark.mllib.regression.RDD.subtract" title="pyspark.mllib.regression.RDD.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return each value in C{self} that is not contained in C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.subtractByKey.html#pyspark.mllib.regression.RDD.subtractByKey" title="pyspark.mllib.regression.RDD.subtractByKey"><code class="xref py py-obj docutils literal"><span class="pre">subtractByKey</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return each (key, value) pair in C{self} that has no pair with matching key in C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sum.html#pyspark.mllib.regression.RDD.sum" title="pyspark.mllib.regression.RDD.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>()</td>
+<td>Add up the elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.sumApprox.html#pyspark.mllib.regression.RDD.sumApprox" title="pyspark.mllib.regression.RDD.sumApprox"><code class="xref py py-obj docutils literal"><span class="pre">sumApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.take.html#pyspark.mllib.regression.RDD.take" title="pyspark.mllib.regression.RDD.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a>(num)</td>
+<td>Take the first num elements of the RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.takeOrdered.html#pyspark.mllib.regression.RDD.takeOrdered" title="pyspark.mllib.regression.RDD.takeOrdered"><code class="xref py py-obj docutils literal"><span class="pre">takeOrdered</span></code></a>(num[,&nbsp;key])</td>
+<td>Get the N elements from a RDD ordered in ascending order or as specified by the optional key function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.takeSample.html#pyspark.mllib.regression.RDD.takeSample" title="pyspark.mllib.regression.RDD.takeSample"><code class="xref py py-obj docutils literal"><span class="pre">takeSample</span></code></a>(withReplacement,&nbsp;num[,&nbsp;seed])</td>
+<td>Return a fixed-size sampled subset of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.toDebugString.html#pyspark.mllib.regression.RDD.toDebugString" title="pyspark.mllib.regression.RDD.toDebugString"><code class="xref py py-obj docutils literal"><span class="pre">toDebugString</span></code></a>()</td>
+<td>A description of this RDD and its recursive dependencies for debugging.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.toLocalIterator.html#pyspark.mllib.regression.RDD.toLocalIterator" title="pyspark.mllib.regression.RDD.toLocalIterator"><code class="xref py py-obj docutils literal"><span class="pre">toLocalIterator</span></code></a>()</td>
+<td>Return an iterator that contains all of the elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.top.html#pyspark.mllib.regression.RDD.top" title="pyspark.mllib.regression.RDD.top"><code class="xref py py-obj docutils literal"><span class="pre">top</span></code></a>(num[,&nbsp;key])</td>
+<td>Get the top N elements from a RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.treeAggregate.html#pyspark.mllib.regression.RDD.treeAggregate" title="pyspark.mllib.regression.RDD.treeAggregate"><code class="xref py py-obj docutils literal"><span class="pre">treeAggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp[,&nbsp;depth])</td>
+<td>Aggregates the elements of this RDD in a multi-level tree pattern.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.treeReduce.html#pyspark.mllib.regression.RDD.treeReduce" title="pyspark.mllib.regression.RDD.treeReduce"><code class="xref py py-obj docutils literal"><span class="pre">treeReduce</span></code></a>(f[,&nbsp;depth])</td>
+<td>Reduces the elements of this RDD in a multi-level tree pattern.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.union.html#pyspark.mllib.regression.RDD.union" title="pyspark.mllib.regression.RDD.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<td>Return the union of this RDD and another one.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.unpersist.html#pyspark.mllib.regression.RDD.unpersist" title="pyspark.mllib.regression.RDD.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>()</td>
+<td>Mark the RDD as non-persistent, and remove all blocks for it from memory and disk.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.values.html#pyspark.mllib.regression.RDD.values" title="pyspark.mllib.regression.RDD.values"><code class="xref py py-obj docutils literal"><span class="pre">values</span></code></a>()</td>
+<td>Return an RDD with the values of each tuple.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.variance.html#pyspark.mllib.regression.RDD.variance" title="pyspark.mllib.regression.RDD.variance"><code class="xref py py-obj docutils literal"><span class="pre">variance</span></code></a>()</td>
+<td>Compute the variance of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.zip.html#pyspark.mllib.regression.RDD.zip" title="pyspark.mllib.regression.RDD.zip"><code class="xref py py-obj docutils literal"><span class="pre">zip</span></code></a>(other)</td>
+<td>Zips this RDD with another one, returning key-value pairs with the first element in each RDD second element in each RDD, etc.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.zipWithIndex.html#pyspark.mllib.regression.RDD.zipWithIndex" title="pyspark.mllib.regression.RDD.zipWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">zipWithIndex</span></code></a>()</td>
+<td>Zips this RDD with its element indices.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.RDD.zipWithUniqueId.html#pyspark.mllib.regression.RDD.zipWithUniqueId" title="pyspark.mllib.regression.RDD.zipWithUniqueId"><code class="xref py py-obj docutils literal"><span class="pre">zipWithUniqueId</span></code></a>()</td>
+<td>Zips this RDD with generated unique Long ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.regression.RDD.context.html" class="btn btn-neutral float-right" title="4.11.2.12.1. pyspark.mllib.regression.RDD.context" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.mllib.regression.Loader.load.html" class="btn btn-neutral" title="4.11.2.11.1. pyspark.mllib.regression.Loader.load" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

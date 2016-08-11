@@ -1,0 +1,961 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.3. pyspark.sql.functions &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="2. pyspark.sql" href="../pyspark.sql.html"/>
+        <link rel="next" title="2.3.1.1. pyspark.sql.functions.abs" href="pyspark.sql.functions.abs.html"/>
+        <link rel="prev" title="2.2.2.30.22. pyspark.sql.types.array.write" href="generated/pyspark.sql.types.array.write.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.sql.html">2.1. pyspark.sql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.3. pyspark.sql.functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">2.3.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.abs.html">2.3.1.1. pyspark.sql.functions.abs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.acos.html">2.3.1.2. pyspark.sql.functions.acos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.add_months.html">2.3.1.3. pyspark.sql.functions.add_months</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.approxCountDistinct.html">2.3.1.4. pyspark.sql.functions.approxCountDistinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.array.html">2.3.1.5. pyspark.sql.functions.array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.array_contains.html">2.3.1.6. pyspark.sql.functions.array_contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.asc.html">2.3.1.7. pyspark.sql.functions.asc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ascii.html">2.3.1.8. pyspark.sql.functions.ascii</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.asin.html">2.3.1.9. pyspark.sql.functions.asin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.atan.html">2.3.1.10. pyspark.sql.functions.atan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.atan2.html">2.3.1.11. pyspark.sql.functions.atan2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.avg.html">2.3.1.12. pyspark.sql.functions.avg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.base64.html">2.3.1.13. pyspark.sql.functions.base64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.bin.html">2.3.1.14. pyspark.sql.functions.bin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.bitwiseNOT.html">2.3.1.15. pyspark.sql.functions.bitwiseNOT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.broadcast.html">2.3.1.16. pyspark.sql.functions.broadcast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.bround.html">2.3.1.17. pyspark.sql.functions.bround</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cbrt.html">2.3.1.18. pyspark.sql.functions.cbrt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ceil.html">2.3.1.19. pyspark.sql.functions.ceil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.coalesce.html">2.3.1.20. pyspark.sql.functions.coalesce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.col.html">2.3.1.21. pyspark.sql.functions.col</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.collect_list.html">2.3.1.22. pyspark.sql.functions.collect_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.collect_set.html">2.3.1.23. pyspark.sql.functions.collect_set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.column.html">2.3.1.24. pyspark.sql.functions.column</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.concat.html">2.3.1.25. pyspark.sql.functions.concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.concat_ws.html">2.3.1.26. pyspark.sql.functions.concat_ws</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.conv.html">2.3.1.27. pyspark.sql.functions.conv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.corr.html">2.3.1.28. pyspark.sql.functions.corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cos.html">2.3.1.29. pyspark.sql.functions.cos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cosh.html">2.3.1.30. pyspark.sql.functions.cosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.count.html">2.3.1.31. pyspark.sql.functions.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.countDistinct.html">2.3.1.32. pyspark.sql.functions.countDistinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.covar_pop.html">2.3.1.33. pyspark.sql.functions.covar_pop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.covar_samp.html">2.3.1.34. pyspark.sql.functions.covar_samp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.crc32.html">2.3.1.35. pyspark.sql.functions.crc32</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.create_map.html">2.3.1.36. pyspark.sql.functions.create_map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cume_dist.html">2.3.1.37. pyspark.sql.functions.cume_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.current_date.html">2.3.1.38. pyspark.sql.functions.current_date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.current_timestamp.html">2.3.1.39. pyspark.sql.functions.current_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.date_add.html">2.3.1.40. pyspark.sql.functions.date_add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.date_format.html">2.3.1.41. pyspark.sql.functions.date_format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.date_sub.html">2.3.1.42. pyspark.sql.functions.date_sub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.datediff.html">2.3.1.43. pyspark.sql.functions.datediff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.dayofmonth.html">2.3.1.44. pyspark.sql.functions.dayofmonth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.dayofyear.html">2.3.1.45. pyspark.sql.functions.dayofyear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.decode.html">2.3.1.46. pyspark.sql.functions.decode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.dense_rank.html">2.3.1.47. pyspark.sql.functions.dense_rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.desc.html">2.3.1.48. pyspark.sql.functions.desc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.encode.html">2.3.1.49. pyspark.sql.functions.encode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.exp.html">2.3.1.50. pyspark.sql.functions.exp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.explode.html">2.3.1.51. pyspark.sql.functions.explode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.expm1.html">2.3.1.52. pyspark.sql.functions.expm1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.expr.html">2.3.1.53. pyspark.sql.functions.expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.factorial.html">2.3.1.54. pyspark.sql.functions.factorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.first.html">2.3.1.55. pyspark.sql.functions.first</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.floor.html">2.3.1.56. pyspark.sql.functions.floor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.format_number.html">2.3.1.57. pyspark.sql.functions.format_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.format_string.html">2.3.1.58. pyspark.sql.functions.format_string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.from_unixtime.html">2.3.1.59. pyspark.sql.functions.from_unixtime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.from_utc_timestamp.html">2.3.1.60. pyspark.sql.functions.from_utc_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.get_json_object.html">2.3.1.61. pyspark.sql.functions.get_json_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.greatest.html">2.3.1.62. pyspark.sql.functions.greatest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.grouping.html">2.3.1.63. pyspark.sql.functions.grouping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.grouping_id.html">2.3.1.64. pyspark.sql.functions.grouping_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hash.html">2.3.1.65. pyspark.sql.functions.hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hex.html">2.3.1.66. pyspark.sql.functions.hex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hour.html">2.3.1.67. pyspark.sql.functions.hour</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hypot.html">2.3.1.68. pyspark.sql.functions.hypot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ignore_unicode_prefix.html">2.3.1.69. pyspark.sql.functions.ignore_unicode_prefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.initcap.html">2.3.1.70. pyspark.sql.functions.initcap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.input_file_name.html">2.3.1.71. pyspark.sql.functions.input_file_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.instr.html">2.3.1.72. pyspark.sql.functions.instr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.isnan.html">2.3.1.73. pyspark.sql.functions.isnan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.isnull.html">2.3.1.74. pyspark.sql.functions.isnull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.json_tuple.html">2.3.1.75. pyspark.sql.functions.json_tuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.kurtosis.html">2.3.1.76. pyspark.sql.functions.kurtosis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lag.html">2.3.1.77. pyspark.sql.functions.lag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.last.html">2.3.1.78. pyspark.sql.functions.last</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.last_day.html">2.3.1.79. pyspark.sql.functions.last_day</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lead.html">2.3.1.80. pyspark.sql.functions.lead</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.least.html">2.3.1.81. pyspark.sql.functions.least</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.length.html">2.3.1.82. pyspark.sql.functions.length</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.levenshtein.html">2.3.1.83. pyspark.sql.functions.levenshtein</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lit.html">2.3.1.84. pyspark.sql.functions.lit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.locate.html">2.3.1.85. pyspark.sql.functions.locate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log.html">2.3.1.86. pyspark.sql.functions.log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log10.html">2.3.1.87. pyspark.sql.functions.log10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log1p.html">2.3.1.88. pyspark.sql.functions.log1p</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log2.html">2.3.1.89. pyspark.sql.functions.log2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lower.html">2.3.1.90. pyspark.sql.functions.lower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lpad.html">2.3.1.91. pyspark.sql.functions.lpad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ltrim.html">2.3.1.92. pyspark.sql.functions.ltrim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.max.html">2.3.1.93. pyspark.sql.functions.max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.md5.html">2.3.1.94. pyspark.sql.functions.md5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.mean.html">2.3.1.95. pyspark.sql.functions.mean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.min.html">2.3.1.96. pyspark.sql.functions.min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.minute.html">2.3.1.97. pyspark.sql.functions.minute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.monotonically_increasing_id.html">2.3.1.98. pyspark.sql.functions.monotonically_increasing_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.month.html">2.3.1.99. pyspark.sql.functions.month</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.months_between.html">2.3.1.100. pyspark.sql.functions.months_between</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.nanvl.html">2.3.1.101. pyspark.sql.functions.nanvl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.next_day.html">2.3.1.102. pyspark.sql.functions.next_day</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ntile.html">2.3.1.103. pyspark.sql.functions.ntile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.percent_rank.html">2.3.1.104. pyspark.sql.functions.percent_rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.posexplode.html">2.3.1.105. pyspark.sql.functions.posexplode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.pow.html">2.3.1.106. pyspark.sql.functions.pow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.quarter.html">2.3.1.107. pyspark.sql.functions.quarter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rand.html">2.3.1.108. pyspark.sql.functions.rand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.randn.html">2.3.1.109. pyspark.sql.functions.randn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rank.html">2.3.1.110. pyspark.sql.functions.rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.regexp_extract.html">2.3.1.111. pyspark.sql.functions.regexp_extract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.regexp_replace.html">2.3.1.112. pyspark.sql.functions.regexp_replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.repeat.html">2.3.1.113. pyspark.sql.functions.repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.reverse.html">2.3.1.114. pyspark.sql.functions.reverse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rint.html">2.3.1.115. pyspark.sql.functions.rint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.round.html">2.3.1.116. pyspark.sql.functions.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.row_number.html">2.3.1.117. pyspark.sql.functions.row_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rpad.html">2.3.1.118. pyspark.sql.functions.rpad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rtrim.html">2.3.1.119. pyspark.sql.functions.rtrim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.second.html">2.3.1.120. pyspark.sql.functions.second</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sha1.html">2.3.1.121. pyspark.sql.functions.sha1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sha2.html">2.3.1.122. pyspark.sql.functions.sha2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.shiftLeft.html">2.3.1.123. pyspark.sql.functions.shiftLeft</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.shiftRight.html">2.3.1.124. pyspark.sql.functions.shiftRight</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.shiftRightUnsigned.html">2.3.1.125. pyspark.sql.functions.shiftRightUnsigned</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.signum.html">2.3.1.126. pyspark.sql.functions.signum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sin.html">2.3.1.127. pyspark.sql.functions.sin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.since.html">2.3.1.128. pyspark.sql.functions.since</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sinh.html">2.3.1.129. pyspark.sql.functions.sinh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.size.html">2.3.1.130. pyspark.sql.functions.size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.skewness.html">2.3.1.131. pyspark.sql.functions.skewness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sort_array.html">2.3.1.132. pyspark.sql.functions.sort_array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.soundex.html">2.3.1.133. pyspark.sql.functions.soundex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.spark_partition_id.html">2.3.1.134. pyspark.sql.functions.spark_partition_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.split.html">2.3.1.135. pyspark.sql.functions.split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sqrt.html">2.3.1.136. pyspark.sql.functions.sqrt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.stddev.html">2.3.1.137. pyspark.sql.functions.stddev</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.stddev_pop.html">2.3.1.138. pyspark.sql.functions.stddev_pop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.stddev_samp.html">2.3.1.139. pyspark.sql.functions.stddev_samp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.struct.html">2.3.1.140. pyspark.sql.functions.struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.substring.html">2.3.1.141. pyspark.sql.functions.substring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.substring_index.html">2.3.1.142. pyspark.sql.functions.substring_index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sum.html">2.3.1.143. pyspark.sql.functions.sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sumDistinct.html">2.3.1.144. pyspark.sql.functions.sumDistinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.tan.html">2.3.1.145. pyspark.sql.functions.tan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.tanh.html">2.3.1.146. pyspark.sql.functions.tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.toDegrees.html">2.3.1.147. pyspark.sql.functions.toDegrees</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.toRadians.html">2.3.1.148. pyspark.sql.functions.toRadians</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.to_date.html">2.3.1.149. pyspark.sql.functions.to_date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.to_utc_timestamp.html">2.3.1.150. pyspark.sql.functions.to_utc_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.translate.html">2.3.1.151. pyspark.sql.functions.translate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.trim.html">2.3.1.152. pyspark.sql.functions.trim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.trunc.html">2.3.1.153. pyspark.sql.functions.trunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.udf.html">2.3.1.154. pyspark.sql.functions.udf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.unbase64.html">2.3.1.155. pyspark.sql.functions.unbase64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.unhex.html">2.3.1.156. pyspark.sql.functions.unhex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.unix_timestamp.html">2.3.1.157. pyspark.sql.functions.unix_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.upper.html">2.3.1.158. pyspark.sql.functions.upper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.v.html">2.3.1.159. pyspark.sql.functions.v</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.var_pop.html">2.3.1.160. pyspark.sql.functions.var_pop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.var_samp.html">2.3.1.161. pyspark.sql.functions.var_samp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.variance.html">2.3.1.162. pyspark.sql.functions.variance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.weekofyear.html">2.3.1.163. pyspark.sql.functions.weekofyear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.when.html">2.3.1.164. pyspark.sql.functions.when</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.window.html">2.3.1.165. pyspark.sql.functions.window</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.year.html">2.3.1.166. pyspark.sql.functions.year</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">2.3.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.AutoBatchedSerializer.html">2.3.2.1. pyspark.sql.functions.AutoBatchedSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.Column.html">2.3.2.2. pyspark.sql.functions.Column</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.DataFrame.html">2.3.2.3. pyspark.sql.functions.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.PickleSerializer.html">2.3.2.4. pyspark.sql.functions.PickleSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.SparkContext.html">2.3.2.5. pyspark.sql.functions.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.StringType.html">2.3.2.6. pyspark.sql.functions.StringType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.UserDefinedFunction.html">2.3.2.7. pyspark.sql.functions.UserDefinedFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.sql.functions.map.html">2.3.2.8. pyspark.sql.functions.map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.html">2. pyspark.sql</a> &raquo;</li>
+        
+      <li>2.3. pyspark.sql.functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.sql.functions.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.sql.functions">
+<span id="pyspark-sql-functions"></span><h1>2.3. pyspark.sql.functions<a class="headerlink" href="#module-pyspark.sql.functions" title="Permalink to this headline">¶</a></h1>
+<p>A collections of builtin functions</p>
+<div class="section" id="functions">
+<h2>2.3.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.abs.html#pyspark.sql.functions.abs" title="pyspark.sql.functions.abs"><code class="xref py py-obj docutils literal"><span class="pre">abs</span></code></a>(col)</td>
+<td>Computes the absolute value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.acos.html#pyspark.sql.functions.acos" title="pyspark.sql.functions.acos"><code class="xref py py-obj docutils literal"><span class="pre">acos</span></code></a>(col)</td>
+<td>Computes the cosine inverse of the given value; the returned angle is in the range0.0 through pi.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.add_months.html#pyspark.sql.functions.add_months" title="pyspark.sql.functions.add_months"><code class="xref py py-obj docutils literal"><span class="pre">add_months</span></code></a>(start,&nbsp;months)</td>
+<td>Returns the date that is <cite>months</cite> months after <cite>start</cite></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.approxCountDistinct.html#pyspark.sql.functions.approxCountDistinct" title="pyspark.sql.functions.approxCountDistinct"><code class="xref py py-obj docutils literal"><span class="pre">approxCountDistinct</span></code></a>(col[,&nbsp;rsd])</td>
+<td>Returns a new <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for approximate distinct count of <code class="docutils literal"><span class="pre">col</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.array.html#pyspark.sql.functions.array" title="pyspark.sql.functions.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>(*cols)</td>
+<td>Creates a new array column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.array_contains.html#pyspark.sql.functions.array_contains" title="pyspark.sql.functions.array_contains"><code class="xref py py-obj docutils literal"><span class="pre">array_contains</span></code></a>(col,&nbsp;value)</td>
+<td>Collection function: returns True if the array contains the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.asc.html#pyspark.sql.functions.asc" title="pyspark.sql.functions.asc"><code class="xref py py-obj docutils literal"><span class="pre">asc</span></code></a>(col)</td>
+<td>Returns a sort expression based on the ascending order of the given column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.ascii.html#pyspark.sql.functions.ascii" title="pyspark.sql.functions.ascii"><code class="xref py py-obj docutils literal"><span class="pre">ascii</span></code></a>(col)</td>
+<td>Computes the numeric value of the first character of the string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.asin.html#pyspark.sql.functions.asin" title="pyspark.sql.functions.asin"><code class="xref py py-obj docutils literal"><span class="pre">asin</span></code></a>(col)</td>
+<td>Computes the sine inverse of the given value; the returned angle is in the range-pi/2 through pi/2.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.atan.html#pyspark.sql.functions.atan" title="pyspark.sql.functions.atan"><code class="xref py py-obj docutils literal"><span class="pre">atan</span></code></a>(col)</td>
+<td>Computes the tangent inverse of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.atan2.html#pyspark.sql.functions.atan2" title="pyspark.sql.functions.atan2"><code class="xref py py-obj docutils literal"><span class="pre">atan2</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns the angle theta from the conversion of rectangular coordinates (x, y) topolar coordinates (r, theta).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.avg.html#pyspark.sql.functions.avg" title="pyspark.sql.functions.avg"><code class="xref py py-obj docutils literal"><span class="pre">avg</span></code></a>(col)</td>
+<td>Aggregate function: returns the average of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.base64.html#pyspark.sql.functions.base64" title="pyspark.sql.functions.base64"><code class="xref py py-obj docutils literal"><span class="pre">base64</span></code></a>(col)</td>
+<td>Computes the BASE64 encoding of a binary column and returns it as a string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.bin.html#pyspark.sql.functions.bin" title="pyspark.sql.functions.bin"><code class="xref py py-obj docutils literal"><span class="pre">bin</span></code></a>(col)</td>
+<td>Returns the string representation of the binary value of the given column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.bitwiseNOT.html#pyspark.sql.functions.bitwiseNOT" title="pyspark.sql.functions.bitwiseNOT"><code class="xref py py-obj docutils literal"><span class="pre">bitwiseNOT</span></code></a>(col)</td>
+<td>Computes bitwise not.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.broadcast.html#pyspark.sql.functions.broadcast" title="pyspark.sql.functions.broadcast"><code class="xref py py-obj docutils literal"><span class="pre">broadcast</span></code></a>(df)</td>
+<td>Marks a DataFrame as small enough for use in broadcast joins.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.bround.html#pyspark.sql.functions.bround" title="pyspark.sql.functions.bround"><code class="xref py py-obj docutils literal"><span class="pre">bround</span></code></a>(col[,&nbsp;scale])</td>
+<td>Round the given value to <cite>scale</cite> decimal places using HALF_EVEN rounding mode if <cite>scale</cite> &gt;= 0 or at integral part when <cite>scale</cite> &lt; 0.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.cbrt.html#pyspark.sql.functions.cbrt" title="pyspark.sql.functions.cbrt"><code class="xref py py-obj docutils literal"><span class="pre">cbrt</span></code></a>(col)</td>
+<td>Computes the cube-root of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.ceil.html#pyspark.sql.functions.ceil" title="pyspark.sql.functions.ceil"><code class="xref py py-obj docutils literal"><span class="pre">ceil</span></code></a>(col)</td>
+<td>Computes the ceiling of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.coalesce.html#pyspark.sql.functions.coalesce" title="pyspark.sql.functions.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(*cols)</td>
+<td>Returns the first column that is not null.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.col.html#pyspark.sql.functions.col" title="pyspark.sql.functions.col"><code class="xref py py-obj docutils literal"><span class="pre">col</span></code></a>(col)</td>
+<td>Returns a <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> based on the given column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.collect_list.html#pyspark.sql.functions.collect_list" title="pyspark.sql.functions.collect_list"><code class="xref py py-obj docutils literal"><span class="pre">collect_list</span></code></a>(col)</td>
+<td>Aggregate function: returns a list of objects with duplicates.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.collect_set.html#pyspark.sql.functions.collect_set" title="pyspark.sql.functions.collect_set"><code class="xref py py-obj docutils literal"><span class="pre">collect_set</span></code></a>(col)</td>
+<td>Aggregate function: returns a set of objects with duplicate elements eliminated.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.column.html#pyspark.sql.functions.column" title="pyspark.sql.functions.column"><code class="xref py py-obj docutils literal"><span class="pre">column</span></code></a>(col)</td>
+<td>Returns a <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> based on the given column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.concat.html#pyspark.sql.functions.concat" title="pyspark.sql.functions.concat"><code class="xref py py-obj docutils literal"><span class="pre">concat</span></code></a>(*cols)</td>
+<td>Concatenates multiple input string columns together into a single string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.concat_ws.html#pyspark.sql.functions.concat_ws" title="pyspark.sql.functions.concat_ws"><code class="xref py py-obj docutils literal"><span class="pre">concat_ws</span></code></a>(sep,&nbsp;*cols)</td>
+<td>Concatenates multiple input string columns together into a single string column, using the given separator.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.conv.html#pyspark.sql.functions.conv" title="pyspark.sql.functions.conv"><code class="xref py py-obj docutils literal"><span class="pre">conv</span></code></a>(col,&nbsp;fromBase,&nbsp;toBase)</td>
+<td>Convert a number in a string column from one base to another.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.corr.html#pyspark.sql.functions.corr" title="pyspark.sql.functions.corr"><code class="xref py py-obj docutils literal"><span class="pre">corr</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns a new <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for the Pearson Correlation Coefficient for <code class="docutils literal"><span class="pre">col1</span></code> and <code class="docutils literal"><span class="pre">col2</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.cos.html#pyspark.sql.functions.cos" title="pyspark.sql.functions.cos"><code class="xref py py-obj docutils literal"><span class="pre">cos</span></code></a>(col)</td>
+<td>Computes the cosine of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.cosh.html#pyspark.sql.functions.cosh" title="pyspark.sql.functions.cosh"><code class="xref py py-obj docutils literal"><span class="pre">cosh</span></code></a>(col)</td>
+<td>Computes the hyperbolic cosine of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.count.html#pyspark.sql.functions.count" title="pyspark.sql.functions.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>(col)</td>
+<td>Aggregate function: returns the number of items in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.countDistinct.html#pyspark.sql.functions.countDistinct" title="pyspark.sql.functions.countDistinct"><code class="xref py py-obj docutils literal"><span class="pre">countDistinct</span></code></a>(col,&nbsp;*cols)</td>
+<td>Returns a new <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for distinct count of <code class="docutils literal"><span class="pre">col</span></code> or <code class="docutils literal"><span class="pre">cols</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.covar_pop.html#pyspark.sql.functions.covar_pop" title="pyspark.sql.functions.covar_pop"><code class="xref py py-obj docutils literal"><span class="pre">covar_pop</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns a new <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for the population covariance of <code class="docutils literal"><span class="pre">col1</span></code> and <code class="docutils literal"><span class="pre">col2</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.covar_samp.html#pyspark.sql.functions.covar_samp" title="pyspark.sql.functions.covar_samp"><code class="xref py py-obj docutils literal"><span class="pre">covar_samp</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns a new <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for the sample covariance of <code class="docutils literal"><span class="pre">col1</span></code> and <code class="docutils literal"><span class="pre">col2</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.crc32.html#pyspark.sql.functions.crc32" title="pyspark.sql.functions.crc32"><code class="xref py py-obj docutils literal"><span class="pre">crc32</span></code></a>(col)</td>
+<td>Calculates the cyclic redundancy check value  (CRC32) of a binary column and returns the value as a bigint.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.create_map.html#pyspark.sql.functions.create_map" title="pyspark.sql.functions.create_map"><code class="xref py py-obj docutils literal"><span class="pre">create_map</span></code></a>(*cols)</td>
+<td>Creates a new map column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.cume_dist.html#pyspark.sql.functions.cume_dist" title="pyspark.sql.functions.cume_dist"><code class="xref py py-obj docutils literal"><span class="pre">cume_dist</span></code></a>()</td>
+<td>Window function: returns the cumulative distribution of values within a window partition, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.current_date.html#pyspark.sql.functions.current_date" title="pyspark.sql.functions.current_date"><code class="xref py py-obj docutils literal"><span class="pre">current_date</span></code></a>()</td>
+<td>Returns the current date as a date column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.current_timestamp.html#pyspark.sql.functions.current_timestamp" title="pyspark.sql.functions.current_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">current_timestamp</span></code></a>()</td>
+<td>Returns the current timestamp as a timestamp column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.date_add.html#pyspark.sql.functions.date_add" title="pyspark.sql.functions.date_add"><code class="xref py py-obj docutils literal"><span class="pre">date_add</span></code></a>(start,&nbsp;days)</td>
+<td>Returns the date that is <cite>days</cite> days after <cite>start</cite></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.date_format.html#pyspark.sql.functions.date_format" title="pyspark.sql.functions.date_format"><code class="xref py py-obj docutils literal"><span class="pre">date_format</span></code></a>(date,&nbsp;format)</td>
+<td>Converts a date/timestamp/string to a value of string in the format specified by the date format given by the second argument.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.date_sub.html#pyspark.sql.functions.date_sub" title="pyspark.sql.functions.date_sub"><code class="xref py py-obj docutils literal"><span class="pre">date_sub</span></code></a>(start,&nbsp;days)</td>
+<td>Returns the date that is <cite>days</cite> days before <cite>start</cite></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.datediff.html#pyspark.sql.functions.datediff" title="pyspark.sql.functions.datediff"><code class="xref py py-obj docutils literal"><span class="pre">datediff</span></code></a>(end,&nbsp;start)</td>
+<td>Returns the number of days from <cite>start</cite> to <cite>end</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.dayofmonth.html#pyspark.sql.functions.dayofmonth" title="pyspark.sql.functions.dayofmonth"><code class="xref py py-obj docutils literal"><span class="pre">dayofmonth</span></code></a>(col)</td>
+<td>Extract the day of the month of a given date as integer.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.dayofyear.html#pyspark.sql.functions.dayofyear" title="pyspark.sql.functions.dayofyear"><code class="xref py py-obj docutils literal"><span class="pre">dayofyear</span></code></a>(col)</td>
+<td>Extract the day of the year of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.decode.html#pyspark.sql.functions.decode" title="pyspark.sql.functions.decode"><code class="xref py py-obj docutils literal"><span class="pre">decode</span></code></a>(col,&nbsp;charset)</td>
+<td>Computes the first argument into a string from a binary using the provided character set (one of &#8216;US-ASCII&#8217;, &#8216;ISO-8859-1&#8217;, &#8216;UTF-8&#8217;, &#8216;UTF-16BE&#8217;, &#8216;UTF-16LE&#8217;, &#8216;UTF-16&#8217;).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.dense_rank.html#pyspark.sql.functions.dense_rank" title="pyspark.sql.functions.dense_rank"><code class="xref py py-obj docutils literal"><span class="pre">dense_rank</span></code></a>()</td>
+<td>Window function: returns the rank of rows within a window partition, without any gaps.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.desc.html#pyspark.sql.functions.desc" title="pyspark.sql.functions.desc"><code class="xref py py-obj docutils literal"><span class="pre">desc</span></code></a>(col)</td>
+<td>Returns a sort expression based on the descending order of the given column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.encode.html#pyspark.sql.functions.encode" title="pyspark.sql.functions.encode"><code class="xref py py-obj docutils literal"><span class="pre">encode</span></code></a>(col,&nbsp;charset)</td>
+<td>Computes the first argument into a binary from a string using the provided character set (one of &#8216;US-ASCII&#8217;, &#8216;ISO-8859-1&#8217;, &#8216;UTF-8&#8217;, &#8216;UTF-16BE&#8217;, &#8216;UTF-16LE&#8217;, &#8216;UTF-16&#8217;).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.exp.html#pyspark.sql.functions.exp" title="pyspark.sql.functions.exp"><code class="xref py py-obj docutils literal"><span class="pre">exp</span></code></a>(col)</td>
+<td>Computes the exponential of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.explode.html#pyspark.sql.functions.explode" title="pyspark.sql.functions.explode"><code class="xref py py-obj docutils literal"><span class="pre">explode</span></code></a>(col)</td>
+<td>Returns a new row for each element in the given array or map.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.expm1.html#pyspark.sql.functions.expm1" title="pyspark.sql.functions.expm1"><code class="xref py py-obj docutils literal"><span class="pre">expm1</span></code></a>(col)</td>
+<td>Computes the exponential of the given value minus one.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.expr.html#pyspark.sql.functions.expr" title="pyspark.sql.functions.expr"><code class="xref py py-obj docutils literal"><span class="pre">expr</span></code></a>(str)</td>
+<td>Parses the expression string into the column that it represents</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.factorial.html#pyspark.sql.functions.factorial" title="pyspark.sql.functions.factorial"><code class="xref py py-obj docutils literal"><span class="pre">factorial</span></code></a>(col)</td>
+<td>Computes the factorial of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.first.html#pyspark.sql.functions.first" title="pyspark.sql.functions.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>(col[,&nbsp;ignorenulls])</td>
+<td>Aggregate function: returns the first value in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.floor.html#pyspark.sql.functions.floor" title="pyspark.sql.functions.floor"><code class="xref py py-obj docutils literal"><span class="pre">floor</span></code></a>(col)</td>
+<td>Computes the floor of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.format_number.html#pyspark.sql.functions.format_number" title="pyspark.sql.functions.format_number"><code class="xref py py-obj docutils literal"><span class="pre">format_number</span></code></a>(col,&nbsp;d)</td>
+<td>Formats the number X to a format like &#8216;#,&#8211;#,&#8211;#.&#8211;&#8217;, rounded to d decimal places, and returns the result as a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.format_string.html#pyspark.sql.functions.format_string" title="pyspark.sql.functions.format_string"><code class="xref py py-obj docutils literal"><span class="pre">format_string</span></code></a>(format,&nbsp;*cols)</td>
+<td>Formats the arguments in printf-style and returns the result as a string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.from_unixtime.html#pyspark.sql.functions.from_unixtime" title="pyspark.sql.functions.from_unixtime"><code class="xref py py-obj docutils literal"><span class="pre">from_unixtime</span></code></a>(timestamp[,&nbsp;format])</td>
+<td>Converts the number of seconds from unix epoch (1970-01-01 00:00:00 UTC) to a string representing the timestamp of that moment in the current system time zone in the given format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.from_utc_timestamp.html#pyspark.sql.functions.from_utc_timestamp" title="pyspark.sql.functions.from_utc_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">from_utc_timestamp</span></code></a>(timestamp,&nbsp;tz)</td>
+<td>Assumes given timestamp is UTC and converts to given timezone.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.get_json_object.html#pyspark.sql.functions.get_json_object" title="pyspark.sql.functions.get_json_object"><code class="xref py py-obj docutils literal"><span class="pre">get_json_object</span></code></a>(col,&nbsp;path)</td>
+<td>Extracts json object from a json string based on json path specified, and returns json string of the extracted json object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.greatest.html#pyspark.sql.functions.greatest" title="pyspark.sql.functions.greatest"><code class="xref py py-obj docutils literal"><span class="pre">greatest</span></code></a>(*cols)</td>
+<td>Returns the greatest value of the list of column names, skipping null values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.grouping.html#pyspark.sql.functions.grouping" title="pyspark.sql.functions.grouping"><code class="xref py py-obj docutils literal"><span class="pre">grouping</span></code></a>(col)</td>
+<td>Aggregate function: indicates whether a specified column in a GROUP BY list is aggregated or not, returns 1 for aggregated or 0 for not aggregated in the result set.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.grouping_id.html#pyspark.sql.functions.grouping_id" title="pyspark.sql.functions.grouping_id"><code class="xref py py-obj docutils literal"><span class="pre">grouping_id</span></code></a>(*cols)</td>
+<td>Aggregate function: returns the level of grouping, equals to</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.hash.html#pyspark.sql.functions.hash" title="pyspark.sql.functions.hash"><code class="xref py py-obj docutils literal"><span class="pre">hash</span></code></a>(*cols)</td>
+<td>Calculates the hash code of given columns, and returns the result as an int column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.hex.html#pyspark.sql.functions.hex" title="pyspark.sql.functions.hex"><code class="xref py py-obj docutils literal"><span class="pre">hex</span></code></a>(col)</td>
+<td>Computes hex value of the given column, which could be StringType, BinaryType, IntegerType or LongType.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.hour.html#pyspark.sql.functions.hour" title="pyspark.sql.functions.hour"><code class="xref py py-obj docutils literal"><span class="pre">hour</span></code></a>(col)</td>
+<td>Extract the hours of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.hypot.html#pyspark.sql.functions.hypot" title="pyspark.sql.functions.hypot"><code class="xref py py-obj docutils literal"><span class="pre">hypot</span></code></a>(col1,&nbsp;col2)</td>
+<td>Computes <cite>sqrt(a^2 + b^2)</cite> without intermediate overflow or underflow.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.ignore_unicode_prefix.html#pyspark.sql.functions.ignore_unicode_prefix" title="pyspark.sql.functions.ignore_unicode_prefix"><code class="xref py py-obj docutils literal"><span class="pre">ignore_unicode_prefix</span></code></a>(f)</td>
+<td>Ignore the &#8216;u&#8217; prefix of string in doc tests, to make it works</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.initcap.html#pyspark.sql.functions.initcap" title="pyspark.sql.functions.initcap"><code class="xref py py-obj docutils literal"><span class="pre">initcap</span></code></a>(col)</td>
+<td>Translate the first letter of each word to upper case in the sentence.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.input_file_name.html#pyspark.sql.functions.input_file_name" title="pyspark.sql.functions.input_file_name"><code class="xref py py-obj docutils literal"><span class="pre">input_file_name</span></code></a>()</td>
+<td>Creates a string column for the file name of the current Spark task.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.instr.html#pyspark.sql.functions.instr" title="pyspark.sql.functions.instr"><code class="xref py py-obj docutils literal"><span class="pre">instr</span></code></a>(str,&nbsp;substr)</td>
+<td>Locate the position of the first occurrence of substr column in the given string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.isnan.html#pyspark.sql.functions.isnan" title="pyspark.sql.functions.isnan"><code class="xref py py-obj docutils literal"><span class="pre">isnan</span></code></a>(col)</td>
+<td>An expression that returns true iff the column is NaN.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.isnull.html#pyspark.sql.functions.isnull" title="pyspark.sql.functions.isnull"><code class="xref py py-obj docutils literal"><span class="pre">isnull</span></code></a>(col)</td>
+<td>An expression that returns true iff the column is null.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.json_tuple.html#pyspark.sql.functions.json_tuple" title="pyspark.sql.functions.json_tuple"><code class="xref py py-obj docutils literal"><span class="pre">json_tuple</span></code></a>(col,&nbsp;*fields)</td>
+<td>Creates a new row for a json column according to the given field names.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.kurtosis.html#pyspark.sql.functions.kurtosis" title="pyspark.sql.functions.kurtosis"><code class="xref py py-obj docutils literal"><span class="pre">kurtosis</span></code></a>(col)</td>
+<td>Aggregate function: returns the kurtosis of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.lag.html#pyspark.sql.functions.lag" title="pyspark.sql.functions.lag"><code class="xref py py-obj docutils literal"><span class="pre">lag</span></code></a>(col[,&nbsp;count,&nbsp;default])</td>
+<td>Window function: returns the value that is <cite>offset</cite> rows before the current row, and <cite>defaultValue</cite> if there is less than <cite>offset</cite> rows before the current row.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.last.html#pyspark.sql.functions.last" title="pyspark.sql.functions.last"><code class="xref py py-obj docutils literal"><span class="pre">last</span></code></a>(col[,&nbsp;ignorenulls])</td>
+<td>Aggregate function: returns the last value in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.last_day.html#pyspark.sql.functions.last_day" title="pyspark.sql.functions.last_day"><code class="xref py py-obj docutils literal"><span class="pre">last_day</span></code></a>(date)</td>
+<td>Returns the last day of the month which the given date belongs to.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.lead.html#pyspark.sql.functions.lead" title="pyspark.sql.functions.lead"><code class="xref py py-obj docutils literal"><span class="pre">lead</span></code></a>(col[,&nbsp;count,&nbsp;default])</td>
+<td>Window function: returns the value that is <cite>offset</cite> rows after the current row, and <cite>defaultValue</cite> if there is less than <cite>offset</cite> rows after the current row.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.least.html#pyspark.sql.functions.least" title="pyspark.sql.functions.least"><code class="xref py py-obj docutils literal"><span class="pre">least</span></code></a>(*cols)</td>
+<td>Returns the least value of the list of column names, skipping null values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.length.html#pyspark.sql.functions.length" title="pyspark.sql.functions.length"><code class="xref py py-obj docutils literal"><span class="pre">length</span></code></a>(col)</td>
+<td>Calculates the length of a string or binary expression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.levenshtein.html#pyspark.sql.functions.levenshtein" title="pyspark.sql.functions.levenshtein"><code class="xref py py-obj docutils literal"><span class="pre">levenshtein</span></code></a>(left,&nbsp;right)</td>
+<td>Computes the Levenshtein distance of the two given strings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.lit.html#pyspark.sql.functions.lit" title="pyspark.sql.functions.lit"><code class="xref py py-obj docutils literal"><span class="pre">lit</span></code></a>(col)</td>
+<td>Creates a <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> of literal value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.locate.html#pyspark.sql.functions.locate" title="pyspark.sql.functions.locate"><code class="xref py py-obj docutils literal"><span class="pre">locate</span></code></a>(substr,&nbsp;str[,&nbsp;pos])</td>
+<td>Locate the position of the first occurrence of substr in a string column, after position pos.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.log.html#pyspark.sql.functions.log" title="pyspark.sql.functions.log"><code class="xref py py-obj docutils literal"><span class="pre">log</span></code></a>(arg1[,&nbsp;arg2])</td>
+<td>Returns the first argument-based logarithm of the second argument.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.log10.html#pyspark.sql.functions.log10" title="pyspark.sql.functions.log10"><code class="xref py py-obj docutils literal"><span class="pre">log10</span></code></a>(col)</td>
+<td>Computes the logarithm of the given value in Base 10.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.log1p.html#pyspark.sql.functions.log1p" title="pyspark.sql.functions.log1p"><code class="xref py py-obj docutils literal"><span class="pre">log1p</span></code></a>(col)</td>
+<td>Computes the natural logarithm of the given value plus one.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.log2.html#pyspark.sql.functions.log2" title="pyspark.sql.functions.log2"><code class="xref py py-obj docutils literal"><span class="pre">log2</span></code></a>(col)</td>
+<td>Returns the base-2 logarithm of the argument.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.lower.html#pyspark.sql.functions.lower" title="pyspark.sql.functions.lower"><code class="xref py py-obj docutils literal"><span class="pre">lower</span></code></a>(col)</td>
+<td>Converts a string column to lower case.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.lpad.html#pyspark.sql.functions.lpad" title="pyspark.sql.functions.lpad"><code class="xref py py-obj docutils literal"><span class="pre">lpad</span></code></a>(col,&nbsp;len,&nbsp;pad)</td>
+<td>Left-pad the string column to width <cite>len</cite> with <cite>pad</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.ltrim.html#pyspark.sql.functions.ltrim" title="pyspark.sql.functions.ltrim"><code class="xref py py-obj docutils literal"><span class="pre">ltrim</span></code></a>(col)</td>
+<td>Trim the spaces from left end for the specified string value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.max.html#pyspark.sql.functions.max" title="pyspark.sql.functions.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a>(col)</td>
+<td>Aggregate function: returns the maximum value of the expression in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.md5.html#pyspark.sql.functions.md5" title="pyspark.sql.functions.md5"><code class="xref py py-obj docutils literal"><span class="pre">md5</span></code></a>(col)</td>
+<td>Calculates the MD5 digest and returns the value as a 32 character hex string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.mean.html#pyspark.sql.functions.mean" title="pyspark.sql.functions.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a>(col)</td>
+<td>Aggregate function: returns the average of the values in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.min.html#pyspark.sql.functions.min" title="pyspark.sql.functions.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a>(col)</td>
+<td>Aggregate function: returns the minimum value of the expression in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.minute.html#pyspark.sql.functions.minute" title="pyspark.sql.functions.minute"><code class="xref py py-obj docutils literal"><span class="pre">minute</span></code></a>(col)</td>
+<td>Extract the minutes of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.monotonically_increasing_id.html#pyspark.sql.functions.monotonically_increasing_id" title="pyspark.sql.functions.monotonically_increasing_id"><code class="xref py py-obj docutils literal"><span class="pre">monotonically_increasing_id</span></code></a>()</td>
+<td>A column that generates monotonically increasing 64-bit integers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.month.html#pyspark.sql.functions.month" title="pyspark.sql.functions.month"><code class="xref py py-obj docutils literal"><span class="pre">month</span></code></a>(col)</td>
+<td>Extract the month of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.months_between.html#pyspark.sql.functions.months_between" title="pyspark.sql.functions.months_between"><code class="xref py py-obj docutils literal"><span class="pre">months_between</span></code></a>(date1,&nbsp;date2)</td>
+<td>Returns the number of months between date1 and date2.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.nanvl.html#pyspark.sql.functions.nanvl" title="pyspark.sql.functions.nanvl"><code class="xref py py-obj docutils literal"><span class="pre">nanvl</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns col1 if it is not NaN, or col2 if col1 is NaN.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.next_day.html#pyspark.sql.functions.next_day" title="pyspark.sql.functions.next_day"><code class="xref py py-obj docutils literal"><span class="pre">next_day</span></code></a>(date,&nbsp;dayOfWeek)</td>
+<td>Returns the first date which is later than the value of the date column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.ntile.html#pyspark.sql.functions.ntile" title="pyspark.sql.functions.ntile"><code class="xref py py-obj docutils literal"><span class="pre">ntile</span></code></a>(n)</td>
+<td>Window function: returns the ntile group id (from 1 to <cite>n</cite> inclusive) in an ordered window partition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.percent_rank.html#pyspark.sql.functions.percent_rank" title="pyspark.sql.functions.percent_rank"><code class="xref py py-obj docutils literal"><span class="pre">percent_rank</span></code></a>()</td>
+<td>Window function: returns the relative rank (i.e.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.posexplode.html#pyspark.sql.functions.posexplode" title="pyspark.sql.functions.posexplode"><code class="xref py py-obj docutils literal"><span class="pre">posexplode</span></code></a>(col)</td>
+<td>Returns a new row for each element with position in the given array or map.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.pow.html#pyspark.sql.functions.pow" title="pyspark.sql.functions.pow"><code class="xref py py-obj docutils literal"><span class="pre">pow</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns the value of the first argument raised to the power of the second argument.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.quarter.html#pyspark.sql.functions.quarter" title="pyspark.sql.functions.quarter"><code class="xref py py-obj docutils literal"><span class="pre">quarter</span></code></a>(col)</td>
+<td>Extract the quarter of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.rand.html#pyspark.sql.functions.rand" title="pyspark.sql.functions.rand"><code class="xref py py-obj docutils literal"><span class="pre">rand</span></code></a>([seed])</td>
+<td>Generates a random column with i.i.d.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.randn.html#pyspark.sql.functions.randn" title="pyspark.sql.functions.randn"><code class="xref py py-obj docutils literal"><span class="pre">randn</span></code></a>([seed])</td>
+<td>Generates a column with i.i.d.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.rank.html#pyspark.sql.functions.rank" title="pyspark.sql.functions.rank"><code class="xref py py-obj docutils literal"><span class="pre">rank</span></code></a>()</td>
+<td>Window function: returns the rank of rows within a window partition.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.regexp_extract.html#pyspark.sql.functions.regexp_extract" title="pyspark.sql.functions.regexp_extract"><code class="xref py py-obj docutils literal"><span class="pre">regexp_extract</span></code></a>(str,&nbsp;pattern,&nbsp;idx)</td>
+<td>Extract a specific(idx) group identified by a java regex, from the specified string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.regexp_replace.html#pyspark.sql.functions.regexp_replace" title="pyspark.sql.functions.regexp_replace"><code class="xref py py-obj docutils literal"><span class="pre">regexp_replace</span></code></a>(str,&nbsp;pattern,&nbsp;replacement)</td>
+<td>Replace all substrings of the specified string value that match regexp with rep.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.repeat.html#pyspark.sql.functions.repeat" title="pyspark.sql.functions.repeat"><code class="xref py py-obj docutils literal"><span class="pre">repeat</span></code></a>(col,&nbsp;n)</td>
+<td>Repeats a string column n times, and returns it as a new string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.reverse.html#pyspark.sql.functions.reverse" title="pyspark.sql.functions.reverse"><code class="xref py py-obj docutils literal"><span class="pre">reverse</span></code></a>(col)</td>
+<td>Reverses the string column and returns it as a new string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.rint.html#pyspark.sql.functions.rint" title="pyspark.sql.functions.rint"><code class="xref py py-obj docutils literal"><span class="pre">rint</span></code></a>(col)</td>
+<td>Returns the double value that is closest in value to the argument and is equal to a mathematical integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.round.html#pyspark.sql.functions.round" title="pyspark.sql.functions.round"><code class="xref py py-obj docutils literal"><span class="pre">round</span></code></a>(col[,&nbsp;scale])</td>
+<td>Round the given value to <cite>scale</cite> decimal places using HALF_UP rounding mode if <cite>scale</cite> &gt;= 0 or at integral part when <cite>scale</cite> &lt; 0.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.row_number.html#pyspark.sql.functions.row_number" title="pyspark.sql.functions.row_number"><code class="xref py py-obj docutils literal"><span class="pre">row_number</span></code></a>()</td>
+<td>Window function: returns a sequential number starting at 1 within a window partition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.rpad.html#pyspark.sql.functions.rpad" title="pyspark.sql.functions.rpad"><code class="xref py py-obj docutils literal"><span class="pre">rpad</span></code></a>(col,&nbsp;len,&nbsp;pad)</td>
+<td>Right-pad the string column to width <cite>len</cite> with <cite>pad</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.rtrim.html#pyspark.sql.functions.rtrim" title="pyspark.sql.functions.rtrim"><code class="xref py py-obj docutils literal"><span class="pre">rtrim</span></code></a>(col)</td>
+<td>Trim the spaces from right end for the specified string value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.second.html#pyspark.sql.functions.second" title="pyspark.sql.functions.second"><code class="xref py py-obj docutils literal"><span class="pre">second</span></code></a>(col)</td>
+<td>Extract the seconds of a given date as integer.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.sha1.html#pyspark.sql.functions.sha1" title="pyspark.sql.functions.sha1"><code class="xref py py-obj docutils literal"><span class="pre">sha1</span></code></a>(col)</td>
+<td>Returns the hex string result of SHA-1.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.sha2.html#pyspark.sql.functions.sha2" title="pyspark.sql.functions.sha2"><code class="xref py py-obj docutils literal"><span class="pre">sha2</span></code></a>(col,&nbsp;numBits)</td>
+<td>Returns the hex string result of SHA-2 family of hash functions (SHA-224, SHA-256, SHA-384, and SHA-512).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.shiftLeft.html#pyspark.sql.functions.shiftLeft" title="pyspark.sql.functions.shiftLeft"><code class="xref py py-obj docutils literal"><span class="pre">shiftLeft</span></code></a>(col,&nbsp;numBits)</td>
+<td>Shift the given value numBits left.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.shiftRight.html#pyspark.sql.functions.shiftRight" title="pyspark.sql.functions.shiftRight"><code class="xref py py-obj docutils literal"><span class="pre">shiftRight</span></code></a>(col,&nbsp;numBits)</td>
+<td>Shift the given value numBits right.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.shiftRightUnsigned.html#pyspark.sql.functions.shiftRightUnsigned" title="pyspark.sql.functions.shiftRightUnsigned"><code class="xref py py-obj docutils literal"><span class="pre">shiftRightUnsigned</span></code></a>(col,&nbsp;numBits)</td>
+<td>Unsigned shift the given value numBits right.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.signum.html#pyspark.sql.functions.signum" title="pyspark.sql.functions.signum"><code class="xref py py-obj docutils literal"><span class="pre">signum</span></code></a>(col)</td>
+<td>Computes the signum of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.sin.html#pyspark.sql.functions.sin" title="pyspark.sql.functions.sin"><code class="xref py py-obj docutils literal"><span class="pre">sin</span></code></a>(col)</td>
+<td>Computes the sine of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.since.html#pyspark.sql.functions.since" title="pyspark.sql.functions.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.sinh.html#pyspark.sql.functions.sinh" title="pyspark.sql.functions.sinh"><code class="xref py py-obj docutils literal"><span class="pre">sinh</span></code></a>(col)</td>
+<td>Computes the hyperbolic sine of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.size.html#pyspark.sql.functions.size" title="pyspark.sql.functions.size"><code class="xref py py-obj docutils literal"><span class="pre">size</span></code></a>(col)</td>
+<td>Collection function: returns the length of the array or map stored in the column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.skewness.html#pyspark.sql.functions.skewness" title="pyspark.sql.functions.skewness"><code class="xref py py-obj docutils literal"><span class="pre">skewness</span></code></a>(col)</td>
+<td>Aggregate function: returns the skewness of the values in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.sort_array.html#pyspark.sql.functions.sort_array" title="pyspark.sql.functions.sort_array"><code class="xref py py-obj docutils literal"><span class="pre">sort_array</span></code></a>(col[,&nbsp;asc])</td>
+<td>Collection function: sorts the input array for the given column in ascending order.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.soundex.html#pyspark.sql.functions.soundex" title="pyspark.sql.functions.soundex"><code class="xref py py-obj docutils literal"><span class="pre">soundex</span></code></a>(col)</td>
+<td>Returns the SoundEx encoding for a string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.spark_partition_id.html#pyspark.sql.functions.spark_partition_id" title="pyspark.sql.functions.spark_partition_id"><code class="xref py py-obj docutils literal"><span class="pre">spark_partition_id</span></code></a>()</td>
+<td>A column for partition ID of the Spark task.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.split.html#pyspark.sql.functions.split" title="pyspark.sql.functions.split"><code class="xref py py-obj docutils literal"><span class="pre">split</span></code></a>(str,&nbsp;pattern)</td>
+<td>Splits str around pattern (pattern is a regular expression).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.sqrt.html#pyspark.sql.functions.sqrt" title="pyspark.sql.functions.sqrt"><code class="xref py py-obj docutils literal"><span class="pre">sqrt</span></code></a>(col)</td>
+<td>Computes the square root of the specified float value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.stddev.html#pyspark.sql.functions.stddev" title="pyspark.sql.functions.stddev"><code class="xref py py-obj docutils literal"><span class="pre">stddev</span></code></a>(col)</td>
+<td>Aggregate function: returns the unbiased sample standard deviation of the expression in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.stddev_pop.html#pyspark.sql.functions.stddev_pop" title="pyspark.sql.functions.stddev_pop"><code class="xref py py-obj docutils literal"><span class="pre">stddev_pop</span></code></a>(col)</td>
+<td>Aggregate function: returns population standard deviation of the expression in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.stddev_samp.html#pyspark.sql.functions.stddev_samp" title="pyspark.sql.functions.stddev_samp"><code class="xref py py-obj docutils literal"><span class="pre">stddev_samp</span></code></a>(col)</td>
+<td>Aggregate function: returns the unbiased sample standard deviation of the expression in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.struct.html#pyspark.sql.functions.struct" title="pyspark.sql.functions.struct"><code class="xref py py-obj docutils literal"><span class="pre">struct</span></code></a>(*cols)</td>
+<td>Creates a new struct column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.substring.html#pyspark.sql.functions.substring" title="pyspark.sql.functions.substring"><code class="xref py py-obj docutils literal"><span class="pre">substring</span></code></a>(str,&nbsp;pos,&nbsp;len)</td>
+<td>Substring starts at <cite>pos</cite> and is of length <cite>len</cite> when str is String type or</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.substring_index.html#pyspark.sql.functions.substring_index" title="pyspark.sql.functions.substring_index"><code class="xref py py-obj docutils literal"><span class="pre">substring_index</span></code></a>(str,&nbsp;delim,&nbsp;count)</td>
+<td>Returns the substring from string str before count occurrences of the delimiter delim.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.sum.html#pyspark.sql.functions.sum" title="pyspark.sql.functions.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>(col)</td>
+<td>Aggregate function: returns the sum of all values in the expression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.sumDistinct.html#pyspark.sql.functions.sumDistinct" title="pyspark.sql.functions.sumDistinct"><code class="xref py py-obj docutils literal"><span class="pre">sumDistinct</span></code></a>(col)</td>
+<td>Aggregate function: returns the sum of distinct values in the expression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.tan.html#pyspark.sql.functions.tan" title="pyspark.sql.functions.tan"><code class="xref py py-obj docutils literal"><span class="pre">tan</span></code></a>(col)</td>
+<td>Computes the tangent of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.tanh.html#pyspark.sql.functions.tanh" title="pyspark.sql.functions.tanh"><code class="xref py py-obj docutils literal"><span class="pre">tanh</span></code></a>(col)</td>
+<td>Computes the hyperbolic tangent of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.toDegrees.html#pyspark.sql.functions.toDegrees" title="pyspark.sql.functions.toDegrees"><code class="xref py py-obj docutils literal"><span class="pre">toDegrees</span></code></a>(col)</td>
+<td>Converts an angle measured in radians to an approximately equivalent angle measured in degrees.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.toRadians.html#pyspark.sql.functions.toRadians" title="pyspark.sql.functions.toRadians"><code class="xref py py-obj docutils literal"><span class="pre">toRadians</span></code></a>(col)</td>
+<td>Converts an angle measured in degrees to an approximately equivalent angle measured in radians.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.to_date.html#pyspark.sql.functions.to_date" title="pyspark.sql.functions.to_date"><code class="xref py py-obj docutils literal"><span class="pre">to_date</span></code></a>(col)</td>
+<td>Converts the column of StringType or TimestampType into DateType.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.to_utc_timestamp.html#pyspark.sql.functions.to_utc_timestamp" title="pyspark.sql.functions.to_utc_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">to_utc_timestamp</span></code></a>(timestamp,&nbsp;tz)</td>
+<td>Assumes given timestamp is in given timezone and converts to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.translate.html#pyspark.sql.functions.translate" title="pyspark.sql.functions.translate"><code class="xref py py-obj docutils literal"><span class="pre">translate</span></code></a>(srcCol,&nbsp;matching,&nbsp;replace)</td>
+<td>A function translate any character in the <cite>srcCol</cite> by a character in <cite>matching</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.trim.html#pyspark.sql.functions.trim" title="pyspark.sql.functions.trim"><code class="xref py py-obj docutils literal"><span class="pre">trim</span></code></a>(col)</td>
+<td>Trim the spaces from both ends for the specified string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.trunc.html#pyspark.sql.functions.trunc" title="pyspark.sql.functions.trunc"><code class="xref py py-obj docutils literal"><span class="pre">trunc</span></code></a>(date,&nbsp;format)</td>
+<td>Returns date truncated to the unit specified by the format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.udf.html#pyspark.sql.functions.udf" title="pyspark.sql.functions.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a>(f[,&nbsp;returnType])</td>
+<td>Creates a <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> expression representing a user defined function (UDF).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.unbase64.html#pyspark.sql.functions.unbase64" title="pyspark.sql.functions.unbase64"><code class="xref py py-obj docutils literal"><span class="pre">unbase64</span></code></a>(col)</td>
+<td>Decodes a BASE64 encoded string column and returns it as a binary column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.unhex.html#pyspark.sql.functions.unhex" title="pyspark.sql.functions.unhex"><code class="xref py py-obj docutils literal"><span class="pre">unhex</span></code></a>(col)</td>
+<td>Inverse of hex.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.unix_timestamp.html#pyspark.sql.functions.unix_timestamp" title="pyspark.sql.functions.unix_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">unix_timestamp</span></code></a>([timestamp,&nbsp;format])</td>
+<td>Convert time string with given pattern (&#8216;yyyy-MM-dd HH:mm:ss&#8217;, by default) to Unix time stamp (in seconds), using the default timezone and the default locale, return null if fail.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.upper.html#pyspark.sql.functions.upper" title="pyspark.sql.functions.upper"><code class="xref py py-obj docutils literal"><span class="pre">upper</span></code></a>(col)</td>
+<td>Converts a string column to upper case.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.v.html#pyspark.sql.functions.v" title="pyspark.sql.functions.v"><code class="xref py py-obj docutils literal"><span class="pre">v</span></code></a>(name[,&nbsp;doc])</td>
+<td>Create a binary mathfunction by name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.var_pop.html#pyspark.sql.functions.var_pop" title="pyspark.sql.functions.var_pop"><code class="xref py py-obj docutils literal"><span class="pre">var_pop</span></code></a>(col)</td>
+<td>Aggregate function: returns the population variance of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.var_samp.html#pyspark.sql.functions.var_samp" title="pyspark.sql.functions.var_samp"><code class="xref py py-obj docutils literal"><span class="pre">var_samp</span></code></a>(col)</td>
+<td>Aggregate function: returns the unbiased variance of the values in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.variance.html#pyspark.sql.functions.variance" title="pyspark.sql.functions.variance"><code class="xref py py-obj docutils literal"><span class="pre">variance</span></code></a>(col)</td>
+<td>Aggregate function: returns the population variance of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.weekofyear.html#pyspark.sql.functions.weekofyear" title="pyspark.sql.functions.weekofyear"><code class="xref py py-obj docutils literal"><span class="pre">weekofyear</span></code></a>(col)</td>
+<td>Extract the week number of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.when.html#pyspark.sql.functions.when" title="pyspark.sql.functions.when"><code class="xref py py-obj docutils literal"><span class="pre">when</span></code></a>(condition,&nbsp;value)</td>
+<td>Evaluates a list of conditions and returns one of multiple possible result expressions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.window.html#pyspark.sql.functions.window" title="pyspark.sql.functions.window"><code class="xref py py-obj docutils literal"><span class="pre">window</span></code></a>(timeColumn,&nbsp;windowDuration[,&nbsp;...])</td>
+<td>Bucketize rows into one or more time windows given a timestamp specifying column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.year.html#pyspark.sql.functions.year" title="pyspark.sql.functions.year"><code class="xref py py-obj docutils literal"><span class="pre">year</span></code></a>(col)</td>
+<td>Extract the year of a given date as integer.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>2.3.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.sql.functions.AutoBatchedSerializer.html#pyspark.sql.functions.AutoBatchedSerializer" title="pyspark.sql.functions.AutoBatchedSerializer"><code class="xref py py-obj docutils literal"><span class="pre">AutoBatchedSerializer</span></code></a>(serializer[,&nbsp;bestSize])</td>
+<td>Choose the size of batch automatically based on the size of object</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>(jc)</td>
+<td>A column in a DataFrame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.sql.functions.DataFrame.html#pyspark.sql.functions.DataFrame" title="pyspark.sql.functions.DataFrame"><code class="xref py py-obj docutils literal"><span class="pre">DataFrame</span></code></a>(jdf,&nbsp;sql_ctx)</td>
+<td>A distributed collection of data grouped into named columns.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.sql.functions.PickleSerializer.html#pyspark.sql.functions.PickleSerializer" title="pyspark.sql.functions.PickleSerializer"><code class="xref py py-obj docutils literal"><span class="pre">PickleSerializer</span></code></a>()</td>
+<td>Serializes objects using Python&#8217;s pickle serializer:</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.sql.functions.SparkContext.html#pyspark.sql.functions.SparkContext" title="pyspark.sql.functions.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.sql.functions.StringType.html#pyspark.sql.functions.StringType" title="pyspark.sql.functions.StringType"><code class="xref py py-obj docutils literal"><span class="pre">StringType</span></code></a></td>
+<td>String data type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.sql.functions.UserDefinedFunction.html#pyspark.sql.functions.UserDefinedFunction" title="pyspark.sql.functions.UserDefinedFunction"><code class="xref py py-obj docutils literal"><span class="pre">UserDefinedFunction</span></code></a>(func,&nbsp;returnType[,&nbsp;name])</td>
+<td>User defined function in Python</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.sql.functions.map.html#pyspark.sql.functions.map" title="pyspark.sql.functions.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">imap</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.sql.functions.abs.html" class="btn btn-neutral float-right" title="2.3.1.1. pyspark.sql.functions.abs" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pyspark.sql.types.array.write.html" class="btn btn-neutral" title="2.2.2.30.22. pyspark.sql.types.array.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

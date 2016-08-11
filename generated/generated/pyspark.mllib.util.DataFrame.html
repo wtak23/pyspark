@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.14.2.1. pyspark.mllib.util.DataFrame &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="4.14. pyspark.mllib.util" href="../pyspark.mllib.util.html"/>
+        <link rel="next" title="4.14.2.1.1. pyspark.mllib.util.DataFrame.columns" href="pyspark.mllib.util.DataFrame.columns.html"/>
+        <link rel="prev" title="4.14.1.3. pyspark.mllib.util.since" href="../pyspark.mllib.util.since.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.mllib.util.html">4.14. pyspark.mllib.util</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.util.html#functions">4.14.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.mllib.util.html#classes">4.14.2. Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.14.2.1. pyspark.mllib.util.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.JavaLoader.html">4.14.2.2. pyspark.mllib.util.JavaLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.JavaSaveable.html">4.14.2.3. pyspark.mllib.util.JavaSaveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.LinearDataGenerator.html">4.14.2.4. pyspark.mllib.util.LinearDataGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.Loader.html">4.14.2.5. pyspark.mllib.util.Loader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.MLUtils.html">4.14.2.6. pyspark.mllib.util.MLUtils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.Saveable.html">4.14.2.7. pyspark.mllib.util.Saveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.SparkContext.html">4.14.2.8. pyspark.mllib.util.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.SparseVector.html">4.14.2.9. pyspark.mllib.util.SparseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.util.Vectors.html">4.14.2.10. pyspark.mllib.util.Vectors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.util.html">4.14. pyspark.mllib.util</a> &raquo;</li>
+        
+      <li>4.14.2.1. pyspark.mllib.util.DataFrame</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.mllib.util.DataFrame.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-mllib-util-dataframe">
+<h1>4.14.2.1. pyspark.mllib.util.DataFrame<a class="headerlink" href="#pyspark-mllib-util-dataframe" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.mllib.util.DataFrame">
+<em class="property">class </em><code class="descclassname">pyspark.mllib.util.</code><code class="descname">DataFrame</code><span class="sig-paren">(</span><em>jdf</em>, <em>sql_ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/sql/dataframe.html#DataFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.util.DataFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>A distributed collection of data grouped into named columns.</p>
+<p>A <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> is equivalent to a relational table in Spark SQL,
+and can be created using various functions in <code class="xref py py-class docutils literal"><span class="pre">SQLContext</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">people</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once created, it can be manipulated using the various domain-specific-language
+(DSL) functions defined in: <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">Column</span></code>.</p>
+<p>To select a column from the data frame, use the apply method:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ageCol</span> <span class="o">=</span> <span class="n">people</span><span class="o">.</span><span class="n">age</span>
+</pre></div>
+</div>
+<p>A more concrete example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># To create DataFrame using SQLContext</span>
+<span class="n">people</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<span class="n">department</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+
+<span class="n">people</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">people</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">department</span><span class="p">,</span> <span class="n">people</span><span class="o">.</span><span class="n">deptId</span> <span class="o">==</span> <span class="n">department</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>          <span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="n">department</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;gender&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;salary&quot;</span><span class="p">:</span> <span class="s2">&quot;avg&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="s2">&quot;max&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.columns.html#pyspark.mllib.util.DataFrame.columns" title="pyspark.mllib.util.DataFrame.columns"><code class="xref py py-obj docutils literal"><span class="pre">columns</span></code></a></td>
+<td>Returns all column names as a list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.dtypes.html#pyspark.mllib.util.DataFrame.dtypes" title="pyspark.mllib.util.DataFrame.dtypes"><code class="xref py py-obj docutils literal"><span class="pre">dtypes</span></code></a></td>
+<td>Returns all column names and their data types as a list.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.isStreaming.html#pyspark.mllib.util.DataFrame.isStreaming" title="pyspark.mllib.util.DataFrame.isStreaming"><code class="xref py py-obj docutils literal"><span class="pre">isStreaming</span></code></a></td>
+<td>Returns true if this <code class="xref py py-class docutils literal"><span class="pre">Dataset</span></code> contains one or more sources that continuously return data as it arrives.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.na.html#pyspark.mllib.util.DataFrame.na" title="pyspark.mllib.util.DataFrame.na"><code class="xref py py-obj docutils literal"><span class="pre">na</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrameNaFunctions</span></code> for handling missing values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.rdd.html#pyspark.mllib.util.DataFrame.rdd" title="pyspark.mllib.util.DataFrame.rdd"><code class="xref py py-obj docutils literal"><span class="pre">rdd</span></code></a></td>
+<td>Returns the content as an <a class="reference internal" href="pyspark.RDD.html#pyspark.RDD" title="pyspark.RDD"><code class="xref py py-class docutils literal"><span class="pre">pyspark.RDD</span></code></a> of <code class="xref py py-class docutils literal"><span class="pre">Row</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.schema.html#pyspark.mllib.util.DataFrame.schema" title="pyspark.mllib.util.DataFrame.schema"><code class="xref py py-obj docutils literal"><span class="pre">schema</span></code></a></td>
+<td>Returns the schema of this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as a <code class="xref py py-class docutils literal"><span class="pre">types.StructType</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.stat.html#pyspark.mllib.util.DataFrame.stat" title="pyspark.mllib.util.DataFrame.stat"><code class="xref py py-obj docutils literal"><span class="pre">stat</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrameStatFunctions</span></code> for statistic functions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.write.html#pyspark.mllib.util.DataFrame.write" title="pyspark.mllib.util.DataFrame.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a></td>
+<td>Interface for saving the content of the non-streaming <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> out into external storage.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.writeStream.html#pyspark.mllib.util.DataFrame.writeStream" title="pyspark.mllib.util.DataFrame.writeStream"><code class="xref py py-obj docutils literal"><span class="pre">writeStream</span></code></a></td>
+<td>Interface for saving the content of the streaming <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> out into external storage.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.agg.html#pyspark.mllib.util.DataFrame.agg" title="pyspark.mllib.util.DataFrame.agg"><code class="xref py py-obj docutils literal"><span class="pre">agg</span></code></a>(*exprs)</td>
+<td>Aggregate on the entire <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> without groups (shorthand for <code class="docutils literal"><span class="pre">df.groupBy.agg()</span></code>).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.alias.html#pyspark.mllib.util.DataFrame.alias" title="pyspark.mllib.util.DataFrame.alias"><code class="xref py py-obj docutils literal"><span class="pre">alias</span></code></a>(alias)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with an alias set.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.approxQuantile.html#pyspark.mllib.util.DataFrame.approxQuantile" title="pyspark.mllib.util.DataFrame.approxQuantile"><code class="xref py py-obj docutils literal"><span class="pre">approxQuantile</span></code></a>(col,&nbsp;probabilities,&nbsp;relativeError)</td>
+<td>Calculates the approximate quantiles of a numerical column of a DataFrame.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.cache.html#pyspark.mllib.util.DataFrame.cache" title="pyspark.mllib.util.DataFrame.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<td>Persists with the default storage level (C{MEMORY_ONLY}).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.coalesce.html#pyspark.mllib.util.DataFrame.coalesce" title="pyspark.mllib.util.DataFrame.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(numPartitions)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> that has exactly <cite>numPartitions</cite> partitions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.collect.html#pyspark.mllib.util.DataFrame.collect" title="pyspark.mllib.util.DataFrame.collect"><code class="xref py py-obj docutils literal"><span class="pre">collect</span></code></a>()</td>
+<td>Returns all the records as a list of <code class="xref py py-class docutils literal"><span class="pre">Row</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.corr.html#pyspark.mllib.util.DataFrame.corr" title="pyspark.mllib.util.DataFrame.corr"><code class="xref py py-obj docutils literal"><span class="pre">corr</span></code></a>(col1,&nbsp;col2[,&nbsp;method])</td>
+<td>Calculates the correlation of two columns of a DataFrame as a double value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.count.html#pyspark.mllib.util.DataFrame.count" title="pyspark.mllib.util.DataFrame.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<td>Returns the number of rows in this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.cov.html#pyspark.mllib.util.DataFrame.cov" title="pyspark.mllib.util.DataFrame.cov"><code class="xref py py-obj docutils literal"><span class="pre">cov</span></code></a>(col1,&nbsp;col2)</td>
+<td>Calculate the sample covariance for the given columns, specified by their names, as a double value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.createOrReplaceTempView.html#pyspark.mllib.util.DataFrame.createOrReplaceTempView" title="pyspark.mllib.util.DataFrame.createOrReplaceTempView"><code class="xref py py-obj docutils literal"><span class="pre">createOrReplaceTempView</span></code></a>(name)</td>
+<td>Creates or replaces a temporary view with this DataFrame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.createTempView.html#pyspark.mllib.util.DataFrame.createTempView" title="pyspark.mllib.util.DataFrame.createTempView"><code class="xref py py-obj docutils literal"><span class="pre">createTempView</span></code></a>(name)</td>
+<td>Creates a temporary view with this DataFrame.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.crosstab.html#pyspark.mllib.util.DataFrame.crosstab" title="pyspark.mllib.util.DataFrame.crosstab"><code class="xref py py-obj docutils literal"><span class="pre">crosstab</span></code></a>(col1,&nbsp;col2)</td>
+<td>Computes a pair-wise frequency table of the given columns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.cube.html#pyspark.mllib.util.DataFrame.cube" title="pyspark.mllib.util.DataFrame.cube"><code class="xref py py-obj docutils literal"><span class="pre">cube</span></code></a>(*cols)</td>
+<td>Create a multi-dimensional cube for the current <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.describe.html#pyspark.mllib.util.DataFrame.describe" title="pyspark.mllib.util.DataFrame.describe"><code class="xref py py-obj docutils literal"><span class="pre">describe</span></code></a>(*cols)</td>
+<td>Computes statistics for numeric columns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.distinct.html#pyspark.mllib.util.DataFrame.distinct" title="pyspark.mllib.util.DataFrame.distinct"><code class="xref py py-obj docutils literal"><span class="pre">distinct</span></code></a>()</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing the distinct rows in this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.drop.html#pyspark.mllib.util.DataFrame.drop" title="pyspark.mllib.util.DataFrame.drop"><code class="xref py py-obj docutils literal"><span class="pre">drop</span></code></a>(col)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> that drops the specified column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.dropDuplicates.html#pyspark.mllib.util.DataFrame.dropDuplicates" title="pyspark.mllib.util.DataFrame.dropDuplicates"><code class="xref py py-obj docutils literal"><span class="pre">dropDuplicates</span></code></a>([subset])</td>
+<td>Return a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with duplicate rows removed, optionally only considering certain columns.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.drop_duplicates.html#pyspark.mllib.util.DataFrame.drop_duplicates" title="pyspark.mllib.util.DataFrame.drop_duplicates"><code class="xref py py-obj docutils literal"><span class="pre">drop_duplicates</span></code></a>([subset])</td>
+<td><a class="reference internal" href="pyspark.mllib.util.DataFrame.drop_duplicates.html#pyspark.mllib.util.DataFrame.drop_duplicates" title="pyspark.mllib.util.DataFrame.drop_duplicates"><code class="xref py py-func docutils literal"><span class="pre">drop_duplicates()</span></code></a> is an alias for <a class="reference internal" href="pyspark.mllib.util.DataFrame.dropDuplicates.html#pyspark.mllib.util.DataFrame.dropDuplicates" title="pyspark.mllib.util.DataFrame.dropDuplicates"><code class="xref py py-func docutils literal"><span class="pre">dropDuplicates()</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.dropna.html#pyspark.mllib.util.DataFrame.dropna" title="pyspark.mllib.util.DataFrame.dropna"><code class="xref py py-obj docutils literal"><span class="pre">dropna</span></code></a>([how,&nbsp;thresh,&nbsp;subset])</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> omitting rows with null values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.explain.html#pyspark.mllib.util.DataFrame.explain" title="pyspark.mllib.util.DataFrame.explain"><code class="xref py py-obj docutils literal"><span class="pre">explain</span></code></a>([extended])</td>
+<td>Prints the (logical and physical) plans to the console for debugging purpose.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.fillna.html#pyspark.mllib.util.DataFrame.fillna" title="pyspark.mllib.util.DataFrame.fillna"><code class="xref py py-obj docutils literal"><span class="pre">fillna</span></code></a>(value[,&nbsp;subset])</td>
+<td>Replace null values, alias for <code class="docutils literal"><span class="pre">na.fill()</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.filter.html#pyspark.mllib.util.DataFrame.filter" title="pyspark.mllib.util.DataFrame.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(condition)</td>
+<td>Filters rows using the given condition.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.first.html#pyspark.mllib.util.DataFrame.first" title="pyspark.mllib.util.DataFrame.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>()</td>
+<td>Returns the first row as a <code class="xref py py-class docutils literal"><span class="pre">Row</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.foreach.html#pyspark.mllib.util.DataFrame.foreach" title="pyspark.mllib.util.DataFrame.foreach"><code class="xref py py-obj docutils literal"><span class="pre">foreach</span></code></a>(f)</td>
+<td>Applies the <code class="docutils literal"><span class="pre">f</span></code> function to all <code class="xref py py-class docutils literal"><span class="pre">Row</span></code> of this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.foreachPartition.html#pyspark.mllib.util.DataFrame.foreachPartition" title="pyspark.mllib.util.DataFrame.foreachPartition"><code class="xref py py-obj docutils literal"><span class="pre">foreachPartition</span></code></a>(f)</td>
+<td>Applies the <code class="docutils literal"><span class="pre">f</span></code> function to each partition of this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.freqItems.html#pyspark.mllib.util.DataFrame.freqItems" title="pyspark.mllib.util.DataFrame.freqItems"><code class="xref py py-obj docutils literal"><span class="pre">freqItems</span></code></a>(cols[,&nbsp;support])</td>
+<td>Finding frequent items for columns, possibly with false positives.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.groupBy.html#pyspark.mllib.util.DataFrame.groupBy" title="pyspark.mllib.util.DataFrame.groupBy"><code class="xref py py-obj docutils literal"><span class="pre">groupBy</span></code></a>(*cols)</td>
+<td>Groups the <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.groupby.html#pyspark.mllib.util.DataFrame.groupby" title="pyspark.mllib.util.DataFrame.groupby"><code class="xref py py-obj docutils literal"><span class="pre">groupby</span></code></a>(*cols)</td>
+<td><a class="reference internal" href="pyspark.mllib.util.DataFrame.groupby.html#pyspark.mllib.util.DataFrame.groupby" title="pyspark.mllib.util.DataFrame.groupby"><code class="xref py py-func docutils literal"><span class="pre">groupby()</span></code></a> is an alias for <a class="reference internal" href="pyspark.mllib.util.DataFrame.groupBy.html#pyspark.mllib.util.DataFrame.groupBy" title="pyspark.mllib.util.DataFrame.groupBy"><code class="xref py py-func docutils literal"><span class="pre">groupBy()</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.head.html#pyspark.mllib.util.DataFrame.head" title="pyspark.mllib.util.DataFrame.head"><code class="xref py py-obj docutils literal"><span class="pre">head</span></code></a>([n])</td>
+<td>Returns the first <code class="docutils literal"><span class="pre">n</span></code> rows.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.intersect.html#pyspark.mllib.util.DataFrame.intersect" title="pyspark.mllib.util.DataFrame.intersect"><code class="xref py py-obj docutils literal"><span class="pre">intersect</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing rows only in both this frame and another frame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.isLocal.html#pyspark.mllib.util.DataFrame.isLocal" title="pyspark.mllib.util.DataFrame.isLocal"><code class="xref py py-obj docutils literal"><span class="pre">isLocal</span></code></a>()</td>
+<td>Returns <code class="docutils literal"><span class="pre">True</span></code> if the <a class="reference internal" href="pyspark.mllib.util.DataFrame.collect.html#pyspark.mllib.util.DataFrame.collect" title="pyspark.mllib.util.DataFrame.collect"><code class="xref py py-func docutils literal"><span class="pre">collect()</span></code></a> and <a class="reference internal" href="pyspark.mllib.util.DataFrame.take.html#pyspark.mllib.util.DataFrame.take" title="pyspark.mllib.util.DataFrame.take"><code class="xref py py-func docutils literal"><span class="pre">take()</span></code></a> methods can be run locally (without any Spark executors).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.join.html#pyspark.mllib.util.DataFrame.join" title="pyspark.mllib.util.DataFrame.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;on,&nbsp;how])</td>
+<td>Joins with another <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>, using the given join expression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.limit.html#pyspark.mllib.util.DataFrame.limit" title="pyspark.mllib.util.DataFrame.limit"><code class="xref py py-obj docutils literal"><span class="pre">limit</span></code></a>(num)</td>
+<td>Limits the result count to the number specified.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.orderBy.html#pyspark.mllib.util.DataFrame.orderBy" title="pyspark.mllib.util.DataFrame.orderBy"><code class="xref py py-obj docutils literal"><span class="pre">orderBy</span></code></a>(*cols,&nbsp;**kwargs)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> sorted by the specified column(s).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.persist.html#pyspark.mllib.util.DataFrame.persist" title="pyspark.mllib.util.DataFrame.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>([storageLevel])</td>
+<td>Sets the storage level to persist its values across operations after the first time it is computed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.printSchema.html#pyspark.mllib.util.DataFrame.printSchema" title="pyspark.mllib.util.DataFrame.printSchema"><code class="xref py py-obj docutils literal"><span class="pre">printSchema</span></code></a>()</td>
+<td>Prints out the schema in the tree format.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.randomSplit.html#pyspark.mllib.util.DataFrame.randomSplit" title="pyspark.mllib.util.DataFrame.randomSplit"><code class="xref py py-obj docutils literal"><span class="pre">randomSplit</span></code></a>(weights[,&nbsp;seed])</td>
+<td>Randomly splits this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with the provided weights.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.registerTempTable.html#pyspark.mllib.util.DataFrame.registerTempTable" title="pyspark.mllib.util.DataFrame.registerTempTable"><code class="xref py py-obj docutils literal"><span class="pre">registerTempTable</span></code></a>(name)</td>
+<td>Registers this RDD as a temporary table using the given name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.repartition.html#pyspark.mllib.util.DataFrame.repartition" title="pyspark.mllib.util.DataFrame.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions,&nbsp;*cols)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> partitioned by the given partitioning expressions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.replace.html#pyspark.mllib.util.DataFrame.replace" title="pyspark.mllib.util.DataFrame.replace"><code class="xref py py-obj docutils literal"><span class="pre">replace</span></code></a>(to_replace,&nbsp;value[,&nbsp;subset])</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> replacing a value with another value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.rollup.html#pyspark.mllib.util.DataFrame.rollup" title="pyspark.mllib.util.DataFrame.rollup"><code class="xref py py-obj docutils literal"><span class="pre">rollup</span></code></a>(*cols)</td>
+<td>Create a multi-dimensional rollup for the current <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.sample.html#pyspark.mllib.util.DataFrame.sample" title="pyspark.mllib.util.DataFrame.sample"><code class="xref py py-obj docutils literal"><span class="pre">sample</span></code></a>(withReplacement,&nbsp;fraction[,&nbsp;seed])</td>
+<td>Returns a sampled subset of this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.sampleBy.html#pyspark.mllib.util.DataFrame.sampleBy" title="pyspark.mllib.util.DataFrame.sampleBy"><code class="xref py py-obj docutils literal"><span class="pre">sampleBy</span></code></a>(col,&nbsp;fractions[,&nbsp;seed])</td>
+<td>Returns a stratified sample without replacement based on the fraction given on each stratum.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.select.html#pyspark.mllib.util.DataFrame.select" title="pyspark.mllib.util.DataFrame.select"><code class="xref py py-obj docutils literal"><span class="pre">select</span></code></a>(*cols)</td>
+<td>Projects a set of expressions and returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.selectExpr.html#pyspark.mllib.util.DataFrame.selectExpr" title="pyspark.mllib.util.DataFrame.selectExpr"><code class="xref py py-obj docutils literal"><span class="pre">selectExpr</span></code></a>(*expr)</td>
+<td>Projects a set of SQL expressions and returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.show.html#pyspark.mllib.util.DataFrame.show" title="pyspark.mllib.util.DataFrame.show"><code class="xref py py-obj docutils literal"><span class="pre">show</span></code></a>([n,&nbsp;truncate])</td>
+<td>Prints the first <code class="docutils literal"><span class="pre">n</span></code> rows to the console.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.sort.html#pyspark.mllib.util.DataFrame.sort" title="pyspark.mllib.util.DataFrame.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a>(*cols,&nbsp;**kwargs)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> sorted by the specified column(s).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.sortWithinPartitions.html#pyspark.mllib.util.DataFrame.sortWithinPartitions" title="pyspark.mllib.util.DataFrame.sortWithinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">sortWithinPartitions</span></code></a>(*cols,&nbsp;**kwargs)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with each partition sorted by the specified column(s).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.subtract.html#pyspark.mllib.util.DataFrame.subtract" title="pyspark.mllib.util.DataFrame.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing rows in this frame but not in another frame.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.take.html#pyspark.mllib.util.DataFrame.take" title="pyspark.mllib.util.DataFrame.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a>(num)</td>
+<td>Returns the first <code class="docutils literal"><span class="pre">num</span></code> rows as a <code class="xref py py-class docutils literal"><span class="pre">list</span></code> of <code class="xref py py-class docutils literal"><span class="pre">Row</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.toDF.html#pyspark.mllib.util.DataFrame.toDF" title="pyspark.mllib.util.DataFrame.toDF"><code class="xref py py-obj docutils literal"><span class="pre">toDF</span></code></a>(*cols)</td>
+<td>Returns a new class:<cite>DataFrame</cite> that with new specified column names</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.toJSON.html#pyspark.mllib.util.DataFrame.toJSON" title="pyspark.mllib.util.DataFrame.toJSON"><code class="xref py py-obj docutils literal"><span class="pre">toJSON</span></code></a>([use_unicode])</td>
+<td>Converts a <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> into a <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code> of string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.toLocalIterator.html#pyspark.mllib.util.DataFrame.toLocalIterator" title="pyspark.mllib.util.DataFrame.toLocalIterator"><code class="xref py py-obj docutils literal"><span class="pre">toLocalIterator</span></code></a>()</td>
+<td>Returns an iterator that contains all of the rows in this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.toPandas.html#pyspark.mllib.util.DataFrame.toPandas" title="pyspark.mllib.util.DataFrame.toPandas"><code class="xref py py-obj docutils literal"><span class="pre">toPandas</span></code></a>()</td>
+<td>Returns the contents of this <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as Pandas <code class="docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.union.html#pyspark.mllib.util.DataFrame.union" title="pyspark.mllib.util.DataFrame.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing union of rows in this frame and another frame.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.unionAll.html#pyspark.mllib.util.DataFrame.unionAll" title="pyspark.mllib.util.DataFrame.unionAll"><code class="xref py py-obj docutils literal"><span class="pre">unionAll</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing union of rows in this frame and another frame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.unpersist.html#pyspark.mllib.util.DataFrame.unpersist" title="pyspark.mllib.util.DataFrame.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>([blocking])</td>
+<td>Marks the <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as non-persistent, and remove all blocks for it from memory and disk.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.where.html#pyspark.mllib.util.DataFrame.where" title="pyspark.mllib.util.DataFrame.where"><code class="xref py py-obj docutils literal"><span class="pre">where</span></code></a>(condition)</td>
+<td><a class="reference internal" href="pyspark.mllib.util.DataFrame.where.html#pyspark.mllib.util.DataFrame.where" title="pyspark.mllib.util.DataFrame.where"><code class="xref py py-func docutils literal"><span class="pre">where()</span></code></a> is an alias for <a class="reference internal" href="pyspark.mllib.util.DataFrame.filter.html#pyspark.mllib.util.DataFrame.filter" title="pyspark.mllib.util.DataFrame.filter"><code class="xref py py-func docutils literal"><span class="pre">filter()</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.withColumn.html#pyspark.mllib.util.DataFrame.withColumn" title="pyspark.mllib.util.DataFrame.withColumn"><code class="xref py py-obj docutils literal"><span class="pre">withColumn</span></code></a>(colName,&nbsp;col)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> by adding a column or replacing the existing column that has the same name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.util.DataFrame.withColumnRenamed.html#pyspark.mllib.util.DataFrame.withColumnRenamed" title="pyspark.mllib.util.DataFrame.withColumnRenamed"><code class="xref py py-obj docutils literal"><span class="pre">withColumnRenamed</span></code></a>(existing,&nbsp;new)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.mllib.util.DataFrame" title="pyspark.mllib.util.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> by renaming an existing column.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.util.DataFrame.columns.html" class="btn btn-neutral float-right" title="4.14.2.1.1. pyspark.mllib.util.DataFrame.columns" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pyspark.mllib.util.since.html" class="btn btn-neutral" title="4.14.1.3. pyspark.mllib.util.since" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

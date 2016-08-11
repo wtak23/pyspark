@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.6.2.12.1. pyspark.ml.linalg.SparseVector.dot &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="3.6.2.12. pyspark.ml.linalg.SparseVector" href="pyspark.ml.linalg.SparseVector.html"/>
+        <link rel="next" title="3.6.2.12.2. pyspark.ml.linalg.SparseVector.norm" href="pyspark.ml.linalg.SparseVector.norm.html"/>
+        <link rel="prev" title="3.6.2.12. pyspark.ml.linalg.SparseVector" href="pyspark.ml.linalg.SparseVector.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.ml.linalg.html#functions">3.6.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.ml.linalg.html#classes">3.6.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.ArrayType.html">3.6.2.1. pyspark.ml.linalg.ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.BooleanType.html">3.6.2.2. pyspark.ml.linalg.BooleanType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.ByteType.html">3.6.2.3. pyspark.ml.linalg.ByteType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.DenseMatrix.html">3.6.2.4. pyspark.ml.linalg.DenseMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.DenseVector.html">3.6.2.5. pyspark.ml.linalg.DenseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.DoubleType.html">3.6.2.6. pyspark.ml.linalg.DoubleType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.IntegerType.html">3.6.2.7. pyspark.ml.linalg.IntegerType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.Matrices.html">3.6.2.8. pyspark.ml.linalg.Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.Matrix.html">3.6.2.9. pyspark.ml.linalg.Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.MatrixUDT.html">3.6.2.10. pyspark.ml.linalg.MatrixUDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.SparseMatrix.html">3.6.2.11. pyspark.ml.linalg.SparseMatrix</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.ml.linalg.SparseVector.html">3.6.2.12. pyspark.ml.linalg.SparseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.StructField.html">3.6.2.13. pyspark.ml.linalg.StructField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.StructType.html">3.6.2.14. pyspark.ml.linalg.StructType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.UserDefinedType.html">3.6.2.15. pyspark.ml.linalg.UserDefinedType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.Vector.html">3.6.2.16. pyspark.ml.linalg.Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.VectorUDT.html">3.6.2.17. pyspark.ml.linalg.VectorUDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.Vectors.html">3.6.2.18. pyspark.ml.linalg.Vectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.linalg.zip.html">3.6.2.19. pyspark.ml.linalg.zip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a> &raquo;</li>
+        
+          <li><a href="pyspark.ml.linalg.SparseVector.html">3.6.2.12. pyspark.ml.linalg.SparseVector</a> &raquo;</li>
+        
+      <li>3.6.2.12.1. pyspark.ml.linalg.SparseVector.dot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.ml.linalg.SparseVector.dot.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-ml-linalg-sparsevector-dot">
+<h1>3.6.2.12.1. pyspark.ml.linalg.SparseVector.dot<a class="headerlink" href="#pyspark-ml-linalg-sparsevector-dot" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.ml.linalg.SparseVector.dot">
+<code class="descclassname">SparseVector.</code><code class="descname">dot</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/ml/linalg.html#SparseVector.dot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.linalg.SparseVector.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dot product with a SparseVector or 1- or 2-dimensional Numpy array.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">SparseVector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">25.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]))</span>
+<span class="go">22.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">SparseVector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]))</span>
+<span class="go">array([ 22.,  22.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">AssertionError</span>: <span class="n">dimension mismatch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]))</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">AssertionError</span>: <span class="n">dimension mismatch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">DenseVector</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]))</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">AssertionError</span>: <span class="n">dimension mismatch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">AssertionError</span>: <span class="n">dimension mismatch</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.linalg.SparseVector.norm.html" class="btn btn-neutral float-right" title="3.6.2.12.2. pyspark.ml.linalg.SparseVector.norm" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.ml.linalg.SparseVector.html" class="btn btn-neutral" title="3.6.2.12. pyspark.ml.linalg.SparseVector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.4.2.1.32. pyspark.streaming.flume.DStream.rightOuterJoin &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="5.4.2.1. pyspark.streaming.flume.DStream" href="pyspark.streaming.flume.DStream.html"/>
+        <link rel="next" title="5.4.2.1.33. pyspark.streaming.flume.DStream.saveAsTextFiles" href="pyspark.streaming.flume.DStream.saveAsTextFiles.html"/>
+        <link rel="prev" title="5.4.2.1.31. pyspark.streaming.flume.DStream.repartition" href="pyspark.streaming.flume.DStream.repartition.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.html">5.1. pyspark.streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.streaming.flume.html">5.4. pyspark.streaming.flume</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.flume.html#functions">5.4.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.streaming.flume.html#classes">5.4.2. Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.streaming.flume.DStream.html">5.4.2.1. pyspark.streaming.flume.DStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.FlumeUtils.html">5.4.2.2. pyspark.streaming.flume.FlumeUtils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.NoOpSerializer.html">5.4.2.3. pyspark.streaming.flume.NoOpSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.PairDeserializer.html">5.4.2.4. pyspark.streaming.flume.PairDeserializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.StorageLevel.html">5.4.2.5. pyspark.streaming.flume.StorageLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.StringIO.html">5.4.2.6. pyspark.streaming.flume.StringIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.UTF8Deserializer.html">5.4.2.7. pyspark.streaming.flume.UTF8Deserializer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.flume.html#exceptions">5.4.3. Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.streaming.html">5. pyspark.streaming</a> &raquo;</li>
+        
+          <li><a href="../pyspark.streaming.flume.html">5.4. pyspark.streaming.flume</a> &raquo;</li>
+        
+          <li><a href="pyspark.streaming.flume.DStream.html">5.4.2.1. pyspark.streaming.flume.DStream</a> &raquo;</li>
+        
+      <li>5.4.2.1.32. pyspark.streaming.flume.DStream.rightOuterJoin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.streaming.flume.DStream.rightOuterJoin.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-streaming-flume-dstream-rightouterjoin">
+<h1>5.4.2.1.32. pyspark.streaming.flume.DStream.rightOuterJoin<a class="headerlink" href="#pyspark-streaming-flume-dstream-rightouterjoin" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.streaming.flume.DStream.rightOuterJoin">
+<code class="descclassname">DStream.</code><code class="descname">rightOuterJoin</code><span class="sig-paren">(</span><em>other</em>, <em>numPartitions=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/streaming/dstream.html#DStream.rightOuterJoin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.flume.DStream.rightOuterJoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new DStream by applying &#8216;right outer join&#8217; between RDDs of this DStream and
+<cite>other</cite> DStream.</p>
+<p>Hash partitioning is used to generate the RDDs with <cite>numPartitions</cite>
+partitions.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.streaming.flume.DStream.saveAsTextFiles.html" class="btn btn-neutral float-right" title="5.4.2.1.33. pyspark.streaming.flume.DStream.saveAsTextFiles" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.streaming.flume.DStream.repartition.html" class="btn btn-neutral" title="5.4.2.1.31. pyspark.streaming.flume.DStream.repartition" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

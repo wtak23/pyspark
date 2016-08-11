@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.3.1.1. pyspark.mllib.clustering.array &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="4.3. pyspark.mllib.clustering" href="pyspark.mllib.clustering.html"/>
+        <link rel="next" title="4.3.1.2. pyspark.mllib.clustering.callJavaFunc" href="pyspark.mllib.clustering.callJavaFunc.html"/>
+        <link rel="prev" title="4.3. pyspark.mllib.clustering" href="pyspark.mllib.clustering.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pyspark.mllib.clustering.html#functions">4.3.1. Functions</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.3.1.1. pyspark.mllib.clustering.array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.callJavaFunc.html">4.3.1.2. pyspark.mllib.clustering.callJavaFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.callMLlibFunc.html">4.3.1.3. pyspark.mllib.clustering.callMLlibFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.exp.html">4.3.1.4. pyspark.mllib.clustering.exp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.ignore_unicode_prefix.html">4.3.1.5. pyspark.mllib.clustering.ignore_unicode_prefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.inherit_doc.html">4.3.1.6. pyspark.mllib.clustering.inherit_doc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.log.html">4.3.1.7. pyspark.mllib.clustering.log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.namedtuple.html">4.3.1.8. pyspark.mllib.clustering.namedtuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.since.html">4.3.1.9. pyspark.mllib.clustering.since</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.tile.html">4.3.1.10. pyspark.mllib.clustering.tile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.mllib.clustering.html#classes">4.3.2. Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a> &raquo;</li>
+        
+      <li>4.3.1.1. pyspark.mllib.clustering.array</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.mllib.clustering.array.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-mllib-clustering-array">
+<h1>4.3.1.1. pyspark.mllib.clustering.array<a class="headerlink" href="#pyspark-mllib-clustering-array" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="pyspark.mllib.clustering.array">
+<code class="descclassname">pyspark.mllib.clustering.</code><code class="descname">array</code><span class="sig-paren">(</span><em>object</em>, <em>dtype=None</em>, <em>copy=True</em>, <em>order=None</em>, <em>subok=False</em>, <em>ndmin=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.mllib.clustering.array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>object</strong> : array_like</p>
+<blockquote>
+<div><p>An array, any object exposing the array interface, an
+object whose __array__ method returns an array, or any
+(nested) sequence.</p>
+</div></blockquote>
+<p><strong>dtype</strong> : data-type, optional</p>
+<blockquote>
+<div><p>The desired data-type for the array.  If not given, then
+the type will be determined as the minimum type required
+to hold the objects in the sequence.  This argument can only
+be used to &#8216;upcast&#8217; the array.  For downcasting, use the
+.astype(t) method.</p>
+</div></blockquote>
+<p><strong>copy</strong> : bool, optional</p>
+<blockquote>
+<div><p>If true (default), then the object is copied.  Otherwise, a copy
+will only be made if __array__ returns a copy, if obj is a
+nested sequence, or if a copy is needed to satisfy any of the other
+requirements (<cite>dtype</cite>, <cite>order</cite>, etc.).</p>
+</div></blockquote>
+<p><strong>order</strong> : {&#8216;C&#8217;, &#8216;F&#8217;, &#8216;A&#8217;}, optional</p>
+<blockquote>
+<div><p>Specify the order of the array.  If order is &#8216;C&#8217;, then the array
+will be in C-contiguous order (last-index varies the fastest).
+If order is &#8216;F&#8217;, then the returned array will be in
+Fortran-contiguous order (first-index varies the fastest).
+If order is &#8216;A&#8217; (default), then the returned array may be
+in any order (either C-, Fortran-contiguous, or even discontiguous),
+unless a copy is required, in which case it will be C-contiguous.</p>
+</div></blockquote>
+<p><strong>subok</strong> : bool, optional</p>
+<blockquote>
+<div><p>If True, then sub-classes will be passed-through, otherwise
+the returned array will be forced to be a base-class array (default).</p>
+</div></blockquote>
+<p><strong>ndmin</strong> : int, optional</p>
+<blockquote>
+<div><p>Specifies the minimum number of dimensions that the resulting
+array should have.  Ones will be pre-pended to the shape as
+needed to meet this requirement.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>An array object satisfying the specified requirements.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-obj docutils literal"><span class="pre">empty</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">empty_like</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">zeros</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">zeros_like</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">ones</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">ones_like</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">fill</span></code></p>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">array([1, 2, 3])</span>
+</pre></div>
+</div>
+<p>Upcasting:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<span class="go">array([ 1.,  2.,  3.])</span>
+</pre></div>
+</div>
+<p>More than one dimension:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="go">array([[1, 2],</span>
+<span class="go">       [3, 4]])</span>
+</pre></div>
+</div>
+<p>Minimum dimensions 2:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">array([[1, 2, 3]])</span>
+</pre></div>
+</div>
+<p>Type provided:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<span class="go">array([ 1.+0.j,  2.+0.j,  3.+0.j])</span>
+</pre></div>
+</div>
+<p>Data-type consisting of more than one element:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)],</span><span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;i4&#39;</span><span class="p">),(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;i4&#39;</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="go">array([1, 3])</span>
+</pre></div>
+</div>
+<p>Creating an array from sub-classes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2; 3 4&#39;</span><span class="p">))</span>
+<span class="go">array([[1, 2],</span>
+<span class="go">       [3, 4]])</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2; 3 4&#39;</span><span class="p">),</span> <span class="n">subok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">matrix([[1, 2],</span>
+<span class="go">        [3, 4]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.clustering.callJavaFunc.html" class="btn btn-neutral float-right" title="4.3.1.2. pyspark.mllib.clustering.callJavaFunc" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.mllib.clustering.html" class="btn btn-neutral" title="4.3. pyspark.mllib.clustering" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.8.2.19.1. pyspark.ml.regression.HasHandleInvalid.params &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="3.8.2.19. pyspark.ml.regression.HasHandleInvalid" href="pyspark.ml.regression.HasHandleInvalid.html"/>
+        <link rel="next" title="3.8.2.19.2. pyspark.ml.regression.HasHandleInvalid.copy" href="pyspark.ml.regression.HasHandleInvalid.copy.html"/>
+        <link rel="prev" title="3.8.2.19. pyspark.ml.regression.HasHandleInvalid" href="pyspark.ml.regression.HasHandleInvalid.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.ml.regression.html">3.8. pyspark.ml.regression</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.ml.regression.html#functions">3.8.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.ml.regression.html#classes">3.8.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegression.html">3.8.2.1. pyspark.ml.regression.AFTSurvivalRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.html">3.8.2.2. pyspark.ml.regression.AFTSurvivalRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.DataFrame.html">3.8.2.3. pyspark.ml.regression.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.html">3.8.2.4. pyspark.ml.regression.DecisionTreeModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.DecisionTreeParams.html">3.8.2.5. pyspark.ml.regression.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressionModel.html">3.8.2.6. pyspark.ml.regression.DecisionTreeRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.html">3.8.2.7. pyspark.ml.regression.DecisionTreeRegressor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.GBTParams.html">3.8.2.8. pyspark.ml.regression.GBTParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.GBTRegressionModel.html">3.8.2.9. pyspark.ml.regression.GBTRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.html">3.8.2.10. pyspark.ml.regression.GBTRegressor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.GeneralizedLinearRegression.html">3.8.2.11. pyspark.ml.regression.GeneralizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.GeneralizedLinearRegressionModel.html">3.8.2.12. pyspark.ml.regression.GeneralizedLinearRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.GeneralizedLinearRegressionSummary.html">3.8.2.13. pyspark.ml.regression.GeneralizedLinearRegressionSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary.html">3.8.2.14. pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasCheckpointInterval.html">3.8.2.15. pyspark.ml.regression.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasElasticNetParam.html">3.8.2.16. pyspark.ml.regression.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasFeaturesCol.html">3.8.2.17. pyspark.ml.regression.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasFitIntercept.html">3.8.2.18. pyspark.ml.regression.HasFitIntercept</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.ml.regression.HasHandleInvalid.html">3.8.2.19. pyspark.ml.regression.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasInputCol.html">3.8.2.20. pyspark.ml.regression.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasInputCols.html">3.8.2.21. pyspark.ml.regression.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasLabelCol.html">3.8.2.22. pyspark.ml.regression.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasMaxIter.html">3.8.2.23. pyspark.ml.regression.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasNumFeatures.html">3.8.2.24. pyspark.ml.regression.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasOutputCol.html">3.8.2.25. pyspark.ml.regression.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasPredictionCol.html">3.8.2.26. pyspark.ml.regression.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasProbabilityCol.html">3.8.2.27. pyspark.ml.regression.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasRawPredictionCol.html">3.8.2.28. pyspark.ml.regression.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasRegParam.html">3.8.2.29. pyspark.ml.regression.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasSeed.html">3.8.2.30. pyspark.ml.regression.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasSolver.html">3.8.2.31. pyspark.ml.regression.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasStandardization.html">3.8.2.32. pyspark.ml.regression.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasStepSize.html">3.8.2.33. pyspark.ml.regression.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasThresholds.html">3.8.2.34. pyspark.ml.regression.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasTol.html">3.8.2.35. pyspark.ml.regression.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasVarianceCol.html">3.8.2.36. pyspark.ml.regression.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.HasWeightCol.html">3.8.2.37. pyspark.ml.regression.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.Identifiable.html">3.8.2.38. pyspark.ml.regression.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.IsotonicRegression.html">3.8.2.39. pyspark.ml.regression.IsotonicRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.IsotonicRegressionModel.html">3.8.2.40. pyspark.ml.regression.IsotonicRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.JavaEstimator.html">3.8.2.41. pyspark.ml.regression.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.JavaMLReadable.html">3.8.2.42. pyspark.ml.regression.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.JavaMLReader.html">3.8.2.43. pyspark.ml.regression.JavaMLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.JavaMLWritable.html">3.8.2.44. pyspark.ml.regression.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.JavaMLWriter.html">3.8.2.45. pyspark.ml.regression.JavaMLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.JavaModel.html">3.8.2.46. pyspark.ml.regression.JavaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.JavaWrapper.html">3.8.2.47. pyspark.ml.regression.JavaWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.LinearRegression.html">3.8.2.48. pyspark.ml.regression.LinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.LinearRegressionModel.html">3.8.2.49. pyspark.ml.regression.LinearRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.LinearRegressionSummary.html">3.8.2.50. pyspark.ml.regression.LinearRegressionSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.LinearRegressionTrainingSummary.html">3.8.2.51. pyspark.ml.regression.LinearRegressionTrainingSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.MLReadable.html">3.8.2.52. pyspark.ml.regression.MLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.MLReader.html">3.8.2.53. pyspark.ml.regression.MLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.MLWritable.html">3.8.2.54. pyspark.ml.regression.MLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.MLWriter.html">3.8.2.55. pyspark.ml.regression.MLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.Param.html">3.8.2.56. pyspark.ml.regression.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.Params.html">3.8.2.57. pyspark.ml.regression.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.RandomForestParams.html">3.8.2.58. pyspark.ml.regression.RandomForestParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressionModel.html">3.8.2.59. pyspark.ml.regression.RandomForestRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.html">3.8.2.60. pyspark.ml.regression.RandomForestRegressor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.SparkContext.html">3.8.2.61. pyspark.ml.regression.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.TreeEnsembleModels.html">3.8.2.62. pyspark.ml.regression.TreeEnsembleModels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.TreeEnsembleParams.html">3.8.2.63. pyspark.ml.regression.TreeEnsembleParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.TreeRegressorParams.html">3.8.2.64. pyspark.ml.regression.TreeRegressorParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.TypeConverters.html">3.8.2.65. pyspark.ml.regression.TypeConverters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.regression.html">3.8. pyspark.ml.regression</a> &raquo;</li>
+        
+          <li><a href="pyspark.ml.regression.HasHandleInvalid.html">3.8.2.19. pyspark.ml.regression.HasHandleInvalid</a> &raquo;</li>
+        
+      <li>3.8.2.19.1. pyspark.ml.regression.HasHandleInvalid.params</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.ml.regression.HasHandleInvalid.params.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-ml-regression-hashandleinvalid-params">
+<h1>3.8.2.19.1. pyspark.ml.regression.HasHandleInvalid.params<a class="headerlink" href="#pyspark-ml-regression-hashandleinvalid-params" title="Permalink to this headline">¶</a></h1>
+<dl class="attribute">
+<dt id="pyspark.ml.regression.HasHandleInvalid.params">
+<code class="descclassname">HasHandleInvalid.</code><code class="descname">params</code><a class="headerlink" href="#pyspark.ml.regression.HasHandleInvalid.params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all params ordered by name. The default implementation
+uses <code class="xref py py-func docutils literal"><span class="pre">dir()</span></code> to get all attributes of type
+<a class="reference internal" href="pyspark.ml.regression.Param.html#pyspark.ml.regression.Param" title="pyspark.ml.regression.Param"><code class="xref py py-class docutils literal"><span class="pre">Param</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.0.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.regression.HasHandleInvalid.copy.html" class="btn btn-neutral float-right" title="3.8.2.19.2. pyspark.ml.regression.HasHandleInvalid.copy" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.ml.regression.HasHandleInvalid.html" class="btn btn-neutral" title="3.8.2.19. pyspark.ml.regression.HasHandleInvalid" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

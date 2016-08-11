@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyspark.streaming.util &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+        <link rel="up" title="pyspark" href="../../pyspark.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.html">pyspark</a> &raquo;</li>
+        
+      <li>pyspark.streaming.util</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyspark.streaming.util</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
+<span class="c1"># contributor license agreements.  See the NOTICE file distributed with</span>
+<span class="c1"># this work for additional information regarding copyright ownership.</span>
+<span class="c1"># The ASF licenses this file to You under the Apache License, Version 2.0</span>
+<span class="c1"># (the &quot;License&quot;); you may not use this file except in compliance with</span>
+<span class="c1"># the License.  You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1">#</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span><span class="p">,</span> <span class="n">RDD</span>
+
+
+<div class="viewcode-block" id="TransformFunction"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.html#pyspark.streaming.kafka.TransformFunction">[docs]</a><span class="k">class</span> <span class="nc">TransformFunction</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class wraps a function RDD[X] -&gt; RDD[Y] that was passed to</span>
+<span class="sd">    DStream.transform(), allowing it to be called from Java via Py4J&#39;s</span>
+<span class="sd">    callback server.</span>
+
+<span class="sd">    Java calls this function with a sequence of JavaRDDs and this function</span>
+<span class="sd">    returns a single JavaRDD pointer back to Java.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_emptyRDD</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="TransformFunction.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.__init__.html#pyspark.streaming.kafka.TransformFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">deserializers</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">ctx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">deserializers</span> <span class="o">=</span> <span class="n">deserializers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rdd_wrap_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">jrdd</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">ser</span><span class="p">:</span> <span class="n">RDD</span><span class="p">(</span><span class="n">jrdd</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">ser</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="TransformFunction.rdd_wrapper"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.rdd_wrapper.html#pyspark.streaming.kafka.TransformFunction.rdd_wrapper">[docs]</a>    <span class="k">def</span> <span class="nf">rdd_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rdd_wrap_func</span> <span class="o">=</span> <span class="n">func</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="TransformFunction.call"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.call.html#pyspark.streaming.kafka.TransformFunction.call">[docs]</a>    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">milliseconds</span><span class="p">,</span> <span class="n">jrdds</span><span class="p">):</span>
+        <span class="c1"># Clear the failure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jsc</span><span class="p">:</span>
+                <span class="c1"># stopped</span>
+                <span class="k">return</span>
+
+            <span class="c1"># extend deserializers with the first one</span>
+            <span class="n">sers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deserializers</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sers</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">jrdds</span><span class="p">):</span>
+                <span class="n">sers</span> <span class="o">+=</span> <span class="p">(</span><span class="n">sers</span><span class="p">[</span><span class="mi">0</span><span class="p">],)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">jrdds</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">sers</span><span class="p">))</span>
+
+            <span class="n">rdds</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rdd_wrap_func</span><span class="p">(</span><span class="n">jrdd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">ser</span><span class="p">)</span> <span class="k">if</span> <span class="n">jrdd</span> <span class="k">else</span> <span class="kc">None</span>
+                    <span class="k">for</span> <span class="n">jrdd</span><span class="p">,</span> <span class="n">ser</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">jrdds</span><span class="p">,</span> <span class="n">sers</span><span class="p">)]</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">milliseconds</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">*</span><span class="n">rdds</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">r</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">_jrdd</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="TransformFunction.getLastFailure"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.getLastFailure.html#pyspark.streaming.kafka.TransformFunction.getLastFailure">[docs]</a>    <span class="k">def</span> <span class="nf">getLastFailure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">failure</span></div>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;TransformFunction(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
+
+    <span class="k">class</span> <span class="nc">Java</span><span class="p">:</span>
+        <span class="n">implements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;org.apache.spark.streaming.api.python.PythonTransformFunction&#39;</span><span class="p">]</span></div>
+
+
+<span class="k">class</span> <span class="nc">TransformFunctionSerializer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class implements a serializer for PythonTransformFunction Java</span>
+<span class="sd">    objects.</span>
+
+<span class="sd">    This is necessary because the Java PythonTransformFunction objects are</span>
+<span class="sd">    actually Py4J references to Python objects and thus are not directly</span>
+<span class="sd">    serializable. When Java needs to serialize a PythonTransformFunction,</span>
+<span class="sd">    it uses this class to invoke Python, which returns the serialized function</span>
+<span class="sd">    as a byte array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">serializer</span><span class="p">,</span> <span class="n">gateway</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">ctx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">serializer</span> <span class="o">=</span> <span class="n">serializer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gateway</span> <span class="o">=</span> <span class="n">gateway</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_gateway</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gateway</span><span class="o">.</span><span class="n">jvm</span><span class="o">.</span><span class="n">PythonDStream</span><span class="o">.</span><span class="n">registerSerializer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="c1"># Clear the failure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">func</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gateway</span><span class="o">.</span><span class="n">gateway_property</span><span class="o">.</span><span class="n">pool</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span>
+            <span class="k">return</span> <span class="nb">bytearray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">serializer</span><span class="o">.</span><span class="n">dumps</span><span class="p">((</span>
+                <span class="n">func</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">rdd_wrap_func</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">deserializers</span><span class="p">)))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="c1"># Clear the failure</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">f</span><span class="p">,</span> <span class="n">wrap_func</span><span class="p">,</span> <span class="n">deserializers</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">serializer</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">TransformFunction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">deserializers</span><span class="p">)</span><span class="o">.</span><span class="n">rdd_wrapper</span><span class="p">(</span><span class="n">wrap_func</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">getLastFailure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">failure</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;TransformFunctionSerializer(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">serializer</span>
+
+    <span class="k">class</span> <span class="nc">Java</span><span class="p">:</span>
+        <span class="n">implements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;org.apache.spark.streaming.api.python.PythonTransformFunctionSerializer&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">rddToFileName</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return string prefix-time(.suffix)</span>
+
+<span class="sd">    &gt;&gt;&gt; rddToFileName(&quot;spark&quot;, None, 12345678910)</span>
+<span class="sd">    &#39;spark-12345678910&#39;</span>
+<span class="sd">    &gt;&gt;&gt; rddToFileName(&quot;spark&quot;, &quot;tmp&quot;, 12345678910)</span>
+<span class="sd">    &#39;spark-12345678910.tmp&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+        <span class="n">seconds</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">timestamp</span><span class="o">.</span><span class="n">timetuple</span><span class="p">())</span>
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">seconds</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="n">timestamp</span><span class="o">.</span><span class="n">microsecond</span> <span class="o">//</span> <span class="mi">1000</span>
+    <span class="k">if</span> <span class="n">suffix</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">prefix</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">suffix</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">doctest</span>
+    <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
+        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.5.2.5.24. pyspark.ml.clustering.GaussianMixture.setK &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="3.5.2.5. pyspark.ml.clustering.GaussianMixture" href="pyspark.ml.clustering.GaussianMixture.html"/>
+        <link rel="next" title="3.5.2.5.25. pyspark.ml.clustering.GaussianMixture.setMaxIter" href="pyspark.ml.clustering.GaussianMixture.setMaxIter.html"/>
+        <link rel="prev" title="3.5.2.5.23. pyspark.ml.clustering.GaussianMixture.setFeaturesCol" href="pyspark.ml.clustering.GaussianMixture.setFeaturesCol.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.ml.clustering.html#functions">3.5.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.ml.clustering.html#classes">3.5.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.BisectingKMeans.html">3.5.2.1. pyspark.ml.clustering.BisectingKMeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.BisectingKMeansModel.html">3.5.2.2. pyspark.ml.clustering.BisectingKMeansModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.DecisionTreeParams.html">3.5.2.3. pyspark.ml.clustering.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.DistributedLDAModel.html">3.5.2.4. pyspark.ml.clustering.DistributedLDAModel</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.ml.clustering.GaussianMixture.html">3.5.2.5. pyspark.ml.clustering.GaussianMixture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.GaussianMixtureModel.html">3.5.2.6. pyspark.ml.clustering.GaussianMixtureModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasCheckpointInterval.html">3.5.2.7. pyspark.ml.clustering.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasElasticNetParam.html">3.5.2.8. pyspark.ml.clustering.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasFeaturesCol.html">3.5.2.9. pyspark.ml.clustering.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasFitIntercept.html">3.5.2.10. pyspark.ml.clustering.HasFitIntercept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.html">3.5.2.11. pyspark.ml.clustering.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasInputCol.html">3.5.2.12. pyspark.ml.clustering.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasInputCols.html">3.5.2.13. pyspark.ml.clustering.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasLabelCol.html">3.5.2.14. pyspark.ml.clustering.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasMaxIter.html">3.5.2.15. pyspark.ml.clustering.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasNumFeatures.html">3.5.2.16. pyspark.ml.clustering.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasOutputCol.html">3.5.2.17. pyspark.ml.clustering.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasPredictionCol.html">3.5.2.18. pyspark.ml.clustering.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasProbabilityCol.html">3.5.2.19. pyspark.ml.clustering.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasRawPredictionCol.html">3.5.2.20. pyspark.ml.clustering.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasRegParam.html">3.5.2.21. pyspark.ml.clustering.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasSeed.html">3.5.2.22. pyspark.ml.clustering.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasSolver.html">3.5.2.23. pyspark.ml.clustering.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasStandardization.html">3.5.2.24. pyspark.ml.clustering.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasStepSize.html">3.5.2.25. pyspark.ml.clustering.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.html">3.5.2.26. pyspark.ml.clustering.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasTol.html">3.5.2.27. pyspark.ml.clustering.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasVarianceCol.html">3.5.2.28. pyspark.ml.clustering.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasWeightCol.html">3.5.2.29. pyspark.ml.clustering.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.Identifiable.html">3.5.2.30. pyspark.ml.clustering.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaEstimator.html">3.5.2.31. pyspark.ml.clustering.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLReadable.html">3.5.2.32. pyspark.ml.clustering.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLReader.html">3.5.2.33. pyspark.ml.clustering.JavaMLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLWritable.html">3.5.2.34. pyspark.ml.clustering.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLWriter.html">3.5.2.35. pyspark.ml.clustering.JavaMLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaModel.html">3.5.2.36. pyspark.ml.clustering.JavaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.KMeans.html">3.5.2.37. pyspark.ml.clustering.KMeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.KMeansModel.html">3.5.2.38. pyspark.ml.clustering.KMeansModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LDA.html">3.5.2.39. pyspark.ml.clustering.LDA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LDAModel.html">3.5.2.40. pyspark.ml.clustering.LDAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LocalLDAModel.html">3.5.2.41. pyspark.ml.clustering.LocalLDAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLReadable.html">3.5.2.42. pyspark.ml.clustering.MLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLReader.html">3.5.2.43. pyspark.ml.clustering.MLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLWritable.html">3.5.2.44. pyspark.ml.clustering.MLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLWriter.html">3.5.2.45. pyspark.ml.clustering.MLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.Param.html">3.5.2.46. pyspark.ml.clustering.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.Params.html">3.5.2.47. pyspark.ml.clustering.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.SparkContext.html">3.5.2.48. pyspark.ml.clustering.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.TypeConverters.html">3.5.2.49. pyspark.ml.clustering.TypeConverters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a> &raquo;</li>
+        
+          <li><a href="pyspark.ml.clustering.GaussianMixture.html">3.5.2.5. pyspark.ml.clustering.GaussianMixture</a> &raquo;</li>
+        
+      <li>3.5.2.5.24. pyspark.ml.clustering.GaussianMixture.setK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.ml.clustering.GaussianMixture.setK.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-ml-clustering-gaussianmixture-setk">
+<h1>3.5.2.5.24. pyspark.ml.clustering.GaussianMixture.setK<a class="headerlink" href="#pyspark-ml-clustering-gaussianmixture-setk" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.ml.clustering.GaussianMixture.setK">
+<code class="descclassname">GaussianMixture.</code><code class="descname">setK</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/ml/clustering.html#GaussianMixture.setK"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.GaussianMixture.setK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.GaussianMixture.k.html#pyspark.ml.clustering.GaussianMixture.k" title="pyspark.ml.clustering.GaussianMixture.k"><code class="xref py py-attr docutils literal"><span class="pre">k</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.0.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.clustering.GaussianMixture.setMaxIter.html" class="btn btn-neutral float-right" title="3.5.2.5.25. pyspark.ml.clustering.GaussianMixture.setMaxIter" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.ml.clustering.GaussianMixture.setFeaturesCol.html" class="btn btn-neutral" title="3.5.2.5.23. pyspark.ml.clustering.GaussianMixture.setFeaturesCol" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

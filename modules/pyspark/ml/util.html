@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyspark.ml.util &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+        <link rel="up" title="pyspark" href="../../pyspark.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.html">pyspark</a> &raquo;</li>
+        
+      <li>pyspark.ml.util</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyspark.ml.util</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
+<span class="c1"># contributor license agreements.  See the NOTICE file distributed with</span>
+<span class="c1"># this work for additional information regarding copyright ownership.</span>
+<span class="c1"># The ASF licenses this file to You under the Apache License, Version 2.0</span>
+<span class="c1"># (the &quot;License&quot;); you may not use this file except in compliance with</span>
+<span class="c1"># the License.  You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1">#</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">uuid</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
+    <span class="n">basestring</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span><span class="p">,</span> <span class="n">since</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.common</span> <span class="k">import</span> <span class="n">inherit_doc</span>
+
+
+<span class="k">def</span> <span class="nf">_jvm</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the JVM view associated with SparkContext. Must be called</span>
+<span class="sd">    after SparkContext is initialized.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">jvm</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_jvm</span>
+    <span class="k">if</span> <span class="n">jvm</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jvm</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s2">&quot;Cannot load _jvm from SparkContext. Is SparkContext initialized?&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Identifiable"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.Identifiable.html#pyspark.ml.Identifiable">[docs]</a><span class="k">class</span> <span class="nc">Identifiable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Object with a unique ID.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Identifiable.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.Identifiable.__init__.html#pyspark.ml.Identifiable.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#: A unique id for the object.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_randomUID</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_randomUID</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a unique unicode id for the object. The default implementation</span>
+<span class="sd">        concatenates the class name, &quot;_&quot;, and 12 random hex chars.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">unicode</span><span class="p">(</span><span class="n">cls</span><span class="o">.</span><span class="n">__name__</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">[</span><span class="mi">12</span><span class="p">:])</span></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="MLWriter"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLWriter.html#pyspark.ml.MLWriter">[docs]</a><span class="k">class</span> <span class="nc">MLWriter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. note:: Experimental</span>
+
+<span class="sd">    Utility class that can save ML instances.</span>
+
+<span class="sd">    .. versionadded:: 2.0.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MLWriter.save"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLWriter.save.html#pyspark.ml.MLWriter.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save the ML instance to the input path.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;MLWriter is not yet implemented for type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="MLWriter.overwrite"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLWriter.overwrite.html#pyspark.ml.MLWriter.overwrite">[docs]</a>    <span class="k">def</span> <span class="nf">overwrite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Overwrites if the output path already exists.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;MLWriter is not yet implemented for type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="MLWriter.context"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLWriter.context.html#pyspark.ml.MLWriter.context">[docs]</a>    <span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlContext</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the SQL context to use for saving.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;MLWriter is not yet implemented for type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="JavaMLWriter"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLWriter.html#pyspark.ml.JavaMLWriter">[docs]</a><span class="k">class</span> <span class="nc">JavaMLWriter</span><span class="p">(</span><span class="n">MLWriter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    (Private) Specialization of :py:class:`MLWriter` for :py:class:`JavaParams` types</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="JavaMLWriter.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLWriter.__init__.html#pyspark.ml.JavaMLWriter.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">JavaMLWriter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="n">_java_obj</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">_to_java</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span> <span class="o">=</span> <span class="n">_java_obj</span><span class="o">.</span><span class="n">write</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JavaMLWriter.save"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLWriter.save.html#pyspark.ml.JavaMLWriter.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save the ML instance to the input path.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;path should be a basestring, got type </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JavaMLWriter.overwrite"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLWriter.overwrite.html#pyspark.ml.JavaMLWriter.overwrite">[docs]</a>    <span class="k">def</span> <span class="nf">overwrite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Overwrites if the output path already exists.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">overwrite</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="JavaMLWriter.context"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLWriter.context.html#pyspark.ml.JavaMLWriter.context">[docs]</a>    <span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlContext</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the SQL context to use for saving.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="n">sqlContext</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="MLWritable"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLWritable.html#pyspark.ml.MLWritable">[docs]</a><span class="k">class</span> <span class="nc">MLWritable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. note:: Experimental</span>
+
+<span class="sd">    Mixin for ML instances that provide :py:class:`MLWriter`.</span>
+
+<span class="sd">    .. versionadded:: 2.0.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MLWritable.write"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLWritable.write.html#pyspark.ml.MLWritable.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns an MLWriter instance for this ML instance.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;MLWritable is not yet implemented for type: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="MLWritable.save"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLWritable.save.html#pyspark.ml.MLWritable.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save this ML instance to the given path, a shortcut of `write().save(path)`.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">()</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="JavaMLWritable"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLWritable.html#pyspark.ml.JavaMLWritable">[docs]</a><span class="k">class</span> <span class="nc">JavaMLWritable</span><span class="p">(</span><span class="n">MLWritable</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    (Private) Mixin for ML instances that provide :py:class:`JavaMLWriter`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="JavaMLWritable.write"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLWritable.write.html#pyspark.ml.JavaMLWritable.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns an MLWriter instance for this ML instance.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">JavaMLWriter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="MLReader"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLReader.html#pyspark.ml.MLReader">[docs]</a><span class="k">class</span> <span class="nc">MLReader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. note:: Experimental</span>
+
+<span class="sd">    Utility class that can load ML instances.</span>
+
+<span class="sd">    .. versionadded:: 2.0.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="MLReader.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLReader.load.html#pyspark.ml.MLReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load the ML instance from the input path.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;MLReader is not yet implemented for type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="MLReader.context"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLReader.context.html#pyspark.ml.MLReader.context">[docs]</a>    <span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlContext</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the SQL context to use for loading.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;MLReader is not yet implemented for type: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span></div></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="JavaMLReader"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLReader.html#pyspark.ml.JavaMLReader">[docs]</a><span class="k">class</span> <span class="nc">JavaMLReader</span><span class="p">(</span><span class="n">MLReader</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    (Private) Specialization of :py:class:`MLReader` for :py:class:`JavaParams` types</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="JavaMLReader.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLReader.__init__.html#pyspark.ml.JavaMLReader.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clazz</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clazz</span> <span class="o">=</span> <span class="n">clazz</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jread</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_java_obj</span><span class="p">(</span><span class="n">clazz</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="JavaMLReader.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLReader.load.html#pyspark.ml.JavaMLReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load the ML instance from the input path.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;path should be a basestring, got type </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="n">java_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jread</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_clazz</span><span class="p">,</span> <span class="s2">&quot;_from_java&quot;</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;This Java ML type cannot be loaded into Python currently: </span><span class="si">%r</span><span class="s2">&quot;</span>
+                                      <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clazz</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clazz</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="n">java_obj</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JavaMLReader.context"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLReader.context.html#pyspark.ml.JavaMLReader.context">[docs]</a>    <span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlContext</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the SQL context to use for loading.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jread</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="n">sqlContext</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_java_loader_class</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">clazz</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the full class name of the Java ML instance. The default</span>
+<span class="sd">        implementation replaces &quot;pyspark&quot; by &quot;org.apache.spark&quot; in</span>
+<span class="sd">        the Python full class name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">java_package</span> <span class="o">=</span> <span class="n">clazz</span><span class="o">.</span><span class="n">__module__</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;pyspark&quot;</span><span class="p">,</span> <span class="s2">&quot;org.apache.spark&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">clazz</span><span class="o">.</span><span class="n">__name__</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;Pipeline&quot;</span><span class="p">,</span> <span class="s2">&quot;PipelineModel&quot;</span><span class="p">):</span>
+            <span class="c1"># Remove the last package name &quot;pipeline&quot; for Pipeline and PipelineModel.</span>
+            <span class="n">java_package</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">java_package</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">java_package</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">clazz</span><span class="o">.</span><span class="n">__name__</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_load_java_obj</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">clazz</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Load the peer Java object of the ML instance.&quot;&quot;&quot;</span>
+        <span class="n">java_class</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_java_loader_class</span><span class="p">(</span><span class="n">clazz</span><span class="p">)</span>
+        <span class="n">java_obj</span> <span class="o">=</span> <span class="n">_jvm</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">java_class</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+            <span class="n">java_obj</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">java_obj</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">java_obj</span></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="MLReadable"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLReadable.html#pyspark.ml.MLReadable">[docs]</a><span class="k">class</span> <span class="nc">MLReadable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    .. note:: Experimental</span>
+
+<span class="sd">    Mixin for instances that provide :py:class:`MLReader`.</span>
+
+<span class="sd">    .. versionadded:: 2.0.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="MLReadable.read"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLReadable.read.html#pyspark.ml.MLReadable.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns an MLReader instance for this class.&quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;MLReadable.read() not implemented for type: </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">cls</span><span class="p">)</span></div>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="MLReadable.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.MLReadable.load.html#pyspark.ml.MLReadable.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reads an ML instance from the input path, a shortcut of `read().load(path)`.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div></div>
+
+
+<span class="nd">@inherit_doc</span>
+<div class="viewcode-block" id="JavaMLReadable"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLReadable.html#pyspark.ml.JavaMLReadable">[docs]</a><span class="k">class</span> <span class="nc">JavaMLReadable</span><span class="p">(</span><span class="n">MLReadable</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    (Private) Mixin for instances that provide JavaMLReader.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="JavaMLReadable.read"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.JavaMLReadable.read.html#pyspark.ml.JavaMLReadable.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns an MLReader instance for this class.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">JavaMLReader</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

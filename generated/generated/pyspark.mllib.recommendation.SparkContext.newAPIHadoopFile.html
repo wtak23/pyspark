@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.10.2.9.22. pyspark.mllib.recommendation.SparkContext.newAPIHadoopFile &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="4.10.2.9. pyspark.mllib.recommendation.SparkContext" href="pyspark.mllib.recommendation.SparkContext.html"/>
+        <link rel="next" title="4.10.2.9.23. pyspark.mllib.recommendation.SparkContext.newAPIHadoopRDD" href="pyspark.mllib.recommendation.SparkContext.newAPIHadoopRDD.html"/>
+        <link rel="prev" title="4.10.2.9.21. pyspark.mllib.recommendation.SparkContext.hadoopRDD" href="pyspark.mllib.recommendation.SparkContext.hadoopRDD.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.recommendation.html#functions">4.10.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.mllib.recommendation.html#classes">4.10.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.ALS.html">4.10.2.1. pyspark.mllib.recommendation.ALS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.DataFrame.html">4.10.2.2. pyspark.mllib.recommendation.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.JavaLoader.html">4.10.2.3. pyspark.mllib.recommendation.JavaLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.JavaModelWrapper.html">4.10.2.4. pyspark.mllib.recommendation.JavaModelWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.JavaSaveable.html">4.10.2.5. pyspark.mllib.recommendation.JavaSaveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.html">4.10.2.6. pyspark.mllib.recommendation.MatrixFactorizationModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.RDD.html">4.10.2.7. pyspark.mllib.recommendation.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.Rating.html">4.10.2.8. pyspark.mllib.recommendation.Rating</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.mllib.recommendation.SparkContext.html">4.10.2.9. pyspark.mllib.recommendation.SparkContext</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a> &raquo;</li>
+        
+          <li><a href="pyspark.mllib.recommendation.SparkContext.html">4.10.2.9. pyspark.mllib.recommendation.SparkContext</a> &raquo;</li>
+        
+      <li>4.10.2.9.22. pyspark.mllib.recommendation.SparkContext.newAPIHadoopFile</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.mllib.recommendation.SparkContext.newAPIHadoopFile.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-mllib-recommendation-sparkcontext-newapihadoopfile">
+<h1>4.10.2.9.22. pyspark.mllib.recommendation.SparkContext.newAPIHadoopFile<a class="headerlink" href="#pyspark-mllib-recommendation-sparkcontext-newapihadoopfile" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.mllib.recommendation.SparkContext.newAPIHadoopFile">
+<code class="descclassname">SparkContext.</code><code class="descname">newAPIHadoopFile</code><span class="sig-paren">(</span><em>path</em>, <em>inputFormatClass</em>, <em>keyClass</em>, <em>valueClass</em>, <em>keyConverter=None</em>, <em>valueConverter=None</em>, <em>conf=None</em>, <em>batchSize=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/context.html#SparkContext.newAPIHadoopFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.recommendation.SparkContext.newAPIHadoopFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS,
+a local file system (available on all nodes), or any Hadoop-supported file system URI.
+The mechanism is the same as for sc.sequenceFile.</p>
+<p>A Hadoop configuration can be passed in as a Python dict. This will be converted into a
+Configuration in Java</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> &#8211; path to Hadoop file</li>
+<li><strong>inputFormatClass</strong> &#8211; fully qualified classname of Hadoop InputFormat
+(e.g. &#8220;org.apache.hadoop.mapreduce.lib.input.TextInputFormat&#8221;)</li>
+<li><strong>keyClass</strong> &#8211; fully qualified classname of key Writable class
+(e.g. &#8220;org.apache.hadoop.io.Text&#8221;)</li>
+<li><strong>valueClass</strong> &#8211; fully qualified classname of value Writable class
+(e.g. &#8220;org.apache.hadoop.io.LongWritable&#8221;)</li>
+<li><strong>keyConverter</strong> &#8211; (None by default)</li>
+<li><strong>valueConverter</strong> &#8211; (None by default)</li>
+<li><strong>conf</strong> &#8211; Hadoop configuration, passed in as a dict
+(None by default)</li>
+<li><strong>batchSize</strong> &#8211; The number of Python objects represented as a single
+Java object. (default 0, choose batchSize automatically)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.recommendation.SparkContext.newAPIHadoopRDD.html" class="btn btn-neutral float-right" title="4.10.2.9.23. pyspark.mllib.recommendation.SparkContext.newAPIHadoopRDD" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.mllib.recommendation.SparkContext.hadoopRDD.html" class="btn btn-neutral" title="4.10.2.9.21. pyspark.mllib.recommendation.SparkContext.hadoopRDD" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

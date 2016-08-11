@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.3.2.5. pyspark.sql.functions.SparkContext &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="2.3. pyspark.sql.functions" href="../pyspark.sql.functions.html"/>
+        <link rel="next" title="2.3.2.5.1. pyspark.sql.functions.SparkContext.applicationId" href="pyspark.sql.functions.SparkContext.applicationId.html"/>
+        <link rel="prev" title="2.3.2.4.4. pyspark.sql.functions.PickleSerializer.loads" href="pyspark.sql.functions.PickleSerializer.loads.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.html">2.1. pyspark.sql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.sql.functions.html#functions">2.3.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.sql.functions.html#classes">2.3.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.AutoBatchedSerializer.html">2.3.2.1. pyspark.sql.functions.AutoBatchedSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.Column.html">2.3.2.2. pyspark.sql.functions.Column</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.DataFrame.html">2.3.2.3. pyspark.sql.functions.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.PickleSerializer.html">2.3.2.4. pyspark.sql.functions.PickleSerializer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.2.5. pyspark.sql.functions.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.StringType.html">2.3.2.6. pyspark.sql.functions.StringType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.UserDefinedFunction.html">2.3.2.7. pyspark.sql.functions.UserDefinedFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.map.html">2.3.2.8. pyspark.sql.functions.map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">2. pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a> &raquo;</li>
+        
+      <li>2.3.2.5. pyspark.sql.functions.SparkContext</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.sql.functions.SparkContext.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-sql-functions-sparkcontext">
+<h1>2.3.2.5. pyspark.sql.functions.SparkContext<a class="headerlink" href="#pyspark-sql-functions-sparkcontext" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.sql.functions.SparkContext">
+<em class="property">class </em><code class="descclassname">pyspark.sql.functions.</code><code class="descname">SparkContext</code><span class="sig-paren">(</span><em>master=None</em>, <em>appName=None</em>, <em>sparkHome=None</em>, <em>pyFiles=None</em>, <em>environment=None</em>, <em>batchSize=0</em>, <em>serializer=PickleSerializer()</em>, <em>conf=None</em>, <em>gateway=None</em>, <em>jsc=None</em>, <em>profiler_cls=&lt;class 'pyspark.profiler.BasicProfiler'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/context.html#SparkContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.SparkContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main entry point for Spark functionality. A SparkContext represents the
+connection to a Spark cluster, and can be used to create L{RDD} and
+broadcast variables on that cluster.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.applicationId.html#pyspark.sql.functions.SparkContext.applicationId" title="pyspark.sql.functions.SparkContext.applicationId"><code class="xref py py-obj docutils literal"><span class="pre">applicationId</span></code></a></td>
+<td>A unique identifier for the Spark application.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.defaultMinPartitions.html#pyspark.sql.functions.SparkContext.defaultMinPartitions" title="pyspark.sql.functions.SparkContext.defaultMinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">defaultMinPartitions</span></code></a></td>
+<td>Default min number of partitions for Hadoop RDDs when not given by user</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.defaultParallelism.html#pyspark.sql.functions.SparkContext.defaultParallelism" title="pyspark.sql.functions.SparkContext.defaultParallelism"><code class="xref py py-obj docutils literal"><span class="pre">defaultParallelism</span></code></a></td>
+<td>Default level of parallelism to use when not given by user (e.g.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.startTime.html#pyspark.sql.functions.SparkContext.startTime" title="pyspark.sql.functions.SparkContext.startTime"><code class="xref py py-obj docutils literal"><span class="pre">startTime</span></code></a></td>
+<td>Return the epoch time when the Spark Context was started.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.version.html#pyspark.sql.functions.SparkContext.version" title="pyspark.sql.functions.SparkContext.version"><code class="xref py py-obj docutils literal"><span class="pre">version</span></code></a></td>
+<td>The version of Spark on which this application is running.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.accumulator.html#pyspark.sql.functions.SparkContext.accumulator" title="pyspark.sql.functions.SparkContext.accumulator"><code class="xref py py-obj docutils literal"><span class="pre">accumulator</span></code></a>(value[,&nbsp;accum_param])</td>
+<td>Create an L{Accumulator} with the given initial value, using a given L{AccumulatorParam} helper object to define how to add values of the data type if provided.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.addFile.html#pyspark.sql.functions.SparkContext.addFile" title="pyspark.sql.functions.SparkContext.addFile"><code class="xref py py-obj docutils literal"><span class="pre">addFile</span></code></a>(path)</td>
+<td>Add a file to be downloaded with this Spark job on every node.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.addPyFile.html#pyspark.sql.functions.SparkContext.addPyFile" title="pyspark.sql.functions.SparkContext.addPyFile"><code class="xref py py-obj docutils literal"><span class="pre">addPyFile</span></code></a>(path)</td>
+<td>Add a .py or .zip dependency for all tasks to be executed on this SparkContext in the future.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.binaryFiles.html#pyspark.sql.functions.SparkContext.binaryFiles" title="pyspark.sql.functions.SparkContext.binaryFiles"><code class="xref py py-obj docutils literal"><span class="pre">binaryFiles</span></code></a>(path[,&nbsp;minPartitions])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.binaryRecords.html#pyspark.sql.functions.SparkContext.binaryRecords" title="pyspark.sql.functions.SparkContext.binaryRecords"><code class="xref py py-obj docutils literal"><span class="pre">binaryRecords</span></code></a>(path,&nbsp;recordLength)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.broadcast.html#pyspark.sql.functions.SparkContext.broadcast" title="pyspark.sql.functions.SparkContext.broadcast"><code class="xref py py-obj docutils literal"><span class="pre">broadcast</span></code></a>(value)</td>
+<td>Broadcast a read-only variable to the cluster, returning a L{Broadcast&lt;pyspark.broadcast.Broadcast&gt;} object for reading it in distributed functions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.cancelAllJobs.html#pyspark.sql.functions.SparkContext.cancelAllJobs" title="pyspark.sql.functions.SparkContext.cancelAllJobs"><code class="xref py py-obj docutils literal"><span class="pre">cancelAllJobs</span></code></a>()</td>
+<td>Cancel all jobs that have been scheduled or are running.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.cancelJobGroup.html#pyspark.sql.functions.SparkContext.cancelJobGroup" title="pyspark.sql.functions.SparkContext.cancelJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">cancelJobGroup</span></code></a>(groupId)</td>
+<td>Cancel active jobs for the specified group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.clearFiles.html#pyspark.sql.functions.SparkContext.clearFiles" title="pyspark.sql.functions.SparkContext.clearFiles"><code class="xref py py-obj docutils literal"><span class="pre">clearFiles</span></code></a>()</td>
+<td>Clear the job&#8217;s list of files added by L{addFile} or L{addPyFile} so that they do not get downloaded to any new nodes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.dump_profiles.html#pyspark.sql.functions.SparkContext.dump_profiles" title="pyspark.sql.functions.SparkContext.dump_profiles"><code class="xref py py-obj docutils literal"><span class="pre">dump_profiles</span></code></a>(path)</td>
+<td>Dump the profile stats into directory <cite>path</cite></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.emptyRDD.html#pyspark.sql.functions.SparkContext.emptyRDD" title="pyspark.sql.functions.SparkContext.emptyRDD"><code class="xref py py-obj docutils literal"><span class="pre">emptyRDD</span></code></a>()</td>
+<td>Create an RDD that has no partitions or elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.getConf.html#pyspark.sql.functions.SparkContext.getConf" title="pyspark.sql.functions.SparkContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.getLocalProperty.html#pyspark.sql.functions.SparkContext.getLocalProperty" title="pyspark.sql.functions.SparkContext.getLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">getLocalProperty</span></code></a>(key)</td>
+<td>Get a local property set in this thread, or null if it is missing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.getOrCreate.html#pyspark.sql.functions.SparkContext.getOrCreate" title="pyspark.sql.functions.SparkContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>([conf])</td>
+<td>Get or instantiate a SparkContext and register it as a singleton object.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.hadoopFile.html#pyspark.sql.functions.SparkContext.hadoopFile" title="pyspark.sql.functions.SparkContext.hadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">hadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
+<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.hadoopRDD.html#pyspark.sql.functions.SparkContext.hadoopRDD" title="pyspark.sql.functions.SparkContext.hadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">hadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;valueClass)</td>
+<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.newAPIHadoopFile.html#pyspark.sql.functions.SparkContext.newAPIHadoopFile" title="pyspark.sql.functions.SparkContext.newAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;...)</td>
+<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.newAPIHadoopRDD.html#pyspark.sql.functions.SparkContext.newAPIHadoopRDD" title="pyspark.sql.functions.SparkContext.newAPIHadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
+<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.parallelize.html#pyspark.sql.functions.SparkContext.parallelize" title="pyspark.sql.functions.SparkContext.parallelize"><code class="xref py py-obj docutils literal"><span class="pre">parallelize</span></code></a>(c[,&nbsp;numSlices])</td>
+<td>Distribute a local Python collection to form an RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.pickleFile.html#pyspark.sql.functions.SparkContext.pickleFile" title="pyspark.sql.functions.SparkContext.pickleFile"><code class="xref py py-obj docutils literal"><span class="pre">pickleFile</span></code></a>(name[,&nbsp;minPartitions])</td>
+<td>Load an RDD previously saved using L{RDD.saveAsPickleFile} method.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.range.html#pyspark.sql.functions.SparkContext.range" title="pyspark.sql.functions.SparkContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numSlices])</td>
+<td>Create a new RDD of int containing elements from <cite>start</cite> to <cite>end</cite> (exclusive), increased by <cite>step</cite> every element.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.runJob.html#pyspark.sql.functions.SparkContext.runJob" title="pyspark.sql.functions.SparkContext.runJob"><code class="xref py py-obj docutils literal"><span class="pre">runJob</span></code></a>(rdd,&nbsp;partitionFunc[,&nbsp;partitions,&nbsp;...])</td>
+<td>Executes the given partitionFunc on the specified set of partitions, returning the result as an array of elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.sequenceFile.html#pyspark.sql.functions.SparkContext.sequenceFile" title="pyspark.sql.functions.SparkContext.sequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">sequenceFile</span></code></a>(path[,&nbsp;keyClass,&nbsp;valueClass,&nbsp;...])</td>
+<td>Read a Hadoop SequenceFile with arbitrary key and value Writable class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.setCheckpointDir.html#pyspark.sql.functions.SparkContext.setCheckpointDir" title="pyspark.sql.functions.SparkContext.setCheckpointDir"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointDir</span></code></a>(dirName)</td>
+<td>Set the directory under which RDDs are going to be checkpointed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.setJobGroup.html#pyspark.sql.functions.SparkContext.setJobGroup" title="pyspark.sql.functions.SparkContext.setJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">setJobGroup</span></code></a>(groupId,&nbsp;description[,&nbsp;...])</td>
+<td>Assigns a group ID to all the jobs started by this thread until the group ID is set to a different value or cleared.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.setLocalProperty.html#pyspark.sql.functions.SparkContext.setLocalProperty" title="pyspark.sql.functions.SparkContext.setLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">setLocalProperty</span></code></a>(key,&nbsp;value)</td>
+<td>Set a local property that affects jobs submitted from this thread, such as the Spark fair scheduler pool.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.setLogLevel.html#pyspark.sql.functions.SparkContext.setLogLevel" title="pyspark.sql.functions.SparkContext.setLogLevel"><code class="xref py py-obj docutils literal"><span class="pre">setLogLevel</span></code></a>(logLevel)</td>
+<td>Control our logLevel.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.setSystemProperty.html#pyspark.sql.functions.SparkContext.setSystemProperty" title="pyspark.sql.functions.SparkContext.setSystemProperty"><code class="xref py py-obj docutils literal"><span class="pre">setSystemProperty</span></code></a>(key,&nbsp;value)</td>
+<td>Set a Java system property, such as spark.executor.memory.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.show_profiles.html#pyspark.sql.functions.SparkContext.show_profiles" title="pyspark.sql.functions.SparkContext.show_profiles"><code class="xref py py-obj docutils literal"><span class="pre">show_profiles</span></code></a>()</td>
+<td>Print the profile stats to stdout</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.sparkUser.html#pyspark.sql.functions.SparkContext.sparkUser" title="pyspark.sql.functions.SparkContext.sparkUser"><code class="xref py py-obj docutils literal"><span class="pre">sparkUser</span></code></a>()</td>
+<td>Get SPARK_USER for user who is running SparkContext.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.statusTracker.html#pyspark.sql.functions.SparkContext.statusTracker" title="pyspark.sql.functions.SparkContext.statusTracker"><code class="xref py py-obj docutils literal"><span class="pre">statusTracker</span></code></a>()</td>
+<td>Return <code class="xref py py-class docutils literal"><span class="pre">StatusTracker</span></code> object</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.stop.html#pyspark.sql.functions.SparkContext.stop" title="pyspark.sql.functions.SparkContext.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>()</td>
+<td>Shut down the SparkContext.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.textFile.html#pyspark.sql.functions.SparkContext.textFile" title="pyspark.sql.functions.SparkContext.textFile"><code class="xref py py-obj docutils literal"><span class="pre">textFile</span></code></a>(name[,&nbsp;minPartitions,&nbsp;use_unicode])</td>
+<td>Read a text file from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI, and return it as an RDD of Strings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.union.html#pyspark.sql.functions.SparkContext.union" title="pyspark.sql.functions.SparkContext.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(rdds)</td>
+<td>Build the union of a list of RDDs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.functions.SparkContext.wholeTextFiles.html#pyspark.sql.functions.SparkContext.wholeTextFiles" title="pyspark.sql.functions.SparkContext.wholeTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">wholeTextFiles</span></code></a>(path[,&nbsp;minPartitions,&nbsp;...])</td>
+<td>Read a directory of text files from HDFS, a local file system (available on all nodes), or any  Hadoop-supported file system URI.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.sql.functions.SparkContext.applicationId.html" class="btn btn-neutral float-right" title="2.3.2.5.1. pyspark.sql.functions.SparkContext.applicationId" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.sql.functions.PickleSerializer.loads.html" class="btn btn-neutral" title="2.3.2.4.4. pyspark.sql.functions.PickleSerializer.loads" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.8. pyspark.ml.regression &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="3. pyspark.ml" href="../pyspark.ml.html"/>
+        <link rel="next" title="3.8.1.1. pyspark.ml.regression.inherit_doc" href="pyspark.ml.regression.inherit_doc.html"/>
+        <link rel="prev" title="3.7.2.41.10. pyspark.ml.recommendation.TypeConverters.toVector" href="generated/pyspark.ml.recommendation.TypeConverters.toVector.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. pyspark.ml.regression</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">3.8.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.inherit_doc.html">3.8.1.1. pyspark.ml.regression.inherit_doc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.keyword_only.html">3.8.1.2. pyspark.ml.regression.keyword_only</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.regression.since.html">3.8.1.3. pyspark.ml.regression.since</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">3.8.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.AFTSurvivalRegression.html">3.8.2.1. pyspark.ml.regression.AFTSurvivalRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.AFTSurvivalRegressionModel.html">3.8.2.2. pyspark.ml.regression.AFTSurvivalRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.DataFrame.html">3.8.2.3. pyspark.ml.regression.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeModel.html">3.8.2.4. pyspark.ml.regression.DecisionTreeModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeParams.html">3.8.2.5. pyspark.ml.regression.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeRegressionModel.html">3.8.2.6. pyspark.ml.regression.DecisionTreeRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeRegressor.html">3.8.2.7. pyspark.ml.regression.DecisionTreeRegressor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.GBTParams.html">3.8.2.8. pyspark.ml.regression.GBTParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.GBTRegressionModel.html">3.8.2.9. pyspark.ml.regression.GBTRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.GBTRegressor.html">3.8.2.10. pyspark.ml.regression.GBTRegressor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegression.html">3.8.2.11. pyspark.ml.regression.GeneralizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegressionModel.html">3.8.2.12. pyspark.ml.regression.GeneralizedLinearRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegressionSummary.html">3.8.2.13. pyspark.ml.regression.GeneralizedLinearRegressionSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary.html">3.8.2.14. pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasCheckpointInterval.html">3.8.2.15. pyspark.ml.regression.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasElasticNetParam.html">3.8.2.16. pyspark.ml.regression.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasFeaturesCol.html">3.8.2.17. pyspark.ml.regression.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasFitIntercept.html">3.8.2.18. pyspark.ml.regression.HasFitIntercept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasHandleInvalid.html">3.8.2.19. pyspark.ml.regression.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasInputCol.html">3.8.2.20. pyspark.ml.regression.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasInputCols.html">3.8.2.21. pyspark.ml.regression.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasLabelCol.html">3.8.2.22. pyspark.ml.regression.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasMaxIter.html">3.8.2.23. pyspark.ml.regression.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasNumFeatures.html">3.8.2.24. pyspark.ml.regression.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasOutputCol.html">3.8.2.25. pyspark.ml.regression.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasPredictionCol.html">3.8.2.26. pyspark.ml.regression.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasProbabilityCol.html">3.8.2.27. pyspark.ml.regression.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasRawPredictionCol.html">3.8.2.28. pyspark.ml.regression.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasRegParam.html">3.8.2.29. pyspark.ml.regression.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasSeed.html">3.8.2.30. pyspark.ml.regression.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasSolver.html">3.8.2.31. pyspark.ml.regression.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasStandardization.html">3.8.2.32. pyspark.ml.regression.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasStepSize.html">3.8.2.33. pyspark.ml.regression.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasThresholds.html">3.8.2.34. pyspark.ml.regression.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasTol.html">3.8.2.35. pyspark.ml.regression.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasVarianceCol.html">3.8.2.36. pyspark.ml.regression.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.HasWeightCol.html">3.8.2.37. pyspark.ml.regression.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.Identifiable.html">3.8.2.38. pyspark.ml.regression.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.IsotonicRegression.html">3.8.2.39. pyspark.ml.regression.IsotonicRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.IsotonicRegressionModel.html">3.8.2.40. pyspark.ml.regression.IsotonicRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.JavaEstimator.html">3.8.2.41. pyspark.ml.regression.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLReadable.html">3.8.2.42. pyspark.ml.regression.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLReader.html">3.8.2.43. pyspark.ml.regression.JavaMLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLWritable.html">3.8.2.44. pyspark.ml.regression.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLWriter.html">3.8.2.45. pyspark.ml.regression.JavaMLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.JavaModel.html">3.8.2.46. pyspark.ml.regression.JavaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.JavaWrapper.html">3.8.2.47. pyspark.ml.regression.JavaWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegression.html">3.8.2.48. pyspark.ml.regression.LinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegressionModel.html">3.8.2.49. pyspark.ml.regression.LinearRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegressionSummary.html">3.8.2.50. pyspark.ml.regression.LinearRegressionSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegressionTrainingSummary.html">3.8.2.51. pyspark.ml.regression.LinearRegressionTrainingSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.MLReadable.html">3.8.2.52. pyspark.ml.regression.MLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.MLReader.html">3.8.2.53. pyspark.ml.regression.MLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.MLWritable.html">3.8.2.54. pyspark.ml.regression.MLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.MLWriter.html">3.8.2.55. pyspark.ml.regression.MLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.Param.html">3.8.2.56. pyspark.ml.regression.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.Params.html">3.8.2.57. pyspark.ml.regression.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.RandomForestParams.html">3.8.2.58. pyspark.ml.regression.RandomForestParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.RandomForestRegressionModel.html">3.8.2.59. pyspark.ml.regression.RandomForestRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.RandomForestRegressor.html">3.8.2.60. pyspark.ml.regression.RandomForestRegressor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.SparkContext.html">3.8.2.61. pyspark.ml.regression.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.TreeEnsembleModels.html">3.8.2.62. pyspark.ml.regression.TreeEnsembleModels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.TreeEnsembleParams.html">3.8.2.63. pyspark.ml.regression.TreeEnsembleParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.TreeRegressorParams.html">3.8.2.64. pyspark.ml.regression.TreeRegressorParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.regression.TypeConverters.html">3.8.2.65. pyspark.ml.regression.TypeConverters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+      <li>3.8. pyspark.ml.regression</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.ml.regression.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.ml.regression">
+<span id="pyspark-ml-regression"></span><h1>3.8. pyspark.ml.regression<a class="headerlink" href="#module-pyspark.ml.regression" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>3.8.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.inherit_doc.html#pyspark.ml.regression.inherit_doc" title="pyspark.ml.regression.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.keyword_only.html#pyspark.ml.regression.keyword_only" title="pyspark.ml.regression.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
+<td>A decorator that forces keyword arguments in the wrapped method and saves actual input keyword arguments in <cite>_input_kwargs</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.since.html#pyspark.ml.regression.since" title="pyspark.ml.regression.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>3.8.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.AFTSurvivalRegression.html#pyspark.ml.regression.AFTSurvivalRegression" title="pyspark.ml.regression.AFTSurvivalRegression"><code class="xref py py-obj docutils literal"><span class="pre">AFTSurvivalRegression</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.AFTSurvivalRegressionModel.html#pyspark.ml.regression.AFTSurvivalRegressionModel" title="pyspark.ml.regression.AFTSurvivalRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">AFTSurvivalRegressionModel</span></code></a>([java_model])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.DataFrame.html#pyspark.ml.regression.DataFrame" title="pyspark.ml.regression.DataFrame"><code class="xref py py-obj docutils literal"><span class="pre">DataFrame</span></code></a>(jdf,&nbsp;sql_ctx)</td>
+<td>A distributed collection of data grouped into named columns.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeModel.html#pyspark.ml.regression.DecisionTreeModel" title="pyspark.ml.regression.DecisionTreeModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeModel</span></code></a>([java_model])</td>
+<td>Abstraction for Decision Tree models.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeParams.html#pyspark.ml.regression.DecisionTreeParams" title="pyspark.ml.regression.DecisionTreeParams"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeParams</span></code></a>()</td>
+<td>Mixin for Decision Tree parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeRegressionModel.html#pyspark.ml.regression.DecisionTreeRegressionModel" title="pyspark.ml.regression.DecisionTreeRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeRegressor.html#pyspark.ml.regression.DecisionTreeRegressor" title="pyspark.ml.regression.DecisionTreeRegressor"><code class="xref py py-class docutils literal"><span class="pre">DecisionTreeRegressor</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.DecisionTreeRegressor.html#pyspark.ml.regression.DecisionTreeRegressor" title="pyspark.ml.regression.DecisionTreeRegressor"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeRegressor</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Decision_tree_learning">Decision tree</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.GBTParams.html#pyspark.ml.regression.GBTParams" title="pyspark.ml.regression.GBTParams"><code class="xref py py-obj docutils literal"><span class="pre">GBTParams</span></code></a>()</td>
+<td>Private class to track supported GBT params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.GBTRegressionModel.html#pyspark.ml.regression.GBTRegressionModel" title="pyspark.ml.regression.GBTRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">GBTRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.regression.GBTRegressor.html#pyspark.ml.regression.GBTRegressor" title="pyspark.ml.regression.GBTRegressor"><code class="xref py py-class docutils literal"><span class="pre">GBTRegressor</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.GBTRegressor.html#pyspark.ml.regression.GBTRegressor" title="pyspark.ml.regression.GBTRegressor"><code class="xref py py-obj docutils literal"><span class="pre">GBTRegressor</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Gradient_boosting">Gradient-Boosted Trees (GBTs)</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegression.html#pyspark.ml.regression.GeneralizedLinearRegression" title="pyspark.ml.regression.GeneralizedLinearRegression"><code class="xref py py-obj docutils literal"><span class="pre">GeneralizedLinearRegression</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegressionModel.html#pyspark.ml.regression.GeneralizedLinearRegressionModel" title="pyspark.ml.regression.GeneralizedLinearRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">GeneralizedLinearRegressionModel</span></code></a>([java_model])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegressionSummary.html#pyspark.ml.regression.GeneralizedLinearRegressionSummary" title="pyspark.ml.regression.GeneralizedLinearRegressionSummary"><code class="xref py py-obj docutils literal"><span class="pre">GeneralizedLinearRegressionSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary.html#pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary" title="pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary"><code class="xref py py-obj docutils literal"><span class="pre">GeneralizedLinearRegressionTrainingSummary</span></code></a>([...])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasCheckpointInterval.html#pyspark.ml.regression.HasCheckpointInterval" title="pyspark.ml.regression.HasCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">HasCheckpointInterval</span></code></a>()</td>
+<td>Mixin for param checkpointInterval: set checkpoint interval (&gt;= 1) or disable checkpoint (-1).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasElasticNetParam.html#pyspark.ml.regression.HasElasticNetParam" title="pyspark.ml.regression.HasElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">HasElasticNetParam</span></code></a>()</td>
+<td>Mixin for param elasticNetParam: the ElasticNet mixing parameter, in range [0, 1].</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasFeaturesCol.html#pyspark.ml.regression.HasFeaturesCol" title="pyspark.ml.regression.HasFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">HasFeaturesCol</span></code></a>()</td>
+<td>Mixin for param featuresCol: features column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasFitIntercept.html#pyspark.ml.regression.HasFitIntercept" title="pyspark.ml.regression.HasFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">HasFitIntercept</span></code></a>()</td>
+<td>Mixin for param fitIntercept: whether to fit an intercept term.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasHandleInvalid.html#pyspark.ml.regression.HasHandleInvalid" title="pyspark.ml.regression.HasHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">HasHandleInvalid</span></code></a>()</td>
+<td>Mixin for param handleInvalid: how to handle invalid entries.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasInputCol.html#pyspark.ml.regression.HasInputCol" title="pyspark.ml.regression.HasInputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCol</span></code></a>()</td>
+<td>Mixin for param inputCol: input column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasInputCols.html#pyspark.ml.regression.HasInputCols" title="pyspark.ml.regression.HasInputCols"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCols</span></code></a>()</td>
+<td>Mixin for param inputCols: input column names.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasLabelCol.html#pyspark.ml.regression.HasLabelCol" title="pyspark.ml.regression.HasLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">HasLabelCol</span></code></a>()</td>
+<td>Mixin for param labelCol: label column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasMaxIter.html#pyspark.ml.regression.HasMaxIter" title="pyspark.ml.regression.HasMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">HasMaxIter</span></code></a>()</td>
+<td>Mixin for param maxIter: max number of iterations (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasNumFeatures.html#pyspark.ml.regression.HasNumFeatures" title="pyspark.ml.regression.HasNumFeatures"><code class="xref py py-obj docutils literal"><span class="pre">HasNumFeatures</span></code></a>()</td>
+<td>Mixin for param numFeatures: number of features.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasOutputCol.html#pyspark.ml.regression.HasOutputCol" title="pyspark.ml.regression.HasOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasOutputCol</span></code></a>()</td>
+<td>Mixin for param outputCol: output column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasPredictionCol.html#pyspark.ml.regression.HasPredictionCol" title="pyspark.ml.regression.HasPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasPredictionCol</span></code></a>()</td>
+<td>Mixin for param predictionCol: prediction column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasProbabilityCol.html#pyspark.ml.regression.HasProbabilityCol" title="pyspark.ml.regression.HasProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">HasProbabilityCol</span></code></a>()</td>
+<td>Mixin for param probabilityCol: Column name for predicted class conditional probabilities.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasRawPredictionCol.html#pyspark.ml.regression.HasRawPredictionCol" title="pyspark.ml.regression.HasRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasRawPredictionCol</span></code></a>()</td>
+<td>Mixin for param rawPredictionCol: raw prediction (a.k.a.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasRegParam.html#pyspark.ml.regression.HasRegParam" title="pyspark.ml.regression.HasRegParam"><code class="xref py py-obj docutils literal"><span class="pre">HasRegParam</span></code></a>()</td>
+<td>Mixin for param regParam: regularization parameter (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasSeed.html#pyspark.ml.regression.HasSeed" title="pyspark.ml.regression.HasSeed"><code class="xref py py-obj docutils literal"><span class="pre">HasSeed</span></code></a>()</td>
+<td>Mixin for param seed: random seed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasSolver.html#pyspark.ml.regression.HasSolver" title="pyspark.ml.regression.HasSolver"><code class="xref py py-obj docutils literal"><span class="pre">HasSolver</span></code></a>()</td>
+<td>Mixin for param solver: the solver algorithm for optimization.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasStandardization.html#pyspark.ml.regression.HasStandardization" title="pyspark.ml.regression.HasStandardization"><code class="xref py py-obj docutils literal"><span class="pre">HasStandardization</span></code></a>()</td>
+<td>Mixin for param standardization: whether to standardize the training features before fitting the model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasStepSize.html#pyspark.ml.regression.HasStepSize" title="pyspark.ml.regression.HasStepSize"><code class="xref py py-obj docutils literal"><span class="pre">HasStepSize</span></code></a>()</td>
+<td>Mixin for param stepSize: Step size to be used for each iteration of optimization (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasThresholds.html#pyspark.ml.regression.HasThresholds" title="pyspark.ml.regression.HasThresholds"><code class="xref py py-obj docutils literal"><span class="pre">HasThresholds</span></code></a>()</td>
+<td>Mixin for param thresholds: Thresholds in multi-class classification to adjust the probability of predicting each class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasTol.html#pyspark.ml.regression.HasTol" title="pyspark.ml.regression.HasTol"><code class="xref py py-obj docutils literal"><span class="pre">HasTol</span></code></a>()</td>
+<td>Mixin for param tol: the convergence tolerance for iterative algorithms (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasVarianceCol.html#pyspark.ml.regression.HasVarianceCol" title="pyspark.ml.regression.HasVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">HasVarianceCol</span></code></a>()</td>
+<td>Mixin for param varianceCol: column name for the biased sample variance of prediction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.HasWeightCol.html#pyspark.ml.regression.HasWeightCol" title="pyspark.ml.regression.HasWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">HasWeightCol</span></code></a>()</td>
+<td>Mixin for param weightCol: weight column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.Identifiable.html#pyspark.ml.regression.Identifiable" title="pyspark.ml.regression.Identifiable"><code class="xref py py-obj docutils literal"><span class="pre">Identifiable</span></code></a>()</td>
+<td>Object with a unique ID.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.IsotonicRegression.html#pyspark.ml.regression.IsotonicRegression" title="pyspark.ml.regression.IsotonicRegression"><code class="xref py py-obj docutils literal"><span class="pre">IsotonicRegression</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Currently implemented using parallelized pool adjacent violators algorithm.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.IsotonicRegressionModel.html#pyspark.ml.regression.IsotonicRegressionModel" title="pyspark.ml.regression.IsotonicRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">IsotonicRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.regression.IsotonicRegression.html#pyspark.ml.regression.IsotonicRegression" title="pyspark.ml.regression.IsotonicRegression"><code class="xref py py-class docutils literal"><span class="pre">IsotonicRegression</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.JavaEstimator.html#pyspark.ml.regression.JavaEstimator" title="pyspark.ml.regression.JavaEstimator"><code class="xref py py-obj docutils literal"><span class="pre">JavaEstimator</span></code></a>([java_obj])</td>
+<td>Base class for :py:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Estimator`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLReadable.html#pyspark.ml.regression.JavaMLReadable" title="pyspark.ml.regression.JavaMLReadable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLReadable</span></code></a></td>
+<td>(Private) Mixin for instances that provide JavaMLReader.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLReader.html#pyspark.ml.regression.JavaMLReader" title="pyspark.ml.regression.JavaMLReader"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLReader</span></code></a>(clazz)</td>
+<td>(Private) Specialization of <a class="reference internal" href="generated/pyspark.ml.regression.MLReader.html#pyspark.ml.regression.MLReader" title="pyspark.ml.regression.MLReader"><code class="xref py py-class docutils literal"><span class="pre">MLReader</span></code></a> for <code class="xref py py-class docutils literal"><span class="pre">JavaParams</span></code> types</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLWritable.html#pyspark.ml.regression.JavaMLWritable" title="pyspark.ml.regression.JavaMLWritable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLWritable</span></code></a></td>
+<td>(Private) Mixin for ML instances that provide <a class="reference internal" href="generated/pyspark.ml.regression.JavaMLWriter.html#pyspark.ml.regression.JavaMLWriter" title="pyspark.ml.regression.JavaMLWriter"><code class="xref py py-class docutils literal"><span class="pre">JavaMLWriter</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.JavaMLWriter.html#pyspark.ml.regression.JavaMLWriter" title="pyspark.ml.regression.JavaMLWriter"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLWriter</span></code></a>(instance)</td>
+<td>(Private) Specialization of <a class="reference internal" href="generated/pyspark.ml.regression.MLWriter.html#pyspark.ml.regression.MLWriter" title="pyspark.ml.regression.MLWriter"><code class="xref py py-class docutils literal"><span class="pre">MLWriter</span></code></a> for <code class="xref py py-class docutils literal"><span class="pre">JavaParams</span></code> types</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.JavaModel.html#pyspark.ml.regression.JavaModel" title="pyspark.ml.regression.JavaModel"><code class="xref py py-obj docutils literal"><span class="pre">JavaModel</span></code></a>([java_model])</td>
+<td>Base class for :py:class:<a href="#id3"><span class="problematic" id="id4">`</span></a>Model`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.JavaWrapper.html#pyspark.ml.regression.JavaWrapper" title="pyspark.ml.regression.JavaWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaWrapper</span></code></a>([java_obj])</td>
+<td>Wrapper class for a Java companion object</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegression.html#pyspark.ml.regression.LinearRegression" title="pyspark.ml.regression.LinearRegression"><code class="xref py py-obj docutils literal"><span class="pre">LinearRegression</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Linear regression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegressionModel.html#pyspark.ml.regression.LinearRegressionModel" title="pyspark.ml.regression.LinearRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">LinearRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.regression.LinearRegression.html#pyspark.ml.regression.LinearRegression" title="pyspark.ml.regression.LinearRegression"><code class="xref py py-class docutils literal"><span class="pre">LinearRegression</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegressionSummary.html#pyspark.ml.regression.LinearRegressionSummary" title="pyspark.ml.regression.LinearRegressionSummary"><code class="xref py py-obj docutils literal"><span class="pre">LinearRegressionSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.LinearRegressionTrainingSummary.html#pyspark.ml.regression.LinearRegressionTrainingSummary" title="pyspark.ml.regression.LinearRegressionTrainingSummary"><code class="xref py py-obj docutils literal"><span class="pre">LinearRegressionTrainingSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.MLReadable.html#pyspark.ml.regression.MLReadable" title="pyspark.ml.regression.MLReadable"><code class="xref py py-obj docutils literal"><span class="pre">MLReadable</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.MLReader.html#pyspark.ml.regression.MLReader" title="pyspark.ml.regression.MLReader"><code class="xref py py-obj docutils literal"><span class="pre">MLReader</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.MLWritable.html#pyspark.ml.regression.MLWritable" title="pyspark.ml.regression.MLWritable"><code class="xref py py-obj docutils literal"><span class="pre">MLWritable</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.MLWriter.html#pyspark.ml.regression.MLWriter" title="pyspark.ml.regression.MLWriter"><code class="xref py py-obj docutils literal"><span class="pre">MLWriter</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.Param.html#pyspark.ml.regression.Param" title="pyspark.ml.regression.Param"><code class="xref py py-obj docutils literal"><span class="pre">Param</span></code></a>(parent,&nbsp;name,&nbsp;doc[,&nbsp;typeConverter])</td>
+<td>A param with self-contained documentation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.Params.html#pyspark.ml.regression.Params" title="pyspark.ml.regression.Params"><code class="xref py py-obj docutils literal"><span class="pre">Params</span></code></a>()</td>
+<td>Components that take parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.RandomForestParams.html#pyspark.ml.regression.RandomForestParams" title="pyspark.ml.regression.RandomForestParams"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestParams</span></code></a>()</td>
+<td>Private class to track supported random forest parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.RandomForestRegressionModel.html#pyspark.ml.regression.RandomForestRegressionModel" title="pyspark.ml.regression.RandomForestRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.regression.RandomForestRegressor.html#pyspark.ml.regression.RandomForestRegressor" title="pyspark.ml.regression.RandomForestRegressor"><code class="xref py py-class docutils literal"><span class="pre">RandomForestRegressor</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.RandomForestRegressor.html#pyspark.ml.regression.RandomForestRegressor" title="pyspark.ml.regression.RandomForestRegressor"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestRegressor</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Random_forest">Random Forest</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.SparkContext.html#pyspark.ml.regression.SparkContext" title="pyspark.ml.regression.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.TreeEnsembleModels.html#pyspark.ml.regression.TreeEnsembleModels" title="pyspark.ml.regression.TreeEnsembleModels"><code class="xref py py-obj docutils literal"><span class="pre">TreeEnsembleModels</span></code></a>([java_model])</td>
+<td>(private abstraction)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.TreeEnsembleParams.html#pyspark.ml.regression.TreeEnsembleParams" title="pyspark.ml.regression.TreeEnsembleParams"><code class="xref py py-obj docutils literal"><span class="pre">TreeEnsembleParams</span></code></a>()</td>
+<td>Mixin for Decision Tree-based ensemble algorithms parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.regression.TreeRegressorParams.html#pyspark.ml.regression.TreeRegressorParams" title="pyspark.ml.regression.TreeRegressorParams"><code class="xref py py-obj docutils literal"><span class="pre">TreeRegressorParams</span></code></a>()</td>
+<td>Private class to track supported impurity measures.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.regression.TypeConverters.html#pyspark.ml.regression.TypeConverters" title="pyspark.ml.regression.TypeConverters"><code class="xref py py-obj docutils literal"><span class="pre">TypeConverters</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DeveloperApi</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.regression.inherit_doc.html" class="btn btn-neutral float-right" title="3.8.1.1. pyspark.ml.regression.inherit_doc" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pyspark.ml.recommendation.TypeConverters.toVector.html" class="btn btn-neutral" title="3.7.2.41.10. pyspark.ml.recommendation.TypeConverters.toVector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

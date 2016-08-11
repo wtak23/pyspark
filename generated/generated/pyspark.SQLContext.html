@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.2.11. pyspark.SQLContext &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="1. pyspark" href="../pyspark.html"/>
+        <link rel="next" title="1.2.11.1. pyspark.SQLContext.read" href="pyspark.SQLContext.read.html"/>
+        <link rel="prev" title="1.2.10.3. pyspark.Row.index" href="pyspark.Row.index.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.html">1. pyspark</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.html#functions">1.1. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.html#classes">1.2. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Accumulator.html">1.2.1. pyspark.Accumulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.AccumulatorParam.html">1.2.2. pyspark.AccumulatorParam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.BasicProfiler.html">1.2.3. pyspark.BasicProfiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Broadcast.html">1.2.4. pyspark.Broadcast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.HiveContext.html">1.2.5. pyspark.HiveContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.MarshalSerializer.html">1.2.6. pyspark.MarshalSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.PickleSerializer.html">1.2.7. pyspark.PickleSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Profiler.html">1.2.8. pyspark.Profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.RDD.html">1.2.9. pyspark.RDD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Row.html">1.2.10. pyspark.Row</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.11. pyspark.SQLContext</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.read.html">1.2.11.1. pyspark.SQLContext.read</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.readStream.html">1.2.11.2. pyspark.SQLContext.readStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.streams.html">1.2.11.3. pyspark.SQLContext.streams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.udf.html">1.2.11.4. pyspark.SQLContext.udf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.cacheTable.html">1.2.11.5. pyspark.SQLContext.cacheTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.clearCache.html">1.2.11.6. pyspark.SQLContext.clearCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.createDataFrame.html">1.2.11.7. pyspark.SQLContext.createDataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.createExternalTable.html">1.2.11.8. pyspark.SQLContext.createExternalTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.dropTempTable.html">1.2.11.9. pyspark.SQLContext.dropTempTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.getConf.html">1.2.11.10. pyspark.SQLContext.getConf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.getOrCreate.html">1.2.11.11. pyspark.SQLContext.getOrCreate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.newSession.html">1.2.11.12. pyspark.SQLContext.newSession</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.range.html">1.2.11.13. pyspark.SQLContext.range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.registerDataFrameAsTable.html">1.2.11.14. pyspark.SQLContext.registerDataFrameAsTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.registerFunction.html">1.2.11.15. pyspark.SQLContext.registerFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.setConf.html">1.2.11.16. pyspark.SQLContext.setConf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.sql.html">1.2.11.17. pyspark.SQLContext.sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.table.html">1.2.11.18. pyspark.SQLContext.table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.tableNames.html">1.2.11.19. pyspark.SQLContext.tableNames</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.tables.html">1.2.11.20. pyspark.SQLContext.tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.uncacheTable.html">1.2.11.21. pyspark.SQLContext.uncacheTable</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkConf.html">1.2.12. pyspark.SparkConf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkContext.html">1.2.13. pyspark.SparkContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkFiles.html">1.2.14. pyspark.SparkFiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkJobInfo.html">1.2.15. pyspark.SparkJobInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkStageInfo.html">1.2.16. pyspark.SparkStageInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.StatusTracker.html">1.2.17. pyspark.StatusTracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.StorageLevel.html">1.2.18. pyspark.StorageLevel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../pyspark.html">1. pyspark</a> &raquo;</li>
+        
+      <li>1.2.11. pyspark.SQLContext</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.SQLContext.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-sqlcontext">
+<h1>1.2.11. pyspark.SQLContext<a class="headerlink" href="#pyspark-sqlcontext" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.SQLContext">
+<em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">SQLContext</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>sparkSession=None</em>, <em>jsqlContext=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/sql/context.html#SQLContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.SQLContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>The entry point for working with structured data (rows and columns) in Spark, in Spark 1.x.</p>
+<p>As of Spark 2.0, this is replaced by <code class="xref py py-class docutils literal"><span class="pre">SparkSession</span></code>. However, we are keeping the class
+here for backward compatibility.</p>
+<p>A SQLContext can be used create <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>, register <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> as
+tables, execute SQL over tables, cache tables, and read parquet files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sparkContext</strong> &#8211; The <a class="reference internal" href="pyspark.SparkContext.html#pyspark.SparkContext" title="pyspark.SparkContext"><code class="xref py py-class docutils literal"><span class="pre">SparkContext</span></code></a> backing this SQLContext.</li>
+<li><strong>sparkSession</strong> &#8211; The <code class="xref py py-class docutils literal"><span class="pre">SparkSession</span></code> around which this SQLContext wraps.</li>
+<li><strong>jsqlContext</strong> &#8211; An optional JVM Scala SQLContext. If set, we do not instantiate a new
+SQLContext in the JVM, instead we make all calls to this object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.read.html#pyspark.SQLContext.read" title="pyspark.SQLContext.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrameReader</span></code> that can be used to read data in as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.readStream.html#pyspark.SQLContext.readStream" title="pyspark.SQLContext.readStream"><code class="xref py py-obj docutils literal"><span class="pre">readStream</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataStreamReader</span></code> that can be used to read data streams as a streaming <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.streams.html#pyspark.SQLContext.streams" title="pyspark.SQLContext.streams"><code class="xref py py-obj docutils literal"><span class="pre">streams</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">StreamingQueryManager</span></code> that allows managing all the <code class="xref py py-class docutils literal"><span class="pre">StreamingQuery</span></code> StreamingQueries active on <cite>this</cite> context.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.udf.html#pyspark.SQLContext.udf" title="pyspark.SQLContext.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">UDFRegistration</span></code> for UDF registration.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.cacheTable.html#pyspark.SQLContext.cacheTable" title="pyspark.SQLContext.cacheTable"><code class="xref py py-obj docutils literal"><span class="pre">cacheTable</span></code></a>(tableName)</td>
+<td>Caches the specified table in-memory.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.clearCache.html#pyspark.SQLContext.clearCache" title="pyspark.SQLContext.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
+<td>Removes all cached tables from the in-memory cache.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.createDataFrame.html#pyspark.SQLContext.createDataFrame" title="pyspark.SQLContext.createDataFrame"><code class="xref py py-obj docutils literal"><span class="pre">createDataFrame</span></code></a>(data[,&nbsp;schema,&nbsp;samplingRatio])</td>
+<td>Creates a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from an <a class="reference internal" href="pyspark.RDD.html#pyspark.RDD" title="pyspark.RDD"><code class="xref py py-class docutils literal"><span class="pre">RDD</span></code></a>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.createExternalTable.html#pyspark.SQLContext.createExternalTable" title="pyspark.SQLContext.createExternalTable"><code class="xref py py-obj docutils literal"><span class="pre">createExternalTable</span></code></a>(tableName[,&nbsp;path,&nbsp;...])</td>
+<td>Creates an external table based on the dataset in a data source.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.dropTempTable.html#pyspark.SQLContext.dropTempTable" title="pyspark.SQLContext.dropTempTable"><code class="xref py py-obj docutils literal"><span class="pre">dropTempTable</span></code></a>(tableName)</td>
+<td>Remove the temp table from catalog.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.getConf.html#pyspark.SQLContext.getConf" title="pyspark.SQLContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>(key[,&nbsp;defaultValue])</td>
+<td>Returns the value of Spark SQL configuration property for the given key.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.getOrCreate.html#pyspark.SQLContext.getOrCreate" title="pyspark.SQLContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>(sc)</td>
+<td>Get the existing SQLContext or create a new one with given SparkContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.newSession.html#pyspark.SQLContext.newSession" title="pyspark.SQLContext.newSession"><code class="xref py py-obj docutils literal"><span class="pre">newSession</span></code></a>()</td>
+<td>Returns a new SQLContext as new session, that has separate SQLConf, registered temporary views and UDFs, but shared SparkContext and table cache.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.range.html#pyspark.SQLContext.range" title="pyspark.SQLContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numPartitions])</td>
+<td>Create a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> with single LongType column named <cite>id</cite>, containing elements in a range from <cite>start</cite> to <cite>end</cite> (exclusive) with step value <cite>step</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.registerDataFrameAsTable.html#pyspark.SQLContext.registerDataFrameAsTable" title="pyspark.SQLContext.registerDataFrameAsTable"><code class="xref py py-obj docutils literal"><span class="pre">registerDataFrameAsTable</span></code></a>(df,&nbsp;tableName)</td>
+<td>Registers the given <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> as a temporary table in the catalog.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.registerFunction.html#pyspark.SQLContext.registerFunction" title="pyspark.SQLContext.registerFunction"><code class="xref py py-obj docutils literal"><span class="pre">registerFunction</span></code></a>(name,&nbsp;f[,&nbsp;returnType])</td>
+<td>Registers a python function (including lambda function) as a UDF so it can be used in SQL statements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.setConf.html#pyspark.SQLContext.setConf" title="pyspark.SQLContext.setConf"><code class="xref py py-obj docutils literal"><span class="pre">setConf</span></code></a>(key,&nbsp;value)</td>
+<td>Sets the given Spark SQL configuration property.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.sql.html#pyspark.SQLContext.sql" title="pyspark.SQLContext.sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a>(sqlQuery)</td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> representing the result of the given query.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.table.html#pyspark.SQLContext.table" title="pyspark.SQLContext.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
+<td>Returns the specified table as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.tableNames.html#pyspark.SQLContext.tableNames" title="pyspark.SQLContext.tableNames"><code class="xref py py-obj docutils literal"><span class="pre">tableNames</span></code></a>([dbName])</td>
+<td>Returns a list of names of tables in the database <code class="docutils literal"><span class="pre">dbName</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SQLContext.tables.html#pyspark.SQLContext.tables" title="pyspark.SQLContext.tables"><code class="xref py py-obj docutils literal"><span class="pre">tables</span></code></a>([dbName])</td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> containing names of tables in the given database.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SQLContext.uncacheTable.html#pyspark.SQLContext.uncacheTable" title="pyspark.SQLContext.uncacheTable"><code class="xref py py-obj docutils literal"><span class="pre">uncacheTable</span></code></a>(tableName)</td>
+<td>Removes the specified table from the in-memory cache.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.SQLContext.read.html" class="btn btn-neutral float-right" title="1.2.11.1. pyspark.SQLContext.read" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.Row.index.html" class="btn btn-neutral" title="1.2.10.3. pyspark.Row.index" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

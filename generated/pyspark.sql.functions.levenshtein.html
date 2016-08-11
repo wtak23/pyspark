@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.3.1.83. pyspark.sql.functions.levenshtein &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
+        <link rel="next" title="2.3.1.84. pyspark.sql.functions.lit" href="pyspark.sql.functions.lit.html"/>
+        <link rel="prev" title="2.3.1.82. pyspark.sql.functions.length" href="pyspark.sql.functions.length.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.sql.html">2.1. pyspark.sql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="pyspark.sql.functions.html">2.3. pyspark.sql.functions</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pyspark.sql.functions.html#functions">2.3.1. Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.abs.html">2.3.1.1. pyspark.sql.functions.abs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.acos.html">2.3.1.2. pyspark.sql.functions.acos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.add_months.html">2.3.1.3. pyspark.sql.functions.add_months</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.approxCountDistinct.html">2.3.1.4. pyspark.sql.functions.approxCountDistinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.array.html">2.3.1.5. pyspark.sql.functions.array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.array_contains.html">2.3.1.6. pyspark.sql.functions.array_contains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.asc.html">2.3.1.7. pyspark.sql.functions.asc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ascii.html">2.3.1.8. pyspark.sql.functions.ascii</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.asin.html">2.3.1.9. pyspark.sql.functions.asin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.atan.html">2.3.1.10. pyspark.sql.functions.atan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.atan2.html">2.3.1.11. pyspark.sql.functions.atan2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.avg.html">2.3.1.12. pyspark.sql.functions.avg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.base64.html">2.3.1.13. pyspark.sql.functions.base64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.bin.html">2.3.1.14. pyspark.sql.functions.bin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.bitwiseNOT.html">2.3.1.15. pyspark.sql.functions.bitwiseNOT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.broadcast.html">2.3.1.16. pyspark.sql.functions.broadcast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.bround.html">2.3.1.17. pyspark.sql.functions.bround</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cbrt.html">2.3.1.18. pyspark.sql.functions.cbrt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ceil.html">2.3.1.19. pyspark.sql.functions.ceil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.coalesce.html">2.3.1.20. pyspark.sql.functions.coalesce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.col.html">2.3.1.21. pyspark.sql.functions.col</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.collect_list.html">2.3.1.22. pyspark.sql.functions.collect_list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.collect_set.html">2.3.1.23. pyspark.sql.functions.collect_set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.column.html">2.3.1.24. pyspark.sql.functions.column</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.concat.html">2.3.1.25. pyspark.sql.functions.concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.concat_ws.html">2.3.1.26. pyspark.sql.functions.concat_ws</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.conv.html">2.3.1.27. pyspark.sql.functions.conv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.corr.html">2.3.1.28. pyspark.sql.functions.corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cos.html">2.3.1.29. pyspark.sql.functions.cos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cosh.html">2.3.1.30. pyspark.sql.functions.cosh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.count.html">2.3.1.31. pyspark.sql.functions.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.countDistinct.html">2.3.1.32. pyspark.sql.functions.countDistinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.covar_pop.html">2.3.1.33. pyspark.sql.functions.covar_pop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.covar_samp.html">2.3.1.34. pyspark.sql.functions.covar_samp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.crc32.html">2.3.1.35. pyspark.sql.functions.crc32</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.create_map.html">2.3.1.36. pyspark.sql.functions.create_map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cume_dist.html">2.3.1.37. pyspark.sql.functions.cume_dist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.current_date.html">2.3.1.38. pyspark.sql.functions.current_date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.current_timestamp.html">2.3.1.39. pyspark.sql.functions.current_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.date_add.html">2.3.1.40. pyspark.sql.functions.date_add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.date_format.html">2.3.1.41. pyspark.sql.functions.date_format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.date_sub.html">2.3.1.42. pyspark.sql.functions.date_sub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.datediff.html">2.3.1.43. pyspark.sql.functions.datediff</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.dayofmonth.html">2.3.1.44. pyspark.sql.functions.dayofmonth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.dayofyear.html">2.3.1.45. pyspark.sql.functions.dayofyear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.decode.html">2.3.1.46. pyspark.sql.functions.decode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.dense_rank.html">2.3.1.47. pyspark.sql.functions.dense_rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.desc.html">2.3.1.48. pyspark.sql.functions.desc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.encode.html">2.3.1.49. pyspark.sql.functions.encode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.exp.html">2.3.1.50. pyspark.sql.functions.exp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.explode.html">2.3.1.51. pyspark.sql.functions.explode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.expm1.html">2.3.1.52. pyspark.sql.functions.expm1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.expr.html">2.3.1.53. pyspark.sql.functions.expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.factorial.html">2.3.1.54. pyspark.sql.functions.factorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.first.html">2.3.1.55. pyspark.sql.functions.first</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.floor.html">2.3.1.56. pyspark.sql.functions.floor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.format_number.html">2.3.1.57. pyspark.sql.functions.format_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.format_string.html">2.3.1.58. pyspark.sql.functions.format_string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.from_unixtime.html">2.3.1.59. pyspark.sql.functions.from_unixtime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.from_utc_timestamp.html">2.3.1.60. pyspark.sql.functions.from_utc_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.get_json_object.html">2.3.1.61. pyspark.sql.functions.get_json_object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.greatest.html">2.3.1.62. pyspark.sql.functions.greatest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.grouping.html">2.3.1.63. pyspark.sql.functions.grouping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.grouping_id.html">2.3.1.64. pyspark.sql.functions.grouping_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hash.html">2.3.1.65. pyspark.sql.functions.hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hex.html">2.3.1.66. pyspark.sql.functions.hex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hour.html">2.3.1.67. pyspark.sql.functions.hour</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hypot.html">2.3.1.68. pyspark.sql.functions.hypot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ignore_unicode_prefix.html">2.3.1.69. pyspark.sql.functions.ignore_unicode_prefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.initcap.html">2.3.1.70. pyspark.sql.functions.initcap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.input_file_name.html">2.3.1.71. pyspark.sql.functions.input_file_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.instr.html">2.3.1.72. pyspark.sql.functions.instr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.isnan.html">2.3.1.73. pyspark.sql.functions.isnan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.isnull.html">2.3.1.74. pyspark.sql.functions.isnull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.json_tuple.html">2.3.1.75. pyspark.sql.functions.json_tuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.kurtosis.html">2.3.1.76. pyspark.sql.functions.kurtosis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lag.html">2.3.1.77. pyspark.sql.functions.lag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.last.html">2.3.1.78. pyspark.sql.functions.last</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.last_day.html">2.3.1.79. pyspark.sql.functions.last_day</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lead.html">2.3.1.80. pyspark.sql.functions.lead</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.least.html">2.3.1.81. pyspark.sql.functions.least</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.length.html">2.3.1.82. pyspark.sql.functions.length</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.83. pyspark.sql.functions.levenshtein</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lit.html">2.3.1.84. pyspark.sql.functions.lit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.locate.html">2.3.1.85. pyspark.sql.functions.locate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log.html">2.3.1.86. pyspark.sql.functions.log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log10.html">2.3.1.87. pyspark.sql.functions.log10</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log1p.html">2.3.1.88. pyspark.sql.functions.log1p</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log2.html">2.3.1.89. pyspark.sql.functions.log2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lower.html">2.3.1.90. pyspark.sql.functions.lower</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lpad.html">2.3.1.91. pyspark.sql.functions.lpad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ltrim.html">2.3.1.92. pyspark.sql.functions.ltrim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.max.html">2.3.1.93. pyspark.sql.functions.max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.md5.html">2.3.1.94. pyspark.sql.functions.md5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.mean.html">2.3.1.95. pyspark.sql.functions.mean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.min.html">2.3.1.96. pyspark.sql.functions.min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.minute.html">2.3.1.97. pyspark.sql.functions.minute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.monotonically_increasing_id.html">2.3.1.98. pyspark.sql.functions.monotonically_increasing_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.month.html">2.3.1.99. pyspark.sql.functions.month</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.months_between.html">2.3.1.100. pyspark.sql.functions.months_between</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.nanvl.html">2.3.1.101. pyspark.sql.functions.nanvl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.next_day.html">2.3.1.102. pyspark.sql.functions.next_day</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ntile.html">2.3.1.103. pyspark.sql.functions.ntile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.percent_rank.html">2.3.1.104. pyspark.sql.functions.percent_rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.posexplode.html">2.3.1.105. pyspark.sql.functions.posexplode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.pow.html">2.3.1.106. pyspark.sql.functions.pow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.quarter.html">2.3.1.107. pyspark.sql.functions.quarter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rand.html">2.3.1.108. pyspark.sql.functions.rand</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.randn.html">2.3.1.109. pyspark.sql.functions.randn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rank.html">2.3.1.110. pyspark.sql.functions.rank</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.regexp_extract.html">2.3.1.111. pyspark.sql.functions.regexp_extract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.regexp_replace.html">2.3.1.112. pyspark.sql.functions.regexp_replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.repeat.html">2.3.1.113. pyspark.sql.functions.repeat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.reverse.html">2.3.1.114. pyspark.sql.functions.reverse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rint.html">2.3.1.115. pyspark.sql.functions.rint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.round.html">2.3.1.116. pyspark.sql.functions.round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.row_number.html">2.3.1.117. pyspark.sql.functions.row_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rpad.html">2.3.1.118. pyspark.sql.functions.rpad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rtrim.html">2.3.1.119. pyspark.sql.functions.rtrim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.second.html">2.3.1.120. pyspark.sql.functions.second</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sha1.html">2.3.1.121. pyspark.sql.functions.sha1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sha2.html">2.3.1.122. pyspark.sql.functions.sha2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.shiftLeft.html">2.3.1.123. pyspark.sql.functions.shiftLeft</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.shiftRight.html">2.3.1.124. pyspark.sql.functions.shiftRight</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.shiftRightUnsigned.html">2.3.1.125. pyspark.sql.functions.shiftRightUnsigned</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.signum.html">2.3.1.126. pyspark.sql.functions.signum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sin.html">2.3.1.127. pyspark.sql.functions.sin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.since.html">2.3.1.128. pyspark.sql.functions.since</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sinh.html">2.3.1.129. pyspark.sql.functions.sinh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.size.html">2.3.1.130. pyspark.sql.functions.size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.skewness.html">2.3.1.131. pyspark.sql.functions.skewness</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sort_array.html">2.3.1.132. pyspark.sql.functions.sort_array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.soundex.html">2.3.1.133. pyspark.sql.functions.soundex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.spark_partition_id.html">2.3.1.134. pyspark.sql.functions.spark_partition_id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.split.html">2.3.1.135. pyspark.sql.functions.split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sqrt.html">2.3.1.136. pyspark.sql.functions.sqrt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.stddev.html">2.3.1.137. pyspark.sql.functions.stddev</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.stddev_pop.html">2.3.1.138. pyspark.sql.functions.stddev_pop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.stddev_samp.html">2.3.1.139. pyspark.sql.functions.stddev_samp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.struct.html">2.3.1.140. pyspark.sql.functions.struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.substring.html">2.3.1.141. pyspark.sql.functions.substring</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.substring_index.html">2.3.1.142. pyspark.sql.functions.substring_index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sum.html">2.3.1.143. pyspark.sql.functions.sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.sumDistinct.html">2.3.1.144. pyspark.sql.functions.sumDistinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.tan.html">2.3.1.145. pyspark.sql.functions.tan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.tanh.html">2.3.1.146. pyspark.sql.functions.tanh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.toDegrees.html">2.3.1.147. pyspark.sql.functions.toDegrees</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.toRadians.html">2.3.1.148. pyspark.sql.functions.toRadians</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.to_date.html">2.3.1.149. pyspark.sql.functions.to_date</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.to_utc_timestamp.html">2.3.1.150. pyspark.sql.functions.to_utc_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.translate.html">2.3.1.151. pyspark.sql.functions.translate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.trim.html">2.3.1.152. pyspark.sql.functions.trim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.trunc.html">2.3.1.153. pyspark.sql.functions.trunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.udf.html">2.3.1.154. pyspark.sql.functions.udf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.unbase64.html">2.3.1.155. pyspark.sql.functions.unbase64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.unhex.html">2.3.1.156. pyspark.sql.functions.unhex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.unix_timestamp.html">2.3.1.157. pyspark.sql.functions.unix_timestamp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.upper.html">2.3.1.158. pyspark.sql.functions.upper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.v.html">2.3.1.159. pyspark.sql.functions.v</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.var_pop.html">2.3.1.160. pyspark.sql.functions.var_pop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.var_samp.html">2.3.1.161. pyspark.sql.functions.var_samp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.variance.html">2.3.1.162. pyspark.sql.functions.variance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.weekofyear.html">2.3.1.163. pyspark.sql.functions.weekofyear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.when.html">2.3.1.164. pyspark.sql.functions.when</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.window.html">2.3.1.165. pyspark.sql.functions.window</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.year.html">2.3.1.166. pyspark.sql.functions.year</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.sql.functions.html#classes">2.3.2. Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.html">2. pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="pyspark.sql.functions.html">2.3. pyspark.sql.functions</a> &raquo;</li>
+        
+      <li>2.3.1.83. pyspark.sql.functions.levenshtein</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.sql.functions.levenshtein.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-sql-functions-levenshtein">
+<h1>2.3.1.83. pyspark.sql.functions.levenshtein<a class="headerlink" href="#pyspark-sql-functions-levenshtein" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="pyspark.sql.functions.levenshtein">
+<code class="descclassname">pyspark.sql.functions.</code><code class="descname">levenshtein</code><span class="sig-paren">(</span><em>left</em>, <em>right</em><span class="sig-paren">)</span><a class="reference internal" href="../modules/pyspark/sql/functions.html#levenshtein"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.levenshtein" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the Levenshtein distance of the two given strings.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df0</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;kitten&#39;</span><span class="p">,</span> <span class="s1">&#39;sitting&#39;</span><span class="p">,)],</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df0</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">levenshtein</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(d=3)]</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.sql.functions.lit.html" class="btn btn-neutral float-right" title="2.3.1.84. pyspark.sql.functions.lit" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.sql.functions.length.html" class="btn btn-neutral" title="2.3.1.82. pyspark.sql.functions.length" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

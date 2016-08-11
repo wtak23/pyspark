@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.3.2.19.23. pyspark.mllib.clustering.RDD.foldByKey &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="4.3.2.19. pyspark.mllib.clustering.RDD" href="pyspark.mllib.clustering.RDD.html"/>
+        <link rel="next" title="4.3.2.19.24. pyspark.mllib.clustering.RDD.foreach" href="pyspark.mllib.clustering.RDD.foreach.html"/>
+        <link rel="prev" title="4.3.2.19.22. pyspark.mllib.clustering.RDD.fold" href="pyspark.mllib.clustering.RDD.fold.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.clustering.html#functions">4.3.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.mllib.clustering.html#classes">4.3.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.BisectingKMeans.html">4.3.2.1. pyspark.mllib.clustering.BisectingKMeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.BisectingKMeansModel.html">4.3.2.2. pyspark.mllib.clustering.BisectingKMeansModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.DStream.html">4.3.2.3. pyspark.mllib.clustering.DStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.DenseVector.html">4.3.2.4. pyspark.mllib.clustering.DenseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.GaussianMixture.html">4.3.2.5. pyspark.mllib.clustering.GaussianMixture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.GaussianMixtureModel.html">4.3.2.6. pyspark.mllib.clustering.GaussianMixtureModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.JavaLoader.html">4.3.2.7. pyspark.mllib.clustering.JavaLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.JavaModelWrapper.html">4.3.2.8. pyspark.mllib.clustering.JavaModelWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.JavaSaveable.html">4.3.2.9. pyspark.mllib.clustering.JavaSaveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.KMeans.html">4.3.2.10. pyspark.mllib.clustering.KMeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.KMeansModel.html">4.3.2.11. pyspark.mllib.clustering.KMeansModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.LDA.html">4.3.2.12. pyspark.mllib.clustering.LDA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.LDAModel.html">4.3.2.13. pyspark.mllib.clustering.LDAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.LabeledPoint.html">4.3.2.14. pyspark.mllib.clustering.LabeledPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.Loader.html">4.3.2.15. pyspark.mllib.clustering.Loader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.MultivariateGaussian.html">4.3.2.16. pyspark.mllib.clustering.MultivariateGaussian</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.PowerIterationClustering.html">4.3.2.17. pyspark.mllib.clustering.PowerIterationClustering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.PowerIterationClusteringModel.html">4.3.2.18. pyspark.mllib.clustering.PowerIterationClusteringModel</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.mllib.clustering.RDD.html">4.3.2.19. pyspark.mllib.clustering.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.Saveable.html">4.3.2.20. pyspark.mllib.clustering.Saveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.SparkContext.html">4.3.2.21. pyspark.mllib.clustering.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.SparseVector.html">4.3.2.22. pyspark.mllib.clustering.SparseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.html">4.3.2.23. pyspark.mllib.clustering.StreamingKMeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.html">4.3.2.24. pyspark.mllib.clustering.StreamingKMeansModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a> &raquo;</li>
+        
+          <li><a href="pyspark.mllib.clustering.RDD.html">4.3.2.19. pyspark.mllib.clustering.RDD</a> &raquo;</li>
+        
+      <li>4.3.2.19.23. pyspark.mllib.clustering.RDD.foldByKey</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.mllib.clustering.RDD.foldByKey.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-mllib-clustering-rdd-foldbykey">
+<h1>4.3.2.19.23. pyspark.mllib.clustering.RDD.foldByKey<a class="headerlink" href="#pyspark-mllib-clustering-rdd-foldbykey" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.mllib.clustering.RDD.foldByKey">
+<code class="descclassname">RDD.</code><code class="descname">foldByKey</code><span class="sig-paren">(</span><em>zeroValue</em>, <em>func</em>, <em>numPartitions=None</em>, <em>partitionFunc=&lt;function portable_hash&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/rdd.html#RDD.foldByKey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.clustering.RDD.foldByKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge the values for each key using an associative function &#8220;func&#8221;
+and a neutral &#8220;zeroValue&#8221; which may be added to the result an
+arbitrary number of times, and must not change the result
+(e.g., 0 for addition, or 1 for multiplication.).</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">foldByKey</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">add</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
+<span class="go">[(&#39;a&#39;, 2), (&#39;b&#39;, 1)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.clustering.RDD.foreach.html" class="btn btn-neutral float-right" title="4.3.2.19.24. pyspark.mllib.clustering.RDD.foreach" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.mllib.clustering.RDD.fold.html" class="btn btn-neutral" title="4.3.2.19.22. pyspark.mllib.clustering.RDD.fold" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

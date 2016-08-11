@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.1.1.1. pyspark.sql.Column &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="2.1. pyspark.sql" href="../pyspark.sql.html"/>
+        <link rel="next" title="2.1.1.1.1. pyspark.sql.Column.alias" href="pyspark.sql.Column.alias.html"/>
+        <link rel="prev" title="2.1. pyspark.sql" href="../pyspark.sql.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.sql.html">2.1. pyspark.sql</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.sql.html#classes">2.1.1. Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.1.1. pyspark.sql.Column</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.DataFrame.html">2.1.1.2. pyspark.sql.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.DataFrameNaFunctions.html">2.1.1.3. pyspark.sql.DataFrameNaFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.DataFrameReader.html">2.1.1.4. pyspark.sql.DataFrameReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.DataFrameStatFunctions.html">2.1.1.5. pyspark.sql.DataFrameStatFunctions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.DataFrameWriter.html">2.1.1.6. pyspark.sql.DataFrameWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.GroupedData.html">2.1.1.7. pyspark.sql.GroupedData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.HiveContext.html">2.1.1.8. pyspark.sql.HiveContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.Row.html">2.1.1.9. pyspark.sql.Row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.SQLContext.html">2.1.1.10. pyspark.sql.SQLContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.SparkSession.html">2.1.1.11. pyspark.sql.SparkSession</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.Window.html">2.1.1.12. pyspark.sql.Window</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.WindowSpec.html">2.1.1.13. pyspark.sql.WindowSpec</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">2. pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.html">2.1. pyspark.sql</a> &raquo;</li>
+        
+      <li>2.1.1.1. pyspark.sql.Column</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.sql.Column.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-sql-column">
+<h1>2.1.1.1. pyspark.sql.Column<a class="headerlink" href="#pyspark-sql-column" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.sql.Column">
+<em class="property">class </em><code class="descclassname">pyspark.sql.</code><code class="descname">Column</code><span class="sig-paren">(</span><em>jc</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/sql/column.html#Column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.Column" title="Permalink to this definition">¶</a></dt>
+<dd><p>A column in a DataFrame.</p>
+<p><a class="reference internal" href="#pyspark.sql.Column" title="pyspark.sql.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> instances can be created by:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># 1. Select a column out of a DataFrame</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">colName</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;colName&quot;</span><span class="p">]</span>
+
+<span class="c1"># 2. Create from an expression</span>
+<span class="n">df</span><span class="o">.</span><span class="n">colName</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="o">/</span> <span class="n">df</span><span class="o">.</span><span class="n">colName</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.alias.html#pyspark.sql.Column.alias" title="pyspark.sql.Column.alias"><code class="xref py py-obj docutils literal"><span class="pre">alias</span></code></a>(*alias)</td>
+<td>Returns this column aliased with a new name or names (in the case of expressions that return more than one column, such as explode).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.asc.html#pyspark.sql.Column.asc" title="pyspark.sql.Column.asc"><code class="xref py py-obj docutils literal"><span class="pre">asc</span></code></a>()</td>
+<td>Returns a sort expression based on the ascending order of the given column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.astype.html#pyspark.sql.Column.astype" title="pyspark.sql.Column.astype"><code class="xref py py-obj docutils literal"><span class="pre">astype</span></code></a>(dataType)</td>
+<td><a class="reference internal" href="pyspark.sql.Column.astype.html#pyspark.sql.Column.astype" title="pyspark.sql.Column.astype"><code class="xref py py-func docutils literal"><span class="pre">astype()</span></code></a> is an alias for <a class="reference internal" href="pyspark.sql.Column.cast.html#pyspark.sql.Column.cast" title="pyspark.sql.Column.cast"><code class="xref py py-func docutils literal"><span class="pre">cast()</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.between.html#pyspark.sql.Column.between" title="pyspark.sql.Column.between"><code class="xref py py-obj docutils literal"><span class="pre">between</span></code></a>(lowerBound,&nbsp;upperBound)</td>
+<td>A boolean expression that is evaluated to true if the value of this expression is between the given columns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.bitwiseAND.html#pyspark.sql.Column.bitwiseAND" title="pyspark.sql.Column.bitwiseAND"><code class="xref py py-obj docutils literal"><span class="pre">bitwiseAND</span></code></a>(other)</td>
+<td>binary operator</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.bitwiseOR.html#pyspark.sql.Column.bitwiseOR" title="pyspark.sql.Column.bitwiseOR"><code class="xref py py-obj docutils literal"><span class="pre">bitwiseOR</span></code></a>(other)</td>
+<td>binary operator</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.bitwiseXOR.html#pyspark.sql.Column.bitwiseXOR" title="pyspark.sql.Column.bitwiseXOR"><code class="xref py py-obj docutils literal"><span class="pre">bitwiseXOR</span></code></a>(other)</td>
+<td>binary operator</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.cast.html#pyspark.sql.Column.cast" title="pyspark.sql.Column.cast"><code class="xref py py-obj docutils literal"><span class="pre">cast</span></code></a>(dataType)</td>
+<td>Convert the column into type <code class="docutils literal"><span class="pre">dataType</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.desc.html#pyspark.sql.Column.desc" title="pyspark.sql.Column.desc"><code class="xref py py-obj docutils literal"><span class="pre">desc</span></code></a>()</td>
+<td>Returns a sort expression based on the descending order of the given column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.endswith.html#pyspark.sql.Column.endswith" title="pyspark.sql.Column.endswith"><code class="xref py py-obj docutils literal"><span class="pre">endswith</span></code></a>(other)</td>
+<td>binary operator</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.getField.html#pyspark.sql.Column.getField" title="pyspark.sql.Column.getField"><code class="xref py py-obj docutils literal"><span class="pre">getField</span></code></a>(name)</td>
+<td>An expression that gets a field by name in a StructField.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.getItem.html#pyspark.sql.Column.getItem" title="pyspark.sql.Column.getItem"><code class="xref py py-obj docutils literal"><span class="pre">getItem</span></code></a>(key)</td>
+<td>An expression that gets an item at position <code class="docutils literal"><span class="pre">ordinal</span></code> out of a list, or gets an item by key out of a dict.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.isNotNull.html#pyspark.sql.Column.isNotNull" title="pyspark.sql.Column.isNotNull"><code class="xref py py-obj docutils literal"><span class="pre">isNotNull</span></code></a>()</td>
+<td>True if the current expression is not null.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.isNull.html#pyspark.sql.Column.isNull" title="pyspark.sql.Column.isNull"><code class="xref py py-obj docutils literal"><span class="pre">isNull</span></code></a>()</td>
+<td>True if the current expression is null.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.isin.html#pyspark.sql.Column.isin" title="pyspark.sql.Column.isin"><code class="xref py py-obj docutils literal"><span class="pre">isin</span></code></a>(*cols)</td>
+<td>A boolean expression that is evaluated to true if the value of this expression is contained by the evaluated values of the arguments.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.like.html#pyspark.sql.Column.like" title="pyspark.sql.Column.like"><code class="xref py py-obj docutils literal"><span class="pre">like</span></code></a>(other)</td>
+<td>binary operator</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.name.html#pyspark.sql.Column.name" title="pyspark.sql.Column.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a>(*alias)</td>
+<td><a class="reference internal" href="pyspark.sql.Column.name.html#pyspark.sql.Column.name" title="pyspark.sql.Column.name"><code class="xref py py-func docutils literal"><span class="pre">name()</span></code></a> is an alias for <a class="reference internal" href="pyspark.sql.Column.alias.html#pyspark.sql.Column.alias" title="pyspark.sql.Column.alias"><code class="xref py py-func docutils literal"><span class="pre">alias()</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.otherwise.html#pyspark.sql.Column.otherwise" title="pyspark.sql.Column.otherwise"><code class="xref py py-obj docutils literal"><span class="pre">otherwise</span></code></a>(value)</td>
+<td>Evaluates a list of conditions and returns one of multiple possible result expressions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.over.html#pyspark.sql.Column.over" title="pyspark.sql.Column.over"><code class="xref py py-obj docutils literal"><span class="pre">over</span></code></a>(window)</td>
+<td>Define a windowing column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.rlike.html#pyspark.sql.Column.rlike" title="pyspark.sql.Column.rlike"><code class="xref py py-obj docutils literal"><span class="pre">rlike</span></code></a>(other)</td>
+<td>binary operator</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.startswith.html#pyspark.sql.Column.startswith" title="pyspark.sql.Column.startswith"><code class="xref py py-obj docutils literal"><span class="pre">startswith</span></code></a>(other)</td>
+<td>binary operator</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.Column.substr.html#pyspark.sql.Column.substr" title="pyspark.sql.Column.substr"><code class="xref py py-obj docutils literal"><span class="pre">substr</span></code></a>(startPos,&nbsp;length)</td>
+<td>Return a <a class="reference internal" href="#pyspark.sql.Column" title="pyspark.sql.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> which is a substring of the column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.Column.when.html#pyspark.sql.Column.when" title="pyspark.sql.Column.when"><code class="xref py py-obj docutils literal"><span class="pre">when</span></code></a>(condition,&nbsp;value)</td>
+<td>Evaluates a list of conditions and returns one of multiple possible result expressions.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.sql.Column.alias.html" class="btn btn-neutral float-right" title="2.1.1.1.1. pyspark.sql.Column.alias" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pyspark.sql.html" class="btn btn-neutral" title="2.1. pyspark.sql" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

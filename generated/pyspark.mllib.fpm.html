@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.6. pyspark.mllib.fpm &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="4. pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="4.6.1.1. pyspark.mllib.fpm.array" href="pyspark.mllib.fpm.array.html"/>
+        <link rel="prev" title="4.5.3.1. pyspark.mllib.feature.Py4JJavaError" href="pyspark.mllib.feature.Py4JJavaError.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.6. pyspark.mllib.fpm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">4.6.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.array.html">4.6.1.1. pyspark.mllib.fpm.array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.callMLlibFunc.html">4.6.1.2. pyspark.mllib.fpm.callMLlibFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.ignore_unicode_prefix.html">4.6.1.3. pyspark.mllib.fpm.ignore_unicode_prefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.inherit_doc.html">4.6.1.4. pyspark.mllib.fpm.inherit_doc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.namedtuple.html">4.6.1.5. pyspark.mllib.fpm.namedtuple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.since.html">4.6.1.6. pyspark.mllib.fpm.since</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">4.6.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.FPGrowth.html">4.6.2.1. pyspark.mllib.fpm.FPGrowth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.FPGrowthModel.html">4.6.2.2. pyspark.mllib.fpm.FPGrowthModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.JavaLoader.html">4.6.2.3. pyspark.mllib.fpm.JavaLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.JavaModelWrapper.html">4.6.2.4. pyspark.mllib.fpm.JavaModelWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.JavaSaveable.html">4.6.2.5. pyspark.mllib.fpm.JavaSaveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.PrefixSpan.html">4.6.2.6. pyspark.mllib.fpm.PrefixSpan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.PrefixSpanModel.html">4.6.2.7. pyspark.mllib.fpm.PrefixSpanModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.fpm.SparkContext.html">4.6.2.8. pyspark.mllib.fpm.SparkContext</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+      <li>4.6. pyspark.mllib.fpm</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.mllib.fpm.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.mllib.fpm">
+<span id="pyspark-mllib-fpm"></span><h1>4.6. pyspark.mllib.fpm<a class="headerlink" href="#module-pyspark.mllib.fpm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>4.6.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.fpm.array.html#pyspark.mllib.fpm.array" title="pyspark.mllib.fpm.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>(object[,&nbsp;dtype,&nbsp;copy,&nbsp;order,&nbsp;subok,&nbsp;ndmin])</td>
+<td>Create an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.fpm.callMLlibFunc.html#pyspark.mllib.fpm.callMLlibFunc" title="pyspark.mllib.fpm.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.fpm.ignore_unicode_prefix.html#pyspark.mllib.fpm.ignore_unicode_prefix" title="pyspark.mllib.fpm.ignore_unicode_prefix"><code class="xref py py-obj docutils literal"><span class="pre">ignore_unicode_prefix</span></code></a>(f)</td>
+<td>Ignore the &#8216;u&#8217; prefix of string in doc tests, to make it works</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.fpm.inherit_doc.html#pyspark.mllib.fpm.inherit_doc" title="pyspark.mllib.fpm.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.fpm.namedtuple.html#pyspark.mllib.fpm.namedtuple" title="pyspark.mllib.fpm.namedtuple"><code class="xref py py-obj docutils literal"><span class="pre">namedtuple</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Returns a new subclass of tuple with named fields.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.fpm.since.html#pyspark.mllib.fpm.since" title="pyspark.mllib.fpm.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>4.6.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.FPGrowth.html#pyspark.mllib.fpm.FPGrowth" title="pyspark.mllib.fpm.FPGrowth"><code class="xref py py-obj docutils literal"><span class="pre">FPGrowth</span></code></a></td>
+<td>A Parallel FP-growth algorithm to mine frequent itemsets.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.FPGrowthModel.html#pyspark.mllib.fpm.FPGrowthModel" title="pyspark.mllib.fpm.FPGrowthModel"><code class="xref py py-obj docutils literal"><span class="pre">FPGrowthModel</span></code></a>(java_model)</td>
+<td>A FP-Growth model for mining frequent itemsets using the Parallel FP-Growth algorithm.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.JavaLoader.html#pyspark.mllib.fpm.JavaLoader" title="pyspark.mllib.fpm.JavaLoader"><code class="xref py py-obj docutils literal"><span class="pre">JavaLoader</span></code></a></td>
+<td>Mixin for classes which can load saved models using its Scala implementation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.JavaModelWrapper.html#pyspark.mllib.fpm.JavaModelWrapper" title="pyspark.mllib.fpm.JavaModelWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaModelWrapper</span></code></a>(java_model)</td>
+<td>Wrapper for the model in JVM</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.JavaSaveable.html#pyspark.mllib.fpm.JavaSaveable" title="pyspark.mllib.fpm.JavaSaveable"><code class="xref py py-obj docutils literal"><span class="pre">JavaSaveable</span></code></a></td>
+<td>Mixin for models that provide save() through their Scala implementation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.PrefixSpan.html#pyspark.mllib.fpm.PrefixSpan" title="pyspark.mllib.fpm.PrefixSpan"><code class="xref py py-obj docutils literal"><span class="pre">PrefixSpan</span></code></a></td>
+<td>A parallel PrefixSpan algorithm to mine frequent sequential patterns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.PrefixSpanModel.html#pyspark.mllib.fpm.PrefixSpanModel" title="pyspark.mllib.fpm.PrefixSpanModel"><code class="xref py py-obj docutils literal"><span class="pre">PrefixSpanModel</span></code></a>(java_model)</td>
+<td>Model fitted by PrefixSpan</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.fpm.SparkContext.html#pyspark.mllib.fpm.SparkContext" title="pyspark.mllib.fpm.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.fpm.array.html" class="btn btn-neutral float-right" title="4.6.1.1. pyspark.mllib.fpm.array" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.mllib.feature.Py4JJavaError.html" class="btn btn-neutral" title="4.5.3.1. pyspark.mllib.feature.Py4JJavaError" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

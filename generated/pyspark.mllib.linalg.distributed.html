@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.8. pyspark.mllib.linalg.distributed &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="4. pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="4.8.1.1. pyspark.mllib.linalg.distributed.callMLlibFunc" href="pyspark.mllib.linalg.distributed.callMLlibFunc.html"/>
+        <link rel="prev" title="4.7.2.20. pyspark.mllib.linalg.zip" href="generated/pyspark.mllib.linalg.zip.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.8. pyspark.mllib.linalg.distributed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">4.8.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.callMLlibFunc.html">4.8.1.1. pyspark.mllib.linalg.distributed.callMLlibFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.since.html">4.8.1.2. pyspark.mllib.linalg.distributed.since</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">4.8.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.BlockMatrix.html">4.8.2.1. pyspark.mllib.linalg.distributed.BlockMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.CoordinateMatrix.html">4.8.2.2. pyspark.mllib.linalg.distributed.CoordinateMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.DistributedMatrix.html">4.8.2.3. pyspark.mllib.linalg.distributed.DistributedMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.IndexedRow.html">4.8.2.4. pyspark.mllib.linalg.distributed.IndexedRow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.IndexedRowMatrix.html">4.8.2.5. pyspark.mllib.linalg.distributed.IndexedRowMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.JavaModelWrapper.html">4.8.2.6. pyspark.mllib.linalg.distributed.JavaModelWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.JavaObject.html">4.8.2.7. pyspark.mllib.linalg.distributed.JavaObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.Matrix.html">4.8.2.8. pyspark.mllib.linalg.distributed.Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.MatrixEntry.html">4.8.2.9. pyspark.mllib.linalg.distributed.MatrixEntry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html">4.8.2.10. pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.QRDecomposition.html">4.8.2.11. pyspark.mllib.linalg.distributed.QRDecomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.RDD.html">4.8.2.12. pyspark.mllib.linalg.distributed.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.RowMatrix.html">4.8.2.13. pyspark.mllib.linalg.distributed.RowMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.StorageLevel.html">4.8.2.14. pyspark.mllib.linalg.distributed.StorageLevel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+      <li>4.8. pyspark.mllib.linalg.distributed</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.mllib.linalg.distributed.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.mllib.linalg.distributed">
+<span id="pyspark-mllib-linalg-distributed"></span><h1>4.8. pyspark.mllib.linalg.distributed<a class="headerlink" href="#module-pyspark.mllib.linalg.distributed" title="Permalink to this headline">¶</a></h1>
+<p>Package for distributed linear algebra.</p>
+<div class="section" id="functions">
+<h2>4.8.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.callMLlibFunc.html#pyspark.mllib.linalg.distributed.callMLlibFunc" title="pyspark.mllib.linalg.distributed.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.since.html#pyspark.mllib.linalg.distributed.since" title="pyspark.mllib.linalg.distributed.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>4.8.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.BlockMatrix.html#pyspark.mllib.linalg.distributed.BlockMatrix" title="pyspark.mllib.linalg.distributed.BlockMatrix"><code class="xref py py-obj docutils literal"><span class="pre">BlockMatrix</span></code></a>(blocks,&nbsp;rowsPerBlock,&nbsp;colsPerBlock)</td>
+<td>Represents a distributed matrix in blocks of local matrices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.CoordinateMatrix.html#pyspark.mllib.linalg.distributed.CoordinateMatrix" title="pyspark.mllib.linalg.distributed.CoordinateMatrix"><code class="xref py py-obj docutils literal"><span class="pre">CoordinateMatrix</span></code></a>(entries[,&nbsp;numRows,&nbsp;numCols])</td>
+<td>Represents a matrix in coordinate format.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.DistributedMatrix.html#pyspark.mllib.linalg.distributed.DistributedMatrix" title="pyspark.mllib.linalg.distributed.DistributedMatrix"><code class="xref py py-obj docutils literal"><span class="pre">DistributedMatrix</span></code></a></td>
+<td>Represents a distributively stored matrix backed by one or more RDDs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.IndexedRow.html#pyspark.mllib.linalg.distributed.IndexedRow" title="pyspark.mllib.linalg.distributed.IndexedRow"><code class="xref py py-obj docutils literal"><span class="pre">IndexedRow</span></code></a>(index,&nbsp;vector)</td>
+<td>Represents a row of an IndexedRowMatrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.IndexedRowMatrix.html#pyspark.mllib.linalg.distributed.IndexedRowMatrix" title="pyspark.mllib.linalg.distributed.IndexedRowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">IndexedRowMatrix</span></code></a>(rows[,&nbsp;numRows,&nbsp;numCols])</td>
+<td>Represents a row-oriented distributed Matrix with indexed rows.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.JavaModelWrapper.html#pyspark.mllib.linalg.distributed.JavaModelWrapper" title="pyspark.mllib.linalg.distributed.JavaModelWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaModelWrapper</span></code></a>(java_model)</td>
+<td>Wrapper for the model in JVM</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.JavaObject.html#pyspark.mllib.linalg.distributed.JavaObject" title="pyspark.mllib.linalg.distributed.JavaObject"><code class="xref py py-obj docutils literal"><span class="pre">JavaObject</span></code></a>(target_id,&nbsp;gateway_client)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.Matrix.html#pyspark.mllib.linalg.distributed.Matrix" title="pyspark.mllib.linalg.distributed.Matrix"><code class="xref py py-obj docutils literal"><span class="pre">Matrix</span></code></a>(numRows,&nbsp;numCols[,&nbsp;isTransposed])</td>
+<td><p class="rubric">Methods</p>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.MatrixEntry.html#pyspark.mllib.linalg.distributed.MatrixEntry" title="pyspark.mllib.linalg.distributed.MatrixEntry"><code class="xref py py-obj docutils literal"><span class="pre">MatrixEntry</span></code></a>(i,&nbsp;j,&nbsp;value)</td>
+<td>Represents an entry of a CoordinateMatrix.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html#pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary" title="pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary"><code class="xref py py-obj docutils literal"><span class="pre">MultivariateStatisticalSummary</span></code></a>(java_model)</td>
+<td>Trait for multivariate statistical summary of a data matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.QRDecomposition.html#pyspark.mllib.linalg.distributed.QRDecomposition" title="pyspark.mllib.linalg.distributed.QRDecomposition"><code class="xref py py-obj docutils literal"><span class="pre">QRDecomposition</span></code></a>(Q,&nbsp;R)</td>
+<td>Represents QR factors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.RDD.html#pyspark.mllib.linalg.distributed.RDD" title="pyspark.mllib.linalg.distributed.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.RowMatrix.html#pyspark.mllib.linalg.distributed.RowMatrix" title="pyspark.mllib.linalg.distributed.RowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">RowMatrix</span></code></a>(rows[,&nbsp;numRows,&nbsp;numCols])</td>
+<td>Represents a row-oriented distributed Matrix with no meaningful row indices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.distributed.StorageLevel.html#pyspark.mllib.linalg.distributed.StorageLevel" title="pyspark.mllib.linalg.distributed.StorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">StorageLevel</span></code></a>(useDisk,&nbsp;useMemory,&nbsp;useOffHeap,&nbsp;...)</td>
+<td>Flags for controlling the storage of an RDD.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.linalg.distributed.callMLlibFunc.html" class="btn btn-neutral float-right" title="4.8.1.1. pyspark.mllib.linalg.distributed.callMLlibFunc" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pyspark.mllib.linalg.zip.html" class="btn btn-neutral" title="4.7.2.20. pyspark.mllib.linalg.zip" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

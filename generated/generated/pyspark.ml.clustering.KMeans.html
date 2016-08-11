@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.5.2.37. pyspark.ml.clustering.KMeans &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="3.5. pyspark.ml.clustering" href="../pyspark.ml.clustering.html"/>
+        <link rel="next" title="3.5.2.37.1. pyspark.ml.clustering.KMeans.params" href="pyspark.ml.clustering.KMeans.params.html"/>
+        <link rel="prev" title="3.5.2.36.12. pyspark.ml.clustering.JavaModel.transform" href="pyspark.ml.clustering.JavaModel.transform.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.ml.clustering.html#functions">3.5.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.ml.clustering.html#classes">3.5.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.BisectingKMeans.html">3.5.2.1. pyspark.ml.clustering.BisectingKMeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.BisectingKMeansModel.html">3.5.2.2. pyspark.ml.clustering.BisectingKMeansModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.DecisionTreeParams.html">3.5.2.3. pyspark.ml.clustering.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.DistributedLDAModel.html">3.5.2.4. pyspark.ml.clustering.DistributedLDAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.GaussianMixture.html">3.5.2.5. pyspark.ml.clustering.GaussianMixture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.GaussianMixtureModel.html">3.5.2.6. pyspark.ml.clustering.GaussianMixtureModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasCheckpointInterval.html">3.5.2.7. pyspark.ml.clustering.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasElasticNetParam.html">3.5.2.8. pyspark.ml.clustering.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasFeaturesCol.html">3.5.2.9. pyspark.ml.clustering.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasFitIntercept.html">3.5.2.10. pyspark.ml.clustering.HasFitIntercept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.html">3.5.2.11. pyspark.ml.clustering.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasInputCol.html">3.5.2.12. pyspark.ml.clustering.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasInputCols.html">3.5.2.13. pyspark.ml.clustering.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasLabelCol.html">3.5.2.14. pyspark.ml.clustering.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasMaxIter.html">3.5.2.15. pyspark.ml.clustering.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasNumFeatures.html">3.5.2.16. pyspark.ml.clustering.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasOutputCol.html">3.5.2.17. pyspark.ml.clustering.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasPredictionCol.html">3.5.2.18. pyspark.ml.clustering.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasProbabilityCol.html">3.5.2.19. pyspark.ml.clustering.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasRawPredictionCol.html">3.5.2.20. pyspark.ml.clustering.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasRegParam.html">3.5.2.21. pyspark.ml.clustering.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasSeed.html">3.5.2.22. pyspark.ml.clustering.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasSolver.html">3.5.2.23. pyspark.ml.clustering.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasStandardization.html">3.5.2.24. pyspark.ml.clustering.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasStepSize.html">3.5.2.25. pyspark.ml.clustering.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.html">3.5.2.26. pyspark.ml.clustering.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasTol.html">3.5.2.27. pyspark.ml.clustering.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasVarianceCol.html">3.5.2.28. pyspark.ml.clustering.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.HasWeightCol.html">3.5.2.29. pyspark.ml.clustering.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.Identifiable.html">3.5.2.30. pyspark.ml.clustering.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaEstimator.html">3.5.2.31. pyspark.ml.clustering.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLReadable.html">3.5.2.32. pyspark.ml.clustering.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLReader.html">3.5.2.33. pyspark.ml.clustering.JavaMLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLWritable.html">3.5.2.34. pyspark.ml.clustering.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaMLWriter.html">3.5.2.35. pyspark.ml.clustering.JavaMLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaModel.html">3.5.2.36. pyspark.ml.clustering.JavaModel</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.5.2.37. pyspark.ml.clustering.KMeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.KMeansModel.html">3.5.2.38. pyspark.ml.clustering.KMeansModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LDA.html">3.5.2.39. pyspark.ml.clustering.LDA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LDAModel.html">3.5.2.40. pyspark.ml.clustering.LDAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LocalLDAModel.html">3.5.2.41. pyspark.ml.clustering.LocalLDAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLReadable.html">3.5.2.42. pyspark.ml.clustering.MLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLReader.html">3.5.2.43. pyspark.ml.clustering.MLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLWritable.html">3.5.2.44. pyspark.ml.clustering.MLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLWriter.html">3.5.2.45. pyspark.ml.clustering.MLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.Param.html">3.5.2.46. pyspark.ml.clustering.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.Params.html">3.5.2.47. pyspark.ml.clustering.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.SparkContext.html">3.5.2.48. pyspark.ml.clustering.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.TypeConverters.html">3.5.2.49. pyspark.ml.clustering.TypeConverters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a> &raquo;</li>
+        
+      <li>3.5.2.37. pyspark.ml.clustering.KMeans</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.ml.clustering.KMeans.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-ml-clustering-kmeans">
+<h1>3.5.2.37. pyspark.ml.clustering.KMeans<a class="headerlink" href="#pyspark-ml-clustering-kmeans" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.ml.clustering.KMeans">
+<em class="property">class </em><code class="descclassname">pyspark.ml.clustering.</code><code class="descname">KMeans</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/ml/clustering.html#KMeans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.KMeans" title="Permalink to this definition">¶</a></dt>
+<dd><p>K-means clustering with a k-means++ like initialization mode
+(the k-means|| algorithm by Bahmani et al).</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="k">import</span> <span class="n">Vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),),</span> <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]),),</span>
+<span class="gp">... </span>        <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">9.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">]),),</span> <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">]),)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">centers</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">centers</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">computeCost</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">2.000...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transformed</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="s2">&quot;prediction&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rows</span> <span class="o">=</span> <span class="n">transformed</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">prediction</span> <span class="o">==</span> <span class="n">rows</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">prediction</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rows</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">prediction</span> <span class="o">==</span> <span class="n">rows</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">prediction</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kmeans_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/kmeans&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kmeans</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">kmeans_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kmeans2</span> <span class="o">=</span> <span class="n">KMeans</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">kmeans_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kmeans2</span><span class="o">.</span><span class="n">getK</span><span class="p">()</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/kmeans_model&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model2</span> <span class="o">=</span> <span class="n">KMeansModel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">model2</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">array([ True,  True], dtype=bool)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">model2</span><span class="o">.</span><span class="n">clusterCenters</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">array([ True,  True], dtype=bool)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5.0.</span></p>
+</div>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.params.html#pyspark.ml.clustering.KMeans.params" title="pyspark.ml.clustering.KMeans.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.copy.html#pyspark.ml.clustering.KMeans.copy" title="pyspark.ml.clustering.KMeans.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.explainParam.html#pyspark.ml.clustering.KMeans.explainParam" title="pyspark.ml.clustering.KMeans.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.explainParams.html#pyspark.ml.clustering.KMeans.explainParams" title="pyspark.ml.clustering.KMeans.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.extractParamMap.html#pyspark.ml.clustering.KMeans.extractParamMap" title="pyspark.ml.clustering.KMeans.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.fit.html#pyspark.ml.clustering.KMeans.fit" title="pyspark.ml.clustering.KMeans.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getFeaturesCol.html#pyspark.ml.clustering.KMeans.getFeaturesCol" title="pyspark.ml.clustering.KMeans.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getInitMode.html#pyspark.ml.clustering.KMeans.getInitMode" title="pyspark.ml.clustering.KMeans.getInitMode"><code class="xref py py-obj docutils literal"><span class="pre">getInitMode</span></code></a>()</td>
+<td>Gets the value of <cite>initMode</cite></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getInitSteps.html#pyspark.ml.clustering.KMeans.getInitSteps" title="pyspark.ml.clustering.KMeans.getInitSteps"><code class="xref py py-obj docutils literal"><span class="pre">getInitSteps</span></code></a>()</td>
+<td>Gets the value of <cite>initSteps</cite></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getK.html#pyspark.ml.clustering.KMeans.getK" title="pyspark.ml.clustering.KMeans.getK"><code class="xref py py-obj docutils literal"><span class="pre">getK</span></code></a>()</td>
+<td>Gets the value of <cite>k</cite></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getMaxIter.html#pyspark.ml.clustering.KMeans.getMaxIter" title="pyspark.ml.clustering.KMeans.getMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">getMaxIter</span></code></a>()</td>
+<td>Gets the value of maxIter or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getOrDefault.html#pyspark.ml.clustering.KMeans.getOrDefault" title="pyspark.ml.clustering.KMeans.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getParam.html#pyspark.ml.clustering.KMeans.getParam" title="pyspark.ml.clustering.KMeans.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getPredictionCol.html#pyspark.ml.clustering.KMeans.getPredictionCol" title="pyspark.ml.clustering.KMeans.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getSeed.html#pyspark.ml.clustering.KMeans.getSeed" title="pyspark.ml.clustering.KMeans.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.getTol.html#pyspark.ml.clustering.KMeans.getTol" title="pyspark.ml.clustering.KMeans.getTol"><code class="xref py py-obj docutils literal"><span class="pre">getTol</span></code></a>()</td>
+<td>Gets the value of tol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.hasDefault.html#pyspark.ml.clustering.KMeans.hasDefault" title="pyspark.ml.clustering.KMeans.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.hasParam.html#pyspark.ml.clustering.KMeans.hasParam" title="pyspark.ml.clustering.KMeans.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.isDefined.html#pyspark.ml.clustering.KMeans.isDefined" title="pyspark.ml.clustering.KMeans.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.isSet.html#pyspark.ml.clustering.KMeans.isSet" title="pyspark.ml.clustering.KMeans.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.load.html#pyspark.ml.clustering.KMeans.load" title="pyspark.ml.clustering.KMeans.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.read.html#pyspark.ml.clustering.KMeans.read" title="pyspark.ml.clustering.KMeans.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.save.html#pyspark.ml.clustering.KMeans.save" title="pyspark.ml.clustering.KMeans.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setFeaturesCol.html#pyspark.ml.clustering.KMeans.setFeaturesCol" title="pyspark.ml.clustering.KMeans.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.featuresCol.html#pyspark.ml.clustering.KMeans.featuresCol" title="pyspark.ml.clustering.KMeans.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setInitMode.html#pyspark.ml.clustering.KMeans.setInitMode" title="pyspark.ml.clustering.KMeans.setInitMode"><code class="xref py py-obj docutils literal"><span class="pre">setInitMode</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.initMode.html#pyspark.ml.clustering.KMeans.initMode" title="pyspark.ml.clustering.KMeans.initMode"><code class="xref py py-attr docutils literal"><span class="pre">initMode</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setInitSteps.html#pyspark.ml.clustering.KMeans.setInitSteps" title="pyspark.ml.clustering.KMeans.setInitSteps"><code class="xref py py-obj docutils literal"><span class="pre">setInitSteps</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.initSteps.html#pyspark.ml.clustering.KMeans.initSteps" title="pyspark.ml.clustering.KMeans.initSteps"><code class="xref py py-attr docutils literal"><span class="pre">initSteps</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setK.html#pyspark.ml.clustering.KMeans.setK" title="pyspark.ml.clustering.KMeans.setK"><code class="xref py py-obj docutils literal"><span class="pre">setK</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.k.html#pyspark.ml.clustering.KMeans.k" title="pyspark.ml.clustering.KMeans.k"><code class="xref py py-attr docutils literal"><span class="pre">k</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setMaxIter.html#pyspark.ml.clustering.KMeans.setMaxIter" title="pyspark.ml.clustering.KMeans.setMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">setMaxIter</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.maxIter.html#pyspark.ml.clustering.KMeans.maxIter" title="pyspark.ml.clustering.KMeans.maxIter"><code class="xref py py-attr docutils literal"><span class="pre">maxIter</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setParams.html#pyspark.ml.clustering.KMeans.setParams" title="pyspark.ml.clustering.KMeans.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;...])</td>
+<td>Sets params for KMeans.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setPredictionCol.html#pyspark.ml.clustering.KMeans.setPredictionCol" title="pyspark.ml.clustering.KMeans.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.predictionCol.html#pyspark.ml.clustering.KMeans.predictionCol" title="pyspark.ml.clustering.KMeans.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setSeed.html#pyspark.ml.clustering.KMeans.setSeed" title="pyspark.ml.clustering.KMeans.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.seed.html#pyspark.ml.clustering.KMeans.seed" title="pyspark.ml.clustering.KMeans.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.setTol.html#pyspark.ml.clustering.KMeans.setTol" title="pyspark.ml.clustering.KMeans.setTol"><code class="xref py py-obj docutils literal"><span class="pre">setTol</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.KMeans.tol.html#pyspark.ml.clustering.KMeans.tol" title="pyspark.ml.clustering.KMeans.tol"><code class="xref py py-attr docutils literal"><span class="pre">tol</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.KMeans.write.html#pyspark.ml.clustering.KMeans.write" title="pyspark.ml.clustering.KMeans.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.clustering.KMeans.params.html" class="btn btn-neutral float-right" title="3.5.2.37.1. pyspark.ml.clustering.KMeans.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.ml.clustering.JavaModel.transform.html" class="btn btn-neutral" title="3.5.2.36.12. pyspark.ml.clustering.JavaModel.transform" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

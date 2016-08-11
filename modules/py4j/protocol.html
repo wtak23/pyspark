@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>py4j.protocol &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>py4j.protocol</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for py4j.protocol</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The protocol module defines the primitives and the escaping used by</span>
+<span class="sd">Py4J protocol.</span>
+
+<span class="sd">This is a text-based protocol that is efficient for general-purpose</span>
+<span class="sd">method calling, but very inefficient with large numbers (because</span>
+<span class="sd">they are text-based).</span>
+
+<span class="sd">Binary protocol (e.g., protobuf) was considered in the past, but</span>
+<span class="sd">internal benchmarking showed that it was less efficient in</span>
+<span class="sd">terms of size and time. This is due to the fact that a lot</span>
+<span class="sd">of small strings are exchanged (method name, class name, variable</span>
+<span class="sd">names, etc.).</span>
+
+<span class="sd">Created on Oct 14, 2010</span>
+
+<span class="sd">:author: Barthelemy Dagenais</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span><span class="p">,</span> <span class="n">absolute_import</span>
+
+<span class="kn">from</span> <span class="nn">base64</span> <span class="k">import</span> <span class="n">standard_b64encode</span><span class="p">,</span> <span class="n">standard_b64decode</span>
+
+<span class="kn">from</span> <span class="nn">decimal</span> <span class="k">import</span> <span class="n">Decimal</span>
+
+<span class="kn">from</span> <span class="nn">py4j.compat</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">long</span><span class="p">,</span> <span class="n">basestring</span><span class="p">,</span> <span class="n">unicode</span><span class="p">,</span> <span class="n">bytearray2</span><span class="p">,</span>
+    <span class="n">bytestr</span><span class="p">,</span> <span class="n">isbytestr</span><span class="p">,</span> <span class="n">isbytearray</span><span class="p">,</span> <span class="n">ispython3bytestr</span><span class="p">,</span>
+    <span class="n">bytetoint</span><span class="p">,</span> <span class="n">bytetostr</span><span class="p">,</span> <span class="n">strtobyte</span><span class="p">)</span>
+
+
+<span class="n">JAVA_MAX_INT</span> <span class="o">=</span> <span class="mi">2147483647</span>
+<span class="n">JAVA_MIN_INT</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2147483648</span>
+
+<span class="n">JAVA_INFINITY</span> <span class="o">=</span> <span class="s2">&quot;Infinity&quot;</span>
+<span class="n">JAVA_NEGATIVE_INFINITY</span> <span class="o">=</span> <span class="s2">&quot;-Infinity&quot;</span>
+<span class="n">JAVA_NAN</span> <span class="o">=</span> <span class="s2">&quot;NaN&quot;</span>
+
+
+<span class="n">ESCAPE_CHAR</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span>
+
+<span class="c1"># Entry point</span>
+<span class="n">ENTRY_POINT_OBJECT_ID</span> <span class="o">=</span> <span class="s2">&quot;t&quot;</span>
+<span class="n">CONNECTION_PROPERTY_OBJECT_ID</span> <span class="o">=</span> <span class="s2">&quot;c&quot;</span>
+<span class="n">GATEWAY_SERVER_OBJECT_ID</span> <span class="o">=</span> <span class="s2">&quot;GATEWAY_SERVER&quot;</span>
+<span class="n">STATIC_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;z:&quot;</span>
+
+<span class="c1"># JVM</span>
+<span class="n">DEFAULT_JVM_ID</span> <span class="o">=</span> <span class="s2">&quot;rj&quot;</span>
+<span class="n">DEFAULT_JVM_NAME</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+
+<span class="c1"># Types</span>
+<span class="n">BYTES_TYPE</span> <span class="o">=</span> <span class="s2">&quot;j&quot;</span>
+<span class="n">INTEGER_TYPE</span> <span class="o">=</span> <span class="s2">&quot;i&quot;</span>
+<span class="n">LONG_TYPE</span> <span class="o">=</span> <span class="s2">&quot;L&quot;</span>
+<span class="n">BOOLEAN_TYPE</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
+<span class="n">DOUBLE_TYPE</span> <span class="o">=</span> <span class="s2">&quot;d&quot;</span>
+<span class="n">DECIMAL_TYPE</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
+<span class="n">STRING_TYPE</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span>
+<span class="n">REFERENCE_TYPE</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span>
+<span class="n">ARRAY_TYPE</span> <span class="o">=</span> <span class="s2">&quot;t&quot;</span>
+<span class="n">SET_TYPE</span> <span class="o">=</span> <span class="s2">&quot;h&quot;</span>
+<span class="n">LIST_TYPE</span> <span class="o">=</span> <span class="s2">&quot;l&quot;</span>
+<span class="n">MAP_TYPE</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">NULL_TYPE</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
+<span class="n">PACKAGE_TYPE</span> <span class="o">=</span> <span class="s2">&quot;p&quot;</span>
+<span class="n">CLASS_TYPE</span> <span class="o">=</span> <span class="s2">&quot;c&quot;</span>
+<span class="n">METHOD_TYPE</span> <span class="o">=</span> <span class="s2">&quot;m&quot;</span>
+<span class="n">NO_MEMBER</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span>
+<span class="n">VOID_TYPE</span> <span class="o">=</span> <span class="s2">&quot;v&quot;</span>
+<span class="n">ITERATOR_TYPE</span> <span class="o">=</span> <span class="s2">&quot;g&quot;</span>
+<span class="n">PYTHON_PROXY_TYPE</span> <span class="o">=</span> <span class="s2">&quot;f&quot;</span>
+
+<span class="c1"># Protocol</span>
+<span class="n">END</span> <span class="o">=</span> <span class="s2">&quot;e&quot;</span>
+<span class="n">ERROR</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span>
+<span class="n">SUCCESS</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
+<span class="n">RETURN_MESSAGE</span> <span class="o">=</span> <span class="s2">&quot;!&quot;</span>
+
+
+<span class="c1"># Shortcuts</span>
+<span class="n">SUCCESS_PACKAGE</span> <span class="o">=</span> <span class="n">SUCCESS</span> <span class="o">+</span> <span class="n">PACKAGE_TYPE</span>
+<span class="n">SUCCESS_CLASS</span> <span class="o">=</span> <span class="n">SUCCESS</span> <span class="o">+</span> <span class="n">CLASS_TYPE</span>
+<span class="n">CLASS_FQN_START</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">END_COMMAND_PART</span> <span class="o">=</span> <span class="n">END</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">NO_MEMBER_COMMAND</span> <span class="o">=</span> <span class="n">SUCCESS</span> <span class="o">+</span> <span class="n">NO_MEMBER</span>
+
+<span class="c1"># Commands</span>
+<span class="n">CALL_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;c</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">FIELD_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;f</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">CONSTRUCTOR_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;i</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">SHUTDOWN_GATEWAY_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;s</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">LIST_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;l</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">REFLECTION_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;r</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">MEMORY_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;m</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">HELP_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;h</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">ARRAY_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;a</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">JVMVIEW_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;j</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">EXCEPTION_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;p</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">DIR_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;d</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">STREAM_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;S</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># Array subcommands</span>
+<span class="n">ARRAY_GET_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;g</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">ARRAY_SET_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;s</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">ARRAY_SLICE_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;l</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">ARRAY_LEN_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;e</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">ARRAY_CREATE_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;c</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># Reflection subcommands</span>
+<span class="n">REFL_GET_UNKNOWN_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;u</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">REFL_GET_MEMBER_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;m</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">REFL_GET_JAVA_LANG_CLASS_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;c</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+
+<span class="c1"># List subcommands</span>
+<span class="n">LIST_SORT_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;s</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">LIST_REVERSE_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;r</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">LIST_SLICE_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;l</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">LIST_CONCAT_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;a</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">LIST_MULT_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;m</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">LIST_IMULT_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;i</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">LIST_COUNT_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;f</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># Field subcommands</span>
+<span class="n">FIELD_GET_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;g</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">FIELD_SET_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;s</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># Memory subcommands</span>
+<span class="n">MEMORY_DEL_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;d</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">MEMORY_ATTACH_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;a</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># Help subcommands</span>
+<span class="n">HELP_OBJECT_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;o</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">HELP_CLASS_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;c</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># JVM subcommands</span>
+<span class="n">JVM_CREATE_VIEW_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;c</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">JVM_IMPORT_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;i</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">JVM_SEARCH_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;s</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">REMOVE_IMPORT_SUB_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;r</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="c1"># Callback specific</span>
+<span class="n">PYTHON_PROXY_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;p&quot;</span>
+<span class="n">ERROR_RETURN_MESSAGE</span> <span class="o">=</span> <span class="n">RETURN_MESSAGE</span> <span class="o">+</span> <span class="n">ERROR</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">SUCCESS_RETURN_MESSAGE</span> <span class="o">=</span> <span class="n">RETURN_MESSAGE</span> <span class="o">+</span> <span class="n">SUCCESS</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="n">CALL_PROXY_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;c&quot;</span>
+<span class="n">GARBAGE_COLLECT_PROXY_COMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;g&quot;</span>
+
+<span class="c1"># Dir subcommands</span>
+<span class="n">DIR_FIELDS_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;f</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">DIR_METHODS_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;m</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">DIR_STATIC_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;s</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">DIR_JVMVIEW_SUBCOMMAND_NAME</span> <span class="o">=</span> <span class="s2">&quot;v</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="n">OUTPUT_CONVERTER</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">NULL_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="n">BOOLEAN_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span><span class="p">),</span>
+    <span class="n">LONG_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">long</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
+    <span class="n">DECIMAL_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
+    <span class="n">INTEGER_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
+    <span class="n">BYTES_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">decode_bytearray</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
+    <span class="n">DOUBLE_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
+    <span class="n">STRING_TYPE</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">unescape_new_line</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
+<span class="p">}</span>
+
+<span class="n">INPUT_CONVERTER</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># ERRORS</span>
+<span class="n">ERROR_ON_SEND</span> <span class="o">=</span> <span class="s2">&quot;on_send&quot;</span>
+<span class="n">ERROR_ON_RECEIVE</span> <span class="o">=</span> <span class="s2">&quot;on_receive&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">escape_new_line</span><span class="p">(</span><span class="n">original</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replaces new line characters by a backslash followed by a n.</span>
+
+<span class="sd">    Backslashes are also escaped by another backslash.</span>
+
+<span class="sd">    :param original: the string to escape</span>
+
+<span class="sd">    :rtype: an escaped string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">smart_decode</span><span class="p">(</span><span class="n">original</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">r&quot;</span><span class="p">)</span><span class="o">.</span>\
+        <span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">unescape_new_line</span><span class="p">(</span><span class="n">escaped</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replaces escaped characters by unescaped characters.</span>
+
+<span class="sd">    For example, double backslashes are replaced by a single backslash.</span>
+
+<span class="sd">    The behavior for improperly formatted strings is undefined and can change.</span>
+
+<span class="sd">    :param escaped: the escaped string</span>
+
+<span class="sd">    :rtype: the original string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ESCAPE_CHAR</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">ESCAPE_CHAR</span> <span class="o">+</span> <span class="s2">&quot;r&quot;</span><span class="p">)))</span>
+            <span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">ESCAPE_CHAR</span> <span class="o">+</span> <span class="s2">&quot;n&quot;</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">escaped</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">ESCAPE_CHAR</span> <span class="o">+</span> <span class="n">ESCAPE_CHAR</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">smart_decode</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">bytestr</span><span class="p">):</span>
+        <span class="c1"># Should never reach this case in Python 3</span>
+        <span class="k">return</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">unicode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">encode_float</span><span class="p">(</span><span class="n">float_value</span><span class="p">):</span>
+    <span class="n">float_str</span> <span class="o">=</span> <span class="n">smart_decode</span><span class="p">(</span><span class="n">float_value</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">float_str</span> <span class="o">==</span> <span class="s2">&quot;-inf&quot;</span><span class="p">:</span>
+        <span class="n">float_str</span> <span class="o">=</span> <span class="n">JAVA_NEGATIVE_INFINITY</span>
+    <span class="k">elif</span> <span class="n">float_str</span> <span class="o">==</span> <span class="s2">&quot;inf&quot;</span><span class="p">:</span>
+        <span class="n">float_str</span> <span class="o">=</span> <span class="n">JAVA_INFINITY</span>
+    <span class="k">elif</span> <span class="n">float_str</span> <span class="o">==</span> <span class="s2">&quot;nan&quot;</span><span class="p">:</span>
+        <span class="n">float_str</span> <span class="o">=</span> <span class="n">JAVA_NAN</span>
+    <span class="k">return</span> <span class="n">float_str</span>
+
+
+<span class="k">def</span> <span class="nf">encode_bytearray</span><span class="p">(</span><span class="n">barray</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">isbytestr</span><span class="p">(</span><span class="n">barray</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">bytetostr</span><span class="p">(</span><span class="n">standard_b64encode</span><span class="p">(</span><span class="n">barray</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">newbytestr</span> <span class="o">=</span> <span class="n">bytestr</span><span class="p">(</span><span class="n">barray</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">bytetostr</span><span class="p">(</span><span class="n">standard_b64encode</span><span class="p">(</span><span class="n">newbytestr</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">decode_bytearray</span><span class="p">(</span><span class="n">encoded</span><span class="p">):</span>
+    <span class="n">new_bytes</span> <span class="o">=</span> <span class="n">strtobyte</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">bytearray2</span><span class="p">([</span><span class="n">bytetoint</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">standard_b64decode</span><span class="p">(</span><span class="n">new_bytes</span><span class="p">)])</span>
+
+
+<span class="k">def</span> <span class="nf">is_python_proxy</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Determines whether parameter is a Python Proxy, i.e., it has a Java</span>
+<span class="sd">    internal class with an `implements` member.</span>
+
+<span class="sd">    :param parameter: the object to check.</span>
+<span class="sd">    :rtype: True if the parameter is a Python Proxy</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">is_proxy</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">parameter</span><span class="o">.</span><span class="n">Java</span><span class="o">.</span><span class="n">implements</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">is_proxy</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">is_proxy</span>
+
+
+<span class="k">def</span> <span class="nf">get_command_part</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="n">python_proxy_pool</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts a Python object into a string representation respecting the</span>
+<span class="sd">    Py4J protocol.</span>
+
+<span class="sd">    For example, the integer `1` is converted to `u&quot;i1&quot;`</span>
+
+<span class="sd">    :param parameter: the object to convert</span>
+<span class="sd">    :rtype: the string representing the command part</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">command_part</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">NULL_TYPE</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">BOOLEAN_TYPE</span> <span class="o">+</span> <span class="n">smart_decode</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="n">Decimal</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">DECIMAL_TYPE</span> <span class="o">+</span> <span class="n">smart_decode</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">parameter</span> <span class="o">&lt;=</span> <span class="n">JAVA_MAX_INT</span>\
+            <span class="ow">and</span> <span class="n">parameter</span> <span class="o">&gt;=</span> <span class="n">JAVA_MIN_INT</span><span class="p">:</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">INTEGER_TYPE</span> <span class="o">+</span> <span class="n">smart_decode</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="n">long</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">LONG_TYPE</span> <span class="o">+</span> <span class="n">smart_decode</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">DOUBLE_TYPE</span> <span class="o">+</span> <span class="n">encode_float</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">isbytearray</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">BYTES_TYPE</span> <span class="o">+</span> <span class="n">encode_bytearray</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ispython3bytestr</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">BYTES_TYPE</span> <span class="o">+</span> <span class="n">encode_bytearray</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parameter</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">STRING_TYPE</span> <span class="o">+</span> <span class="n">escape_new_line</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">is_python_proxy</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">PYTHON_PROXY_TYPE</span> <span class="o">+</span> <span class="n">python_proxy_pool</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">interface</span> <span class="ow">in</span> <span class="n">parameter</span><span class="o">.</span><span class="n">Java</span><span class="o">.</span><span class="n">implements</span><span class="p">:</span>
+            <span class="n">command_part</span> <span class="o">+=</span> <span class="s2">&quot;;&quot;</span> <span class="o">+</span> <span class="n">interface</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">command_part</span> <span class="o">=</span> <span class="n">REFERENCE_TYPE</span> <span class="o">+</span> <span class="n">parameter</span><span class="o">.</span><span class="n">_get_object_id</span><span class="p">()</span>
+
+    <span class="n">command_part</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+    <span class="k">return</span> <span class="n">command_part</span>
+
+
+<span class="k">def</span> <span class="nf">get_return_value</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">gateway_client</span><span class="p">,</span> <span class="n">target_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Converts an answer received from the Java gateway into a Python object.</span>
+
+<span class="sd">    For example, string representation of integers are converted to Python</span>
+<span class="sd">    integer, string representation of objects are converted to JavaObject</span>
+<span class="sd">    instances, etc.</span>
+
+<span class="sd">    :param answer: the string returned by the Java gateway</span>
+<span class="sd">    :param gateway_client: the gateway client used to communicate with the Java</span>
+<span class="sd">        Gateway. Only necessary if the answer is a reference (e.g., object,</span>
+<span class="sd">        list, map)</span>
+<span class="sd">    :param target_id: the name of the object from which the answer comes from</span>
+<span class="sd">        (e.g., *object1* in `object1.hello()`). Optional.</span>
+<span class="sd">    :param name: the name of the member from which the answer comes from</span>
+<span class="sd">        (e.g., *hello* in `object1.hello()`). Optional.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_error</span><span class="p">(</span><span class="n">answer</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">type</span> <span class="o">=</span> <span class="n">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">OUTPUT_CONVERTER</span><span class="p">[</span><span class="nb">type</span><span class="p">](</span><span class="n">answer</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">gateway_client</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">REFERENCE_TYPE</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">Py4JJavaError</span><span class="p">(</span>
+                    <span class="s2">&quot;An error occurred while calling </span><span class="si">{0}{1}{2}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span>
+                    <span class="nb">format</span><span class="p">(</span><span class="n">target_id</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">Py4JError</span><span class="p">(</span>
+                    <span class="s2">&quot;An error occurred while calling </span><span class="si">{0}{1}{2}</span><span class="s2">. Trace:</span><span class="se">\n</span><span class="si">{3}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span>
+                    <span class="nb">format</span><span class="p">(</span><span class="n">target_id</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Py4JError</span><span class="p">(</span>
+                <span class="s2">&quot;An error occurred while calling </span><span class="si">{0}{1}{2}</span><span class="s2">&quot;</span><span class="o">.</span>
+                <span class="nb">format</span><span class="p">(</span><span class="n">target_id</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="n">answer</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="n">VOID_TYPE</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">OUTPUT_CONVERTER</span><span class="p">[</span><span class="nb">type</span><span class="p">](</span><span class="n">answer</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">gateway_client</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">is_error</span><span class="p">(</span><span class="n">answer</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">answer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">SUCCESS</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">register_output_converter</span><span class="p">(</span><span class="n">output_type</span><span class="p">,</span> <span class="n">converter</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Registers an output converter to the list of global output converters.</span>
+
+<span class="sd">    An output converter transforms the output of the Java side to an instance</span>
+<span class="sd">    on the Python side. For example, you could transform a java.util.ArrayList</span>
+<span class="sd">    to a Python list. See ``py4j.java_collections`` for examples.</span>
+
+<span class="sd">    :param output_type: A Py4J type of a return object (e.g., MAP_TYPE,</span>
+<span class="sd">        BOOLEAN_TYPE).</span>
+<span class="sd">    :param converter: A function that takes an object_id and a gateway_client</span>
+<span class="sd">        as parameter and that returns a Python object (like a `bool` or a</span>
+<span class="sd">        `JavaObject` instance).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">OUTPUT_CONVERTER</span>
+    <span class="n">OUTPUT_CONVERTER</span><span class="p">[</span><span class="n">output_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">converter</span>
+
+
+<div class="viewcode-block" id="register_input_converter"><a class="viewcode-back" href="../../generated/pyspark.sql.types.register_input_converter.html#pyspark.mllib.feature.register_input_converter">[docs]</a><span class="k">def</span> <span class="nf">register_input_converter</span><span class="p">(</span><span class="n">converter</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Registers an input converter to the list of global input converters.</span>
+
+<span class="sd">    An input converter transforms the input of the Python side to an instance</span>
+<span class="sd">    on the Java side. For example, you could transform a Python list into a</span>
+<span class="sd">    java.util.ArrayList on the Java side. See ``py4j.java_collections`` for</span>
+<span class="sd">    examples.</span>
+
+<span class="sd">    When initialized with `auto_convert=True`, a :class:`JavaGateway</span>
+<span class="sd">    &lt;py4j.java_gateway.JavaGateway&gt;` will use the input converters on any</span>
+<span class="sd">    parameter that is not a :class:`JavaObject &lt;py4j.java_gateway.JavaObject&gt;`</span>
+<span class="sd">    or `basestring` instance.</span>
+
+<span class="sd">    :param converter: A converter that declares the methods</span>
+<span class="sd">        `can_convert(object)` and `convert(object,gateway_client)`.</span>
+<span class="sd">    :param prepend: Put at the beginning of the input converters list</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">INPUT_CONVERTER</span>
+    <span class="k">if</span> <span class="n">prepend</span><span class="p">:</span>
+        <span class="n">INPUT_CONVERTER</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">converter</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">INPUT_CONVERTER</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">converter</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">Py4JError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a problem occurs with Py4J.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cause</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Py4JError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cause</span> <span class="o">=</span> <span class="n">cause</span>
+
+
+<span class="k">class</span> <span class="nc">Py4JNetworkError</span><span class="p">(</span><span class="n">Py4JError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a network error occurs with Py4J.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cause</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Py4JNetworkError</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cause</span> <span class="o">=</span> <span class="n">cause</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">when</span> <span class="o">=</span> <span class="n">when</span>
+
+
+<div class="viewcode-block" id="Py4JJavaError"><a class="viewcode-back" href="../../generated/pyspark.streaming.kinesis.Py4JJavaError.html#pyspark.mllib.feature.Py4JJavaError">[docs]</a><span class="k">class</span> <span class="nc">Py4JJavaError</span><span class="p">(</span><span class="n">Py4JError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when an exception occurs in the client code.</span>
+
+<span class="sd">    The exception instance that was thrown on the Java side can be accessed</span>
+<span class="sd">    with `Py4JJavaError.java_exception`.</span>
+
+<span class="sd">    `str(py4j_java_error)` returns the error message and the stack trace</span>
+<span class="sd">    available on the Java side (similar to printStackTrace()).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">java_exception</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">java_exception</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">errmsg</span> <span class="o">=</span> <span class="n">msg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">java_exception</span> <span class="o">=</span> <span class="n">java_exception</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exception_cmd</span> <span class="o">=</span> <span class="n">EXCEPTION_COMMAND_NAME</span> <span class="o">+</span> <span class="n">REFERENCE_TYPE</span> <span class="o">+</span> \
+            <span class="n">java_exception</span><span class="o">.</span><span class="n">_target_id</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">END_COMMAND_PART</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">gateway_client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">java_exception</span><span class="o">.</span><span class="n">_gateway_client</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">gateway_client</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">exception_cmd</span><span class="p">)</span>
+        <span class="n">return_value</span> <span class="o">=</span> <span class="n">get_return_value</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">gateway_client</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">: </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">errmsg</span><span class="p">,</span> <span class="n">return_value</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.2. pyspark.ml.param &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="3. pyspark.ml" href="../pyspark.ml.html"/>
+        <link rel="next" title="3.2.1.1. pyspark.ml.param.since" href="pyspark.ml.param.since.html"/>
+        <link rel="prev" title="3.1.1.5.12. pyspark.ml.Transformer.transform" href="generated/pyspark.ml.Transformer.transform.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. pyspark.ml.param</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">3.2.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.since.html">3.2.1.1. pyspark.ml.param.since</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">3.2.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.ABCMeta.html">3.2.2.1. pyspark.ml.param.ABCMeta</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.DenseVector.html">3.2.2.2. pyspark.ml.param.DenseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Identifiable.html">3.2.2.3. pyspark.ml.param.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.JavaObject.html">3.2.2.4. pyspark.ml.param.JavaObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Param.html">3.2.2.5. pyspark.ml.param.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Params.html">3.2.2.6. pyspark.ml.param.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.TypeConverters.html">3.2.2.7. pyspark.ml.param.TypeConverters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Vector.html">3.2.2.8. pyspark.ml.param.Vector</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+      <li>3.2. pyspark.ml.param</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.ml.param.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.ml.param">
+<span id="pyspark-ml-param"></span><h1>3.2. pyspark.ml.param<a class="headerlink" href="#module-pyspark.ml.param" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>3.2.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.param.since.html#pyspark.ml.param.since" title="pyspark.ml.param.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>3.2.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.param.ABCMeta.html#pyspark.ml.param.ABCMeta" title="pyspark.ml.param.ABCMeta"><code class="xref py py-obj docutils literal"><span class="pre">ABCMeta</span></code></a></td>
+<td>Metaclass for defining Abstract Base Classes (ABCs).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.param.DenseVector.html#pyspark.ml.param.DenseVector" title="pyspark.ml.param.DenseVector"><code class="xref py py-obj docutils literal"><span class="pre">DenseVector</span></code></a>(ar)</td>
+<td>A dense vector represented by a value array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.param.Identifiable.html#pyspark.ml.param.Identifiable" title="pyspark.ml.param.Identifiable"><code class="xref py py-obj docutils literal"><span class="pre">Identifiable</span></code></a>()</td>
+<td>Object with a unique ID.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.param.JavaObject.html#pyspark.ml.param.JavaObject" title="pyspark.ml.param.JavaObject"><code class="xref py py-obj docutils literal"><span class="pre">JavaObject</span></code></a>(target_id,&nbsp;gateway_client)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.param.Param.html#pyspark.ml.param.Param" title="pyspark.ml.param.Param"><code class="xref py py-obj docutils literal"><span class="pre">Param</span></code></a>(parent,&nbsp;name,&nbsp;doc[,&nbsp;typeConverter])</td>
+<td>A param with self-contained documentation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.param.Params.html#pyspark.ml.param.Params" title="pyspark.ml.param.Params"><code class="xref py py-obj docutils literal"><span class="pre">Params</span></code></a>()</td>
+<td>Components that take parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.param.TypeConverters.html#pyspark.ml.param.TypeConverters" title="pyspark.ml.param.TypeConverters"><code class="xref py py-obj docutils literal"><span class="pre">TypeConverters</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DeveloperApi</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.param.Vector.html#pyspark.ml.param.Vector" title="pyspark.ml.param.Vector"><code class="xref py py-obj docutils literal"><span class="pre">Vector</span></code></a></td>
+<td><p class="rubric">Methods</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.param.since.html" class="btn btn-neutral float-right" title="3.2.1.1. pyspark.ml.param.since" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pyspark.ml.Transformer.transform.html" class="btn btn-neutral" title="3.1.1.5.12. pyspark.ml.Transformer.transform" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

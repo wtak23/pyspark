@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.2.2.13. pyspark.streaming.kafka.RDD &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="5.2. pyspark.streaming.kafka" href="../pyspark.streaming.kafka.html"/>
+        <link rel="next" title="5.2.2.13.1. pyspark.streaming.kafka.RDD.context" href="pyspark.streaming.kafka.RDD.context.html"/>
+        <link rel="prev" title="5.2.2.12.4. pyspark.streaming.kafka.PickleSerializer.loads" href="pyspark.streaming.kafka.PickleSerializer.loads.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.html">5.1. pyspark.streaming</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#functions">5.2.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.streaming.kafka.html#classes">5.2.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.AutoBatchedSerializer.html">5.2.2.1. pyspark.streaming.kafka.AutoBatchedSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.Broker.html">5.2.2.2. pyspark.streaming.kafka.Broker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.DStream.html">5.2.2.3. pyspark.streaming.kafka.DStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaDStream.html">5.2.2.4. pyspark.streaming.kafka.KafkaDStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaMessageAndMetadata.html">5.2.2.5. pyspark.streaming.kafka.KafkaMessageAndMetadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaRDD.html">5.2.2.6. pyspark.streaming.kafka.KafkaRDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaTransformedDStream.html">5.2.2.7. pyspark.streaming.kafka.KafkaTransformedDStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaUtils.html">5.2.2.8. pyspark.streaming.kafka.KafkaUtils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.NoOpSerializer.html">5.2.2.9. pyspark.streaming.kafka.NoOpSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.OffsetRange.html">5.2.2.10. pyspark.streaming.kafka.OffsetRange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.PairDeserializer.html">5.2.2.11. pyspark.streaming.kafka.PairDeserializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.PickleSerializer.html">5.2.2.12. pyspark.streaming.kafka.PickleSerializer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">5.2.2.13. pyspark.streaming.kafka.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.StorageLevel.html">5.2.2.14. pyspark.streaming.kafka.StorageLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TopicAndPartition.html">5.2.2.15. pyspark.streaming.kafka.TopicAndPartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TransformFunction.html">5.2.2.16. pyspark.streaming.kafka.TransformFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.html">5.2.2.17. pyspark.streaming.kafka.TransformedDStream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#exceptions">5.2.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.flume.html">5.4. pyspark.streaming.flume</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.streaming.html">5. pyspark.streaming</a> &raquo;</li>
+        
+          <li><a href="../pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a> &raquo;</li>
+        
+      <li>5.2.2.13. pyspark.streaming.kafka.RDD</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.streaming.kafka.RDD.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-streaming-kafka-rdd">
+<h1>5.2.2.13. pyspark.streaming.kafka.RDD<a class="headerlink" href="#pyspark-streaming-kafka-rdd" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.streaming.kafka.RDD">
+<em class="property">class </em><code class="descclassname">pyspark.streaming.kafka.</code><code class="descname">RDD</code><span class="sig-paren">(</span><em>jrdd</em>, <em>ctx</em>, <em>jrdd_deserializer=AutoBatchedSerializer(PickleSerializer())</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/rdd.html#RDD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.kafka.RDD" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.
+Represents an immutable, partitioned collection of elements that can be
+operated on in parallel.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.context.html#pyspark.streaming.kafka.RDD.context" title="pyspark.streaming.kafka.RDD.context"><code class="xref py py-obj docutils literal"><span class="pre">context</span></code></a></td>
+<td>The L{SparkContext} that this RDD was created on.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.aggregate.html#pyspark.streaming.kafka.RDD.aggregate" title="pyspark.streaming.kafka.RDD.aggregate"><code class="xref py py-obj docutils literal"><span class="pre">aggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp)</td>
+<td>Aggregate the elements of each partition, and then the results for all</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.aggregateByKey.html#pyspark.streaming.kafka.RDD.aggregateByKey" title="pyspark.streaming.kafka.RDD.aggregateByKey"><code class="xref py py-obj docutils literal"><span class="pre">aggregateByKey</span></code></a>(zeroValue,&nbsp;seqFunc,&nbsp;combFunc)</td>
+<td>Aggregate the values of each key, using given combine functions and a neutral &#8220;zero value&#8221;.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.cache.html#pyspark.streaming.kafka.RDD.cache" title="pyspark.streaming.kafka.RDD.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<td>Persist this RDD with the default storage level (C{MEMORY_ONLY}).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.cartesian.html#pyspark.streaming.kafka.RDD.cartesian" title="pyspark.streaming.kafka.RDD.cartesian"><code class="xref py py-obj docutils literal"><span class="pre">cartesian</span></code></a>(other)</td>
+<td>Return the Cartesian product of this RDD and another one, that is, the RDD of all pairs of elements C{(a, b)} where C{a} is in C{self} and C{b} is in C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.checkpoint.html#pyspark.streaming.kafka.RDD.checkpoint" title="pyspark.streaming.kafka.RDD.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>()</td>
+<td>Mark this RDD for checkpointing.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.coalesce.html#pyspark.streaming.kafka.RDD.coalesce" title="pyspark.streaming.kafka.RDD.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(numPartitions[,&nbsp;shuffle])</td>
+<td>Return a new RDD that is reduced into <cite>numPartitions</cite> partitions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.cogroup.html#pyspark.streaming.kafka.RDD.cogroup" title="pyspark.streaming.kafka.RDD.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>For each key k in C{self} or C{other}, return a resulting RDD that contains a tuple with the list of values for that key in C{self} as well as C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.collect.html#pyspark.streaming.kafka.RDD.collect" title="pyspark.streaming.kafka.RDD.collect"><code class="xref py py-obj docutils literal"><span class="pre">collect</span></code></a>()</td>
+<td>Return a list that contains all of the elements in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.collectAsMap.html#pyspark.streaming.kafka.RDD.collectAsMap" title="pyspark.streaming.kafka.RDD.collectAsMap"><code class="xref py py-obj docutils literal"><span class="pre">collectAsMap</span></code></a>()</td>
+<td>Return the key-value pairs in this RDD to the master as a dictionary.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.combineByKey.html#pyspark.streaming.kafka.RDD.combineByKey" title="pyspark.streaming.kafka.RDD.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
+<td>Generic function to combine the elements for each key using a custom set of aggregation functions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.count.html#pyspark.streaming.kafka.RDD.count" title="pyspark.streaming.kafka.RDD.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<td>Return the number of elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.countApprox.html#pyspark.streaming.kafka.RDD.countApprox" title="pyspark.streaming.kafka.RDD.countApprox"><code class="xref py py-obj docutils literal"><span class="pre">countApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.countApproxDistinct.html#pyspark.streaming.kafka.RDD.countApproxDistinct" title="pyspark.streaming.kafka.RDD.countApproxDistinct"><code class="xref py py-obj docutils literal"><span class="pre">countApproxDistinct</span></code></a>([relativeSD])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.countByKey.html#pyspark.streaming.kafka.RDD.countByKey" title="pyspark.streaming.kafka.RDD.countByKey"><code class="xref py py-obj docutils literal"><span class="pre">countByKey</span></code></a>()</td>
+<td>Count the number of elements for each key, and return the result to the master as a dictionary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.countByValue.html#pyspark.streaming.kafka.RDD.countByValue" title="pyspark.streaming.kafka.RDD.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
+<td>Return the count of each unique value in this RDD as a dictionary of (value, count) pairs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.distinct.html#pyspark.streaming.kafka.RDD.distinct" title="pyspark.streaming.kafka.RDD.distinct"><code class="xref py py-obj docutils literal"><span class="pre">distinct</span></code></a>([numPartitions])</td>
+<td>Return a new RDD containing the distinct elements in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.filter.html#pyspark.streaming.kafka.RDD.filter" title="pyspark.streaming.kafka.RDD.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
+<td>Return a new RDD containing only the elements that satisfy a predicate.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.first.html#pyspark.streaming.kafka.RDD.first" title="pyspark.streaming.kafka.RDD.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>()</td>
+<td>Return the first element in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.flatMap.html#pyspark.streaming.kafka.RDD.flatMap" title="pyspark.streaming.kafka.RDD.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by first applying a function to all elements of this RDD, and then flattening the results.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.flatMapValues.html#pyspark.streaming.kafka.RDD.flatMapValues" title="pyspark.streaming.kafka.RDD.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
+<td>Pass each value in the key-value pair RDD through a flatMap function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.fold.html#pyspark.streaming.kafka.RDD.fold" title="pyspark.streaming.kafka.RDD.fold"><code class="xref py py-obj docutils literal"><span class="pre">fold</span></code></a>(zeroValue,&nbsp;op)</td>
+<td>Aggregate the elements of each partition, and then the results for all</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.foldByKey.html#pyspark.streaming.kafka.RDD.foldByKey" title="pyspark.streaming.kafka.RDD.foldByKey"><code class="xref py py-obj docutils literal"><span class="pre">foldByKey</span></code></a>(zeroValue,&nbsp;func[,&nbsp;numPartitions,&nbsp;...])</td>
+<td>Merge the values for each key using an associative function &#8220;func&#8221; and a neutral &#8220;zeroValue&#8221; which may be added to the result an arbitrary number of times, and must not change the result (e.g., 0 for addition, or 1 for multiplication.).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.foreach.html#pyspark.streaming.kafka.RDD.foreach" title="pyspark.streaming.kafka.RDD.foreach"><code class="xref py py-obj docutils literal"><span class="pre">foreach</span></code></a>(f)</td>
+<td>Applies a function to all elements of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.foreachPartition.html#pyspark.streaming.kafka.RDD.foreachPartition" title="pyspark.streaming.kafka.RDD.foreachPartition"><code class="xref py py-obj docutils literal"><span class="pre">foreachPartition</span></code></a>(f)</td>
+<td>Applies a function to each partition of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.fullOuterJoin.html#pyspark.streaming.kafka.RDD.fullOuterJoin" title="pyspark.streaming.kafka.RDD.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a right outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.getCheckpointFile.html#pyspark.streaming.kafka.RDD.getCheckpointFile" title="pyspark.streaming.kafka.RDD.getCheckpointFile"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointFile</span></code></a>()</td>
+<td>Gets the name of the file to which this RDD was checkpointed</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.getNumPartitions.html#pyspark.streaming.kafka.RDD.getNumPartitions" title="pyspark.streaming.kafka.RDD.getNumPartitions"><code class="xref py py-obj docutils literal"><span class="pre">getNumPartitions</span></code></a>()</td>
+<td>Returns the number of partitions in RDD</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.getStorageLevel.html#pyspark.streaming.kafka.RDD.getStorageLevel" title="pyspark.streaming.kafka.RDD.getStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">getStorageLevel</span></code></a>()</td>
+<td>Get the RDD&#8217;s current storage level.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.glom.html#pyspark.streaming.kafka.RDD.glom" title="pyspark.streaming.kafka.RDD.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
+<td>Return an RDD created by coalescing all elements within each partition into a list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.groupBy.html#pyspark.streaming.kafka.RDD.groupBy" title="pyspark.streaming.kafka.RDD.groupBy"><code class="xref py py-obj docutils literal"><span class="pre">groupBy</span></code></a>(f[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
+<td>Return an RDD of grouped items.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.groupByKey.html#pyspark.streaming.kafka.RDD.groupByKey" title="pyspark.streaming.kafka.RDD.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions,&nbsp;partitionFunc])</td>
+<td>Group the values for each key in the RDD into a single sequence.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.groupWith.html#pyspark.streaming.kafka.RDD.groupWith" title="pyspark.streaming.kafka.RDD.groupWith"><code class="xref py py-obj docutils literal"><span class="pre">groupWith</span></code></a>(other,&nbsp;*others)</td>
+<td>Alias for cogroup but with support for multiple RDDs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.histogram.html#pyspark.streaming.kafka.RDD.histogram" title="pyspark.streaming.kafka.RDD.histogram"><code class="xref py py-obj docutils literal"><span class="pre">histogram</span></code></a>(buckets)</td>
+<td>Compute a histogram using the provided buckets.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.id.html#pyspark.streaming.kafka.RDD.id" title="pyspark.streaming.kafka.RDD.id"><code class="xref py py-obj docutils literal"><span class="pre">id</span></code></a>()</td>
+<td>A unique ID for this RDD (within its SparkContext).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.intersection.html#pyspark.streaming.kafka.RDD.intersection" title="pyspark.streaming.kafka.RDD.intersection"><code class="xref py py-obj docutils literal"><span class="pre">intersection</span></code></a>(other)</td>
+<td>Return the intersection of this RDD and another one.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.isCheckpointed.html#pyspark.streaming.kafka.RDD.isCheckpointed" title="pyspark.streaming.kafka.RDD.isCheckpointed"><code class="xref py py-obj docutils literal"><span class="pre">isCheckpointed</span></code></a>()</td>
+<td>Return whether this RDD has been checkpointed or not</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.isEmpty.html#pyspark.streaming.kafka.RDD.isEmpty" title="pyspark.streaming.kafka.RDD.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<td>Returns true if and only if the RDD contains no elements at all.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.join.html#pyspark.streaming.kafka.RDD.join" title="pyspark.streaming.kafka.RDD.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return an RDD containing all pairs of elements with matching keys in C{self} and C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.keyBy.html#pyspark.streaming.kafka.RDD.keyBy" title="pyspark.streaming.kafka.RDD.keyBy"><code class="xref py py-obj docutils literal"><span class="pre">keyBy</span></code></a>(f)</td>
+<td>Creates tuples of the elements in this RDD by applying C{f}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.keys.html#pyspark.streaming.kafka.RDD.keys" title="pyspark.streaming.kafka.RDD.keys"><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code></a>()</td>
+<td>Return an RDD with the keys of each tuple.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.leftOuterJoin.html#pyspark.streaming.kafka.RDD.leftOuterJoin" title="pyspark.streaming.kafka.RDD.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a left outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.lookup.html#pyspark.streaming.kafka.RDD.lookup" title="pyspark.streaming.kafka.RDD.lookup"><code class="xref py py-obj docutils literal"><span class="pre">lookup</span></code></a>(key)</td>
+<td>Return the list of values in the RDD for key <cite>key</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.map.html#pyspark.streaming.kafka.RDD.map" title="pyspark.streaming.kafka.RDD.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by applying a function to each element of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.mapPartitions.html#pyspark.streaming.kafka.RDD.mapPartitions" title="pyspark.streaming.kafka.RDD.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by applying a function to each partition of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.mapPartitionsWithIndex.html#pyspark.streaming.kafka.RDD.mapPartitionsWithIndex" title="pyspark.streaming.kafka.RDD.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
+<td>Return a new RDD by applying a function to each partition of this RDD, while tracking the index of the original partition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.mapPartitionsWithSplit.html#pyspark.streaming.kafka.RDD.mapPartitionsWithSplit" title="pyspark.streaming.kafka.RDD.mapPartitionsWithSplit"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithSplit</span></code></a>(f[,&nbsp;...])</td>
+<td>Deprecated: use mapPartitionsWithIndex instead.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.mapValues.html#pyspark.streaming.kafka.RDD.mapValues" title="pyspark.streaming.kafka.RDD.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
+<td>Pass each value in the key-value pair RDD through a map function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.max.html#pyspark.streaming.kafka.RDD.max" title="pyspark.streaming.kafka.RDD.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a>([key])</td>
+<td>Find the maximum item in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.mean.html#pyspark.streaming.kafka.RDD.mean" title="pyspark.streaming.kafka.RDD.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a>()</td>
+<td>Compute the mean of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.meanApprox.html#pyspark.streaming.kafka.RDD.meanApprox" title="pyspark.streaming.kafka.RDD.meanApprox"><code class="xref py py-obj docutils literal"><span class="pre">meanApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.min.html#pyspark.streaming.kafka.RDD.min" title="pyspark.streaming.kafka.RDD.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a>([key])</td>
+<td>Find the minimum item in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.name.html#pyspark.streaming.kafka.RDD.name" title="pyspark.streaming.kafka.RDD.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a>()</td>
+<td>Return the name of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.partitionBy.html#pyspark.streaming.kafka.RDD.partitionBy" title="pyspark.streaming.kafka.RDD.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
+<td>Return a copy of the RDD partitioned using the specified partitioner.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.persist.html#pyspark.streaming.kafka.RDD.persist" title="pyspark.streaming.kafka.RDD.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>([storageLevel])</td>
+<td>Set this RDD&#8217;s storage level to persist its values across operations after the first time it is computed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.pipe.html#pyspark.streaming.kafka.RDD.pipe" title="pyspark.streaming.kafka.RDD.pipe"><code class="xref py py-obj docutils literal"><span class="pre">pipe</span></code></a>(command[,&nbsp;env,&nbsp;checkCode])</td>
+<td>Return an RDD created by piping elements to a forked external process.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.randomSplit.html#pyspark.streaming.kafka.RDD.randomSplit" title="pyspark.streaming.kafka.RDD.randomSplit"><code class="xref py py-obj docutils literal"><span class="pre">randomSplit</span></code></a>(weights[,&nbsp;seed])</td>
+<td>Randomly splits this RDD with the provided weights.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.reduce.html#pyspark.streaming.kafka.RDD.reduce" title="pyspark.streaming.kafka.RDD.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(f)</td>
+<td>Reduces the elements of this RDD using the specified commutative and associative binary operator.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.reduceByKey.html#pyspark.streaming.kafka.RDD.reduceByKey" title="pyspark.streaming.kafka.RDD.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
+<td>Merge the values for each key using an associative and commutative reduce function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.reduceByKeyLocally.html#pyspark.streaming.kafka.RDD.reduceByKeyLocally" title="pyspark.streaming.kafka.RDD.reduceByKeyLocally"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyLocally</span></code></a>(func)</td>
+<td>Merge the values for each key using an associative and commutative reduce function, but return the results immediately to the master as a dictionary.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.repartition.html#pyspark.streaming.kafka.RDD.repartition" title="pyspark.streaming.kafka.RDD.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
+<td>Return a new RDD that has exactly numPartitions partitions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.repartitionAndSortWithinPartitions.html#pyspark.streaming.kafka.RDD.repartitionAndSortWithinPartitions" title="pyspark.streaming.kafka.RDD.repartitionAndSortWithinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">repartitionAndSortWithinPartitions</span></code></a>([...])</td>
+<td>Repartition the RDD according to the given partitioner and, within each resulting partition, sort records by their keys.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.rightOuterJoin.html#pyspark.streaming.kafka.RDD.rightOuterJoin" title="pyspark.streaming.kafka.RDD.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a right outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sample.html#pyspark.streaming.kafka.RDD.sample" title="pyspark.streaming.kafka.RDD.sample"><code class="xref py py-obj docutils literal"><span class="pre">sample</span></code></a>(withReplacement,&nbsp;fraction[,&nbsp;seed])</td>
+<td>Return a sampled subset of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sampleByKey.html#pyspark.streaming.kafka.RDD.sampleByKey" title="pyspark.streaming.kafka.RDD.sampleByKey"><code class="xref py py-obj docutils literal"><span class="pre">sampleByKey</span></code></a>(withReplacement,&nbsp;fractions[,&nbsp;seed])</td>
+<td>Return a subset of this RDD sampled by key (via stratified sampling).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sampleStdev.html#pyspark.streaming.kafka.RDD.sampleStdev" title="pyspark.streaming.kafka.RDD.sampleStdev"><code class="xref py py-obj docutils literal"><span class="pre">sampleStdev</span></code></a>()</td>
+<td>Compute the sample standard deviation of this RDD&#8217;s elements (which corrects for bias in estimating the standard deviation by dividing by N-1 instead of N).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sampleVariance.html#pyspark.streaming.kafka.RDD.sampleVariance" title="pyspark.streaming.kafka.RDD.sampleVariance"><code class="xref py py-obj docutils literal"><span class="pre">sampleVariance</span></code></a>()</td>
+<td>Compute the sample variance of this RDD&#8217;s elements (which corrects for bias in estimating the variance by dividing by N-1 instead of N).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.saveAsHadoopDataset.html#pyspark.streaming.kafka.RDD.saveAsHadoopDataset" title="pyspark.streaming.kafka.RDD.saveAsHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopDataset</span></code></a>(conf[,&nbsp;keyConverter,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.saveAsHadoopFile.html#pyspark.streaming.kafka.RDD.saveAsHadoopFile" title="pyspark.streaming.kafka.RDD.saveAsHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopFile</span></code></a>(path,&nbsp;outputFormatClass[,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopDataset.html#pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopDataset" title="pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopDataset</span></code></a>(conf[,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopFile.html#pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopFile" title="pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopFile</span></code></a>(path,&nbsp;outputFormatClass)</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.saveAsPickleFile.html#pyspark.streaming.kafka.RDD.saveAsPickleFile" title="pyspark.streaming.kafka.RDD.saveAsPickleFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsPickleFile</span></code></a>(path[,&nbsp;batchSize])</td>
+<td>Save this RDD as a SequenceFile of serialized objects.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.saveAsSequenceFile.html#pyspark.streaming.kafka.RDD.saveAsSequenceFile" title="pyspark.streaming.kafka.RDD.saveAsSequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsSequenceFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the L{org.apache.hadoop.io.Writable} types that we convert from the RDD&#8217;s key and value types.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.saveAsTextFile.html#pyspark.streaming.kafka.RDD.saveAsTextFile" title="pyspark.streaming.kafka.RDD.saveAsTextFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
+<td>Save this RDD as a text file, using string representations of elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.setName.html#pyspark.streaming.kafka.RDD.setName" title="pyspark.streaming.kafka.RDD.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<td>Assign a name to this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sortBy.html#pyspark.streaming.kafka.RDD.sortBy" title="pyspark.streaming.kafka.RDD.sortBy"><code class="xref py py-obj docutils literal"><span class="pre">sortBy</span></code></a>(keyfunc[,&nbsp;ascending,&nbsp;numPartitions])</td>
+<td>Sorts this RDD by the given keyfunc</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sortByKey.html#pyspark.streaming.kafka.RDD.sortByKey" title="pyspark.streaming.kafka.RDD.sortByKey"><code class="xref py py-obj docutils literal"><span class="pre">sortByKey</span></code></a>([ascending,&nbsp;numPartitions,&nbsp;keyfunc])</td>
+<td>Sorts this RDD, which is assumed to consist of (key, value) pairs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.stats.html#pyspark.streaming.kafka.RDD.stats" title="pyspark.streaming.kafka.RDD.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
+<td>Return a L{StatCounter} object that captures the mean, variance and count of the RDD&#8217;s elements in one operation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.stdev.html#pyspark.streaming.kafka.RDD.stdev" title="pyspark.streaming.kafka.RDD.stdev"><code class="xref py py-obj docutils literal"><span class="pre">stdev</span></code></a>()</td>
+<td>Compute the standard deviation of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.subtract.html#pyspark.streaming.kafka.RDD.subtract" title="pyspark.streaming.kafka.RDD.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return each value in C{self} that is not contained in C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.subtractByKey.html#pyspark.streaming.kafka.RDD.subtractByKey" title="pyspark.streaming.kafka.RDD.subtractByKey"><code class="xref py py-obj docutils literal"><span class="pre">subtractByKey</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return each (key, value) pair in C{self} that has no pair with matching key in C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sum.html#pyspark.streaming.kafka.RDD.sum" title="pyspark.streaming.kafka.RDD.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>()</td>
+<td>Add up the elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.sumApprox.html#pyspark.streaming.kafka.RDD.sumApprox" title="pyspark.streaming.kafka.RDD.sumApprox"><code class="xref py py-obj docutils literal"><span class="pre">sumApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.take.html#pyspark.streaming.kafka.RDD.take" title="pyspark.streaming.kafka.RDD.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a>(num)</td>
+<td>Take the first num elements of the RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.takeOrdered.html#pyspark.streaming.kafka.RDD.takeOrdered" title="pyspark.streaming.kafka.RDD.takeOrdered"><code class="xref py py-obj docutils literal"><span class="pre">takeOrdered</span></code></a>(num[,&nbsp;key])</td>
+<td>Get the N elements from a RDD ordered in ascending order or as specified by the optional key function.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.takeSample.html#pyspark.streaming.kafka.RDD.takeSample" title="pyspark.streaming.kafka.RDD.takeSample"><code class="xref py py-obj docutils literal"><span class="pre">takeSample</span></code></a>(withReplacement,&nbsp;num[,&nbsp;seed])</td>
+<td>Return a fixed-size sampled subset of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.toDebugString.html#pyspark.streaming.kafka.RDD.toDebugString" title="pyspark.streaming.kafka.RDD.toDebugString"><code class="xref py py-obj docutils literal"><span class="pre">toDebugString</span></code></a>()</td>
+<td>A description of this RDD and its recursive dependencies for debugging.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.toLocalIterator.html#pyspark.streaming.kafka.RDD.toLocalIterator" title="pyspark.streaming.kafka.RDD.toLocalIterator"><code class="xref py py-obj docutils literal"><span class="pre">toLocalIterator</span></code></a>()</td>
+<td>Return an iterator that contains all of the elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.top.html#pyspark.streaming.kafka.RDD.top" title="pyspark.streaming.kafka.RDD.top"><code class="xref py py-obj docutils literal"><span class="pre">top</span></code></a>(num[,&nbsp;key])</td>
+<td>Get the top N elements from a RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.treeAggregate.html#pyspark.streaming.kafka.RDD.treeAggregate" title="pyspark.streaming.kafka.RDD.treeAggregate"><code class="xref py py-obj docutils literal"><span class="pre">treeAggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp[,&nbsp;depth])</td>
+<td>Aggregates the elements of this RDD in a multi-level tree pattern.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.treeReduce.html#pyspark.streaming.kafka.RDD.treeReduce" title="pyspark.streaming.kafka.RDD.treeReduce"><code class="xref py py-obj docutils literal"><span class="pre">treeReduce</span></code></a>(f[,&nbsp;depth])</td>
+<td>Reduces the elements of this RDD in a multi-level tree pattern.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.union.html#pyspark.streaming.kafka.RDD.union" title="pyspark.streaming.kafka.RDD.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<td>Return the union of this RDD and another one.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.unpersist.html#pyspark.streaming.kafka.RDD.unpersist" title="pyspark.streaming.kafka.RDD.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>()</td>
+<td>Mark the RDD as non-persistent, and remove all blocks for it from memory and disk.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.values.html#pyspark.streaming.kafka.RDD.values" title="pyspark.streaming.kafka.RDD.values"><code class="xref py py-obj docutils literal"><span class="pre">values</span></code></a>()</td>
+<td>Return an RDD with the values of each tuple.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.variance.html#pyspark.streaming.kafka.RDD.variance" title="pyspark.streaming.kafka.RDD.variance"><code class="xref py py-obj docutils literal"><span class="pre">variance</span></code></a>()</td>
+<td>Compute the variance of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.zip.html#pyspark.streaming.kafka.RDD.zip" title="pyspark.streaming.kafka.RDD.zip"><code class="xref py py-obj docutils literal"><span class="pre">zip</span></code></a>(other)</td>
+<td>Zips this RDD with another one, returning key-value pairs with the first element in each RDD second element in each RDD, etc.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.zipWithIndex.html#pyspark.streaming.kafka.RDD.zipWithIndex" title="pyspark.streaming.kafka.RDD.zipWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">zipWithIndex</span></code></a>()</td>
+<td>Zips this RDD with its element indices.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.RDD.zipWithUniqueId.html#pyspark.streaming.kafka.RDD.zipWithUniqueId" title="pyspark.streaming.kafka.RDD.zipWithUniqueId"><code class="xref py py-obj docutils literal"><span class="pre">zipWithUniqueId</span></code></a>()</td>
+<td>Zips this RDD with generated unique Long ids.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.streaming.kafka.RDD.context.html" class="btn btn-neutral float-right" title="5.2.2.13.1. pyspark.streaming.kafka.RDD.context" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.streaming.kafka.PickleSerializer.loads.html" class="btn btn-neutral" title="5.2.2.12.4. pyspark.streaming.kafka.PickleSerializer.loads" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.7. pyspark.mllib.linalg &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="4. pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="4.7.1.1. pyspark.mllib.linalg.fast_pickle_array" href="pyspark.mllib.linalg.fast_pickle_array.html"/>
+        <link rel="prev" title="4.6.2.8.40. pyspark.mllib.fpm.SparkContext.wholeTextFiles" href="generated/pyspark.mllib.fpm.SparkContext.wholeTextFiles.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7. pyspark.mllib.linalg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">4.7.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.fast_pickle_array.html">4.7.1.1. pyspark.mllib.linalg.fast_pickle_array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.since.html">4.7.1.2. pyspark.mllib.linalg.since</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">4.7.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.ArrayType.html">4.7.2.1. pyspark.mllib.linalg.ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.BooleanType.html">4.7.2.2. pyspark.mllib.linalg.BooleanType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.ByteType.html">4.7.2.3. pyspark.mllib.linalg.ByteType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.DenseMatrix.html">4.7.2.4. pyspark.mllib.linalg.DenseMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.DenseVector.html">4.7.2.5. pyspark.mllib.linalg.DenseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.DoubleType.html">4.7.2.6. pyspark.mllib.linalg.DoubleType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.IntegerType.html">4.7.2.7. pyspark.mllib.linalg.IntegerType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.Matrices.html">4.7.2.8. pyspark.mllib.linalg.Matrices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.Matrix.html">4.7.2.9. pyspark.mllib.linalg.Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.MatrixUDT.html">4.7.2.10. pyspark.mllib.linalg.MatrixUDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.QRDecomposition.html">4.7.2.11. pyspark.mllib.linalg.QRDecomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.SparseMatrix.html">4.7.2.12. pyspark.mllib.linalg.SparseMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.SparseVector.html">4.7.2.13. pyspark.mllib.linalg.SparseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.StructField.html">4.7.2.14. pyspark.mllib.linalg.StructField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.StructType.html">4.7.2.15. pyspark.mllib.linalg.StructType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.UserDefinedType.html">4.7.2.16. pyspark.mllib.linalg.UserDefinedType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.Vector.html">4.7.2.17. pyspark.mllib.linalg.Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.VectorUDT.html">4.7.2.18. pyspark.mllib.linalg.VectorUDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.Vectors.html">4.7.2.19. pyspark.mllib.linalg.Vectors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.linalg.zip.html">4.7.2.20. pyspark.mllib.linalg.zip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+      <li>4.7. pyspark.mllib.linalg</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.mllib.linalg.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.mllib.linalg">
+<span id="pyspark-mllib-linalg"></span><h1>4.7. pyspark.mllib.linalg<a class="headerlink" href="#module-pyspark.mllib.linalg" title="Permalink to this headline">¶</a></h1>
+<p>MLlib utilities for linear algebra. For dense vectors, MLlib
+uses the NumPy C{array} type, so you can simply pass NumPy arrays
+around. For sparse vectors, users can construct a L{SparseVector}
+object from MLlib or pass SciPy C{scipy.sparse} column vectors if
+SciPy is available in their environment.</p>
+<div class="section" id="functions">
+<h2>4.7.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.fast_pickle_array.html#pyspark.mllib.linalg.fast_pickle_array" title="pyspark.mllib.linalg.fast_pickle_array"><code class="xref py py-obj docutils literal"><span class="pre">fast_pickle_array</span></code></a>(ar)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.since.html#pyspark.mllib.linalg.since" title="pyspark.mllib.linalg.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>4.7.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.ArrayType.html#pyspark.mllib.linalg.ArrayType" title="pyspark.mllib.linalg.ArrayType"><code class="xref py py-obj docutils literal"><span class="pre">ArrayType</span></code></a>(elementType[,&nbsp;containsNull])</td>
+<td>Array data type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.BooleanType.html#pyspark.mllib.linalg.BooleanType" title="pyspark.mllib.linalg.BooleanType"><code class="xref py py-obj docutils literal"><span class="pre">BooleanType</span></code></a></td>
+<td>Boolean data type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.ByteType.html#pyspark.mllib.linalg.ByteType" title="pyspark.mllib.linalg.ByteType"><code class="xref py py-obj docutils literal"><span class="pre">ByteType</span></code></a></td>
+<td>Byte data type, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.DenseMatrix.html#pyspark.mllib.linalg.DenseMatrix" title="pyspark.mllib.linalg.DenseMatrix"><code class="xref py py-obj docutils literal"><span class="pre">DenseMatrix</span></code></a>(numRows,&nbsp;numCols,&nbsp;values[,&nbsp;...])</td>
+<td>Column-major dense matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.DenseVector.html#pyspark.mllib.linalg.DenseVector" title="pyspark.mllib.linalg.DenseVector"><code class="xref py py-obj docutils literal"><span class="pre">DenseVector</span></code></a>(ar)</td>
+<td>A dense vector represented by a value array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.DoubleType.html#pyspark.mllib.linalg.DoubleType" title="pyspark.mllib.linalg.DoubleType"><code class="xref py py-obj docutils literal"><span class="pre">DoubleType</span></code></a></td>
+<td>Double data type, representing double precision floats.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.IntegerType.html#pyspark.mllib.linalg.IntegerType" title="pyspark.mllib.linalg.IntegerType"><code class="xref py py-obj docutils literal"><span class="pre">IntegerType</span></code></a></td>
+<td>Int data type, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.Matrices.html#pyspark.mllib.linalg.Matrices" title="pyspark.mllib.linalg.Matrices"><code class="xref py py-obj docutils literal"><span class="pre">Matrices</span></code></a></td>
+<td><p class="rubric">Methods</p>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.Matrix.html#pyspark.mllib.linalg.Matrix" title="pyspark.mllib.linalg.Matrix"><code class="xref py py-obj docutils literal"><span class="pre">Matrix</span></code></a>(numRows,&nbsp;numCols[,&nbsp;isTransposed])</td>
+<td><p class="rubric">Methods</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.MatrixUDT.html#pyspark.mllib.linalg.MatrixUDT" title="pyspark.mllib.linalg.MatrixUDT"><code class="xref py py-obj docutils literal"><span class="pre">MatrixUDT</span></code></a></td>
+<td>SQL user-defined type (UDT) for Matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.QRDecomposition.html#pyspark.mllib.linalg.QRDecomposition" title="pyspark.mllib.linalg.QRDecomposition"><code class="xref py py-obj docutils literal"><span class="pre">QRDecomposition</span></code></a>(Q,&nbsp;R)</td>
+<td>Represents QR factors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.SparseMatrix.html#pyspark.mllib.linalg.SparseMatrix" title="pyspark.mllib.linalg.SparseMatrix"><code class="xref py py-obj docutils literal"><span class="pre">SparseMatrix</span></code></a>(numRows,&nbsp;numCols,&nbsp;colPtrs,&nbsp;...)</td>
+<td>Sparse Matrix stored in CSC format.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.SparseVector.html#pyspark.mllib.linalg.SparseVector" title="pyspark.mllib.linalg.SparseVector"><code class="xref py py-obj docutils literal"><span class="pre">SparseVector</span></code></a>(size,&nbsp;*args)</td>
+<td>A simple sparse vector class for passing data to MLlib.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.StructField.html#pyspark.mllib.linalg.StructField" title="pyspark.mllib.linalg.StructField"><code class="xref py py-obj docutils literal"><span class="pre">StructField</span></code></a>(name,&nbsp;dataType[,&nbsp;nullable,&nbsp;metadata])</td>
+<td>A field in <a class="reference internal" href="generated/pyspark.mllib.linalg.StructType.html#pyspark.mllib.linalg.StructType" title="pyspark.mllib.linalg.StructType"><code class="xref py py-class docutils literal"><span class="pre">StructType</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.StructType.html#pyspark.mllib.linalg.StructType" title="pyspark.mllib.linalg.StructType"><code class="xref py py-obj docutils literal"><span class="pre">StructType</span></code></a>([fields])</td>
+<td>Struct type, consisting of a list of <a class="reference internal" href="generated/pyspark.mllib.linalg.StructField.html#pyspark.mllib.linalg.StructField" title="pyspark.mllib.linalg.StructField"><code class="xref py py-class docutils literal"><span class="pre">StructField</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.UserDefinedType.html#pyspark.mllib.linalg.UserDefinedType" title="pyspark.mllib.linalg.UserDefinedType"><code class="xref py py-obj docutils literal"><span class="pre">UserDefinedType</span></code></a></td>
+<td>User-defined type (UDT).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.Vector.html#pyspark.mllib.linalg.Vector" title="pyspark.mllib.linalg.Vector"><code class="xref py py-obj docutils literal"><span class="pre">Vector</span></code></a></td>
+<td><p class="rubric">Methods</p>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.VectorUDT.html#pyspark.mllib.linalg.VectorUDT" title="pyspark.mllib.linalg.VectorUDT"><code class="xref py py-obj docutils literal"><span class="pre">VectorUDT</span></code></a></td>
+<td>SQL user-defined type (UDT) for Vector.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.Vectors.html#pyspark.mllib.linalg.Vectors" title="pyspark.mllib.linalg.Vectors"><code class="xref py py-obj docutils literal"><span class="pre">Vectors</span></code></a></td>
+<td>Factory methods for working with vectors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.linalg.zip.html#pyspark.mllib.linalg.zip" title="pyspark.mllib.linalg.zip"><code class="xref py py-obj docutils literal"><span class="pre">zip</span></code></a></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">izip</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.linalg.fast_pickle_array.html" class="btn btn-neutral float-right" title="4.7.1.1. pyspark.mllib.linalg.fast_pickle_array" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pyspark.mllib.fpm.SparkContext.wholeTextFiles.html" class="btn btn-neutral" title="4.6.2.8.40. pyspark.mllib.fpm.SparkContext.wholeTextFiles" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.2. pyspark.mllib.classification &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="4. pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="4.2.1.1. pyspark.mllib.classification.array" href="pyspark.mllib.classification.array.html"/>
+        <link rel="prev" title="4.1. pyspark.mllib" href="pyspark.mllib.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. pyspark.mllib.classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">4.2.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.array.html">4.2.1.1. pyspark.mllib.classification.array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.callMLlibFunc.html">4.2.1.2. pyspark.mllib.classification.callMLlibFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.exp.html">4.2.1.3. pyspark.mllib.classification.exp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.inherit_doc.html">4.2.1.4. pyspark.mllib.classification.inherit_doc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.since.html">4.2.1.5. pyspark.mllib.classification.since</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">4.2.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.DStream.html">4.2.2.1. pyspark.mllib.classification.DStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.DenseVector.html">4.2.2.2. pyspark.mllib.classification.DenseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.LabeledPoint.html">4.2.2.3. pyspark.mllib.classification.LabeledPoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.LinearClassificationModel.html">4.2.2.4. pyspark.mllib.classification.LinearClassificationModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.LinearModel.html">4.2.2.5. pyspark.mllib.classification.LinearModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.Loader.html">4.2.2.6. pyspark.mllib.classification.Loader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.LogisticRegressionModel.html">4.2.2.7. pyspark.mllib.classification.LogisticRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.LogisticRegressionWithLBFGS.html">4.2.2.8. pyspark.mllib.classification.LogisticRegressionWithLBFGS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.LogisticRegressionWithSGD.html">4.2.2.9. pyspark.mllib.classification.LogisticRegressionWithSGD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.NaiveBayes.html">4.2.2.10. pyspark.mllib.classification.NaiveBayes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.NaiveBayesModel.html">4.2.2.11. pyspark.mllib.classification.NaiveBayesModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.RDD.html">4.2.2.12. pyspark.mllib.classification.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.SVMModel.html">4.2.2.13. pyspark.mllib.classification.SVMModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.SVMWithSGD.html">4.2.2.14. pyspark.mllib.classification.SVMWithSGD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.Saveable.html">4.2.2.15. pyspark.mllib.classification.Saveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.SparseVector.html">4.2.2.16. pyspark.mllib.classification.SparseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.StreamingLinearAlgorithm.html">4.2.2.17. pyspark.mllib.classification.StreamingLinearAlgorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.mllib.classification.StreamingLogisticRegressionWithSGD.html">4.2.2.18. pyspark.mllib.classification.StreamingLogisticRegressionWithSGD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+      <li>4.2. pyspark.mllib.classification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.mllib.classification.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.mllib.classification">
+<span id="pyspark-mllib-classification"></span><h1>4.2. pyspark.mllib.classification<a class="headerlink" href="#module-pyspark.mllib.classification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>4.2.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.array.html#pyspark.mllib.classification.array" title="pyspark.mllib.classification.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>(object[,&nbsp;dtype,&nbsp;copy,&nbsp;order,&nbsp;subok,&nbsp;ndmin])</td>
+<td>Create an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.callMLlibFunc.html#pyspark.mllib.classification.callMLlibFunc" title="pyspark.mllib.classification.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.exp.html#pyspark.mllib.classification.exp" title="pyspark.mllib.classification.exp"><code class="xref py py-obj docutils literal"><span class="pre">exp</span></code></a>(x)</td>
+<td>Return e raised to the power of x.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.inherit_doc.html#pyspark.mllib.classification.inherit_doc" title="pyspark.mllib.classification.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.since.html#pyspark.mllib.classification.since" title="pyspark.mllib.classification.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>4.2.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.DStream.html#pyspark.mllib.classification.DStream" title="pyspark.mllib.classification.DStream"><code class="xref py py-obj docutils literal"><span class="pre">DStream</span></code></a>(jdstream,&nbsp;ssc,&nbsp;jrdd_deserializer)</td>
+<td>A Discretized Stream (DStream), the basic abstraction in Spark Streaming, is a continuous sequence of RDDs (of the same type) representing a continuous stream of data (see L{RDD} in the Spark core documentation for more details on RDDs).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.DenseVector.html#pyspark.mllib.classification.DenseVector" title="pyspark.mllib.classification.DenseVector"><code class="xref py py-obj docutils literal"><span class="pre">DenseVector</span></code></a>(ar)</td>
+<td>A dense vector represented by a value array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.LabeledPoint.html#pyspark.mllib.classification.LabeledPoint" title="pyspark.mllib.classification.LabeledPoint"><code class="xref py py-obj docutils literal"><span class="pre">LabeledPoint</span></code></a>(label,&nbsp;features)</td>
+<td>Class that represents the features and labels of a data point.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.LinearClassificationModel.html#pyspark.mllib.classification.LinearClassificationModel" title="pyspark.mllib.classification.LinearClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">LinearClassificationModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A private abstract class representing a multiclass classification model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.LinearModel.html#pyspark.mllib.classification.LinearModel" title="pyspark.mllib.classification.LinearModel"><code class="xref py py-obj docutils literal"><span class="pre">LinearModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A linear model that has a vector of coefficients and an intercept.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.Loader.html#pyspark.mllib.classification.Loader" title="pyspark.mllib.classification.Loader"><code class="xref py py-obj docutils literal"><span class="pre">Loader</span></code></a></td>
+<td>Mixin for classes which can load saved models from files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.LogisticRegressionModel.html#pyspark.mllib.classification.LogisticRegressionModel" title="pyspark.mllib.classification.LogisticRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionModel</span></code></a>(weights,&nbsp;intercept,&nbsp;...)</td>
+<td>Classification model trained using Multinomial/Binary Logistic Regression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.LogisticRegressionWithLBFGS.html#pyspark.mllib.classification.LogisticRegressionWithLBFGS" title="pyspark.mllib.classification.LogisticRegressionWithLBFGS"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionWithLBFGS</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.LogisticRegressionWithSGD.html#pyspark.mllib.classification.LogisticRegressionWithSGD" title="pyspark.mllib.classification.LogisticRegressionWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionWithSGD</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.NaiveBayes.html#pyspark.mllib.classification.NaiveBayes" title="pyspark.mllib.classification.NaiveBayes"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayes</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.NaiveBayesModel.html#pyspark.mllib.classification.NaiveBayesModel" title="pyspark.mllib.classification.NaiveBayesModel"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayesModel</span></code></a>(labels,&nbsp;pi,&nbsp;theta)</td>
+<td>Model for Naive Bayes classifiers.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.RDD.html#pyspark.mllib.classification.RDD" title="pyspark.mllib.classification.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.SVMModel.html#pyspark.mllib.classification.SVMModel" title="pyspark.mllib.classification.SVMModel"><code class="xref py py-obj docutils literal"><span class="pre">SVMModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>Model for Support Vector Machines (SVMs).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.SVMWithSGD.html#pyspark.mllib.classification.SVMWithSGD" title="pyspark.mllib.classification.SVMWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">SVMWithSGD</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.Saveable.html#pyspark.mllib.classification.Saveable" title="pyspark.mllib.classification.Saveable"><code class="xref py py-obj docutils literal"><span class="pre">Saveable</span></code></a></td>
+<td>Mixin for models and transformers which may be saved as files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.SparseVector.html#pyspark.mllib.classification.SparseVector" title="pyspark.mllib.classification.SparseVector"><code class="xref py py-obj docutils literal"><span class="pre">SparseVector</span></code></a>(size,&nbsp;*args)</td>
+<td>A simple sparse vector class for passing data to MLlib.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.mllib.classification.StreamingLinearAlgorithm.html#pyspark.mllib.classification.StreamingLinearAlgorithm" title="pyspark.mllib.classification.StreamingLinearAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">StreamingLinearAlgorithm</span></code></a>(model)</td>
+<td>Base class that has to be inherited by any StreamingLinearAlgorithm.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.mllib.classification.StreamingLogisticRegressionWithSGD.html#pyspark.mllib.classification.StreamingLogisticRegressionWithSGD" title="pyspark.mllib.classification.StreamingLogisticRegressionWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">StreamingLogisticRegressionWithSGD</span></code></a>([...])</td>
+<td>Train or predict a logistic regression model on streaming data.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.classification.array.html" class="btn btn-neutral float-right" title="4.2.1.1. pyspark.mllib.classification.array" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.mllib.html" class="btn btn-neutral" title="4.1. pyspark.mllib" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

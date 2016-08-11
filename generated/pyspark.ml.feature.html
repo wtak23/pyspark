@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3. pyspark.ml.feature &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="3. pyspark.ml" href="../pyspark.ml.html"/>
+        <link rel="next" title="3.3.1.1. pyspark.ml.feature.ignore_unicode_prefix" href="pyspark.ml.feature.ignore_unicode_prefix.html"/>
+        <link rel="prev" title="3.2.2.8.1. pyspark.ml.param.Vector.toArray" href="generated/pyspark.ml.param.Vector.toArray.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. pyspark.ml.feature</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">3.3.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.ignore_unicode_prefix.html">3.3.1.1. pyspark.ml.feature.ignore_unicode_prefix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.inherit_doc.html">3.3.1.2. pyspark.ml.feature.inherit_doc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.keyword_only.html">3.3.1.3. pyspark.ml.feature.keyword_only</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.since.html">3.3.1.4. pyspark.ml.feature.since</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">3.3.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Binarizer.html">3.3.2.1. pyspark.ml.feature.Binarizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Bucketizer.html">3.3.2.2. pyspark.ml.feature.Bucketizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.ChiSqSelector.html">3.3.2.3. pyspark.ml.feature.ChiSqSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.ChiSqSelectorModel.html">3.3.2.4. pyspark.ml.feature.ChiSqSelectorModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.CountVectorizer.html">3.3.2.5. pyspark.ml.feature.CountVectorizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.CountVectorizerModel.html">3.3.2.6. pyspark.ml.feature.CountVectorizerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.DCT.html">3.3.2.7. pyspark.ml.feature.DCT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.DecisionTreeParams.html">3.3.2.8. pyspark.ml.feature.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.ElementwiseProduct.html">3.3.2.9. pyspark.ml.feature.ElementwiseProduct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasCheckpointInterval.html">3.3.2.10. pyspark.ml.feature.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasElasticNetParam.html">3.3.2.11. pyspark.ml.feature.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasFeaturesCol.html">3.3.2.12. pyspark.ml.feature.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasFitIntercept.html">3.3.2.13. pyspark.ml.feature.HasFitIntercept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasHandleInvalid.html">3.3.2.14. pyspark.ml.feature.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasInputCol.html">3.3.2.15. pyspark.ml.feature.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasInputCols.html">3.3.2.16. pyspark.ml.feature.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasLabelCol.html">3.3.2.17. pyspark.ml.feature.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasMaxIter.html">3.3.2.18. pyspark.ml.feature.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasNumFeatures.html">3.3.2.19. pyspark.ml.feature.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasOutputCol.html">3.3.2.20. pyspark.ml.feature.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasPredictionCol.html">3.3.2.21. pyspark.ml.feature.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasProbabilityCol.html">3.3.2.22. pyspark.ml.feature.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasRawPredictionCol.html">3.3.2.23. pyspark.ml.feature.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasRegParam.html">3.3.2.24. pyspark.ml.feature.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasSeed.html">3.3.2.25. pyspark.ml.feature.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasSolver.html">3.3.2.26. pyspark.ml.feature.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasStandardization.html">3.3.2.27. pyspark.ml.feature.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasStepSize.html">3.3.2.28. pyspark.ml.feature.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasThresholds.html">3.3.2.29. pyspark.ml.feature.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasTol.html">3.3.2.30. pyspark.ml.feature.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasVarianceCol.html">3.3.2.31. pyspark.ml.feature.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HasWeightCol.html">3.3.2.32. pyspark.ml.feature.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.HashingTF.html">3.3.2.33. pyspark.ml.feature.HashingTF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.IDF.html">3.3.2.34. pyspark.ml.feature.IDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.IDFModel.html">3.3.2.35. pyspark.ml.feature.IDFModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.IndexToString.html">3.3.2.36. pyspark.ml.feature.IndexToString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.JavaEstimator.html">3.3.2.37. pyspark.ml.feature.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.JavaMLReadable.html">3.3.2.38. pyspark.ml.feature.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.JavaMLWritable.html">3.3.2.39. pyspark.ml.feature.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.JavaModel.html">3.3.2.40. pyspark.ml.feature.JavaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.JavaTransformer.html">3.3.2.41. pyspark.ml.feature.JavaTransformer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.MaxAbsScaler.html">3.3.2.42. pyspark.ml.feature.MaxAbsScaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.MaxAbsScalerModel.html">3.3.2.43. pyspark.ml.feature.MaxAbsScalerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.MinMaxScaler.html">3.3.2.44. pyspark.ml.feature.MinMaxScaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.MinMaxScalerModel.html">3.3.2.45. pyspark.ml.feature.MinMaxScalerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.NGram.html">3.3.2.46. pyspark.ml.feature.NGram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Normalizer.html">3.3.2.47. pyspark.ml.feature.Normalizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.OneHotEncoder.html">3.3.2.48. pyspark.ml.feature.OneHotEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.PCA.html">3.3.2.49. pyspark.ml.feature.PCA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.PCAModel.html">3.3.2.50. pyspark.ml.feature.PCAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Param.html">3.3.2.51. pyspark.ml.feature.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Params.html">3.3.2.52. pyspark.ml.feature.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.PolynomialExpansion.html">3.3.2.53. pyspark.ml.feature.PolynomialExpansion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.QuantileDiscretizer.html">3.3.2.54. pyspark.ml.feature.QuantileDiscretizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.RFormula.html">3.3.2.55. pyspark.ml.feature.RFormula</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.RFormulaModel.html">3.3.2.56. pyspark.ml.feature.RFormulaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.RegexTokenizer.html">3.3.2.57. pyspark.ml.feature.RegexTokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.SQLTransformer.html">3.3.2.58. pyspark.ml.feature.SQLTransformer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.StandardScaler.html">3.3.2.59. pyspark.ml.feature.StandardScaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.StandardScalerModel.html">3.3.2.60. pyspark.ml.feature.StandardScalerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.StopWordsRemover.html">3.3.2.61. pyspark.ml.feature.StopWordsRemover</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.StringIndexer.html">3.3.2.62. pyspark.ml.feature.StringIndexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.StringIndexerModel.html">3.3.2.63. pyspark.ml.feature.StringIndexerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Tokenizer.html">3.3.2.64. pyspark.ml.feature.Tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.TypeConverters.html">3.3.2.65. pyspark.ml.feature.TypeConverters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.VectorAssembler.html">3.3.2.66. pyspark.ml.feature.VectorAssembler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.VectorIndexer.html">3.3.2.67. pyspark.ml.feature.VectorIndexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.VectorIndexerModel.html">3.3.2.68. pyspark.ml.feature.VectorIndexerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.VectorSlicer.html">3.3.2.69. pyspark.ml.feature.VectorSlicer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Word2Vec.html">3.3.2.70. pyspark.ml.feature.Word2Vec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.feature.Word2VecModel.html">3.3.2.71. pyspark.ml.feature.Word2VecModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+      <li>3.3. pyspark.ml.feature</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.ml.feature.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.ml.feature">
+<span id="pyspark-ml-feature"></span><h1>3.3. pyspark.ml.feature<a class="headerlink" href="#module-pyspark.ml.feature" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>3.3.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ignore_unicode_prefix.html#pyspark.ml.feature.ignore_unicode_prefix" title="pyspark.ml.feature.ignore_unicode_prefix"><code class="xref py py-obj docutils literal"><span class="pre">ignore_unicode_prefix</span></code></a>(f)</td>
+<td>Ignore the &#8216;u&#8217; prefix of string in doc tests, to make it works</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.inherit_doc.html#pyspark.ml.feature.inherit_doc" title="pyspark.ml.feature.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.keyword_only.html#pyspark.ml.feature.keyword_only" title="pyspark.ml.feature.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
+<td>A decorator that forces keyword arguments in the wrapped method and saves actual input keyword arguments in <cite>_input_kwargs</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.since.html#pyspark.ml.feature.since" title="pyspark.ml.feature.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>3.3.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.Binarizer.html#pyspark.ml.feature.Binarizer" title="pyspark.ml.feature.Binarizer"><code class="xref py py-obj docutils literal"><span class="pre">Binarizer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Binarize a column of continuous features given a threshold.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.Bucketizer.html#pyspark.ml.feature.Bucketizer" title="pyspark.ml.feature.Bucketizer"><code class="xref py py-obj docutils literal"><span class="pre">Bucketizer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Maps a column of continuous features to a column of feature buckets.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.ChiSqSelector.html#pyspark.ml.feature.ChiSqSelector" title="pyspark.ml.feature.ChiSqSelector"><code class="xref py py-obj docutils literal"><span class="pre">ChiSqSelector</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.ChiSqSelectorModel.html#pyspark.ml.feature.ChiSqSelectorModel" title="pyspark.ml.feature.ChiSqSelectorModel"><code class="xref py py-obj docutils literal"><span class="pre">ChiSqSelectorModel</span></code></a>([java_model])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.CountVectorizer.html#pyspark.ml.feature.CountVectorizer" title="pyspark.ml.feature.CountVectorizer"><code class="xref py py-obj docutils literal"><span class="pre">CountVectorizer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Extracts a vocabulary from document collections and generates a <a class="reference internal" href="generated/pyspark.ml.feature.CountVectorizerModel.html#pyspark.ml.feature.CountVectorizerModel" title="pyspark.ml.feature.CountVectorizerModel"><code class="xref py py-attr docutils literal"><span class="pre">CountVectorizerModel</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.CountVectorizerModel.html#pyspark.ml.feature.CountVectorizerModel" title="pyspark.ml.feature.CountVectorizerModel"><code class="xref py py-obj docutils literal"><span class="pre">CountVectorizerModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.CountVectorizer.html#pyspark.ml.feature.CountVectorizer" title="pyspark.ml.feature.CountVectorizer"><code class="xref py py-class docutils literal"><span class="pre">CountVectorizer</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.DCT.html#pyspark.ml.feature.DCT" title="pyspark.ml.feature.DCT"><code class="xref py py-obj docutils literal"><span class="pre">DCT</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A feature transformer that takes the 1D discrete cosine transform of a real vector.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.DecisionTreeParams.html#pyspark.ml.feature.DecisionTreeParams" title="pyspark.ml.feature.DecisionTreeParams"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeParams</span></code></a>()</td>
+<td>Mixin for Decision Tree parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.ElementwiseProduct.html#pyspark.ml.feature.ElementwiseProduct" title="pyspark.ml.feature.ElementwiseProduct"><code class="xref py py-obj docutils literal"><span class="pre">ElementwiseProduct</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Outputs the Hadamard product (i.e., the element-wise product) of each input vector with a provided &#8220;weight&#8221; vector.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasCheckpointInterval.html#pyspark.ml.feature.HasCheckpointInterval" title="pyspark.ml.feature.HasCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">HasCheckpointInterval</span></code></a>()</td>
+<td>Mixin for param checkpointInterval: set checkpoint interval (&gt;= 1) or disable checkpoint (-1).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasElasticNetParam.html#pyspark.ml.feature.HasElasticNetParam" title="pyspark.ml.feature.HasElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">HasElasticNetParam</span></code></a>()</td>
+<td>Mixin for param elasticNetParam: the ElasticNet mixing parameter, in range [0, 1].</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasFeaturesCol.html#pyspark.ml.feature.HasFeaturesCol" title="pyspark.ml.feature.HasFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">HasFeaturesCol</span></code></a>()</td>
+<td>Mixin for param featuresCol: features column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasFitIntercept.html#pyspark.ml.feature.HasFitIntercept" title="pyspark.ml.feature.HasFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">HasFitIntercept</span></code></a>()</td>
+<td>Mixin for param fitIntercept: whether to fit an intercept term.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasHandleInvalid.html#pyspark.ml.feature.HasHandleInvalid" title="pyspark.ml.feature.HasHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">HasHandleInvalid</span></code></a>()</td>
+<td>Mixin for param handleInvalid: how to handle invalid entries.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasInputCol.html#pyspark.ml.feature.HasInputCol" title="pyspark.ml.feature.HasInputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCol</span></code></a>()</td>
+<td>Mixin for param inputCol: input column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasInputCols.html#pyspark.ml.feature.HasInputCols" title="pyspark.ml.feature.HasInputCols"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCols</span></code></a>()</td>
+<td>Mixin for param inputCols: input column names.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasLabelCol.html#pyspark.ml.feature.HasLabelCol" title="pyspark.ml.feature.HasLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">HasLabelCol</span></code></a>()</td>
+<td>Mixin for param labelCol: label column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasMaxIter.html#pyspark.ml.feature.HasMaxIter" title="pyspark.ml.feature.HasMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">HasMaxIter</span></code></a>()</td>
+<td>Mixin for param maxIter: max number of iterations (&gt;= 0).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasNumFeatures.html#pyspark.ml.feature.HasNumFeatures" title="pyspark.ml.feature.HasNumFeatures"><code class="xref py py-obj docutils literal"><span class="pre">HasNumFeatures</span></code></a>()</td>
+<td>Mixin for param numFeatures: number of features.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasOutputCol.html#pyspark.ml.feature.HasOutputCol" title="pyspark.ml.feature.HasOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasOutputCol</span></code></a>()</td>
+<td>Mixin for param outputCol: output column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasPredictionCol.html#pyspark.ml.feature.HasPredictionCol" title="pyspark.ml.feature.HasPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasPredictionCol</span></code></a>()</td>
+<td>Mixin for param predictionCol: prediction column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasProbabilityCol.html#pyspark.ml.feature.HasProbabilityCol" title="pyspark.ml.feature.HasProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">HasProbabilityCol</span></code></a>()</td>
+<td>Mixin for param probabilityCol: Column name for predicted class conditional probabilities.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasRawPredictionCol.html#pyspark.ml.feature.HasRawPredictionCol" title="pyspark.ml.feature.HasRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasRawPredictionCol</span></code></a>()</td>
+<td>Mixin for param rawPredictionCol: raw prediction (a.k.a.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasRegParam.html#pyspark.ml.feature.HasRegParam" title="pyspark.ml.feature.HasRegParam"><code class="xref py py-obj docutils literal"><span class="pre">HasRegParam</span></code></a>()</td>
+<td>Mixin for param regParam: regularization parameter (&gt;= 0).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasSeed.html#pyspark.ml.feature.HasSeed" title="pyspark.ml.feature.HasSeed"><code class="xref py py-obj docutils literal"><span class="pre">HasSeed</span></code></a>()</td>
+<td>Mixin for param seed: random seed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasSolver.html#pyspark.ml.feature.HasSolver" title="pyspark.ml.feature.HasSolver"><code class="xref py py-obj docutils literal"><span class="pre">HasSolver</span></code></a>()</td>
+<td>Mixin for param solver: the solver algorithm for optimization.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasStandardization.html#pyspark.ml.feature.HasStandardization" title="pyspark.ml.feature.HasStandardization"><code class="xref py py-obj docutils literal"><span class="pre">HasStandardization</span></code></a>()</td>
+<td>Mixin for param standardization: whether to standardize the training features before fitting the model.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasStepSize.html#pyspark.ml.feature.HasStepSize" title="pyspark.ml.feature.HasStepSize"><code class="xref py py-obj docutils literal"><span class="pre">HasStepSize</span></code></a>()</td>
+<td>Mixin for param stepSize: Step size to be used for each iteration of optimization (&gt;= 0).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasThresholds.html#pyspark.ml.feature.HasThresholds" title="pyspark.ml.feature.HasThresholds"><code class="xref py py-obj docutils literal"><span class="pre">HasThresholds</span></code></a>()</td>
+<td>Mixin for param thresholds: Thresholds in multi-class classification to adjust the probability of predicting each class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasTol.html#pyspark.ml.feature.HasTol" title="pyspark.ml.feature.HasTol"><code class="xref py py-obj docutils literal"><span class="pre">HasTol</span></code></a>()</td>
+<td>Mixin for param tol: the convergence tolerance for iterative algorithms (&gt;= 0).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasVarianceCol.html#pyspark.ml.feature.HasVarianceCol" title="pyspark.ml.feature.HasVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">HasVarianceCol</span></code></a>()</td>
+<td>Mixin for param varianceCol: column name for the biased sample variance of prediction.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.HasWeightCol.html#pyspark.ml.feature.HasWeightCol" title="pyspark.ml.feature.HasWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">HasWeightCol</span></code></a>()</td>
+<td>Mixin for param weightCol: weight column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.HashingTF.html#pyspark.ml.feature.HashingTF" title="pyspark.ml.feature.HashingTF"><code class="xref py py-obj docutils literal"><span class="pre">HashingTF</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Maps a sequence of terms to their term frequencies using the hashing trick.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.IDF.html#pyspark.ml.feature.IDF" title="pyspark.ml.feature.IDF"><code class="xref py py-obj docutils literal"><span class="pre">IDF</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Compute the Inverse Document Frequency (IDF) given a collection of documents.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.IDFModel.html#pyspark.ml.feature.IDFModel" title="pyspark.ml.feature.IDFModel"><code class="xref py py-obj docutils literal"><span class="pre">IDFModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.IDF.html#pyspark.ml.feature.IDF" title="pyspark.ml.feature.IDF"><code class="xref py py-class docutils literal"><span class="pre">IDF</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.IndexToString.html#pyspark.ml.feature.IndexToString" title="pyspark.ml.feature.IndexToString"><code class="xref py py-obj docutils literal"><span class="pre">IndexToString</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A <code class="xref py py-class docutils literal"><span class="pre">Transformer</span></code> that maps a column of indices back to a new column of corresponding string values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.JavaEstimator.html#pyspark.ml.feature.JavaEstimator" title="pyspark.ml.feature.JavaEstimator"><code class="xref py py-obj docutils literal"><span class="pre">JavaEstimator</span></code></a>([java_obj])</td>
+<td>Base class for :py:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Estimator`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.JavaMLReadable.html#pyspark.ml.feature.JavaMLReadable" title="pyspark.ml.feature.JavaMLReadable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLReadable</span></code></a></td>
+<td>(Private) Mixin for instances that provide JavaMLReader.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.JavaMLWritable.html#pyspark.ml.feature.JavaMLWritable" title="pyspark.ml.feature.JavaMLWritable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLWritable</span></code></a></td>
+<td>(Private) Mixin for ML instances that provide <code class="xref py py-class docutils literal"><span class="pre">JavaMLWriter</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.JavaModel.html#pyspark.ml.feature.JavaModel" title="pyspark.ml.feature.JavaModel"><code class="xref py py-obj docutils literal"><span class="pre">JavaModel</span></code></a>([java_model])</td>
+<td>Base class for :py:class:<a href="#id3"><span class="problematic" id="id4">`</span></a>Model`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.JavaTransformer.html#pyspark.ml.feature.JavaTransformer" title="pyspark.ml.feature.JavaTransformer"><code class="xref py py-obj docutils literal"><span class="pre">JavaTransformer</span></code></a>([java_obj])</td>
+<td>Base class for :py:class:<a href="#id5"><span class="problematic" id="id6">`</span></a>Transformer`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.MaxAbsScaler.html#pyspark.ml.feature.MaxAbsScaler" title="pyspark.ml.feature.MaxAbsScaler"><code class="xref py py-obj docutils literal"><span class="pre">MaxAbsScaler</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.MaxAbsScalerModel.html#pyspark.ml.feature.MaxAbsScalerModel" title="pyspark.ml.feature.MaxAbsScalerModel"><code class="xref py py-obj docutils literal"><span class="pre">MaxAbsScalerModel</span></code></a>([java_model])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.MinMaxScaler.html#pyspark.ml.feature.MinMaxScaler" title="pyspark.ml.feature.MinMaxScaler"><code class="xref py py-obj docutils literal"><span class="pre">MinMaxScaler</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Rescale each feature individually to a common range [min, max] linearly using column summary statistics, which is also known as min-max normalization or Rescaling.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.MinMaxScalerModel.html#pyspark.ml.feature.MinMaxScalerModel" title="pyspark.ml.feature.MinMaxScalerModel"><code class="xref py py-obj docutils literal"><span class="pre">MinMaxScalerModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.MinMaxScaler.html#pyspark.ml.feature.MinMaxScaler" title="pyspark.ml.feature.MinMaxScaler"><code class="xref py py-class docutils literal"><span class="pre">MinMaxScaler</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.NGram.html#pyspark.ml.feature.NGram" title="pyspark.ml.feature.NGram"><code class="xref py py-obj docutils literal"><span class="pre">NGram</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A feature transformer that converts the input array of strings into an array of n-grams.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.Normalizer.html#pyspark.ml.feature.Normalizer" title="pyspark.ml.feature.Normalizer"><code class="xref py py-obj docutils literal"><span class="pre">Normalizer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Normalize a vector to have unit norm using the given p-norm.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.OneHotEncoder.html#pyspark.ml.feature.OneHotEncoder" title="pyspark.ml.feature.OneHotEncoder"><code class="xref py py-obj docutils literal"><span class="pre">OneHotEncoder</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A one-hot encoder that maps a column of category indices to a column of binary vectors, with at most a single one-value per row that indicates the input category index.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.PCA.html#pyspark.ml.feature.PCA" title="pyspark.ml.feature.PCA"><code class="xref py py-obj docutils literal"><span class="pre">PCA</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>PCA trains a model to project vectors to a lower dimensional space of the top <code class="xref py py-attr docutils literal"><span class="pre">k</span></code> principal components.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.PCAModel.html#pyspark.ml.feature.PCAModel" title="pyspark.ml.feature.PCAModel"><code class="xref py py-obj docutils literal"><span class="pre">PCAModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.PCA.html#pyspark.ml.feature.PCA" title="pyspark.ml.feature.PCA"><code class="xref py py-class docutils literal"><span class="pre">PCA</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.Param.html#pyspark.ml.feature.Param" title="pyspark.ml.feature.Param"><code class="xref py py-obj docutils literal"><span class="pre">Param</span></code></a>(parent,&nbsp;name,&nbsp;doc[,&nbsp;typeConverter])</td>
+<td>A param with self-contained documentation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.Params.html#pyspark.ml.feature.Params" title="pyspark.ml.feature.Params"><code class="xref py py-obj docutils literal"><span class="pre">Params</span></code></a>()</td>
+<td>Components that take parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.PolynomialExpansion.html#pyspark.ml.feature.PolynomialExpansion" title="pyspark.ml.feature.PolynomialExpansion"><code class="xref py py-obj docutils literal"><span class="pre">PolynomialExpansion</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Perform feature expansion in a polynomial space.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.QuantileDiscretizer.html#pyspark.ml.feature.QuantileDiscretizer" title="pyspark.ml.feature.QuantileDiscretizer"><code class="xref py py-obj docutils literal"><span class="pre">QuantileDiscretizer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.RFormula.html#pyspark.ml.feature.RFormula" title="pyspark.ml.feature.RFormula"><code class="xref py py-obj docutils literal"><span class="pre">RFormula</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.RFormulaModel.html#pyspark.ml.feature.RFormulaModel" title="pyspark.ml.feature.RFormulaModel"><code class="xref py py-obj docutils literal"><span class="pre">RFormulaModel</span></code></a>([java_model])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.RegexTokenizer.html#pyspark.ml.feature.RegexTokenizer" title="pyspark.ml.feature.RegexTokenizer"><code class="xref py py-obj docutils literal"><span class="pre">RegexTokenizer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A regex based tokenizer that extracts tokens either by using the provided regex pattern (in Java dialect) to split the text (default) or repeatedly matching the regex (if gaps is false).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.SQLTransformer.html#pyspark.ml.feature.SQLTransformer" title="pyspark.ml.feature.SQLTransformer"><code class="xref py py-obj docutils literal"><span class="pre">SQLTransformer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Implements the transforms which are defined by SQL statement.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.StandardScaler.html#pyspark.ml.feature.StandardScaler" title="pyspark.ml.feature.StandardScaler"><code class="xref py py-obj docutils literal"><span class="pre">StandardScaler</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Standardizes features by removing the mean and scaling to unit variance using column summary statistics on the samples in the training set.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.StandardScalerModel.html#pyspark.ml.feature.StandardScalerModel" title="pyspark.ml.feature.StandardScalerModel"><code class="xref py py-obj docutils literal"><span class="pre">StandardScalerModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.StandardScaler.html#pyspark.ml.feature.StandardScaler" title="pyspark.ml.feature.StandardScaler"><code class="xref py py-class docutils literal"><span class="pre">StandardScaler</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.StopWordsRemover.html#pyspark.ml.feature.StopWordsRemover" title="pyspark.ml.feature.StopWordsRemover"><code class="xref py py-obj docutils literal"><span class="pre">StopWordsRemover</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A feature transformer that filters out stop words from input.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.StringIndexer.html#pyspark.ml.feature.StringIndexer" title="pyspark.ml.feature.StringIndexer"><code class="xref py py-obj docutils literal"><span class="pre">StringIndexer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A label indexer that maps a string column of labels to an ML column of label indices.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.StringIndexerModel.html#pyspark.ml.feature.StringIndexerModel" title="pyspark.ml.feature.StringIndexerModel"><code class="xref py py-obj docutils literal"><span class="pre">StringIndexerModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.StringIndexer.html#pyspark.ml.feature.StringIndexer" title="pyspark.ml.feature.StringIndexer"><code class="xref py py-class docutils literal"><span class="pre">StringIndexer</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.Tokenizer.html#pyspark.ml.feature.Tokenizer" title="pyspark.ml.feature.Tokenizer"><code class="xref py py-obj docutils literal"><span class="pre">Tokenizer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A tokenizer that converts the input string to lowercase and then splits it by white spaces.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.TypeConverters.html#pyspark.ml.feature.TypeConverters" title="pyspark.ml.feature.TypeConverters"><code class="xref py py-obj docutils literal"><span class="pre">TypeConverters</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DeveloperApi</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.VectorAssembler.html#pyspark.ml.feature.VectorAssembler" title="pyspark.ml.feature.VectorAssembler"><code class="xref py py-obj docutils literal"><span class="pre">VectorAssembler</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>A feature transformer that merges multiple columns into a vector column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.VectorIndexer.html#pyspark.ml.feature.VectorIndexer" title="pyspark.ml.feature.VectorIndexer"><code class="xref py py-obj docutils literal"><span class="pre">VectorIndexer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Class for indexing categorical feature columns in a dataset of <cite>Vector</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.VectorIndexerModel.html#pyspark.ml.feature.VectorIndexerModel" title="pyspark.ml.feature.VectorIndexerModel"><code class="xref py py-obj docutils literal"><span class="pre">VectorIndexerModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.VectorIndexer.html#pyspark.ml.feature.VectorIndexer" title="pyspark.ml.feature.VectorIndexer"><code class="xref py py-class docutils literal"><span class="pre">VectorIndexer</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.VectorSlicer.html#pyspark.ml.feature.VectorSlicer" title="pyspark.ml.feature.VectorSlicer"><code class="xref py py-obj docutils literal"><span class="pre">VectorSlicer</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>This class takes a feature vector and outputs a new feature vector with a subarray of the original features.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.feature.Word2Vec.html#pyspark.ml.feature.Word2Vec" title="pyspark.ml.feature.Word2Vec"><code class="xref py py-obj docutils literal"><span class="pre">Word2Vec</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Word2Vec trains a model of <cite>Map(String, Vector)</cite>, i.e.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.feature.Word2VecModel.html#pyspark.ml.feature.Word2VecModel" title="pyspark.ml.feature.Word2VecModel"><code class="xref py py-obj docutils literal"><span class="pre">Word2VecModel</span></code></a>([java_model])</td>
+<td>Model fitted by <a class="reference internal" href="generated/pyspark.ml.feature.Word2Vec.html#pyspark.ml.feature.Word2Vec" title="pyspark.ml.feature.Word2Vec"><code class="xref py py-class docutils literal"><span class="pre">Word2Vec</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.feature.ignore_unicode_prefix.html" class="btn btn-neutral float-right" title="3.3.1.1. pyspark.ml.feature.ignore_unicode_prefix" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pyspark.ml.param.Vector.toArray.html" class="btn btn-neutral" title="3.2.2.8.1. pyspark.ml.param.Vector.toArray" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

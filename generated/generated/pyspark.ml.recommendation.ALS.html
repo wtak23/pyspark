@@ -1,0 +1,526 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.7.2.1. pyspark.ml.recommendation.ALS &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="3.7. pyspark.ml.recommendation" href="../pyspark.ml.recommendation.html"/>
+        <link rel="next" title="3.7.2.1.1. pyspark.ml.recommendation.ALS.params" href="pyspark.ml.recommendation.ALS.params.html"/>
+        <link rel="prev" title="3.7.1.3. pyspark.ml.recommendation.since" href="../pyspark.ml.recommendation.since.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.ml.recommendation.html#functions">3.7.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.ml.recommendation.html#classes">3.7.2. Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3.7.2.1. pyspark.ml.recommendation.ALS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.ALSModel.html">3.7.2.2. pyspark.ml.recommendation.ALSModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.DecisionTreeParams.html">3.7.2.3. pyspark.ml.recommendation.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasCheckpointInterval.html">3.7.2.4. pyspark.ml.recommendation.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasElasticNetParam.html">3.7.2.5. pyspark.ml.recommendation.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasFeaturesCol.html">3.7.2.6. pyspark.ml.recommendation.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasFitIntercept.html">3.7.2.7. pyspark.ml.recommendation.HasFitIntercept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasHandleInvalid.html">3.7.2.8. pyspark.ml.recommendation.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasInputCol.html">3.7.2.9. pyspark.ml.recommendation.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasInputCols.html">3.7.2.10. pyspark.ml.recommendation.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasLabelCol.html">3.7.2.11. pyspark.ml.recommendation.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasMaxIter.html">3.7.2.12. pyspark.ml.recommendation.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasNumFeatures.html">3.7.2.13. pyspark.ml.recommendation.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasOutputCol.html">3.7.2.14. pyspark.ml.recommendation.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasPredictionCol.html">3.7.2.15. pyspark.ml.recommendation.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasProbabilityCol.html">3.7.2.16. pyspark.ml.recommendation.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasRawPredictionCol.html">3.7.2.17. pyspark.ml.recommendation.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasRegParam.html">3.7.2.18. pyspark.ml.recommendation.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasSeed.html">3.7.2.19. pyspark.ml.recommendation.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasSolver.html">3.7.2.20. pyspark.ml.recommendation.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasStandardization.html">3.7.2.21. pyspark.ml.recommendation.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasStepSize.html">3.7.2.22. pyspark.ml.recommendation.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasThresholds.html">3.7.2.23. pyspark.ml.recommendation.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasTol.html">3.7.2.24. pyspark.ml.recommendation.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasVarianceCol.html">3.7.2.25. pyspark.ml.recommendation.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.HasWeightCol.html">3.7.2.26. pyspark.ml.recommendation.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.Identifiable.html">3.7.2.27. pyspark.ml.recommendation.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.JavaEstimator.html">3.7.2.28. pyspark.ml.recommendation.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.JavaMLReadable.html">3.7.2.29. pyspark.ml.recommendation.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.JavaMLReader.html">3.7.2.30. pyspark.ml.recommendation.JavaMLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.JavaMLWritable.html">3.7.2.31. pyspark.ml.recommendation.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.JavaMLWriter.html">3.7.2.32. pyspark.ml.recommendation.JavaMLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.JavaModel.html">3.7.2.33. pyspark.ml.recommendation.JavaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.MLReadable.html">3.7.2.34. pyspark.ml.recommendation.MLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.MLReader.html">3.7.2.35. pyspark.ml.recommendation.MLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.MLWritable.html">3.7.2.36. pyspark.ml.recommendation.MLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.MLWriter.html">3.7.2.37. pyspark.ml.recommendation.MLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.Param.html">3.7.2.38. pyspark.ml.recommendation.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.Params.html">3.7.2.39. pyspark.ml.recommendation.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.SparkContext.html">3.7.2.40. pyspark.ml.recommendation.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.recommendation.TypeConverters.html">3.7.2.41. pyspark.ml.recommendation.TypeConverters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a> &raquo;</li>
+        
+      <li>3.7.2.1. pyspark.ml.recommendation.ALS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.ml.recommendation.ALS.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-ml-recommendation-als">
+<h1>3.7.2.1. pyspark.ml.recommendation.ALS<a class="headerlink" href="#pyspark-ml-recommendation-als" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.ml.recommendation.ALS">
+<em class="property">class </em><code class="descclassname">pyspark.ml.recommendation.</code><code class="descname">ALS</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/ml/recommendation.html#ALS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.recommendation.ALS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alternating Least Squares (ALS) matrix factorization.</p>
+<p>ALS attempts to estimate the ratings matrix <cite>R</cite> as the product of
+two lower-rank matrices, <cite>X</cite> and <cite>Y</cite>, i.e. <cite>X * Yt = R</cite>. Typically
+these approximations are called &#8216;factor&#8217; matrices. The general
+approach is iterative. During each iteration, one of the factor
+matrices is held constant, while the other is solved for using least
+squares. The newly-solved factor matrix is then held constant while
+solving for the other factor matrix.</p>
+<p>This is a blocked implementation of the ALS factorization algorithm
+that groups the two sets of factors (referred to as &#8220;users&#8221; and
+&#8220;products&#8221;) into blocks and reduces communication by only sending
+one copy of each user vector to each product block on each
+iteration, and only for the product blocks that need that user&#8217;s
+feature vector. This is achieved by pre-computing some information
+about the ratings matrix to determine the &#8220;out-links&#8221; of each user
+(which blocks of products it will contribute to) and &#8220;in-link&#8221;
+information for each product (which of the feature vectors it
+receives from each user block it will depend on). This allows us to
+send only an array of feature vectors between each user block and
+product block, and have the product block find the users&#8217; ratings
+and update the products based on these messages.</p>
+<p>For implicit preference data, the algorithm used is based on
+<a class="reference external" href="http://dx.doi.org/10.1109/ICDM.2008.22">&#8220;Collaborative Filtering for Implicit Feedback Datasets&#8221;,</a>, adapted for the blocked
+approach used here.</p>
+<p>Essentially instead of finding the low-rank approximations to the
+rating matrix <cite>R</cite>, this finds the approximations for a preference
+matrix <cite>P</cite> where the elements of <cite>P</cite> are 1 if r &gt; 0 and 0 if r &lt;= 0.
+The ratings then act as &#8216;confidence&#8217; values related to strength of
+indicated user preferences rather than explicit ratings given to
+items.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)],</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;item&quot;</span><span class="p">,</span> <span class="s2">&quot;rating&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">als</span> <span class="o">=</span> <span class="n">ALS</span><span class="p">(</span><span class="n">rank</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">als</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">rank</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">userFactors</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(id=0, features=[...]), Row(id=1, ...), Row(id=2, ...)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span> <span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;item&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictions</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">Row(user=0, item=2, prediction=-0.13807615637779236)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">Row(user=1, item=0, prediction=2.6258413791656494)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">Row(user=2, item=0, prediction=-1.5018409490585327)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">als_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/als&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">als</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">als_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">als2</span> <span class="o">=</span> <span class="n">ALS</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">als_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">als</span><span class="o">.</span><span class="n">getMaxIter</span><span class="p">()</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/als_model&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model2</span> <span class="o">=</span> <span class="n">ALSModel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">rank</span> <span class="o">==</span> <span class="n">model2</span><span class="o">.</span><span class="n">rank</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">userFactors</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span> <span class="o">==</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">model2</span><span class="o">.</span><span class="n">userFactors</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">itemFactors</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span> <span class="o">==</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">model2</span><span class="o">.</span><span class="n">itemFactors</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.0.</span></p>
+</div>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.params.html#pyspark.ml.recommendation.ALS.params" title="pyspark.ml.recommendation.ALS.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.copy.html#pyspark.ml.recommendation.ALS.copy" title="pyspark.ml.recommendation.ALS.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.explainParam.html#pyspark.ml.recommendation.ALS.explainParam" title="pyspark.ml.recommendation.ALS.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.explainParams.html#pyspark.ml.recommendation.ALS.explainParams" title="pyspark.ml.recommendation.ALS.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.extractParamMap.html#pyspark.ml.recommendation.ALS.extractParamMap" title="pyspark.ml.recommendation.ALS.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.fit.html#pyspark.ml.recommendation.ALS.fit" title="pyspark.ml.recommendation.ALS.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getAlpha.html#pyspark.ml.recommendation.ALS.getAlpha" title="pyspark.ml.recommendation.ALS.getAlpha"><code class="xref py py-obj docutils literal"><span class="pre">getAlpha</span></code></a>()</td>
+<td>Gets the value of alpha or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getCheckpointInterval.html#pyspark.ml.recommendation.ALS.getCheckpointInterval" title="pyspark.ml.recommendation.ALS.getCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointInterval</span></code></a>()</td>
+<td>Gets the value of checkpointInterval or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getFinalStorageLevel.html#pyspark.ml.recommendation.ALS.getFinalStorageLevel" title="pyspark.ml.recommendation.ALS.getFinalStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">getFinalStorageLevel</span></code></a>()</td>
+<td>Gets the value of finalStorageLevel or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getImplicitPrefs.html#pyspark.ml.recommendation.ALS.getImplicitPrefs" title="pyspark.ml.recommendation.ALS.getImplicitPrefs"><code class="xref py py-obj docutils literal"><span class="pre">getImplicitPrefs</span></code></a>()</td>
+<td>Gets the value of implicitPrefs or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getIntermediateStorageLevel.html#pyspark.ml.recommendation.ALS.getIntermediateStorageLevel" title="pyspark.ml.recommendation.ALS.getIntermediateStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">getIntermediateStorageLevel</span></code></a>()</td>
+<td>Gets the value of intermediateStorageLevel or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getItemCol.html#pyspark.ml.recommendation.ALS.getItemCol" title="pyspark.ml.recommendation.ALS.getItemCol"><code class="xref py py-obj docutils literal"><span class="pre">getItemCol</span></code></a>()</td>
+<td>Gets the value of itemCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getMaxIter.html#pyspark.ml.recommendation.ALS.getMaxIter" title="pyspark.ml.recommendation.ALS.getMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">getMaxIter</span></code></a>()</td>
+<td>Gets the value of maxIter or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getNonnegative.html#pyspark.ml.recommendation.ALS.getNonnegative" title="pyspark.ml.recommendation.ALS.getNonnegative"><code class="xref py py-obj docutils literal"><span class="pre">getNonnegative</span></code></a>()</td>
+<td>Gets the value of nonnegative or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getNumItemBlocks.html#pyspark.ml.recommendation.ALS.getNumItemBlocks" title="pyspark.ml.recommendation.ALS.getNumItemBlocks"><code class="xref py py-obj docutils literal"><span class="pre">getNumItemBlocks</span></code></a>()</td>
+<td>Gets the value of numItemBlocks or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getNumUserBlocks.html#pyspark.ml.recommendation.ALS.getNumUserBlocks" title="pyspark.ml.recommendation.ALS.getNumUserBlocks"><code class="xref py py-obj docutils literal"><span class="pre">getNumUserBlocks</span></code></a>()</td>
+<td>Gets the value of numUserBlocks or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getOrDefault.html#pyspark.ml.recommendation.ALS.getOrDefault" title="pyspark.ml.recommendation.ALS.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getParam.html#pyspark.ml.recommendation.ALS.getParam" title="pyspark.ml.recommendation.ALS.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getPredictionCol.html#pyspark.ml.recommendation.ALS.getPredictionCol" title="pyspark.ml.recommendation.ALS.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getRank.html#pyspark.ml.recommendation.ALS.getRank" title="pyspark.ml.recommendation.ALS.getRank"><code class="xref py py-obj docutils literal"><span class="pre">getRank</span></code></a>()</td>
+<td>Gets the value of rank or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getRatingCol.html#pyspark.ml.recommendation.ALS.getRatingCol" title="pyspark.ml.recommendation.ALS.getRatingCol"><code class="xref py py-obj docutils literal"><span class="pre">getRatingCol</span></code></a>()</td>
+<td>Gets the value of ratingCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getRegParam.html#pyspark.ml.recommendation.ALS.getRegParam" title="pyspark.ml.recommendation.ALS.getRegParam"><code class="xref py py-obj docutils literal"><span class="pre">getRegParam</span></code></a>()</td>
+<td>Gets the value of regParam or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getSeed.html#pyspark.ml.recommendation.ALS.getSeed" title="pyspark.ml.recommendation.ALS.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.getUserCol.html#pyspark.ml.recommendation.ALS.getUserCol" title="pyspark.ml.recommendation.ALS.getUserCol"><code class="xref py py-obj docutils literal"><span class="pre">getUserCol</span></code></a>()</td>
+<td>Gets the value of userCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.hasDefault.html#pyspark.ml.recommendation.ALS.hasDefault" title="pyspark.ml.recommendation.ALS.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.hasParam.html#pyspark.ml.recommendation.ALS.hasParam" title="pyspark.ml.recommendation.ALS.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.isDefined.html#pyspark.ml.recommendation.ALS.isDefined" title="pyspark.ml.recommendation.ALS.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.isSet.html#pyspark.ml.recommendation.ALS.isSet" title="pyspark.ml.recommendation.ALS.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.load.html#pyspark.ml.recommendation.ALS.load" title="pyspark.ml.recommendation.ALS.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.read.html#pyspark.ml.recommendation.ALS.read" title="pyspark.ml.recommendation.ALS.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.save.html#pyspark.ml.recommendation.ALS.save" title="pyspark.ml.recommendation.ALS.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setAlpha.html#pyspark.ml.recommendation.ALS.setAlpha" title="pyspark.ml.recommendation.ALS.setAlpha"><code class="xref py py-obj docutils literal"><span class="pre">setAlpha</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.alpha.html#pyspark.ml.recommendation.ALS.alpha" title="pyspark.ml.recommendation.ALS.alpha"><code class="xref py py-attr docutils literal"><span class="pre">alpha</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setCheckpointInterval.html#pyspark.ml.recommendation.ALS.setCheckpointInterval" title="pyspark.ml.recommendation.ALS.setCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointInterval</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.checkpointInterval.html#pyspark.ml.recommendation.ALS.checkpointInterval" title="pyspark.ml.recommendation.ALS.checkpointInterval"><code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setFinalStorageLevel.html#pyspark.ml.recommendation.ALS.setFinalStorageLevel" title="pyspark.ml.recommendation.ALS.setFinalStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">setFinalStorageLevel</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.finalStorageLevel.html#pyspark.ml.recommendation.ALS.finalStorageLevel" title="pyspark.ml.recommendation.ALS.finalStorageLevel"><code class="xref py py-attr docutils literal"><span class="pre">finalStorageLevel</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setImplicitPrefs.html#pyspark.ml.recommendation.ALS.setImplicitPrefs" title="pyspark.ml.recommendation.ALS.setImplicitPrefs"><code class="xref py py-obj docutils literal"><span class="pre">setImplicitPrefs</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.implicitPrefs.html#pyspark.ml.recommendation.ALS.implicitPrefs" title="pyspark.ml.recommendation.ALS.implicitPrefs"><code class="xref py py-attr docutils literal"><span class="pre">implicitPrefs</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setIntermediateStorageLevel.html#pyspark.ml.recommendation.ALS.setIntermediateStorageLevel" title="pyspark.ml.recommendation.ALS.setIntermediateStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">setIntermediateStorageLevel</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.intermediateStorageLevel.html#pyspark.ml.recommendation.ALS.intermediateStorageLevel" title="pyspark.ml.recommendation.ALS.intermediateStorageLevel"><code class="xref py py-attr docutils literal"><span class="pre">intermediateStorageLevel</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setItemCol.html#pyspark.ml.recommendation.ALS.setItemCol" title="pyspark.ml.recommendation.ALS.setItemCol"><code class="xref py py-obj docutils literal"><span class="pre">setItemCol</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.itemCol.html#pyspark.ml.recommendation.ALS.itemCol" title="pyspark.ml.recommendation.ALS.itemCol"><code class="xref py py-attr docutils literal"><span class="pre">itemCol</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setMaxIter.html#pyspark.ml.recommendation.ALS.setMaxIter" title="pyspark.ml.recommendation.ALS.setMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">setMaxIter</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.maxIter.html#pyspark.ml.recommendation.ALS.maxIter" title="pyspark.ml.recommendation.ALS.maxIter"><code class="xref py py-attr docutils literal"><span class="pre">maxIter</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setNonnegative.html#pyspark.ml.recommendation.ALS.setNonnegative" title="pyspark.ml.recommendation.ALS.setNonnegative"><code class="xref py py-obj docutils literal"><span class="pre">setNonnegative</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.nonnegative.html#pyspark.ml.recommendation.ALS.nonnegative" title="pyspark.ml.recommendation.ALS.nonnegative"><code class="xref py py-attr docutils literal"><span class="pre">nonnegative</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setNumBlocks.html#pyspark.ml.recommendation.ALS.setNumBlocks" title="pyspark.ml.recommendation.ALS.setNumBlocks"><code class="xref py py-obj docutils literal"><span class="pre">setNumBlocks</span></code></a>(value)</td>
+<td>Sets both <a class="reference internal" href="pyspark.ml.recommendation.ALS.numUserBlocks.html#pyspark.ml.recommendation.ALS.numUserBlocks" title="pyspark.ml.recommendation.ALS.numUserBlocks"><code class="xref py py-attr docutils literal"><span class="pre">numUserBlocks</span></code></a> and <a class="reference internal" href="pyspark.ml.recommendation.ALS.numItemBlocks.html#pyspark.ml.recommendation.ALS.numItemBlocks" title="pyspark.ml.recommendation.ALS.numItemBlocks"><code class="xref py py-attr docutils literal"><span class="pre">numItemBlocks</span></code></a> to the specific value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setNumItemBlocks.html#pyspark.ml.recommendation.ALS.setNumItemBlocks" title="pyspark.ml.recommendation.ALS.setNumItemBlocks"><code class="xref py py-obj docutils literal"><span class="pre">setNumItemBlocks</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.numItemBlocks.html#pyspark.ml.recommendation.ALS.numItemBlocks" title="pyspark.ml.recommendation.ALS.numItemBlocks"><code class="xref py py-attr docutils literal"><span class="pre">numItemBlocks</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setNumUserBlocks.html#pyspark.ml.recommendation.ALS.setNumUserBlocks" title="pyspark.ml.recommendation.ALS.setNumUserBlocks"><code class="xref py py-obj docutils literal"><span class="pre">setNumUserBlocks</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.numUserBlocks.html#pyspark.ml.recommendation.ALS.numUserBlocks" title="pyspark.ml.recommendation.ALS.numUserBlocks"><code class="xref py py-attr docutils literal"><span class="pre">numUserBlocks</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setParams.html#pyspark.ml.recommendation.ALS.setParams" title="pyspark.ml.recommendation.ALS.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;rank,&nbsp;maxIter,&nbsp;regParam,&nbsp;...])</td>
+<td>Sets params for ALS.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setPredictionCol.html#pyspark.ml.recommendation.ALS.setPredictionCol" title="pyspark.ml.recommendation.ALS.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.predictionCol.html#pyspark.ml.recommendation.ALS.predictionCol" title="pyspark.ml.recommendation.ALS.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setRank.html#pyspark.ml.recommendation.ALS.setRank" title="pyspark.ml.recommendation.ALS.setRank"><code class="xref py py-obj docutils literal"><span class="pre">setRank</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.rank.html#pyspark.ml.recommendation.ALS.rank" title="pyspark.ml.recommendation.ALS.rank"><code class="xref py py-attr docutils literal"><span class="pre">rank</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setRatingCol.html#pyspark.ml.recommendation.ALS.setRatingCol" title="pyspark.ml.recommendation.ALS.setRatingCol"><code class="xref py py-obj docutils literal"><span class="pre">setRatingCol</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.ratingCol.html#pyspark.ml.recommendation.ALS.ratingCol" title="pyspark.ml.recommendation.ALS.ratingCol"><code class="xref py py-attr docutils literal"><span class="pre">ratingCol</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setRegParam.html#pyspark.ml.recommendation.ALS.setRegParam" title="pyspark.ml.recommendation.ALS.setRegParam"><code class="xref py py-obj docutils literal"><span class="pre">setRegParam</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.regParam.html#pyspark.ml.recommendation.ALS.regParam" title="pyspark.ml.recommendation.ALS.regParam"><code class="xref py py-attr docutils literal"><span class="pre">regParam</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setSeed.html#pyspark.ml.recommendation.ALS.setSeed" title="pyspark.ml.recommendation.ALS.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.seed.html#pyspark.ml.recommendation.ALS.seed" title="pyspark.ml.recommendation.ALS.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.setUserCol.html#pyspark.ml.recommendation.ALS.setUserCol" title="pyspark.ml.recommendation.ALS.setUserCol"><code class="xref py py-obj docutils literal"><span class="pre">setUserCol</span></code></a>(value)</td>
+<td>Sets the value of <a class="reference internal" href="pyspark.ml.recommendation.ALS.userCol.html#pyspark.ml.recommendation.ALS.userCol" title="pyspark.ml.recommendation.ALS.userCol"><code class="xref py py-attr docutils literal"><span class="pre">userCol</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.recommendation.ALS.write.html#pyspark.ml.recommendation.ALS.write" title="pyspark.ml.recommendation.ALS.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.recommendation.ALS.params.html" class="btn btn-neutral float-right" title="3.7.2.1.1. pyspark.ml.recommendation.ALS.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pyspark.ml.recommendation.since.html" class="btn btn-neutral" title="3.7.1.3. pyspark.ml.recommendation.since" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

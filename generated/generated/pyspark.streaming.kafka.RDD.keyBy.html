@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.2.2.13.40. pyspark.streaming.kafka.RDD.keyBy &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="5.2.2.13. pyspark.streaming.kafka.RDD" href="pyspark.streaming.kafka.RDD.html"/>
+        <link rel="next" title="5.2.2.13.41. pyspark.streaming.kafka.RDD.keys" href="pyspark.streaming.kafka.RDD.keys.html"/>
+        <link rel="prev" title="5.2.2.13.39. pyspark.streaming.kafka.RDD.join" href="pyspark.streaming.kafka.RDD.join.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.html">5.1. pyspark.streaming</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#functions">5.2.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.streaming.kafka.html#classes">5.2.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.AutoBatchedSerializer.html">5.2.2.1. pyspark.streaming.kafka.AutoBatchedSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.Broker.html">5.2.2.2. pyspark.streaming.kafka.Broker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.DStream.html">5.2.2.3. pyspark.streaming.kafka.DStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaDStream.html">5.2.2.4. pyspark.streaming.kafka.KafkaDStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaMessageAndMetadata.html">5.2.2.5. pyspark.streaming.kafka.KafkaMessageAndMetadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaRDD.html">5.2.2.6. pyspark.streaming.kafka.KafkaRDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaTransformedDStream.html">5.2.2.7. pyspark.streaming.kafka.KafkaTransformedDStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.KafkaUtils.html">5.2.2.8. pyspark.streaming.kafka.KafkaUtils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.NoOpSerializer.html">5.2.2.9. pyspark.streaming.kafka.NoOpSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.OffsetRange.html">5.2.2.10. pyspark.streaming.kafka.OffsetRange</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.PairDeserializer.html">5.2.2.11. pyspark.streaming.kafka.PairDeserializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.PickleSerializer.html">5.2.2.12. pyspark.streaming.kafka.PickleSerializer</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.streaming.kafka.RDD.html">5.2.2.13. pyspark.streaming.kafka.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.StorageLevel.html">5.2.2.14. pyspark.streaming.kafka.StorageLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TopicAndPartition.html">5.2.2.15. pyspark.streaming.kafka.TopicAndPartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TransformFunction.html">5.2.2.16. pyspark.streaming.kafka.TransformFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.html">5.2.2.17. pyspark.streaming.kafka.TransformedDStream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#exceptions">5.2.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.flume.html">5.4. pyspark.streaming.flume</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.streaming.html">5. pyspark.streaming</a> &raquo;</li>
+        
+          <li><a href="../pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a> &raquo;</li>
+        
+          <li><a href="pyspark.streaming.kafka.RDD.html">5.2.2.13. pyspark.streaming.kafka.RDD</a> &raquo;</li>
+        
+      <li>5.2.2.13.40. pyspark.streaming.kafka.RDD.keyBy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.streaming.kafka.RDD.keyBy.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-streaming-kafka-rdd-keyby">
+<h1>5.2.2.13.40. pyspark.streaming.kafka.RDD.keyBy<a class="headerlink" href="#pyspark-streaming-kafka-rdd-keyby" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.streaming.kafka.RDD.keyBy">
+<code class="descclassname">RDD.</code><code class="descname">keyBy</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/rdd.html#RDD.keyBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.kafka.RDD.keyBy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates tuples of the elements in this RDD by applying C{f}.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">keyBy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">y</span><span class="p">)))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">cogroup</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())]</span>
+<span class="go">[(0, [[0], [0]]), (1, [[1], [1]]), (2, [[], [2]]), (3, [[], [3]]), (4, [[2], [4]])]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.streaming.kafka.RDD.keys.html" class="btn btn-neutral float-right" title="5.2.2.13.41. pyspark.streaming.kafka.RDD.keys" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.streaming.kafka.RDD.join.html" class="btn btn-neutral" title="5.2.2.13.39. pyspark.streaming.kafka.RDD.join" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyspark.streaming.listener &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+        <link rel="up" title="pyspark" href="../../pyspark.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.html">pyspark</a> &raquo;</li>
+        
+      <li>pyspark.streaming.listener</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyspark.streaming.listener</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
+<span class="c1"># contributor license agreements.  See the NOTICE file distributed with</span>
+<span class="c1"># this work for additional information regarding copyright ownership.</span>
+<span class="c1"># The ASF licenses this file to You under the Apache License, Version 2.0</span>
+<span class="c1"># (the &quot;License&quot;); you may not use this file except in compliance with</span>
+<span class="c1"># the License.  You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1">#</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;StreamingListener&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="StreamingListener"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.html#pyspark.streaming.StreamingListener">[docs]</a><span class="k">class</span> <span class="nc">StreamingListener</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<div class="viewcode-block" id="StreamingListener.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.__init__.html#pyspark.streaming.StreamingListener.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onReceiverStarted"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onReceiverStarted.html#pyspark.streaming.StreamingListener.onReceiverStarted">[docs]</a>    <span class="k">def</span> <span class="nf">onReceiverStarted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiverStarted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when a receiver has been started</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onReceiverError"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onReceiverError.html#pyspark.streaming.StreamingListener.onReceiverError">[docs]</a>    <span class="k">def</span> <span class="nf">onReceiverError</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiverError</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when a receiver has reported an error</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onReceiverStopped"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onReceiverStopped.html#pyspark.streaming.StreamingListener.onReceiverStopped">[docs]</a>    <span class="k">def</span> <span class="nf">onReceiverStopped</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">receiverStopped</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when a receiver has been stopped</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onBatchSubmitted"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onBatchSubmitted.html#pyspark.streaming.StreamingListener.onBatchSubmitted">[docs]</a>    <span class="k">def</span> <span class="nf">onBatchSubmitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batchSubmitted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when a batch of jobs has been submitted for processing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onBatchStarted"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onBatchStarted.html#pyspark.streaming.StreamingListener.onBatchStarted">[docs]</a>    <span class="k">def</span> <span class="nf">onBatchStarted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batchStarted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when processing of a batch of jobs has started.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onBatchCompleted"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onBatchCompleted.html#pyspark.streaming.StreamingListener.onBatchCompleted">[docs]</a>    <span class="k">def</span> <span class="nf">onBatchCompleted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batchCompleted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when processing of a batch of jobs has completed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onOutputOperationStarted"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onOutputOperationStarted.html#pyspark.streaming.StreamingListener.onOutputOperationStarted">[docs]</a>    <span class="k">def</span> <span class="nf">onOutputOperationStarted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputOperationStarted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when processing of a job of a batch has started.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="StreamingListener.onOutputOperationCompleted"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingListener.onOutputOperationCompleted.html#pyspark.streaming.StreamingListener.onOutputOperationCompleted">[docs]</a>    <span class="k">def</span> <span class="nf">onOutputOperationCompleted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outputOperationCompleted</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Called when processing of a job of a batch has completed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+    <span class="k">class</span> <span class="nc">Java</span><span class="p">:</span>
+        <span class="n">implements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;org.apache.spark.streaming.api.java.PythonStreamingListener&quot;</span><span class="p">]</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

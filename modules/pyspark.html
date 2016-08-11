@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyspark &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../generated/pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>pyspark</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyspark</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
+<span class="c1"># contributor license agreements.  See the NOTICE file distributed with</span>
+<span class="c1"># this work for additional information regarding copyright ownership.</span>
+<span class="c1"># The ASF licenses this file to You under the Apache License, Version 2.0</span>
+<span class="c1"># (the &quot;License&quot;); you may not use this file except in compliance with</span>
+<span class="c1"># the License.  You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1">#</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">PySpark is the Python API for Spark.</span>
+
+<span class="sd">Public classes:</span>
+
+<span class="sd">  - :class:`SparkContext`:</span>
+<span class="sd">      Main entry point for Spark functionality.</span>
+<span class="sd">  - :class:`RDD`:</span>
+<span class="sd">      A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</span>
+<span class="sd">  - :class:`Broadcast`:</span>
+<span class="sd">      A broadcast variable that gets reused across tasks.</span>
+<span class="sd">  - :class:`Accumulator`:</span>
+<span class="sd">      An &quot;add-only&quot; shared variable that tasks can only add values to.</span>
+<span class="sd">  - :class:`SparkConf`:</span>
+<span class="sd">      For configuring Spark.</span>
+<span class="sd">  - :class:`SparkFiles`:</span>
+<span class="sd">      Access files shipped with jobs.</span>
+<span class="sd">  - :class:`StorageLevel`:</span>
+<span class="sd">      Finer-grained cache persistence levels.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
+<span class="kn">import</span> <span class="nn">types</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.conf</span> <span class="k">import</span> <span class="n">SparkConf</span>
+<span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="k">import</span> <span class="n">RDD</span>
+<span class="kn">from</span> <span class="nn">pyspark.files</span> <span class="k">import</span> <span class="n">SparkFiles</span>
+<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="k">import</span> <span class="n">StorageLevel</span>
+<span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="k">import</span> <span class="n">Accumulator</span><span class="p">,</span> <span class="n">AccumulatorParam</span>
+<span class="kn">from</span> <span class="nn">pyspark.broadcast</span> <span class="k">import</span> <span class="n">Broadcast</span>
+<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="k">import</span> <span class="n">MarshalSerializer</span><span class="p">,</span> <span class="n">PickleSerializer</span>
+<span class="kn">from</span> <span class="nn">pyspark.status</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.profiler</span> <span class="k">import</span> <span class="n">Profiler</span><span class="p">,</span> <span class="n">BasicProfiler</span>
+
+
+<div class="viewcode-block" id="since"><a class="viewcode-back" href="../generated/pyspark.sql.streaming.since.html#pyspark.since">[docs]</a><span class="k">def</span> <span class="nf">since</span><span class="p">(</span><span class="n">version</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A decorator that annotates a function to append the version of Spark the function was added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">re</span>
+    <span class="n">indent_p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">r&#39;\n( +)&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">indents</span> <span class="o">=</span> <span class="n">indent_p</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__doc__</span><span class="p">)</span>
+        <span class="n">indent</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">indents</span><span class="p">)</span> <span class="k">if</span> <span class="n">indents</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="si">%s</span><span class="s2">.. versionadded:: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">indent</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span>
+    <span class="k">return</span> <span class="n">deco</span></div>
+
+
+<div class="viewcode-block" id="copy_func"><a class="viewcode-back" href="../generated/pyspark.copy_func.html#pyspark.copy_func">[docs]</a><span class="k">def</span> <span class="nf">copy_func</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sinceversion</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a function with same code, globals, defaults, closure, and</span>
+<span class="sd">    name (or provide a new name).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># See</span>
+    <span class="c1"># http://stackoverflow.com/questions/6527633/how-can-i-make-a-deepcopy-of-a-function-in-python</span>
+    <span class="n">fn</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__code__</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__globals__</span><span class="p">,</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">__defaults__</span><span class="p">,</span>
+                            <span class="n">f</span><span class="o">.</span><span class="n">__closure__</span><span class="p">)</span>
+    <span class="c1"># in case f was given attrs (note this dict is a shallow copy):</span>
+    <span class="n">fn</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__dict__</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">doc</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fn</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">doc</span>
+    <span class="k">if</span> <span class="n">sinceversion</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">since</span><span class="p">(</span><span class="n">sinceversion</span><span class="p">)(</span><span class="n">fn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fn</span></div>
+
+
+<div class="viewcode-block" id="keyword_only"><a class="viewcode-back" href="../generated/pyspark.sql.streaming.keyword_only.html#pyspark.keyword_only">[docs]</a><span class="k">def</span> <span class="nf">keyword_only</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A decorator that forces keyword arguments in the wrapped method</span>
+<span class="sd">    and saves actual input keyword arguments in `_input_kwargs`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Method </span><span class="si">%s</span><span class="s2"> forces keyword arguments.&quot;</span> <span class="o">%</span> <span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+        <span class="n">wrapper</span><span class="o">.</span><span class="n">_input_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span></div>
+
+
+<span class="c1"># for back compatibility</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SQLContext</span><span class="p">,</span> <span class="n">HiveContext</span><span class="p">,</span> <span class="n">Row</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;SparkConf&quot;</span><span class="p">,</span> <span class="s2">&quot;SparkContext&quot;</span><span class="p">,</span> <span class="s2">&quot;SparkFiles&quot;</span><span class="p">,</span> <span class="s2">&quot;RDD&quot;</span><span class="p">,</span> <span class="s2">&quot;StorageLevel&quot;</span><span class="p">,</span> <span class="s2">&quot;Broadcast&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Accumulator&quot;</span><span class="p">,</span> <span class="s2">&quot;AccumulatorParam&quot;</span><span class="p">,</span> <span class="s2">&quot;MarshalSerializer&quot;</span><span class="p">,</span> <span class="s2">&quot;PickleSerializer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;StatusTracker&quot;</span><span class="p">,</span> <span class="s2">&quot;SparkJobInfo&quot;</span><span class="p">,</span> <span class="s2">&quot;SparkStageInfo&quot;</span><span class="p">,</span> <span class="s2">&quot;Profiler&quot;</span><span class="p">,</span> <span class="s2">&quot;BasicProfiler&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

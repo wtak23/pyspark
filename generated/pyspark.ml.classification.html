@@ -1,0 +1,634 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.4. pyspark.ml.classification &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="3. pyspark.ml" href="../pyspark.ml.html"/>
+        <link rel="next" title="3.4.1.1. pyspark.ml.classification.inherit_doc" href="pyspark.ml.classification.inherit_doc.html"/>
+        <link rel="prev" title="3.3.2.71.18. pyspark.ml.feature.Word2VecModel.write" href="generated/pyspark.ml.feature.Word2VecModel.write.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. pyspark.ml.classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">3.4.1. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.inherit_doc.html">3.4.1.1. pyspark.ml.classification.inherit_doc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.keyword_only.html">3.4.1.2. pyspark.ml.classification.keyword_only</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.since.html">3.4.1.3. pyspark.ml.classification.since</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.udf.html">3.4.1.4. pyspark.ml.classification.udf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.when.html">3.4.1.5. pyspark.ml.classification.when</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">3.4.2. Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.ArrayType.html">3.4.2.1. pyspark.ml.classification.ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.BinaryLogisticRegressionSummary.html">3.4.2.2. pyspark.ml.classification.BinaryLogisticRegressionSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.BinaryLogisticRegressionTrainingSummary.html">3.4.2.3. pyspark.ml.classification.BinaryLogisticRegressionTrainingSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.DataFrame.html">3.4.2.4. pyspark.ml.classification.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeClassificationModel.html">3.4.2.5. pyspark.ml.classification.DecisionTreeClassificationModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeClassifier.html">3.4.2.6. pyspark.ml.classification.DecisionTreeClassifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeModel.html">3.4.2.7. pyspark.ml.classification.DecisionTreeModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeParams.html">3.4.2.8. pyspark.ml.classification.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeRegressionModel.html">3.4.2.9. pyspark.ml.classification.DecisionTreeRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.DoubleType.html">3.4.2.10. pyspark.ml.classification.DoubleType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.Estimator.html">3.4.2.11. pyspark.ml.classification.Estimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.GBTClassificationModel.html">3.4.2.12. pyspark.ml.classification.GBTClassificationModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.GBTClassifier.html">3.4.2.13. pyspark.ml.classification.GBTClassifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.GBTParams.html">3.4.2.14. pyspark.ml.classification.GBTParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasCheckpointInterval.html">3.4.2.15. pyspark.ml.classification.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasElasticNetParam.html">3.4.2.16. pyspark.ml.classification.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasFeaturesCol.html">3.4.2.17. pyspark.ml.classification.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasFitIntercept.html">3.4.2.18. pyspark.ml.classification.HasFitIntercept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasHandleInvalid.html">3.4.2.19. pyspark.ml.classification.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasInputCol.html">3.4.2.20. pyspark.ml.classification.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasInputCols.html">3.4.2.21. pyspark.ml.classification.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasLabelCol.html">3.4.2.22. pyspark.ml.classification.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasMaxIter.html">3.4.2.23. pyspark.ml.classification.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasNumFeatures.html">3.4.2.24. pyspark.ml.classification.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasOutputCol.html">3.4.2.25. pyspark.ml.classification.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasPredictionCol.html">3.4.2.26. pyspark.ml.classification.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasProbabilityCol.html">3.4.2.27. pyspark.ml.classification.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasRawPredictionCol.html">3.4.2.28. pyspark.ml.classification.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasRegParam.html">3.4.2.29. pyspark.ml.classification.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasSeed.html">3.4.2.30. pyspark.ml.classification.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasSolver.html">3.4.2.31. pyspark.ml.classification.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasStandardization.html">3.4.2.32. pyspark.ml.classification.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasStepSize.html">3.4.2.33. pyspark.ml.classification.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasThresholds.html">3.4.2.34. pyspark.ml.classification.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasTol.html">3.4.2.35. pyspark.ml.classification.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasVarianceCol.html">3.4.2.36. pyspark.ml.classification.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.HasWeightCol.html">3.4.2.37. pyspark.ml.classification.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.Identifiable.html">3.4.2.38. pyspark.ml.classification.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaEstimator.html">3.4.2.39. pyspark.ml.classification.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLReadable.html">3.4.2.40. pyspark.ml.classification.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLReader.html">3.4.2.41. pyspark.ml.classification.JavaMLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLWritable.html">3.4.2.42. pyspark.ml.classification.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLWriter.html">3.4.2.43. pyspark.ml.classification.JavaMLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaModel.html">3.4.2.44. pyspark.ml.classification.JavaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaParams.html">3.4.2.45. pyspark.ml.classification.JavaParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.JavaWrapper.html">3.4.2.46. pyspark.ml.classification.JavaWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegression.html">3.4.2.47. pyspark.ml.classification.LogisticRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegressionModel.html">3.4.2.48. pyspark.ml.classification.LogisticRegressionModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegressionSummary.html">3.4.2.49. pyspark.ml.classification.LogisticRegressionSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegressionTrainingSummary.html">3.4.2.50. pyspark.ml.classification.LogisticRegressionTrainingSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.MLReadable.html">3.4.2.51. pyspark.ml.classification.MLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.MLReader.html">3.4.2.52. pyspark.ml.classification.MLReader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.MLWritable.html">3.4.2.53. pyspark.ml.classification.MLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.MLWriter.html">3.4.2.54. pyspark.ml.classification.MLWriter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.Model.html">3.4.2.55. pyspark.ml.classification.Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.MultilayerPerceptronClassificationModel.html">3.4.2.56. pyspark.ml.classification.MultilayerPerceptronClassificationModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.MultilayerPerceptronClassifier.html">3.4.2.57. pyspark.ml.classification.MultilayerPerceptronClassifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.NaiveBayes.html">3.4.2.58. pyspark.ml.classification.NaiveBayes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.NaiveBayesModel.html">3.4.2.59. pyspark.ml.classification.NaiveBayesModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.OneVsRest.html">3.4.2.60. pyspark.ml.classification.OneVsRest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.OneVsRestModel.html">3.4.2.61. pyspark.ml.classification.OneVsRestModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.OneVsRestParams.html">3.4.2.62. pyspark.ml.classification.OneVsRestParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.Param.html">3.4.2.63. pyspark.ml.classification.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.Params.html">3.4.2.64. pyspark.ml.classification.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.RandomForestClassificationModel.html">3.4.2.65. pyspark.ml.classification.RandomForestClassificationModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.RandomForestClassifier.html">3.4.2.66. pyspark.ml.classification.RandomForestClassifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.RandomForestParams.html">3.4.2.67. pyspark.ml.classification.RandomForestParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.SparkContext.html">3.4.2.68. pyspark.ml.classification.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.StorageLevel.html">3.4.2.69. pyspark.ml.classification.StorageLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.TreeClassifierParams.html">3.4.2.70. pyspark.ml.classification.TreeClassifierParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.TreeEnsembleModels.html">3.4.2.71. pyspark.ml.classification.TreeEnsembleModels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.TreeEnsembleParams.html">3.4.2.72. pyspark.ml.classification.TreeEnsembleParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.classification.TypeConverters.html">3.4.2.73. pyspark.ml.classification.TypeConverters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+      <li>3.4. pyspark.ml.classification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.ml.classification.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark.ml.classification">
+<span id="pyspark-ml-classification"></span><h1>3.4. pyspark.ml.classification<a class="headerlink" href="#module-pyspark.ml.classification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>3.4.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.inherit_doc.html#pyspark.ml.classification.inherit_doc" title="pyspark.ml.classification.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.keyword_only.html#pyspark.ml.classification.keyword_only" title="pyspark.ml.classification.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
+<td>A decorator that forces keyword arguments in the wrapped method and saves actual input keyword arguments in <cite>_input_kwargs</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.since.html#pyspark.ml.classification.since" title="pyspark.ml.classification.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.udf.html#pyspark.ml.classification.udf" title="pyspark.ml.classification.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a>(f[,&nbsp;returnType])</td>
+<td>Creates a <code class="xref py py-class docutils literal"><span class="pre">Column</span></code> expression representing a user defined function (UDF).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.when.html#pyspark.ml.classification.when" title="pyspark.ml.classification.when"><code class="xref py py-obj docutils literal"><span class="pre">when</span></code></a>(condition,&nbsp;value)</td>
+<td>Evaluates a list of conditions and returns one of multiple possible result expressions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>3.4.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.ArrayType.html#pyspark.ml.classification.ArrayType" title="pyspark.ml.classification.ArrayType"><code class="xref py py-obj docutils literal"><span class="pre">ArrayType</span></code></a>(elementType[,&nbsp;containsNull])</td>
+<td>Array data type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.BinaryLogisticRegressionSummary.html#pyspark.ml.classification.BinaryLogisticRegressionSummary" title="pyspark.ml.classification.BinaryLogisticRegressionSummary"><code class="xref py py-obj docutils literal"><span class="pre">BinaryLogisticRegressionSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.BinaryLogisticRegressionTrainingSummary.html#pyspark.ml.classification.BinaryLogisticRegressionTrainingSummary" title="pyspark.ml.classification.BinaryLogisticRegressionTrainingSummary"><code class="xref py py-obj docutils literal"><span class="pre">BinaryLogisticRegressionTrainingSummary</span></code></a>([...])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.DataFrame.html#pyspark.ml.classification.DataFrame" title="pyspark.ml.classification.DataFrame"><code class="xref py py-obj docutils literal"><span class="pre">DataFrame</span></code></a>(jdf,&nbsp;sql_ctx)</td>
+<td>A distributed collection of data grouped into named columns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeClassificationModel.html#pyspark.ml.classification.DecisionTreeClassificationModel" title="pyspark.ml.classification.DecisionTreeClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeClassificationModel</span></code></a>([java_model])</td>
+<td>Model fitted by DecisionTreeClassifier.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeClassifier.html#pyspark.ml.classification.DecisionTreeClassifier" title="pyspark.ml.classification.DecisionTreeClassifier"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Decision_tree_learning">Decision tree</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeModel.html#pyspark.ml.classification.DecisionTreeModel" title="pyspark.ml.classification.DecisionTreeModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeModel</span></code></a>([java_model])</td>
+<td>Abstraction for Decision Tree models.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeParams.html#pyspark.ml.classification.DecisionTreeParams" title="pyspark.ml.classification.DecisionTreeParams"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeParams</span></code></a>()</td>
+<td>Mixin for Decision Tree parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.DecisionTreeRegressionModel.html#pyspark.ml.classification.DecisionTreeRegressionModel" title="pyspark.ml.classification.DecisionTreeRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by <code class="xref py py-class docutils literal"><span class="pre">DecisionTreeRegressor</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.DoubleType.html#pyspark.ml.classification.DoubleType" title="pyspark.ml.classification.DoubleType"><code class="xref py py-obj docutils literal"><span class="pre">DoubleType</span></code></a></td>
+<td>Double data type, representing double precision floats.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.Estimator.html#pyspark.ml.classification.Estimator" title="pyspark.ml.classification.Estimator"><code class="xref py py-obj docutils literal"><span class="pre">Estimator</span></code></a>()</td>
+<td>Abstract class for estimators that fit models to data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.GBTClassificationModel.html#pyspark.ml.classification.GBTClassificationModel" title="pyspark.ml.classification.GBTClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">GBTClassificationModel</span></code></a>([java_model])</td>
+<td>Model fitted by GBTClassifier.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.GBTClassifier.html#pyspark.ml.classification.GBTClassifier" title="pyspark.ml.classification.GBTClassifier"><code class="xref py py-obj docutils literal"><span class="pre">GBTClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Gradient_boosting">Gradient-Boosted Trees (GBTs)</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.GBTParams.html#pyspark.ml.classification.GBTParams" title="pyspark.ml.classification.GBTParams"><code class="xref py py-obj docutils literal"><span class="pre">GBTParams</span></code></a>()</td>
+<td>Private class to track supported GBT params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasCheckpointInterval.html#pyspark.ml.classification.HasCheckpointInterval" title="pyspark.ml.classification.HasCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">HasCheckpointInterval</span></code></a>()</td>
+<td>Mixin for param checkpointInterval: set checkpoint interval (&gt;= 1) or disable checkpoint (-1).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasElasticNetParam.html#pyspark.ml.classification.HasElasticNetParam" title="pyspark.ml.classification.HasElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">HasElasticNetParam</span></code></a>()</td>
+<td>Mixin for param elasticNetParam: the ElasticNet mixing parameter, in range [0, 1].</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasFeaturesCol.html#pyspark.ml.classification.HasFeaturesCol" title="pyspark.ml.classification.HasFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">HasFeaturesCol</span></code></a>()</td>
+<td>Mixin for param featuresCol: features column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasFitIntercept.html#pyspark.ml.classification.HasFitIntercept" title="pyspark.ml.classification.HasFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">HasFitIntercept</span></code></a>()</td>
+<td>Mixin for param fitIntercept: whether to fit an intercept term.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasHandleInvalid.html#pyspark.ml.classification.HasHandleInvalid" title="pyspark.ml.classification.HasHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">HasHandleInvalid</span></code></a>()</td>
+<td>Mixin for param handleInvalid: how to handle invalid entries.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasInputCol.html#pyspark.ml.classification.HasInputCol" title="pyspark.ml.classification.HasInputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCol</span></code></a>()</td>
+<td>Mixin for param inputCol: input column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasInputCols.html#pyspark.ml.classification.HasInputCols" title="pyspark.ml.classification.HasInputCols"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCols</span></code></a>()</td>
+<td>Mixin for param inputCols: input column names.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasLabelCol.html#pyspark.ml.classification.HasLabelCol" title="pyspark.ml.classification.HasLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">HasLabelCol</span></code></a>()</td>
+<td>Mixin for param labelCol: label column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasMaxIter.html#pyspark.ml.classification.HasMaxIter" title="pyspark.ml.classification.HasMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">HasMaxIter</span></code></a>()</td>
+<td>Mixin for param maxIter: max number of iterations (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasNumFeatures.html#pyspark.ml.classification.HasNumFeatures" title="pyspark.ml.classification.HasNumFeatures"><code class="xref py py-obj docutils literal"><span class="pre">HasNumFeatures</span></code></a>()</td>
+<td>Mixin for param numFeatures: number of features.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasOutputCol.html#pyspark.ml.classification.HasOutputCol" title="pyspark.ml.classification.HasOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasOutputCol</span></code></a>()</td>
+<td>Mixin for param outputCol: output column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasPredictionCol.html#pyspark.ml.classification.HasPredictionCol" title="pyspark.ml.classification.HasPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasPredictionCol</span></code></a>()</td>
+<td>Mixin for param predictionCol: prediction column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasProbabilityCol.html#pyspark.ml.classification.HasProbabilityCol" title="pyspark.ml.classification.HasProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">HasProbabilityCol</span></code></a>()</td>
+<td>Mixin for param probabilityCol: Column name for predicted class conditional probabilities.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasRawPredictionCol.html#pyspark.ml.classification.HasRawPredictionCol" title="pyspark.ml.classification.HasRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasRawPredictionCol</span></code></a>()</td>
+<td>Mixin for param rawPredictionCol: raw prediction (a.k.a.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasRegParam.html#pyspark.ml.classification.HasRegParam" title="pyspark.ml.classification.HasRegParam"><code class="xref py py-obj docutils literal"><span class="pre">HasRegParam</span></code></a>()</td>
+<td>Mixin for param regParam: regularization parameter (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasSeed.html#pyspark.ml.classification.HasSeed" title="pyspark.ml.classification.HasSeed"><code class="xref py py-obj docutils literal"><span class="pre">HasSeed</span></code></a>()</td>
+<td>Mixin for param seed: random seed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasSolver.html#pyspark.ml.classification.HasSolver" title="pyspark.ml.classification.HasSolver"><code class="xref py py-obj docutils literal"><span class="pre">HasSolver</span></code></a>()</td>
+<td>Mixin for param solver: the solver algorithm for optimization.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasStandardization.html#pyspark.ml.classification.HasStandardization" title="pyspark.ml.classification.HasStandardization"><code class="xref py py-obj docutils literal"><span class="pre">HasStandardization</span></code></a>()</td>
+<td>Mixin for param standardization: whether to standardize the training features before fitting the model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasStepSize.html#pyspark.ml.classification.HasStepSize" title="pyspark.ml.classification.HasStepSize"><code class="xref py py-obj docutils literal"><span class="pre">HasStepSize</span></code></a>()</td>
+<td>Mixin for param stepSize: Step size to be used for each iteration of optimization (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasThresholds.html#pyspark.ml.classification.HasThresholds" title="pyspark.ml.classification.HasThresholds"><code class="xref py py-obj docutils literal"><span class="pre">HasThresholds</span></code></a>()</td>
+<td>Mixin for param thresholds: Thresholds in multi-class classification to adjust the probability of predicting each class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasTol.html#pyspark.ml.classification.HasTol" title="pyspark.ml.classification.HasTol"><code class="xref py py-obj docutils literal"><span class="pre">HasTol</span></code></a>()</td>
+<td>Mixin for param tol: the convergence tolerance for iterative algorithms (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasVarianceCol.html#pyspark.ml.classification.HasVarianceCol" title="pyspark.ml.classification.HasVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">HasVarianceCol</span></code></a>()</td>
+<td>Mixin for param varianceCol: column name for the biased sample variance of prediction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.HasWeightCol.html#pyspark.ml.classification.HasWeightCol" title="pyspark.ml.classification.HasWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">HasWeightCol</span></code></a>()</td>
+<td>Mixin for param weightCol: weight column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.Identifiable.html#pyspark.ml.classification.Identifiable" title="pyspark.ml.classification.Identifiable"><code class="xref py py-obj docutils literal"><span class="pre">Identifiable</span></code></a>()</td>
+<td>Object with a unique ID.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaEstimator.html#pyspark.ml.classification.JavaEstimator" title="pyspark.ml.classification.JavaEstimator"><code class="xref py py-obj docutils literal"><span class="pre">JavaEstimator</span></code></a>([java_obj])</td>
+<td>Base class for :py:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Estimator`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLReadable.html#pyspark.ml.classification.JavaMLReadable" title="pyspark.ml.classification.JavaMLReadable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLReadable</span></code></a></td>
+<td>(Private) Mixin for instances that provide JavaMLReader.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLReader.html#pyspark.ml.classification.JavaMLReader" title="pyspark.ml.classification.JavaMLReader"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLReader</span></code></a>(clazz)</td>
+<td>(Private) Specialization of <a class="reference internal" href="generated/pyspark.ml.classification.MLReader.html#pyspark.ml.classification.MLReader" title="pyspark.ml.classification.MLReader"><code class="xref py py-class docutils literal"><span class="pre">MLReader</span></code></a> for <a class="reference internal" href="generated/pyspark.ml.classification.JavaParams.html#pyspark.ml.classification.JavaParams" title="pyspark.ml.classification.JavaParams"><code class="xref py py-class docutils literal"><span class="pre">JavaParams</span></code></a> types</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLWritable.html#pyspark.ml.classification.JavaMLWritable" title="pyspark.ml.classification.JavaMLWritable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLWritable</span></code></a></td>
+<td>(Private) Mixin for ML instances that provide <a class="reference internal" href="generated/pyspark.ml.classification.JavaMLWriter.html#pyspark.ml.classification.JavaMLWriter" title="pyspark.ml.classification.JavaMLWriter"><code class="xref py py-class docutils literal"><span class="pre">JavaMLWriter</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaMLWriter.html#pyspark.ml.classification.JavaMLWriter" title="pyspark.ml.classification.JavaMLWriter"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLWriter</span></code></a>(instance)</td>
+<td>(Private) Specialization of <a class="reference internal" href="generated/pyspark.ml.classification.MLWriter.html#pyspark.ml.classification.MLWriter" title="pyspark.ml.classification.MLWriter"><code class="xref py py-class docutils literal"><span class="pre">MLWriter</span></code></a> for <a class="reference internal" href="generated/pyspark.ml.classification.JavaParams.html#pyspark.ml.classification.JavaParams" title="pyspark.ml.classification.JavaParams"><code class="xref py py-class docutils literal"><span class="pre">JavaParams</span></code></a> types</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaModel.html#pyspark.ml.classification.JavaModel" title="pyspark.ml.classification.JavaModel"><code class="xref py py-obj docutils literal"><span class="pre">JavaModel</span></code></a>([java_model])</td>
+<td>Base class for :py:class:<a href="#id3"><span class="problematic" id="id4">`</span></a>Model`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaParams.html#pyspark.ml.classification.JavaParams" title="pyspark.ml.classification.JavaParams"><code class="xref py py-obj docutils literal"><span class="pre">JavaParams</span></code></a>([java_obj])</td>
+<td>Utility class to help create wrapper classes from Java/Scala implementations of pipeline components.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.JavaWrapper.html#pyspark.ml.classification.JavaWrapper" title="pyspark.ml.classification.JavaWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaWrapper</span></code></a>([java_obj])</td>
+<td>Wrapper class for a Java companion object</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegression.html#pyspark.ml.classification.LogisticRegression" title="pyspark.ml.classification.LogisticRegression"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegression</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Logistic regression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegressionModel.html#pyspark.ml.classification.LogisticRegressionModel" title="pyspark.ml.classification.LogisticRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by LogisticRegression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegressionSummary.html#pyspark.ml.classification.LogisticRegressionSummary" title="pyspark.ml.classification.LogisticRegressionSummary"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.LogisticRegressionTrainingSummary.html#pyspark.ml.classification.LogisticRegressionTrainingSummary" title="pyspark.ml.classification.LogisticRegressionTrainingSummary"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionTrainingSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.MLReadable.html#pyspark.ml.classification.MLReadable" title="pyspark.ml.classification.MLReadable"><code class="xref py py-obj docutils literal"><span class="pre">MLReadable</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.MLReader.html#pyspark.ml.classification.MLReader" title="pyspark.ml.classification.MLReader"><code class="xref py py-obj docutils literal"><span class="pre">MLReader</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.MLWritable.html#pyspark.ml.classification.MLWritable" title="pyspark.ml.classification.MLWritable"><code class="xref py py-obj docutils literal"><span class="pre">MLWritable</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.MLWriter.html#pyspark.ml.classification.MLWriter" title="pyspark.ml.classification.MLWriter"><code class="xref py py-obj docutils literal"><span class="pre">MLWriter</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.Model.html#pyspark.ml.classification.Model" title="pyspark.ml.classification.Model"><code class="xref py py-obj docutils literal"><span class="pre">Model</span></code></a>()</td>
+<td>Abstract class for models that are fitted by estimators.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.MultilayerPerceptronClassificationModel.html#pyspark.ml.classification.MultilayerPerceptronClassificationModel" title="pyspark.ml.classification.MultilayerPerceptronClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">MultilayerPerceptronClassificationModel</span></code></a>([...])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.MultilayerPerceptronClassifier.html#pyspark.ml.classification.MultilayerPerceptronClassifier" title="pyspark.ml.classification.MultilayerPerceptronClassifier"><code class="xref py py-obj docutils literal"><span class="pre">MultilayerPerceptronClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.NaiveBayes.html#pyspark.ml.classification.NaiveBayes" title="pyspark.ml.classification.NaiveBayes"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayes</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Naive Bayes Classifiers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.NaiveBayesModel.html#pyspark.ml.classification.NaiveBayesModel" title="pyspark.ml.classification.NaiveBayesModel"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayesModel</span></code></a>([java_model])</td>
+<td>Model fitted by NaiveBayes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.OneVsRest.html#pyspark.ml.classification.OneVsRest" title="pyspark.ml.classification.OneVsRest"><code class="xref py py-obj docutils literal"><span class="pre">OneVsRest</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.OneVsRestModel.html#pyspark.ml.classification.OneVsRestModel" title="pyspark.ml.classification.OneVsRestModel"><code class="xref py py-obj docutils literal"><span class="pre">OneVsRestModel</span></code></a>(models)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.OneVsRestParams.html#pyspark.ml.classification.OneVsRestParams" title="pyspark.ml.classification.OneVsRestParams"><code class="xref py py-obj docutils literal"><span class="pre">OneVsRestParams</span></code></a>()</td>
+<td>Parameters for OneVsRest and OneVsRestModel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.Param.html#pyspark.ml.classification.Param" title="pyspark.ml.classification.Param"><code class="xref py py-obj docutils literal"><span class="pre">Param</span></code></a>(parent,&nbsp;name,&nbsp;doc[,&nbsp;typeConverter])</td>
+<td>A param with self-contained documentation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.Params.html#pyspark.ml.classification.Params" title="pyspark.ml.classification.Params"><code class="xref py py-obj docutils literal"><span class="pre">Params</span></code></a>()</td>
+<td>Components that take parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.RandomForestClassificationModel.html#pyspark.ml.classification.RandomForestClassificationModel" title="pyspark.ml.classification.RandomForestClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestClassificationModel</span></code></a>([java_model])</td>
+<td>Model fitted by RandomForestClassifier.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.RandomForestClassifier.html#pyspark.ml.classification.RandomForestClassifier" title="pyspark.ml.classification.RandomForestClassifier"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Random_forest">Random Forest</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.RandomForestParams.html#pyspark.ml.classification.RandomForestParams" title="pyspark.ml.classification.RandomForestParams"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestParams</span></code></a>()</td>
+<td>Private class to track supported random forest parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.SparkContext.html#pyspark.ml.classification.SparkContext" title="pyspark.ml.classification.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.StorageLevel.html#pyspark.ml.classification.StorageLevel" title="pyspark.ml.classification.StorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">StorageLevel</span></code></a>(useDisk,&nbsp;useMemory,&nbsp;useOffHeap,&nbsp;...)</td>
+<td>Flags for controlling the storage of an RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.TreeClassifierParams.html#pyspark.ml.classification.TreeClassifierParams" title="pyspark.ml.classification.TreeClassifierParams"><code class="xref py py-obj docutils literal"><span class="pre">TreeClassifierParams</span></code></a>()</td>
+<td>Private class to track supported impurity measures.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.TreeEnsembleModels.html#pyspark.ml.classification.TreeEnsembleModels" title="pyspark.ml.classification.TreeEnsembleModels"><code class="xref py py-obj docutils literal"><span class="pre">TreeEnsembleModels</span></code></a>([java_model])</td>
+<td>(private abstraction)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.classification.TreeEnsembleParams.html#pyspark.ml.classification.TreeEnsembleParams" title="pyspark.ml.classification.TreeEnsembleParams"><code class="xref py py-obj docutils literal"><span class="pre">TreeEnsembleParams</span></code></a>()</td>
+<td>Mixin for Decision Tree-based ensemble algorithms parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.classification.TypeConverters.html#pyspark.ml.classification.TypeConverters" title="pyspark.ml.classification.TypeConverters"><code class="xref py py-obj docutils literal"><span class="pre">TypeConverters</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DeveloperApi</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.classification.inherit_doc.html" class="btn btn-neutral float-right" title="3.4.1.1. pyspark.ml.classification.inherit_doc" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/pyspark.ml.feature.Word2VecModel.write.html" class="btn btn-neutral" title="3.3.2.71.18. pyspark.ml.feature.Word2VecModel.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

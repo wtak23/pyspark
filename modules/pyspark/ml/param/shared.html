@@ -1,0 +1,865 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyspark.ml.param.shared &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../../../index.html"/>
+        <link rel="up" title="pyspark.ml.param" href="../param.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../generated/pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../pyspark.html">pyspark</a> &raquo;</li>
+        
+          <li><a href="../param.html">pyspark.ml.param</a> &raquo;</li>
+        
+      <li>pyspark.ml.param.shared</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pyspark.ml.param.shared</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
+<span class="c1"># contributor license agreements.  See the NOTICE file distributed with</span>
+<span class="c1"># this work for additional information regarding copyright ownership.</span>
+<span class="c1"># The ASF licenses this file to You under the Apache License, Version 2.0</span>
+<span class="c1"># (the &quot;License&quot;); you may not use this file except in compliance with</span>
+<span class="c1"># the License.  You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1">#</span>
+
+<span class="c1"># DO NOT MODIFY THIS FILE! It was generated by _shared_params_code_gen.py.</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.ml.param</span> <span class="k">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="HasMaxIter"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasMaxIter.html#pyspark.ml.classification.HasMaxIter">[docs]</a><span class="k">class</span> <span class="nc">HasMaxIter</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param maxIter: max number of iterations (&gt;= 0).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">maxIter</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;maxIter&quot;</span><span class="p">,</span> <span class="s2">&quot;max number of iterations (&gt;= 0).&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasMaxIter.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasMaxIter.__init__.html#pyspark.ml.classification.HasMaxIter.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasMaxIter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasMaxIter.setMaxIter"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasMaxIter.setMaxIter.html#pyspark.ml.classification.HasMaxIter.setMaxIter">[docs]</a>    <span class="k">def</span> <span class="nf">setMaxIter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`maxIter`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasMaxIter.getMaxIter"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasMaxIter.getMaxIter.html#pyspark.ml.classification.HasMaxIter.getMaxIter">[docs]</a>    <span class="k">def</span> <span class="nf">getMaxIter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of maxIter or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxIter</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasRegParam"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRegParam.html#pyspark.ml.classification.HasRegParam">[docs]</a><span class="k">class</span> <span class="nc">HasRegParam</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param regParam: regularization parameter (&gt;= 0).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">regParam</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;regParam&quot;</span><span class="p">,</span> <span class="s2">&quot;regularization parameter (&gt;= 0).&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toFloat</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasRegParam.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRegParam.__init__.html#pyspark.ml.classification.HasRegParam.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasRegParam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasRegParam.setRegParam"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRegParam.setRegParam.html#pyspark.ml.classification.HasRegParam.setRegParam">[docs]</a>    <span class="k">def</span> <span class="nf">setRegParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`regParam`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">regParam</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasRegParam.getRegParam"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRegParam.getRegParam.html#pyspark.ml.classification.HasRegParam.getRegParam">[docs]</a>    <span class="k">def</span> <span class="nf">getRegParam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of regParam or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">regParam</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasFeaturesCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFeaturesCol.html#pyspark.ml.classification.HasFeaturesCol">[docs]</a><span class="k">class</span> <span class="nc">HasFeaturesCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param featuresCol: features column name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">featuresCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;featuresCol&quot;</span><span class="p">,</span> <span class="s2">&quot;features column name.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasFeaturesCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFeaturesCol.__init__.html#pyspark.ml.classification.HasFeaturesCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">featuresCol</span><span class="o">=</span><span class="s1">&#39;features&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasFeaturesCol.setFeaturesCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFeaturesCol.setFeaturesCol.html#pyspark.ml.classification.HasFeaturesCol.setFeaturesCol">[docs]</a>    <span class="k">def</span> <span class="nf">setFeaturesCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`featuresCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">featuresCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasFeaturesCol.getFeaturesCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFeaturesCol.getFeaturesCol.html#pyspark.ml.classification.HasFeaturesCol.getFeaturesCol">[docs]</a>    <span class="k">def</span> <span class="nf">getFeaturesCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of featuresCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">featuresCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasLabelCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasLabelCol.html#pyspark.ml.classification.HasLabelCol">[docs]</a><span class="k">class</span> <span class="nc">HasLabelCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param labelCol: label column name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">labelCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;labelCol&quot;</span><span class="p">,</span> <span class="s2">&quot;label column name.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasLabelCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasLabelCol.__init__.html#pyspark.ml.classification.HasLabelCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasLabelCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasLabelCol.setLabelCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasLabelCol.setLabelCol.html#pyspark.ml.classification.HasLabelCol.setLabelCol">[docs]</a>    <span class="k">def</span> <span class="nf">setLabelCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`labelCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">labelCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasLabelCol.getLabelCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasLabelCol.getLabelCol.html#pyspark.ml.classification.HasLabelCol.getLabelCol">[docs]</a>    <span class="k">def</span> <span class="nf">getLabelCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of labelCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labelCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasPredictionCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasPredictionCol.html#pyspark.ml.classification.HasPredictionCol">[docs]</a><span class="k">class</span> <span class="nc">HasPredictionCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param predictionCol: prediction column name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">predictionCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;predictionCol&quot;</span><span class="p">,</span> <span class="s2">&quot;prediction column name.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasPredictionCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasPredictionCol.__init__.html#pyspark.ml.classification.HasPredictionCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasPredictionCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">predictionCol</span><span class="o">=</span><span class="s1">&#39;prediction&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasPredictionCol.setPredictionCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasPredictionCol.setPredictionCol.html#pyspark.ml.classification.HasPredictionCol.setPredictionCol">[docs]</a>    <span class="k">def</span> <span class="nf">setPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`predictionCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">predictionCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasPredictionCol.getPredictionCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasPredictionCol.getPredictionCol.html#pyspark.ml.classification.HasPredictionCol.getPredictionCol">[docs]</a>    <span class="k">def</span> <span class="nf">getPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of predictionCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predictionCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasProbabilityCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasProbabilityCol.html#pyspark.ml.classification.HasProbabilityCol">[docs]</a><span class="k">class</span> <span class="nc">HasProbabilityCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param probabilityCol: Column name for predicted class conditional probabilities. Note: Not all models output well-calibrated probability estimates! These probabilities should be treated as confidences, not precise probabilities.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">probabilityCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;probabilityCol&quot;</span><span class="p">,</span> <span class="s2">&quot;Column name for predicted class conditional probabilities. Note: Not all models output well-calibrated probability estimates! These probabilities should be treated as confidences, not precise probabilities.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasProbabilityCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasProbabilityCol.__init__.html#pyspark.ml.classification.HasProbabilityCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasProbabilityCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">probabilityCol</span><span class="o">=</span><span class="s1">&#39;probability&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasProbabilityCol.setProbabilityCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasProbabilityCol.setProbabilityCol.html#pyspark.ml.classification.HasProbabilityCol.setProbabilityCol">[docs]</a>    <span class="k">def</span> <span class="nf">setProbabilityCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`probabilityCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">probabilityCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasProbabilityCol.getProbabilityCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasProbabilityCol.getProbabilityCol.html#pyspark.ml.classification.HasProbabilityCol.getProbabilityCol">[docs]</a>    <span class="k">def</span> <span class="nf">getProbabilityCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of probabilityCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">probabilityCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasRawPredictionCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRawPredictionCol.html#pyspark.ml.classification.HasRawPredictionCol">[docs]</a><span class="k">class</span> <span class="nc">HasRawPredictionCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param rawPredictionCol: raw prediction (a.k.a. confidence) column name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">rawPredictionCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;rawPredictionCol&quot;</span><span class="p">,</span> <span class="s2">&quot;raw prediction (a.k.a. confidence) column name.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasRawPredictionCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRawPredictionCol.__init__.html#pyspark.ml.classification.HasRawPredictionCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasRawPredictionCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">rawPredictionCol</span><span class="o">=</span><span class="s1">&#39;rawPrediction&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasRawPredictionCol.setRawPredictionCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRawPredictionCol.setRawPredictionCol.html#pyspark.ml.classification.HasRawPredictionCol.setRawPredictionCol">[docs]</a>    <span class="k">def</span> <span class="nf">setRawPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`rawPredictionCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">rawPredictionCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasRawPredictionCol.getRawPredictionCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasRawPredictionCol.getRawPredictionCol.html#pyspark.ml.classification.HasRawPredictionCol.getRawPredictionCol">[docs]</a>    <span class="k">def</span> <span class="nf">getRawPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of rawPredictionCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rawPredictionCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasInputCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCol.html#pyspark.ml.classification.HasInputCol">[docs]</a><span class="k">class</span> <span class="nc">HasInputCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param inputCol: input column name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">inputCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;inputCol&quot;</span><span class="p">,</span> <span class="s2">&quot;input column name.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasInputCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCol.__init__.html#pyspark.ml.classification.HasInputCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasInputCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasInputCol.setInputCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCol.setInputCol.html#pyspark.ml.classification.HasInputCol.setInputCol">[docs]</a>    <span class="k">def</span> <span class="nf">setInputCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`inputCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasInputCol.getInputCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCol.getInputCol.html#pyspark.ml.classification.HasInputCol.getInputCol">[docs]</a>    <span class="k">def</span> <span class="nf">getInputCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of inputCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inputCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasInputCols"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCols.html#pyspark.ml.classification.HasInputCols">[docs]</a><span class="k">class</span> <span class="nc">HasInputCols</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param inputCols: input column names.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">inputCols</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;inputCols&quot;</span><span class="p">,</span> <span class="s2">&quot;input column names.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toListString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasInputCols.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCols.__init__.html#pyspark.ml.classification.HasInputCols.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasInputCols</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasInputCols.setInputCols"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCols.setInputCols.html#pyspark.ml.classification.HasInputCols.setInputCols">[docs]</a>    <span class="k">def</span> <span class="nf">setInputCols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`inputCols`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">inputCols</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasInputCols.getInputCols"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasInputCols.getInputCols.html#pyspark.ml.classification.HasInputCols.getInputCols">[docs]</a>    <span class="k">def</span> <span class="nf">getInputCols</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of inputCols or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inputCols</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasOutputCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasOutputCol.html#pyspark.ml.classification.HasOutputCol">[docs]</a><span class="k">class</span> <span class="nc">HasOutputCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param outputCol: output column name.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">outputCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;outputCol&quot;</span><span class="p">,</span> <span class="s2">&quot;output column name.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasOutputCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasOutputCol.__init__.html#pyspark.ml.classification.HasOutputCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasOutputCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">outputCol</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">+</span> <span class="s1">&#39;__output&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasOutputCol.setOutputCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasOutputCol.setOutputCol.html#pyspark.ml.classification.HasOutputCol.setOutputCol">[docs]</a>    <span class="k">def</span> <span class="nf">setOutputCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`outputCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">outputCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasOutputCol.getOutputCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasOutputCol.getOutputCol.html#pyspark.ml.classification.HasOutputCol.getOutputCol">[docs]</a>    <span class="k">def</span> <span class="nf">getOutputCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of outputCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outputCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasNumFeatures"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasNumFeatures.html#pyspark.ml.classification.HasNumFeatures">[docs]</a><span class="k">class</span> <span class="nc">HasNumFeatures</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param numFeatures: number of features.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">numFeatures</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;numFeatures&quot;</span><span class="p">,</span> <span class="s2">&quot;number of features.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasNumFeatures.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasNumFeatures.__init__.html#pyspark.ml.classification.HasNumFeatures.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasNumFeatures</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasNumFeatures.setNumFeatures"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasNumFeatures.setNumFeatures.html#pyspark.ml.classification.HasNumFeatures.setNumFeatures">[docs]</a>    <span class="k">def</span> <span class="nf">setNumFeatures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`numFeatures`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">numFeatures</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasNumFeatures.getNumFeatures"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasNumFeatures.getNumFeatures.html#pyspark.ml.classification.HasNumFeatures.getNumFeatures">[docs]</a>    <span class="k">def</span> <span class="nf">getNumFeatures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of numFeatures or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numFeatures</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasCheckpointInterval"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasCheckpointInterval.html#pyspark.ml.classification.HasCheckpointInterval">[docs]</a><span class="k">class</span> <span class="nc">HasCheckpointInterval</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param checkpointInterval: set checkpoint interval (&gt;= 1) or disable checkpoint (-1). E.g. 10 means that the cache will get checkpointed every 10 iterations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">checkpointInterval</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;checkpointInterval&quot;</span><span class="p">,</span> <span class="s2">&quot;set checkpoint interval (&gt;= 1) or disable checkpoint (-1). E.g. 10 means that the cache will get checkpointed every 10 iterations.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasCheckpointInterval.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasCheckpointInterval.__init__.html#pyspark.ml.classification.HasCheckpointInterval.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasCheckpointInterval</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasCheckpointInterval.setCheckpointInterval"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasCheckpointInterval.setCheckpointInterval.html#pyspark.ml.classification.HasCheckpointInterval.setCheckpointInterval">[docs]</a>    <span class="k">def</span> <span class="nf">setCheckpointInterval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`checkpointInterval`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">checkpointInterval</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasCheckpointInterval.getCheckpointInterval"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasCheckpointInterval.getCheckpointInterval.html#pyspark.ml.classification.HasCheckpointInterval.getCheckpointInterval">[docs]</a>    <span class="k">def</span> <span class="nf">getCheckpointInterval</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of checkpointInterval or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">checkpointInterval</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasSeed"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.tuning.HasSeed.html#pyspark.ml.classification.HasSeed">[docs]</a><span class="k">class</span> <span class="nc">HasSeed</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param seed: random seed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">seed</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="s2">&quot;random seed.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasSeed.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.tuning.HasSeed.__init__.html#pyspark.ml.classification.HasSeed.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasSeed</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="nb">hash</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__name__</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="HasSeed.setSeed"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.tuning.HasSeed.setSeed.html#pyspark.ml.classification.HasSeed.setSeed">[docs]</a>    <span class="k">def</span> <span class="nf">setSeed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`seed`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasSeed.getSeed"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.tuning.HasSeed.getSeed.html#pyspark.ml.classification.HasSeed.getSeed">[docs]</a>    <span class="k">def</span> <span class="nf">getSeed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of seed or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasTol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasTol.html#pyspark.ml.classification.HasTol">[docs]</a><span class="k">class</span> <span class="nc">HasTol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param tol: the convergence tolerance for iterative algorithms (&gt;= 0).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;tol&quot;</span><span class="p">,</span> <span class="s2">&quot;the convergence tolerance for iterative algorithms (&gt;= 0).&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toFloat</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasTol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasTol.__init__.html#pyspark.ml.classification.HasTol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasTol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasTol.setTol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasTol.setTol.html#pyspark.ml.classification.HasTol.setTol">[docs]</a>    <span class="k">def</span> <span class="nf">setTol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`tol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">tol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasTol.getTol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasTol.getTol.html#pyspark.ml.classification.HasTol.getTol">[docs]</a>    <span class="k">def</span> <span class="nf">getTol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of tol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasStepSize"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStepSize.html#pyspark.ml.classification.HasStepSize">[docs]</a><span class="k">class</span> <span class="nc">HasStepSize</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param stepSize: Step size to be used for each iteration of optimization (&gt;= 0).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">stepSize</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;stepSize&quot;</span><span class="p">,</span> <span class="s2">&quot;Step size to be used for each iteration of optimization (&gt;= 0).&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toFloat</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasStepSize.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStepSize.__init__.html#pyspark.ml.classification.HasStepSize.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasStepSize</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasStepSize.setStepSize"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStepSize.setStepSize.html#pyspark.ml.classification.HasStepSize.setStepSize">[docs]</a>    <span class="k">def</span> <span class="nf">setStepSize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`stepSize`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">stepSize</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasStepSize.getStepSize"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStepSize.getStepSize.html#pyspark.ml.classification.HasStepSize.getStepSize">[docs]</a>    <span class="k">def</span> <span class="nf">getStepSize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of stepSize or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stepSize</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasHandleInvalid"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasHandleInvalid.html#pyspark.ml.classification.HasHandleInvalid">[docs]</a><span class="k">class</span> <span class="nc">HasHandleInvalid</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param handleInvalid: how to handle invalid entries. Options are skip (which will filter out rows with bad values), or error (which will throw an error). More options may be added later.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">handleInvalid</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;handleInvalid&quot;</span><span class="p">,</span> <span class="s2">&quot;how to handle invalid entries. Options are skip (which will filter out rows with bad values), or error (which will throw an error). More options may be added later.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasHandleInvalid.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasHandleInvalid.__init__.html#pyspark.ml.classification.HasHandleInvalid.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasHandleInvalid</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasHandleInvalid.setHandleInvalid"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasHandleInvalid.setHandleInvalid.html#pyspark.ml.classification.HasHandleInvalid.setHandleInvalid">[docs]</a>    <span class="k">def</span> <span class="nf">setHandleInvalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`handleInvalid`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">handleInvalid</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasHandleInvalid.getHandleInvalid"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasHandleInvalid.getHandleInvalid.html#pyspark.ml.classification.HasHandleInvalid.getHandleInvalid">[docs]</a>    <span class="k">def</span> <span class="nf">getHandleInvalid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of handleInvalid or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handleInvalid</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasElasticNetParam"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasElasticNetParam.html#pyspark.ml.classification.HasElasticNetParam">[docs]</a><span class="k">class</span> <span class="nc">HasElasticNetParam</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param elasticNetParam: the ElasticNet mixing parameter, in range [0, 1]. For alpha = 0, the penalty is an L2 penalty. For alpha = 1, it is an L1 penalty.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">elasticNetParam</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;elasticNetParam&quot;</span><span class="p">,</span> <span class="s2">&quot;the ElasticNet mixing parameter, in range [0, 1]. For alpha = 0, the penalty is an L2 penalty. For alpha = 1, it is an L1 penalty.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toFloat</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasElasticNetParam.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasElasticNetParam.__init__.html#pyspark.ml.classification.HasElasticNetParam.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasElasticNetParam</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">elasticNetParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasElasticNetParam.setElasticNetParam"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasElasticNetParam.setElasticNetParam.html#pyspark.ml.classification.HasElasticNetParam.setElasticNetParam">[docs]</a>    <span class="k">def</span> <span class="nf">setElasticNetParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`elasticNetParam`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">elasticNetParam</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasElasticNetParam.getElasticNetParam"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasElasticNetParam.getElasticNetParam.html#pyspark.ml.classification.HasElasticNetParam.getElasticNetParam">[docs]</a>    <span class="k">def</span> <span class="nf">getElasticNetParam</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of elasticNetParam or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">elasticNetParam</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasFitIntercept"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFitIntercept.html#pyspark.ml.classification.HasFitIntercept">[docs]</a><span class="k">class</span> <span class="nc">HasFitIntercept</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param fitIntercept: whether to fit an intercept term.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">fitIntercept</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;fitIntercept&quot;</span><span class="p">,</span> <span class="s2">&quot;whether to fit an intercept term.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toBoolean</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasFitIntercept.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFitIntercept.__init__.html#pyspark.ml.classification.HasFitIntercept.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasFitIntercept</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">fitIntercept</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasFitIntercept.setFitIntercept"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFitIntercept.setFitIntercept.html#pyspark.ml.classification.HasFitIntercept.setFitIntercept">[docs]</a>    <span class="k">def</span> <span class="nf">setFitIntercept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`fitIntercept`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">fitIntercept</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasFitIntercept.getFitIntercept"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasFitIntercept.getFitIntercept.html#pyspark.ml.classification.HasFitIntercept.getFitIntercept">[docs]</a>    <span class="k">def</span> <span class="nf">getFitIntercept</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of fitIntercept or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fitIntercept</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasStandardization"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStandardization.html#pyspark.ml.classification.HasStandardization">[docs]</a><span class="k">class</span> <span class="nc">HasStandardization</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param standardization: whether to standardize the training features before fitting the model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">standardization</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;standardization&quot;</span><span class="p">,</span> <span class="s2">&quot;whether to standardize the training features before fitting the model.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toBoolean</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasStandardization.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStandardization.__init__.html#pyspark.ml.classification.HasStandardization.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasStandardization</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">standardization</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasStandardization.setStandardization"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStandardization.setStandardization.html#pyspark.ml.classification.HasStandardization.setStandardization">[docs]</a>    <span class="k">def</span> <span class="nf">setStandardization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`standardization`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">standardization</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasStandardization.getStandardization"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasStandardization.getStandardization.html#pyspark.ml.classification.HasStandardization.getStandardization">[docs]</a>    <span class="k">def</span> <span class="nf">getStandardization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of standardization or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">standardization</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasThresholds"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasThresholds.html#pyspark.ml.classification.HasThresholds">[docs]</a><span class="k">class</span> <span class="nc">HasThresholds</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param thresholds: Thresholds in multi-class classification to adjust the probability of predicting each class. Array must have length equal to the number of classes, with values &gt;= 0. The class with largest value p/t is predicted, where p is the original probability of that class and t is the class&#39; threshold.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">thresholds</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;thresholds&quot;</span><span class="p">,</span> <span class="s2">&quot;Thresholds in multi-class classification to adjust the probability of predicting each class. Array must have length equal to the number of classes, with values &gt;= 0. The class with largest value p/t is predicted, where p is the original probability of that class and t is the class&#39; threshold.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toListFloat</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasThresholds.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasThresholds.__init__.html#pyspark.ml.classification.HasThresholds.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasThresholds</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasThresholds.setThresholds"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasThresholds.setThresholds.html#pyspark.ml.classification.HasThresholds.setThresholds">[docs]</a>    <span class="k">def</span> <span class="nf">setThresholds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`thresholds`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">thresholds</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasThresholds.getThresholds"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasThresholds.getThresholds.html#pyspark.ml.classification.HasThresholds.getThresholds">[docs]</a>    <span class="k">def</span> <span class="nf">getThresholds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of thresholds or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thresholds</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasWeightCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasWeightCol.html#pyspark.ml.classification.HasWeightCol">[docs]</a><span class="k">class</span> <span class="nc">HasWeightCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param weightCol: weight column name. If this is not set or empty, we treat all instance weights as 1.0.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">weightCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;weightCol&quot;</span><span class="p">,</span> <span class="s2">&quot;weight column name. If this is not set or empty, we treat all instance weights as 1.0.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasWeightCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasWeightCol.__init__.html#pyspark.ml.classification.HasWeightCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasWeightCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasWeightCol.setWeightCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasWeightCol.setWeightCol.html#pyspark.ml.classification.HasWeightCol.setWeightCol">[docs]</a>    <span class="k">def</span> <span class="nf">setWeightCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`weightCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">weightCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasWeightCol.getWeightCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasWeightCol.getWeightCol.html#pyspark.ml.classification.HasWeightCol.getWeightCol">[docs]</a>    <span class="k">def</span> <span class="nf">getWeightCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of weightCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weightCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasSolver"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasSolver.html#pyspark.ml.classification.HasSolver">[docs]</a><span class="k">class</span> <span class="nc">HasSolver</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param solver: the solver algorithm for optimization. If this is not set or empty, default value is &#39;auto&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;solver&quot;</span><span class="p">,</span> <span class="s2">&quot;the solver algorithm for optimization. If this is not set or empty, default value is &#39;auto&#39;.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasSolver.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasSolver.__init__.html#pyspark.ml.classification.HasSolver.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasSolver</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasSolver.setSolver"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasSolver.setSolver.html#pyspark.ml.classification.HasSolver.setSolver">[docs]</a>    <span class="k">def</span> <span class="nf">setSolver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`solver`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasSolver.getSolver"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasSolver.getSolver.html#pyspark.ml.classification.HasSolver.getSolver">[docs]</a>    <span class="k">def</span> <span class="nf">getSolver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of solver or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">solver</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="HasVarianceCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasVarianceCol.html#pyspark.ml.classification.HasVarianceCol">[docs]</a><span class="k">class</span> <span class="nc">HasVarianceCol</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for param varianceCol: column name for the biased sample variance of prediction.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">varianceCol</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;varianceCol&quot;</span><span class="p">,</span> <span class="s2">&quot;column name for the biased sample variance of prediction.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HasVarianceCol.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasVarianceCol.__init__.html#pyspark.ml.classification.HasVarianceCol.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">HasVarianceCol</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="HasVarianceCol.setVarianceCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasVarianceCol.setVarianceCol.html#pyspark.ml.classification.HasVarianceCol.setVarianceCol">[docs]</a>    <span class="k">def</span> <span class="nf">setVarianceCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`varianceCol`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">varianceCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HasVarianceCol.getVarianceCol"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.HasVarianceCol.getVarianceCol.html#pyspark.ml.classification.HasVarianceCol.getVarianceCol">[docs]</a>    <span class="k">def</span> <span class="nf">getVarianceCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of varianceCol or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">varianceCol</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="DecisionTreeParams"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.html#pyspark.ml.classification.DecisionTreeParams">[docs]</a><span class="k">class</span> <span class="nc">DecisionTreeParams</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mixin for Decision Tree parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">maxDepth</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;maxDepth&quot;</span><span class="p">,</span> <span class="s2">&quot;Maximum depth of the tree. (&gt;= 0) E.g., depth 0 means 1 leaf node; depth 1 means 1 internal node + 2 leaf nodes.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+    <span class="n">maxBins</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;maxBins&quot;</span><span class="p">,</span> <span class="s2">&quot;Max number of bins for discretizing continuous features.  Must be &gt;=2 and &gt;= number of categories for any categorical feature.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+    <span class="n">minInstancesPerNode</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;minInstancesPerNode&quot;</span><span class="p">,</span> <span class="s2">&quot;Minimum number of instances each child must have after split. If a split causes the left or right child to have fewer than minInstancesPerNode, the split will be discarded as invalid. Should be &gt;= 1.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+    <span class="n">minInfoGain</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;minInfoGain&quot;</span><span class="p">,</span> <span class="s2">&quot;Minimum information gain for a split to be considered at a tree node.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toFloat</span><span class="p">)</span>
+    <span class="n">maxMemoryInMB</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;maxMemoryInMB&quot;</span><span class="p">,</span> <span class="s2">&quot;Maximum memory in MB allocated to histogram aggregation. If too small, then 1 node will be split per iteration, and its aggregates may exceed this size.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
+    <span class="n">cacheNodeIds</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">Params</span><span class="o">.</span><span class="n">_dummy</span><span class="p">(),</span> <span class="s2">&quot;cacheNodeIds&quot;</span><span class="p">,</span> <span class="s2">&quot;If false, the algorithm will pass trees to executors to match instances with nodes. If true, the algorithm will cache node IDs for each instance. Caching can speed up training of deeper trees. Users can set how often should the cache be checkpointed or disable it by setting checkpointInterval.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toBoolean</span><span class="p">)</span>
+    
+
+<div class="viewcode-block" id="DecisionTreeParams.__init__"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.__init__.html#pyspark.ml.classification.DecisionTreeParams.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DecisionTreeParams</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.setMaxDepth"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.setMaxDepth.html#pyspark.ml.classification.DecisionTreeParams.setMaxDepth">[docs]</a>    <span class="k">def</span> <span class="nf">setMaxDepth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`maxDepth`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">maxDepth</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.getMaxDepth"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.getMaxDepth.html#pyspark.ml.classification.DecisionTreeParams.getMaxDepth">[docs]</a>    <span class="k">def</span> <span class="nf">getMaxDepth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of maxDepth or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxDepth</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.setMaxBins"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.setMaxBins.html#pyspark.ml.classification.DecisionTreeParams.setMaxBins">[docs]</a>    <span class="k">def</span> <span class="nf">setMaxBins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`maxBins`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">maxBins</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.getMaxBins"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.getMaxBins.html#pyspark.ml.classification.DecisionTreeParams.getMaxBins">[docs]</a>    <span class="k">def</span> <span class="nf">getMaxBins</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of maxBins or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxBins</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.setMinInstancesPerNode"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.setMinInstancesPerNode.html#pyspark.ml.classification.DecisionTreeParams.setMinInstancesPerNode">[docs]</a>    <span class="k">def</span> <span class="nf">setMinInstancesPerNode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`minInstancesPerNode`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">minInstancesPerNode</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.getMinInstancesPerNode"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.getMinInstancesPerNode.html#pyspark.ml.classification.DecisionTreeParams.getMinInstancesPerNode">[docs]</a>    <span class="k">def</span> <span class="nf">getMinInstancesPerNode</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of minInstancesPerNode or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minInstancesPerNode</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.setMinInfoGain"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.setMinInfoGain.html#pyspark.ml.classification.DecisionTreeParams.setMinInfoGain">[docs]</a>    <span class="k">def</span> <span class="nf">setMinInfoGain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`minInfoGain`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">minInfoGain</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.getMinInfoGain"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.getMinInfoGain.html#pyspark.ml.classification.DecisionTreeParams.getMinInfoGain">[docs]</a>    <span class="k">def</span> <span class="nf">getMinInfoGain</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of minInfoGain or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">minInfoGain</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.setMaxMemoryInMB"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.setMaxMemoryInMB.html#pyspark.ml.classification.DecisionTreeParams.setMaxMemoryInMB">[docs]</a>    <span class="k">def</span> <span class="nf">setMaxMemoryInMB</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`maxMemoryInMB`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">maxMemoryInMB</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.getMaxMemoryInMB"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.getMaxMemoryInMB.html#pyspark.ml.classification.DecisionTreeParams.getMaxMemoryInMB">[docs]</a>    <span class="k">def</span> <span class="nf">getMaxMemoryInMB</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of maxMemoryInMB or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxMemoryInMB</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.setCacheNodeIds"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.setCacheNodeIds.html#pyspark.ml.classification.DecisionTreeParams.setCacheNodeIds">[docs]</a>    <span class="k">def</span> <span class="nf">setCacheNodeIds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the value of :py:attr:`cacheNodeIds`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">cacheNodeIds</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="DecisionTreeParams.getCacheNodeIds"><a class="viewcode-back" href="../../../../generated/generated/pyspark.ml.regression.DecisionTreeParams.getCacheNodeIds.html#pyspark.ml.classification.DecisionTreeParams.getCacheNodeIds">[docs]</a>    <span class="k">def</span> <span class="nf">getCacheNodeIds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Gets the value of cacheNodeIds or its default value.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cacheNodeIds</span><span class="p">)</span></div></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

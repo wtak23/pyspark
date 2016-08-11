@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.2.9.39. pyspark.RDD.join &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="1.2.9. pyspark.RDD" href="pyspark.RDD.html"/>
+        <link rel="next" title="1.2.9.40. pyspark.RDD.keyBy" href="pyspark.RDD.keyBy.html"/>
+        <link rel="prev" title="1.2.9.38. pyspark.RDD.isEmpty" href="pyspark.RDD.isEmpty.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.html">1. pyspark</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.html#functions">1.1. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.html#classes">1.2. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Accumulator.html">1.2.1. pyspark.Accumulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.AccumulatorParam.html">1.2.2. pyspark.AccumulatorParam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.BasicProfiler.html">1.2.3. pyspark.BasicProfiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Broadcast.html">1.2.4. pyspark.Broadcast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.HiveContext.html">1.2.5. pyspark.HiveContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.MarshalSerializer.html">1.2.6. pyspark.MarshalSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.PickleSerializer.html">1.2.7. pyspark.PickleSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Profiler.html">1.2.8. pyspark.Profiler</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="pyspark.RDD.html">1.2.9. pyspark.RDD</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.context.html">1.2.9.1. pyspark.RDD.context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.aggregate.html">1.2.9.2. pyspark.RDD.aggregate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.aggregateByKey.html">1.2.9.3. pyspark.RDD.aggregateByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.cache.html">1.2.9.4. pyspark.RDD.cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.cartesian.html">1.2.9.5. pyspark.RDD.cartesian</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.checkpoint.html">1.2.9.6. pyspark.RDD.checkpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.coalesce.html">1.2.9.7. pyspark.RDD.coalesce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.cogroup.html">1.2.9.8. pyspark.RDD.cogroup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.collect.html">1.2.9.9. pyspark.RDD.collect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.collectAsMap.html">1.2.9.10. pyspark.RDD.collectAsMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.combineByKey.html">1.2.9.11. pyspark.RDD.combineByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.count.html">1.2.9.12. pyspark.RDD.count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.countApprox.html">1.2.9.13. pyspark.RDD.countApprox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.countApproxDistinct.html">1.2.9.14. pyspark.RDD.countApproxDistinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.countByKey.html">1.2.9.15. pyspark.RDD.countByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.countByValue.html">1.2.9.16. pyspark.RDD.countByValue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.distinct.html">1.2.9.17. pyspark.RDD.distinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.filter.html">1.2.9.18. pyspark.RDD.filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.first.html">1.2.9.19. pyspark.RDD.first</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.flatMap.html">1.2.9.20. pyspark.RDD.flatMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.flatMapValues.html">1.2.9.21. pyspark.RDD.flatMapValues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.fold.html">1.2.9.22. pyspark.RDD.fold</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.foldByKey.html">1.2.9.23. pyspark.RDD.foldByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.foreach.html">1.2.9.24. pyspark.RDD.foreach</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.foreachPartition.html">1.2.9.25. pyspark.RDD.foreachPartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.fullOuterJoin.html">1.2.9.26. pyspark.RDD.fullOuterJoin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.getCheckpointFile.html">1.2.9.27. pyspark.RDD.getCheckpointFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.getNumPartitions.html">1.2.9.28. pyspark.RDD.getNumPartitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.getStorageLevel.html">1.2.9.29. pyspark.RDD.getStorageLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.glom.html">1.2.9.30. pyspark.RDD.glom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.groupBy.html">1.2.9.31. pyspark.RDD.groupBy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.groupByKey.html">1.2.9.32. pyspark.RDD.groupByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.groupWith.html">1.2.9.33. pyspark.RDD.groupWith</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.histogram.html">1.2.9.34. pyspark.RDD.histogram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.id.html">1.2.9.35. pyspark.RDD.id</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.intersection.html">1.2.9.36. pyspark.RDD.intersection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.isCheckpointed.html">1.2.9.37. pyspark.RDD.isCheckpointed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.isEmpty.html">1.2.9.38. pyspark.RDD.isEmpty</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">1.2.9.39. pyspark.RDD.join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.keyBy.html">1.2.9.40. pyspark.RDD.keyBy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.keys.html">1.2.9.41. pyspark.RDD.keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.leftOuterJoin.html">1.2.9.42. pyspark.RDD.leftOuterJoin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.lookup.html">1.2.9.43. pyspark.RDD.lookup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.map.html">1.2.9.44. pyspark.RDD.map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.mapPartitions.html">1.2.9.45. pyspark.RDD.mapPartitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.mapPartitionsWithIndex.html">1.2.9.46. pyspark.RDD.mapPartitionsWithIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.mapPartitionsWithSplit.html">1.2.9.47. pyspark.RDD.mapPartitionsWithSplit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.mapValues.html">1.2.9.48. pyspark.RDD.mapValues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.max.html">1.2.9.49. pyspark.RDD.max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.mean.html">1.2.9.50. pyspark.RDD.mean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.meanApprox.html">1.2.9.51. pyspark.RDD.meanApprox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.min.html">1.2.9.52. pyspark.RDD.min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.name.html">1.2.9.53. pyspark.RDD.name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.partitionBy.html">1.2.9.54. pyspark.RDD.partitionBy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.persist.html">1.2.9.55. pyspark.RDD.persist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.pipe.html">1.2.9.56. pyspark.RDD.pipe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.randomSplit.html">1.2.9.57. pyspark.RDD.randomSplit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.reduce.html">1.2.9.58. pyspark.RDD.reduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.reduceByKey.html">1.2.9.59. pyspark.RDD.reduceByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.reduceByKeyLocally.html">1.2.9.60. pyspark.RDD.reduceByKeyLocally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.repartition.html">1.2.9.61. pyspark.RDD.repartition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.repartitionAndSortWithinPartitions.html">1.2.9.62. pyspark.RDD.repartitionAndSortWithinPartitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.rightOuterJoin.html">1.2.9.63. pyspark.RDD.rightOuterJoin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sample.html">1.2.9.64. pyspark.RDD.sample</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sampleByKey.html">1.2.9.65. pyspark.RDD.sampleByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sampleStdev.html">1.2.9.66. pyspark.RDD.sampleStdev</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sampleVariance.html">1.2.9.67. pyspark.RDD.sampleVariance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.saveAsHadoopDataset.html">1.2.9.68. pyspark.RDD.saveAsHadoopDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.saveAsHadoopFile.html">1.2.9.69. pyspark.RDD.saveAsHadoopFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.saveAsNewAPIHadoopDataset.html">1.2.9.70. pyspark.RDD.saveAsNewAPIHadoopDataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.saveAsNewAPIHadoopFile.html">1.2.9.71. pyspark.RDD.saveAsNewAPIHadoopFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.saveAsPickleFile.html">1.2.9.72. pyspark.RDD.saveAsPickleFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.saveAsSequenceFile.html">1.2.9.73. pyspark.RDD.saveAsSequenceFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.saveAsTextFile.html">1.2.9.74. pyspark.RDD.saveAsTextFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.setName.html">1.2.9.75. pyspark.RDD.setName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sortBy.html">1.2.9.76. pyspark.RDD.sortBy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sortByKey.html">1.2.9.77. pyspark.RDD.sortByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.stats.html">1.2.9.78. pyspark.RDD.stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.stdev.html">1.2.9.79. pyspark.RDD.stdev</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.subtract.html">1.2.9.80. pyspark.RDD.subtract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.subtractByKey.html">1.2.9.81. pyspark.RDD.subtractByKey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sum.html">1.2.9.82. pyspark.RDD.sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.sumApprox.html">1.2.9.83. pyspark.RDD.sumApprox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.take.html">1.2.9.84. pyspark.RDD.take</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.takeOrdered.html">1.2.9.85. pyspark.RDD.takeOrdered</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.takeSample.html">1.2.9.86. pyspark.RDD.takeSample</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.toDebugString.html">1.2.9.87. pyspark.RDD.toDebugString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.toLocalIterator.html">1.2.9.88. pyspark.RDD.toLocalIterator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.top.html">1.2.9.89. pyspark.RDD.top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.treeAggregate.html">1.2.9.90. pyspark.RDD.treeAggregate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.treeReduce.html">1.2.9.91. pyspark.RDD.treeReduce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.union.html">1.2.9.92. pyspark.RDD.union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.unpersist.html">1.2.9.93. pyspark.RDD.unpersist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.values.html">1.2.9.94. pyspark.RDD.values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.variance.html">1.2.9.95. pyspark.RDD.variance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.zip.html">1.2.9.96. pyspark.RDD.zip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.zipWithIndex.html">1.2.9.97. pyspark.RDD.zipWithIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.RDD.zipWithUniqueId.html">1.2.9.98. pyspark.RDD.zipWithUniqueId</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Row.html">1.2.10. pyspark.Row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SQLContext.html">1.2.11. pyspark.SQLContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkConf.html">1.2.12. pyspark.SparkConf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkContext.html">1.2.13. pyspark.SparkContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkFiles.html">1.2.14. pyspark.SparkFiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkJobInfo.html">1.2.15. pyspark.SparkJobInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkStageInfo.html">1.2.16. pyspark.SparkStageInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.StatusTracker.html">1.2.17. pyspark.StatusTracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.StorageLevel.html">1.2.18. pyspark.StorageLevel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../pyspark.html">1. pyspark</a> &raquo;</li>
+        
+          <li><a href="pyspark.RDD.html">1.2.9. pyspark.RDD</a> &raquo;</li>
+        
+      <li>1.2.9.39. pyspark.RDD.join</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.RDD.join.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-rdd-join">
+<h1>1.2.9.39. pyspark.RDD.join<a class="headerlink" href="#pyspark-rdd-join" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.RDD.join">
+<code class="descclassname">RDD.</code><code class="descname">join</code><span class="sig-paren">(</span><em>other</em>, <em>numPartitions=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/rdd.html#RDD.join"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.RDD.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an RDD containing all pairs of elements with matching keys in
+C{self} and C{other}.</p>
+<p>Each pair of elements will be returned as a (k, (v1, v2)) tuple, where
+(k, v1) is in C{self} and (k, v2) is in C{other}.</p>
+<p>Performs a hash join across the cluster.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
+<span class="go">[(&#39;a&#39;, (1, 2)), (&#39;a&#39;, (1, 3))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.RDD.keyBy.html" class="btn btn-neutral float-right" title="1.2.9.40. pyspark.RDD.keyBy" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.RDD.isEmpty.html" class="btn btn-neutral" title="1.2.9.38. pyspark.RDD.isEmpty" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

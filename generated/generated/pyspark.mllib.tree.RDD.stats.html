@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.13.2.9.78. pyspark.mllib.tree.RDD.stats &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="4.13.2.9. pyspark.mllib.tree.RDD" href="pyspark.mllib.tree.RDD.html"/>
+        <link rel="next" title="4.13.2.9.79. pyspark.mllib.tree.RDD.stdev" href="pyspark.mllib.tree.RDD.stdev.html"/>
+        <link rel="prev" title="4.13.2.9.77. pyspark.mllib.tree.RDD.sortByKey" href="pyspark.mllib.tree.RDD.sortByKey.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.html">4.1. pyspark.mllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.clustering.html">4.3. pyspark.mllib.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.evaluation.html">4.4. pyspark.mllib.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.feature.html">4.5. pyspark.mllib.feature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.html">4.7. pyspark.mllib.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.random.html">4.9. pyspark.mllib.random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.recommendation.html">4.10. pyspark.mllib.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.regression.html">4.11. pyspark.mllib.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.stat.html">4.12. pyspark.mllib.stat</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.tree.html#functions">4.13.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.mllib.tree.html#classes">4.13.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.DecisionTree.html">4.13.2.1. pyspark.mllib.tree.DecisionTree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.DecisionTreeModel.html">4.13.2.2. pyspark.mllib.tree.DecisionTreeModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.GradientBoostedTrees.html">4.13.2.3. pyspark.mllib.tree.GradientBoostedTrees</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.GradientBoostedTreesModel.html">4.13.2.4. pyspark.mllib.tree.GradientBoostedTreesModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.JavaLoader.html">4.13.2.5. pyspark.mllib.tree.JavaLoader</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.JavaModelWrapper.html">4.13.2.6. pyspark.mllib.tree.JavaModelWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.JavaSaveable.html">4.13.2.7. pyspark.mllib.tree.JavaSaveable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.LabeledPoint.html">4.13.2.8. pyspark.mllib.tree.LabeledPoint</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.mllib.tree.RDD.html">4.13.2.9. pyspark.mllib.tree.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.RandomForest.html">4.13.2.10. pyspark.mllib.tree.RandomForest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.RandomForestModel.html">4.13.2.11. pyspark.mllib.tree.RandomForestModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.SparkContext.html">4.13.2.12. pyspark.mllib.tree.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.tree.TreeEnsembleModel.html">4.13.2.13. pyspark.mllib.tree.TreeEnsembleModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.util.html">4.14. pyspark.mllib.util</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">4. pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.tree.html">4.13. pyspark.mllib.tree</a> &raquo;</li>
+        
+          <li><a href="pyspark.mllib.tree.RDD.html">4.13.2.9. pyspark.mllib.tree.RDD</a> &raquo;</li>
+        
+      <li>4.13.2.9.78. pyspark.mllib.tree.RDD.stats</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.mllib.tree.RDD.stats.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-mllib-tree-rdd-stats">
+<h1>4.13.2.9.78. pyspark.mllib.tree.RDD.stats<a class="headerlink" href="#pyspark-mllib-tree-rdd-stats" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.mllib.tree.RDD.stats">
+<code class="descclassname">RDD.</code><code class="descname">stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/rdd.html#RDD.stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.tree.RDD.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a L{StatCounter} object that captures the mean, variance
+and count of the RDD&#8217;s elements in one operation.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.mllib.tree.RDD.stdev.html" class="btn btn-neutral float-right" title="4.13.2.9.79. pyspark.mllib.tree.RDD.stdev" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.mllib.tree.RDD.sortByKey.html" class="btn btn-neutral" title="4.13.2.9.77. pyspark.mllib.tree.RDD.sortByKey" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.3.2.1. pyspark.streaming.kinesis.DStream &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="5.3. pyspark.streaming.kinesis" href="../pyspark.streaming.kinesis.html"/>
+        <link rel="next" title="5.3.2.1.1. pyspark.streaming.kinesis.DStream.cache" href="pyspark.streaming.kinesis.DStream.cache.html"/>
+        <link rel="prev" title="5.3.1.1. pyspark.streaming.kinesis.utf8_decoder" href="../pyspark.streaming.kinesis.utf8_decoder.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.html">5.1. pyspark.streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kinesis.html#functions">5.3.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.streaming.kinesis.html#classes">5.3.2. Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">5.3.2.1. pyspark.streaming.kinesis.DStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kinesis.InitialPositionInStream.html">5.3.2.2. pyspark.streaming.kinesis.InitialPositionInStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kinesis.KinesisUtils.html">5.3.2.3. pyspark.streaming.kinesis.KinesisUtils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kinesis.NoOpSerializer.html">5.3.2.4. pyspark.streaming.kinesis.NoOpSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kinesis.PairDeserializer.html">5.3.2.5. pyspark.streaming.kinesis.PairDeserializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kinesis.StorageLevel.html">5.3.2.6. pyspark.streaming.kinesis.StorageLevel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kinesis.html#exceptions">5.3.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.flume.html">5.4. pyspark.streaming.flume</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.streaming.html">5. pyspark.streaming</a> &raquo;</li>
+        
+          <li><a href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a> &raquo;</li>
+        
+      <li>5.3.2.1. pyspark.streaming.kinesis.DStream</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.streaming.kinesis.DStream.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-streaming-kinesis-dstream">
+<h1>5.3.2.1. pyspark.streaming.kinesis.DStream<a class="headerlink" href="#pyspark-streaming-kinesis-dstream" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.streaming.kinesis.DStream">
+<em class="property">class </em><code class="descclassname">pyspark.streaming.kinesis.</code><code class="descname">DStream</code><span class="sig-paren">(</span><em>jdstream</em>, <em>ssc</em>, <em>jrdd_deserializer</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/streaming/dstream.html#DStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.kinesis.DStream" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Discretized Stream (DStream), the basic abstraction in Spark Streaming,
+is a continuous sequence of RDDs (of the same type) representing a
+continuous stream of data (see L{RDD} in the Spark core documentation
+for more details on RDDs).</p>
+<p>DStreams can either be created from live data (such as, data from TCP
+sockets, Kafka, Flume, etc.) using a L{StreamingContext} or it can be
+generated by transforming existing DStreams using operations such as
+<cite>map</cite>, <cite>window</cite> and <cite>reduceByKeyAndWindow</cite>. While a Spark Streaming
+program is running, each DStream periodically generates a RDD, either
+from live data or by transforming the RDD generated by a parent DStream.</p>
+<dl class="docutils">
+<dt>DStreams internally is characterized by a few basic properties:</dt>
+<dd><ul class="first last simple">
+<li>A list of other DStreams that the DStream depends on</li>
+<li>A time interval at which the DStream generates an RDD</li>
+<li>A function that is used to generate an RDD after each time interval</li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.cache.html#pyspark.streaming.kinesis.DStream.cache" title="pyspark.streaming.kinesis.DStream.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<td>Persist the RDDs of this DStream with the default storage level (C{MEMORY_ONLY}).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.checkpoint.html#pyspark.streaming.kinesis.DStream.checkpoint" title="pyspark.streaming.kinesis.DStream.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>(interval)</td>
+<td>Enable periodic checkpointing of RDDs of this DStream</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.cogroup.html#pyspark.streaming.kinesis.DStream.cogroup" title="pyspark.streaming.kinesis.DStream.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;cogroup&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.combineByKey.html#pyspark.streaming.kinesis.DStream.combineByKey" title="pyspark.streaming.kinesis.DStream.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
+<td>Return a new DStream by applying combineByKey to each RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.context.html#pyspark.streaming.kinesis.DStream.context" title="pyspark.streaming.kinesis.DStream.context"><code class="xref py py-obj docutils literal"><span class="pre">context</span></code></a>()</td>
+<td>Return the StreamingContext associated with this DStream</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.count.html#pyspark.streaming.kinesis.DStream.count" title="pyspark.streaming.kinesis.DStream.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<td>Return a new DStream in which each RDD has a single element generated by counting each RDD of this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.countByValue.html#pyspark.streaming.kinesis.DStream.countByValue" title="pyspark.streaming.kinesis.DStream.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
+<td>Return a new DStream in which each RDD contains the counts of each distinct value in each RDD of this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.countByValueAndWindow.html#pyspark.streaming.kinesis.DStream.countByValueAndWindow" title="pyspark.streaming.kinesis.DStream.countByValueAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByValueAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
+<td>Return a new DStream in which each RDD contains the count of distinct elements in RDDs in a sliding window over this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.countByWindow.html#pyspark.streaming.kinesis.DStream.countByWindow" title="pyspark.streaming.kinesis.DStream.countByWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByWindow</span></code></a>(windowDuration,&nbsp;slideDuration)</td>
+<td>Return a new DStream in which each RDD has a single element generated by counting the number of elements in a window over this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.filter.html#pyspark.streaming.kinesis.DStream.filter" title="pyspark.streaming.kinesis.DStream.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
+<td>Return a new DStream containing only the elements that satisfy predicate.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.flatMap.html#pyspark.streaming.kinesis.DStream.flatMap" title="pyspark.streaming.kinesis.DStream.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new DStream by applying a function to all elements of</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.flatMapValues.html#pyspark.streaming.kinesis.DStream.flatMapValues" title="pyspark.streaming.kinesis.DStream.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
+<td>Return a new DStream by applying a flatmap function to the value of each key-value pairs in this DStream without changing the key.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.foreachRDD.html#pyspark.streaming.kinesis.DStream.foreachRDD" title="pyspark.streaming.kinesis.DStream.foreachRDD"><code class="xref py py-obj docutils literal"><span class="pre">foreachRDD</span></code></a>(func)</td>
+<td>Apply a function to each RDD in this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.fullOuterJoin.html#pyspark.streaming.kinesis.DStream.fullOuterJoin" title="pyspark.streaming.kinesis.DStream.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;full outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.glom.html#pyspark.streaming.kinesis.DStream.glom" title="pyspark.streaming.kinesis.DStream.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
+<td>Return a new DStream in which RDD is generated by applying glom() to RDD of this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.groupByKey.html#pyspark.streaming.kinesis.DStream.groupByKey" title="pyspark.streaming.kinesis.DStream.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions])</td>
+<td>Return a new DStream by applying groupByKey on each RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.groupByKeyAndWindow.html#pyspark.streaming.kinesis.DStream.groupByKeyAndWindow" title="pyspark.streaming.kinesis.DStream.groupByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">groupByKeyAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
+<td>Return a new DStream by applying <cite>groupByKey</cite> over a sliding window.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.join.html#pyspark.streaming.kinesis.DStream.join" title="pyspark.streaming.kinesis.DStream.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.leftOuterJoin.html#pyspark.streaming.kinesis.DStream.leftOuterJoin" title="pyspark.streaming.kinesis.DStream.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;left outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.map.html#pyspark.streaming.kinesis.DStream.map" title="pyspark.streaming.kinesis.DStream.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new DStream by applying a function to each element of DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.mapPartitions.html#pyspark.streaming.kinesis.DStream.mapPartitions" title="pyspark.streaming.kinesis.DStream.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new DStream in which each RDD is generated by applying mapPartitions() to each RDDs of this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.mapPartitionsWithIndex.html#pyspark.streaming.kinesis.DStream.mapPartitionsWithIndex" title="pyspark.streaming.kinesis.DStream.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
+<td>Return a new DStream in which each RDD is generated by applying mapPartitionsWithIndex() to each RDDs of this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.mapValues.html#pyspark.streaming.kinesis.DStream.mapValues" title="pyspark.streaming.kinesis.DStream.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
+<td>Return a new DStream by applying a map function to the value of each key-value pairs in this DStream without changing the key.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.partitionBy.html#pyspark.streaming.kinesis.DStream.partitionBy" title="pyspark.streaming.kinesis.DStream.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
+<td>Return a copy of the DStream in which each RDD are partitioned using the specified partitioner.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.persist.html#pyspark.streaming.kinesis.DStream.persist" title="pyspark.streaming.kinesis.DStream.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>(storageLevel)</td>
+<td>Persist the RDDs of this DStream with the given storage level</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.pprint.html#pyspark.streaming.kinesis.DStream.pprint" title="pyspark.streaming.kinesis.DStream.pprint"><code class="xref py py-obj docutils literal"><span class="pre">pprint</span></code></a>([num])</td>
+<td>Print the first num elements of each RDD generated in this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.reduce.html#pyspark.streaming.kinesis.DStream.reduce" title="pyspark.streaming.kinesis.DStream.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(func)</td>
+<td>Return a new DStream in which each RDD has a single element generated by reducing each RDD of this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.reduceByKey.html#pyspark.streaming.kinesis.DStream.reduceByKey" title="pyspark.streaming.kinesis.DStream.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying reduceByKey to each RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.reduceByKeyAndWindow.html#pyspark.streaming.kinesis.DStream.reduceByKeyAndWindow" title="pyspark.streaming.kinesis.DStream.reduceByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyAndWindow</span></code></a>(func,&nbsp;invFunc,&nbsp;...[,&nbsp;...])</td>
+<td>Return a new DStream by applying incremental <cite>reduceByKey</cite> over a sliding window.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.reduceByWindow.html#pyspark.streaming.kinesis.DStream.reduceByWindow" title="pyspark.streaming.kinesis.DStream.reduceByWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByWindow</span></code></a>(reduceFunc,&nbsp;invReduceFunc,&nbsp;...)</td>
+<td>Return a new DStream in which each RDD has a single element generated by reducing all elements in a sliding window over this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.repartition.html#pyspark.streaming.kinesis.DStream.repartition" title="pyspark.streaming.kinesis.DStream.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
+<td>Return a new DStream with an increased or decreased level of parallelism.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.rightOuterJoin.html#pyspark.streaming.kinesis.DStream.rightOuterJoin" title="pyspark.streaming.kinesis.DStream.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;right outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.saveAsTextFiles.html#pyspark.streaming.kinesis.DStream.saveAsTextFiles" title="pyspark.streaming.kinesis.DStream.saveAsTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFiles</span></code></a>(prefix[,&nbsp;suffix])</td>
+<td>Save each RDD in this DStream as at text file, using string representation of elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.slice.html#pyspark.streaming.kinesis.DStream.slice" title="pyspark.streaming.kinesis.DStream.slice"><code class="xref py py-obj docutils literal"><span class="pre">slice</span></code></a>(begin,&nbsp;end)</td>
+<td>Return all the RDDs between &#8216;begin&#8217; to &#8216;end&#8217; (both included)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.transform.html#pyspark.streaming.kinesis.DStream.transform" title="pyspark.streaming.kinesis.DStream.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(func)</td>
+<td>Return a new DStream in which each RDD is generated by applying a function on each RDD of this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.transformWith.html#pyspark.streaming.kinesis.DStream.transformWith" title="pyspark.streaming.kinesis.DStream.transformWith"><code class="xref py py-obj docutils literal"><span class="pre">transformWith</span></code></a>(func,&nbsp;other[,&nbsp;keepSerializer])</td>
+<td>Return a new DStream in which each RDD is generated by applying a function on each RDD of this DStream and &#8216;other&#8217; DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.union.html#pyspark.streaming.kinesis.DStream.union" title="pyspark.streaming.kinesis.DStream.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<td>Return a new DStream by unifying data of another DStream with this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.updateStateByKey.html#pyspark.streaming.kinesis.DStream.updateStateByKey" title="pyspark.streaming.kinesis.DStream.updateStateByKey"><code class="xref py py-obj docutils literal"><span class="pre">updateStateByKey</span></code></a>(updateFunc[,&nbsp;...])</td>
+<td>Return a new &#8220;state&#8221; DStream where the state for each key is updated by applying the given function on the previous state of the key and the new values of the key.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kinesis.DStream.window.html#pyspark.streaming.kinesis.DStream.window" title="pyspark.streaming.kinesis.DStream.window"><code class="xref py py-obj docutils literal"><span class="pre">window</span></code></a>(windowDuration[,&nbsp;slideDuration])</td>
+<td>Return a new DStream in which each RDD contains all the elements in seen in a sliding window of time over this DStream.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.streaming.kinesis.DStream.cache.html" class="btn btn-neutral float-right" title="5.3.2.1.1. pyspark.streaming.kinesis.DStream.cache" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pyspark.streaming.kinesis.utf8_decoder.html" class="btn btn-neutral" title="5.3.1.1. pyspark.streaming.kinesis.utf8_decoder" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

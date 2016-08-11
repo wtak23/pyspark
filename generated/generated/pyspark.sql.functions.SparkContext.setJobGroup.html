@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.3.2.5.30. pyspark.sql.functions.SparkContext.setJobGroup &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="2.3.2.5. pyspark.sql.functions.SparkContext" href="pyspark.sql.functions.SparkContext.html"/>
+        <link rel="next" title="2.3.2.5.31. pyspark.sql.functions.SparkContext.setLocalProperty" href="pyspark.sql.functions.SparkContext.setLocalProperty.html"/>
+        <link rel="prev" title="2.3.2.5.29. pyspark.sql.functions.SparkContext.setCheckpointDir" href="pyspark.sql.functions.SparkContext.setCheckpointDir.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.html">2.1. pyspark.sql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.sql.functions.html#functions">2.3.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.sql.functions.html#classes">2.3.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.AutoBatchedSerializer.html">2.3.2.1. pyspark.sql.functions.AutoBatchedSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.Column.html">2.3.2.2. pyspark.sql.functions.Column</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.DataFrame.html">2.3.2.3. pyspark.sql.functions.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.PickleSerializer.html">2.3.2.4. pyspark.sql.functions.PickleSerializer</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.sql.functions.SparkContext.html">2.3.2.5. pyspark.sql.functions.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.StringType.html">2.3.2.6. pyspark.sql.functions.StringType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.UserDefinedFunction.html">2.3.2.7. pyspark.sql.functions.UserDefinedFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.map.html">2.3.2.8. pyspark.sql.functions.map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">2. pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a> &raquo;</li>
+        
+          <li><a href="pyspark.sql.functions.SparkContext.html">2.3.2.5. pyspark.sql.functions.SparkContext</a> &raquo;</li>
+        
+      <li>2.3.2.5.30. pyspark.sql.functions.SparkContext.setJobGroup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.sql.functions.SparkContext.setJobGroup.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-sql-functions-sparkcontext-setjobgroup">
+<h1>2.3.2.5.30. pyspark.sql.functions.SparkContext.setJobGroup<a class="headerlink" href="#pyspark-sql-functions-sparkcontext-setjobgroup" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.sql.functions.SparkContext.setJobGroup">
+<code class="descclassname">SparkContext.</code><code class="descname">setJobGroup</code><span class="sig-paren">(</span><em>groupId</em>, <em>description</em>, <em>interruptOnCancel=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/context.html#SparkContext.setJobGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.SparkContext.setJobGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns a group ID to all the jobs started by this thread until the group ID is set to a
+different value or cleared.</p>
+<p>Often, a unit of execution in an application consists of multiple Spark actions or jobs.
+Application programmers can use this method to group all those jobs together and give a
+group description. Once set, the Spark web UI will associate such jobs with this group.</p>
+<p>The application can use L{SparkContext.cancelJobGroup} to cancel all
+running jobs in this group.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Not Set&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">map_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Task should have been cancelled&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">start_job</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">global</span> <span class="n">result</span>
+<span class="gp">... </span>    <span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">sc</span><span class="o">.</span><span class="n">setJobGroup</span><span class="p">(</span><span class="s2">&quot;job_to_cancel&quot;</span><span class="p">,</span> <span class="s2">&quot;some description&quot;</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="n">result</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">map_func</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Cancelled&quot;</span>
+<span class="gp">... </span>    <span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">stop_job</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">sc</span><span class="o">.</span><span class="n">cancelJobGroup</span><span class="p">(</span><span class="s2">&quot;job_to_cancel&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">supress</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">supress</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">start_job</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">supress</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">stop_job</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">supress</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">Cancelled</span>
+</pre></div>
+</div>
+<p>If interruptOnCancel is set to true for the job group, then job cancellation will result
+in Thread.interrupt() being called on the job&#8217;s executor threads. This is useful to help
+ensure that the tasks are actually stopped in a timely manner, but is off by default due
+to HDFS-1208, where HDFS may respond to Thread.interrupt() by marking nodes as dead.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.sql.functions.SparkContext.setLocalProperty.html" class="btn btn-neutral float-right" title="2.3.2.5.31. pyspark.sql.functions.SparkContext.setLocalProperty" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.sql.functions.SparkContext.setCheckpointDir.html" class="btn btn-neutral" title="2.3.2.5.29. pyspark.sql.functions.SparkContext.setCheckpointDir" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

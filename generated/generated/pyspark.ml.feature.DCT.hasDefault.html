@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3.3.2.7.11. pyspark.ml.feature.DCT.hasDefault &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="3.3.2.7. pyspark.ml.feature.DCT" href="pyspark.ml.feature.DCT.html"/>
+        <link rel="next" title="3.3.2.7.12. pyspark.ml.feature.DCT.hasParam" href="pyspark.ml.feature.DCT.hasParam.html"/>
+        <link rel="prev" title="3.3.2.7.10. pyspark.ml.feature.DCT.getParam" href="pyspark.ml.feature.DCT.getParam.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.html">3.1. pyspark.ml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.ml.feature.html">3.3. pyspark.ml.feature</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.ml.feature.html#functions">3.3.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.ml.feature.html#classes">3.3.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Binarizer.html">3.3.2.1. pyspark.ml.feature.Binarizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Bucketizer.html">3.3.2.2. pyspark.ml.feature.Bucketizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.html">3.3.2.3. pyspark.ml.feature.ChiSqSelector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.ChiSqSelectorModel.html">3.3.2.4. pyspark.ml.feature.ChiSqSelectorModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.CountVectorizer.html">3.3.2.5. pyspark.ml.feature.CountVectorizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.CountVectorizerModel.html">3.3.2.6. pyspark.ml.feature.CountVectorizerModel</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.ml.feature.DCT.html">3.3.2.7. pyspark.ml.feature.DCT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.DecisionTreeParams.html">3.3.2.8. pyspark.ml.feature.DecisionTreeParams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.ElementwiseProduct.html">3.3.2.9. pyspark.ml.feature.ElementwiseProduct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasCheckpointInterval.html">3.3.2.10. pyspark.ml.feature.HasCheckpointInterval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasElasticNetParam.html">3.3.2.11. pyspark.ml.feature.HasElasticNetParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasFeaturesCol.html">3.3.2.12. pyspark.ml.feature.HasFeaturesCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasFitIntercept.html">3.3.2.13. pyspark.ml.feature.HasFitIntercept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasHandleInvalid.html">3.3.2.14. pyspark.ml.feature.HasHandleInvalid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasInputCol.html">3.3.2.15. pyspark.ml.feature.HasInputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasInputCols.html">3.3.2.16. pyspark.ml.feature.HasInputCols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasLabelCol.html">3.3.2.17. pyspark.ml.feature.HasLabelCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasMaxIter.html">3.3.2.18. pyspark.ml.feature.HasMaxIter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasNumFeatures.html">3.3.2.19. pyspark.ml.feature.HasNumFeatures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasOutputCol.html">3.3.2.20. pyspark.ml.feature.HasOutputCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasPredictionCol.html">3.3.2.21. pyspark.ml.feature.HasPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasProbabilityCol.html">3.3.2.22. pyspark.ml.feature.HasProbabilityCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasRawPredictionCol.html">3.3.2.23. pyspark.ml.feature.HasRawPredictionCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasRegParam.html">3.3.2.24. pyspark.ml.feature.HasRegParam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasSeed.html">3.3.2.25. pyspark.ml.feature.HasSeed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasSolver.html">3.3.2.26. pyspark.ml.feature.HasSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasStandardization.html">3.3.2.27. pyspark.ml.feature.HasStandardization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasStepSize.html">3.3.2.28. pyspark.ml.feature.HasStepSize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasThresholds.html">3.3.2.29. pyspark.ml.feature.HasThresholds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasTol.html">3.3.2.30. pyspark.ml.feature.HasTol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasVarianceCol.html">3.3.2.31. pyspark.ml.feature.HasVarianceCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasWeightCol.html">3.3.2.32. pyspark.ml.feature.HasWeightCol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HashingTF.html">3.3.2.33. pyspark.ml.feature.HashingTF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.IDF.html">3.3.2.34. pyspark.ml.feature.IDF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.IDFModel.html">3.3.2.35. pyspark.ml.feature.IDFModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.IndexToString.html">3.3.2.36. pyspark.ml.feature.IndexToString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.JavaEstimator.html">3.3.2.37. pyspark.ml.feature.JavaEstimator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.JavaMLReadable.html">3.3.2.38. pyspark.ml.feature.JavaMLReadable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.JavaMLWritable.html">3.3.2.39. pyspark.ml.feature.JavaMLWritable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.JavaModel.html">3.3.2.40. pyspark.ml.feature.JavaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.JavaTransformer.html">3.3.2.41. pyspark.ml.feature.JavaTransformer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MaxAbsScaler.html">3.3.2.42. pyspark.ml.feature.MaxAbsScaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MaxAbsScalerModel.html">3.3.2.43. pyspark.ml.feature.MaxAbsScalerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MinMaxScaler.html">3.3.2.44. pyspark.ml.feature.MinMaxScaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MinMaxScalerModel.html">3.3.2.45. pyspark.ml.feature.MinMaxScalerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.NGram.html">3.3.2.46. pyspark.ml.feature.NGram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Normalizer.html">3.3.2.47. pyspark.ml.feature.Normalizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.OneHotEncoder.html">3.3.2.48. pyspark.ml.feature.OneHotEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.PCA.html">3.3.2.49. pyspark.ml.feature.PCA</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.PCAModel.html">3.3.2.50. pyspark.ml.feature.PCAModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Param.html">3.3.2.51. pyspark.ml.feature.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Params.html">3.3.2.52. pyspark.ml.feature.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.PolynomialExpansion.html">3.3.2.53. pyspark.ml.feature.PolynomialExpansion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.html">3.3.2.54. pyspark.ml.feature.QuantileDiscretizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RFormula.html">3.3.2.55. pyspark.ml.feature.RFormula</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RFormulaModel.html">3.3.2.56. pyspark.ml.feature.RFormulaModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RegexTokenizer.html">3.3.2.57. pyspark.ml.feature.RegexTokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.SQLTransformer.html">3.3.2.58. pyspark.ml.feature.SQLTransformer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StandardScaler.html">3.3.2.59. pyspark.ml.feature.StandardScaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StandardScalerModel.html">3.3.2.60. pyspark.ml.feature.StandardScalerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StopWordsRemover.html">3.3.2.61. pyspark.ml.feature.StopWordsRemover</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StringIndexer.html">3.3.2.62. pyspark.ml.feature.StringIndexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StringIndexerModel.html">3.3.2.63. pyspark.ml.feature.StringIndexerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Tokenizer.html">3.3.2.64. pyspark.ml.feature.Tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.TypeConverters.html">3.3.2.65. pyspark.ml.feature.TypeConverters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorAssembler.html">3.3.2.66. pyspark.ml.feature.VectorAssembler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorIndexer.html">3.3.2.67. pyspark.ml.feature.VectorIndexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorIndexerModel.html">3.3.2.68. pyspark.ml.feature.VectorIndexerModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorSlicer.html">3.3.2.69. pyspark.ml.feature.VectorSlicer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Word2Vec.html">3.3.2.70. pyspark.ml.feature.Word2Vec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Word2VecModel.html">3.3.2.71. pyspark.ml.feature.Word2VecModel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.feature.html">3.3. pyspark.ml.feature</a> &raquo;</li>
+        
+          <li><a href="pyspark.ml.feature.DCT.html">3.3.2.7. pyspark.ml.feature.DCT</a> &raquo;</li>
+        
+      <li>3.3.2.7.11. pyspark.ml.feature.DCT.hasDefault</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.ml.feature.DCT.hasDefault.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-ml-feature-dct-hasdefault">
+<h1>3.3.2.7.11. pyspark.ml.feature.DCT.hasDefault<a class="headerlink" href="#pyspark-ml-feature-dct-hasdefault" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.ml.feature.DCT.hasDefault">
+<code class="descclassname">DCT.</code><code class="descname">hasDefault</code><span class="sig-paren">(</span><em>param</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.feature.DCT.hasDefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether a param has a default value.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.0.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.ml.feature.DCT.hasParam.html" class="btn btn-neutral float-right" title="3.3.2.7.12. pyspark.ml.feature.DCT.hasParam" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.ml.feature.DCT.getParam.html" class="btn btn-neutral" title="3.3.2.7.10. pyspark.ml.feature.DCT.getParam" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

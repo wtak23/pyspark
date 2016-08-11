@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.2.2.30. pyspark.sql.types.array &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="2.2. pyspark.sql.types" href="../pyspark.sql.types.html"/>
+        <link rel="next" title="2.2.2.30.1. pyspark.sql.types.array.itemsize" href="pyspark.sql.types.array.itemsize.html"/>
+        <link rel="prev" title="2.2.2.29.13. pyspark.sql.types.UserDefinedType.typeName" href="pyspark.sql.types.UserDefinedType.typeName.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.html">2.1. pyspark.sql</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.sql.types.html">2.2. pyspark.sql.types</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.sql.types.html#functions">2.2.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.sql.types.html#classes">2.2.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.ArrayType.html">2.2.2.1. pyspark.sql.types.ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.AtomicType.html">2.2.2.2. pyspark.sql.types.AtomicType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.BinaryType.html">2.2.2.3. pyspark.sql.types.BinaryType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.BooleanType.html">2.2.2.4. pyspark.sql.types.BooleanType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.ByteType.html">2.2.2.5. pyspark.sql.types.ByteType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.CloudPickleSerializer.html">2.2.2.6. pyspark.sql.types.CloudPickleSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.DataType.html">2.2.2.7. pyspark.sql.types.DataType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.DataTypeSingleton.html">2.2.2.8. pyspark.sql.types.DataTypeSingleton</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.DateConverter.html">2.2.2.9. pyspark.sql.types.DateConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.DateType.html">2.2.2.10. pyspark.sql.types.DateType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.DatetimeConverter.html">2.2.2.11. pyspark.sql.types.DatetimeConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.DecimalType.html">2.2.2.12. pyspark.sql.types.DecimalType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.DoubleType.html">2.2.2.13. pyspark.sql.types.DoubleType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.FloatType.html">2.2.2.14. pyspark.sql.types.FloatType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.FractionalType.html">2.2.2.15. pyspark.sql.types.FractionalType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.IntegerType.html">2.2.2.16. pyspark.sql.types.IntegerType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.IntegralType.html">2.2.2.17. pyspark.sql.types.IntegralType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.JavaClass.html">2.2.2.18. pyspark.sql.types.JavaClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.LongType.html">2.2.2.19. pyspark.sql.types.LongType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.MapType.html">2.2.2.20. pyspark.sql.types.MapType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.NullType.html">2.2.2.21. pyspark.sql.types.NullType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.NumericType.html">2.2.2.22. pyspark.sql.types.NumericType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.Row.html">2.2.2.23. pyspark.sql.types.Row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.ShortType.html">2.2.2.24. pyspark.sql.types.ShortType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.StringType.html">2.2.2.25. pyspark.sql.types.StringType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.StructField.html">2.2.2.26. pyspark.sql.types.StructField</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.StructType.html">2.2.2.27. pyspark.sql.types.StructType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.TimestampType.html">2.2.2.28. pyspark.sql.types.TimestampType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.types.UserDefinedType.html">2.2.2.29. pyspark.sql.types.UserDefinedType</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2.2.2.30. pyspark.sql.types.array</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">2. pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.types.html">2.2. pyspark.sql.types</a> &raquo;</li>
+        
+      <li>2.2.2.30. pyspark.sql.types.array</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.sql.types.array.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-sql-types-array">
+<h1>2.2.2.30. pyspark.sql.types.array<a class="headerlink" href="#pyspark-sql-types-array" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pyspark.sql.types.array">
+<em class="property">class </em><code class="descclassname">pyspark.sql.types.</code><code class="descname">array</code><a class="headerlink" href="#pyspark.sql.types.array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new array whose items are restricted by typecode, and
+initialized from the optional initializer value, which must be a list,
+string or iterable over elements of the appropriate type.</p>
+<p>Arrays represent basic values and behave very much like lists, except
+the type of objects stored in them is constrained.</p>
+<p>Methods:</p>
+<p>append() &#8211; append a new item to the end of the array
+buffer_info() &#8211; return information giving the current memory info
+byteswap() &#8211; byteswap all the items of the array
+count() &#8211; return number of occurrences of an object
+extend() &#8211; extend array by appending multiple elements from an iterable
+fromfile() &#8211; read items from a file object
+fromlist() &#8211; append items from the list
+fromstring() &#8211; append items from the string
+index() &#8211; return index of first occurrence of an object
+insert() &#8211; insert a new item into the array at a provided position
+pop() &#8211; remove and return item (default last)
+read() &#8211; DEPRECATED, use fromfile()
+remove() &#8211; remove first occurrence of an object
+reverse() &#8211; reverse the order of the items in the array
+tofile() &#8211; write all items to a file object
+tolist() &#8211; return the array converted to an ordinary list
+tostring() &#8211; return the array converted to a string
+write() &#8211; DEPRECATED, use tofile()</p>
+<p>Attributes:</p>
+<p>typecode &#8211; the typecode character used to create the array
+itemsize &#8211; the length in bytes of one array item</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.itemsize.html#pyspark.sql.types.array.itemsize" title="pyspark.sql.types.array.itemsize"><code class="xref py py-obj docutils literal"><span class="pre">itemsize</span></code></a></td>
+<td>the size, in bytes, of one array item</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.typecode.html#pyspark.sql.types.array.typecode" title="pyspark.sql.types.array.typecode"><code class="xref py py-obj docutils literal"><span class="pre">typecode</span></code></a></td>
+<td>the typecode character used to create the array</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.append.html#pyspark.sql.types.array.append" title="pyspark.sql.types.array.append"><code class="xref py py-obj docutils literal"><span class="pre">append</span></code></a>(x)</td>
+<td>Append new value x to the end of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.buffer_info.html#pyspark.sql.types.array.buffer_info" title="pyspark.sql.types.array.buffer_info"><code class="xref py py-obj docutils literal"><span class="pre">buffer_info</span></code></a>()&nbsp;-&gt;&nbsp;(address,&nbsp;length)</td>
+<td>Return a tuple (address, length) giving the current memory address and the length in items of the buffer used to hold array&#8217;s contents The length should be multiplied by the itemsize attribute to calculate the buffer length in bytes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.byteswap.html#pyspark.sql.types.array.byteswap" title="pyspark.sql.types.array.byteswap"><code class="xref py py-obj docutils literal"><span class="pre">byteswap</span></code></a>()</td>
+<td>Byteswap all items of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.count.html#pyspark.sql.types.array.count" title="pyspark.sql.types.array.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>(x)</td>
+<td>Return number of occurrences of x in the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.extend.html#pyspark.sql.types.array.extend" title="pyspark.sql.types.array.extend"><code class="xref py py-obj docutils literal"><span class="pre">extend</span></code></a>(array&nbsp;or&nbsp;iterable)</td>
+<td>Append items to the end of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.fromfile.html#pyspark.sql.types.array.fromfile" title="pyspark.sql.types.array.fromfile"><code class="xref py py-obj docutils literal"><span class="pre">fromfile</span></code></a>(f,&nbsp;n)</td>
+<td>Read n objects from the file object f and append them to the end of the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.fromlist.html#pyspark.sql.types.array.fromlist" title="pyspark.sql.types.array.fromlist"><code class="xref py py-obj docutils literal"><span class="pre">fromlist</span></code></a>(list)</td>
+<td>Append items to array from list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.fromstring.html#pyspark.sql.types.array.fromstring" title="pyspark.sql.types.array.fromstring"><code class="xref py py-obj docutils literal"><span class="pre">fromstring</span></code></a>(string)</td>
+<td>Appends items from the string, interpreting it as an array of machine values,as if it had been read from a file using the fromfile() method).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.fromunicode.html#pyspark.sql.types.array.fromunicode" title="pyspark.sql.types.array.fromunicode"><code class="xref py py-obj docutils literal"><span class="pre">fromunicode</span></code></a>(ustr)</td>
+<td>Extends this array with data from the unicode string ustr.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.index.html#pyspark.sql.types.array.index" title="pyspark.sql.types.array.index"><code class="xref py py-obj docutils literal"><span class="pre">index</span></code></a>(x)</td>
+<td>Return index of first occurrence of x in the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.insert.html#pyspark.sql.types.array.insert" title="pyspark.sql.types.array.insert"><code class="xref py py-obj docutils literal"><span class="pre">insert</span></code></a>(i,x)</td>
+<td>Insert a new item x into the array before position i.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.pop.html#pyspark.sql.types.array.pop" title="pyspark.sql.types.array.pop"><code class="xref py py-obj docutils literal"><span class="pre">pop</span></code></a>([i])</td>
+<td>Return the i-th element and delete it from the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.read.html#pyspark.sql.types.array.read" title="pyspark.sql.types.array.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>(f,&nbsp;n)</td>
+<td>Read n objects from the file object f and append them to the end of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.remove.html#pyspark.sql.types.array.remove" title="pyspark.sql.types.array.remove"><code class="xref py py-obj docutils literal"><span class="pre">remove</span></code></a>(x)</td>
+<td>Remove the first occurrence of x in the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.reverse.html#pyspark.sql.types.array.reverse" title="pyspark.sql.types.array.reverse"><code class="xref py py-obj docutils literal"><span class="pre">reverse</span></code></a>()</td>
+<td>Reverse the order of the items in the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.tofile.html#pyspark.sql.types.array.tofile" title="pyspark.sql.types.array.tofile"><code class="xref py py-obj docutils literal"><span class="pre">tofile</span></code></a>(f)</td>
+<td>Write all items (as machine values) to the file object f.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.tolist.html#pyspark.sql.types.array.tolist" title="pyspark.sql.types.array.tolist"><code class="xref py py-obj docutils literal"><span class="pre">tolist</span></code></a>(()&nbsp;-&gt;&nbsp;list)</td>
+<td>Convert array to an ordinary list with the same items.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.tostring.html#pyspark.sql.types.array.tostring" title="pyspark.sql.types.array.tostring"><code class="xref py py-obj docutils literal"><span class="pre">tostring</span></code></a>(()&nbsp;-&gt;&nbsp;string)</td>
+<td>Convert the array to an array of machine values and return the string representation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.types.array.tounicode.html#pyspark.sql.types.array.tounicode" title="pyspark.sql.types.array.tounicode"><code class="xref py py-obj docutils literal"><span class="pre">tounicode</span></code></a>(()&nbsp;-&gt;&nbsp;unicode)</td>
+<td>Convert the array to a unicode string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.types.array.write.html#pyspark.sql.types.array.write" title="pyspark.sql.types.array.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>(f)</td>
+<td>Write all items (as machine values) to the file object f.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.sql.types.array.itemsize.html" class="btn btn-neutral float-right" title="2.2.2.30.1. pyspark.sql.types.array.itemsize" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.sql.types.UserDefinedType.typeName.html" class="btn btn-neutral" title="2.2.2.29.13. pyspark.sql.types.UserDefinedType.typeName" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

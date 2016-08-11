@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. pyspark &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+        <link rel="up" title="&lt;no title&gt;" href="../pyspark.html"/>
+        <link rel="next" title="1.1.1. pyspark.copy_func" href="pyspark.copy_func.html"/>
+        <link rel="prev" title="&lt;no title&gt;" href="../pyspark.html"/> 
+
+  
+  <script src="../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. pyspark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#functions">1.1. Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.copy_func.html">1.1.1. pyspark.copy_func</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.keyword_only.html">1.1.2. pyspark.keyword_only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.since.html">1.1.3. pyspark.since</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.wraps.html">1.1.4. pyspark.wraps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#classes">1.2. Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.Accumulator.html">1.2.1. pyspark.Accumulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.AccumulatorParam.html">1.2.2. pyspark.AccumulatorParam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.BasicProfiler.html">1.2.3. pyspark.BasicProfiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.Broadcast.html">1.2.4. pyspark.Broadcast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.HiveContext.html">1.2.5. pyspark.HiveContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.MarshalSerializer.html">1.2.6. pyspark.MarshalSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.PickleSerializer.html">1.2.7. pyspark.PickleSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.Profiler.html">1.2.8. pyspark.Profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.RDD.html">1.2.9. pyspark.RDD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.Row.html">1.2.10. pyspark.Row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.SQLContext.html">1.2.11. pyspark.SQLContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.SparkConf.html">1.2.12. pyspark.SparkConf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.SparkContext.html">1.2.13. pyspark.SparkContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.SparkFiles.html">1.2.14. pyspark.SparkFiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.SparkJobInfo.html">1.2.15. pyspark.SparkJobInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.SparkStageInfo.html">1.2.16. pyspark.SparkStageInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.StatusTracker.html">1.2.17. pyspark.StatusTracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/pyspark.StorageLevel.html">1.2.18. pyspark.StorageLevel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.html">&lt;no title&gt;</a> &raquo;</li>
+        
+      <li>1. pyspark</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../sources/generated/pyspark.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pyspark">
+<span id="pyspark"></span><h1>1. pyspark<a class="headerlink" href="#module-pyspark" title="Permalink to this headline">¶</a></h1>
+<p>PySpark is the Python API for Spark.</p>
+<p>Public classes:</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="generated/pyspark.SparkContext.html#pyspark.SparkContext" title="pyspark.SparkContext"><code class="xref py py-class docutils literal"><span class="pre">SparkContext</span></code></a>:</dt>
+<dd><p class="first last">Main entry point for Spark functionality.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="generated/pyspark.RDD.html#pyspark.RDD" title="pyspark.RDD"><code class="xref py py-class docutils literal"><span class="pre">RDD</span></code></a>:</dt>
+<dd><p class="first last">A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="generated/pyspark.Broadcast.html#pyspark.Broadcast" title="pyspark.Broadcast"><code class="xref py py-class docutils literal"><span class="pre">Broadcast</span></code></a>:</dt>
+<dd><p class="first last">A broadcast variable that gets reused across tasks.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="generated/pyspark.Accumulator.html#pyspark.Accumulator" title="pyspark.Accumulator"><code class="xref py py-class docutils literal"><span class="pre">Accumulator</span></code></a>:</dt>
+<dd><p class="first last">An &#8220;add-only&#8221; shared variable that tasks can only add values to.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="generated/pyspark.SparkConf.html#pyspark.SparkConf" title="pyspark.SparkConf"><code class="xref py py-class docutils literal"><span class="pre">SparkConf</span></code></a>:</dt>
+<dd><p class="first last">For configuring Spark.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="generated/pyspark.SparkFiles.html#pyspark.SparkFiles" title="pyspark.SparkFiles"><code class="xref py py-class docutils literal"><span class="pre">SparkFiles</span></code></a>:</dt>
+<dd><p class="first last">Access files shipped with jobs.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference internal" href="generated/pyspark.StorageLevel.html#pyspark.StorageLevel" title="pyspark.StorageLevel"><code class="xref py py-class docutils literal"><span class="pre">StorageLevel</span></code></a>:</dt>
+<dd><p class="first last">Finer-grained cache persistence levels.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="section" id="functions">
+<h2>1.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.copy_func.html#pyspark.copy_func" title="pyspark.copy_func"><code class="xref py py-obj docutils literal"><span class="pre">copy_func</span></code></a>(f[,&nbsp;name,&nbsp;sinceversion,&nbsp;doc])</td>
+<td>Returns a function with same code, globals, defaults, closure, and name (or provide a new name).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.keyword_only.html#pyspark.keyword_only" title="pyspark.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
+<td>A decorator that forces keyword arguments in the wrapped method and saves actual input keyword arguments in <cite>_input_kwargs</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.since.html#pyspark.since" title="pyspark.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.wraps.html#pyspark.wraps" title="pyspark.wraps"><code class="xref py py-obj docutils literal"><span class="pre">wraps</span></code></a>(wrapped[,&nbsp;assigned,&nbsp;updated])</td>
+<td>Decorator factory to apply update_wrapper() to a wrapper function</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h2>1.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.Accumulator.html#pyspark.Accumulator" title="pyspark.Accumulator"><code class="xref py py-obj docutils literal"><span class="pre">Accumulator</span></code></a>(aid,&nbsp;value,&nbsp;accum_param)</td>
+<td>A shared variable that can be accumulated, i.e., has a commutative and associative &#8220;add&#8221; operation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.AccumulatorParam.html#pyspark.AccumulatorParam" title="pyspark.AccumulatorParam"><code class="xref py py-obj docutils literal"><span class="pre">AccumulatorParam</span></code></a></td>
+<td>Helper object that defines how to accumulate values of a given type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.BasicProfiler.html#pyspark.BasicProfiler" title="pyspark.BasicProfiler"><code class="xref py py-obj docutils literal"><span class="pre">BasicProfiler</span></code></a>(ctx)</td>
+<td>BasicProfiler is the default profiler, which is implemented based on</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.Broadcast.html#pyspark.Broadcast" title="pyspark.Broadcast"><code class="xref py py-obj docutils literal"><span class="pre">Broadcast</span></code></a>([sc,&nbsp;value,&nbsp;pickle_registry,&nbsp;path])</td>
+<td>A broadcast variable created with L{SparkContext.broadcast()}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.HiveContext.html#pyspark.HiveContext" title="pyspark.HiveContext"><code class="xref py py-obj docutils literal"><span class="pre">HiveContext</span></code></a>(sparkContext[,&nbsp;jhiveContext])</td>
+<td>A variant of Spark SQL that integrates with data stored in Hive.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.MarshalSerializer.html#pyspark.MarshalSerializer" title="pyspark.MarshalSerializer"><code class="xref py py-obj docutils literal"><span class="pre">MarshalSerializer</span></code></a>()</td>
+<td>Serializes objects using Python&#8217;s Marshal serializer:</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.PickleSerializer.html#pyspark.PickleSerializer" title="pyspark.PickleSerializer"><code class="xref py py-obj docutils literal"><span class="pre">PickleSerializer</span></code></a>()</td>
+<td>Serializes objects using Python&#8217;s pickle serializer:</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.Profiler.html#pyspark.Profiler" title="pyspark.Profiler"><code class="xref py py-obj docutils literal"><span class="pre">Profiler</span></code></a>(ctx)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DeveloperApi</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.RDD.html#pyspark.RDD" title="pyspark.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.Row.html#pyspark.Row" title="pyspark.Row"><code class="xref py py-obj docutils literal"><span class="pre">Row</span></code></a></td>
+<td>A row in L{DataFrame}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.SQLContext.html#pyspark.SQLContext" title="pyspark.SQLContext"><code class="xref py py-obj docutils literal"><span class="pre">SQLContext</span></code></a>(sparkContext[,&nbsp;sparkSession,&nbsp;...])</td>
+<td>The entry point for working with structured data (rows and columns) in Spark, in Spark 1.x.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.SparkConf.html#pyspark.SparkConf" title="pyspark.SparkConf"><code class="xref py py-obj docutils literal"><span class="pre">SparkConf</span></code></a>([loadDefaults,&nbsp;_jvm,&nbsp;_jconf])</td>
+<td>Configuration for a Spark application.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.SparkContext.html#pyspark.SparkContext" title="pyspark.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.SparkFiles.html#pyspark.SparkFiles" title="pyspark.SparkFiles"><code class="xref py py-obj docutils literal"><span class="pre">SparkFiles</span></code></a>()</td>
+<td>Resolves paths to files added through L{SparkContext.addFile()&lt;pyspark.context.SparkContext.addFile&gt;}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.SparkJobInfo.html#pyspark.SparkJobInfo" title="pyspark.SparkJobInfo"><code class="xref py py-obj docutils literal"><span class="pre">SparkJobInfo</span></code></a></td>
+<td>Exposes information about Spark Jobs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.SparkStageInfo.html#pyspark.SparkStageInfo" title="pyspark.SparkStageInfo"><code class="xref py py-obj docutils literal"><span class="pre">SparkStageInfo</span></code></a></td>
+<td>Exposes information about Spark Stages.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.StatusTracker.html#pyspark.StatusTracker" title="pyspark.StatusTracker"><code class="xref py py-obj docutils literal"><span class="pre">StatusTracker</span></code></a>(jtracker)</td>
+<td>Low-level status reporting APIs for monitoring job and stage progress.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.StorageLevel.html#pyspark.StorageLevel" title="pyspark.StorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">StorageLevel</span></code></a>(useDisk,&nbsp;useMemory,&nbsp;useOffHeap,&nbsp;...)</td>
+<td>Flags for controlling the storage of an RDD.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.copy_func.html" class="btn btn-neutral float-right" title="1.1.1. pyspark.copy_func" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../pyspark.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../static/jquery.js"></script>
+      <script type="text/javascript" src="../static/underscore.js"></script>
+      <script type="text/javascript" src="../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

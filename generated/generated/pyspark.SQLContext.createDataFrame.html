@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.2.11.7. pyspark.SQLContext.createDataFrame &mdash; PySpark API 1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="1.2.11. pyspark.SQLContext" href="pyspark.SQLContext.html"/>
+        <link rel="next" title="1.2.11.8. pyspark.SQLContext.createExternalTable" href="pyspark.SQLContext.createExternalTable.html"/>
+        <link rel="prev" title="1.2.11.6. pyspark.SQLContext.clearCache" href="pyspark.SQLContext.clearCache.html"/> 
+
+  
+  <script src="../../static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.html">1. pyspark</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.html#functions">1.1. Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.html#classes">1.2. Classes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Accumulator.html">1.2.1. pyspark.Accumulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.AccumulatorParam.html">1.2.2. pyspark.AccumulatorParam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.BasicProfiler.html">1.2.3. pyspark.BasicProfiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Broadcast.html">1.2.4. pyspark.Broadcast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.HiveContext.html">1.2.5. pyspark.HiveContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.MarshalSerializer.html">1.2.6. pyspark.MarshalSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.PickleSerializer.html">1.2.7. pyspark.PickleSerializer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Profiler.html">1.2.8. pyspark.Profiler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.RDD.html">1.2.9. pyspark.RDD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.Row.html">1.2.10. pyspark.Row</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="pyspark.SQLContext.html">1.2.11. pyspark.SQLContext</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.read.html">1.2.11.1. pyspark.SQLContext.read</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.readStream.html">1.2.11.2. pyspark.SQLContext.readStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.streams.html">1.2.11.3. pyspark.SQLContext.streams</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.udf.html">1.2.11.4. pyspark.SQLContext.udf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.cacheTable.html">1.2.11.5. pyspark.SQLContext.cacheTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.clearCache.html">1.2.11.6. pyspark.SQLContext.clearCache</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">1.2.11.7. pyspark.SQLContext.createDataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.createExternalTable.html">1.2.11.8. pyspark.SQLContext.createExternalTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.dropTempTable.html">1.2.11.9. pyspark.SQLContext.dropTempTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.getConf.html">1.2.11.10. pyspark.SQLContext.getConf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.getOrCreate.html">1.2.11.11. pyspark.SQLContext.getOrCreate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.newSession.html">1.2.11.12. pyspark.SQLContext.newSession</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.range.html">1.2.11.13. pyspark.SQLContext.range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.registerDataFrameAsTable.html">1.2.11.14. pyspark.SQLContext.registerDataFrameAsTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.registerFunction.html">1.2.11.15. pyspark.SQLContext.registerFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.setConf.html">1.2.11.16. pyspark.SQLContext.setConf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.sql.html">1.2.11.17. pyspark.SQLContext.sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.table.html">1.2.11.18. pyspark.SQLContext.table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.tableNames.html">1.2.11.19. pyspark.SQLContext.tableNames</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.tables.html">1.2.11.20. pyspark.SQLContext.tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.SQLContext.uncacheTable.html">1.2.11.21. pyspark.SQLContext.uncacheTable</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkConf.html">1.2.12. pyspark.SparkConf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkContext.html">1.2.13. pyspark.SparkContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkFiles.html">1.2.14. pyspark.SparkFiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkJobInfo.html">1.2.15. pyspark.SparkJobInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.SparkStageInfo.html">1.2.16. pyspark.SparkStageInfo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.StatusTracker.html">1.2.17. pyspark.StatusTracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyspark.StorageLevel.html">1.2.18. pyspark.StorageLevel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.html">&lt;no title&gt;</a> &raquo;</li>
+        
+          <li><a href="../pyspark.html">1. pyspark</a> &raquo;</li>
+        
+          <li><a href="pyspark.SQLContext.html">1.2.11. pyspark.SQLContext</a> &raquo;</li>
+        
+      <li>1.2.11.7. pyspark.SQLContext.createDataFrame</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../sources/generated/generated/pyspark.SQLContext.createDataFrame.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyspark-sqlcontext-createdataframe">
+<h1>1.2.11.7. pyspark.SQLContext.createDataFrame<a class="headerlink" href="#pyspark-sqlcontext-createdataframe" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pyspark.SQLContext.createDataFrame">
+<code class="descclassname">SQLContext.</code><code class="descname">createDataFrame</code><span class="sig-paren">(</span><em>data</em>, <em>schema=None</em>, <em>samplingRatio=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../modules/pyspark/sql/context.html#SQLContext.createDataFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.SQLContext.createDataFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from an <a class="reference internal" href="pyspark.RDD.html#pyspark.RDD" title="pyspark.RDD"><code class="xref py py-class docutils literal"><span class="pre">RDD</span></code></a>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</p>
+<p>When <code class="docutils literal"><span class="pre">schema</span></code> is a list of column names, the type of each column
+will be inferred from <code class="docutils literal"><span class="pre">data</span></code>.</p>
+<p>When <code class="docutils literal"><span class="pre">schema</span></code> is <code class="docutils literal"><span class="pre">None</span></code>, it will try to infer the schema (column names and types)
+from <code class="docutils literal"><span class="pre">data</span></code>, which should be an RDD of <a class="reference internal" href="pyspark.Row.html#pyspark.Row" title="pyspark.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a>,
+or <code class="xref py py-class docutils literal"><span class="pre">namedtuple</span></code>, or <code class="xref py py-class docutils literal"><span class="pre">dict</span></code>.</p>
+<p>When <code class="docutils literal"><span class="pre">schema</span></code> is <code class="xref py py-class docutils literal"><span class="pre">DataType</span></code> or datatype string, it must match the real data, or
+exception will be thrown at runtime. If the given schema is not StructType, it will be
+wrapped into a StructType as its only field, and the field name will be &#8220;value&#8221;, each record
+will also be wrapped into a tuple, which can be converted to row later.</p>
+<p>If schema inference is needed, <code class="docutils literal"><span class="pre">samplingRatio</span></code> is used to determined the ratio of
+rows used for schema inference. The first row will be used if <code class="docutils literal"><span class="pre">samplingRatio</span></code> is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; an RDD of any kind of SQL data representation(e.g. row, tuple, int, boolean,
+etc.), or <code class="xref py py-class docutils literal"><span class="pre">list</span></code>, or <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</li>
+<li><strong>schema</strong> &#8211; a <code class="xref py py-class docutils literal"><span class="pre">DataType</span></code> or a datatype string or a list of column names, default
+is None.  The data type string format equals to <cite>DataType.simpleString</cite>, except that
+top level struct type can omit the <cite>struct&lt;&gt;</cite> and atomic types use <cite>typeName()</cite> as
+their format, e.g. use <cite>byte</cite> instead of <cite>tinyint</cite> for ByteType. We can also use <cite>int</cite>
+as a short name for IntegerType.</li>
+<li><strong>samplingRatio</strong> &#8211; the sample ratio of rows used for inferring</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 2.0: </span>The schema parameter can be a DataType or a datatype string after 2.0. If it&#8217;s not a
+StructType, it will be wrapped into a StructType and each record will also be wrapped
+into a tuple.</p>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(_1=u&#39;Alice&#39;, _2=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(age=1, name=u&#39;Alice&#39;)]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(_1=u&#39;Alice&#39;, _2=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Row</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Person</span> <span class="o">=</span> <span class="n">Row</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">Person</span><span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span>
+<span class="gp">... </span>   <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">toPandas</span><span class="p">())</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>  
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>  
+<span class="go">[Row(0=1, 1=2)]</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="s2">&quot;a: string, b: int&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(a=u&#39;Alice&#39;, b=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(value=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span> 
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">Py4JJavaError</span>: <span class="n">...</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.SQLContext.createExternalTable.html" class="btn btn-neutral float-right" title="1.2.11.8. pyspark.SQLContext.createExternalTable" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.SQLContext.clearCache.html" class="btn btn-neutral" title="1.2.11.6. pyspark.SQLContext.clearCache" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../static/jquery.js"></script>
+      <script type="text/javascript" src="../../static/underscore.js"></script>
+      <script type="text/javascript" src="../../static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
