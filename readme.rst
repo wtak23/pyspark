@@ -1,1 +1,1 @@
-http://wtak23.github.io/pyspark_doc
+http://wtak23.github.io/pyspark
