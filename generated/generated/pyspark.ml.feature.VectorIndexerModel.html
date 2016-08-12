@@ -243,6 +243,7 @@
             
   <div class="section" id="pyspark-ml-feature-vectorindexermodel">
 <h1>3.3.2.68. pyspark.ml.feature.VectorIndexerModel<a class="headerlink" href="#pyspark-ml-feature-vectorindexermodel" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.ml.feature.VectorIndexerModel.__init__.html#pyspark.ml.feature.VectorIndexerModel.__init__" title="pyspark.ml.feature.VectorIndexerModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">VectorIndexerModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.feature.VectorIndexerModel">
 <em class="property">class </em><code class="descclassname">pyspark.ml.feature.</code><code class="descname">VectorIndexerModel</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#VectorIndexerModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.VectorIndexerModel" title="Permalink to this definition">¶</a></dt>
@@ -334,6 +335,21 @@ Non-ML metadata is not carried over from the input to the output column.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.ml.feature.VectorIndexerModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.feature.VectorIndexerModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize this instance with a Java model object.
+Subclasses should call this constructor, initialize params,
+and then call _transfer_params_from_java.</p>
+<p>This instance can be instantiated without specifying java_model,
+it will be assigned after that, but this scenario only used by
+<code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code> to load models.  This is a bit of a
+hack, but it is easiest since a proper fix would require
+MLReader (in pyspark.ml.util) to depend on these wrappers, but
+these wrappers depend on pyspark.ml.util (both directly and via
+other ML classes).</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>

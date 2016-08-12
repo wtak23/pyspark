@@ -192,6 +192,7 @@
             
   <div class="section" id="pyspark-sql-streaming-maptype">
 <h1>2.4.2.15. pyspark.sql.streaming.MapType<a class="headerlink" href="#pyspark-sql-streaming-maptype" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.sql.streaming.MapType.__init__.html#pyspark.sql.streaming.MapType.__init__" title="pyspark.sql.streaming.MapType.__init__"><code class="xref py py-func docutils literal"><span class="pre">MapType.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.sql.streaming.MapType">
 <em class="property">class </em><code class="descclassname">pyspark.sql.streaming.</code><code class="descname">MapType</code><span class="sig-paren">(</span><em>keyType</em>, <em>valueType</em>, <em>valueContainsNull=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/types.html#MapType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.streaming.MapType" title="Permalink to this definition">¶</a></dt>
@@ -243,6 +244,19 @@
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.sql.streaming.MapType.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>keyType</em>, <em>valueType</em>, <em>valueContainsNull=True</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/types.html#MapType.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.streaming.MapType.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">MapType</span><span class="p">(</span><span class="n">StringType</span><span class="p">(),</span> <span class="n">IntegerType</span><span class="p">())</span>
+<span class="gp">... </span>       <span class="o">==</span> <span class="n">MapType</span><span class="p">(</span><span class="n">StringType</span><span class="p">(),</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">MapType</span><span class="p">(</span><span class="n">StringType</span><span class="p">(),</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">... </span>       <span class="o">==</span> <span class="n">MapType</span><span class="p">(</span><span class="n">StringType</span><span class="p">(),</span> <span class="n">FloatType</span><span class="p">()))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>

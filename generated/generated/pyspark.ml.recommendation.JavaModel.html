@@ -213,6 +213,7 @@
             
   <div class="section" id="pyspark-ml-recommendation-javamodel">
 <h1>3.7.2.33. pyspark.ml.recommendation.JavaModel<a class="headerlink" href="#pyspark-ml-recommendation-javamodel" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.ml.recommendation.JavaModel.__init__.html#pyspark.ml.recommendation.JavaModel.__init__" title="pyspark.ml.recommendation.JavaModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">JavaModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.recommendation.JavaModel">
 <em class="property">class </em><code class="descclassname">pyspark.ml.recommendation.</code><code class="descname">JavaModel</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/wrapper.html#JavaModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.recommendation.JavaModel" title="Permalink to this definition">¶</a></dt>
@@ -273,6 +274,21 @@ param mix-ins, because this sets the UID from the Java model.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.ml.recommendation.JavaModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/wrapper.html#JavaModel.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.recommendation.JavaModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize this instance with a Java model object.
+Subclasses should call this constructor, initialize params,
+and then call _transfer_params_from_java.</p>
+<p>This instance can be instantiated without specifying java_model,
+it will be assigned after that, but this scenario only used by
+<a class="reference internal" href="pyspark.ml.recommendation.JavaMLReader.html#pyspark.ml.recommendation.JavaMLReader" title="pyspark.ml.recommendation.JavaMLReader"><code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code></a> to load models.  This is a bit of a
+hack, but it is easiest since a proper fix would require
+MLReader (in pyspark.ml.util) to depend on these wrappers, but
+these wrappers depend on pyspark.ml.util (both directly and via
+other ML classes).</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>

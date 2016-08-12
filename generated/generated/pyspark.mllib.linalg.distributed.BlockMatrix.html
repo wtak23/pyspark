@@ -190,6 +190,7 @@
             
   <div class="section" id="pyspark-mllib-linalg-distributed-blockmatrix">
 <h1>4.8.2.1. pyspark.mllib.linalg.distributed.BlockMatrix<a class="headerlink" href="#pyspark-mllib-linalg-distributed-blockmatrix" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.mllib.linalg.distributed.BlockMatrix.__init__.html#pyspark.mllib.linalg.distributed.BlockMatrix.__init__" title="pyspark.mllib.linalg.distributed.BlockMatrix.__init__"><code class="xref py py-func docutils literal"><span class="pre">BlockMatrix.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.linalg.distributed.BlockMatrix">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.linalg.distributed.</code><code class="descname">BlockMatrix</code><span class="sig-paren">(</span><em>blocks</em>, <em>rowsPerBlock</em>, <em>colsPerBlock</em>, <em>numRows=0</em>, <em>numCols=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg/distributed.html#BlockMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.linalg.distributed.BlockMatrix" title="Permalink to this definition">¶</a></dt>
@@ -293,6 +294,34 @@ invoked.</li>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.mllib.linalg.distributed.BlockMatrix.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>blocks</em>, <em>rowsPerBlock</em>, <em>colsPerBlock</em>, <em>numRows=0</em>, <em>numCols=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg/distributed.html#BlockMatrix.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.linalg.distributed.BlockMatrix.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Note: This docstring is not shown publicly.</p>
+<p>Create a wrapper over a Java BlockMatrix.</p>
+<p>Publicly, we require that <cite>blocks</cite> be an RDD.  However, for
+internal usage, <cite>blocks</cite> can also be a Java BlockMatrix
+object, in which case we can wrap it directly.  This
+assists in clean matrix conversions.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">blocks</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Matrices</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])),</span>
+<span class="gp">... </span>                         <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Matrices</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]))])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">BlockMatrix</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_diff</span> <span class="o">=</span> <span class="n">BlockMatrix</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">mat_diff</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span> <span class="o">==</span>
+<span class="gp">... </span> <span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_same</span> <span class="o">=</span> <span class="n">BlockMatrix</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">mat_same</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span> <span class="o">==</span>
+<span class="gp">... </span> <span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>

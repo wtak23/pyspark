@@ -237,6 +237,7 @@
             
   <div class="section" id="pyspark-ml-regression-sparkcontext">
 <h1>3.8.2.61. pyspark.ml.regression.SparkContext<a class="headerlink" href="#pyspark-ml-regression-sparkcontext" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.ml.regression.SparkContext.__init__.html#pyspark.ml.regression.SparkContext.__init__" title="pyspark.ml.regression.SparkContext.__init__"><code class="xref py py-func docutils literal"><span class="pre">SparkContext.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.SparkContext">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">SparkContext</code><span class="sig-paren">(</span><em>master=None</em>, <em>appName=None</em>, <em>sparkHome=None</em>, <em>pyFiles=None</em>, <em>environment=None</em>, <em>batchSize=0</em>, <em>serializer=PickleSerializer()</em>, <em>conf=None</em>, <em>gateway=None</em>, <em>jsc=None</em>, <em>profiler_cls=&lt;class 'pyspark.profiler.BasicProfiler'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.SparkContext" title="Permalink to this definition">¶</a></dt>
@@ -389,6 +390,53 @@ broadcast variables on that cluster.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.ml.regression.SparkContext.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>master=None</em>, <em>appName=None</em>, <em>sparkHome=None</em>, <em>pyFiles=None</em>, <em>environment=None</em>, <em>batchSize=0</em>, <em>serializer=PickleSerializer()</em>, <em>conf=None</em>, <em>gateway=None</em>, <em>jsc=None</em>, <em>profiler_cls=&lt;class 'pyspark.profiler.BasicProfiler'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.SparkContext.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new SparkContext. At least the master and app name should be set,
+either through the named parameters here or through C{conf}.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>master</strong> &#8211; Cluster URL to connect to
+(e.g. mesos://host:port, spark://host:port, local[4]).</li>
+<li><strong>appName</strong> &#8211; A name for your job, to display on the cluster web UI.</li>
+<li><strong>sparkHome</strong> &#8211; Location where Spark is installed on cluster nodes.</li>
+<li><strong>pyFiles</strong> &#8211; Collection of .zip or .py files to send to the cluster
+and add to PYTHONPATH.  These can be paths on the local file
+system or HDFS, HTTP, HTTPS, or FTP URLs.</li>
+<li><strong>environment</strong> &#8211; A dictionary of environment variables to set on
+worker nodes.</li>
+<li><strong>batchSize</strong> &#8211; The number of Python objects represented as a single
+Java object. Set 1 to disable batching, 0 to automatically choose
+the batch size based on object sizes, or -1 to use an unlimited
+batch size</li>
+<li><strong>serializer</strong> &#8211; The serializer for RDDs.</li>
+<li><strong>conf</strong> &#8211; A L{SparkConf} object setting Spark properties.</li>
+<li><strong>gateway</strong> &#8211; Use an existing gateway and JVM, otherwise a new JVM
+will be instantiated.</li>
+<li><strong>jsc</strong> &#8211; The JavaSparkContext instance (optional).</li>
+<li><strong>profiler_cls</strong> &#8211; A class of custom Profiler used to do profiling
+(default is pyspark.profiler.BasicProfiler).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">(</span><span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&gt;&gt;&gt; sc2 = SparkContext(&#39;local&#39;, &#39;test2&#39;) 
+Traceback (most recent call last):
+    ...
+ValueError:...
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>

@@ -190,6 +190,7 @@
             
   <div class="section" id="pyspark-mllib-linalg-distributed-rowmatrix">
 <h1>4.8.2.13. pyspark.mllib.linalg.distributed.RowMatrix<a class="headerlink" href="#pyspark-mllib-linalg-distributed-rowmatrix" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.mllib.linalg.distributed.RowMatrix.__init__.html#pyspark.mllib.linalg.distributed.RowMatrix.__init__" title="pyspark.mllib.linalg.distributed.RowMatrix.__init__"><code class="xref py py-func docutils literal"><span class="pre">RowMatrix.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.linalg.distributed.RowMatrix">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.linalg.distributed.</code><code class="descname">RowMatrix</code><span class="sig-paren">(</span><em>rows</em>, <em>numRows=0</em>, <em>numCols=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg/distributed.html#RowMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.linalg.distributed.RowMatrix" title="Permalink to this definition">¶</a></dt>
@@ -256,6 +257,33 @@ the first row.</li>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.mllib.linalg.distributed.RowMatrix.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>rows</em>, <em>numRows=0</em>, <em>numCols=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg/distributed.html#RowMatrix.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.linalg.distributed.RowMatrix.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Note: This docstring is not shown publicly.</p>
+<p>Create a wrapper over a Java RowMatrix.</p>
+<p>Publicly, we require that <cite>rows</cite> be an RDD.  However, for
+internal usage, <cite>rows</cite> can also be a Java RowMatrix
+object, in which case we can wrap it directly.  This
+assists in clean matrix conversions.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rows</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">RowMatrix</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_diff</span> <span class="o">=</span> <span class="n">RowMatrix</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">mat_diff</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span> <span class="o">==</span>
+<span class="gp">... </span> <span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_same</span> <span class="o">=</span> <span class="n">RowMatrix</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">mat_same</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span> <span class="o">==</span>
+<span class="gp">... </span> <span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>

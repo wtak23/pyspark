@@ -245,6 +245,7 @@
             
   <div class="section" id="pyspark-ml-classification-naivebayesmodel">
 <h1>3.4.2.59. pyspark.ml.classification.NaiveBayesModel<a class="headerlink" href="#pyspark-ml-classification-naivebayesmodel" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.ml.classification.NaiveBayesModel.__init__.html#pyspark.ml.classification.NaiveBayesModel.__init__" title="pyspark.ml.classification.NaiveBayesModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">NaiveBayesModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.classification.NaiveBayesModel">
 <em class="property">class </em><code class="descclassname">pyspark.ml.classification.</code><code class="descname">NaiveBayesModel</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/classification.html#NaiveBayesModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.classification.NaiveBayesModel" title="Permalink to this definition">¶</a></dt>
@@ -324,6 +325,21 @@
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.ml.classification.NaiveBayesModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.classification.NaiveBayesModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize this instance with a Java model object.
+Subclasses should call this constructor, initialize params,
+and then call _transfer_params_from_java.</p>
+<p>This instance can be instantiated without specifying java_model,
+it will be assigned after that, but this scenario only used by
+<a class="reference internal" href="pyspark.ml.classification.JavaMLReader.html#pyspark.ml.classification.JavaMLReader" title="pyspark.ml.classification.JavaMLReader"><code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code></a> to load models.  This is a bit of a
+hack, but it is easiest since a proper fix would require
+MLReader (in pyspark.ml.util) to depend on these wrappers, but
+these wrappers depend on pyspark.ml.util (both directly and via
+other ML classes).</p>
+</dd></dl>
+
 </dd></dl>
 
 </div>

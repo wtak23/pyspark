@@ -188,6 +188,7 @@
             
   <div class="section" id="pyspark-mllib-evaluation-sqlcontext">
 <h1>4.4.2.10. pyspark.mllib.evaluation.SQLContext<a class="headerlink" href="#pyspark-mllib-evaluation-sqlcontext" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.__init__.html#pyspark.mllib.evaluation.SQLContext.__init__" title="pyspark.mllib.evaluation.SQLContext.__init__"><code class="xref py py-func docutils literal"><span class="pre">SQLContext.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.evaluation.SQLContext">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.evaluation.</code><code class="descname">SQLContext</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>sparkSession=None</em>, <em>jsqlContext=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#SQLContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.SQLContext" title="Permalink to this definition">¶</a></dt>
@@ -291,6 +292,26 @@ SQLContext in the JVM, instead we make all calls to this object.</li>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.mllib.evaluation.SQLContext.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>sparkSession=None</em>, <em>jsqlContext=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#SQLContext.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.SQLContext.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new SQLContext.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">allTypes</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">row</span><span class="o">=</span><span class="n">Row</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">time</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">allTypes</span><span class="o">.</span><span class="n">toDF</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s2">&quot;allTypes&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s1">&#39;select i+1, d+1, not b, list[1], dict[&quot;s&quot;], time, row.a &#39;</span>
+<span class="gp">... </span>           <span class="s1">&#39;from allTypes where b and i &gt; 0&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row((i + CAST(1 AS BIGINT))=2, (d + CAST(1 AS DOUBLE))=2.0, (NOT b)=False, list[1]=2,             dict[s]=0, time=datetime.datetime(2014, 8, 1, 14, 1, 5), a=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">l</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">row</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">list</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[(1, u&#39;string&#39;, 1.0, 1, True, datetime.datetime(2014, 8, 1, 14, 1, 5), 1, [1, 2, 3])]</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>

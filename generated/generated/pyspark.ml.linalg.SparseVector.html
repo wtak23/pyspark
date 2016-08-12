@@ -191,6 +191,7 @@
             
   <div class="section" id="pyspark-ml-linalg-sparsevector">
 <h1>3.6.2.12. pyspark.ml.linalg.SparseVector<a class="headerlink" href="#pyspark-ml-linalg-sparsevector" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="pyspark.ml.linalg.SparseVector.__init__.html#pyspark.ml.linalg.SparseVector.__init__" title="pyspark.ml.linalg.SparseVector.__init__"><code class="xref py py-func docutils literal"><span class="pre">SparseVector.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.linalg.SparseVector">
 <em class="property">class </em><code class="descclassname">pyspark.ml.linalg.</code><code class="descname">SparseVector</code><span class="sig-paren">(</span><em>size</em>, <em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/linalg.html#SparseVector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.linalg.SparseVector" title="Permalink to this definition">¶</a></dt>
@@ -220,6 +221,37 @@ alternatively pass SciPy&#8217;s {scipy.sparse} data types.</p>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="pyspark.ml.linalg.SparseVector.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>size</em>, <em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/linalg.html#SparseVector.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.linalg.SparseVector.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a sparse vector, using either a dictionary, a list of
+(index, value) pairs, or two separate arrays of indices and
+values (sorted by index).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>size</strong> &#8211; Size of the vector.</li>
+<li><strong>args</strong> &#8211; Active entries, as a dictionary {index: value, ...},
+a list of tuples [(index, value), ...], or a list of strictly
+increasing indices and a list of corresponding values [index, ...],
+[value, ...]. Inactive entries are treated as zeros.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SparseVector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">5.5</span><span class="p">})</span>
+<span class="go">SparseVector(4, {1: 1.0, 3: 5.5})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SparseVector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">)])</span>
+<span class="go">SparseVector(4, {1: 1.0, 3: 5.5})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SparseVector</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">])</span>
+<span class="go">SparseVector(4, {1: 1.0, 3: 5.5})</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>
