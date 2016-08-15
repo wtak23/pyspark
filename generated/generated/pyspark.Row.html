@@ -32,7 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="prev" title="1.2.9.98. pyspark.RDD.zipWithUniqueId" href="pyspark.RDD.zipWithUniqueId.html"/> 
+        <link rel="next" title="1.2.10.1.1. pyspark.Row.asDict" href="pyspark.Row.asDict.html"/>
+        <link rel="prev" title="1.2.9.2.1. pyspark.RDD.context" href="pyspark.RDD.context.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -97,9 +98,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.Profiler.html">1.2.8. pyspark.Profiler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.RDD.html">1.2.9. pyspark.RDD</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.10. pyspark.Row</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Row.asDict.html">1.2.10.1. pyspark.Row.asDict</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Row.count.html">1.2.10.2. pyspark.Row.count</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Row.index.html">1.2.10.3. pyspark.Row.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.10.1. Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.SQLContext.html">1.2.11. pyspark.SQLContext</a></li>
@@ -182,7 +181,6 @@
             
   <div class="section" id="pyspark-row">
 <h1>1.2.10. pyspark.Row<a class="headerlink" href="#pyspark-row" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="#pyspark.Row.__init__" title="pyspark.Row.__init__"><code class="xref py py-func docutils literal"><span class="pre">Row.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.Row">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">Row</code><a class="reference internal" href="../../_modules/pyspark/sql/types.html#Row"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Row" title="Permalink to this definition">¶</a></dt>
@@ -221,27 +219,6 @@ could be used to create Row objects, such as</p>
 <span class="go">Row(name=&#39;Alice&#39;, age=11)</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">__call__</span></code>(*args)</td>
-<td>create new Row object</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.Row.asDict.html#pyspark.Row.asDict" title="pyspark.Row.asDict"><code class="xref py py-obj docutils literal"><span class="pre">asDict</span></code></a>([recursive])</td>
-<td>Return as an dict</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.Row.count.html#pyspark.Row.count" title="pyspark.Row.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>(...)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.Row.index.html#pyspark.Row.index" title="pyspark.Row.index"><code class="xref py py-obj docutils literal"><span class="pre">index</span></code></a>((value,&nbsp;[start,&nbsp;...)</td>
-<td>Raises ValueError if the value is not present.</td>
-</tr>
-</tbody>
-</table>
 <dl class="attribute">
 <dt id="pyspark.Row.__init__">
 <code class="descname">__init__</code><a class="headerlink" href="#pyspark.Row.__init__" title="Permalink to this definition">¶</a></dt>
@@ -250,6 +227,26 @@ could be used to create Row objects, such as</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>1.2.10.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Row.asDict.html#pyspark.Row.asDict" title="pyspark.Row.asDict"><code class="xref py py-obj docutils literal"><span class="pre">asDict</span></code></a>([recursive])</td>
+<td>Return as an dict</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.Row.count.html#pyspark.Row.count" title="pyspark.Row.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>(...)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Row.index.html#pyspark.Row.index" title="pyspark.Row.index"><code class="xref py py-obj docutils literal"><span class="pre">index</span></code></a>((value,&nbsp;[start,&nbsp;...)</td>
+<td>Raises ValueError if the value is not present.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -259,8 +256,10 @@ could be used to create Row objects, such as</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="pyspark.Row.asDict.html" class="btn btn-neutral float-right" title="1.2.10.1.1. pyspark.Row.asDict" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="pyspark.RDD.zipWithUniqueId.html" class="btn btn-neutral" title="1.2.9.98. pyspark.RDD.zipWithUniqueId" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="pyspark.RDD.context.html" class="btn btn-neutral" title="1.2.9.2.1. pyspark.RDD.context" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

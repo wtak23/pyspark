@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.2. pyspark.mllib.classification" href="../pyspark.mllib.classification.html"/>
-        <link rel="next" title="4.2.2.4.1. pyspark.mllib.classification.LinearClassificationModel.intercept" href="pyspark.mllib.classification.LinearClassificationModel.intercept.html"/>
-        <link rel="prev" title="4.2.2.3. pyspark.mllib.classification.LabeledPoint" href="pyspark.mllib.classification.LabeledPoint.html"/> 
+        <link rel="next" title="4.2.2.4.1.1. pyspark.mllib.classification.LinearClassificationModel.__init__" href="pyspark.mllib.classification.LinearClassificationModel.__init__.html"/>
+        <link rel="prev" title="4.2.2.3.1.1. pyspark.mllib.classification.LabeledPoint.__init__" href="pyspark.mllib.classification.LabeledPoint.__init__.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -194,13 +194,43 @@
             
   <div class="section" id="pyspark-mllib-classification-linearclassificationmodel">
 <h1>4.2.2.4. pyspark.mllib.classification.LinearClassificationModel<a class="headerlink" href="#pyspark-mllib-classification-linearclassificationmodel" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.__init__.html#pyspark.mllib.classification.LinearClassificationModel.__init__" title="pyspark.mllib.classification.LinearClassificationModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">LinearClassificationModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.classification.LinearClassificationModel">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.classification.</code><code class="descname">LinearClassificationModel</code><span class="sig-paren">(</span><em>weights</em>, <em>intercept</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/classification.html#LinearClassificationModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.classification.LinearClassificationModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>A private abstract class representing a multiclass classification
 model. The categories are represented by int values: 0, 1, 2, etc.</p>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.mllib.classification.LinearClassificationModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>weights</em>, <em>intercept</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/classification.html#LinearClassificationModel.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.classification.LinearClassificationModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.2.2.4.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.__init__.html#pyspark.mllib.classification.LinearClassificationModel.__init__" title="pyspark.mllib.classification.LinearClassificationModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(weights,&nbsp;intercept)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.clearThreshold.html#pyspark.mllib.classification.LinearClassificationModel.clearThreshold" title="pyspark.mllib.classification.LinearClassificationModel.clearThreshold"><code class="xref py py-obj docutils literal"><span class="pre">clearThreshold</span></code></a>()</td>
+<td>Clears the threshold so that <cite>predict</cite> will output raw prediction scores.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.predict.html#pyspark.mllib.classification.LinearClassificationModel.predict" title="pyspark.mllib.classification.LinearClassificationModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(test)</td>
+<td>Predict values for a single data point or an RDD of points using the model trained.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.setThreshold.html#pyspark.mllib.classification.LinearClassificationModel.setThreshold" title="pyspark.mllib.classification.LinearClassificationModel.setThreshold"><code class="xref py py-obj docutils literal"><span class="pre">setThreshold</span></code></a>(value)</td>
+<td>Sets the threshold that separates positive predictions from negative predictions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.2.2.4.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -218,26 +248,7 @@ model. The categories are represented by int values: 0, 1, 2, etc.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.clearThreshold.html#pyspark.mllib.classification.LinearClassificationModel.clearThreshold" title="pyspark.mllib.classification.LinearClassificationModel.clearThreshold"><code class="xref py py-obj docutils literal"><span class="pre">clearThreshold</span></code></a>()</td>
-<td>Clears the threshold so that <cite>predict</cite> will output raw prediction scores.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.predict.html#pyspark.mllib.classification.LinearClassificationModel.predict" title="pyspark.mllib.classification.LinearClassificationModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(test)</td>
-<td>Predict values for a single data point or an RDD of points using the model trained.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.LinearClassificationModel.setThreshold.html#pyspark.mllib.classification.LinearClassificationModel.setThreshold" title="pyspark.mllib.classification.LinearClassificationModel.setThreshold"><code class="xref py py-obj docutils literal"><span class="pre">setThreshold</span></code></a>(value)</td>
-<td>Sets the threshold that separates positive predictions from negative predictions.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -247,10 +258,10 @@ model. The categories are represented by int values: 0, 1, 2, etc.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.classification.LinearClassificationModel.intercept.html" class="btn btn-neutral float-right" title="4.2.2.4.1. pyspark.mllib.classification.LinearClassificationModel.intercept" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.classification.LinearClassificationModel.__init__.html" class="btn btn-neutral float-right" title="4.2.2.4.1.1. pyspark.mllib.classification.LinearClassificationModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.classification.LabeledPoint.html" class="btn btn-neutral" title="4.2.2.3. pyspark.mllib.classification.LabeledPoint" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.classification.LabeledPoint.__init__.html" class="btn btn-neutral" title="4.2.2.3.1.1. pyspark.mllib.classification.LabeledPoint.__init__" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

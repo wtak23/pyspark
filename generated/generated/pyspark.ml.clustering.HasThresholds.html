@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.5. pyspark.ml.clustering" href="../pyspark.ml.clustering.html"/>
-        <link rel="next" title="3.5.2.26.1. pyspark.ml.clustering.HasThresholds.params" href="pyspark.ml.clustering.HasThresholds.params.html"/>
-        <link rel="prev" title="3.5.2.25.13. pyspark.ml.clustering.HasStepSize.setStepSize" href="pyspark.ml.clustering.HasStepSize.setStepSize.html"/> 
+        <link rel="next" title="3.5.2.26.1.1. pyspark.ml.clustering.HasThresholds.__init__" href="pyspark.ml.clustering.HasThresholds.__init__.html"/>
+        <link rel="prev" title="3.5.2.25.2.2. pyspark.ml.clustering.HasStepSize.stepSize" href="pyspark.ml.clustering.HasStepSize.stepSize.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -221,12 +221,69 @@
             
   <div class="section" id="pyspark-ml-clustering-hasthresholds">
 <h1>3.5.2.26. pyspark.ml.clustering.HasThresholds<a class="headerlink" href="#pyspark-ml-clustering-hasthresholds" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.__init__.html#pyspark.ml.clustering.HasThresholds.__init__" title="pyspark.ml.clustering.HasThresholds.__init__"><code class="xref py py-func docutils literal"><span class="pre">HasThresholds.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.clustering.HasThresholds">
 <em class="property">class </em><code class="descclassname">pyspark.ml.clustering.</code><code class="descname">HasThresholds</code><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasThresholds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.HasThresholds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mixin for param thresholds: Thresholds in multi-class classification to adjust the probability of predicting each class. Array must have length equal to the number of classes, with values &gt;= 0. The class with largest value p/t is predicted, where p is the original probability of that class and t is the class&#8217; threshold.</p>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.ml.clustering.HasThresholds.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasThresholds.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.HasThresholds.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>3.5.2.26.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.__init__.html#pyspark.ml.clustering.HasThresholds.__init__" title="pyspark.ml.clustering.HasThresholds.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.copy.html#pyspark.ml.clustering.HasThresholds.copy" title="pyspark.ml.clustering.HasThresholds.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.explainParam.html#pyspark.ml.clustering.HasThresholds.explainParam" title="pyspark.ml.clustering.HasThresholds.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.explainParams.html#pyspark.ml.clustering.HasThresholds.explainParams" title="pyspark.ml.clustering.HasThresholds.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.extractParamMap.html#pyspark.ml.clustering.HasThresholds.extractParamMap" title="pyspark.ml.clustering.HasThresholds.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.getOrDefault.html#pyspark.ml.clustering.HasThresholds.getOrDefault" title="pyspark.ml.clustering.HasThresholds.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.getParam.html#pyspark.ml.clustering.HasThresholds.getParam" title="pyspark.ml.clustering.HasThresholds.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.getThresholds.html#pyspark.ml.clustering.HasThresholds.getThresholds" title="pyspark.ml.clustering.HasThresholds.getThresholds"><code class="xref py py-obj docutils literal"><span class="pre">getThresholds</span></code></a>()</td>
+<td>Gets the value of thresholds or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.hasDefault.html#pyspark.ml.clustering.HasThresholds.hasDefault" title="pyspark.ml.clustering.HasThresholds.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.hasParam.html#pyspark.ml.clustering.HasThresholds.hasParam" title="pyspark.ml.clustering.HasThresholds.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.isDefined.html#pyspark.ml.clustering.HasThresholds.isDefined" title="pyspark.ml.clustering.HasThresholds.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.isSet.html#pyspark.ml.clustering.HasThresholds.isSet" title="pyspark.ml.clustering.HasThresholds.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.setThresholds.html#pyspark.ml.clustering.HasThresholds.setThresholds" title="pyspark.ml.clustering.HasThresholds.setThresholds"><code class="xref py py-obj docutils literal"><span class="pre">setThresholds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">thresholds</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.5.2.26.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -236,55 +293,12 @@
 <tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.params.html#pyspark.ml.clustering.HasThresholds.params" title="pyspark.ml.clustering.HasThresholds.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
 <td>Returns all params ordered by name.</td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.copy.html#pyspark.ml.clustering.HasThresholds.copy" title="pyspark.ml.clustering.HasThresholds.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.explainParam.html#pyspark.ml.clustering.HasThresholds.explainParam" title="pyspark.ml.clustering.HasThresholds.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.explainParams.html#pyspark.ml.clustering.HasThresholds.explainParams" title="pyspark.ml.clustering.HasThresholds.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.extractParamMap.html#pyspark.ml.clustering.HasThresholds.extractParamMap" title="pyspark.ml.clustering.HasThresholds.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.getOrDefault.html#pyspark.ml.clustering.HasThresholds.getOrDefault" title="pyspark.ml.clustering.HasThresholds.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.getParam.html#pyspark.ml.clustering.HasThresholds.getParam" title="pyspark.ml.clustering.HasThresholds.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.getThresholds.html#pyspark.ml.clustering.HasThresholds.getThresholds" title="pyspark.ml.clustering.HasThresholds.getThresholds"><code class="xref py py-obj docutils literal"><span class="pre">getThresholds</span></code></a>()</td>
-<td>Gets the value of thresholds or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.hasDefault.html#pyspark.ml.clustering.HasThresholds.hasDefault" title="pyspark.ml.clustering.HasThresholds.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.hasParam.html#pyspark.ml.clustering.HasThresholds.hasParam" title="pyspark.ml.clustering.HasThresholds.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.isDefined.html#pyspark.ml.clustering.HasThresholds.isDefined" title="pyspark.ml.clustering.HasThresholds.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.isSet.html#pyspark.ml.clustering.HasThresholds.isSet" title="pyspark.ml.clustering.HasThresholds.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.setThresholds.html#pyspark.ml.clustering.HasThresholds.setThresholds" title="pyspark.ml.clustering.HasThresholds.setThresholds"><code class="xref py py-obj docutils literal"><span class="pre">setThresholds</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.HasThresholds.thresholds.html#pyspark.ml.clustering.HasThresholds.thresholds" title="pyspark.ml.clustering.HasThresholds.thresholds"><code class="xref py py-attr docutils literal"><span class="pre">thresholds</span></code></a>.</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasThresholds.thresholds.html#pyspark.ml.clustering.HasThresholds.thresholds" title="pyspark.ml.clustering.HasThresholds.thresholds"><code class="xref py py-obj docutils literal"><span class="pre">thresholds</span></code></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -294,10 +308,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.clustering.HasThresholds.params.html" class="btn btn-neutral float-right" title="3.5.2.26.1. pyspark.ml.clustering.HasThresholds.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.clustering.HasThresholds.__init__.html" class="btn btn-neutral float-right" title="3.5.2.26.1.1. pyspark.ml.clustering.HasThresholds.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.clustering.HasStepSize.setStepSize.html" class="btn btn-neutral" title="3.5.2.25.13. pyspark.ml.clustering.HasStepSize.setStepSize" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.clustering.HasStepSize.stepSize.html" class="btn btn-neutral" title="3.5.2.25.2.2. pyspark.ml.clustering.HasStepSize.stepSize" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

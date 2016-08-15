@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.4. pyspark.mllib.evaluation" href="../pyspark.mllib.evaluation.html"/>
-        <link rel="next" title="4.4.2.7.1. pyspark.mllib.evaluation.MultilabelMetrics.accuracy" href="pyspark.mllib.evaluation.MultilabelMetrics.accuracy.html"/>
-        <link rel="prev" title="4.4.2.6.13. pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure" href="pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure.html"/> 
+        <link rel="next" title="4.4.2.7.1.1. pyspark.mllib.evaluation.MultilabelMetrics.__init__" href="pyspark.mllib.evaluation.MultilabelMetrics.__init__.html"/>
+        <link rel="prev" title="4.4.2.6.2.5. pyspark.mllib.evaluation.MulticlassMetrics.weightedTruePositiveRate" href="pyspark.mllib.evaluation.MulticlassMetrics.weightedTruePositiveRate.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -188,7 +188,6 @@
             
   <div class="section" id="pyspark-mllib-evaluation-multilabelmetrics">
 <h1>4.4.2.7. pyspark.mllib.evaluation.MultilabelMetrics<a class="headerlink" href="#pyspark-mllib-evaluation-multilabelmetrics" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.__init__.html#pyspark.mllib.evaluation.MultilabelMetrics.__init__" title="pyspark.mllib.evaluation.MultilabelMetrics.__init__"><code class="xref py py-func docutils literal"><span class="pre">MultilabelMetrics.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.evaluation.MultilabelMetrics">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.evaluation.</code><code class="descname">MultilabelMetrics</code><span class="sig-paren">(</span><em>predictionAndLabels</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/evaluation.html#MultilabelMetrics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.MultilabelMetrics" title="Permalink to this definition">¶</a></dt>
@@ -236,7 +235,41 @@ unique elements.</td>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.mllib.evaluation.MultilabelMetrics.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>predictionAndLabels</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/evaluation.html#MultilabelMetrics.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.MultilabelMetrics.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.4.2.7.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.__init__.html#pyspark.mllib.evaluation.MultilabelMetrics.__init__" title="pyspark.mllib.evaluation.MultilabelMetrics.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(predictionAndLabels)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.call.html#pyspark.mllib.evaluation.MultilabelMetrics.call" title="pyspark.mllib.evaluation.MultilabelMetrics.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(name,&nbsp;*a)</td>
+<td>Call method of java_model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.f1Measure.html#pyspark.mllib.evaluation.MultilabelMetrics.f1Measure" title="pyspark.mllib.evaluation.MultilabelMetrics.f1Measure"><code class="xref py py-obj docutils literal"><span class="pre">f1Measure</span></code></a>([label])</td>
+<td>Returns f1Measure or f1Measure for a given label (category) if specified.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.precision.html#pyspark.mllib.evaluation.MultilabelMetrics.precision" title="pyspark.mllib.evaluation.MultilabelMetrics.precision"><code class="xref py py-obj docutils literal"><span class="pre">precision</span></code></a>([label])</td>
+<td>Returns precision or precision for a given label (category) if specified.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.recall.html#pyspark.mllib.evaluation.MultilabelMetrics.recall" title="pyspark.mllib.evaluation.MultilabelMetrics.recall"><code class="xref py py-obj docutils literal"><span class="pre">recall</span></code></a>([label])</td>
+<td>Returns recall or recall for a given label (category) if specified.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.4.2.7.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -263,29 +296,7 @@ unique elements.</td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.call.html#pyspark.mllib.evaluation.MultilabelMetrics.call" title="pyspark.mllib.evaluation.MultilabelMetrics.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(name,&nbsp;*a)</td>
-<td>Call method of java_model</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.f1Measure.html#pyspark.mllib.evaluation.MultilabelMetrics.f1Measure" title="pyspark.mllib.evaluation.MultilabelMetrics.f1Measure"><code class="xref py py-obj docutils literal"><span class="pre">f1Measure</span></code></a>([label])</td>
-<td>Returns f1Measure or f1Measure for a given label (category) if specified.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.precision.html#pyspark.mllib.evaluation.MultilabelMetrics.precision" title="pyspark.mllib.evaluation.MultilabelMetrics.precision"><code class="xref py py-obj docutils literal"><span class="pre">precision</span></code></a>([label])</td>
-<td>Returns precision or precision for a given label (category) if specified.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.recall.html#pyspark.mllib.evaluation.MultilabelMetrics.recall" title="pyspark.mllib.evaluation.MultilabelMetrics.recall"><code class="xref py py-obj docutils literal"><span class="pre">recall</span></code></a>([label])</td>
-<td>Returns recall or recall for a given label (category) if specified.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -295,10 +306,10 @@ unique elements.</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.evaluation.MultilabelMetrics.accuracy.html" class="btn btn-neutral float-right" title="4.4.2.7.1. pyspark.mllib.evaluation.MultilabelMetrics.accuracy" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.evaluation.MultilabelMetrics.__init__.html" class="btn btn-neutral float-right" title="4.4.2.7.1.1. pyspark.mllib.evaluation.MultilabelMetrics.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure.html" class="btn btn-neutral" title="4.4.2.6.13. pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.evaluation.MulticlassMetrics.weightedTruePositiveRate.html" class="btn btn-neutral" title="4.4.2.6.2.5. pyspark.mllib.evaluation.MulticlassMetrics.weightedTruePositiveRate" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

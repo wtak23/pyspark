@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.8. pyspark.ml.regression" href="../pyspark.ml.regression.html"/>
-        <link rel="next" title="3.8.2.8.1. pyspark.ml.regression.GBTParams.params" href="pyspark.ml.regression.GBTParams.params.html"/>
-        <link rel="prev" title="3.8.2.7.43. pyspark.ml.regression.DecisionTreeRegressor.write" href="pyspark.ml.regression.DecisionTreeRegressor.write.html"/> 
+        <link rel="next" title="3.8.2.8.1.1. pyspark.ml.regression.GBTParams.__init__" href="pyspark.ml.regression.GBTParams.__init__.html"/>
+        <link rel="prev" title="3.8.2.7.2.15. pyspark.ml.regression.DecisionTreeRegressor.varianceCol" href="pyspark.ml.regression.DecisionTreeRegressor.varianceCol.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -237,106 +237,141 @@
             
   <div class="section" id="pyspark-ml-regression-gbtparams">
 <h1>3.8.2.8. pyspark.ml.regression.GBTParams<a class="headerlink" href="#pyspark-ml-regression-gbtparams" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.regression.GBTParams.__init__.html#pyspark.ml.regression.GBTParams.__init__" title="pyspark.ml.regression.GBTParams.__init__"><code class="xref py py-func docutils literal"><span class="pre">GBTParams.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.GBTParams">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">GBTParams</code><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#GBTParams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.GBTParams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Private class to track supported GBT params.</p>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.ml.regression.GBTParams.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.regression.GBTParams.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>3.8.2.8.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.__init__.html#pyspark.ml.regression.GBTParams.__init__" title="pyspark.ml.regression.GBTParams.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.copy.html#pyspark.ml.regression.GBTParams.copy" title="pyspark.ml.regression.GBTParams.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.explainParam.html#pyspark.ml.regression.GBTParams.explainParam" title="pyspark.ml.regression.GBTParams.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.explainParams.html#pyspark.ml.regression.GBTParams.explainParams" title="pyspark.ml.regression.GBTParams.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.extractParamMap.html#pyspark.ml.regression.GBTParams.extractParamMap" title="pyspark.ml.regression.GBTParams.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getCacheNodeIds.html#pyspark.ml.regression.GBTParams.getCacheNodeIds" title="pyspark.ml.regression.GBTParams.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
+<td>Gets the value of cacheNodeIds or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMaxBins.html#pyspark.ml.regression.GBTParams.getMaxBins" title="pyspark.ml.regression.GBTParams.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
+<td>Gets the value of maxBins or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMaxDepth.html#pyspark.ml.regression.GBTParams.getMaxDepth" title="pyspark.ml.regression.GBTParams.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
+<td>Gets the value of maxDepth or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMaxMemoryInMB.html#pyspark.ml.regression.GBTParams.getMaxMemoryInMB" title="pyspark.ml.regression.GBTParams.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
+<td>Gets the value of maxMemoryInMB or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMinInfoGain.html#pyspark.ml.regression.GBTParams.getMinInfoGain" title="pyspark.ml.regression.GBTParams.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
+<td>Gets the value of minInfoGain or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMinInstancesPerNode.html#pyspark.ml.regression.GBTParams.getMinInstancesPerNode" title="pyspark.ml.regression.GBTParams.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
+<td>Gets the value of minInstancesPerNode or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getOrDefault.html#pyspark.ml.regression.GBTParams.getOrDefault" title="pyspark.ml.regression.GBTParams.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getParam.html#pyspark.ml.regression.GBTParams.getParam" title="pyspark.ml.regression.GBTParams.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getSubsamplingRate.html#pyspark.ml.regression.GBTParams.getSubsamplingRate" title="pyspark.ml.regression.GBTParams.getSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">getSubsamplingRate</span></code></a>()</td>
+<td>Gets the value of subsamplingRate or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.hasDefault.html#pyspark.ml.regression.GBTParams.hasDefault" title="pyspark.ml.regression.GBTParams.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.hasParam.html#pyspark.ml.regression.GBTParams.hasParam" title="pyspark.ml.regression.GBTParams.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.isDefined.html#pyspark.ml.regression.GBTParams.isDefined" title="pyspark.ml.regression.GBTParams.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.isSet.html#pyspark.ml.regression.GBTParams.isSet" title="pyspark.ml.regression.GBTParams.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setCacheNodeIds.html#pyspark.ml.regression.GBTParams.setCacheNodeIds" title="pyspark.ml.regression.GBTParams.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMaxBins.html#pyspark.ml.regression.GBTParams.setMaxBins" title="pyspark.ml.regression.GBTParams.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMaxDepth.html#pyspark.ml.regression.GBTParams.setMaxDepth" title="pyspark.ml.regression.GBTParams.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMaxMemoryInMB.html#pyspark.ml.regression.GBTParams.setMaxMemoryInMB" title="pyspark.ml.regression.GBTParams.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMinInfoGain.html#pyspark.ml.regression.GBTParams.setMinInfoGain" title="pyspark.ml.regression.GBTParams.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMinInstancesPerNode.html#pyspark.ml.regression.GBTParams.setMinInstancesPerNode" title="pyspark.ml.regression.GBTParams.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setSubsamplingRate.html#pyspark.ml.regression.GBTParams.setSubsamplingRate" title="pyspark.ml.regression.GBTParams.setSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">setSubsamplingRate</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">subsamplingRate</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.8.2.8.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.cacheNodeIds.html#pyspark.ml.regression.GBTParams.cacheNodeIds" title="pyspark.ml.regression.GBTParams.cacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">cacheNodeIds</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.maxBins.html#pyspark.ml.regression.GBTParams.maxBins" title="pyspark.ml.regression.GBTParams.maxBins"><code class="xref py py-obj docutils literal"><span class="pre">maxBins</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.maxDepth.html#pyspark.ml.regression.GBTParams.maxDepth" title="pyspark.ml.regression.GBTParams.maxDepth"><code class="xref py py-obj docutils literal"><span class="pre">maxDepth</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.maxMemoryInMB.html#pyspark.ml.regression.GBTParams.maxMemoryInMB" title="pyspark.ml.regression.GBTParams.maxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">maxMemoryInMB</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.minInfoGain.html#pyspark.ml.regression.GBTParams.minInfoGain" title="pyspark.ml.regression.GBTParams.minInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">minInfoGain</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.minInstancesPerNode.html#pyspark.ml.regression.GBTParams.minInstancesPerNode" title="pyspark.ml.regression.GBTParams.minInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">minInstancesPerNode</span></code></a></td>
+<td></td>
+</tr>
 <tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.params.html#pyspark.ml.regression.GBTParams.params" title="pyspark.ml.regression.GBTParams.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
 <td>Returns all params ordered by name.</td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.copy.html#pyspark.ml.regression.GBTParams.copy" title="pyspark.ml.regression.GBTParams.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.subsamplingRate.html#pyspark.ml.regression.GBTParams.subsamplingRate" title="pyspark.ml.regression.GBTParams.subsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">subsamplingRate</span></code></a></td>
+<td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.explainParam.html#pyspark.ml.regression.GBTParams.explainParam" title="pyspark.ml.regression.GBTParams.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.explainParams.html#pyspark.ml.regression.GBTParams.explainParams" title="pyspark.ml.regression.GBTParams.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.extractParamMap.html#pyspark.ml.regression.GBTParams.extractParamMap" title="pyspark.ml.regression.GBTParams.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getCacheNodeIds.html#pyspark.ml.regression.GBTParams.getCacheNodeIds" title="pyspark.ml.regression.GBTParams.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
-<td>Gets the value of cacheNodeIds or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMaxBins.html#pyspark.ml.regression.GBTParams.getMaxBins" title="pyspark.ml.regression.GBTParams.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
-<td>Gets the value of maxBins or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMaxDepth.html#pyspark.ml.regression.GBTParams.getMaxDepth" title="pyspark.ml.regression.GBTParams.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
-<td>Gets the value of maxDepth or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMaxMemoryInMB.html#pyspark.ml.regression.GBTParams.getMaxMemoryInMB" title="pyspark.ml.regression.GBTParams.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
-<td>Gets the value of maxMemoryInMB or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMinInfoGain.html#pyspark.ml.regression.GBTParams.getMinInfoGain" title="pyspark.ml.regression.GBTParams.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
-<td>Gets the value of minInfoGain or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getMinInstancesPerNode.html#pyspark.ml.regression.GBTParams.getMinInstancesPerNode" title="pyspark.ml.regression.GBTParams.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
-<td>Gets the value of minInstancesPerNode or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getOrDefault.html#pyspark.ml.regression.GBTParams.getOrDefault" title="pyspark.ml.regression.GBTParams.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getParam.html#pyspark.ml.regression.GBTParams.getParam" title="pyspark.ml.regression.GBTParams.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.getSubsamplingRate.html#pyspark.ml.regression.GBTParams.getSubsamplingRate" title="pyspark.ml.regression.GBTParams.getSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">getSubsamplingRate</span></code></a>()</td>
-<td>Gets the value of subsamplingRate or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.hasDefault.html#pyspark.ml.regression.GBTParams.hasDefault" title="pyspark.ml.regression.GBTParams.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.hasParam.html#pyspark.ml.regression.GBTParams.hasParam" title="pyspark.ml.regression.GBTParams.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.isDefined.html#pyspark.ml.regression.GBTParams.isDefined" title="pyspark.ml.regression.GBTParams.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.isSet.html#pyspark.ml.regression.GBTParams.isSet" title="pyspark.ml.regression.GBTParams.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setCacheNodeIds.html#pyspark.ml.regression.GBTParams.setCacheNodeIds" title="pyspark.ml.regression.GBTParams.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTParams.cacheNodeIds.html#pyspark.ml.regression.GBTParams.cacheNodeIds" title="pyspark.ml.regression.GBTParams.cacheNodeIds"><code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMaxBins.html#pyspark.ml.regression.GBTParams.setMaxBins" title="pyspark.ml.regression.GBTParams.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTParams.maxBins.html#pyspark.ml.regression.GBTParams.maxBins" title="pyspark.ml.regression.GBTParams.maxBins"><code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMaxDepth.html#pyspark.ml.regression.GBTParams.setMaxDepth" title="pyspark.ml.regression.GBTParams.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTParams.maxDepth.html#pyspark.ml.regression.GBTParams.maxDepth" title="pyspark.ml.regression.GBTParams.maxDepth"><code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMaxMemoryInMB.html#pyspark.ml.regression.GBTParams.setMaxMemoryInMB" title="pyspark.ml.regression.GBTParams.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTParams.maxMemoryInMB.html#pyspark.ml.regression.GBTParams.maxMemoryInMB" title="pyspark.ml.regression.GBTParams.maxMemoryInMB"><code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMinInfoGain.html#pyspark.ml.regression.GBTParams.setMinInfoGain" title="pyspark.ml.regression.GBTParams.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTParams.minInfoGain.html#pyspark.ml.regression.GBTParams.minInfoGain" title="pyspark.ml.regression.GBTParams.minInfoGain"><code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setMinInstancesPerNode.html#pyspark.ml.regression.GBTParams.setMinInstancesPerNode" title="pyspark.ml.regression.GBTParams.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTParams.minInstancesPerNode.html#pyspark.ml.regression.GBTParams.minInstancesPerNode" title="pyspark.ml.regression.GBTParams.minInstancesPerNode"><code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.setSubsamplingRate.html#pyspark.ml.regression.GBTParams.setSubsamplingRate" title="pyspark.ml.regression.GBTParams.setSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">setSubsamplingRate</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTParams.subsamplingRate.html#pyspark.ml.regression.GBTParams.subsamplingRate" title="pyspark.ml.regression.GBTParams.subsamplingRate"><code class="xref py py-attr docutils literal"><span class="pre">subsamplingRate</span></code></a>.</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTParams.supportedLossTypes.html#pyspark.ml.regression.GBTParams.supportedLossTypes" title="pyspark.ml.regression.GBTParams.supportedLossTypes"><code class="xref py py-obj docutils literal"><span class="pre">supportedLossTypes</span></code></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -346,10 +381,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.regression.GBTParams.params.html" class="btn btn-neutral float-right" title="3.8.2.8.1. pyspark.ml.regression.GBTParams.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.regression.GBTParams.__init__.html" class="btn btn-neutral float-right" title="3.8.2.8.1.1. pyspark.ml.regression.GBTParams.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.regression.DecisionTreeRegressor.write.html" class="btn btn-neutral" title="3.8.2.7.43. pyspark.ml.regression.DecisionTreeRegressor.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.regression.DecisionTreeRegressor.varianceCol.html" class="btn btn-neutral" title="3.8.2.7.2.15. pyspark.ml.regression.DecisionTreeRegressor.varianceCol" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

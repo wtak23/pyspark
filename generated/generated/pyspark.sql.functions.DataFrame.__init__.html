@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.functions.DataFrame.__init__ &mdash; PySpark API 1 documentation</title>
+  <title>2.3.2.3.1.1. pyspark.sql.functions.DataFrame.__init__ &mdash; PySpark API 1 documentation</title>
   
 
   
@@ -30,7 +30,10 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/> 
+    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+        <link rel="up" title="2.3.2.3. pyspark.sql.functions.DataFrame" href="pyspark.sql.functions.DataFrame.html"/>
+        <link rel="next" title="2.3.2.3.1.2. pyspark.sql.functions.DataFrame.agg" href="pyspark.sql.functions.DataFrame.agg.html"/>
+        <link rel="prev" title="2.3.2.3. pyspark.sql.functions.DataFrame" href="pyspark.sql.functions.DataFrame.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -81,9 +84,28 @@
             
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.html">2.1. pyspark.sql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.sql.functions.html#functions">2.3.1. Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../pyspark.sql.functions.html#classes">2.3.2. Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.AutoBatchedSerializer.html">2.3.2.1. pyspark.sql.functions.AutoBatchedSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.Column.html">2.3.2.2. pyspark.sql.functions.Column</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pyspark.sql.functions.DataFrame.html">2.3.2.3. pyspark.sql.functions.DataFrame</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.PickleSerializer.html">2.3.2.4. pyspark.sql.functions.PickleSerializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.SparkContext.html">2.3.2.5. pyspark.sql.functions.SparkContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.StringType.html">2.3.2.6. pyspark.sql.functions.StringType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.UserDefinedFunction.html">2.3.2.7. pyspark.sql.functions.UserDefinedFunction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
@@ -128,7 +150,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>pyspark.sql.functions.DataFrame.__init__</li>
+          <li><a href="../../pyspark.sql.html">2. pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.functions.html">2.3. pyspark.sql.functions</a> &raquo;</li>
+        
+          <li><a href="pyspark.sql.functions.DataFrame.html">2.3.2.3. pyspark.sql.functions.DataFrame</a> &raquo;</li>
+        
+      <li>2.3.2.3.1.1. pyspark.sql.functions.DataFrame.__init__</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -146,7 +174,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pyspark-sql-functions-dataframe-init">
-<h1>pyspark.sql.functions.DataFrame.__init__<a class="headerlink" href="#pyspark-sql-functions-dataframe-init" title="Permalink to this headline">¶</a></h1>
+<h1>2.3.2.3.1.1. pyspark.sql.functions.DataFrame.__init__<a class="headerlink" href="#pyspark-sql-functions-dataframe-init" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="pyspark.sql.functions.DataFrame.__init__">
 <code class="descclassname">DataFrame.</code><code class="descname">__init__</code><span class="sig-paren">(</span><em>jdf</em>, <em>sql_ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/dataframe.html#DataFrame.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.DataFrame.__init__" title="Permalink to this definition">¶</a></dt>
@@ -158,6 +186,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pyspark.sql.functions.DataFrame.agg.html" class="btn btn-neutral float-right" title="2.3.2.3.1.2. pyspark.sql.functions.DataFrame.agg" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pyspark.sql.functions.DataFrame.html" class="btn btn-neutral" title="2.3.2.3. pyspark.sql.functions.DataFrame" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

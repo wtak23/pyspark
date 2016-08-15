@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="next" title="1.2.3.1. pyspark.BasicProfiler.dump" href="pyspark.BasicProfiler.dump.html"/>
-        <link rel="prev" title="1.2.2.2. pyspark.AccumulatorParam.zero" href="pyspark.AccumulatorParam.zero.html"/> 
+        <link rel="next" title="1.2.3.1.1. pyspark.BasicProfiler.__init__" href="pyspark.BasicProfiler.__init__.html"/>
+        <link rel="prev" title="1.2.2.1.2. pyspark.AccumulatorParam.zero" href="pyspark.AccumulatorParam.zero.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -91,10 +91,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.Accumulator.html">1.2.1. pyspark.Accumulator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.AccumulatorParam.html">1.2.2. pyspark.AccumulatorParam</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.3. pyspark.BasicProfiler</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.BasicProfiler.dump.html">1.2.3.1. pyspark.BasicProfiler.dump</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.BasicProfiler.profile.html">1.2.3.2. pyspark.BasicProfiler.profile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.BasicProfiler.show.html">1.2.3.3. pyspark.BasicProfiler.show</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.BasicProfiler.stats.html">1.2.3.4. pyspark.BasicProfiler.stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.3.1. Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.Broadcast.html">1.2.4. pyspark.Broadcast</a></li>
@@ -184,35 +181,44 @@
             
   <div class="section" id="pyspark-basicprofiler">
 <h1>1.2.3. pyspark.BasicProfiler<a class="headerlink" href="#pyspark-basicprofiler" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.BasicProfiler.__init__.html#pyspark.BasicProfiler.__init__" title="pyspark.BasicProfiler.__init__"><code class="xref py py-func docutils literal"><span class="pre">BasicProfiler.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.BasicProfiler">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">BasicProfiler</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/profiler.html#BasicProfiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.BasicProfiler" title="Permalink to this definition">¶</a></dt>
 <dd><p>BasicProfiler is the default profiler, which is implemented based on
 cProfile and Accumulator</p>
-<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="pyspark.BasicProfiler.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/profiler.html#BasicProfiler.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.BasicProfiler.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>1.2.3.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.BasicProfiler.dump.html#pyspark.BasicProfiler.dump" title="pyspark.BasicProfiler.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a>(id,&nbsp;path)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.BasicProfiler.__init__.html#pyspark.BasicProfiler.__init__" title="pyspark.BasicProfiler.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(ctx)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.BasicProfiler.dump.html#pyspark.BasicProfiler.dump" title="pyspark.BasicProfiler.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a>(id,&nbsp;path)</td>
 <td>Dump the profile into path, id is the RDD id</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.BasicProfiler.profile.html#pyspark.BasicProfiler.profile" title="pyspark.BasicProfiler.profile"><code class="xref py py-obj docutils literal"><span class="pre">profile</span></code></a>(func)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.BasicProfiler.profile.html#pyspark.BasicProfiler.profile" title="pyspark.BasicProfiler.profile"><code class="xref py py-obj docutils literal"><span class="pre">profile</span></code></a>(func)</td>
 <td>Runs and profiles the method to_profile passed in.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.BasicProfiler.show.html#pyspark.BasicProfiler.show" title="pyspark.BasicProfiler.show"><code class="xref py py-obj docutils literal"><span class="pre">show</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.BasicProfiler.show.html#pyspark.BasicProfiler.show" title="pyspark.BasicProfiler.show"><code class="xref py py-obj docutils literal"><span class="pre">show</span></code></a>(id)</td>
 <td>Print the profile stats to stdout, id is the RDD id</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.BasicProfiler.stats.html#pyspark.BasicProfiler.stats" title="pyspark.BasicProfiler.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.BasicProfiler.stats.html#pyspark.BasicProfiler.stats" title="pyspark.BasicProfiler.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -222,10 +228,10 @@ cProfile and Accumulator</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.BasicProfiler.dump.html" class="btn btn-neutral float-right" title="1.2.3.1. pyspark.BasicProfiler.dump" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.BasicProfiler.__init__.html" class="btn btn-neutral float-right" title="1.2.3.1.1. pyspark.BasicProfiler.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.AccumulatorParam.zero.html" class="btn btn-neutral" title="1.2.2.2. pyspark.AccumulatorParam.zero" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.AccumulatorParam.zero.html" class="btn btn-neutral" title="1.2.2.1.2. pyspark.AccumulatorParam.zero" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

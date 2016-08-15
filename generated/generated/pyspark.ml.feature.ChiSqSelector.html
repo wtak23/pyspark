@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
-        <link rel="next" title="3.3.2.3.1. pyspark.ml.feature.ChiSqSelector.params" href="pyspark.ml.feature.ChiSqSelector.params.html"/>
-        <link rel="prev" title="3.3.2.2.23. pyspark.ml.feature.Bucketizer.write" href="pyspark.ml.feature.Bucketizer.write.html"/> 
+        <link rel="next" title="3.3.2.3.1.1. pyspark.ml.feature.ChiSqSelector.__init__" href="pyspark.ml.feature.ChiSqSelector.__init__.html"/>
+        <link rel="prev" title="3.3.2.2.2.4. pyspark.ml.feature.Bucketizer.splits" href="pyspark.ml.feature.Bucketizer.splits.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -243,7 +243,6 @@
             
   <div class="section" id="pyspark-ml-feature-chisqselector">
 <h1>3.3.2.3. pyspark.ml.feature.ChiSqSelector<a class="headerlink" href="#pyspark-ml-feature-chisqselector" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.__init__.html#pyspark.ml.feature.ChiSqSelector.__init__" title="pyspark.ml.feature.ChiSqSelector.__init__"><code class="xref py py-func docutils literal"><span class="pre">ChiSqSelector.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.feature.ChiSqSelector">
 <em class="property">class </em><code class="descclassname">pyspark.ml.feature.</code><code class="descname">ChiSqSelector</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#ChiSqSelector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.ChiSqSelector" title="Permalink to this definition">¶</a></dt>
@@ -280,99 +279,6 @@ categorical label.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 2.0.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.params.html#pyspark.ml.feature.ChiSqSelector.params" title="pyspark.ml.feature.ChiSqSelector.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.copy.html#pyspark.ml.feature.ChiSqSelector.copy" title="pyspark.ml.feature.ChiSqSelector.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.explainParam.html#pyspark.ml.feature.ChiSqSelector.explainParam" title="pyspark.ml.feature.ChiSqSelector.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.explainParams.html#pyspark.ml.feature.ChiSqSelector.explainParams" title="pyspark.ml.feature.ChiSqSelector.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.extractParamMap.html#pyspark.ml.feature.ChiSqSelector.extractParamMap" title="pyspark.ml.feature.ChiSqSelector.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.fit.html#pyspark.ml.feature.ChiSqSelector.fit" title="pyspark.ml.feature.ChiSqSelector.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getFeaturesCol.html#pyspark.ml.feature.ChiSqSelector.getFeaturesCol" title="pyspark.ml.feature.ChiSqSelector.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
-<td>Gets the value of featuresCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getLabelCol.html#pyspark.ml.feature.ChiSqSelector.getLabelCol" title="pyspark.ml.feature.ChiSqSelector.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
-<td>Gets the value of labelCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getNumTopFeatures.html#pyspark.ml.feature.ChiSqSelector.getNumTopFeatures" title="pyspark.ml.feature.ChiSqSelector.getNumTopFeatures"><code class="xref py py-obj docutils literal"><span class="pre">getNumTopFeatures</span></code></a>()</td>
-<td>Gets the value of numTopFeatures or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getOrDefault.html#pyspark.ml.feature.ChiSqSelector.getOrDefault" title="pyspark.ml.feature.ChiSqSelector.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getOutputCol.html#pyspark.ml.feature.ChiSqSelector.getOutputCol" title="pyspark.ml.feature.ChiSqSelector.getOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCol</span></code></a>()</td>
-<td>Gets the value of outputCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getParam.html#pyspark.ml.feature.ChiSqSelector.getParam" title="pyspark.ml.feature.ChiSqSelector.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.hasDefault.html#pyspark.ml.feature.ChiSqSelector.hasDefault" title="pyspark.ml.feature.ChiSqSelector.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.hasParam.html#pyspark.ml.feature.ChiSqSelector.hasParam" title="pyspark.ml.feature.ChiSqSelector.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.isDefined.html#pyspark.ml.feature.ChiSqSelector.isDefined" title="pyspark.ml.feature.ChiSqSelector.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.isSet.html#pyspark.ml.feature.ChiSqSelector.isSet" title="pyspark.ml.feature.ChiSqSelector.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.load.html#pyspark.ml.feature.ChiSqSelector.load" title="pyspark.ml.feature.ChiSqSelector.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.read.html#pyspark.ml.feature.ChiSqSelector.read" title="pyspark.ml.feature.ChiSqSelector.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.save.html#pyspark.ml.feature.ChiSqSelector.save" title="pyspark.ml.feature.ChiSqSelector.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setFeaturesCol.html#pyspark.ml.feature.ChiSqSelector.setFeaturesCol" title="pyspark.ml.feature.ChiSqSelector.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.featuresCol.html#pyspark.ml.feature.ChiSqSelector.featuresCol" title="pyspark.ml.feature.ChiSqSelector.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setLabelCol.html#pyspark.ml.feature.ChiSqSelector.setLabelCol" title="pyspark.ml.feature.ChiSqSelector.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.labelCol.html#pyspark.ml.feature.ChiSqSelector.labelCol" title="pyspark.ml.feature.ChiSqSelector.labelCol"><code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setNumTopFeatures.html#pyspark.ml.feature.ChiSqSelector.setNumTopFeatures" title="pyspark.ml.feature.ChiSqSelector.setNumTopFeatures"><code class="xref py py-obj docutils literal"><span class="pre">setNumTopFeatures</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.numTopFeatures.html#pyspark.ml.feature.ChiSqSelector.numTopFeatures" title="pyspark.ml.feature.ChiSqSelector.numTopFeatures"><code class="xref py py-attr docutils literal"><span class="pre">numTopFeatures</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setOutputCol.html#pyspark.ml.feature.ChiSqSelector.setOutputCol" title="pyspark.ml.feature.ChiSqSelector.setOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.outputCol.html#pyspark.ml.feature.ChiSqSelector.outputCol" title="pyspark.ml.feature.ChiSqSelector.outputCol"><code class="xref py py-attr docutils literal"><span class="pre">outputCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setParams.html#pyspark.ml.feature.ChiSqSelector.setParams" title="pyspark.ml.feature.ChiSqSelector.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;numTopFeatures,&nbsp;...])</td>
-<td>Sets params for this ChiSqSelector.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.write.html#pyspark.ml.feature.ChiSqSelector.write" title="pyspark.ml.feature.ChiSqSelector.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.feature.ChiSqSelector.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>numTopFeatures=50</em>, <em>featuresCol=&quot;features&quot;</em>, <em>outputCol=None</em>, <em>labelCol=&quot;label&quot;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#ChiSqSelector.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.ChiSqSelector.__init__" title="Permalink to this definition">¶</a></dt>
@@ -380,6 +286,118 @@ categorical label.</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.3.2.3.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.__init__.html#pyspark.ml.feature.ChiSqSelector.__init__" title="pyspark.ml.feature.ChiSqSelector.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;numTopFeatures,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.copy.html#pyspark.ml.feature.ChiSqSelector.copy" title="pyspark.ml.feature.ChiSqSelector.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.explainParam.html#pyspark.ml.feature.ChiSqSelector.explainParam" title="pyspark.ml.feature.ChiSqSelector.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.explainParams.html#pyspark.ml.feature.ChiSqSelector.explainParams" title="pyspark.ml.feature.ChiSqSelector.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.extractParamMap.html#pyspark.ml.feature.ChiSqSelector.extractParamMap" title="pyspark.ml.feature.ChiSqSelector.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.fit.html#pyspark.ml.feature.ChiSqSelector.fit" title="pyspark.ml.feature.ChiSqSelector.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getFeaturesCol.html#pyspark.ml.feature.ChiSqSelector.getFeaturesCol" title="pyspark.ml.feature.ChiSqSelector.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getLabelCol.html#pyspark.ml.feature.ChiSqSelector.getLabelCol" title="pyspark.ml.feature.ChiSqSelector.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getNumTopFeatures.html#pyspark.ml.feature.ChiSqSelector.getNumTopFeatures" title="pyspark.ml.feature.ChiSqSelector.getNumTopFeatures"><code class="xref py py-obj docutils literal"><span class="pre">getNumTopFeatures</span></code></a>()</td>
+<td>Gets the value of numTopFeatures or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getOrDefault.html#pyspark.ml.feature.ChiSqSelector.getOrDefault" title="pyspark.ml.feature.ChiSqSelector.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getOutputCol.html#pyspark.ml.feature.ChiSqSelector.getOutputCol" title="pyspark.ml.feature.ChiSqSelector.getOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCol</span></code></a>()</td>
+<td>Gets the value of outputCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.getParam.html#pyspark.ml.feature.ChiSqSelector.getParam" title="pyspark.ml.feature.ChiSqSelector.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.hasDefault.html#pyspark.ml.feature.ChiSqSelector.hasDefault" title="pyspark.ml.feature.ChiSqSelector.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.hasParam.html#pyspark.ml.feature.ChiSqSelector.hasParam" title="pyspark.ml.feature.ChiSqSelector.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.isDefined.html#pyspark.ml.feature.ChiSqSelector.isDefined" title="pyspark.ml.feature.ChiSqSelector.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.isSet.html#pyspark.ml.feature.ChiSqSelector.isSet" title="pyspark.ml.feature.ChiSqSelector.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.load.html#pyspark.ml.feature.ChiSqSelector.load" title="pyspark.ml.feature.ChiSqSelector.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.read.html#pyspark.ml.feature.ChiSqSelector.read" title="pyspark.ml.feature.ChiSqSelector.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.save.html#pyspark.ml.feature.ChiSqSelector.save" title="pyspark.ml.feature.ChiSqSelector.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setFeaturesCol.html#pyspark.ml.feature.ChiSqSelector.setFeaturesCol" title="pyspark.ml.feature.ChiSqSelector.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setLabelCol.html#pyspark.ml.feature.ChiSqSelector.setLabelCol" title="pyspark.ml.feature.ChiSqSelector.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setNumTopFeatures.html#pyspark.ml.feature.ChiSqSelector.setNumTopFeatures" title="pyspark.ml.feature.ChiSqSelector.setNumTopFeatures"><code class="xref py py-obj docutils literal"><span class="pre">setNumTopFeatures</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">numTopFeatures</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setOutputCol.html#pyspark.ml.feature.ChiSqSelector.setOutputCol" title="pyspark.ml.feature.ChiSqSelector.setOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">outputCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.setParams.html#pyspark.ml.feature.ChiSqSelector.setParams" title="pyspark.ml.feature.ChiSqSelector.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;numTopFeatures,&nbsp;...])</td>
+<td>Sets params for this ChiSqSelector.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.write.html#pyspark.ml.feature.ChiSqSelector.write" title="pyspark.ml.feature.ChiSqSelector.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.3.2.3.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.featuresCol.html#pyspark.ml.feature.ChiSqSelector.featuresCol" title="pyspark.ml.feature.ChiSqSelector.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.labelCol.html#pyspark.ml.feature.ChiSqSelector.labelCol" title="pyspark.ml.feature.ChiSqSelector.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.numTopFeatures.html#pyspark.ml.feature.ChiSqSelector.numTopFeatures" title="pyspark.ml.feature.ChiSqSelector.numTopFeatures"><code class="xref py py-obj docutils literal"><span class="pre">numTopFeatures</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.outputCol.html#pyspark.ml.feature.ChiSqSelector.outputCol" title="pyspark.ml.feature.ChiSqSelector.outputCol"><code class="xref py py-obj docutils literal"><span class="pre">outputCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.ChiSqSelector.params.html#pyspark.ml.feature.ChiSqSelector.params" title="pyspark.ml.feature.ChiSqSelector.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -389,10 +407,10 @@ categorical label.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.feature.ChiSqSelector.params.html" class="btn btn-neutral float-right" title="3.3.2.3.1. pyspark.ml.feature.ChiSqSelector.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.feature.ChiSqSelector.__init__.html" class="btn btn-neutral float-right" title="3.3.2.3.1.1. pyspark.ml.feature.ChiSqSelector.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.feature.Bucketizer.write.html" class="btn btn-neutral" title="3.3.2.2.23. pyspark.ml.feature.Bucketizer.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.feature.Bucketizer.splits.html" class="btn btn-neutral" title="3.3.2.2.2.4. pyspark.ml.feature.Bucketizer.splits" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

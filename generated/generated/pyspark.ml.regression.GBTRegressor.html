@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.8. pyspark.ml.regression" href="../pyspark.ml.regression.html"/>
-        <link rel="next" title="3.8.2.10.1. pyspark.ml.regression.GBTRegressor.params" href="pyspark.ml.regression.GBTRegressor.params.html"/>
-        <link rel="prev" title="3.8.2.9.22. pyspark.ml.regression.GBTRegressionModel.write" href="pyspark.ml.regression.GBTRegressionModel.write.html"/> 
+        <link rel="next" title="3.8.2.10.1.1. pyspark.ml.regression.GBTRegressor.__init__" href="pyspark.ml.regression.GBTRegressor.__init__.html"/>
+        <link rel="prev" title="3.8.2.9.2.7. pyspark.ml.regression.GBTRegressionModel.trees" href="pyspark.ml.regression.GBTRegressionModel.trees.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -237,7 +237,6 @@
             
   <div class="section" id="pyspark-ml-regression-gbtregressor">
 <h1>3.8.2.10. pyspark.ml.regression.GBTRegressor<a class="headerlink" href="#pyspark-ml-regression-gbtregressor" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.__init__.html#pyspark.ml.regression.GBTRegressor.__init__" title="pyspark.ml.regression.GBTRegressor.__init__"><code class="xref py py-func docutils literal"><span class="pre">GBTRegressor.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.GBTRegressor">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">GBTRegressor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#GBTRegressor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.GBTRegressor" title="Permalink to this definition">¶</a></dt>
@@ -282,171 +281,6 @@ It supports both continuous and categorical features.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.params.html#pyspark.ml.regression.GBTRegressor.params" title="pyspark.ml.regression.GBTRegressor.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.copy.html#pyspark.ml.regression.GBTRegressor.copy" title="pyspark.ml.regression.GBTRegressor.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.explainParam.html#pyspark.ml.regression.GBTRegressor.explainParam" title="pyspark.ml.regression.GBTRegressor.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.explainParams.html#pyspark.ml.regression.GBTRegressor.explainParams" title="pyspark.ml.regression.GBTRegressor.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.extractParamMap.html#pyspark.ml.regression.GBTRegressor.extractParamMap" title="pyspark.ml.regression.GBTRegressor.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.fit.html#pyspark.ml.regression.GBTRegressor.fit" title="pyspark.ml.regression.GBTRegressor.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getCacheNodeIds.html#pyspark.ml.regression.GBTRegressor.getCacheNodeIds" title="pyspark.ml.regression.GBTRegressor.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
-<td>Gets the value of cacheNodeIds or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getCheckpointInterval.html#pyspark.ml.regression.GBTRegressor.getCheckpointInterval" title="pyspark.ml.regression.GBTRegressor.getCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointInterval</span></code></a>()</td>
-<td>Gets the value of checkpointInterval or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getFeaturesCol.html#pyspark.ml.regression.GBTRegressor.getFeaturesCol" title="pyspark.ml.regression.GBTRegressor.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
-<td>Gets the value of featuresCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getImpurity.html#pyspark.ml.regression.GBTRegressor.getImpurity" title="pyspark.ml.regression.GBTRegressor.getImpurity"><code class="xref py py-obj docutils literal"><span class="pre">getImpurity</span></code></a>()</td>
-<td>Gets the value of impurity or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getLabelCol.html#pyspark.ml.regression.GBTRegressor.getLabelCol" title="pyspark.ml.regression.GBTRegressor.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
-<td>Gets the value of labelCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getLossType.html#pyspark.ml.regression.GBTRegressor.getLossType" title="pyspark.ml.regression.GBTRegressor.getLossType"><code class="xref py py-obj docutils literal"><span class="pre">getLossType</span></code></a>()</td>
-<td>Gets the value of lossType or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxBins.html#pyspark.ml.regression.GBTRegressor.getMaxBins" title="pyspark.ml.regression.GBTRegressor.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
-<td>Gets the value of maxBins or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxDepth.html#pyspark.ml.regression.GBTRegressor.getMaxDepth" title="pyspark.ml.regression.GBTRegressor.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
-<td>Gets the value of maxDepth or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxIter.html#pyspark.ml.regression.GBTRegressor.getMaxIter" title="pyspark.ml.regression.GBTRegressor.getMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">getMaxIter</span></code></a>()</td>
-<td>Gets the value of maxIter or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxMemoryInMB.html#pyspark.ml.regression.GBTRegressor.getMaxMemoryInMB" title="pyspark.ml.regression.GBTRegressor.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
-<td>Gets the value of maxMemoryInMB or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMinInfoGain.html#pyspark.ml.regression.GBTRegressor.getMinInfoGain" title="pyspark.ml.regression.GBTRegressor.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
-<td>Gets the value of minInfoGain or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMinInstancesPerNode.html#pyspark.ml.regression.GBTRegressor.getMinInstancesPerNode" title="pyspark.ml.regression.GBTRegressor.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
-<td>Gets the value of minInstancesPerNode or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getOrDefault.html#pyspark.ml.regression.GBTRegressor.getOrDefault" title="pyspark.ml.regression.GBTRegressor.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getParam.html#pyspark.ml.regression.GBTRegressor.getParam" title="pyspark.ml.regression.GBTRegressor.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getPredictionCol.html#pyspark.ml.regression.GBTRegressor.getPredictionCol" title="pyspark.ml.regression.GBTRegressor.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
-<td>Gets the value of predictionCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getSeed.html#pyspark.ml.regression.GBTRegressor.getSeed" title="pyspark.ml.regression.GBTRegressor.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
-<td>Gets the value of seed or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getStepSize.html#pyspark.ml.regression.GBTRegressor.getStepSize" title="pyspark.ml.regression.GBTRegressor.getStepSize"><code class="xref py py-obj docutils literal"><span class="pre">getStepSize</span></code></a>()</td>
-<td>Gets the value of stepSize or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getSubsamplingRate.html#pyspark.ml.regression.GBTRegressor.getSubsamplingRate" title="pyspark.ml.regression.GBTRegressor.getSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">getSubsamplingRate</span></code></a>()</td>
-<td>Gets the value of subsamplingRate or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.hasDefault.html#pyspark.ml.regression.GBTRegressor.hasDefault" title="pyspark.ml.regression.GBTRegressor.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.hasParam.html#pyspark.ml.regression.GBTRegressor.hasParam" title="pyspark.ml.regression.GBTRegressor.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.isDefined.html#pyspark.ml.regression.GBTRegressor.isDefined" title="pyspark.ml.regression.GBTRegressor.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.isSet.html#pyspark.ml.regression.GBTRegressor.isSet" title="pyspark.ml.regression.GBTRegressor.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.load.html#pyspark.ml.regression.GBTRegressor.load" title="pyspark.ml.regression.GBTRegressor.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.read.html#pyspark.ml.regression.GBTRegressor.read" title="pyspark.ml.regression.GBTRegressor.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.save.html#pyspark.ml.regression.GBTRegressor.save" title="pyspark.ml.regression.GBTRegressor.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setCacheNodeIds.html#pyspark.ml.regression.GBTRegressor.setCacheNodeIds" title="pyspark.ml.regression.GBTRegressor.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.cacheNodeIds.html#pyspark.ml.regression.GBTRegressor.cacheNodeIds" title="pyspark.ml.regression.GBTRegressor.cacheNodeIds"><code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setCheckpointInterval.html#pyspark.ml.regression.GBTRegressor.setCheckpointInterval" title="pyspark.ml.regression.GBTRegressor.setCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointInterval</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.checkpointInterval.html#pyspark.ml.regression.GBTRegressor.checkpointInterval" title="pyspark.ml.regression.GBTRegressor.checkpointInterval"><code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setFeaturesCol.html#pyspark.ml.regression.GBTRegressor.setFeaturesCol" title="pyspark.ml.regression.GBTRegressor.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.featuresCol.html#pyspark.ml.regression.GBTRegressor.featuresCol" title="pyspark.ml.regression.GBTRegressor.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setImpurity.html#pyspark.ml.regression.GBTRegressor.setImpurity" title="pyspark.ml.regression.GBTRegressor.setImpurity"><code class="xref py py-obj docutils literal"><span class="pre">setImpurity</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.impurity.html#pyspark.ml.regression.GBTRegressor.impurity" title="pyspark.ml.regression.GBTRegressor.impurity"><code class="xref py py-attr docutils literal"><span class="pre">impurity</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setLabelCol.html#pyspark.ml.regression.GBTRegressor.setLabelCol" title="pyspark.ml.regression.GBTRegressor.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.labelCol.html#pyspark.ml.regression.GBTRegressor.labelCol" title="pyspark.ml.regression.GBTRegressor.labelCol"><code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setLossType.html#pyspark.ml.regression.GBTRegressor.setLossType" title="pyspark.ml.regression.GBTRegressor.setLossType"><code class="xref py py-obj docutils literal"><span class="pre">setLossType</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.lossType.html#pyspark.ml.regression.GBTRegressor.lossType" title="pyspark.ml.regression.GBTRegressor.lossType"><code class="xref py py-attr docutils literal"><span class="pre">lossType</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxBins.html#pyspark.ml.regression.GBTRegressor.setMaxBins" title="pyspark.ml.regression.GBTRegressor.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxBins.html#pyspark.ml.regression.GBTRegressor.maxBins" title="pyspark.ml.regression.GBTRegressor.maxBins"><code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxDepth.html#pyspark.ml.regression.GBTRegressor.setMaxDepth" title="pyspark.ml.regression.GBTRegressor.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxDepth.html#pyspark.ml.regression.GBTRegressor.maxDepth" title="pyspark.ml.regression.GBTRegressor.maxDepth"><code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxIter.html#pyspark.ml.regression.GBTRegressor.setMaxIter" title="pyspark.ml.regression.GBTRegressor.setMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">setMaxIter</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxIter.html#pyspark.ml.regression.GBTRegressor.maxIter" title="pyspark.ml.regression.GBTRegressor.maxIter"><code class="xref py py-attr docutils literal"><span class="pre">maxIter</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxMemoryInMB.html#pyspark.ml.regression.GBTRegressor.setMaxMemoryInMB" title="pyspark.ml.regression.GBTRegressor.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxMemoryInMB.html#pyspark.ml.regression.GBTRegressor.maxMemoryInMB" title="pyspark.ml.regression.GBTRegressor.maxMemoryInMB"><code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMinInfoGain.html#pyspark.ml.regression.GBTRegressor.setMinInfoGain" title="pyspark.ml.regression.GBTRegressor.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.minInfoGain.html#pyspark.ml.regression.GBTRegressor.minInfoGain" title="pyspark.ml.regression.GBTRegressor.minInfoGain"><code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMinInstancesPerNode.html#pyspark.ml.regression.GBTRegressor.setMinInstancesPerNode" title="pyspark.ml.regression.GBTRegressor.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.minInstancesPerNode.html#pyspark.ml.regression.GBTRegressor.minInstancesPerNode" title="pyspark.ml.regression.GBTRegressor.minInstancesPerNode"><code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setParams.html#pyspark.ml.regression.GBTRegressor.setParams" title="pyspark.ml.regression.GBTRegressor.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
-<td>Sets params for Gradient Boosted Tree Regression.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setPredictionCol.html#pyspark.ml.regression.GBTRegressor.setPredictionCol" title="pyspark.ml.regression.GBTRegressor.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.predictionCol.html#pyspark.ml.regression.GBTRegressor.predictionCol" title="pyspark.ml.regression.GBTRegressor.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setSeed.html#pyspark.ml.regression.GBTRegressor.setSeed" title="pyspark.ml.regression.GBTRegressor.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.seed.html#pyspark.ml.regression.GBTRegressor.seed" title="pyspark.ml.regression.GBTRegressor.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setStepSize.html#pyspark.ml.regression.GBTRegressor.setStepSize" title="pyspark.ml.regression.GBTRegressor.setStepSize"><code class="xref py py-obj docutils literal"><span class="pre">setStepSize</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.stepSize.html#pyspark.ml.regression.GBTRegressor.stepSize" title="pyspark.ml.regression.GBTRegressor.stepSize"><code class="xref py py-attr docutils literal"><span class="pre">stepSize</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setSubsamplingRate.html#pyspark.ml.regression.GBTRegressor.setSubsamplingRate" title="pyspark.ml.regression.GBTRegressor.setSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">setSubsamplingRate</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.GBTRegressor.subsamplingRate.html#pyspark.ml.regression.GBTRegressor.subsamplingRate" title="pyspark.ml.regression.GBTRegressor.subsamplingRate"><code class="xref py py-attr docutils literal"><span class="pre">subsamplingRate</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.write.html#pyspark.ml.regression.GBTRegressor.write" title="pyspark.ml.regression.GBTRegressor.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.regression.GBTRegressor.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>featuresCol=&quot;features&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>maxDepth=5</em>, <em>maxBins=32</em>, <em>minInstancesPerNode=1</em>, <em>minInfoGain=0.0</em>, <em>maxMemoryInMB=256</em>, <em>cacheNodeIds=False</em>, <em>subsamplingRate=1.0</em>, <em>checkpointInterval=10</em>, <em>lossType=&quot;squared&quot;</em>, <em>maxIter=20</em>, <em>stepSize=0.1</em>, <em>seed=None</em>, <em>impurity=&quot;variance&quot;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#GBTRegressor.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.GBTRegressor.__init__" title="Permalink to this definition">¶</a></dt>
@@ -454,6 +288,232 @@ It supports both continuous and categorical features.</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.8.2.10.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.__init__.html#pyspark.ml.regression.GBTRegressor.__init__" title="pyspark.ml.regression.GBTRegressor.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.copy.html#pyspark.ml.regression.GBTRegressor.copy" title="pyspark.ml.regression.GBTRegressor.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.explainParam.html#pyspark.ml.regression.GBTRegressor.explainParam" title="pyspark.ml.regression.GBTRegressor.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.explainParams.html#pyspark.ml.regression.GBTRegressor.explainParams" title="pyspark.ml.regression.GBTRegressor.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.extractParamMap.html#pyspark.ml.regression.GBTRegressor.extractParamMap" title="pyspark.ml.regression.GBTRegressor.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.fit.html#pyspark.ml.regression.GBTRegressor.fit" title="pyspark.ml.regression.GBTRegressor.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getCacheNodeIds.html#pyspark.ml.regression.GBTRegressor.getCacheNodeIds" title="pyspark.ml.regression.GBTRegressor.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
+<td>Gets the value of cacheNodeIds or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getCheckpointInterval.html#pyspark.ml.regression.GBTRegressor.getCheckpointInterval" title="pyspark.ml.regression.GBTRegressor.getCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointInterval</span></code></a>()</td>
+<td>Gets the value of checkpointInterval or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getFeaturesCol.html#pyspark.ml.regression.GBTRegressor.getFeaturesCol" title="pyspark.ml.regression.GBTRegressor.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getImpurity.html#pyspark.ml.regression.GBTRegressor.getImpurity" title="pyspark.ml.regression.GBTRegressor.getImpurity"><code class="xref py py-obj docutils literal"><span class="pre">getImpurity</span></code></a>()</td>
+<td>Gets the value of impurity or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getLabelCol.html#pyspark.ml.regression.GBTRegressor.getLabelCol" title="pyspark.ml.regression.GBTRegressor.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getLossType.html#pyspark.ml.regression.GBTRegressor.getLossType" title="pyspark.ml.regression.GBTRegressor.getLossType"><code class="xref py py-obj docutils literal"><span class="pre">getLossType</span></code></a>()</td>
+<td>Gets the value of lossType or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxBins.html#pyspark.ml.regression.GBTRegressor.getMaxBins" title="pyspark.ml.regression.GBTRegressor.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
+<td>Gets the value of maxBins or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxDepth.html#pyspark.ml.regression.GBTRegressor.getMaxDepth" title="pyspark.ml.regression.GBTRegressor.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
+<td>Gets the value of maxDepth or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxIter.html#pyspark.ml.regression.GBTRegressor.getMaxIter" title="pyspark.ml.regression.GBTRegressor.getMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">getMaxIter</span></code></a>()</td>
+<td>Gets the value of maxIter or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMaxMemoryInMB.html#pyspark.ml.regression.GBTRegressor.getMaxMemoryInMB" title="pyspark.ml.regression.GBTRegressor.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
+<td>Gets the value of maxMemoryInMB or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMinInfoGain.html#pyspark.ml.regression.GBTRegressor.getMinInfoGain" title="pyspark.ml.regression.GBTRegressor.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
+<td>Gets the value of minInfoGain or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getMinInstancesPerNode.html#pyspark.ml.regression.GBTRegressor.getMinInstancesPerNode" title="pyspark.ml.regression.GBTRegressor.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
+<td>Gets the value of minInstancesPerNode or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getOrDefault.html#pyspark.ml.regression.GBTRegressor.getOrDefault" title="pyspark.ml.regression.GBTRegressor.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getParam.html#pyspark.ml.regression.GBTRegressor.getParam" title="pyspark.ml.regression.GBTRegressor.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getPredictionCol.html#pyspark.ml.regression.GBTRegressor.getPredictionCol" title="pyspark.ml.regression.GBTRegressor.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getSeed.html#pyspark.ml.regression.GBTRegressor.getSeed" title="pyspark.ml.regression.GBTRegressor.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getStepSize.html#pyspark.ml.regression.GBTRegressor.getStepSize" title="pyspark.ml.regression.GBTRegressor.getStepSize"><code class="xref py py-obj docutils literal"><span class="pre">getStepSize</span></code></a>()</td>
+<td>Gets the value of stepSize or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.getSubsamplingRate.html#pyspark.ml.regression.GBTRegressor.getSubsamplingRate" title="pyspark.ml.regression.GBTRegressor.getSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">getSubsamplingRate</span></code></a>()</td>
+<td>Gets the value of subsamplingRate or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.hasDefault.html#pyspark.ml.regression.GBTRegressor.hasDefault" title="pyspark.ml.regression.GBTRegressor.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.hasParam.html#pyspark.ml.regression.GBTRegressor.hasParam" title="pyspark.ml.regression.GBTRegressor.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.isDefined.html#pyspark.ml.regression.GBTRegressor.isDefined" title="pyspark.ml.regression.GBTRegressor.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.isSet.html#pyspark.ml.regression.GBTRegressor.isSet" title="pyspark.ml.regression.GBTRegressor.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.load.html#pyspark.ml.regression.GBTRegressor.load" title="pyspark.ml.regression.GBTRegressor.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.read.html#pyspark.ml.regression.GBTRegressor.read" title="pyspark.ml.regression.GBTRegressor.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.save.html#pyspark.ml.regression.GBTRegressor.save" title="pyspark.ml.regression.GBTRegressor.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setCacheNodeIds.html#pyspark.ml.regression.GBTRegressor.setCacheNodeIds" title="pyspark.ml.regression.GBTRegressor.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setCheckpointInterval.html#pyspark.ml.regression.GBTRegressor.setCheckpointInterval" title="pyspark.ml.regression.GBTRegressor.setCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointInterval</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setFeaturesCol.html#pyspark.ml.regression.GBTRegressor.setFeaturesCol" title="pyspark.ml.regression.GBTRegressor.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setImpurity.html#pyspark.ml.regression.GBTRegressor.setImpurity" title="pyspark.ml.regression.GBTRegressor.setImpurity"><code class="xref py py-obj docutils literal"><span class="pre">setImpurity</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">impurity</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setLabelCol.html#pyspark.ml.regression.GBTRegressor.setLabelCol" title="pyspark.ml.regression.GBTRegressor.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setLossType.html#pyspark.ml.regression.GBTRegressor.setLossType" title="pyspark.ml.regression.GBTRegressor.setLossType"><code class="xref py py-obj docutils literal"><span class="pre">setLossType</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">lossType</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxBins.html#pyspark.ml.regression.GBTRegressor.setMaxBins" title="pyspark.ml.regression.GBTRegressor.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxDepth.html#pyspark.ml.regression.GBTRegressor.setMaxDepth" title="pyspark.ml.regression.GBTRegressor.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxIter.html#pyspark.ml.regression.GBTRegressor.setMaxIter" title="pyspark.ml.regression.GBTRegressor.setMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">setMaxIter</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxIter</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMaxMemoryInMB.html#pyspark.ml.regression.GBTRegressor.setMaxMemoryInMB" title="pyspark.ml.regression.GBTRegressor.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMinInfoGain.html#pyspark.ml.regression.GBTRegressor.setMinInfoGain" title="pyspark.ml.regression.GBTRegressor.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setMinInstancesPerNode.html#pyspark.ml.regression.GBTRegressor.setMinInstancesPerNode" title="pyspark.ml.regression.GBTRegressor.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setParams.html#pyspark.ml.regression.GBTRegressor.setParams" title="pyspark.ml.regression.GBTRegressor.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td>Sets params for Gradient Boosted Tree Regression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setPredictionCol.html#pyspark.ml.regression.GBTRegressor.setPredictionCol" title="pyspark.ml.regression.GBTRegressor.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setSeed.html#pyspark.ml.regression.GBTRegressor.setSeed" title="pyspark.ml.regression.GBTRegressor.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">seed</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setStepSize.html#pyspark.ml.regression.GBTRegressor.setStepSize" title="pyspark.ml.regression.GBTRegressor.setStepSize"><code class="xref py py-obj docutils literal"><span class="pre">setStepSize</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">stepSize</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.setSubsamplingRate.html#pyspark.ml.regression.GBTRegressor.setSubsamplingRate" title="pyspark.ml.regression.GBTRegressor.setSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">setSubsamplingRate</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">subsamplingRate</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.write.html#pyspark.ml.regression.GBTRegressor.write" title="pyspark.ml.regression.GBTRegressor.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.8.2.10.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.cacheNodeIds.html#pyspark.ml.regression.GBTRegressor.cacheNodeIds" title="pyspark.ml.regression.GBTRegressor.cacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">cacheNodeIds</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.checkpointInterval.html#pyspark.ml.regression.GBTRegressor.checkpointInterval" title="pyspark.ml.regression.GBTRegressor.checkpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">checkpointInterval</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.featuresCol.html#pyspark.ml.regression.GBTRegressor.featuresCol" title="pyspark.ml.regression.GBTRegressor.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.impurity.html#pyspark.ml.regression.GBTRegressor.impurity" title="pyspark.ml.regression.GBTRegressor.impurity"><code class="xref py py-obj docutils literal"><span class="pre">impurity</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.labelCol.html#pyspark.ml.regression.GBTRegressor.labelCol" title="pyspark.ml.regression.GBTRegressor.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.lossType.html#pyspark.ml.regression.GBTRegressor.lossType" title="pyspark.ml.regression.GBTRegressor.lossType"><code class="xref py py-obj docutils literal"><span class="pre">lossType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxBins.html#pyspark.ml.regression.GBTRegressor.maxBins" title="pyspark.ml.regression.GBTRegressor.maxBins"><code class="xref py py-obj docutils literal"><span class="pre">maxBins</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxDepth.html#pyspark.ml.regression.GBTRegressor.maxDepth" title="pyspark.ml.regression.GBTRegressor.maxDepth"><code class="xref py py-obj docutils literal"><span class="pre">maxDepth</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxIter.html#pyspark.ml.regression.GBTRegressor.maxIter" title="pyspark.ml.regression.GBTRegressor.maxIter"><code class="xref py py-obj docutils literal"><span class="pre">maxIter</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.maxMemoryInMB.html#pyspark.ml.regression.GBTRegressor.maxMemoryInMB" title="pyspark.ml.regression.GBTRegressor.maxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">maxMemoryInMB</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.minInfoGain.html#pyspark.ml.regression.GBTRegressor.minInfoGain" title="pyspark.ml.regression.GBTRegressor.minInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">minInfoGain</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.minInstancesPerNode.html#pyspark.ml.regression.GBTRegressor.minInstancesPerNode" title="pyspark.ml.regression.GBTRegressor.minInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">minInstancesPerNode</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.params.html#pyspark.ml.regression.GBTRegressor.params" title="pyspark.ml.regression.GBTRegressor.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.predictionCol.html#pyspark.ml.regression.GBTRegressor.predictionCol" title="pyspark.ml.regression.GBTRegressor.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.seed.html#pyspark.ml.regression.GBTRegressor.seed" title="pyspark.ml.regression.GBTRegressor.seed"><code class="xref py py-obj docutils literal"><span class="pre">seed</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.stepSize.html#pyspark.ml.regression.GBTRegressor.stepSize" title="pyspark.ml.regression.GBTRegressor.stepSize"><code class="xref py py-obj docutils literal"><span class="pre">stepSize</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.subsamplingRate.html#pyspark.ml.regression.GBTRegressor.subsamplingRate" title="pyspark.ml.regression.GBTRegressor.subsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">subsamplingRate</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.supportedImpurities.html#pyspark.ml.regression.GBTRegressor.supportedImpurities" title="pyspark.ml.regression.GBTRegressor.supportedImpurities"><code class="xref py py-obj docutils literal"><span class="pre">supportedImpurities</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.GBTRegressor.supportedLossTypes.html#pyspark.ml.regression.GBTRegressor.supportedLossTypes" title="pyspark.ml.regression.GBTRegressor.supportedLossTypes"><code class="xref py py-obj docutils literal"><span class="pre">supportedLossTypes</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -463,10 +523,10 @@ It supports both continuous and categorical features.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.regression.GBTRegressor.params.html" class="btn btn-neutral float-right" title="3.8.2.10.1. pyspark.ml.regression.GBTRegressor.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.regression.GBTRegressor.__init__.html" class="btn btn-neutral float-right" title="3.8.2.10.1.1. pyspark.ml.regression.GBTRegressor.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.regression.GBTRegressionModel.write.html" class="btn btn-neutral" title="3.8.2.9.22. pyspark.ml.regression.GBTRegressionModel.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.regression.GBTRegressionModel.trees.html" class="btn btn-neutral" title="3.8.2.9.2.7. pyspark.ml.regression.GBTRegressionModel.trees" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.8. pyspark.ml.regression" href="../pyspark.ml.regression.html"/>
-        <link rel="next" title="3.8.2.2.1. pyspark.ml.regression.AFTSurvivalRegressionModel.coefficients" href="pyspark.ml.regression.AFTSurvivalRegressionModel.coefficients.html"/>
-        <link rel="prev" title="3.8.2.1.35. pyspark.ml.regression.AFTSurvivalRegression.write" href="pyspark.ml.regression.AFTSurvivalRegression.write.html"/> 
+        <link rel="next" title="3.8.2.2.1.1. pyspark.ml.regression.AFTSurvivalRegressionModel.__init__" href="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__.html"/>
+        <link rel="prev" title="3.8.2.1.2.10. pyspark.ml.regression.AFTSurvivalRegression.tol" href="pyspark.ml.regression.AFTSurvivalRegression.tol.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -237,7 +237,6 @@
             
   <div class="section" id="pyspark-ml-regression-aftsurvivalregressionmodel">
 <h1>3.8.2.2. pyspark.ml.regression.AFTSurvivalRegressionModel<a class="headerlink" href="#pyspark-ml-regression-aftsurvivalregressionmodel" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__.html#pyspark.ml.regression.AFTSurvivalRegressionModel.__init__" title="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">AFTSurvivalRegressionModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.AFTSurvivalRegressionModel">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">AFTSurvivalRegressionModel</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#AFTSurvivalRegressionModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.AFTSurvivalRegressionModel" title="Permalink to this definition">¶</a></dt>
@@ -249,7 +248,90 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.6.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.regression.AFTSurvivalRegressionModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize this instance with a Java model object.
+Subclasses should call this constructor, initialize params,
+and then call _transfer_params_from_java.</p>
+<p>This instance can be instantiated without specifying java_model,
+it will be assigned after that, but this scenario only used by
+<a class="reference internal" href="pyspark.ml.regression.JavaMLReader.html#pyspark.ml.regression.JavaMLReader" title="pyspark.ml.regression.JavaMLReader"><code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code></a> to load models.  This is a bit of a
+hack, but it is easiest since a proper fix would require
+MLReader (in pyspark.ml.util) to depend on these wrappers, but
+these wrappers depend on pyspark.ml.util (both directly and via
+other ML classes).</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>3.8.2.2.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__.html#pyspark.ml.regression.AFTSurvivalRegressionModel.__init__" title="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([java_model])</td>
+<td>Initialize this instance with a Java model object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.copy.html#pyspark.ml.regression.AFTSurvivalRegressionModel.copy" title="pyspark.ml.regression.AFTSurvivalRegressionModel.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParam.html#pyspark.ml.regression.AFTSurvivalRegressionModel.explainParam" title="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParams.html#pyspark.ml.regression.AFTSurvivalRegressionModel.explainParams" title="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.extractParamMap.html#pyspark.ml.regression.AFTSurvivalRegressionModel.extractParamMap" title="pyspark.ml.regression.AFTSurvivalRegressionModel.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.getOrDefault.html#pyspark.ml.regression.AFTSurvivalRegressionModel.getOrDefault" title="pyspark.ml.regression.AFTSurvivalRegressionModel.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.getParam.html#pyspark.ml.regression.AFTSurvivalRegressionModel.getParam" title="pyspark.ml.regression.AFTSurvivalRegressionModel.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.hasDefault.html#pyspark.ml.regression.AFTSurvivalRegressionModel.hasDefault" title="pyspark.ml.regression.AFTSurvivalRegressionModel.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.hasParam.html#pyspark.ml.regression.AFTSurvivalRegressionModel.hasParam" title="pyspark.ml.regression.AFTSurvivalRegressionModel.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.isDefined.html#pyspark.ml.regression.AFTSurvivalRegressionModel.isDefined" title="pyspark.ml.regression.AFTSurvivalRegressionModel.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.isSet.html#pyspark.ml.regression.AFTSurvivalRegressionModel.isSet" title="pyspark.ml.regression.AFTSurvivalRegressionModel.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.load.html#pyspark.ml.regression.AFTSurvivalRegressionModel.load" title="pyspark.ml.regression.AFTSurvivalRegressionModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.predict.html#pyspark.ml.regression.AFTSurvivalRegressionModel.predict" title="pyspark.ml.regression.AFTSurvivalRegressionModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(features)</td>
+<td>Predicted value</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.predictQuantiles.html#pyspark.ml.regression.AFTSurvivalRegressionModel.predictQuantiles" title="pyspark.ml.regression.AFTSurvivalRegressionModel.predictQuantiles"><code class="xref py py-obj docutils literal"><span class="pre">predictQuantiles</span></code></a>(features)</td>
+<td>Predicted Quantiles</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.read.html#pyspark.ml.regression.AFTSurvivalRegressionModel.read" title="pyspark.ml.regression.AFTSurvivalRegressionModel.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.save.html#pyspark.ml.regression.AFTSurvivalRegressionModel.save" title="pyspark.ml.regression.AFTSurvivalRegressionModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.transform.html#pyspark.ml.regression.AFTSurvivalRegressionModel.transform" title="pyspark.ml.regression.AFTSurvivalRegressionModel.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Transforms the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.write.html#pyspark.ml.regression.AFTSurvivalRegressionModel.write" title="pyspark.ml.regression.AFTSurvivalRegressionModel.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.8.2.2.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -270,83 +352,7 @@
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.copy.html#pyspark.ml.regression.AFTSurvivalRegressionModel.copy" title="pyspark.ml.regression.AFTSurvivalRegressionModel.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParam.html#pyspark.ml.regression.AFTSurvivalRegressionModel.explainParam" title="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParams.html#pyspark.ml.regression.AFTSurvivalRegressionModel.explainParams" title="pyspark.ml.regression.AFTSurvivalRegressionModel.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.extractParamMap.html#pyspark.ml.regression.AFTSurvivalRegressionModel.extractParamMap" title="pyspark.ml.regression.AFTSurvivalRegressionModel.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.getOrDefault.html#pyspark.ml.regression.AFTSurvivalRegressionModel.getOrDefault" title="pyspark.ml.regression.AFTSurvivalRegressionModel.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.getParam.html#pyspark.ml.regression.AFTSurvivalRegressionModel.getParam" title="pyspark.ml.regression.AFTSurvivalRegressionModel.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.hasDefault.html#pyspark.ml.regression.AFTSurvivalRegressionModel.hasDefault" title="pyspark.ml.regression.AFTSurvivalRegressionModel.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.hasParam.html#pyspark.ml.regression.AFTSurvivalRegressionModel.hasParam" title="pyspark.ml.regression.AFTSurvivalRegressionModel.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.isDefined.html#pyspark.ml.regression.AFTSurvivalRegressionModel.isDefined" title="pyspark.ml.regression.AFTSurvivalRegressionModel.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.isSet.html#pyspark.ml.regression.AFTSurvivalRegressionModel.isSet" title="pyspark.ml.regression.AFTSurvivalRegressionModel.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.load.html#pyspark.ml.regression.AFTSurvivalRegressionModel.load" title="pyspark.ml.regression.AFTSurvivalRegressionModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.predict.html#pyspark.ml.regression.AFTSurvivalRegressionModel.predict" title="pyspark.ml.regression.AFTSurvivalRegressionModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(features)</td>
-<td>Predicted value</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.predictQuantiles.html#pyspark.ml.regression.AFTSurvivalRegressionModel.predictQuantiles" title="pyspark.ml.regression.AFTSurvivalRegressionModel.predictQuantiles"><code class="xref py py-obj docutils literal"><span class="pre">predictQuantiles</span></code></a>(features)</td>
-<td>Predicted Quantiles</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.read.html#pyspark.ml.regression.AFTSurvivalRegressionModel.read" title="pyspark.ml.regression.AFTSurvivalRegressionModel.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.save.html#pyspark.ml.regression.AFTSurvivalRegressionModel.save" title="pyspark.ml.regression.AFTSurvivalRegressionModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.transform.html#pyspark.ml.regression.AFTSurvivalRegressionModel.transform" title="pyspark.ml.regression.AFTSurvivalRegressionModel.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Transforms the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.AFTSurvivalRegressionModel.write.html#pyspark.ml.regression.AFTSurvivalRegressionModel.write" title="pyspark.ml.regression.AFTSurvivalRegressionModel.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.regression.AFTSurvivalRegressionModel.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize this instance with a Java model object.
-Subclasses should call this constructor, initialize params,
-and then call _transfer_params_from_java.</p>
-<p>This instance can be instantiated without specifying java_model,
-it will be assigned after that, but this scenario only used by
-<a class="reference internal" href="pyspark.ml.regression.JavaMLReader.html#pyspark.ml.regression.JavaMLReader" title="pyspark.ml.regression.JavaMLReader"><code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code></a> to load models.  This is a bit of a
-hack, but it is easiest since a proper fix would require
-MLReader (in pyspark.ml.util) to depend on these wrappers, but
-these wrappers depend on pyspark.ml.util (both directly and via
-other ML classes).</p>
-</dd></dl>
-
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -356,10 +362,10 @@ other ML classes).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.regression.AFTSurvivalRegressionModel.coefficients.html" class="btn btn-neutral float-right" title="3.8.2.2.1. pyspark.ml.regression.AFTSurvivalRegressionModel.coefficients" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.regression.AFTSurvivalRegressionModel.__init__.html" class="btn btn-neutral float-right" title="3.8.2.2.1.1. pyspark.ml.regression.AFTSurvivalRegressionModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.regression.AFTSurvivalRegression.write.html" class="btn btn-neutral" title="3.8.2.1.35. pyspark.ml.regression.AFTSurvivalRegression.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.regression.AFTSurvivalRegression.tol.html" class="btn btn-neutral" title="3.8.2.1.2.10. pyspark.ml.regression.AFTSurvivalRegression.tol" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

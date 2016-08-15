@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.8. pyspark.ml.regression" href="../pyspark.ml.regression.html"/>
-        <link rel="next" title="3.8.2.60.1. pyspark.ml.regression.RandomForestRegressor.params" href="pyspark.ml.regression.RandomForestRegressor.params.html"/>
-        <link rel="prev" title="3.8.2.59.22. pyspark.ml.regression.RandomForestRegressionModel.write" href="pyspark.ml.regression.RandomForestRegressionModel.write.html"/> 
+        <link rel="next" title="3.8.2.60.1.1. pyspark.ml.regression.RandomForestRegressor.__init__" href="pyspark.ml.regression.RandomForestRegressor.__init__.html"/>
+        <link rel="prev" title="3.8.2.59.2.7. pyspark.ml.regression.RandomForestRegressionModel.trees" href="pyspark.ml.regression.RandomForestRegressionModel.trees.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -237,7 +237,6 @@
             
   <div class="section" id="pyspark-ml-regression-randomforestregressor">
 <h1>3.8.2.60. pyspark.ml.regression.RandomForestRegressor<a class="headerlink" href="#pyspark-ml-regression-randomforestregressor" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.__init__.html#pyspark.ml.regression.RandomForestRegressor.__init__" title="pyspark.ml.regression.RandomForestRegressor.__init__"><code class="xref py py-func docutils literal"><span class="pre">RandomForestRegressor.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.RandomForestRegressor">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">RandomForestRegressor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#RandomForestRegressor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.RandomForestRegressor" title="Permalink to this definition">¶</a></dt>
@@ -280,165 +279,6 @@ It supports both continuous and categorical features.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.params.html#pyspark.ml.regression.RandomForestRegressor.params" title="pyspark.ml.regression.RandomForestRegressor.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.copy.html#pyspark.ml.regression.RandomForestRegressor.copy" title="pyspark.ml.regression.RandomForestRegressor.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.explainParam.html#pyspark.ml.regression.RandomForestRegressor.explainParam" title="pyspark.ml.regression.RandomForestRegressor.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.explainParams.html#pyspark.ml.regression.RandomForestRegressor.explainParams" title="pyspark.ml.regression.RandomForestRegressor.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.extractParamMap.html#pyspark.ml.regression.RandomForestRegressor.extractParamMap" title="pyspark.ml.regression.RandomForestRegressor.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.fit.html#pyspark.ml.regression.RandomForestRegressor.fit" title="pyspark.ml.regression.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getCacheNodeIds.html#pyspark.ml.regression.RandomForestRegressor.getCacheNodeIds" title="pyspark.ml.regression.RandomForestRegressor.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
-<td>Gets the value of cacheNodeIds or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getCheckpointInterval.html#pyspark.ml.regression.RandomForestRegressor.getCheckpointInterval" title="pyspark.ml.regression.RandomForestRegressor.getCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointInterval</span></code></a>()</td>
-<td>Gets the value of checkpointInterval or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getFeatureSubsetStrategy.html#pyspark.ml.regression.RandomForestRegressor.getFeatureSubsetStrategy" title="pyspark.ml.regression.RandomForestRegressor.getFeatureSubsetStrategy"><code class="xref py py-obj docutils literal"><span class="pre">getFeatureSubsetStrategy</span></code></a>()</td>
-<td>Gets the value of featureSubsetStrategy or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getFeaturesCol.html#pyspark.ml.regression.RandomForestRegressor.getFeaturesCol" title="pyspark.ml.regression.RandomForestRegressor.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
-<td>Gets the value of featuresCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getImpurity.html#pyspark.ml.regression.RandomForestRegressor.getImpurity" title="pyspark.ml.regression.RandomForestRegressor.getImpurity"><code class="xref py py-obj docutils literal"><span class="pre">getImpurity</span></code></a>()</td>
-<td>Gets the value of impurity or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getLabelCol.html#pyspark.ml.regression.RandomForestRegressor.getLabelCol" title="pyspark.ml.regression.RandomForestRegressor.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
-<td>Gets the value of labelCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMaxBins.html#pyspark.ml.regression.RandomForestRegressor.getMaxBins" title="pyspark.ml.regression.RandomForestRegressor.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
-<td>Gets the value of maxBins or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMaxDepth.html#pyspark.ml.regression.RandomForestRegressor.getMaxDepth" title="pyspark.ml.regression.RandomForestRegressor.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
-<td>Gets the value of maxDepth or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMaxMemoryInMB.html#pyspark.ml.regression.RandomForestRegressor.getMaxMemoryInMB" title="pyspark.ml.regression.RandomForestRegressor.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
-<td>Gets the value of maxMemoryInMB or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMinInfoGain.html#pyspark.ml.regression.RandomForestRegressor.getMinInfoGain" title="pyspark.ml.regression.RandomForestRegressor.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
-<td>Gets the value of minInfoGain or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMinInstancesPerNode.html#pyspark.ml.regression.RandomForestRegressor.getMinInstancesPerNode" title="pyspark.ml.regression.RandomForestRegressor.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
-<td>Gets the value of minInstancesPerNode or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getNumTrees.html#pyspark.ml.regression.RandomForestRegressor.getNumTrees" title="pyspark.ml.regression.RandomForestRegressor.getNumTrees"><code class="xref py py-obj docutils literal"><span class="pre">getNumTrees</span></code></a>()</td>
-<td>Gets the value of numTrees or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getOrDefault.html#pyspark.ml.regression.RandomForestRegressor.getOrDefault" title="pyspark.ml.regression.RandomForestRegressor.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getParam.html#pyspark.ml.regression.RandomForestRegressor.getParam" title="pyspark.ml.regression.RandomForestRegressor.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getPredictionCol.html#pyspark.ml.regression.RandomForestRegressor.getPredictionCol" title="pyspark.ml.regression.RandomForestRegressor.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
-<td>Gets the value of predictionCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getSeed.html#pyspark.ml.regression.RandomForestRegressor.getSeed" title="pyspark.ml.regression.RandomForestRegressor.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
-<td>Gets the value of seed or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getSubsamplingRate.html#pyspark.ml.regression.RandomForestRegressor.getSubsamplingRate" title="pyspark.ml.regression.RandomForestRegressor.getSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">getSubsamplingRate</span></code></a>()</td>
-<td>Gets the value of subsamplingRate or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.hasDefault.html#pyspark.ml.regression.RandomForestRegressor.hasDefault" title="pyspark.ml.regression.RandomForestRegressor.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.hasParam.html#pyspark.ml.regression.RandomForestRegressor.hasParam" title="pyspark.ml.regression.RandomForestRegressor.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.isDefined.html#pyspark.ml.regression.RandomForestRegressor.isDefined" title="pyspark.ml.regression.RandomForestRegressor.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.isSet.html#pyspark.ml.regression.RandomForestRegressor.isSet" title="pyspark.ml.regression.RandomForestRegressor.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.load.html#pyspark.ml.regression.RandomForestRegressor.load" title="pyspark.ml.regression.RandomForestRegressor.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.read.html#pyspark.ml.regression.RandomForestRegressor.read" title="pyspark.ml.regression.RandomForestRegressor.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.save.html#pyspark.ml.regression.RandomForestRegressor.save" title="pyspark.ml.regression.RandomForestRegressor.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setCacheNodeIds.html#pyspark.ml.regression.RandomForestRegressor.setCacheNodeIds" title="pyspark.ml.regression.RandomForestRegressor.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.cacheNodeIds.html#pyspark.ml.regression.RandomForestRegressor.cacheNodeIds" title="pyspark.ml.regression.RandomForestRegressor.cacheNodeIds"><code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setCheckpointInterval.html#pyspark.ml.regression.RandomForestRegressor.setCheckpointInterval" title="pyspark.ml.regression.RandomForestRegressor.setCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointInterval</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.checkpointInterval.html#pyspark.ml.regression.RandomForestRegressor.checkpointInterval" title="pyspark.ml.regression.RandomForestRegressor.checkpointInterval"><code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setFeatureSubsetStrategy.html#pyspark.ml.regression.RandomForestRegressor.setFeatureSubsetStrategy" title="pyspark.ml.regression.RandomForestRegressor.setFeatureSubsetStrategy"><code class="xref py py-obj docutils literal"><span class="pre">setFeatureSubsetStrategy</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.featureSubsetStrategy.html#pyspark.ml.regression.RandomForestRegressor.featureSubsetStrategy" title="pyspark.ml.regression.RandomForestRegressor.featureSubsetStrategy"><code class="xref py py-attr docutils literal"><span class="pre">featureSubsetStrategy</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setFeaturesCol.html#pyspark.ml.regression.RandomForestRegressor.setFeaturesCol" title="pyspark.ml.regression.RandomForestRegressor.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.featuresCol.html#pyspark.ml.regression.RandomForestRegressor.featuresCol" title="pyspark.ml.regression.RandomForestRegressor.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setImpurity.html#pyspark.ml.regression.RandomForestRegressor.setImpurity" title="pyspark.ml.regression.RandomForestRegressor.setImpurity"><code class="xref py py-obj docutils literal"><span class="pre">setImpurity</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.impurity.html#pyspark.ml.regression.RandomForestRegressor.impurity" title="pyspark.ml.regression.RandomForestRegressor.impurity"><code class="xref py py-attr docutils literal"><span class="pre">impurity</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setLabelCol.html#pyspark.ml.regression.RandomForestRegressor.setLabelCol" title="pyspark.ml.regression.RandomForestRegressor.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.labelCol.html#pyspark.ml.regression.RandomForestRegressor.labelCol" title="pyspark.ml.regression.RandomForestRegressor.labelCol"><code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMaxBins.html#pyspark.ml.regression.RandomForestRegressor.setMaxBins" title="pyspark.ml.regression.RandomForestRegressor.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.maxBins.html#pyspark.ml.regression.RandomForestRegressor.maxBins" title="pyspark.ml.regression.RandomForestRegressor.maxBins"><code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMaxDepth.html#pyspark.ml.regression.RandomForestRegressor.setMaxDepth" title="pyspark.ml.regression.RandomForestRegressor.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.maxDepth.html#pyspark.ml.regression.RandomForestRegressor.maxDepth" title="pyspark.ml.regression.RandomForestRegressor.maxDepth"><code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMaxMemoryInMB.html#pyspark.ml.regression.RandomForestRegressor.setMaxMemoryInMB" title="pyspark.ml.regression.RandomForestRegressor.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.maxMemoryInMB.html#pyspark.ml.regression.RandomForestRegressor.maxMemoryInMB" title="pyspark.ml.regression.RandomForestRegressor.maxMemoryInMB"><code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMinInfoGain.html#pyspark.ml.regression.RandomForestRegressor.setMinInfoGain" title="pyspark.ml.regression.RandomForestRegressor.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.minInfoGain.html#pyspark.ml.regression.RandomForestRegressor.minInfoGain" title="pyspark.ml.regression.RandomForestRegressor.minInfoGain"><code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMinInstancesPerNode.html#pyspark.ml.regression.RandomForestRegressor.setMinInstancesPerNode" title="pyspark.ml.regression.RandomForestRegressor.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.minInstancesPerNode.html#pyspark.ml.regression.RandomForestRegressor.minInstancesPerNode" title="pyspark.ml.regression.RandomForestRegressor.minInstancesPerNode"><code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setNumTrees.html#pyspark.ml.regression.RandomForestRegressor.setNumTrees" title="pyspark.ml.regression.RandomForestRegressor.setNumTrees"><code class="xref py py-obj docutils literal"><span class="pre">setNumTrees</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.numTrees.html#pyspark.ml.regression.RandomForestRegressor.numTrees" title="pyspark.ml.regression.RandomForestRegressor.numTrees"><code class="xref py py-attr docutils literal"><span class="pre">numTrees</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setParams.html#pyspark.ml.regression.RandomForestRegressor.setParams" title="pyspark.ml.regression.RandomForestRegressor.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
-<td>Sets params for linear regression.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setPredictionCol.html#pyspark.ml.regression.RandomForestRegressor.setPredictionCol" title="pyspark.ml.regression.RandomForestRegressor.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.predictionCol.html#pyspark.ml.regression.RandomForestRegressor.predictionCol" title="pyspark.ml.regression.RandomForestRegressor.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setSeed.html#pyspark.ml.regression.RandomForestRegressor.setSeed" title="pyspark.ml.regression.RandomForestRegressor.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.seed.html#pyspark.ml.regression.RandomForestRegressor.seed" title="pyspark.ml.regression.RandomForestRegressor.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setSubsamplingRate.html#pyspark.ml.regression.RandomForestRegressor.setSubsamplingRate" title="pyspark.ml.regression.RandomForestRegressor.setSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">setSubsamplingRate</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.subsamplingRate.html#pyspark.ml.regression.RandomForestRegressor.subsamplingRate" title="pyspark.ml.regression.RandomForestRegressor.subsamplingRate"><code class="xref py py-attr docutils literal"><span class="pre">subsamplingRate</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.write.html#pyspark.ml.regression.RandomForestRegressor.write" title="pyspark.ml.regression.RandomForestRegressor.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.regression.RandomForestRegressor.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>featuresCol=&quot;features&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>maxDepth=5</em>, <em>maxBins=32</em>, <em>minInstancesPerNode=1</em>, <em>minInfoGain=0.0</em>, <em>maxMemoryInMB=256</em>, <em>cacheNodeIds=False</em>, <em>checkpointInterval=10</em>, <em>impurity=&quot;variance&quot;</em>, <em>subsamplingRate=1.0</em>, <em>seed=None</em>, <em>numTrees=20</em>, <em>featureSubsetStrategy=&quot;auto&quot;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#RandomForestRegressor.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.RandomForestRegressor.__init__" title="Permalink to this definition">¶</a></dt>
@@ -446,6 +286,223 @@ It supports both continuous and categorical features.</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.8.2.60.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.__init__.html#pyspark.ml.regression.RandomForestRegressor.__init__" title="pyspark.ml.regression.RandomForestRegressor.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.copy.html#pyspark.ml.regression.RandomForestRegressor.copy" title="pyspark.ml.regression.RandomForestRegressor.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.explainParam.html#pyspark.ml.regression.RandomForestRegressor.explainParam" title="pyspark.ml.regression.RandomForestRegressor.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.explainParams.html#pyspark.ml.regression.RandomForestRegressor.explainParams" title="pyspark.ml.regression.RandomForestRegressor.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.extractParamMap.html#pyspark.ml.regression.RandomForestRegressor.extractParamMap" title="pyspark.ml.regression.RandomForestRegressor.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.fit.html#pyspark.ml.regression.RandomForestRegressor.fit" title="pyspark.ml.regression.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getCacheNodeIds.html#pyspark.ml.regression.RandomForestRegressor.getCacheNodeIds" title="pyspark.ml.regression.RandomForestRegressor.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
+<td>Gets the value of cacheNodeIds or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getCheckpointInterval.html#pyspark.ml.regression.RandomForestRegressor.getCheckpointInterval" title="pyspark.ml.regression.RandomForestRegressor.getCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointInterval</span></code></a>()</td>
+<td>Gets the value of checkpointInterval or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getFeatureSubsetStrategy.html#pyspark.ml.regression.RandomForestRegressor.getFeatureSubsetStrategy" title="pyspark.ml.regression.RandomForestRegressor.getFeatureSubsetStrategy"><code class="xref py py-obj docutils literal"><span class="pre">getFeatureSubsetStrategy</span></code></a>()</td>
+<td>Gets the value of featureSubsetStrategy or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getFeaturesCol.html#pyspark.ml.regression.RandomForestRegressor.getFeaturesCol" title="pyspark.ml.regression.RandomForestRegressor.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getImpurity.html#pyspark.ml.regression.RandomForestRegressor.getImpurity" title="pyspark.ml.regression.RandomForestRegressor.getImpurity"><code class="xref py py-obj docutils literal"><span class="pre">getImpurity</span></code></a>()</td>
+<td>Gets the value of impurity or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getLabelCol.html#pyspark.ml.regression.RandomForestRegressor.getLabelCol" title="pyspark.ml.regression.RandomForestRegressor.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMaxBins.html#pyspark.ml.regression.RandomForestRegressor.getMaxBins" title="pyspark.ml.regression.RandomForestRegressor.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
+<td>Gets the value of maxBins or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMaxDepth.html#pyspark.ml.regression.RandomForestRegressor.getMaxDepth" title="pyspark.ml.regression.RandomForestRegressor.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
+<td>Gets the value of maxDepth or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMaxMemoryInMB.html#pyspark.ml.regression.RandomForestRegressor.getMaxMemoryInMB" title="pyspark.ml.regression.RandomForestRegressor.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
+<td>Gets the value of maxMemoryInMB or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMinInfoGain.html#pyspark.ml.regression.RandomForestRegressor.getMinInfoGain" title="pyspark.ml.regression.RandomForestRegressor.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
+<td>Gets the value of minInfoGain or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getMinInstancesPerNode.html#pyspark.ml.regression.RandomForestRegressor.getMinInstancesPerNode" title="pyspark.ml.regression.RandomForestRegressor.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
+<td>Gets the value of minInstancesPerNode or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getNumTrees.html#pyspark.ml.regression.RandomForestRegressor.getNumTrees" title="pyspark.ml.regression.RandomForestRegressor.getNumTrees"><code class="xref py py-obj docutils literal"><span class="pre">getNumTrees</span></code></a>()</td>
+<td>Gets the value of numTrees or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getOrDefault.html#pyspark.ml.regression.RandomForestRegressor.getOrDefault" title="pyspark.ml.regression.RandomForestRegressor.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getParam.html#pyspark.ml.regression.RandomForestRegressor.getParam" title="pyspark.ml.regression.RandomForestRegressor.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getPredictionCol.html#pyspark.ml.regression.RandomForestRegressor.getPredictionCol" title="pyspark.ml.regression.RandomForestRegressor.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getSeed.html#pyspark.ml.regression.RandomForestRegressor.getSeed" title="pyspark.ml.regression.RandomForestRegressor.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.getSubsamplingRate.html#pyspark.ml.regression.RandomForestRegressor.getSubsamplingRate" title="pyspark.ml.regression.RandomForestRegressor.getSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">getSubsamplingRate</span></code></a>()</td>
+<td>Gets the value of subsamplingRate or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.hasDefault.html#pyspark.ml.regression.RandomForestRegressor.hasDefault" title="pyspark.ml.regression.RandomForestRegressor.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.hasParam.html#pyspark.ml.regression.RandomForestRegressor.hasParam" title="pyspark.ml.regression.RandomForestRegressor.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.isDefined.html#pyspark.ml.regression.RandomForestRegressor.isDefined" title="pyspark.ml.regression.RandomForestRegressor.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.isSet.html#pyspark.ml.regression.RandomForestRegressor.isSet" title="pyspark.ml.regression.RandomForestRegressor.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.load.html#pyspark.ml.regression.RandomForestRegressor.load" title="pyspark.ml.regression.RandomForestRegressor.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.read.html#pyspark.ml.regression.RandomForestRegressor.read" title="pyspark.ml.regression.RandomForestRegressor.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.save.html#pyspark.ml.regression.RandomForestRegressor.save" title="pyspark.ml.regression.RandomForestRegressor.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setCacheNodeIds.html#pyspark.ml.regression.RandomForestRegressor.setCacheNodeIds" title="pyspark.ml.regression.RandomForestRegressor.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setCheckpointInterval.html#pyspark.ml.regression.RandomForestRegressor.setCheckpointInterval" title="pyspark.ml.regression.RandomForestRegressor.setCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointInterval</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setFeatureSubsetStrategy.html#pyspark.ml.regression.RandomForestRegressor.setFeatureSubsetStrategy" title="pyspark.ml.regression.RandomForestRegressor.setFeatureSubsetStrategy"><code class="xref py py-obj docutils literal"><span class="pre">setFeatureSubsetStrategy</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featureSubsetStrategy</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setFeaturesCol.html#pyspark.ml.regression.RandomForestRegressor.setFeaturesCol" title="pyspark.ml.regression.RandomForestRegressor.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setImpurity.html#pyspark.ml.regression.RandomForestRegressor.setImpurity" title="pyspark.ml.regression.RandomForestRegressor.setImpurity"><code class="xref py py-obj docutils literal"><span class="pre">setImpurity</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">impurity</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setLabelCol.html#pyspark.ml.regression.RandomForestRegressor.setLabelCol" title="pyspark.ml.regression.RandomForestRegressor.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMaxBins.html#pyspark.ml.regression.RandomForestRegressor.setMaxBins" title="pyspark.ml.regression.RandomForestRegressor.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMaxDepth.html#pyspark.ml.regression.RandomForestRegressor.setMaxDepth" title="pyspark.ml.regression.RandomForestRegressor.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMaxMemoryInMB.html#pyspark.ml.regression.RandomForestRegressor.setMaxMemoryInMB" title="pyspark.ml.regression.RandomForestRegressor.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMinInfoGain.html#pyspark.ml.regression.RandomForestRegressor.setMinInfoGain" title="pyspark.ml.regression.RandomForestRegressor.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setMinInstancesPerNode.html#pyspark.ml.regression.RandomForestRegressor.setMinInstancesPerNode" title="pyspark.ml.regression.RandomForestRegressor.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setNumTrees.html#pyspark.ml.regression.RandomForestRegressor.setNumTrees" title="pyspark.ml.regression.RandomForestRegressor.setNumTrees"><code class="xref py py-obj docutils literal"><span class="pre">setNumTrees</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">numTrees</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setParams.html#pyspark.ml.regression.RandomForestRegressor.setParams" title="pyspark.ml.regression.RandomForestRegressor.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td>Sets params for linear regression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setPredictionCol.html#pyspark.ml.regression.RandomForestRegressor.setPredictionCol" title="pyspark.ml.regression.RandomForestRegressor.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setSeed.html#pyspark.ml.regression.RandomForestRegressor.setSeed" title="pyspark.ml.regression.RandomForestRegressor.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">seed</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.setSubsamplingRate.html#pyspark.ml.regression.RandomForestRegressor.setSubsamplingRate" title="pyspark.ml.regression.RandomForestRegressor.setSubsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">setSubsamplingRate</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">subsamplingRate</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.write.html#pyspark.ml.regression.RandomForestRegressor.write" title="pyspark.ml.regression.RandomForestRegressor.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.8.2.60.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.cacheNodeIds.html#pyspark.ml.regression.RandomForestRegressor.cacheNodeIds" title="pyspark.ml.regression.RandomForestRegressor.cacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">cacheNodeIds</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.checkpointInterval.html#pyspark.ml.regression.RandomForestRegressor.checkpointInterval" title="pyspark.ml.regression.RandomForestRegressor.checkpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">checkpointInterval</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.featureSubsetStrategy.html#pyspark.ml.regression.RandomForestRegressor.featureSubsetStrategy" title="pyspark.ml.regression.RandomForestRegressor.featureSubsetStrategy"><code class="xref py py-obj docutils literal"><span class="pre">featureSubsetStrategy</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.featuresCol.html#pyspark.ml.regression.RandomForestRegressor.featuresCol" title="pyspark.ml.regression.RandomForestRegressor.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.impurity.html#pyspark.ml.regression.RandomForestRegressor.impurity" title="pyspark.ml.regression.RandomForestRegressor.impurity"><code class="xref py py-obj docutils literal"><span class="pre">impurity</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.labelCol.html#pyspark.ml.regression.RandomForestRegressor.labelCol" title="pyspark.ml.regression.RandomForestRegressor.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.maxBins.html#pyspark.ml.regression.RandomForestRegressor.maxBins" title="pyspark.ml.regression.RandomForestRegressor.maxBins"><code class="xref py py-obj docutils literal"><span class="pre">maxBins</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.maxDepth.html#pyspark.ml.regression.RandomForestRegressor.maxDepth" title="pyspark.ml.regression.RandomForestRegressor.maxDepth"><code class="xref py py-obj docutils literal"><span class="pre">maxDepth</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.maxMemoryInMB.html#pyspark.ml.regression.RandomForestRegressor.maxMemoryInMB" title="pyspark.ml.regression.RandomForestRegressor.maxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">maxMemoryInMB</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.minInfoGain.html#pyspark.ml.regression.RandomForestRegressor.minInfoGain" title="pyspark.ml.regression.RandomForestRegressor.minInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">minInfoGain</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.minInstancesPerNode.html#pyspark.ml.regression.RandomForestRegressor.minInstancesPerNode" title="pyspark.ml.regression.RandomForestRegressor.minInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">minInstancesPerNode</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.numTrees.html#pyspark.ml.regression.RandomForestRegressor.numTrees" title="pyspark.ml.regression.RandomForestRegressor.numTrees"><code class="xref py py-obj docutils literal"><span class="pre">numTrees</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.params.html#pyspark.ml.regression.RandomForestRegressor.params" title="pyspark.ml.regression.RandomForestRegressor.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.predictionCol.html#pyspark.ml.regression.RandomForestRegressor.predictionCol" title="pyspark.ml.regression.RandomForestRegressor.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.seed.html#pyspark.ml.regression.RandomForestRegressor.seed" title="pyspark.ml.regression.RandomForestRegressor.seed"><code class="xref py py-obj docutils literal"><span class="pre">seed</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.subsamplingRate.html#pyspark.ml.regression.RandomForestRegressor.subsamplingRate" title="pyspark.ml.regression.RandomForestRegressor.subsamplingRate"><code class="xref py py-obj docutils literal"><span class="pre">subsamplingRate</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.supportedFeatureSubsetStrategies.html#pyspark.ml.regression.RandomForestRegressor.supportedFeatureSubsetStrategies" title="pyspark.ml.regression.RandomForestRegressor.supportedFeatureSubsetStrategies"><code class="xref py py-obj docutils literal"><span class="pre">supportedFeatureSubsetStrategies</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.RandomForestRegressor.supportedImpurities.html#pyspark.ml.regression.RandomForestRegressor.supportedImpurities" title="pyspark.ml.regression.RandomForestRegressor.supportedImpurities"><code class="xref py py-obj docutils literal"><span class="pre">supportedImpurities</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -455,10 +512,10 @@ It supports both continuous and categorical features.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.regression.RandomForestRegressor.params.html" class="btn btn-neutral float-right" title="3.8.2.60.1. pyspark.ml.regression.RandomForestRegressor.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.regression.RandomForestRegressor.__init__.html" class="btn btn-neutral float-right" title="3.8.2.60.1.1. pyspark.ml.regression.RandomForestRegressor.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.regression.RandomForestRegressionModel.write.html" class="btn btn-neutral" title="3.8.2.59.22. pyspark.ml.regression.RandomForestRegressionModel.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.regression.RandomForestRegressionModel.trees.html" class="btn btn-neutral" title="3.8.2.59.2.7. pyspark.ml.regression.RandomForestRegressionModel.trees" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="next" title="1.2.5.1. pyspark.HiveContext.read" href="pyspark.HiveContext.read.html"/>
-        <link rel="prev" title="1.2.4.5. pyspark.Broadcast.unpersist" href="pyspark.Broadcast.unpersist.html"/> 
+        <link rel="next" title="1.2.5.1.1. pyspark.HiveContext.__init__" href="pyspark.HiveContext.__init__.html"/>
+        <link rel="prev" title="1.2.4.2.1. pyspark.Broadcast.value" href="pyspark.Broadcast.value.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -93,28 +93,8 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.BasicProfiler.html">1.2.3. pyspark.BasicProfiler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.Broadcast.html">1.2.4. pyspark.Broadcast</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.5. pyspark.HiveContext</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.read.html">1.2.5.1. pyspark.HiveContext.read</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.readStream.html">1.2.5.2. pyspark.HiveContext.readStream</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.streams.html">1.2.5.3. pyspark.HiveContext.streams</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.udf.html">1.2.5.4. pyspark.HiveContext.udf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.cacheTable.html">1.2.5.5. pyspark.HiveContext.cacheTable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.clearCache.html">1.2.5.6. pyspark.HiveContext.clearCache</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.createDataFrame.html">1.2.5.7. pyspark.HiveContext.createDataFrame</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.createExternalTable.html">1.2.5.8. pyspark.HiveContext.createExternalTable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.dropTempTable.html">1.2.5.9. pyspark.HiveContext.dropTempTable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.getConf.html">1.2.5.10. pyspark.HiveContext.getConf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.getOrCreate.html">1.2.5.11. pyspark.HiveContext.getOrCreate</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.newSession.html">1.2.5.12. pyspark.HiveContext.newSession</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.range.html">1.2.5.13. pyspark.HiveContext.range</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.refreshTable.html">1.2.5.14. pyspark.HiveContext.refreshTable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.registerDataFrameAsTable.html">1.2.5.15. pyspark.HiveContext.registerDataFrameAsTable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.registerFunction.html">1.2.5.16. pyspark.HiveContext.registerFunction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.setConf.html">1.2.5.17. pyspark.HiveContext.setConf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.sql.html">1.2.5.18. pyspark.HiveContext.sql</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.table.html">1.2.5.19. pyspark.HiveContext.table</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.tableNames.html">1.2.5.20. pyspark.HiveContext.tableNames</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.tables.html">1.2.5.21. pyspark.HiveContext.tables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.HiveContext.uncacheTable.html">1.2.5.22. pyspark.HiveContext.uncacheTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.5.1. Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">1.2.5.2. Attributes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.MarshalSerializer.html">1.2.6. pyspark.MarshalSerializer</a></li>
@@ -202,7 +182,6 @@
             
   <div class="section" id="pyspark-hivecontext">
 <h1>1.2.5. pyspark.HiveContext<a class="headerlink" href="#pyspark-hivecontext" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.HiveContext.__init__.html#pyspark.HiveContext.__init__" title="pyspark.HiveContext.__init__"><code class="xref py py-func docutils literal"><span class="pre">HiveContext.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.HiveContext">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">HiveContext</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>jhiveContext=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#HiveContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.HiveContext" title="Permalink to this definition">¶</a></dt>
@@ -226,7 +205,83 @@ It supports running both SQL and HiveQL commands.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">Deprecated in 2.0.0. Use SparkSession.builder.enableHiveSupport().getOrCreate().</p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.HiveContext.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>jhiveContext=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#HiveContext.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.HiveContext.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>1.2.5.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.__init__.html#pyspark.HiveContext.__init__" title="pyspark.HiveContext.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(sparkContext[,&nbsp;jhiveContext])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.cacheTable.html#pyspark.HiveContext.cacheTable" title="pyspark.HiveContext.cacheTable"><code class="xref py py-obj docutils literal"><span class="pre">cacheTable</span></code></a>(tableName)</td>
+<td>Caches the specified table in-memory.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.clearCache.html#pyspark.HiveContext.clearCache" title="pyspark.HiveContext.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
+<td>Removes all cached tables from the in-memory cache.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.createDataFrame.html#pyspark.HiveContext.createDataFrame" title="pyspark.HiveContext.createDataFrame"><code class="xref py py-obj docutils literal"><span class="pre">createDataFrame</span></code></a>(data[,&nbsp;schema,&nbsp;samplingRatio])</td>
+<td>Creates a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from an <a class="reference internal" href="pyspark.RDD.html#pyspark.RDD" title="pyspark.RDD"><code class="xref py py-class docutils literal"><span class="pre">RDD</span></code></a>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.createExternalTable.html#pyspark.HiveContext.createExternalTable" title="pyspark.HiveContext.createExternalTable"><code class="xref py py-obj docutils literal"><span class="pre">createExternalTable</span></code></a>(tableName[,&nbsp;path,&nbsp;...])</td>
+<td>Creates an external table based on the dataset in a data source.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.dropTempTable.html#pyspark.HiveContext.dropTempTable" title="pyspark.HiveContext.dropTempTable"><code class="xref py py-obj docutils literal"><span class="pre">dropTempTable</span></code></a>(tableName)</td>
+<td>Remove the temp table from catalog.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.getConf.html#pyspark.HiveContext.getConf" title="pyspark.HiveContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>(key[,&nbsp;defaultValue])</td>
+<td>Returns the value of Spark SQL configuration property for the given key.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.getOrCreate.html#pyspark.HiveContext.getOrCreate" title="pyspark.HiveContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>(sc)</td>
+<td>Get the existing SQLContext or create a new one with given SparkContext.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.newSession.html#pyspark.HiveContext.newSession" title="pyspark.HiveContext.newSession"><code class="xref py py-obj docutils literal"><span class="pre">newSession</span></code></a>()</td>
+<td>Returns a new SQLContext as new session, that has separate SQLConf, registered temporary views and UDFs, but shared SparkContext and table cache.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.range.html#pyspark.HiveContext.range" title="pyspark.HiveContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numPartitions])</td>
+<td>Create a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> with single LongType column named <cite>id</cite>, containing elements in a range from <cite>start</cite> to <cite>end</cite> (exclusive) with step value <cite>step</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.refreshTable.html#pyspark.HiveContext.refreshTable" title="pyspark.HiveContext.refreshTable"><code class="xref py py-obj docutils literal"><span class="pre">refreshTable</span></code></a>(tableName)</td>
+<td>Invalidate and refresh all the cached the metadata of the given table.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.registerDataFrameAsTable.html#pyspark.HiveContext.registerDataFrameAsTable" title="pyspark.HiveContext.registerDataFrameAsTable"><code class="xref py py-obj docutils literal"><span class="pre">registerDataFrameAsTable</span></code></a>(df,&nbsp;tableName)</td>
+<td>Registers the given <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> as a temporary table in the catalog.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.registerFunction.html#pyspark.HiveContext.registerFunction" title="pyspark.HiveContext.registerFunction"><code class="xref py py-obj docutils literal"><span class="pre">registerFunction</span></code></a>(name,&nbsp;f[,&nbsp;returnType])</td>
+<td>Registers a python function (including lambda function) as a UDF so it can be used in SQL statements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.setConf.html#pyspark.HiveContext.setConf" title="pyspark.HiveContext.setConf"><code class="xref py py-obj docutils literal"><span class="pre">setConf</span></code></a>(key,&nbsp;value)</td>
+<td>Sets the given Spark SQL configuration property.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.sql.html#pyspark.HiveContext.sql" title="pyspark.HiveContext.sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a>(sqlQuery)</td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> representing the result of the given query.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.table.html#pyspark.HiveContext.table" title="pyspark.HiveContext.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
+<td>Returns the specified table as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.tableNames.html#pyspark.HiveContext.tableNames" title="pyspark.HiveContext.tableNames"><code class="xref py py-obj docutils literal"><span class="pre">tableNames</span></code></a>([dbName])</td>
+<td>Returns a list of names of tables in the database <code class="docutils literal"><span class="pre">dbName</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.tables.html#pyspark.HiveContext.tables" title="pyspark.HiveContext.tables"><code class="xref py py-obj docutils literal"><span class="pre">tables</span></code></a>([dbName])</td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> containing names of tables in the given database.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.uncacheTable.html#pyspark.HiveContext.uncacheTable" title="pyspark.HiveContext.uncacheTable"><code class="xref py py-obj docutils literal"><span class="pre">uncacheTable</span></code></a>(tableName)</td>
+<td>Removes the specified table from the in-memory cache.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>1.2.5.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -247,71 +302,7 @@ It supports running both SQL and HiveQL commands.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.cacheTable.html#pyspark.HiveContext.cacheTable" title="pyspark.HiveContext.cacheTable"><code class="xref py py-obj docutils literal"><span class="pre">cacheTable</span></code></a>(tableName)</td>
-<td>Caches the specified table in-memory.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.clearCache.html#pyspark.HiveContext.clearCache" title="pyspark.HiveContext.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
-<td>Removes all cached tables from the in-memory cache.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.createDataFrame.html#pyspark.HiveContext.createDataFrame" title="pyspark.HiveContext.createDataFrame"><code class="xref py py-obj docutils literal"><span class="pre">createDataFrame</span></code></a>(data[,&nbsp;schema,&nbsp;samplingRatio])</td>
-<td>Creates a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from an <a class="reference internal" href="pyspark.RDD.html#pyspark.RDD" title="pyspark.RDD"><code class="xref py py-class docutils literal"><span class="pre">RDD</span></code></a>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.createExternalTable.html#pyspark.HiveContext.createExternalTable" title="pyspark.HiveContext.createExternalTable"><code class="xref py py-obj docutils literal"><span class="pre">createExternalTable</span></code></a>(tableName[,&nbsp;path,&nbsp;...])</td>
-<td>Creates an external table based on the dataset in a data source.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.dropTempTable.html#pyspark.HiveContext.dropTempTable" title="pyspark.HiveContext.dropTempTable"><code class="xref py py-obj docutils literal"><span class="pre">dropTempTable</span></code></a>(tableName)</td>
-<td>Remove the temp table from catalog.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.getConf.html#pyspark.HiveContext.getConf" title="pyspark.HiveContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>(key[,&nbsp;defaultValue])</td>
-<td>Returns the value of Spark SQL configuration property for the given key.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.getOrCreate.html#pyspark.HiveContext.getOrCreate" title="pyspark.HiveContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>(sc)</td>
-<td>Get the existing SQLContext or create a new one with given SparkContext.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.newSession.html#pyspark.HiveContext.newSession" title="pyspark.HiveContext.newSession"><code class="xref py py-obj docutils literal"><span class="pre">newSession</span></code></a>()</td>
-<td>Returns a new SQLContext as new session, that has separate SQLConf, registered temporary views and UDFs, but shared SparkContext and table cache.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.range.html#pyspark.HiveContext.range" title="pyspark.HiveContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numPartitions])</td>
-<td>Create a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> with single LongType column named <cite>id</cite>, containing elements in a range from <cite>start</cite> to <cite>end</cite> (exclusive) with step value <cite>step</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.refreshTable.html#pyspark.HiveContext.refreshTable" title="pyspark.HiveContext.refreshTable"><code class="xref py py-obj docutils literal"><span class="pre">refreshTable</span></code></a>(tableName)</td>
-<td>Invalidate and refresh all the cached the metadata of the given table.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.registerDataFrameAsTable.html#pyspark.HiveContext.registerDataFrameAsTable" title="pyspark.HiveContext.registerDataFrameAsTable"><code class="xref py py-obj docutils literal"><span class="pre">registerDataFrameAsTable</span></code></a>(df,&nbsp;tableName)</td>
-<td>Registers the given <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> as a temporary table in the catalog.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.registerFunction.html#pyspark.HiveContext.registerFunction" title="pyspark.HiveContext.registerFunction"><code class="xref py py-obj docutils literal"><span class="pre">registerFunction</span></code></a>(name,&nbsp;f[,&nbsp;returnType])</td>
-<td>Registers a python function (including lambda function) as a UDF so it can be used in SQL statements.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.setConf.html#pyspark.HiveContext.setConf" title="pyspark.HiveContext.setConf"><code class="xref py py-obj docutils literal"><span class="pre">setConf</span></code></a>(key,&nbsp;value)</td>
-<td>Sets the given Spark SQL configuration property.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.sql.html#pyspark.HiveContext.sql" title="pyspark.HiveContext.sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a>(sqlQuery)</td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> representing the result of the given query.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.table.html#pyspark.HiveContext.table" title="pyspark.HiveContext.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
-<td>Returns the specified table as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.tableNames.html#pyspark.HiveContext.tableNames" title="pyspark.HiveContext.tableNames"><code class="xref py py-obj docutils literal"><span class="pre">tableNames</span></code></a>([dbName])</td>
-<td>Returns a list of names of tables in the database <code class="docutils literal"><span class="pre">dbName</span></code>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.HiveContext.tables.html#pyspark.HiveContext.tables" title="pyspark.HiveContext.tables"><code class="xref py py-obj docutils literal"><span class="pre">tables</span></code></a>([dbName])</td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> containing names of tables in the given database.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.HiveContext.uncacheTable.html#pyspark.HiveContext.uncacheTable" title="pyspark.HiveContext.uncacheTable"><code class="xref py py-obj docutils literal"><span class="pre">uncacheTable</span></code></a>(tableName)</td>
-<td>Removes the specified table from the in-memory cache.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -321,10 +312,10 @@ It supports running both SQL and HiveQL commands.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.HiveContext.read.html" class="btn btn-neutral float-right" title="1.2.5.1. pyspark.HiveContext.read" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.HiveContext.__init__.html" class="btn btn-neutral float-right" title="1.2.5.1.1. pyspark.HiveContext.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.Broadcast.unpersist.html" class="btn btn-neutral" title="1.2.4.5. pyspark.Broadcast.unpersist" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.Broadcast.value.html" class="btn btn-neutral" title="1.2.4.2.1. pyspark.Broadcast.value" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

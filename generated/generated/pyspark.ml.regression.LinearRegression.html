@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.8. pyspark.ml.regression" href="../pyspark.ml.regression.html"/>
-        <link rel="next" title="3.8.2.48.1. pyspark.ml.regression.LinearRegression.params" href="pyspark.ml.regression.LinearRegression.params.html"/>
-        <link rel="prev" title="3.8.2.47. pyspark.ml.regression.JavaWrapper" href="pyspark.ml.regression.JavaWrapper.html"/> 
+        <link rel="next" title="3.8.2.48.1.1. pyspark.ml.regression.LinearRegression.__init__" href="pyspark.ml.regression.LinearRegression.__init__.html"/>
+        <link rel="prev" title="3.8.2.47.1.1. pyspark.ml.regression.JavaWrapper.__init__" href="pyspark.ml.regression.JavaWrapper.__init__.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -237,7 +237,6 @@
             
   <div class="section" id="pyspark-ml-regression-linearregression">
 <h1>3.8.2.48. pyspark.ml.regression.LinearRegression<a class="headerlink" href="#pyspark-ml-regression-linearregression" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.regression.LinearRegression.__init__.html#pyspark.ml.regression.LinearRegression.__init__" title="pyspark.ml.regression.LinearRegression.__init__"><code class="xref py py-func docutils literal"><span class="pre">LinearRegression.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.LinearRegression">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">LinearRegression</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#LinearRegression"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.LinearRegression" title="Permalink to this definition">¶</a></dt>
@@ -290,141 +289,6 @@ The specific squared error loss function used is: L = 1/2n ||A coefficients - y|
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.params.html#pyspark.ml.regression.LinearRegression.params" title="pyspark.ml.regression.LinearRegression.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.copy.html#pyspark.ml.regression.LinearRegression.copy" title="pyspark.ml.regression.LinearRegression.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.explainParam.html#pyspark.ml.regression.LinearRegression.explainParam" title="pyspark.ml.regression.LinearRegression.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.explainParams.html#pyspark.ml.regression.LinearRegression.explainParams" title="pyspark.ml.regression.LinearRegression.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.extractParamMap.html#pyspark.ml.regression.LinearRegression.extractParamMap" title="pyspark.ml.regression.LinearRegression.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.fit.html#pyspark.ml.regression.LinearRegression.fit" title="pyspark.ml.regression.LinearRegression.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getElasticNetParam.html#pyspark.ml.regression.LinearRegression.getElasticNetParam" title="pyspark.ml.regression.LinearRegression.getElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">getElasticNetParam</span></code></a>()</td>
-<td>Gets the value of elasticNetParam or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getFeaturesCol.html#pyspark.ml.regression.LinearRegression.getFeaturesCol" title="pyspark.ml.regression.LinearRegression.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
-<td>Gets the value of featuresCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getFitIntercept.html#pyspark.ml.regression.LinearRegression.getFitIntercept" title="pyspark.ml.regression.LinearRegression.getFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">getFitIntercept</span></code></a>()</td>
-<td>Gets the value of fitIntercept or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getLabelCol.html#pyspark.ml.regression.LinearRegression.getLabelCol" title="pyspark.ml.regression.LinearRegression.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
-<td>Gets the value of labelCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getMaxIter.html#pyspark.ml.regression.LinearRegression.getMaxIter" title="pyspark.ml.regression.LinearRegression.getMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">getMaxIter</span></code></a>()</td>
-<td>Gets the value of maxIter or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getOrDefault.html#pyspark.ml.regression.LinearRegression.getOrDefault" title="pyspark.ml.regression.LinearRegression.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getParam.html#pyspark.ml.regression.LinearRegression.getParam" title="pyspark.ml.regression.LinearRegression.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getPredictionCol.html#pyspark.ml.regression.LinearRegression.getPredictionCol" title="pyspark.ml.regression.LinearRegression.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
-<td>Gets the value of predictionCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getRegParam.html#pyspark.ml.regression.LinearRegression.getRegParam" title="pyspark.ml.regression.LinearRegression.getRegParam"><code class="xref py py-obj docutils literal"><span class="pre">getRegParam</span></code></a>()</td>
-<td>Gets the value of regParam or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getSolver.html#pyspark.ml.regression.LinearRegression.getSolver" title="pyspark.ml.regression.LinearRegression.getSolver"><code class="xref py py-obj docutils literal"><span class="pre">getSolver</span></code></a>()</td>
-<td>Gets the value of solver or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getStandardization.html#pyspark.ml.regression.LinearRegression.getStandardization" title="pyspark.ml.regression.LinearRegression.getStandardization"><code class="xref py py-obj docutils literal"><span class="pre">getStandardization</span></code></a>()</td>
-<td>Gets the value of standardization or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getTol.html#pyspark.ml.regression.LinearRegression.getTol" title="pyspark.ml.regression.LinearRegression.getTol"><code class="xref py py-obj docutils literal"><span class="pre">getTol</span></code></a>()</td>
-<td>Gets the value of tol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getWeightCol.html#pyspark.ml.regression.LinearRegression.getWeightCol" title="pyspark.ml.regression.LinearRegression.getWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">getWeightCol</span></code></a>()</td>
-<td>Gets the value of weightCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.hasDefault.html#pyspark.ml.regression.LinearRegression.hasDefault" title="pyspark.ml.regression.LinearRegression.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.hasParam.html#pyspark.ml.regression.LinearRegression.hasParam" title="pyspark.ml.regression.LinearRegression.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.isDefined.html#pyspark.ml.regression.LinearRegression.isDefined" title="pyspark.ml.regression.LinearRegression.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.isSet.html#pyspark.ml.regression.LinearRegression.isSet" title="pyspark.ml.regression.LinearRegression.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.load.html#pyspark.ml.regression.LinearRegression.load" title="pyspark.ml.regression.LinearRegression.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.read.html#pyspark.ml.regression.LinearRegression.read" title="pyspark.ml.regression.LinearRegression.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.save.html#pyspark.ml.regression.LinearRegression.save" title="pyspark.ml.regression.LinearRegression.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setElasticNetParam.html#pyspark.ml.regression.LinearRegression.setElasticNetParam" title="pyspark.ml.regression.LinearRegression.setElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">setElasticNetParam</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.elasticNetParam.html#pyspark.ml.regression.LinearRegression.elasticNetParam" title="pyspark.ml.regression.LinearRegression.elasticNetParam"><code class="xref py py-attr docutils literal"><span class="pre">elasticNetParam</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setFeaturesCol.html#pyspark.ml.regression.LinearRegression.setFeaturesCol" title="pyspark.ml.regression.LinearRegression.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.featuresCol.html#pyspark.ml.regression.LinearRegression.featuresCol" title="pyspark.ml.regression.LinearRegression.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setFitIntercept.html#pyspark.ml.regression.LinearRegression.setFitIntercept" title="pyspark.ml.regression.LinearRegression.setFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">setFitIntercept</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.fitIntercept.html#pyspark.ml.regression.LinearRegression.fitIntercept" title="pyspark.ml.regression.LinearRegression.fitIntercept"><code class="xref py py-attr docutils literal"><span class="pre">fitIntercept</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setLabelCol.html#pyspark.ml.regression.LinearRegression.setLabelCol" title="pyspark.ml.regression.LinearRegression.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.labelCol.html#pyspark.ml.regression.LinearRegression.labelCol" title="pyspark.ml.regression.LinearRegression.labelCol"><code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setMaxIter.html#pyspark.ml.regression.LinearRegression.setMaxIter" title="pyspark.ml.regression.LinearRegression.setMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">setMaxIter</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.maxIter.html#pyspark.ml.regression.LinearRegression.maxIter" title="pyspark.ml.regression.LinearRegression.maxIter"><code class="xref py py-attr docutils literal"><span class="pre">maxIter</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setParams.html#pyspark.ml.regression.LinearRegression.setParams" title="pyspark.ml.regression.LinearRegression.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
-<td>Sets params for linear regression.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setPredictionCol.html#pyspark.ml.regression.LinearRegression.setPredictionCol" title="pyspark.ml.regression.LinearRegression.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.predictionCol.html#pyspark.ml.regression.LinearRegression.predictionCol" title="pyspark.ml.regression.LinearRegression.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setRegParam.html#pyspark.ml.regression.LinearRegression.setRegParam" title="pyspark.ml.regression.LinearRegression.setRegParam"><code class="xref py py-obj docutils literal"><span class="pre">setRegParam</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.regParam.html#pyspark.ml.regression.LinearRegression.regParam" title="pyspark.ml.regression.LinearRegression.regParam"><code class="xref py py-attr docutils literal"><span class="pre">regParam</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setSolver.html#pyspark.ml.regression.LinearRegression.setSolver" title="pyspark.ml.regression.LinearRegression.setSolver"><code class="xref py py-obj docutils literal"><span class="pre">setSolver</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.solver.html#pyspark.ml.regression.LinearRegression.solver" title="pyspark.ml.regression.LinearRegression.solver"><code class="xref py py-attr docutils literal"><span class="pre">solver</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setStandardization.html#pyspark.ml.regression.LinearRegression.setStandardization" title="pyspark.ml.regression.LinearRegression.setStandardization"><code class="xref py py-obj docutils literal"><span class="pre">setStandardization</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.standardization.html#pyspark.ml.regression.LinearRegression.standardization" title="pyspark.ml.regression.LinearRegression.standardization"><code class="xref py py-attr docutils literal"><span class="pre">standardization</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setTol.html#pyspark.ml.regression.LinearRegression.setTol" title="pyspark.ml.regression.LinearRegression.setTol"><code class="xref py py-obj docutils literal"><span class="pre">setTol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.tol.html#pyspark.ml.regression.LinearRegression.tol" title="pyspark.ml.regression.LinearRegression.tol"><code class="xref py py-attr docutils literal"><span class="pre">tol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setWeightCol.html#pyspark.ml.regression.LinearRegression.setWeightCol" title="pyspark.ml.regression.LinearRegression.setWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">setWeightCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.LinearRegression.weightCol.html#pyspark.ml.regression.LinearRegression.weightCol" title="pyspark.ml.regression.LinearRegression.weightCol"><code class="xref py py-attr docutils literal"><span class="pre">weightCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.write.html#pyspark.ml.regression.LinearRegression.write" title="pyspark.ml.regression.LinearRegression.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.regression.LinearRegression.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>featuresCol=&quot;features&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>maxIter=100</em>, <em>regParam=0.0</em>, <em>elasticNetParam=0.0</em>, <em>tol=1e-6</em>, <em>fitIntercept=True</em>, <em>standardization=True</em>, <em>solver=&quot;auto&quot;</em>, <em>weightCol=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#LinearRegression.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.LinearRegression.__init__" title="Permalink to this definition">¶</a></dt>
@@ -432,6 +296,181 @@ The specific squared error loss function used is: L = 1/2n ||A coefficients - y|
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.8.2.48.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.__init__.html#pyspark.ml.regression.LinearRegression.__init__" title="pyspark.ml.regression.LinearRegression.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.copy.html#pyspark.ml.regression.LinearRegression.copy" title="pyspark.ml.regression.LinearRegression.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.explainParam.html#pyspark.ml.regression.LinearRegression.explainParam" title="pyspark.ml.regression.LinearRegression.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.explainParams.html#pyspark.ml.regression.LinearRegression.explainParams" title="pyspark.ml.regression.LinearRegression.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.extractParamMap.html#pyspark.ml.regression.LinearRegression.extractParamMap" title="pyspark.ml.regression.LinearRegression.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.fit.html#pyspark.ml.regression.LinearRegression.fit" title="pyspark.ml.regression.LinearRegression.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getElasticNetParam.html#pyspark.ml.regression.LinearRegression.getElasticNetParam" title="pyspark.ml.regression.LinearRegression.getElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">getElasticNetParam</span></code></a>()</td>
+<td>Gets the value of elasticNetParam or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getFeaturesCol.html#pyspark.ml.regression.LinearRegression.getFeaturesCol" title="pyspark.ml.regression.LinearRegression.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getFitIntercept.html#pyspark.ml.regression.LinearRegression.getFitIntercept" title="pyspark.ml.regression.LinearRegression.getFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">getFitIntercept</span></code></a>()</td>
+<td>Gets the value of fitIntercept or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getLabelCol.html#pyspark.ml.regression.LinearRegression.getLabelCol" title="pyspark.ml.regression.LinearRegression.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getMaxIter.html#pyspark.ml.regression.LinearRegression.getMaxIter" title="pyspark.ml.regression.LinearRegression.getMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">getMaxIter</span></code></a>()</td>
+<td>Gets the value of maxIter or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getOrDefault.html#pyspark.ml.regression.LinearRegression.getOrDefault" title="pyspark.ml.regression.LinearRegression.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getParam.html#pyspark.ml.regression.LinearRegression.getParam" title="pyspark.ml.regression.LinearRegression.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getPredictionCol.html#pyspark.ml.regression.LinearRegression.getPredictionCol" title="pyspark.ml.regression.LinearRegression.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getRegParam.html#pyspark.ml.regression.LinearRegression.getRegParam" title="pyspark.ml.regression.LinearRegression.getRegParam"><code class="xref py py-obj docutils literal"><span class="pre">getRegParam</span></code></a>()</td>
+<td>Gets the value of regParam or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getSolver.html#pyspark.ml.regression.LinearRegression.getSolver" title="pyspark.ml.regression.LinearRegression.getSolver"><code class="xref py py-obj docutils literal"><span class="pre">getSolver</span></code></a>()</td>
+<td>Gets the value of solver or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getStandardization.html#pyspark.ml.regression.LinearRegression.getStandardization" title="pyspark.ml.regression.LinearRegression.getStandardization"><code class="xref py py-obj docutils literal"><span class="pre">getStandardization</span></code></a>()</td>
+<td>Gets the value of standardization or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getTol.html#pyspark.ml.regression.LinearRegression.getTol" title="pyspark.ml.regression.LinearRegression.getTol"><code class="xref py py-obj docutils literal"><span class="pre">getTol</span></code></a>()</td>
+<td>Gets the value of tol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.getWeightCol.html#pyspark.ml.regression.LinearRegression.getWeightCol" title="pyspark.ml.regression.LinearRegression.getWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">getWeightCol</span></code></a>()</td>
+<td>Gets the value of weightCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.hasDefault.html#pyspark.ml.regression.LinearRegression.hasDefault" title="pyspark.ml.regression.LinearRegression.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.hasParam.html#pyspark.ml.regression.LinearRegression.hasParam" title="pyspark.ml.regression.LinearRegression.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.isDefined.html#pyspark.ml.regression.LinearRegression.isDefined" title="pyspark.ml.regression.LinearRegression.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.isSet.html#pyspark.ml.regression.LinearRegression.isSet" title="pyspark.ml.regression.LinearRegression.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.load.html#pyspark.ml.regression.LinearRegression.load" title="pyspark.ml.regression.LinearRegression.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.read.html#pyspark.ml.regression.LinearRegression.read" title="pyspark.ml.regression.LinearRegression.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.save.html#pyspark.ml.regression.LinearRegression.save" title="pyspark.ml.regression.LinearRegression.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setElasticNetParam.html#pyspark.ml.regression.LinearRegression.setElasticNetParam" title="pyspark.ml.regression.LinearRegression.setElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">setElasticNetParam</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">elasticNetParam</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setFeaturesCol.html#pyspark.ml.regression.LinearRegression.setFeaturesCol" title="pyspark.ml.regression.LinearRegression.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setFitIntercept.html#pyspark.ml.regression.LinearRegression.setFitIntercept" title="pyspark.ml.regression.LinearRegression.setFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">setFitIntercept</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">fitIntercept</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setLabelCol.html#pyspark.ml.regression.LinearRegression.setLabelCol" title="pyspark.ml.regression.LinearRegression.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setMaxIter.html#pyspark.ml.regression.LinearRegression.setMaxIter" title="pyspark.ml.regression.LinearRegression.setMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">setMaxIter</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxIter</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setParams.html#pyspark.ml.regression.LinearRegression.setParams" title="pyspark.ml.regression.LinearRegression.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td>Sets params for linear regression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setPredictionCol.html#pyspark.ml.regression.LinearRegression.setPredictionCol" title="pyspark.ml.regression.LinearRegression.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setRegParam.html#pyspark.ml.regression.LinearRegression.setRegParam" title="pyspark.ml.regression.LinearRegression.setRegParam"><code class="xref py py-obj docutils literal"><span class="pre">setRegParam</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">regParam</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setSolver.html#pyspark.ml.regression.LinearRegression.setSolver" title="pyspark.ml.regression.LinearRegression.setSolver"><code class="xref py py-obj docutils literal"><span class="pre">setSolver</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">solver</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setStandardization.html#pyspark.ml.regression.LinearRegression.setStandardization" title="pyspark.ml.regression.LinearRegression.setStandardization"><code class="xref py py-obj docutils literal"><span class="pre">setStandardization</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">standardization</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setTol.html#pyspark.ml.regression.LinearRegression.setTol" title="pyspark.ml.regression.LinearRegression.setTol"><code class="xref py py-obj docutils literal"><span class="pre">setTol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">tol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.setWeightCol.html#pyspark.ml.regression.LinearRegression.setWeightCol" title="pyspark.ml.regression.LinearRegression.setWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">setWeightCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">weightCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.write.html#pyspark.ml.regression.LinearRegression.write" title="pyspark.ml.regression.LinearRegression.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.8.2.48.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.elasticNetParam.html#pyspark.ml.regression.LinearRegression.elasticNetParam" title="pyspark.ml.regression.LinearRegression.elasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">elasticNetParam</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.featuresCol.html#pyspark.ml.regression.LinearRegression.featuresCol" title="pyspark.ml.regression.LinearRegression.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.fitIntercept.html#pyspark.ml.regression.LinearRegression.fitIntercept" title="pyspark.ml.regression.LinearRegression.fitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">fitIntercept</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.labelCol.html#pyspark.ml.regression.LinearRegression.labelCol" title="pyspark.ml.regression.LinearRegression.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.maxIter.html#pyspark.ml.regression.LinearRegression.maxIter" title="pyspark.ml.regression.LinearRegression.maxIter"><code class="xref py py-obj docutils literal"><span class="pre">maxIter</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.params.html#pyspark.ml.regression.LinearRegression.params" title="pyspark.ml.regression.LinearRegression.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.predictionCol.html#pyspark.ml.regression.LinearRegression.predictionCol" title="pyspark.ml.regression.LinearRegression.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.regParam.html#pyspark.ml.regression.LinearRegression.regParam" title="pyspark.ml.regression.LinearRegression.regParam"><code class="xref py py-obj docutils literal"><span class="pre">regParam</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.solver.html#pyspark.ml.regression.LinearRegression.solver" title="pyspark.ml.regression.LinearRegression.solver"><code class="xref py py-obj docutils literal"><span class="pre">solver</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.standardization.html#pyspark.ml.regression.LinearRegression.standardization" title="pyspark.ml.regression.LinearRegression.standardization"><code class="xref py py-obj docutils literal"><span class="pre">standardization</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.tol.html#pyspark.ml.regression.LinearRegression.tol" title="pyspark.ml.regression.LinearRegression.tol"><code class="xref py py-obj docutils literal"><span class="pre">tol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.LinearRegression.weightCol.html#pyspark.ml.regression.LinearRegression.weightCol" title="pyspark.ml.regression.LinearRegression.weightCol"><code class="xref py py-obj docutils literal"><span class="pre">weightCol</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -441,10 +480,10 @@ The specific squared error loss function used is: L = 1/2n ||A coefficients - y|
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.regression.LinearRegression.params.html" class="btn btn-neutral float-right" title="3.8.2.48.1. pyspark.ml.regression.LinearRegression.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.regression.LinearRegression.__init__.html" class="btn btn-neutral float-right" title="3.8.2.48.1.1. pyspark.ml.regression.LinearRegression.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.regression.JavaWrapper.html" class="btn btn-neutral" title="3.8.2.47. pyspark.ml.regression.JavaWrapper" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.regression.JavaWrapper.__init__.html" class="btn btn-neutral" title="3.8.2.47.1.1. pyspark.ml.regression.JavaWrapper.__init__" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

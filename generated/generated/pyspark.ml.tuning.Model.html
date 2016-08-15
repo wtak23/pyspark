@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.9. pyspark.ml.tuning" href="../pyspark.ml.tuning.html"/>
-        <link rel="next" title="3.9.2.6.1. pyspark.ml.tuning.Model.params" href="pyspark.ml.tuning.Model.params.html"/>
-        <link rel="prev" title="3.9.2.5.11. pyspark.ml.tuning.JavaParams.isSet" href="pyspark.ml.tuning.JavaParams.isSet.html"/> 
+        <link rel="next" title="3.9.2.6.1.1. pyspark.ml.tuning.Model.__init__" href="pyspark.ml.tuning.Model.__init__.html"/>
+        <link rel="prev" title="3.9.2.5.2.1. pyspark.ml.tuning.JavaParams.params" href="pyspark.ml.tuning.JavaParams.params.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -186,7 +186,6 @@
             
   <div class="section" id="pyspark-ml-tuning-model">
 <h1>3.9.2.6. pyspark.ml.tuning.Model<a class="headerlink" href="#pyspark-ml-tuning-model" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.tuning.Model.__init__.html#pyspark.ml.tuning.Model.__init__" title="pyspark.ml.tuning.Model.__init__"><code class="xref py py-func docutils literal"><span class="pre">Model.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.tuning.Model">
 <em class="property">class </em><code class="descclassname">pyspark.ml.tuning.</code><code class="descname">Model</code><a class="reference internal" href="../../_modules/pyspark/ml/base.html#Model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.tuning.Model" title="Permalink to this definition">¶</a></dt>
@@ -194,7 +193,62 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.ml.tuning.Model.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.tuning.Model.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>3.9.2.6.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.__init__.html#pyspark.ml.tuning.Model.__init__" title="pyspark.ml.tuning.Model.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.copy.html#pyspark.ml.tuning.Model.copy" title="pyspark.ml.tuning.Model.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.explainParam.html#pyspark.ml.tuning.Model.explainParam" title="pyspark.ml.tuning.Model.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.explainParams.html#pyspark.ml.tuning.Model.explainParams" title="pyspark.ml.tuning.Model.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.extractParamMap.html#pyspark.ml.tuning.Model.extractParamMap" title="pyspark.ml.tuning.Model.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.getOrDefault.html#pyspark.ml.tuning.Model.getOrDefault" title="pyspark.ml.tuning.Model.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.getParam.html#pyspark.ml.tuning.Model.getParam" title="pyspark.ml.tuning.Model.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.hasDefault.html#pyspark.ml.tuning.Model.hasDefault" title="pyspark.ml.tuning.Model.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.hasParam.html#pyspark.ml.tuning.Model.hasParam" title="pyspark.ml.tuning.Model.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.isDefined.html#pyspark.ml.tuning.Model.isDefined" title="pyspark.ml.tuning.Model.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.isSet.html#pyspark.ml.tuning.Model.isSet" title="pyspark.ml.tuning.Model.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.transform.html#pyspark.ml.tuning.Model.transform" title="pyspark.ml.tuning.Model.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Transforms the input dataset with optional parameters.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.9.2.6.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -206,50 +260,7 @@
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.copy.html#pyspark.ml.tuning.Model.copy" title="pyspark.ml.tuning.Model.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.explainParam.html#pyspark.ml.tuning.Model.explainParam" title="pyspark.ml.tuning.Model.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.explainParams.html#pyspark.ml.tuning.Model.explainParams" title="pyspark.ml.tuning.Model.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.extractParamMap.html#pyspark.ml.tuning.Model.extractParamMap" title="pyspark.ml.tuning.Model.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.getOrDefault.html#pyspark.ml.tuning.Model.getOrDefault" title="pyspark.ml.tuning.Model.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.getParam.html#pyspark.ml.tuning.Model.getParam" title="pyspark.ml.tuning.Model.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.hasDefault.html#pyspark.ml.tuning.Model.hasDefault" title="pyspark.ml.tuning.Model.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.hasParam.html#pyspark.ml.tuning.Model.hasParam" title="pyspark.ml.tuning.Model.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.isDefined.html#pyspark.ml.tuning.Model.isDefined" title="pyspark.ml.tuning.Model.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.Model.isSet.html#pyspark.ml.tuning.Model.isSet" title="pyspark.ml.tuning.Model.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.Model.transform.html#pyspark.ml.tuning.Model.transform" title="pyspark.ml.tuning.Model.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Transforms the input dataset with optional parameters.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -259,10 +270,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.tuning.Model.params.html" class="btn btn-neutral float-right" title="3.9.2.6.1. pyspark.ml.tuning.Model.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.tuning.Model.__init__.html" class="btn btn-neutral float-right" title="3.9.2.6.1.1. pyspark.ml.tuning.Model.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.tuning.JavaParams.isSet.html" class="btn btn-neutral" title="3.9.2.5.11. pyspark.ml.tuning.JavaParams.isSet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.tuning.JavaParams.params.html" class="btn btn-neutral" title="3.9.2.5.2.1. pyspark.ml.tuning.JavaParams.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

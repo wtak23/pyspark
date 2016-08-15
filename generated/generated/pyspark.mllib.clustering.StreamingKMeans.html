@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.3. pyspark.mllib.clustering" href="../pyspark.mllib.clustering.html"/>
-        <link rel="next" title="4.3.2.23.1. pyspark.mllib.clustering.StreamingKMeans.latestModel" href="pyspark.mllib.clustering.StreamingKMeans.latestModel.html"/>
-        <link rel="prev" title="4.3.2.22.7. pyspark.mllib.clustering.SparseVector.toArray" href="pyspark.mllib.clustering.SparseVector.toArray.html"/> 
+        <link rel="next" title="4.3.2.23.1.1. pyspark.mllib.clustering.StreamingKMeans.__init__" href="pyspark.mllib.clustering.StreamingKMeans.__init__.html"/>
+        <link rel="prev" title="4.3.2.22.1.8. pyspark.mllib.clustering.SparseVector.toArray" href="pyspark.mllib.clustering.SparseVector.toArray.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -200,7 +200,6 @@
             
   <div class="section" id="pyspark-mllib-clustering-streamingkmeans">
 <h1>4.3.2.23. pyspark.mllib.clustering.StreamingKMeans<a class="headerlink" href="#pyspark-mllib-clustering-streamingkmeans" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.__init__.html#pyspark.mllib.clustering.StreamingKMeans.__init__" title="pyspark.mllib.clustering.StreamingKMeans.__init__"><code class="xref py py-func docutils literal"><span class="pre">StreamingKMeans.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.clustering.StreamingKMeans">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.clustering.</code><code class="descname">StreamingKMeans</code><span class="sig-paren">(</span><em>k=2</em>, <em>decayFactor=1.0</em>, <em>timeUnit='batches'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/clustering.html#StreamingKMeans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.clustering.StreamingKMeans" title="Permalink to this definition">¶</a></dt>
@@ -229,44 +228,54 @@ decay factor will be used as is.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.5.0.</span></p>
 </div>
-<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="pyspark.mllib.clustering.StreamingKMeans.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>k=2</em>, <em>decayFactor=1.0</em>, <em>timeUnit='batches'</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/clustering.html#StreamingKMeans.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.clustering.StreamingKMeans.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.3.2.23.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.latestModel.html#pyspark.mllib.clustering.StreamingKMeans.latestModel" title="pyspark.mllib.clustering.StreamingKMeans.latestModel"><code class="xref py py-obj docutils literal"><span class="pre">latestModel</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.__init__.html#pyspark.mllib.clustering.StreamingKMeans.__init__" title="pyspark.mllib.clustering.StreamingKMeans.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([k,&nbsp;decayFactor,&nbsp;timeUnit])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.latestModel.html#pyspark.mllib.clustering.StreamingKMeans.latestModel" title="pyspark.mllib.clustering.StreamingKMeans.latestModel"><code class="xref py py-obj docutils literal"><span class="pre">latestModel</span></code></a>()</td>
 <td>Return the latest model</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.predictOn.html#pyspark.mllib.clustering.StreamingKMeans.predictOn" title="pyspark.mllib.clustering.StreamingKMeans.predictOn"><code class="xref py py-obj docutils literal"><span class="pre">predictOn</span></code></a>(dstream)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.predictOn.html#pyspark.mllib.clustering.StreamingKMeans.predictOn" title="pyspark.mllib.clustering.StreamingKMeans.predictOn"><code class="xref py py-obj docutils literal"><span class="pre">predictOn</span></code></a>(dstream)</td>
 <td>Make predictions on a dstream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.predictOnValues.html#pyspark.mllib.clustering.StreamingKMeans.predictOnValues" title="pyspark.mllib.clustering.StreamingKMeans.predictOnValues"><code class="xref py py-obj docutils literal"><span class="pre">predictOnValues</span></code></a>(dstream)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.predictOnValues.html#pyspark.mllib.clustering.StreamingKMeans.predictOnValues" title="pyspark.mllib.clustering.StreamingKMeans.predictOnValues"><code class="xref py py-obj docutils literal"><span class="pre">predictOnValues</span></code></a>(dstream)</td>
 <td>Make predictions on a keyed dstream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setDecayFactor.html#pyspark.mllib.clustering.StreamingKMeans.setDecayFactor" title="pyspark.mllib.clustering.StreamingKMeans.setDecayFactor"><code class="xref py py-obj docutils literal"><span class="pre">setDecayFactor</span></code></a>(decayFactor)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setDecayFactor.html#pyspark.mllib.clustering.StreamingKMeans.setDecayFactor" title="pyspark.mllib.clustering.StreamingKMeans.setDecayFactor"><code class="xref py py-obj docutils literal"><span class="pre">setDecayFactor</span></code></a>(decayFactor)</td>
 <td>Set decay factor.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setHalfLife.html#pyspark.mllib.clustering.StreamingKMeans.setHalfLife" title="pyspark.mllib.clustering.StreamingKMeans.setHalfLife"><code class="xref py py-obj docutils literal"><span class="pre">setHalfLife</span></code></a>(halfLife,&nbsp;timeUnit)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setHalfLife.html#pyspark.mllib.clustering.StreamingKMeans.setHalfLife" title="pyspark.mllib.clustering.StreamingKMeans.setHalfLife"><code class="xref py py-obj docutils literal"><span class="pre">setHalfLife</span></code></a>(halfLife,&nbsp;timeUnit)</td>
 <td>Set number of batches after which the centroids of that particular batch has half the weightage.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setInitialCenters.html#pyspark.mllib.clustering.StreamingKMeans.setInitialCenters" title="pyspark.mllib.clustering.StreamingKMeans.setInitialCenters"><code class="xref py py-obj docutils literal"><span class="pre">setInitialCenters</span></code></a>(centers,&nbsp;weights)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setInitialCenters.html#pyspark.mllib.clustering.StreamingKMeans.setInitialCenters" title="pyspark.mllib.clustering.StreamingKMeans.setInitialCenters"><code class="xref py py-obj docutils literal"><span class="pre">setInitialCenters</span></code></a>(centers,&nbsp;weights)</td>
 <td>Set initial centers.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setK.html#pyspark.mllib.clustering.StreamingKMeans.setK" title="pyspark.mllib.clustering.StreamingKMeans.setK"><code class="xref py py-obj docutils literal"><span class="pre">setK</span></code></a>(k)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setK.html#pyspark.mllib.clustering.StreamingKMeans.setK" title="pyspark.mllib.clustering.StreamingKMeans.setK"><code class="xref py py-obj docutils literal"><span class="pre">setK</span></code></a>(k)</td>
 <td>Set number of clusters.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setRandomCenters.html#pyspark.mllib.clustering.StreamingKMeans.setRandomCenters" title="pyspark.mllib.clustering.StreamingKMeans.setRandomCenters"><code class="xref py py-obj docutils literal"><span class="pre">setRandomCenters</span></code></a>(dim,&nbsp;weight,&nbsp;seed)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.setRandomCenters.html#pyspark.mllib.clustering.StreamingKMeans.setRandomCenters" title="pyspark.mllib.clustering.StreamingKMeans.setRandomCenters"><code class="xref py py-obj docutils literal"><span class="pre">setRandomCenters</span></code></a>(dim,&nbsp;weight,&nbsp;seed)</td>
 <td>Set the initial centres to be random samples from a gaussian population with constant weights.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.trainOn.html#pyspark.mllib.clustering.StreamingKMeans.trainOn" title="pyspark.mllib.clustering.StreamingKMeans.trainOn"><code class="xref py py-obj docutils literal"><span class="pre">trainOn</span></code></a>(dstream)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeans.trainOn.html#pyspark.mllib.clustering.StreamingKMeans.trainOn" title="pyspark.mllib.clustering.StreamingKMeans.trainOn"><code class="xref py py-obj docutils literal"><span class="pre">trainOn</span></code></a>(dstream)</td>
 <td>Train the model on the incoming dstream.</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -276,10 +285,10 @@ decay factor will be used as is.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.clustering.StreamingKMeans.latestModel.html" class="btn btn-neutral float-right" title="4.3.2.23.1. pyspark.mllib.clustering.StreamingKMeans.latestModel" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.clustering.StreamingKMeans.__init__.html" class="btn btn-neutral float-right" title="4.3.2.23.1.1. pyspark.mllib.clustering.StreamingKMeans.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.clustering.SparseVector.toArray.html" class="btn btn-neutral" title="4.3.2.22.7. pyspark.mllib.clustering.SparseVector.toArray" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.clustering.SparseVector.toArray.html" class="btn btn-neutral" title="4.3.2.22.1.8. pyspark.mllib.clustering.SparseVector.toArray" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

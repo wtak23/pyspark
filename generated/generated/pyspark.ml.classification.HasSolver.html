@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.4. pyspark.ml.classification" href="../pyspark.ml.classification.html"/>
-        <link rel="next" title="3.4.2.31.1. pyspark.ml.classification.HasSolver.params" href="pyspark.ml.classification.HasSolver.params.html"/>
-        <link rel="prev" title="3.4.2.30.13. pyspark.ml.classification.HasSeed.setSeed" href="pyspark.ml.classification.HasSeed.setSeed.html"/> 
+        <link rel="next" title="3.4.2.31.1.1. pyspark.ml.classification.HasSolver.__init__" href="pyspark.ml.classification.HasSolver.__init__.html"/>
+        <link rel="prev" title="3.4.2.30.2.2. pyspark.ml.classification.HasSeed.seed" href="pyspark.ml.classification.HasSeed.seed.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -245,12 +245,69 @@
             
   <div class="section" id="pyspark-ml-classification-hassolver">
 <h1>3.4.2.31. pyspark.ml.classification.HasSolver<a class="headerlink" href="#pyspark-ml-classification-hassolver" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.classification.HasSolver.__init__.html#pyspark.ml.classification.HasSolver.__init__" title="pyspark.ml.classification.HasSolver.__init__"><code class="xref py py-func docutils literal"><span class="pre">HasSolver.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.classification.HasSolver">
 <em class="property">class </em><code class="descclassname">pyspark.ml.classification.</code><code class="descname">HasSolver</code><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasSolver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.classification.HasSolver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mixin for param solver: the solver algorithm for optimization. If this is not set or empty, default value is &#8216;auto&#8217;.</p>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.ml.classification.HasSolver.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasSolver.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.classification.HasSolver.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>3.4.2.31.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.__init__.html#pyspark.ml.classification.HasSolver.__init__" title="pyspark.ml.classification.HasSolver.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.copy.html#pyspark.ml.classification.HasSolver.copy" title="pyspark.ml.classification.HasSolver.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.explainParam.html#pyspark.ml.classification.HasSolver.explainParam" title="pyspark.ml.classification.HasSolver.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.explainParams.html#pyspark.ml.classification.HasSolver.explainParams" title="pyspark.ml.classification.HasSolver.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.extractParamMap.html#pyspark.ml.classification.HasSolver.extractParamMap" title="pyspark.ml.classification.HasSolver.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.getOrDefault.html#pyspark.ml.classification.HasSolver.getOrDefault" title="pyspark.ml.classification.HasSolver.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.getParam.html#pyspark.ml.classification.HasSolver.getParam" title="pyspark.ml.classification.HasSolver.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.getSolver.html#pyspark.ml.classification.HasSolver.getSolver" title="pyspark.ml.classification.HasSolver.getSolver"><code class="xref py py-obj docutils literal"><span class="pre">getSolver</span></code></a>()</td>
+<td>Gets the value of solver or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.hasDefault.html#pyspark.ml.classification.HasSolver.hasDefault" title="pyspark.ml.classification.HasSolver.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.hasParam.html#pyspark.ml.classification.HasSolver.hasParam" title="pyspark.ml.classification.HasSolver.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.isDefined.html#pyspark.ml.classification.HasSolver.isDefined" title="pyspark.ml.classification.HasSolver.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.isSet.html#pyspark.ml.classification.HasSolver.isSet" title="pyspark.ml.classification.HasSolver.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.setSolver.html#pyspark.ml.classification.HasSolver.setSolver" title="pyspark.ml.classification.HasSolver.setSolver"><code class="xref py py-obj docutils literal"><span class="pre">setSolver</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">solver</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.4.2.31.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -260,55 +317,12 @@
 <tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.params.html#pyspark.ml.classification.HasSolver.params" title="pyspark.ml.classification.HasSolver.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
 <td>Returns all params ordered by name.</td>
 </tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.copy.html#pyspark.ml.classification.HasSolver.copy" title="pyspark.ml.classification.HasSolver.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.explainParam.html#pyspark.ml.classification.HasSolver.explainParam" title="pyspark.ml.classification.HasSolver.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.explainParams.html#pyspark.ml.classification.HasSolver.explainParams" title="pyspark.ml.classification.HasSolver.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.extractParamMap.html#pyspark.ml.classification.HasSolver.extractParamMap" title="pyspark.ml.classification.HasSolver.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.getOrDefault.html#pyspark.ml.classification.HasSolver.getOrDefault" title="pyspark.ml.classification.HasSolver.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.getParam.html#pyspark.ml.classification.HasSolver.getParam" title="pyspark.ml.classification.HasSolver.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.getSolver.html#pyspark.ml.classification.HasSolver.getSolver" title="pyspark.ml.classification.HasSolver.getSolver"><code class="xref py py-obj docutils literal"><span class="pre">getSolver</span></code></a>()</td>
-<td>Gets the value of solver or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.hasDefault.html#pyspark.ml.classification.HasSolver.hasDefault" title="pyspark.ml.classification.HasSolver.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.hasParam.html#pyspark.ml.classification.HasSolver.hasParam" title="pyspark.ml.classification.HasSolver.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.isDefined.html#pyspark.ml.classification.HasSolver.isDefined" title="pyspark.ml.classification.HasSolver.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.isSet.html#pyspark.ml.classification.HasSolver.isSet" title="pyspark.ml.classification.HasSolver.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.setSolver.html#pyspark.ml.classification.HasSolver.setSolver" title="pyspark.ml.classification.HasSolver.setSolver"><code class="xref py py-obj docutils literal"><span class="pre">setSolver</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.HasSolver.solver.html#pyspark.ml.classification.HasSolver.solver" title="pyspark.ml.classification.HasSolver.solver"><code class="xref py py-attr docutils literal"><span class="pre">solver</span></code></a>.</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.HasSolver.solver.html#pyspark.ml.classification.HasSolver.solver" title="pyspark.ml.classification.HasSolver.solver"><code class="xref py py-obj docutils literal"><span class="pre">solver</span></code></a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -318,10 +332,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.classification.HasSolver.params.html" class="btn btn-neutral float-right" title="3.4.2.31.1. pyspark.ml.classification.HasSolver.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.classification.HasSolver.__init__.html" class="btn btn-neutral float-right" title="3.4.2.31.1.1. pyspark.ml.classification.HasSolver.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.classification.HasSeed.setSeed.html" class="btn btn-neutral" title="3.4.2.30.13. pyspark.ml.classification.HasSeed.setSeed" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.classification.HasSeed.seed.html" class="btn btn-neutral" title="3.4.2.30.2.2. pyspark.ml.classification.HasSeed.seed" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

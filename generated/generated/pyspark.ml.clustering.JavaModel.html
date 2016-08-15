@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.5. pyspark.ml.clustering" href="../pyspark.ml.clustering.html"/>
-        <link rel="next" title="3.5.2.36.1. pyspark.ml.clustering.JavaModel.params" href="pyspark.ml.clustering.JavaModel.params.html"/>
-        <link rel="prev" title="3.5.2.35.3. pyspark.ml.clustering.JavaMLWriter.save" href="pyspark.ml.clustering.JavaMLWriter.save.html"/> 
+        <link rel="next" title="3.5.2.36.1.1. pyspark.ml.clustering.JavaModel.__init__" href="pyspark.ml.clustering.JavaModel.__init__.html"/>
+        <link rel="prev" title="3.5.2.35.1.4. pyspark.ml.clustering.JavaMLWriter.save" href="pyspark.ml.clustering.JavaMLWriter.save.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -221,67 +221,12 @@
             
   <div class="section" id="pyspark-ml-clustering-javamodel">
 <h1>3.5.2.36. pyspark.ml.clustering.JavaModel<a class="headerlink" href="#pyspark-ml-clustering-javamodel" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.clustering.JavaModel.__init__.html#pyspark.ml.clustering.JavaModel.__init__" title="pyspark.ml.clustering.JavaModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">JavaModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.clustering.JavaModel">
 <em class="property">class </em><code class="descclassname">pyspark.ml.clustering.</code><code class="descname">JavaModel</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/wrapper.html#JavaModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.JavaModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base class for :py:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Model`s that wrap Java/Scala
 implementations. Subclasses should inherit this class before
 param mix-ins, because this sets the UID from the Java model.</p>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.params.html#pyspark.ml.clustering.JavaModel.params" title="pyspark.ml.clustering.JavaModel.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.copy.html#pyspark.ml.clustering.JavaModel.copy" title="pyspark.ml.clustering.JavaModel.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.explainParam.html#pyspark.ml.clustering.JavaModel.explainParam" title="pyspark.ml.clustering.JavaModel.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.explainParams.html#pyspark.ml.clustering.JavaModel.explainParams" title="pyspark.ml.clustering.JavaModel.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.extractParamMap.html#pyspark.ml.clustering.JavaModel.extractParamMap" title="pyspark.ml.clustering.JavaModel.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.getOrDefault.html#pyspark.ml.clustering.JavaModel.getOrDefault" title="pyspark.ml.clustering.JavaModel.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.getParam.html#pyspark.ml.clustering.JavaModel.getParam" title="pyspark.ml.clustering.JavaModel.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.hasDefault.html#pyspark.ml.clustering.JavaModel.hasDefault" title="pyspark.ml.clustering.JavaModel.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.hasParam.html#pyspark.ml.clustering.JavaModel.hasParam" title="pyspark.ml.clustering.JavaModel.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.isDefined.html#pyspark.ml.clustering.JavaModel.isDefined" title="pyspark.ml.clustering.JavaModel.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.isSet.html#pyspark.ml.clustering.JavaModel.isSet" title="pyspark.ml.clustering.JavaModel.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.transform.html#pyspark.ml.clustering.JavaModel.transform" title="pyspark.ml.clustering.JavaModel.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Transforms the input dataset with optional parameters.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.clustering.JavaModel.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/wrapper.html#JavaModel.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.JavaModel.__init__" title="Permalink to this definition">¶</a></dt>
@@ -299,6 +244,67 @@ other ML classes).</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.5.2.36.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.__init__.html#pyspark.ml.clustering.JavaModel.__init__" title="pyspark.ml.clustering.JavaModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([java_model])</td>
+<td>Initialize this instance with a Java model object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.copy.html#pyspark.ml.clustering.JavaModel.copy" title="pyspark.ml.clustering.JavaModel.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.explainParam.html#pyspark.ml.clustering.JavaModel.explainParam" title="pyspark.ml.clustering.JavaModel.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.explainParams.html#pyspark.ml.clustering.JavaModel.explainParams" title="pyspark.ml.clustering.JavaModel.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.extractParamMap.html#pyspark.ml.clustering.JavaModel.extractParamMap" title="pyspark.ml.clustering.JavaModel.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.getOrDefault.html#pyspark.ml.clustering.JavaModel.getOrDefault" title="pyspark.ml.clustering.JavaModel.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.getParam.html#pyspark.ml.clustering.JavaModel.getParam" title="pyspark.ml.clustering.JavaModel.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.hasDefault.html#pyspark.ml.clustering.JavaModel.hasDefault" title="pyspark.ml.clustering.JavaModel.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.hasParam.html#pyspark.ml.clustering.JavaModel.hasParam" title="pyspark.ml.clustering.JavaModel.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.isDefined.html#pyspark.ml.clustering.JavaModel.isDefined" title="pyspark.ml.clustering.JavaModel.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.isSet.html#pyspark.ml.clustering.JavaModel.isSet" title="pyspark.ml.clustering.JavaModel.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.transform.html#pyspark.ml.clustering.JavaModel.transform" title="pyspark.ml.clustering.JavaModel.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Transforms the input dataset with optional parameters.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.5.2.36.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.JavaModel.params.html#pyspark.ml.clustering.JavaModel.params" title="pyspark.ml.clustering.JavaModel.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -308,10 +314,10 @@ other ML classes).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.clustering.JavaModel.params.html" class="btn btn-neutral float-right" title="3.5.2.36.1. pyspark.ml.clustering.JavaModel.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.clustering.JavaModel.__init__.html" class="btn btn-neutral float-right" title="3.5.2.36.1.1. pyspark.ml.clustering.JavaModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.clustering.JavaMLWriter.save.html" class="btn btn-neutral" title="3.5.2.35.3. pyspark.ml.clustering.JavaMLWriter.save" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.clustering.JavaMLWriter.save.html" class="btn btn-neutral" title="3.5.2.35.1.4. pyspark.ml.clustering.JavaMLWriter.save" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

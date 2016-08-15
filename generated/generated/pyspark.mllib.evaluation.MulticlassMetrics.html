@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.4. pyspark.mllib.evaluation" href="../pyspark.mllib.evaluation.html"/>
-        <link rel="next" title="4.4.2.6.1. pyspark.mllib.evaluation.MulticlassMetrics.accuracy" href="pyspark.mllib.evaluation.MulticlassMetrics.accuracy.html"/>
-        <link rel="prev" title="4.4.2.5.1. pyspark.mllib.evaluation.JavaModelWrapper.call" href="pyspark.mllib.evaluation.JavaModelWrapper.call.html"/> 
+        <link rel="next" title="4.4.2.6.1.1. pyspark.mllib.evaluation.MulticlassMetrics.__init__" href="pyspark.mllib.evaluation.MulticlassMetrics.__init__.html"/>
+        <link rel="prev" title="4.4.2.5.1.2. pyspark.mllib.evaluation.JavaModelWrapper.call" href="pyspark.mllib.evaluation.JavaModelWrapper.call.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -188,7 +188,6 @@
             
   <div class="section" id="pyspark-mllib-evaluation-multiclassmetrics">
 <h1>4.4.2.6. pyspark.mllib.evaluation.MulticlassMetrics<a class="headerlink" href="#pyspark-mllib-evaluation-multiclassmetrics" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.__init__.html#pyspark.mllib.evaluation.MulticlassMetrics.__init__" title="pyspark.mllib.evaluation.MulticlassMetrics.__init__"><code class="xref py py-func docutils literal"><span class="pre">MulticlassMetrics.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.evaluation.MulticlassMetrics">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.evaluation.</code><code class="descname">MulticlassMetrics</code><span class="sig-paren">(</span><em>predictionAndLabels</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/evaluation.html#MulticlassMetrics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.MulticlassMetrics" title="Permalink to this definition">¶</a></dt>
@@ -233,7 +232,53 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.mllib.evaluation.MulticlassMetrics.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>predictionAndLabels</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/evaluation.html#MulticlassMetrics.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.MulticlassMetrics.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.4.2.6.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.__init__.html#pyspark.mllib.evaluation.MulticlassMetrics.__init__" title="pyspark.mllib.evaluation.MulticlassMetrics.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(predictionAndLabels)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.call.html#pyspark.mllib.evaluation.MulticlassMetrics.call" title="pyspark.mllib.evaluation.MulticlassMetrics.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(name,&nbsp;*a)</td>
+<td>Call method of java_model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.confusionMatrix.html#pyspark.mllib.evaluation.MulticlassMetrics.confusionMatrix" title="pyspark.mllib.evaluation.MulticlassMetrics.confusionMatrix"><code class="xref py py-obj docutils literal"><span class="pre">confusionMatrix</span></code></a>()</td>
+<td>Returns confusion matrix: predicted classes are in columns, they are ordered by class label ascending, as in &#8220;labels&#8221;.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.fMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.fMeasure" title="pyspark.mllib.evaluation.MulticlassMetrics.fMeasure"><code class="xref py py-obj docutils literal"><span class="pre">fMeasure</span></code></a>([label,&nbsp;beta])</td>
+<td>Returns f-measure or f-measure for a given label (category) if specified.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.falsePositiveRate.html#pyspark.mllib.evaluation.MulticlassMetrics.falsePositiveRate" title="pyspark.mllib.evaluation.MulticlassMetrics.falsePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">falsePositiveRate</span></code></a>(label)</td>
+<td>Returns false positive rate for a given label (category).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.precision.html#pyspark.mllib.evaluation.MulticlassMetrics.precision" title="pyspark.mllib.evaluation.MulticlassMetrics.precision"><code class="xref py py-obj docutils literal"><span class="pre">precision</span></code></a>([label])</td>
+<td>Returns precision or precision for a given label (category) if specified.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.recall.html#pyspark.mllib.evaluation.MulticlassMetrics.recall" title="pyspark.mllib.evaluation.MulticlassMetrics.recall"><code class="xref py py-obj docutils literal"><span class="pre">recall</span></code></a>([label])</td>
+<td>Returns recall or recall for a given label (category) if specified.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.truePositiveRate.html#pyspark.mllib.evaluation.MulticlassMetrics.truePositiveRate" title="pyspark.mllib.evaluation.MulticlassMetrics.truePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">truePositiveRate</span></code></a>(label)</td>
+<td>Returns true positive rate for a given label (category).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure" title="pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure"><code class="xref py py-obj docutils literal"><span class="pre">weightedFMeasure</span></code></a>([beta])</td>
+<td>Returns weighted averaged f-measure.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.4.2.6.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -257,41 +302,7 @@
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.call.html#pyspark.mllib.evaluation.MulticlassMetrics.call" title="pyspark.mllib.evaluation.MulticlassMetrics.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(name,&nbsp;*a)</td>
-<td>Call method of java_model</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.confusionMatrix.html#pyspark.mllib.evaluation.MulticlassMetrics.confusionMatrix" title="pyspark.mllib.evaluation.MulticlassMetrics.confusionMatrix"><code class="xref py py-obj docutils literal"><span class="pre">confusionMatrix</span></code></a>()</td>
-<td>Returns confusion matrix: predicted classes are in columns, they are ordered by class label ascending, as in &#8220;labels&#8221;.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.fMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.fMeasure" title="pyspark.mllib.evaluation.MulticlassMetrics.fMeasure"><code class="xref py py-obj docutils literal"><span class="pre">fMeasure</span></code></a>([label,&nbsp;beta])</td>
-<td>Returns f-measure or f-measure for a given label (category) if specified.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.falsePositiveRate.html#pyspark.mllib.evaluation.MulticlassMetrics.falsePositiveRate" title="pyspark.mllib.evaluation.MulticlassMetrics.falsePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">falsePositiveRate</span></code></a>(label)</td>
-<td>Returns false positive rate for a given label (category).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.precision.html#pyspark.mllib.evaluation.MulticlassMetrics.precision" title="pyspark.mllib.evaluation.MulticlassMetrics.precision"><code class="xref py py-obj docutils literal"><span class="pre">precision</span></code></a>([label])</td>
-<td>Returns precision or precision for a given label (category) if specified.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.recall.html#pyspark.mllib.evaluation.MulticlassMetrics.recall" title="pyspark.mllib.evaluation.MulticlassMetrics.recall"><code class="xref py py-obj docutils literal"><span class="pre">recall</span></code></a>([label])</td>
-<td>Returns recall or recall for a given label (category) if specified.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.truePositiveRate.html#pyspark.mllib.evaluation.MulticlassMetrics.truePositiveRate" title="pyspark.mllib.evaluation.MulticlassMetrics.truePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">truePositiveRate</span></code></a>(label)</td>
-<td>Returns true positive rate for a given label (category).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure" title="pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure"><code class="xref py py-obj docutils literal"><span class="pre">weightedFMeasure</span></code></a>([beta])</td>
-<td>Returns weighted averaged f-measure.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -301,10 +312,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.evaluation.MulticlassMetrics.accuracy.html" class="btn btn-neutral float-right" title="4.4.2.6.1. pyspark.mllib.evaluation.MulticlassMetrics.accuracy" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.evaluation.MulticlassMetrics.__init__.html" class="btn btn-neutral float-right" title="4.4.2.6.1.1. pyspark.mllib.evaluation.MulticlassMetrics.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.evaluation.JavaModelWrapper.call.html" class="btn btn-neutral" title="4.4.2.5.1. pyspark.mllib.evaluation.JavaModelWrapper.call" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.evaluation.JavaModelWrapper.call.html" class="btn btn-neutral" title="4.4.2.5.1.2. pyspark.mllib.evaluation.JavaModelWrapper.call" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

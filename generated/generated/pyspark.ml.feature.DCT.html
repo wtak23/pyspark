@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
-        <link rel="next" title="3.3.2.7.1. pyspark.ml.feature.DCT.params" href="pyspark.ml.feature.DCT.params.html"/>
-        <link rel="prev" title="3.3.2.6.17. pyspark.ml.feature.CountVectorizerModel.write" href="pyspark.ml.feature.CountVectorizerModel.write.html"/> 
+        <link rel="next" title="3.3.2.7.1.1. pyspark.ml.feature.DCT.__init__" href="pyspark.ml.feature.DCT.__init__.html"/>
+        <link rel="prev" title="3.3.2.6.2.2. pyspark.ml.feature.CountVectorizerModel.vocabulary" href="pyspark.ml.feature.CountVectorizerModel.vocabulary.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -243,7 +243,6 @@
             
   <div class="section" id="pyspark-ml-feature-dct">
 <h1>3.3.2.7. pyspark.ml.feature.DCT<a class="headerlink" href="#pyspark-ml-feature-dct" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.feature.DCT.__init__.html#pyspark.ml.feature.DCT.__init__" title="pyspark.ml.feature.DCT.__init__"><code class="xref py py-func docutils literal"><span class="pre">DCT.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.feature.DCT">
 <em class="property">class </em><code class="descclassname">pyspark.ml.feature.</code><code class="descname">DCT</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#DCT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.DCT" title="Permalink to this definition">¶</a></dt>
@@ -275,93 +274,6 @@ unitary (aka scaled DCT-II).</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.6.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.params.html#pyspark.ml.feature.DCT.params" title="pyspark.ml.feature.DCT.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.copy.html#pyspark.ml.feature.DCT.copy" title="pyspark.ml.feature.DCT.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.explainParam.html#pyspark.ml.feature.DCT.explainParam" title="pyspark.ml.feature.DCT.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.explainParams.html#pyspark.ml.feature.DCT.explainParams" title="pyspark.ml.feature.DCT.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.extractParamMap.html#pyspark.ml.feature.DCT.extractParamMap" title="pyspark.ml.feature.DCT.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getInputCol.html#pyspark.ml.feature.DCT.getInputCol" title="pyspark.ml.feature.DCT.getInputCol"><code class="xref py py-obj docutils literal"><span class="pre">getInputCol</span></code></a>()</td>
-<td>Gets the value of inputCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getInverse.html#pyspark.ml.feature.DCT.getInverse" title="pyspark.ml.feature.DCT.getInverse"><code class="xref py py-obj docutils literal"><span class="pre">getInverse</span></code></a>()</td>
-<td>Gets the value of inverse or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getOrDefault.html#pyspark.ml.feature.DCT.getOrDefault" title="pyspark.ml.feature.DCT.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getOutputCol.html#pyspark.ml.feature.DCT.getOutputCol" title="pyspark.ml.feature.DCT.getOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCol</span></code></a>()</td>
-<td>Gets the value of outputCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getParam.html#pyspark.ml.feature.DCT.getParam" title="pyspark.ml.feature.DCT.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.hasDefault.html#pyspark.ml.feature.DCT.hasDefault" title="pyspark.ml.feature.DCT.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.hasParam.html#pyspark.ml.feature.DCT.hasParam" title="pyspark.ml.feature.DCT.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.isDefined.html#pyspark.ml.feature.DCT.isDefined" title="pyspark.ml.feature.DCT.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.isSet.html#pyspark.ml.feature.DCT.isSet" title="pyspark.ml.feature.DCT.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.load.html#pyspark.ml.feature.DCT.load" title="pyspark.ml.feature.DCT.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.read.html#pyspark.ml.feature.DCT.read" title="pyspark.ml.feature.DCT.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.save.html#pyspark.ml.feature.DCT.save" title="pyspark.ml.feature.DCT.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setInputCol.html#pyspark.ml.feature.DCT.setInputCol" title="pyspark.ml.feature.DCT.setInputCol"><code class="xref py py-obj docutils literal"><span class="pre">setInputCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.DCT.inputCol.html#pyspark.ml.feature.DCT.inputCol" title="pyspark.ml.feature.DCT.inputCol"><code class="xref py py-attr docutils literal"><span class="pre">inputCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setInverse.html#pyspark.ml.feature.DCT.setInverse" title="pyspark.ml.feature.DCT.setInverse"><code class="xref py py-obj docutils literal"><span class="pre">setInverse</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.DCT.inverse.html#pyspark.ml.feature.DCT.inverse" title="pyspark.ml.feature.DCT.inverse"><code class="xref py py-attr docutils literal"><span class="pre">inverse</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setOutputCol.html#pyspark.ml.feature.DCT.setOutputCol" title="pyspark.ml.feature.DCT.setOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.DCT.outputCol.html#pyspark.ml.feature.DCT.outputCol" title="pyspark.ml.feature.DCT.outputCol"><code class="xref py py-attr docutils literal"><span class="pre">outputCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setParams.html#pyspark.ml.feature.DCT.setParams" title="pyspark.ml.feature.DCT.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;inverse,&nbsp;inputCol,&nbsp;outputCol])</td>
-<td>Sets params for this DCT.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.transform.html#pyspark.ml.feature.DCT.transform" title="pyspark.ml.feature.DCT.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Transforms the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.write.html#pyspark.ml.feature.DCT.write" title="pyspark.ml.feature.DCT.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.feature.DCT.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>inverse=False</em>, <em>inputCol=None</em>, <em>outputCol=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#DCT.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.DCT.__init__" title="Permalink to this definition">¶</a></dt>
@@ -369,6 +281,109 @@ unitary (aka scaled DCT-II).</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.3.2.7.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.__init__.html#pyspark.ml.feature.DCT.__init__" title="pyspark.ml.feature.DCT.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;inverse,&nbsp;inputCol,&nbsp;outputCol])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.copy.html#pyspark.ml.feature.DCT.copy" title="pyspark.ml.feature.DCT.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.explainParam.html#pyspark.ml.feature.DCT.explainParam" title="pyspark.ml.feature.DCT.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.explainParams.html#pyspark.ml.feature.DCT.explainParams" title="pyspark.ml.feature.DCT.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.extractParamMap.html#pyspark.ml.feature.DCT.extractParamMap" title="pyspark.ml.feature.DCT.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getInputCol.html#pyspark.ml.feature.DCT.getInputCol" title="pyspark.ml.feature.DCT.getInputCol"><code class="xref py py-obj docutils literal"><span class="pre">getInputCol</span></code></a>()</td>
+<td>Gets the value of inputCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getInverse.html#pyspark.ml.feature.DCT.getInverse" title="pyspark.ml.feature.DCT.getInverse"><code class="xref py py-obj docutils literal"><span class="pre">getInverse</span></code></a>()</td>
+<td>Gets the value of inverse or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getOrDefault.html#pyspark.ml.feature.DCT.getOrDefault" title="pyspark.ml.feature.DCT.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getOutputCol.html#pyspark.ml.feature.DCT.getOutputCol" title="pyspark.ml.feature.DCT.getOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCol</span></code></a>()</td>
+<td>Gets the value of outputCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.getParam.html#pyspark.ml.feature.DCT.getParam" title="pyspark.ml.feature.DCT.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.hasDefault.html#pyspark.ml.feature.DCT.hasDefault" title="pyspark.ml.feature.DCT.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.hasParam.html#pyspark.ml.feature.DCT.hasParam" title="pyspark.ml.feature.DCT.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.isDefined.html#pyspark.ml.feature.DCT.isDefined" title="pyspark.ml.feature.DCT.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.isSet.html#pyspark.ml.feature.DCT.isSet" title="pyspark.ml.feature.DCT.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.load.html#pyspark.ml.feature.DCT.load" title="pyspark.ml.feature.DCT.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.read.html#pyspark.ml.feature.DCT.read" title="pyspark.ml.feature.DCT.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.save.html#pyspark.ml.feature.DCT.save" title="pyspark.ml.feature.DCT.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setInputCol.html#pyspark.ml.feature.DCT.setInputCol" title="pyspark.ml.feature.DCT.setInputCol"><code class="xref py py-obj docutils literal"><span class="pre">setInputCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">inputCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setInverse.html#pyspark.ml.feature.DCT.setInverse" title="pyspark.ml.feature.DCT.setInverse"><code class="xref py py-obj docutils literal"><span class="pre">setInverse</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">inverse</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setOutputCol.html#pyspark.ml.feature.DCT.setOutputCol" title="pyspark.ml.feature.DCT.setOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">outputCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.setParams.html#pyspark.ml.feature.DCT.setParams" title="pyspark.ml.feature.DCT.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;inverse,&nbsp;inputCol,&nbsp;outputCol])</td>
+<td>Sets params for this DCT.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.transform.html#pyspark.ml.feature.DCT.transform" title="pyspark.ml.feature.DCT.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Transforms the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.write.html#pyspark.ml.feature.DCT.write" title="pyspark.ml.feature.DCT.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.3.2.7.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.inputCol.html#pyspark.ml.feature.DCT.inputCol" title="pyspark.ml.feature.DCT.inputCol"><code class="xref py py-obj docutils literal"><span class="pre">inputCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.inverse.html#pyspark.ml.feature.DCT.inverse" title="pyspark.ml.feature.DCT.inverse"><code class="xref py py-obj docutils literal"><span class="pre">inverse</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.DCT.outputCol.html#pyspark.ml.feature.DCT.outputCol" title="pyspark.ml.feature.DCT.outputCol"><code class="xref py py-obj docutils literal"><span class="pre">outputCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.DCT.params.html#pyspark.ml.feature.DCT.params" title="pyspark.ml.feature.DCT.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -378,10 +393,10 @@ unitary (aka scaled DCT-II).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.feature.DCT.params.html" class="btn btn-neutral float-right" title="3.3.2.7.1. pyspark.ml.feature.DCT.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.feature.DCT.__init__.html" class="btn btn-neutral float-right" title="3.3.2.7.1.1. pyspark.ml.feature.DCT.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.feature.CountVectorizerModel.write.html" class="btn btn-neutral" title="3.3.2.6.17. pyspark.ml.feature.CountVectorizerModel.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.feature.CountVectorizerModel.vocabulary.html" class="btn btn-neutral" title="3.3.2.6.2.2. pyspark.ml.feature.CountVectorizerModel.vocabulary" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

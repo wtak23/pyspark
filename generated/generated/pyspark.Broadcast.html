@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="next" title="1.2.4.1. pyspark.Broadcast.value" href="pyspark.Broadcast.value.html"/>
-        <link rel="prev" title="1.2.3.4. pyspark.BasicProfiler.stats" href="pyspark.BasicProfiler.stats.html"/> 
+        <link rel="next" title="1.2.4.1.1. pyspark.Broadcast.__init__" href="pyspark.Broadcast.__init__.html"/>
+        <link rel="prev" title="1.2.3.1.5. pyspark.BasicProfiler.stats" href="pyspark.BasicProfiler.stats.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -92,11 +92,8 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.AccumulatorParam.html">1.2.2. pyspark.AccumulatorParam</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.BasicProfiler.html">1.2.3. pyspark.BasicProfiler</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.4. pyspark.Broadcast</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Broadcast.value.html">1.2.4.1. pyspark.Broadcast.value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Broadcast.destroy.html">1.2.4.2. pyspark.Broadcast.destroy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Broadcast.dump.html">1.2.4.3. pyspark.Broadcast.dump</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Broadcast.load.html">1.2.4.4. pyspark.Broadcast.load</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Broadcast.unpersist.html">1.2.4.5. pyspark.Broadcast.unpersist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.4.1. Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">1.2.4.2. Attributes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.HiveContext.html">1.2.5. pyspark.HiveContext</a></li>
@@ -185,7 +182,6 @@
             
   <div class="section" id="pyspark-broadcast">
 <h1>1.2.4. pyspark.Broadcast<a class="headerlink" href="#pyspark-broadcast" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.Broadcast.__init__.html#pyspark.Broadcast.__init__" title="pyspark.Broadcast.__init__"><code class="xref py py-func docutils literal"><span class="pre">Broadcast.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.Broadcast">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">Broadcast</code><span class="sig-paren">(</span><em>sc=None</em>, <em>value=None</em>, <em>pickle_registry=None</em>, <em>path=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/broadcast.html#Broadcast"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Broadcast" title="Permalink to this definition">¶</a></dt>
@@ -205,7 +201,43 @@ Access its value through C{.value}.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">large_broadcast</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">broadcast</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.Broadcast.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>sc=None</em>, <em>value=None</em>, <em>pickle_registry=None</em>, <em>path=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/broadcast.html#Broadcast.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Broadcast.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should not be called directly by users &#8211; use L{SparkContext.broadcast()}
+instead.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>1.2.4.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Broadcast.__init__.html#pyspark.Broadcast.__init__" title="pyspark.Broadcast.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([sc,&nbsp;value,&nbsp;pickle_registry,&nbsp;path])</td>
+<td>Should not be called directly by users &#8211; use L{SparkContext.broadcast()} instead.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.Broadcast.destroy.html#pyspark.Broadcast.destroy" title="pyspark.Broadcast.destroy"><code class="xref py py-obj docutils literal"><span class="pre">destroy</span></code></a>()</td>
+<td>Destroy all data and metadata related to this broadcast variable.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Broadcast.dump.html#pyspark.Broadcast.dump" title="pyspark.Broadcast.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a>(value,&nbsp;f)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.Broadcast.load.html#pyspark.Broadcast.load" title="pyspark.Broadcast.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Broadcast.unpersist.html#pyspark.Broadcast.unpersist" title="pyspark.Broadcast.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>([blocking])</td>
+<td>Delete cached copies of this broadcast on the executors.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>1.2.4.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -217,36 +249,7 @@ Access its value through C{.value}.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.Broadcast.destroy.html#pyspark.Broadcast.destroy" title="pyspark.Broadcast.destroy"><code class="xref py py-obj docutils literal"><span class="pre">destroy</span></code></a>()</td>
-<td>Destroy all data and metadata related to this broadcast variable.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.Broadcast.dump.html#pyspark.Broadcast.dump" title="pyspark.Broadcast.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a>(value,&nbsp;f)</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.Broadcast.load.html#pyspark.Broadcast.load" title="pyspark.Broadcast.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.Broadcast.unpersist.html#pyspark.Broadcast.unpersist" title="pyspark.Broadcast.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>([blocking])</td>
-<td>Delete cached copies of this broadcast on the executors.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="pyspark.Broadcast.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>sc=None</em>, <em>value=None</em>, <em>pickle_registry=None</em>, <em>path=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/broadcast.html#Broadcast.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Broadcast.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Should not be called directly by users &#8211; use L{SparkContext.broadcast()}
-instead.</p>
-</dd></dl>
-
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -256,10 +259,10 @@ instead.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.Broadcast.value.html" class="btn btn-neutral float-right" title="1.2.4.1. pyspark.Broadcast.value" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.Broadcast.__init__.html" class="btn btn-neutral float-right" title="1.2.4.1.1. pyspark.Broadcast.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.BasicProfiler.stats.html" class="btn btn-neutral" title="1.2.3.4. pyspark.BasicProfiler.stats" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.BasicProfiler.stats.html" class="btn btn-neutral" title="1.2.3.1.5. pyspark.BasicProfiler.stats" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

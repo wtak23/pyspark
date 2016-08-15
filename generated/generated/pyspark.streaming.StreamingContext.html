@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="5.1. pyspark.streaming" href="../pyspark.streaming.html"/>
-        <link rel="next" title="5.1.1.2.1. pyspark.streaming.StreamingContext.sparkContext" href="pyspark.streaming.StreamingContext.sparkContext.html"/>
-        <link rel="prev" title="5.1.1.1.39. pyspark.streaming.DStream.window" href="pyspark.streaming.DStream.window.html"/> 
+        <link rel="next" title="5.1.1.2.1.1. pyspark.streaming.StreamingContext.__init__" href="pyspark.streaming.StreamingContext.__init__.html"/>
+        <link rel="prev" title="5.1.1.1.1.40. pyspark.streaming.DStream.window" href="pyspark.streaming.DStream.window.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -168,7 +168,6 @@
             
   <div class="section" id="pyspark-streaming-streamingcontext">
 <h1>5.1.1.2. pyspark.streaming.StreamingContext<a class="headerlink" href="#pyspark-streaming-streamingcontext" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.streaming.StreamingContext.__init__.html#pyspark.streaming.StreamingContext.__init__" title="pyspark.streaming.StreamingContext.__init__"><code class="xref py py-func docutils literal"><span class="pre">StreamingContext.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.streaming.StreamingContext">
 <em class="property">class </em><code class="descclassname">pyspark.streaming.</code><code class="descname">StreamingContext</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>batchDuration=None</em>, <em>jssc=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/context.html#StreamingContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.StreamingContext" title="Permalink to this definition">¶</a></dt>
@@ -179,75 +178,6 @@ After creating and transforming DStreams, the streaming computation can
 be started and stopped using <cite>context.start()</cite> and <cite>context.stop()</cite>,
 respectively. <cite>context.awaitTermination()</cite> allows the current thread
 to wait for the termination of the context by <cite>stop()</cite> or by an exception.</p>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.sparkContext.html#pyspark.streaming.StreamingContext.sparkContext" title="pyspark.streaming.StreamingContext.sparkContext"><code class="xref py py-obj docutils literal"><span class="pre">sparkContext</span></code></a></td>
-<td>Return SparkContext which is associated with this StreamingContext.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.addStreamingListener.html#pyspark.streaming.StreamingContext.addStreamingListener" title="pyspark.streaming.StreamingContext.addStreamingListener"><code class="xref py py-obj docutils literal"><span class="pre">addStreamingListener</span></code></a>(streamingListener)</td>
-<td>Add a [[org.apache.spark.streaming.scheduler.StreamingListener]] object for receiving system events related to streaming.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.awaitTermination.html#pyspark.streaming.StreamingContext.awaitTermination" title="pyspark.streaming.StreamingContext.awaitTermination"><code class="xref py py-obj docutils literal"><span class="pre">awaitTermination</span></code></a>([timeout])</td>
-<td>Wait for the execution to stop.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.awaitTerminationOrTimeout.html#pyspark.streaming.StreamingContext.awaitTerminationOrTimeout" title="pyspark.streaming.StreamingContext.awaitTerminationOrTimeout"><code class="xref py py-obj docutils literal"><span class="pre">awaitTerminationOrTimeout</span></code></a>(timeout)</td>
-<td>Wait for the execution to stop.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.binaryRecordsStream.html#pyspark.streaming.StreamingContext.binaryRecordsStream" title="pyspark.streaming.StreamingContext.binaryRecordsStream"><code class="xref py py-obj docutils literal"><span class="pre">binaryRecordsStream</span></code></a>(directory,&nbsp;recordLength)</td>
-<td>Create an input stream that monitors a Hadoop-compatible file system for new files and reads them as flat binary files with records of fixed length.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.checkpoint.html#pyspark.streaming.StreamingContext.checkpoint" title="pyspark.streaming.StreamingContext.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>(directory)</td>
-<td>Sets the context to periodically checkpoint the DStream operations for master fault-tolerance.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.getActive.html#pyspark.streaming.StreamingContext.getActive" title="pyspark.streaming.StreamingContext.getActive"><code class="xref py py-obj docutils literal"><span class="pre">getActive</span></code></a>()</td>
-<td>Return either the currently active StreamingContext (i.e., if there is a context started but not stopped) or None.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.getActiveOrCreate.html#pyspark.streaming.StreamingContext.getActiveOrCreate" title="pyspark.streaming.StreamingContext.getActiveOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getActiveOrCreate</span></code></a>(checkpointPath,&nbsp;setupFunc)</td>
-<td>Either return the active StreamingContext (i.e.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.getOrCreate.html#pyspark.streaming.StreamingContext.getOrCreate" title="pyspark.streaming.StreamingContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>(checkpointPath,&nbsp;setupFunc)</td>
-<td>Either recreate a StreamingContext from checkpoint data or create a new StreamingContext.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.queueStream.html#pyspark.streaming.StreamingContext.queueStream" title="pyspark.streaming.StreamingContext.queueStream"><code class="xref py py-obj docutils literal"><span class="pre">queueStream</span></code></a>(rdds[,&nbsp;oneAtATime,&nbsp;default])</td>
-<td>Create an input stream from an queue of RDDs or list.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.remember.html#pyspark.streaming.StreamingContext.remember" title="pyspark.streaming.StreamingContext.remember"><code class="xref py py-obj docutils literal"><span class="pre">remember</span></code></a>(duration)</td>
-<td>Set each DStreams in this context to remember RDDs it generated in the last given duration.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.socketTextStream.html#pyspark.streaming.StreamingContext.socketTextStream" title="pyspark.streaming.StreamingContext.socketTextStream"><code class="xref py py-obj docutils literal"><span class="pre">socketTextStream</span></code></a>(hostname,&nbsp;port[,&nbsp;storageLevel])</td>
-<td>Create an input from TCP source hostname:port.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.start.html#pyspark.streaming.StreamingContext.start" title="pyspark.streaming.StreamingContext.start"><code class="xref py py-obj docutils literal"><span class="pre">start</span></code></a>()</td>
-<td>Start the execution of the streams.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.stop.html#pyspark.streaming.StreamingContext.stop" title="pyspark.streaming.StreamingContext.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>([stopSparkContext,&nbsp;stopGraceFully])</td>
-<td>Stop the execution of the streams, with option of ensuring all received data has been processed.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.textFileStream.html#pyspark.streaming.StreamingContext.textFileStream" title="pyspark.streaming.StreamingContext.textFileStream"><code class="xref py py-obj docutils literal"><span class="pre">textFileStream</span></code></a>(directory)</td>
-<td>Create an input stream that monitors a Hadoop-compatible file system for new files and reads them as text files.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.transform.html#pyspark.streaming.StreamingContext.transform" title="pyspark.streaming.StreamingContext.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dstreams,&nbsp;transformFunc)</td>
-<td>Create a new DStream in which each RDD is generated by applying a function on RDDs of the DStreams.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.union.html#pyspark.streaming.StreamingContext.union" title="pyspark.streaming.StreamingContext.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(*dstreams)</td>
-<td>Create a unified DStream from multiple DStreams of the same type and same slide duration.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.streaming.StreamingContext.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>batchDuration=None</em>, <em>jssc=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/context.html#StreamingContext.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.StreamingContext.__init__" title="Permalink to this definition">¶</a></dt>
@@ -260,6 +190,82 @@ to wait for the termination of the context by <cite>stop()</cite> or by an excep
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>5.1.1.2.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.__init__.html#pyspark.streaming.StreamingContext.__init__" title="pyspark.streaming.StreamingContext.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(sparkContext[,&nbsp;batchDuration,&nbsp;jssc])</td>
+<td>Create a new StreamingContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.addStreamingListener.html#pyspark.streaming.StreamingContext.addStreamingListener" title="pyspark.streaming.StreamingContext.addStreamingListener"><code class="xref py py-obj docutils literal"><span class="pre">addStreamingListener</span></code></a>(streamingListener)</td>
+<td>Add a [[org.apache.spark.streaming.scheduler.StreamingListener]] object for receiving system events related to streaming.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.awaitTermination.html#pyspark.streaming.StreamingContext.awaitTermination" title="pyspark.streaming.StreamingContext.awaitTermination"><code class="xref py py-obj docutils literal"><span class="pre">awaitTermination</span></code></a>([timeout])</td>
+<td>Wait for the execution to stop.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.awaitTerminationOrTimeout.html#pyspark.streaming.StreamingContext.awaitTerminationOrTimeout" title="pyspark.streaming.StreamingContext.awaitTerminationOrTimeout"><code class="xref py py-obj docutils literal"><span class="pre">awaitTerminationOrTimeout</span></code></a>(timeout)</td>
+<td>Wait for the execution to stop.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.binaryRecordsStream.html#pyspark.streaming.StreamingContext.binaryRecordsStream" title="pyspark.streaming.StreamingContext.binaryRecordsStream"><code class="xref py py-obj docutils literal"><span class="pre">binaryRecordsStream</span></code></a>(directory,&nbsp;recordLength)</td>
+<td>Create an input stream that monitors a Hadoop-compatible file system for new files and reads them as flat binary files with records of fixed length.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.checkpoint.html#pyspark.streaming.StreamingContext.checkpoint" title="pyspark.streaming.StreamingContext.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>(directory)</td>
+<td>Sets the context to periodically checkpoint the DStream operations for master fault-tolerance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.getActive.html#pyspark.streaming.StreamingContext.getActive" title="pyspark.streaming.StreamingContext.getActive"><code class="xref py py-obj docutils literal"><span class="pre">getActive</span></code></a>()</td>
+<td>Return either the currently active StreamingContext (i.e., if there is a context started but not stopped) or None.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.getActiveOrCreate.html#pyspark.streaming.StreamingContext.getActiveOrCreate" title="pyspark.streaming.StreamingContext.getActiveOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getActiveOrCreate</span></code></a>(checkpointPath,&nbsp;setupFunc)</td>
+<td>Either return the active StreamingContext (i.e.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.getOrCreate.html#pyspark.streaming.StreamingContext.getOrCreate" title="pyspark.streaming.StreamingContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>(checkpointPath,&nbsp;setupFunc)</td>
+<td>Either recreate a StreamingContext from checkpoint data or create a new StreamingContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.queueStream.html#pyspark.streaming.StreamingContext.queueStream" title="pyspark.streaming.StreamingContext.queueStream"><code class="xref py py-obj docutils literal"><span class="pre">queueStream</span></code></a>(rdds[,&nbsp;oneAtATime,&nbsp;default])</td>
+<td>Create an input stream from an queue of RDDs or list.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.remember.html#pyspark.streaming.StreamingContext.remember" title="pyspark.streaming.StreamingContext.remember"><code class="xref py py-obj docutils literal"><span class="pre">remember</span></code></a>(duration)</td>
+<td>Set each DStreams in this context to remember RDDs it generated in the last given duration.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.socketTextStream.html#pyspark.streaming.StreamingContext.socketTextStream" title="pyspark.streaming.StreamingContext.socketTextStream"><code class="xref py py-obj docutils literal"><span class="pre">socketTextStream</span></code></a>(hostname,&nbsp;port[,&nbsp;storageLevel])</td>
+<td>Create an input from TCP source hostname:port.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.start.html#pyspark.streaming.StreamingContext.start" title="pyspark.streaming.StreamingContext.start"><code class="xref py py-obj docutils literal"><span class="pre">start</span></code></a>()</td>
+<td>Start the execution of the streams.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.stop.html#pyspark.streaming.StreamingContext.stop" title="pyspark.streaming.StreamingContext.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>([stopSparkContext,&nbsp;stopGraceFully])</td>
+<td>Stop the execution of the streams, with option of ensuring all received data has been processed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.textFileStream.html#pyspark.streaming.StreamingContext.textFileStream" title="pyspark.streaming.StreamingContext.textFileStream"><code class="xref py py-obj docutils literal"><span class="pre">textFileStream</span></code></a>(directory)</td>
+<td>Create an input stream that monitors a Hadoop-compatible file system for new files and reads them as text files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.transform.html#pyspark.streaming.StreamingContext.transform" title="pyspark.streaming.StreamingContext.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dstreams,&nbsp;transformFunc)</td>
+<td>Create a new DStream in which each RDD is generated by applying a function on RDDs of the DStreams.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.union.html#pyspark.streaming.StreamingContext.union" title="pyspark.streaming.StreamingContext.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(*dstreams)</td>
+<td>Create a unified DStream from multiple DStreams of the same type and same slide duration.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>5.1.1.2.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.StreamingContext.sparkContext.html#pyspark.streaming.StreamingContext.sparkContext" title="pyspark.streaming.StreamingContext.sparkContext"><code class="xref py py-obj docutils literal"><span class="pre">sparkContext</span></code></a></td>
+<td>Return SparkContext which is associated with this StreamingContext.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -269,10 +275,10 @@ to wait for the termination of the context by <cite>stop()</cite> or by an excep
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.streaming.StreamingContext.sparkContext.html" class="btn btn-neutral float-right" title="5.1.1.2.1. pyspark.streaming.StreamingContext.sparkContext" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.streaming.StreamingContext.__init__.html" class="btn btn-neutral float-right" title="5.1.1.2.1.1. pyspark.streaming.StreamingContext.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.streaming.DStream.window.html" class="btn btn-neutral" title="5.1.1.1.39. pyspark.streaming.DStream.window" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.streaming.DStream.window.html" class="btn btn-neutral" title="5.1.1.1.1.40. pyspark.streaming.DStream.window" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

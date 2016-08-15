@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.2. pyspark.mllib.classification" href="../pyspark.mllib.classification.html"/>
-        <link rel="next" title="4.2.2.12.1. pyspark.mllib.classification.RDD.context" href="pyspark.mllib.classification.RDD.context.html"/>
-        <link rel="prev" title="4.2.2.11.3. pyspark.mllib.classification.NaiveBayesModel.save" href="pyspark.mllib.classification.NaiveBayesModel.save.html"/> 
+        <link rel="next" title="4.2.2.12.1.1. pyspark.mllib.classification.RDD.__init__" href="pyspark.mllib.classification.RDD.__init__.html"/>
+        <link rel="prev" title="4.2.2.11.1.4. pyspark.mllib.classification.NaiveBayesModel.save" href="pyspark.mllib.classification.NaiveBayesModel.save.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -194,14 +194,342 @@
             
   <div class="section" id="pyspark-mllib-classification-rdd">
 <h1>4.2.2.12. pyspark.mllib.classification.RDD<a class="headerlink" href="#pyspark-mllib-classification-rdd" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.classification.RDD.__init__.html#pyspark.mllib.classification.RDD.__init__" title="pyspark.mllib.classification.RDD.__init__"><code class="xref py py-func docutils literal"><span class="pre">RDD.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.classification.RDD">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.classification.</code><code class="descname">RDD</code><span class="sig-paren">(</span><em>jrdd</em>, <em>ctx</em>, <em>jrdd_deserializer=AutoBatchedSerializer(PickleSerializer())</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.classification.RDD" title="Permalink to this definition">¶</a></dt>
 <dd><p>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.
 Represents an immutable, partitioned collection of elements that can be
 operated on in parallel.</p>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.mllib.classification.RDD.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>jrdd</em>, <em>ctx</em>, <em>jrdd_deserializer=AutoBatchedSerializer(PickleSerializer())</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.classification.RDD.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.2.2.12.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.__init__.html#pyspark.mllib.classification.RDD.__init__" title="pyspark.mllib.classification.RDD.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.aggregate.html#pyspark.mllib.classification.RDD.aggregate" title="pyspark.mllib.classification.RDD.aggregate"><code class="xref py py-obj docutils literal"><span class="pre">aggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp)</td>
+<td>Aggregate the elements of each partition, and then the results for all</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.aggregateByKey.html#pyspark.mllib.classification.RDD.aggregateByKey" title="pyspark.mllib.classification.RDD.aggregateByKey"><code class="xref py py-obj docutils literal"><span class="pre">aggregateByKey</span></code></a>(zeroValue,&nbsp;seqFunc,&nbsp;combFunc)</td>
+<td>Aggregate the values of each key, using given combine functions and a neutral &#8220;zero value&#8221;.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.cache.html#pyspark.mllib.classification.RDD.cache" title="pyspark.mllib.classification.RDD.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<td>Persist this RDD with the default storage level (C{MEMORY_ONLY}).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.cartesian.html#pyspark.mllib.classification.RDD.cartesian" title="pyspark.mllib.classification.RDD.cartesian"><code class="xref py py-obj docutils literal"><span class="pre">cartesian</span></code></a>(other)</td>
+<td>Return the Cartesian product of this RDD and another one, that is, the RDD of all pairs of elements C{(a, b)} where C{a} is in C{self} and C{b} is in C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.checkpoint.html#pyspark.mllib.classification.RDD.checkpoint" title="pyspark.mllib.classification.RDD.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>()</td>
+<td>Mark this RDD for checkpointing.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.coalesce.html#pyspark.mllib.classification.RDD.coalesce" title="pyspark.mllib.classification.RDD.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(numPartitions[,&nbsp;shuffle])</td>
+<td>Return a new RDD that is reduced into <cite>numPartitions</cite> partitions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.cogroup.html#pyspark.mllib.classification.RDD.cogroup" title="pyspark.mllib.classification.RDD.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>For each key k in C{self} or C{other}, return a resulting RDD that contains a tuple with the list of values for that key in C{self} as well as C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.collect.html#pyspark.mllib.classification.RDD.collect" title="pyspark.mllib.classification.RDD.collect"><code class="xref py py-obj docutils literal"><span class="pre">collect</span></code></a>()</td>
+<td>Return a list that contains all of the elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.collectAsMap.html#pyspark.mllib.classification.RDD.collectAsMap" title="pyspark.mllib.classification.RDD.collectAsMap"><code class="xref py py-obj docutils literal"><span class="pre">collectAsMap</span></code></a>()</td>
+<td>Return the key-value pairs in this RDD to the master as a dictionary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.combineByKey.html#pyspark.mllib.classification.RDD.combineByKey" title="pyspark.mllib.classification.RDD.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
+<td>Generic function to combine the elements for each key using a custom set of aggregation functions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.count.html#pyspark.mllib.classification.RDD.count" title="pyspark.mllib.classification.RDD.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<td>Return the number of elements in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countApprox.html#pyspark.mllib.classification.RDD.countApprox" title="pyspark.mllib.classification.RDD.countApprox"><code class="xref py py-obj docutils literal"><span class="pre">countApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countApproxDistinct.html#pyspark.mllib.classification.RDD.countApproxDistinct" title="pyspark.mllib.classification.RDD.countApproxDistinct"><code class="xref py py-obj docutils literal"><span class="pre">countApproxDistinct</span></code></a>([relativeSD])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countByKey.html#pyspark.mllib.classification.RDD.countByKey" title="pyspark.mllib.classification.RDD.countByKey"><code class="xref py py-obj docutils literal"><span class="pre">countByKey</span></code></a>()</td>
+<td>Count the number of elements for each key, and return the result to the master as a dictionary.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countByValue.html#pyspark.mllib.classification.RDD.countByValue" title="pyspark.mllib.classification.RDD.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
+<td>Return the count of each unique value in this RDD as a dictionary of (value, count) pairs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.distinct.html#pyspark.mllib.classification.RDD.distinct" title="pyspark.mllib.classification.RDD.distinct"><code class="xref py py-obj docutils literal"><span class="pre">distinct</span></code></a>([numPartitions])</td>
+<td>Return a new RDD containing the distinct elements in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.filter.html#pyspark.mllib.classification.RDD.filter" title="pyspark.mllib.classification.RDD.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
+<td>Return a new RDD containing only the elements that satisfy a predicate.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.first.html#pyspark.mllib.classification.RDD.first" title="pyspark.mllib.classification.RDD.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>()</td>
+<td>Return the first element in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.flatMap.html#pyspark.mllib.classification.RDD.flatMap" title="pyspark.mllib.classification.RDD.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by first applying a function to all elements of this RDD, and then flattening the results.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.flatMapValues.html#pyspark.mllib.classification.RDD.flatMapValues" title="pyspark.mllib.classification.RDD.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
+<td>Pass each value in the key-value pair RDD through a flatMap function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.fold.html#pyspark.mllib.classification.RDD.fold" title="pyspark.mllib.classification.RDD.fold"><code class="xref py py-obj docutils literal"><span class="pre">fold</span></code></a>(zeroValue,&nbsp;op)</td>
+<td>Aggregate the elements of each partition, and then the results for all</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.foldByKey.html#pyspark.mllib.classification.RDD.foldByKey" title="pyspark.mllib.classification.RDD.foldByKey"><code class="xref py py-obj docutils literal"><span class="pre">foldByKey</span></code></a>(zeroValue,&nbsp;func[,&nbsp;numPartitions,&nbsp;...])</td>
+<td>Merge the values for each key using an associative function &#8220;func&#8221; and a neutral &#8220;zeroValue&#8221; which may be added to the result an arbitrary number of times, and must not change the result (e.g., 0 for addition, or 1 for multiplication.).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.foreach.html#pyspark.mllib.classification.RDD.foreach" title="pyspark.mllib.classification.RDD.foreach"><code class="xref py py-obj docutils literal"><span class="pre">foreach</span></code></a>(f)</td>
+<td>Applies a function to all elements of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.foreachPartition.html#pyspark.mllib.classification.RDD.foreachPartition" title="pyspark.mllib.classification.RDD.foreachPartition"><code class="xref py py-obj docutils literal"><span class="pre">foreachPartition</span></code></a>(f)</td>
+<td>Applies a function to each partition of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.fullOuterJoin.html#pyspark.mllib.classification.RDD.fullOuterJoin" title="pyspark.mllib.classification.RDD.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a right outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.getCheckpointFile.html#pyspark.mllib.classification.RDD.getCheckpointFile" title="pyspark.mllib.classification.RDD.getCheckpointFile"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointFile</span></code></a>()</td>
+<td>Gets the name of the file to which this RDD was checkpointed</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.getNumPartitions.html#pyspark.mllib.classification.RDD.getNumPartitions" title="pyspark.mllib.classification.RDD.getNumPartitions"><code class="xref py py-obj docutils literal"><span class="pre">getNumPartitions</span></code></a>()</td>
+<td>Returns the number of partitions in RDD</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.getStorageLevel.html#pyspark.mllib.classification.RDD.getStorageLevel" title="pyspark.mllib.classification.RDD.getStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">getStorageLevel</span></code></a>()</td>
+<td>Get the RDD&#8217;s current storage level.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.glom.html#pyspark.mllib.classification.RDD.glom" title="pyspark.mllib.classification.RDD.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
+<td>Return an RDD created by coalescing all elements within each partition into a list.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.groupBy.html#pyspark.mllib.classification.RDD.groupBy" title="pyspark.mllib.classification.RDD.groupBy"><code class="xref py py-obj docutils literal"><span class="pre">groupBy</span></code></a>(f[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
+<td>Return an RDD of grouped items.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.groupByKey.html#pyspark.mllib.classification.RDD.groupByKey" title="pyspark.mllib.classification.RDD.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions,&nbsp;partitionFunc])</td>
+<td>Group the values for each key in the RDD into a single sequence.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.groupWith.html#pyspark.mllib.classification.RDD.groupWith" title="pyspark.mllib.classification.RDD.groupWith"><code class="xref py py-obj docutils literal"><span class="pre">groupWith</span></code></a>(other,&nbsp;*others)</td>
+<td>Alias for cogroup but with support for multiple RDDs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.histogram.html#pyspark.mllib.classification.RDD.histogram" title="pyspark.mllib.classification.RDD.histogram"><code class="xref py py-obj docutils literal"><span class="pre">histogram</span></code></a>(buckets)</td>
+<td>Compute a histogram using the provided buckets.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.id.html#pyspark.mllib.classification.RDD.id" title="pyspark.mllib.classification.RDD.id"><code class="xref py py-obj docutils literal"><span class="pre">id</span></code></a>()</td>
+<td>A unique ID for this RDD (within its SparkContext).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.intersection.html#pyspark.mllib.classification.RDD.intersection" title="pyspark.mllib.classification.RDD.intersection"><code class="xref py py-obj docutils literal"><span class="pre">intersection</span></code></a>(other)</td>
+<td>Return the intersection of this RDD and another one.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.isCheckpointed.html#pyspark.mllib.classification.RDD.isCheckpointed" title="pyspark.mllib.classification.RDD.isCheckpointed"><code class="xref py py-obj docutils literal"><span class="pre">isCheckpointed</span></code></a>()</td>
+<td>Return whether this RDD has been checkpointed or not</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.isEmpty.html#pyspark.mllib.classification.RDD.isEmpty" title="pyspark.mllib.classification.RDD.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
+<td>Returns true if and only if the RDD contains no elements at all.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.join.html#pyspark.mllib.classification.RDD.join" title="pyspark.mllib.classification.RDD.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return an RDD containing all pairs of elements with matching keys in C{self} and C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.keyBy.html#pyspark.mllib.classification.RDD.keyBy" title="pyspark.mllib.classification.RDD.keyBy"><code class="xref py py-obj docutils literal"><span class="pre">keyBy</span></code></a>(f)</td>
+<td>Creates tuples of the elements in this RDD by applying C{f}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.keys.html#pyspark.mllib.classification.RDD.keys" title="pyspark.mllib.classification.RDD.keys"><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code></a>()</td>
+<td>Return an RDD with the keys of each tuple.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.leftOuterJoin.html#pyspark.mllib.classification.RDD.leftOuterJoin" title="pyspark.mllib.classification.RDD.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a left outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.lookup.html#pyspark.mllib.classification.RDD.lookup" title="pyspark.mllib.classification.RDD.lookup"><code class="xref py py-obj docutils literal"><span class="pre">lookup</span></code></a>(key)</td>
+<td>Return the list of values in the RDD for key <cite>key</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.map.html#pyspark.mllib.classification.RDD.map" title="pyspark.mllib.classification.RDD.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by applying a function to each element of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapPartitions.html#pyspark.mllib.classification.RDD.mapPartitions" title="pyspark.mllib.classification.RDD.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new RDD by applying a function to each partition of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapPartitionsWithIndex.html#pyspark.mllib.classification.RDD.mapPartitionsWithIndex" title="pyspark.mllib.classification.RDD.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
+<td>Return a new RDD by applying a function to each partition of this RDD, while tracking the index of the original partition.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapPartitionsWithSplit.html#pyspark.mllib.classification.RDD.mapPartitionsWithSplit" title="pyspark.mllib.classification.RDD.mapPartitionsWithSplit"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithSplit</span></code></a>(f[,&nbsp;...])</td>
+<td>Deprecated: use mapPartitionsWithIndex instead.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapValues.html#pyspark.mllib.classification.RDD.mapValues" title="pyspark.mllib.classification.RDD.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
+<td>Pass each value in the key-value pair RDD through a map function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.max.html#pyspark.mllib.classification.RDD.max" title="pyspark.mllib.classification.RDD.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a>([key])</td>
+<td>Find the maximum item in this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mean.html#pyspark.mllib.classification.RDD.mean" title="pyspark.mllib.classification.RDD.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a>()</td>
+<td>Compute the mean of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.meanApprox.html#pyspark.mllib.classification.RDD.meanApprox" title="pyspark.mllib.classification.RDD.meanApprox"><code class="xref py py-obj docutils literal"><span class="pre">meanApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.min.html#pyspark.mllib.classification.RDD.min" title="pyspark.mllib.classification.RDD.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a>([key])</td>
+<td>Find the minimum item in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.name.html#pyspark.mllib.classification.RDD.name" title="pyspark.mllib.classification.RDD.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a>()</td>
+<td>Return the name of this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.partitionBy.html#pyspark.mllib.classification.RDD.partitionBy" title="pyspark.mllib.classification.RDD.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
+<td>Return a copy of the RDD partitioned using the specified partitioner.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.persist.html#pyspark.mllib.classification.RDD.persist" title="pyspark.mllib.classification.RDD.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>([storageLevel])</td>
+<td>Set this RDD&#8217;s storage level to persist its values across operations after the first time it is computed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.pipe.html#pyspark.mllib.classification.RDD.pipe" title="pyspark.mllib.classification.RDD.pipe"><code class="xref py py-obj docutils literal"><span class="pre">pipe</span></code></a>(command[,&nbsp;env,&nbsp;checkCode])</td>
+<td>Return an RDD created by piping elements to a forked external process.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.randomSplit.html#pyspark.mllib.classification.RDD.randomSplit" title="pyspark.mllib.classification.RDD.randomSplit"><code class="xref py py-obj docutils literal"><span class="pre">randomSplit</span></code></a>(weights[,&nbsp;seed])</td>
+<td>Randomly splits this RDD with the provided weights.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.reduce.html#pyspark.mllib.classification.RDD.reduce" title="pyspark.mllib.classification.RDD.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(f)</td>
+<td>Reduces the elements of this RDD using the specified commutative and associative binary operator.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.reduceByKey.html#pyspark.mllib.classification.RDD.reduceByKey" title="pyspark.mllib.classification.RDD.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
+<td>Merge the values for each key using an associative and commutative reduce function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.reduceByKeyLocally.html#pyspark.mllib.classification.RDD.reduceByKeyLocally" title="pyspark.mllib.classification.RDD.reduceByKeyLocally"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyLocally</span></code></a>(func)</td>
+<td>Merge the values for each key using an associative and commutative reduce function, but return the results immediately to the master as a dictionary.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.repartition.html#pyspark.mllib.classification.RDD.repartition" title="pyspark.mllib.classification.RDD.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
+<td>Return a new RDD that has exactly numPartitions partitions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.repartitionAndSortWithinPartitions.html#pyspark.mllib.classification.RDD.repartitionAndSortWithinPartitions" title="pyspark.mllib.classification.RDD.repartitionAndSortWithinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">repartitionAndSortWithinPartitions</span></code></a>([...])</td>
+<td>Repartition the RDD according to the given partitioner and, within each resulting partition, sort records by their keys.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.rightOuterJoin.html#pyspark.mllib.classification.RDD.rightOuterJoin" title="pyspark.mllib.classification.RDD.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Perform a right outer join of C{self} and C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sample.html#pyspark.mllib.classification.RDD.sample" title="pyspark.mllib.classification.RDD.sample"><code class="xref py py-obj docutils literal"><span class="pre">sample</span></code></a>(withReplacement,&nbsp;fraction[,&nbsp;seed])</td>
+<td>Return a sampled subset of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sampleByKey.html#pyspark.mllib.classification.RDD.sampleByKey" title="pyspark.mllib.classification.RDD.sampleByKey"><code class="xref py py-obj docutils literal"><span class="pre">sampleByKey</span></code></a>(withReplacement,&nbsp;fractions[,&nbsp;seed])</td>
+<td>Return a subset of this RDD sampled by key (via stratified sampling).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sampleStdev.html#pyspark.mllib.classification.RDD.sampleStdev" title="pyspark.mllib.classification.RDD.sampleStdev"><code class="xref py py-obj docutils literal"><span class="pre">sampleStdev</span></code></a>()</td>
+<td>Compute the sample standard deviation of this RDD&#8217;s elements (which corrects for bias in estimating the standard deviation by dividing by N-1 instead of N).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sampleVariance.html#pyspark.mllib.classification.RDD.sampleVariance" title="pyspark.mllib.classification.RDD.sampleVariance"><code class="xref py py-obj docutils literal"><span class="pre">sampleVariance</span></code></a>()</td>
+<td>Compute the sample variance of this RDD&#8217;s elements (which corrects for bias in estimating the variance by dividing by N-1 instead of N).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsHadoopDataset.html#pyspark.mllib.classification.RDD.saveAsHadoopDataset" title="pyspark.mllib.classification.RDD.saveAsHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopDataset</span></code></a>(conf[,&nbsp;keyConverter,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsHadoopFile.html#pyspark.mllib.classification.RDD.saveAsHadoopFile" title="pyspark.mllib.classification.RDD.saveAsHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopFile</span></code></a>(path,&nbsp;outputFormatClass[,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopDataset.html#pyspark.mllib.classification.RDD.saveAsNewAPIHadoopDataset" title="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopDataset</span></code></a>(conf[,&nbsp;...])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopFile.html#pyspark.mllib.classification.RDD.saveAsNewAPIHadoopFile" title="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopFile</span></code></a>(path,&nbsp;outputFormatClass)</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsPickleFile.html#pyspark.mllib.classification.RDD.saveAsPickleFile" title="pyspark.mllib.classification.RDD.saveAsPickleFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsPickleFile</span></code></a>(path[,&nbsp;batchSize])</td>
+<td>Save this RDD as a SequenceFile of serialized objects.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsSequenceFile.html#pyspark.mllib.classification.RDD.saveAsSequenceFile" title="pyspark.mllib.classification.RDD.saveAsSequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsSequenceFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
+<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the L{org.apache.hadoop.io.Writable} types that we convert from the RDD&#8217;s key and value types.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsTextFile.html#pyspark.mllib.classification.RDD.saveAsTextFile" title="pyspark.mllib.classification.RDD.saveAsTextFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
+<td>Save this RDD as a text file, using string representations of elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.setName.html#pyspark.mllib.classification.RDD.setName" title="pyspark.mllib.classification.RDD.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
+<td>Assign a name to this RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sortBy.html#pyspark.mllib.classification.RDD.sortBy" title="pyspark.mllib.classification.RDD.sortBy"><code class="xref py py-obj docutils literal"><span class="pre">sortBy</span></code></a>(keyfunc[,&nbsp;ascending,&nbsp;numPartitions])</td>
+<td>Sorts this RDD by the given keyfunc</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sortByKey.html#pyspark.mllib.classification.RDD.sortByKey" title="pyspark.mllib.classification.RDD.sortByKey"><code class="xref py py-obj docutils literal"><span class="pre">sortByKey</span></code></a>([ascending,&nbsp;numPartitions,&nbsp;keyfunc])</td>
+<td>Sorts this RDD, which is assumed to consist of (key, value) pairs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.stats.html#pyspark.mllib.classification.RDD.stats" title="pyspark.mllib.classification.RDD.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
+<td>Return a L{StatCounter} object that captures the mean, variance and count of the RDD&#8217;s elements in one operation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.stdev.html#pyspark.mllib.classification.RDD.stdev" title="pyspark.mllib.classification.RDD.stdev"><code class="xref py py-obj docutils literal"><span class="pre">stdev</span></code></a>()</td>
+<td>Compute the standard deviation of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.subtract.html#pyspark.mllib.classification.RDD.subtract" title="pyspark.mllib.classification.RDD.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return each value in C{self} that is not contained in C{other}.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.subtractByKey.html#pyspark.mllib.classification.RDD.subtractByKey" title="pyspark.mllib.classification.RDD.subtractByKey"><code class="xref py py-obj docutils literal"><span class="pre">subtractByKey</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return each (key, value) pair in C{self} that has no pair with matching key in C{other}.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sum.html#pyspark.mllib.classification.RDD.sum" title="pyspark.mllib.classification.RDD.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>()</td>
+<td>Add up the elements in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sumApprox.html#pyspark.mllib.classification.RDD.sumApprox" title="pyspark.mllib.classification.RDD.sumApprox"><code class="xref py py-obj docutils literal"><span class="pre">sumApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.take.html#pyspark.mllib.classification.RDD.take" title="pyspark.mllib.classification.RDD.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a>(num)</td>
+<td>Take the first num elements of the RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.takeOrdered.html#pyspark.mllib.classification.RDD.takeOrdered" title="pyspark.mllib.classification.RDD.takeOrdered"><code class="xref py py-obj docutils literal"><span class="pre">takeOrdered</span></code></a>(num[,&nbsp;key])</td>
+<td>Get the N elements from a RDD ordered in ascending order or as specified by the optional key function.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.takeSample.html#pyspark.mllib.classification.RDD.takeSample" title="pyspark.mllib.classification.RDD.takeSample"><code class="xref py py-obj docutils literal"><span class="pre">takeSample</span></code></a>(withReplacement,&nbsp;num[,&nbsp;seed])</td>
+<td>Return a fixed-size sampled subset of this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.toDebugString.html#pyspark.mllib.classification.RDD.toDebugString" title="pyspark.mllib.classification.RDD.toDebugString"><code class="xref py py-obj docutils literal"><span class="pre">toDebugString</span></code></a>()</td>
+<td>A description of this RDD and its recursive dependencies for debugging.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.toLocalIterator.html#pyspark.mllib.classification.RDD.toLocalIterator" title="pyspark.mllib.classification.RDD.toLocalIterator"><code class="xref py py-obj docutils literal"><span class="pre">toLocalIterator</span></code></a>()</td>
+<td>Return an iterator that contains all of the elements in this RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.top.html#pyspark.mllib.classification.RDD.top" title="pyspark.mllib.classification.RDD.top"><code class="xref py py-obj docutils literal"><span class="pre">top</span></code></a>(num[,&nbsp;key])</td>
+<td>Get the top N elements from a RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.treeAggregate.html#pyspark.mllib.classification.RDD.treeAggregate" title="pyspark.mllib.classification.RDD.treeAggregate"><code class="xref py py-obj docutils literal"><span class="pre">treeAggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp[,&nbsp;depth])</td>
+<td>Aggregates the elements of this RDD in a multi-level tree pattern.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.treeReduce.html#pyspark.mllib.classification.RDD.treeReduce" title="pyspark.mllib.classification.RDD.treeReduce"><code class="xref py py-obj docutils literal"><span class="pre">treeReduce</span></code></a>(f[,&nbsp;depth])</td>
+<td>Reduces the elements of this RDD in a multi-level tree pattern.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.union.html#pyspark.mllib.classification.RDD.union" title="pyspark.mllib.classification.RDD.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<td>Return the union of this RDD and another one.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.unpersist.html#pyspark.mllib.classification.RDD.unpersist" title="pyspark.mllib.classification.RDD.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>()</td>
+<td>Mark the RDD as non-persistent, and remove all blocks for it from memory and disk.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.values.html#pyspark.mllib.classification.RDD.values" title="pyspark.mllib.classification.RDD.values"><code class="xref py py-obj docutils literal"><span class="pre">values</span></code></a>()</td>
+<td>Return an RDD with the values of each tuple.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.variance.html#pyspark.mllib.classification.RDD.variance" title="pyspark.mllib.classification.RDD.variance"><code class="xref py py-obj docutils literal"><span class="pre">variance</span></code></a>()</td>
+<td>Compute the variance of this RDD&#8217;s elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.zip.html#pyspark.mllib.classification.RDD.zip" title="pyspark.mllib.classification.RDD.zip"><code class="xref py py-obj docutils literal"><span class="pre">zip</span></code></a>(other)</td>
+<td>Zips this RDD with another one, returning key-value pairs with the first element in each RDD second element in each RDD, etc.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.zipWithIndex.html#pyspark.mllib.classification.RDD.zipWithIndex" title="pyspark.mllib.classification.RDD.zipWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">zipWithIndex</span></code></a>()</td>
+<td>Zips this RDD with its element indices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.zipWithUniqueId.html#pyspark.mllib.classification.RDD.zipWithUniqueId" title="pyspark.mllib.classification.RDD.zipWithUniqueId"><code class="xref py py-obj docutils literal"><span class="pre">zipWithUniqueId</span></code></a>()</td>
+<td>Zips this RDD with generated unique Long ids.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.2.2.12.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -213,324 +541,7 @@ operated on in parallel.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.aggregate.html#pyspark.mllib.classification.RDD.aggregate" title="pyspark.mllib.classification.RDD.aggregate"><code class="xref py py-obj docutils literal"><span class="pre">aggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp)</td>
-<td>Aggregate the elements of each partition, and then the results for all</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.aggregateByKey.html#pyspark.mllib.classification.RDD.aggregateByKey" title="pyspark.mllib.classification.RDD.aggregateByKey"><code class="xref py py-obj docutils literal"><span class="pre">aggregateByKey</span></code></a>(zeroValue,&nbsp;seqFunc,&nbsp;combFunc)</td>
-<td>Aggregate the values of each key, using given combine functions and a neutral &#8220;zero value&#8221;.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.cache.html#pyspark.mllib.classification.RDD.cache" title="pyspark.mllib.classification.RDD.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
-<td>Persist this RDD with the default storage level (C{MEMORY_ONLY}).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.cartesian.html#pyspark.mllib.classification.RDD.cartesian" title="pyspark.mllib.classification.RDD.cartesian"><code class="xref py py-obj docutils literal"><span class="pre">cartesian</span></code></a>(other)</td>
-<td>Return the Cartesian product of this RDD and another one, that is, the RDD of all pairs of elements C{(a, b)} where C{a} is in C{self} and C{b} is in C{other}.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.checkpoint.html#pyspark.mllib.classification.RDD.checkpoint" title="pyspark.mllib.classification.RDD.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>()</td>
-<td>Mark this RDD for checkpointing.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.coalesce.html#pyspark.mllib.classification.RDD.coalesce" title="pyspark.mllib.classification.RDD.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(numPartitions[,&nbsp;shuffle])</td>
-<td>Return a new RDD that is reduced into <cite>numPartitions</cite> partitions.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.cogroup.html#pyspark.mllib.classification.RDD.cogroup" title="pyspark.mllib.classification.RDD.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
-<td>For each key k in C{self} or C{other}, return a resulting RDD that contains a tuple with the list of values for that key in C{self} as well as C{other}.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.collect.html#pyspark.mllib.classification.RDD.collect" title="pyspark.mllib.classification.RDD.collect"><code class="xref py py-obj docutils literal"><span class="pre">collect</span></code></a>()</td>
-<td>Return a list that contains all of the elements in this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.collectAsMap.html#pyspark.mllib.classification.RDD.collectAsMap" title="pyspark.mllib.classification.RDD.collectAsMap"><code class="xref py py-obj docutils literal"><span class="pre">collectAsMap</span></code></a>()</td>
-<td>Return the key-value pairs in this RDD to the master as a dictionary.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.combineByKey.html#pyspark.mllib.classification.RDD.combineByKey" title="pyspark.mllib.classification.RDD.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
-<td>Generic function to combine the elements for each key using a custom set of aggregation functions.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.count.html#pyspark.mllib.classification.RDD.count" title="pyspark.mllib.classification.RDD.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
-<td>Return the number of elements in this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countApprox.html#pyspark.mllib.classification.RDD.countApprox" title="pyspark.mllib.classification.RDD.countApprox"><code class="xref py py-obj docutils literal"><span class="pre">countApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
-<td><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Experimental</p>
 </div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countApproxDistinct.html#pyspark.mllib.classification.RDD.countApproxDistinct" title="pyspark.mllib.classification.RDD.countApproxDistinct"><code class="xref py py-obj docutils literal"><span class="pre">countApproxDistinct</span></code></a>([relativeSD])</td>
-<td><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Experimental</p>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countByKey.html#pyspark.mllib.classification.RDD.countByKey" title="pyspark.mllib.classification.RDD.countByKey"><code class="xref py py-obj docutils literal"><span class="pre">countByKey</span></code></a>()</td>
-<td>Count the number of elements for each key, and return the result to the master as a dictionary.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.countByValue.html#pyspark.mllib.classification.RDD.countByValue" title="pyspark.mllib.classification.RDD.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
-<td>Return the count of each unique value in this RDD as a dictionary of (value, count) pairs.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.distinct.html#pyspark.mllib.classification.RDD.distinct" title="pyspark.mllib.classification.RDD.distinct"><code class="xref py py-obj docutils literal"><span class="pre">distinct</span></code></a>([numPartitions])</td>
-<td>Return a new RDD containing the distinct elements in this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.filter.html#pyspark.mllib.classification.RDD.filter" title="pyspark.mllib.classification.RDD.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
-<td>Return a new RDD containing only the elements that satisfy a predicate.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.first.html#pyspark.mllib.classification.RDD.first" title="pyspark.mllib.classification.RDD.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>()</td>
-<td>Return the first element in this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.flatMap.html#pyspark.mllib.classification.RDD.flatMap" title="pyspark.mllib.classification.RDD.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
-<td>Return a new RDD by first applying a function to all elements of this RDD, and then flattening the results.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.flatMapValues.html#pyspark.mllib.classification.RDD.flatMapValues" title="pyspark.mllib.classification.RDD.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
-<td>Pass each value in the key-value pair RDD through a flatMap function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.fold.html#pyspark.mllib.classification.RDD.fold" title="pyspark.mllib.classification.RDD.fold"><code class="xref py py-obj docutils literal"><span class="pre">fold</span></code></a>(zeroValue,&nbsp;op)</td>
-<td>Aggregate the elements of each partition, and then the results for all</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.foldByKey.html#pyspark.mllib.classification.RDD.foldByKey" title="pyspark.mllib.classification.RDD.foldByKey"><code class="xref py py-obj docutils literal"><span class="pre">foldByKey</span></code></a>(zeroValue,&nbsp;func[,&nbsp;numPartitions,&nbsp;...])</td>
-<td>Merge the values for each key using an associative function &#8220;func&#8221; and a neutral &#8220;zeroValue&#8221; which may be added to the result an arbitrary number of times, and must not change the result (e.g., 0 for addition, or 1 for multiplication.).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.foreach.html#pyspark.mllib.classification.RDD.foreach" title="pyspark.mllib.classification.RDD.foreach"><code class="xref py py-obj docutils literal"><span class="pre">foreach</span></code></a>(f)</td>
-<td>Applies a function to all elements of this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.foreachPartition.html#pyspark.mllib.classification.RDD.foreachPartition" title="pyspark.mllib.classification.RDD.foreachPartition"><code class="xref py py-obj docutils literal"><span class="pre">foreachPartition</span></code></a>(f)</td>
-<td>Applies a function to each partition of this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.fullOuterJoin.html#pyspark.mllib.classification.RDD.fullOuterJoin" title="pyspark.mllib.classification.RDD.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
-<td>Perform a right outer join of C{self} and C{other}.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.getCheckpointFile.html#pyspark.mllib.classification.RDD.getCheckpointFile" title="pyspark.mllib.classification.RDD.getCheckpointFile"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointFile</span></code></a>()</td>
-<td>Gets the name of the file to which this RDD was checkpointed</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.getNumPartitions.html#pyspark.mllib.classification.RDD.getNumPartitions" title="pyspark.mllib.classification.RDD.getNumPartitions"><code class="xref py py-obj docutils literal"><span class="pre">getNumPartitions</span></code></a>()</td>
-<td>Returns the number of partitions in RDD</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.getStorageLevel.html#pyspark.mllib.classification.RDD.getStorageLevel" title="pyspark.mllib.classification.RDD.getStorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">getStorageLevel</span></code></a>()</td>
-<td>Get the RDD&#8217;s current storage level.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.glom.html#pyspark.mllib.classification.RDD.glom" title="pyspark.mllib.classification.RDD.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
-<td>Return an RDD created by coalescing all elements within each partition into a list.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.groupBy.html#pyspark.mllib.classification.RDD.groupBy" title="pyspark.mllib.classification.RDD.groupBy"><code class="xref py py-obj docutils literal"><span class="pre">groupBy</span></code></a>(f[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
-<td>Return an RDD of grouped items.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.groupByKey.html#pyspark.mllib.classification.RDD.groupByKey" title="pyspark.mllib.classification.RDD.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions,&nbsp;partitionFunc])</td>
-<td>Group the values for each key in the RDD into a single sequence.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.groupWith.html#pyspark.mllib.classification.RDD.groupWith" title="pyspark.mllib.classification.RDD.groupWith"><code class="xref py py-obj docutils literal"><span class="pre">groupWith</span></code></a>(other,&nbsp;*others)</td>
-<td>Alias for cogroup but with support for multiple RDDs.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.histogram.html#pyspark.mllib.classification.RDD.histogram" title="pyspark.mllib.classification.RDD.histogram"><code class="xref py py-obj docutils literal"><span class="pre">histogram</span></code></a>(buckets)</td>
-<td>Compute a histogram using the provided buckets.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.id.html#pyspark.mllib.classification.RDD.id" title="pyspark.mllib.classification.RDD.id"><code class="xref py py-obj docutils literal"><span class="pre">id</span></code></a>()</td>
-<td>A unique ID for this RDD (within its SparkContext).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.intersection.html#pyspark.mllib.classification.RDD.intersection" title="pyspark.mllib.classification.RDD.intersection"><code class="xref py py-obj docutils literal"><span class="pre">intersection</span></code></a>(other)</td>
-<td>Return the intersection of this RDD and another one.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.isCheckpointed.html#pyspark.mllib.classification.RDD.isCheckpointed" title="pyspark.mllib.classification.RDD.isCheckpointed"><code class="xref py py-obj docutils literal"><span class="pre">isCheckpointed</span></code></a>()</td>
-<td>Return whether this RDD has been checkpointed or not</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.isEmpty.html#pyspark.mllib.classification.RDD.isEmpty" title="pyspark.mllib.classification.RDD.isEmpty"><code class="xref py py-obj docutils literal"><span class="pre">isEmpty</span></code></a>()</td>
-<td>Returns true if and only if the RDD contains no elements at all.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.join.html#pyspark.mllib.classification.RDD.join" title="pyspark.mllib.classification.RDD.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
-<td>Return an RDD containing all pairs of elements with matching keys in C{self} and C{other}.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.keyBy.html#pyspark.mllib.classification.RDD.keyBy" title="pyspark.mllib.classification.RDD.keyBy"><code class="xref py py-obj docutils literal"><span class="pre">keyBy</span></code></a>(f)</td>
-<td>Creates tuples of the elements in this RDD by applying C{f}.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.keys.html#pyspark.mllib.classification.RDD.keys" title="pyspark.mllib.classification.RDD.keys"><code class="xref py py-obj docutils literal"><span class="pre">keys</span></code></a>()</td>
-<td>Return an RDD with the keys of each tuple.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.leftOuterJoin.html#pyspark.mllib.classification.RDD.leftOuterJoin" title="pyspark.mllib.classification.RDD.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
-<td>Perform a left outer join of C{self} and C{other}.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.lookup.html#pyspark.mllib.classification.RDD.lookup" title="pyspark.mllib.classification.RDD.lookup"><code class="xref py py-obj docutils literal"><span class="pre">lookup</span></code></a>(key)</td>
-<td>Return the list of values in the RDD for key <cite>key</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.map.html#pyspark.mllib.classification.RDD.map" title="pyspark.mllib.classification.RDD.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
-<td>Return a new RDD by applying a function to each element of this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapPartitions.html#pyspark.mllib.classification.RDD.mapPartitions" title="pyspark.mllib.classification.RDD.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
-<td>Return a new RDD by applying a function to each partition of this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapPartitionsWithIndex.html#pyspark.mllib.classification.RDD.mapPartitionsWithIndex" title="pyspark.mllib.classification.RDD.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
-<td>Return a new RDD by applying a function to each partition of this RDD, while tracking the index of the original partition.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapPartitionsWithSplit.html#pyspark.mllib.classification.RDD.mapPartitionsWithSplit" title="pyspark.mllib.classification.RDD.mapPartitionsWithSplit"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithSplit</span></code></a>(f[,&nbsp;...])</td>
-<td>Deprecated: use mapPartitionsWithIndex instead.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mapValues.html#pyspark.mllib.classification.RDD.mapValues" title="pyspark.mllib.classification.RDD.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
-<td>Pass each value in the key-value pair RDD through a map function without changing the keys; this also retains the original RDD&#8217;s partitioning.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.max.html#pyspark.mllib.classification.RDD.max" title="pyspark.mllib.classification.RDD.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a>([key])</td>
-<td>Find the maximum item in this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.mean.html#pyspark.mllib.classification.RDD.mean" title="pyspark.mllib.classification.RDD.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a>()</td>
-<td>Compute the mean of this RDD&#8217;s elements.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.meanApprox.html#pyspark.mllib.classification.RDD.meanApprox" title="pyspark.mllib.classification.RDD.meanApprox"><code class="xref py py-obj docutils literal"><span class="pre">meanApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
-<td><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Experimental</p>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.min.html#pyspark.mllib.classification.RDD.min" title="pyspark.mllib.classification.RDD.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a>([key])</td>
-<td>Find the minimum item in this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.name.html#pyspark.mllib.classification.RDD.name" title="pyspark.mllib.classification.RDD.name"><code class="xref py py-obj docutils literal"><span class="pre">name</span></code></a>()</td>
-<td>Return the name of this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.partitionBy.html#pyspark.mllib.classification.RDD.partitionBy" title="pyspark.mllib.classification.RDD.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
-<td>Return a copy of the RDD partitioned using the specified partitioner.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.persist.html#pyspark.mllib.classification.RDD.persist" title="pyspark.mllib.classification.RDD.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>([storageLevel])</td>
-<td>Set this RDD&#8217;s storage level to persist its values across operations after the first time it is computed.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.pipe.html#pyspark.mllib.classification.RDD.pipe" title="pyspark.mllib.classification.RDD.pipe"><code class="xref py py-obj docutils literal"><span class="pre">pipe</span></code></a>(command[,&nbsp;env,&nbsp;checkCode])</td>
-<td>Return an RDD created by piping elements to a forked external process.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.randomSplit.html#pyspark.mllib.classification.RDD.randomSplit" title="pyspark.mllib.classification.RDD.randomSplit"><code class="xref py py-obj docutils literal"><span class="pre">randomSplit</span></code></a>(weights[,&nbsp;seed])</td>
-<td>Randomly splits this RDD with the provided weights.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.reduce.html#pyspark.mllib.classification.RDD.reduce" title="pyspark.mllib.classification.RDD.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(f)</td>
-<td>Reduces the elements of this RDD using the specified commutative and associative binary operator.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.reduceByKey.html#pyspark.mllib.classification.RDD.reduceByKey" title="pyspark.mllib.classification.RDD.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions,&nbsp;partitionFunc])</td>
-<td>Merge the values for each key using an associative and commutative reduce function.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.reduceByKeyLocally.html#pyspark.mllib.classification.RDD.reduceByKeyLocally" title="pyspark.mllib.classification.RDD.reduceByKeyLocally"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyLocally</span></code></a>(func)</td>
-<td>Merge the values for each key using an associative and commutative reduce function, but return the results immediately to the master as a dictionary.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.repartition.html#pyspark.mllib.classification.RDD.repartition" title="pyspark.mllib.classification.RDD.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
-<td>Return a new RDD that has exactly numPartitions partitions.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.repartitionAndSortWithinPartitions.html#pyspark.mllib.classification.RDD.repartitionAndSortWithinPartitions" title="pyspark.mllib.classification.RDD.repartitionAndSortWithinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">repartitionAndSortWithinPartitions</span></code></a>([...])</td>
-<td>Repartition the RDD according to the given partitioner and, within each resulting partition, sort records by their keys.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.rightOuterJoin.html#pyspark.mllib.classification.RDD.rightOuterJoin" title="pyspark.mllib.classification.RDD.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
-<td>Perform a right outer join of C{self} and C{other}.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sample.html#pyspark.mllib.classification.RDD.sample" title="pyspark.mllib.classification.RDD.sample"><code class="xref py py-obj docutils literal"><span class="pre">sample</span></code></a>(withReplacement,&nbsp;fraction[,&nbsp;seed])</td>
-<td>Return a sampled subset of this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sampleByKey.html#pyspark.mllib.classification.RDD.sampleByKey" title="pyspark.mllib.classification.RDD.sampleByKey"><code class="xref py py-obj docutils literal"><span class="pre">sampleByKey</span></code></a>(withReplacement,&nbsp;fractions[,&nbsp;seed])</td>
-<td>Return a subset of this RDD sampled by key (via stratified sampling).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sampleStdev.html#pyspark.mllib.classification.RDD.sampleStdev" title="pyspark.mllib.classification.RDD.sampleStdev"><code class="xref py py-obj docutils literal"><span class="pre">sampleStdev</span></code></a>()</td>
-<td>Compute the sample standard deviation of this RDD&#8217;s elements (which corrects for bias in estimating the standard deviation by dividing by N-1 instead of N).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sampleVariance.html#pyspark.mllib.classification.RDD.sampleVariance" title="pyspark.mllib.classification.RDD.sampleVariance"><code class="xref py py-obj docutils literal"><span class="pre">sampleVariance</span></code></a>()</td>
-<td>Compute the sample variance of this RDD&#8217;s elements (which corrects for bias in estimating the variance by dividing by N-1 instead of N).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsHadoopDataset.html#pyspark.mllib.classification.RDD.saveAsHadoopDataset" title="pyspark.mllib.classification.RDD.saveAsHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopDataset</span></code></a>(conf[,&nbsp;keyConverter,&nbsp;...])</td>
-<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsHadoopFile.html#pyspark.mllib.classification.RDD.saveAsHadoopFile" title="pyspark.mllib.classification.RDD.saveAsHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsHadoopFile</span></code></a>(path,&nbsp;outputFormatClass[,&nbsp;...])</td>
-<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the old Hadoop OutputFormat API (mapred package).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopDataset.html#pyspark.mllib.classification.RDD.saveAsNewAPIHadoopDataset" title="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopDataset"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopDataset</span></code></a>(conf[,&nbsp;...])</td>
-<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopFile.html#pyspark.mllib.classification.RDD.saveAsNewAPIHadoopFile" title="pyspark.mllib.classification.RDD.saveAsNewAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsNewAPIHadoopFile</span></code></a>(path,&nbsp;outputFormatClass)</td>
-<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the new Hadoop OutputFormat API (mapreduce package).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsPickleFile.html#pyspark.mllib.classification.RDD.saveAsPickleFile" title="pyspark.mllib.classification.RDD.saveAsPickleFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsPickleFile</span></code></a>(path[,&nbsp;batchSize])</td>
-<td>Save this RDD as a SequenceFile of serialized objects.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsSequenceFile.html#pyspark.mllib.classification.RDD.saveAsSequenceFile" title="pyspark.mllib.classification.RDD.saveAsSequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsSequenceFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
-<td>Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file system, using the L{org.apache.hadoop.io.Writable} types that we convert from the RDD&#8217;s key and value types.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.saveAsTextFile.html#pyspark.mllib.classification.RDD.saveAsTextFile" title="pyspark.mllib.classification.RDD.saveAsTextFile"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFile</span></code></a>(path[,&nbsp;compressionCodecClass])</td>
-<td>Save this RDD as a text file, using string representations of elements.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.setName.html#pyspark.mllib.classification.RDD.setName" title="pyspark.mllib.classification.RDD.setName"><code class="xref py py-obj docutils literal"><span class="pre">setName</span></code></a>(name)</td>
-<td>Assign a name to this RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sortBy.html#pyspark.mllib.classification.RDD.sortBy" title="pyspark.mllib.classification.RDD.sortBy"><code class="xref py py-obj docutils literal"><span class="pre">sortBy</span></code></a>(keyfunc[,&nbsp;ascending,&nbsp;numPartitions])</td>
-<td>Sorts this RDD by the given keyfunc</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sortByKey.html#pyspark.mllib.classification.RDD.sortByKey" title="pyspark.mllib.classification.RDD.sortByKey"><code class="xref py py-obj docutils literal"><span class="pre">sortByKey</span></code></a>([ascending,&nbsp;numPartitions,&nbsp;keyfunc])</td>
-<td>Sorts this RDD, which is assumed to consist of (key, value) pairs.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.stats.html#pyspark.mllib.classification.RDD.stats" title="pyspark.mllib.classification.RDD.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
-<td>Return a L{StatCounter} object that captures the mean, variance and count of the RDD&#8217;s elements in one operation.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.stdev.html#pyspark.mllib.classification.RDD.stdev" title="pyspark.mllib.classification.RDD.stdev"><code class="xref py py-obj docutils literal"><span class="pre">stdev</span></code></a>()</td>
-<td>Compute the standard deviation of this RDD&#8217;s elements.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.subtract.html#pyspark.mllib.classification.RDD.subtract" title="pyspark.mllib.classification.RDD.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(other[,&nbsp;numPartitions])</td>
-<td>Return each value in C{self} that is not contained in C{other}.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.subtractByKey.html#pyspark.mllib.classification.RDD.subtractByKey" title="pyspark.mllib.classification.RDD.subtractByKey"><code class="xref py py-obj docutils literal"><span class="pre">subtractByKey</span></code></a>(other[,&nbsp;numPartitions])</td>
-<td>Return each (key, value) pair in C{self} that has no pair with matching key in C{other}.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sum.html#pyspark.mllib.classification.RDD.sum" title="pyspark.mllib.classification.RDD.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>()</td>
-<td>Add up the elements in this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.sumApprox.html#pyspark.mllib.classification.RDD.sumApprox" title="pyspark.mllib.classification.RDD.sumApprox"><code class="xref py py-obj docutils literal"><span class="pre">sumApprox</span></code></a>(timeout[,&nbsp;confidence])</td>
-<td><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Experimental</p>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.take.html#pyspark.mllib.classification.RDD.take" title="pyspark.mllib.classification.RDD.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a>(num)</td>
-<td>Take the first num elements of the RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.takeOrdered.html#pyspark.mllib.classification.RDD.takeOrdered" title="pyspark.mllib.classification.RDD.takeOrdered"><code class="xref py py-obj docutils literal"><span class="pre">takeOrdered</span></code></a>(num[,&nbsp;key])</td>
-<td>Get the N elements from a RDD ordered in ascending order or as specified by the optional key function.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.takeSample.html#pyspark.mllib.classification.RDD.takeSample" title="pyspark.mllib.classification.RDD.takeSample"><code class="xref py py-obj docutils literal"><span class="pre">takeSample</span></code></a>(withReplacement,&nbsp;num[,&nbsp;seed])</td>
-<td>Return a fixed-size sampled subset of this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.toDebugString.html#pyspark.mllib.classification.RDD.toDebugString" title="pyspark.mllib.classification.RDD.toDebugString"><code class="xref py py-obj docutils literal"><span class="pre">toDebugString</span></code></a>()</td>
-<td>A description of this RDD and its recursive dependencies for debugging.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.toLocalIterator.html#pyspark.mllib.classification.RDD.toLocalIterator" title="pyspark.mllib.classification.RDD.toLocalIterator"><code class="xref py py-obj docutils literal"><span class="pre">toLocalIterator</span></code></a>()</td>
-<td>Return an iterator that contains all of the elements in this RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.top.html#pyspark.mllib.classification.RDD.top" title="pyspark.mllib.classification.RDD.top"><code class="xref py py-obj docutils literal"><span class="pre">top</span></code></a>(num[,&nbsp;key])</td>
-<td>Get the top N elements from a RDD.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.treeAggregate.html#pyspark.mllib.classification.RDD.treeAggregate" title="pyspark.mllib.classification.RDD.treeAggregate"><code class="xref py py-obj docutils literal"><span class="pre">treeAggregate</span></code></a>(zeroValue,&nbsp;seqOp,&nbsp;combOp[,&nbsp;depth])</td>
-<td>Aggregates the elements of this RDD in a multi-level tree pattern.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.treeReduce.html#pyspark.mllib.classification.RDD.treeReduce" title="pyspark.mllib.classification.RDD.treeReduce"><code class="xref py py-obj docutils literal"><span class="pre">treeReduce</span></code></a>(f[,&nbsp;depth])</td>
-<td>Reduces the elements of this RDD in a multi-level tree pattern.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.union.html#pyspark.mllib.classification.RDD.union" title="pyspark.mllib.classification.RDD.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
-<td>Return the union of this RDD and another one.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.unpersist.html#pyspark.mllib.classification.RDD.unpersist" title="pyspark.mllib.classification.RDD.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>()</td>
-<td>Mark the RDD as non-persistent, and remove all blocks for it from memory and disk.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.values.html#pyspark.mllib.classification.RDD.values" title="pyspark.mllib.classification.RDD.values"><code class="xref py py-obj docutils literal"><span class="pre">values</span></code></a>()</td>
-<td>Return an RDD with the values of each tuple.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.variance.html#pyspark.mllib.classification.RDD.variance" title="pyspark.mllib.classification.RDD.variance"><code class="xref py py-obj docutils literal"><span class="pre">variance</span></code></a>()</td>
-<td>Compute the variance of this RDD&#8217;s elements.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.zip.html#pyspark.mllib.classification.RDD.zip" title="pyspark.mllib.classification.RDD.zip"><code class="xref py py-obj docutils literal"><span class="pre">zip</span></code></a>(other)</td>
-<td>Zips this RDD with another one, returning key-value pairs with the first element in each RDD second element in each RDD, etc.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.zipWithIndex.html#pyspark.mllib.classification.RDD.zipWithIndex" title="pyspark.mllib.classification.RDD.zipWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">zipWithIndex</span></code></a>()</td>
-<td>Zips this RDD with its element indices.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.RDD.zipWithUniqueId.html#pyspark.mllib.classification.RDD.zipWithUniqueId" title="pyspark.mllib.classification.RDD.zipWithUniqueId"><code class="xref py py-obj docutils literal"><span class="pre">zipWithUniqueId</span></code></a>()</td>
-<td>Zips this RDD with generated unique Long ids.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
 </div>
 
 
@@ -540,10 +551,10 @@ operated on in parallel.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.classification.RDD.context.html" class="btn btn-neutral float-right" title="4.2.2.12.1. pyspark.mllib.classification.RDD.context" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.classification.RDD.__init__.html" class="btn btn-neutral float-right" title="4.2.2.12.1.1. pyspark.mllib.classification.RDD.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.classification.NaiveBayesModel.save.html" class="btn btn-neutral" title="4.2.2.11.3. pyspark.mllib.classification.NaiveBayesModel.save" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.classification.NaiveBayesModel.save.html" class="btn btn-neutral" title="4.2.2.11.1.4. pyspark.mllib.classification.NaiveBayesModel.save" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

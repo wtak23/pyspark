@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.11. pyspark.mllib.regression" href="../pyspark.mllib.regression.html"/>
-        <link rel="next" title="4.11.2.18.1. pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel.html"/>
-        <link rel="prev" title="4.11.2.17.3. pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues" href="pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues.html"/> 
+        <link rel="next" title="4.11.2.18.1.1. pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__.html"/>
+        <link rel="prev" title="4.11.2.17.1.4. pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues" href="pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -195,7 +195,6 @@
             
   <div class="section" id="pyspark-mllib-regression-streaminglinearregressionwithsgd">
 <h1>4.11.2.18. pyspark.mllib.regression.StreamingLinearRegressionWithSGD<a class="headerlink" href="#pyspark-mllib-regression-streaminglinearregressionwithsgd" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__"><code class="xref py py-func docutils literal"><span class="pre">StreamingLinearRegressionWithSGD.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.regression.StreamingLinearRegressionWithSGD">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.regression.</code><code class="descname">StreamingLinearRegressionWithSGD</code><span class="sig-paren">(</span><em>stepSize=0.1</em>, <em>numIterations=50</em>, <em>miniBatchFraction=1.0</em>, <em>convergenceTol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/regression.html#StreamingLinearRegressionWithSGD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.regression.StreamingLinearRegressionWithSGD" title="Permalink to this definition">¶</a></dt>
@@ -228,32 +227,42 @@ be provided.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.5.0.</span></p>
 </div>
-<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>stepSize=0.1</em>, <em>numIterations=50</em>, <em>miniBatchFraction=1.0</em>, <em>convergenceTol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/regression.html#StreamingLinearRegressionWithSGD.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.11.2.18.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel"><code class="xref py py-obj docutils literal"><span class="pre">latestModel</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([stepSize,&nbsp;numIterations,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel"><code class="xref py py-obj docutils literal"><span class="pre">latestModel</span></code></a>()</td>
 <td>Returns the latest model.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOn.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOn" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOn"><code class="xref py py-obj docutils literal"><span class="pre">predictOn</span></code></a>(dstream)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOn.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOn" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOn"><code class="xref py py-obj docutils literal"><span class="pre">predictOn</span></code></a>(dstream)</td>
 <td>Use the model to make predictions on batches of data from a DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOnValues.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOnValues" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOnValues"><code class="xref py py-obj docutils literal"><span class="pre">predictOnValues</span></code></a>(dstream)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOnValues.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOnValues" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.predictOnValues"><code class="xref py py-obj docutils literal"><span class="pre">predictOnValues</span></code></a>(dstream)</td>
 <td>Use the model to make predictions on the values of a DStream and carry over its keys.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.setInitialWeights.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.setInitialWeights" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.setInitialWeights"><code class="xref py py-obj docutils literal"><span class="pre">setInitialWeights</span></code></a>(initialWeights)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.setInitialWeights.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.setInitialWeights" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.setInitialWeights"><code class="xref py py-obj docutils literal"><span class="pre">setInitialWeights</span></code></a>(initialWeights)</td>
 <td>Set the initial value of weights.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.trainOn.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.trainOn" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.trainOn"><code class="xref py py-obj docutils literal"><span class="pre">trainOn</span></code></a>(dstream)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.trainOn.html#pyspark.mllib.regression.StreamingLinearRegressionWithSGD.trainOn" title="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.trainOn"><code class="xref py py-obj docutils literal"><span class="pre">trainOn</span></code></a>(dstream)</td>
 <td>Train the model on the incoming dstream.</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -263,10 +272,10 @@ be provided.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel.html" class="btn btn-neutral float-right" title="4.11.2.18.1. pyspark.mllib.regression.StreamingLinearRegressionWithSGD.latestModel" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__.html" class="btn btn-neutral float-right" title="4.11.2.18.1.1. pyspark.mllib.regression.StreamingLinearRegressionWithSGD.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues.html" class="btn btn-neutral" title="4.11.2.17.3. pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues.html" class="btn btn-neutral" title="4.11.2.17.1.4. pyspark.mllib.regression.StreamingLinearAlgorithm.predictOnValues" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

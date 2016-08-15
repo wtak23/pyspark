@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="5.2. pyspark.streaming.kafka" href="../pyspark.streaming.kafka.html"/>
-        <link rel="next" title="5.2.2.17.1. pyspark.streaming.kafka.TransformedDStream.cache" href="pyspark.streaming.kafka.TransformedDStream.cache.html"/>
-        <link rel="prev" title="5.2.2.16.3. pyspark.streaming.kafka.TransformFunction.rdd_wrapper" href="pyspark.streaming.kafka.TransformFunction.rdd_wrapper.html"/> 
+        <link rel="next" title="5.2.2.17.1.1. pyspark.streaming.kafka.TransformedDStream.__init__" href="pyspark.streaming.kafka.TransformedDStream.__init__.html"/>
+        <link rel="prev" title="5.2.2.16.1.4. pyspark.streaming.kafka.TransformFunction.rdd_wrapper" href="pyspark.streaming.kafka.TransformFunction.rdd_wrapper.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -113,7 +113,6 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">5.2.2.17. pyspark.streaming.kafka.TransformedDStream</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#exceptions">5.2.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
@@ -184,7 +183,6 @@
             
   <div class="section" id="pyspark-streaming-kafka-transformeddstream">
 <h1>5.2.2.17. pyspark.streaming.kafka.TransformedDStream<a class="headerlink" href="#pyspark-streaming-kafka-transformeddstream" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.__init__.html#pyspark.streaming.kafka.TransformedDStream.__init__" title="pyspark.streaming.kafka.TransformedDStream.__init__"><code class="xref py py-func docutils literal"><span class="pre">TransformedDStream.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.streaming.kafka.TransformedDStream">
 <em class="property">class </em><code class="descclassname">pyspark.streaming.kafka.</code><code class="descname">TransformedDStream</code><span class="sig-paren">(</span><em>prev</em>, <em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/dstream.html#TransformedDStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.kafka.TransformedDStream" title="Permalink to this definition">¶</a></dt>
@@ -192,134 +190,144 @@
 transforming each RDD of a DStream to another RDDs.</p>
 <p>Multiple continuous transformations of DStream can be combined into
 one transformation.</p>
-<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="pyspark.streaming.kafka.TransformedDStream.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>prev</em>, <em>func</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/dstream.html#TransformedDStream.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.streaming.kafka.TransformedDStream.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>5.2.2.17.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.cache.html#pyspark.streaming.kafka.TransformedDStream.cache" title="pyspark.streaming.kafka.TransformedDStream.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.__init__.html#pyspark.streaming.kafka.TransformedDStream.__init__" title="pyspark.streaming.kafka.TransformedDStream.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(prev,&nbsp;func)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.cache.html#pyspark.streaming.kafka.TransformedDStream.cache" title="pyspark.streaming.kafka.TransformedDStream.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
 <td>Persist the RDDs of this DStream with the default storage level (C{MEMORY_ONLY}).</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.checkpoint.html#pyspark.streaming.kafka.TransformedDStream.checkpoint" title="pyspark.streaming.kafka.TransformedDStream.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>(interval)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.checkpoint.html#pyspark.streaming.kafka.TransformedDStream.checkpoint" title="pyspark.streaming.kafka.TransformedDStream.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>(interval)</td>
 <td>Enable periodic checkpointing of RDDs of this DStream</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.cogroup.html#pyspark.streaming.kafka.TransformedDStream.cogroup" title="pyspark.streaming.kafka.TransformedDStream.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.cogroup.html#pyspark.streaming.kafka.TransformedDStream.cogroup" title="pyspark.streaming.kafka.TransformedDStream.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
 <td>Return a new DStream by applying &#8216;cogroup&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.combineByKey.html#pyspark.streaming.kafka.TransformedDStream.combineByKey" title="pyspark.streaming.kafka.TransformedDStream.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.combineByKey.html#pyspark.streaming.kafka.TransformedDStream.combineByKey" title="pyspark.streaming.kafka.TransformedDStream.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
 <td>Return a new DStream by applying combineByKey to each RDD.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.context.html#pyspark.streaming.kafka.TransformedDStream.context" title="pyspark.streaming.kafka.TransformedDStream.context"><code class="xref py py-obj docutils literal"><span class="pre">context</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.context.html#pyspark.streaming.kafka.TransformedDStream.context" title="pyspark.streaming.kafka.TransformedDStream.context"><code class="xref py py-obj docutils literal"><span class="pre">context</span></code></a>()</td>
 <td>Return the StreamingContext associated with this DStream</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.count.html#pyspark.streaming.kafka.TransformedDStream.count" title="pyspark.streaming.kafka.TransformedDStream.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.count.html#pyspark.streaming.kafka.TransformedDStream.count" title="pyspark.streaming.kafka.TransformedDStream.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
 <td>Return a new DStream in which each RDD has a single element generated by counting each RDD of this DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.countByValue.html#pyspark.streaming.kafka.TransformedDStream.countByValue" title="pyspark.streaming.kafka.TransformedDStream.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.countByValue.html#pyspark.streaming.kafka.TransformedDStream.countByValue" title="pyspark.streaming.kafka.TransformedDStream.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
 <td>Return a new DStream in which each RDD contains the counts of each distinct value in each RDD of this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.countByValueAndWindow.html#pyspark.streaming.kafka.TransformedDStream.countByValueAndWindow" title="pyspark.streaming.kafka.TransformedDStream.countByValueAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByValueAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.countByValueAndWindow.html#pyspark.streaming.kafka.TransformedDStream.countByValueAndWindow" title="pyspark.streaming.kafka.TransformedDStream.countByValueAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByValueAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
 <td>Return a new DStream in which each RDD contains the count of distinct elements in RDDs in a sliding window over this DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.countByWindow.html#pyspark.streaming.kafka.TransformedDStream.countByWindow" title="pyspark.streaming.kafka.TransformedDStream.countByWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByWindow</span></code></a>(windowDuration,&nbsp;slideDuration)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.countByWindow.html#pyspark.streaming.kafka.TransformedDStream.countByWindow" title="pyspark.streaming.kafka.TransformedDStream.countByWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByWindow</span></code></a>(windowDuration,&nbsp;slideDuration)</td>
 <td>Return a new DStream in which each RDD has a single element generated by counting the number of elements in a window over this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.filter.html#pyspark.streaming.kafka.TransformedDStream.filter" title="pyspark.streaming.kafka.TransformedDStream.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.filter.html#pyspark.streaming.kafka.TransformedDStream.filter" title="pyspark.streaming.kafka.TransformedDStream.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
 <td>Return a new DStream containing only the elements that satisfy predicate.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.flatMap.html#pyspark.streaming.kafka.TransformedDStream.flatMap" title="pyspark.streaming.kafka.TransformedDStream.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.flatMap.html#pyspark.streaming.kafka.TransformedDStream.flatMap" title="pyspark.streaming.kafka.TransformedDStream.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
 <td>Return a new DStream by applying a function to all elements of</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.flatMapValues.html#pyspark.streaming.kafka.TransformedDStream.flatMapValues" title="pyspark.streaming.kafka.TransformedDStream.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.flatMapValues.html#pyspark.streaming.kafka.TransformedDStream.flatMapValues" title="pyspark.streaming.kafka.TransformedDStream.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
 <td>Return a new DStream by applying a flatmap function to the value of each key-value pairs in this DStream without changing the key.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.foreachRDD.html#pyspark.streaming.kafka.TransformedDStream.foreachRDD" title="pyspark.streaming.kafka.TransformedDStream.foreachRDD"><code class="xref py py-obj docutils literal"><span class="pre">foreachRDD</span></code></a>(func)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.foreachRDD.html#pyspark.streaming.kafka.TransformedDStream.foreachRDD" title="pyspark.streaming.kafka.TransformedDStream.foreachRDD"><code class="xref py py-obj docutils literal"><span class="pre">foreachRDD</span></code></a>(func)</td>
 <td>Apply a function to each RDD in this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.fullOuterJoin.html#pyspark.streaming.kafka.TransformedDStream.fullOuterJoin" title="pyspark.streaming.kafka.TransformedDStream.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.fullOuterJoin.html#pyspark.streaming.kafka.TransformedDStream.fullOuterJoin" title="pyspark.streaming.kafka.TransformedDStream.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
 <td>Return a new DStream by applying &#8216;full outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.glom.html#pyspark.streaming.kafka.TransformedDStream.glom" title="pyspark.streaming.kafka.TransformedDStream.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.glom.html#pyspark.streaming.kafka.TransformedDStream.glom" title="pyspark.streaming.kafka.TransformedDStream.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
 <td>Return a new DStream in which RDD is generated by applying glom() to RDD of this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.groupByKey.html#pyspark.streaming.kafka.TransformedDStream.groupByKey" title="pyspark.streaming.kafka.TransformedDStream.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.groupByKey.html#pyspark.streaming.kafka.TransformedDStream.groupByKey" title="pyspark.streaming.kafka.TransformedDStream.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions])</td>
 <td>Return a new DStream by applying groupByKey on each RDD.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.groupByKeyAndWindow.html#pyspark.streaming.kafka.TransformedDStream.groupByKeyAndWindow" title="pyspark.streaming.kafka.TransformedDStream.groupByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">groupByKeyAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.groupByKeyAndWindow.html#pyspark.streaming.kafka.TransformedDStream.groupByKeyAndWindow" title="pyspark.streaming.kafka.TransformedDStream.groupByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">groupByKeyAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
 <td>Return a new DStream by applying <cite>groupByKey</cite> over a sliding window.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.join.html#pyspark.streaming.kafka.TransformedDStream.join" title="pyspark.streaming.kafka.TransformedDStream.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.join.html#pyspark.streaming.kafka.TransformedDStream.join" title="pyspark.streaming.kafka.TransformedDStream.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
 <td>Return a new DStream by applying &#8216;join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.leftOuterJoin.html#pyspark.streaming.kafka.TransformedDStream.leftOuterJoin" title="pyspark.streaming.kafka.TransformedDStream.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.leftOuterJoin.html#pyspark.streaming.kafka.TransformedDStream.leftOuterJoin" title="pyspark.streaming.kafka.TransformedDStream.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
 <td>Return a new DStream by applying &#8216;left outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.map.html#pyspark.streaming.kafka.TransformedDStream.map" title="pyspark.streaming.kafka.TransformedDStream.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.map.html#pyspark.streaming.kafka.TransformedDStream.map" title="pyspark.streaming.kafka.TransformedDStream.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
 <td>Return a new DStream by applying a function to each element of DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.mapPartitions.html#pyspark.streaming.kafka.TransformedDStream.mapPartitions" title="pyspark.streaming.kafka.TransformedDStream.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.mapPartitions.html#pyspark.streaming.kafka.TransformedDStream.mapPartitions" title="pyspark.streaming.kafka.TransformedDStream.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
 <td>Return a new DStream in which each RDD is generated by applying mapPartitions() to each RDDs of this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.mapPartitionsWithIndex.html#pyspark.streaming.kafka.TransformedDStream.mapPartitionsWithIndex" title="pyspark.streaming.kafka.TransformedDStream.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.mapPartitionsWithIndex.html#pyspark.streaming.kafka.TransformedDStream.mapPartitionsWithIndex" title="pyspark.streaming.kafka.TransformedDStream.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
 <td>Return a new DStream in which each RDD is generated by applying mapPartitionsWithIndex() to each RDDs of this DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.mapValues.html#pyspark.streaming.kafka.TransformedDStream.mapValues" title="pyspark.streaming.kafka.TransformedDStream.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.mapValues.html#pyspark.streaming.kafka.TransformedDStream.mapValues" title="pyspark.streaming.kafka.TransformedDStream.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
 <td>Return a new DStream by applying a map function to the value of each key-value pairs in this DStream without changing the key.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.partitionBy.html#pyspark.streaming.kafka.TransformedDStream.partitionBy" title="pyspark.streaming.kafka.TransformedDStream.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.partitionBy.html#pyspark.streaming.kafka.TransformedDStream.partitionBy" title="pyspark.streaming.kafka.TransformedDStream.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
 <td>Return a copy of the DStream in which each RDD are partitioned using the specified partitioner.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.persist.html#pyspark.streaming.kafka.TransformedDStream.persist" title="pyspark.streaming.kafka.TransformedDStream.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>(storageLevel)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.persist.html#pyspark.streaming.kafka.TransformedDStream.persist" title="pyspark.streaming.kafka.TransformedDStream.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>(storageLevel)</td>
 <td>Persist the RDDs of this DStream with the given storage level</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.pprint.html#pyspark.streaming.kafka.TransformedDStream.pprint" title="pyspark.streaming.kafka.TransformedDStream.pprint"><code class="xref py py-obj docutils literal"><span class="pre">pprint</span></code></a>([num])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.pprint.html#pyspark.streaming.kafka.TransformedDStream.pprint" title="pyspark.streaming.kafka.TransformedDStream.pprint"><code class="xref py py-obj docutils literal"><span class="pre">pprint</span></code></a>([num])</td>
 <td>Print the first num elements of each RDD generated in this DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduce.html#pyspark.streaming.kafka.TransformedDStream.reduce" title="pyspark.streaming.kafka.TransformedDStream.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(func)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduce.html#pyspark.streaming.kafka.TransformedDStream.reduce" title="pyspark.streaming.kafka.TransformedDStream.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(func)</td>
 <td>Return a new DStream in which each RDD has a single element generated by reducing each RDD of this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduceByKey.html#pyspark.streaming.kafka.TransformedDStream.reduceByKey" title="pyspark.streaming.kafka.TransformedDStream.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduceByKey.html#pyspark.streaming.kafka.TransformedDStream.reduceByKey" title="pyspark.streaming.kafka.TransformedDStream.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions])</td>
 <td>Return a new DStream by applying reduceByKey to each RDD.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduceByKeyAndWindow.html#pyspark.streaming.kafka.TransformedDStream.reduceByKeyAndWindow" title="pyspark.streaming.kafka.TransformedDStream.reduceByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyAndWindow</span></code></a>(func,&nbsp;invFunc,&nbsp;...[,&nbsp;...])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduceByKeyAndWindow.html#pyspark.streaming.kafka.TransformedDStream.reduceByKeyAndWindow" title="pyspark.streaming.kafka.TransformedDStream.reduceByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyAndWindow</span></code></a>(func,&nbsp;invFunc,&nbsp;...[,&nbsp;...])</td>
 <td>Return a new DStream by applying incremental <cite>reduceByKey</cite> over a sliding window.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduceByWindow.html#pyspark.streaming.kafka.TransformedDStream.reduceByWindow" title="pyspark.streaming.kafka.TransformedDStream.reduceByWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByWindow</span></code></a>(reduceFunc,&nbsp;invReduceFunc,&nbsp;...)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.reduceByWindow.html#pyspark.streaming.kafka.TransformedDStream.reduceByWindow" title="pyspark.streaming.kafka.TransformedDStream.reduceByWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByWindow</span></code></a>(reduceFunc,&nbsp;invReduceFunc,&nbsp;...)</td>
 <td>Return a new DStream in which each RDD has a single element generated by reducing all elements in a sliding window over this DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.repartition.html#pyspark.streaming.kafka.TransformedDStream.repartition" title="pyspark.streaming.kafka.TransformedDStream.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.repartition.html#pyspark.streaming.kafka.TransformedDStream.repartition" title="pyspark.streaming.kafka.TransformedDStream.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
 <td>Return a new DStream with an increased or decreased level of parallelism.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.rightOuterJoin.html#pyspark.streaming.kafka.TransformedDStream.rightOuterJoin" title="pyspark.streaming.kafka.TransformedDStream.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.rightOuterJoin.html#pyspark.streaming.kafka.TransformedDStream.rightOuterJoin" title="pyspark.streaming.kafka.TransformedDStream.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
 <td>Return a new DStream by applying &#8216;right outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.saveAsTextFiles.html#pyspark.streaming.kafka.TransformedDStream.saveAsTextFiles" title="pyspark.streaming.kafka.TransformedDStream.saveAsTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFiles</span></code></a>(prefix[,&nbsp;suffix])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.saveAsTextFiles.html#pyspark.streaming.kafka.TransformedDStream.saveAsTextFiles" title="pyspark.streaming.kafka.TransformedDStream.saveAsTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFiles</span></code></a>(prefix[,&nbsp;suffix])</td>
 <td>Save each RDD in this DStream as at text file, using string representation of elements.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.slice.html#pyspark.streaming.kafka.TransformedDStream.slice" title="pyspark.streaming.kafka.TransformedDStream.slice"><code class="xref py py-obj docutils literal"><span class="pre">slice</span></code></a>(begin,&nbsp;end)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.slice.html#pyspark.streaming.kafka.TransformedDStream.slice" title="pyspark.streaming.kafka.TransformedDStream.slice"><code class="xref py py-obj docutils literal"><span class="pre">slice</span></code></a>(begin,&nbsp;end)</td>
 <td>Return all the RDDs between &#8216;begin&#8217; to &#8216;end&#8217; (both included)</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.transform.html#pyspark.streaming.kafka.TransformedDStream.transform" title="pyspark.streaming.kafka.TransformedDStream.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(func)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.transform.html#pyspark.streaming.kafka.TransformedDStream.transform" title="pyspark.streaming.kafka.TransformedDStream.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(func)</td>
 <td>Return a new DStream in which each RDD is generated by applying a function on each RDD of this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.transformWith.html#pyspark.streaming.kafka.TransformedDStream.transformWith" title="pyspark.streaming.kafka.TransformedDStream.transformWith"><code class="xref py py-obj docutils literal"><span class="pre">transformWith</span></code></a>(func,&nbsp;other[,&nbsp;keepSerializer])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.transformWith.html#pyspark.streaming.kafka.TransformedDStream.transformWith" title="pyspark.streaming.kafka.TransformedDStream.transformWith"><code class="xref py py-obj docutils literal"><span class="pre">transformWith</span></code></a>(func,&nbsp;other[,&nbsp;keepSerializer])</td>
 <td>Return a new DStream in which each RDD is generated by applying a function on each RDD of this DStream and &#8216;other&#8217; DStream.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.union.html#pyspark.streaming.kafka.TransformedDStream.union" title="pyspark.streaming.kafka.TransformedDStream.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.union.html#pyspark.streaming.kafka.TransformedDStream.union" title="pyspark.streaming.kafka.TransformedDStream.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
 <td>Return a new DStream by unifying data of another DStream with this DStream.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.updateStateByKey.html#pyspark.streaming.kafka.TransformedDStream.updateStateByKey" title="pyspark.streaming.kafka.TransformedDStream.updateStateByKey"><code class="xref py py-obj docutils literal"><span class="pre">updateStateByKey</span></code></a>(updateFunc[,&nbsp;...])</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.updateStateByKey.html#pyspark.streaming.kafka.TransformedDStream.updateStateByKey" title="pyspark.streaming.kafka.TransformedDStream.updateStateByKey"><code class="xref py py-obj docutils literal"><span class="pre">updateStateByKey</span></code></a>(updateFunc[,&nbsp;...])</td>
 <td>Return a new &#8220;state&#8221; DStream where the state for each key is updated by applying the given function on the previous state of the key and the new values of the key.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.window.html#pyspark.streaming.kafka.TransformedDStream.window" title="pyspark.streaming.kafka.TransformedDStream.window"><code class="xref py py-obj docutils literal"><span class="pre">window</span></code></a>(windowDuration[,&nbsp;slideDuration])</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.window.html#pyspark.streaming.kafka.TransformedDStream.window" title="pyspark.streaming.kafka.TransformedDStream.window"><code class="xref py py-obj docutils literal"><span class="pre">window</span></code></a>(windowDuration[,&nbsp;slideDuration])</td>
 <td>Return a new DStream in which each RDD contains all the elements in seen in a sliding window of time over this DStream.</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -329,10 +337,10 @@ one transformation.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.streaming.kafka.TransformedDStream.cache.html" class="btn btn-neutral float-right" title="5.2.2.17.1. pyspark.streaming.kafka.TransformedDStream.cache" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.streaming.kafka.TransformedDStream.__init__.html" class="btn btn-neutral float-right" title="5.2.2.17.1.1. pyspark.streaming.kafka.TransformedDStream.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.streaming.kafka.TransformFunction.rdd_wrapper.html" class="btn btn-neutral" title="5.2.2.16.3. pyspark.streaming.kafka.TransformFunction.rdd_wrapper" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.streaming.kafka.TransformFunction.rdd_wrapper.html" class="btn btn-neutral" title="5.2.2.16.1.4. pyspark.streaming.kafka.TransformFunction.rdd_wrapper" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.4. pyspark.ml.classification" href="../pyspark.ml.classification.html"/>
-        <link rel="next" title="3.4.2.60.1. pyspark.ml.classification.OneVsRest.params" href="pyspark.ml.classification.OneVsRest.params.html"/>
-        <link rel="prev" title="3.4.2.59.18. pyspark.ml.classification.NaiveBayesModel.write" href="pyspark.ml.classification.NaiveBayesModel.write.html"/> 
+        <link rel="next" title="3.4.2.60.1.1. pyspark.ml.classification.OneVsRest.__init__" href="pyspark.ml.classification.OneVsRest.__init__.html"/>
+        <link rel="prev" title="3.4.2.59.2.3. pyspark.ml.classification.NaiveBayesModel.theta" href="pyspark.ml.classification.NaiveBayesModel.theta.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -245,7 +245,6 @@
             
   <div class="section" id="pyspark-ml-classification-onevsrest">
 <h1>3.4.2.60. pyspark.ml.classification.OneVsRest<a class="headerlink" href="#pyspark-ml-classification-onevsrest" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.classification.OneVsRest.__init__.html#pyspark.ml.classification.OneVsRest.__init__" title="pyspark.ml.classification.OneVsRest.__init__"><code class="xref py py-func docutils literal"><span class="pre">OneVsRest.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.classification.OneVsRest">
 <em class="property">class </em><code class="descclassname">pyspark.ml.classification.</code><code class="descname">OneVsRest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/classification.html#OneVsRest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.classification.OneVsRest" title="Permalink to this definition">¶</a></dt>
@@ -285,99 +284,6 @@ is picked to label the example.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 2.0.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.params.html#pyspark.ml.classification.OneVsRest.params" title="pyspark.ml.classification.OneVsRest.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.copy.html#pyspark.ml.classification.OneVsRest.copy" title="pyspark.ml.classification.OneVsRest.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with a randomly generated uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.explainParam.html#pyspark.ml.classification.OneVsRest.explainParam" title="pyspark.ml.classification.OneVsRest.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.explainParams.html#pyspark.ml.classification.OneVsRest.explainParams" title="pyspark.ml.classification.OneVsRest.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.extractParamMap.html#pyspark.ml.classification.OneVsRest.extractParamMap" title="pyspark.ml.classification.OneVsRest.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.fit.html#pyspark.ml.classification.OneVsRest.fit" title="pyspark.ml.classification.OneVsRest.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getClassifier.html#pyspark.ml.classification.OneVsRest.getClassifier" title="pyspark.ml.classification.OneVsRest.getClassifier"><code class="xref py py-obj docutils literal"><span class="pre">getClassifier</span></code></a>()</td>
-<td>Gets the value of classifier or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getFeaturesCol.html#pyspark.ml.classification.OneVsRest.getFeaturesCol" title="pyspark.ml.classification.OneVsRest.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
-<td>Gets the value of featuresCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getLabelCol.html#pyspark.ml.classification.OneVsRest.getLabelCol" title="pyspark.ml.classification.OneVsRest.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
-<td>Gets the value of labelCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getOrDefault.html#pyspark.ml.classification.OneVsRest.getOrDefault" title="pyspark.ml.classification.OneVsRest.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getParam.html#pyspark.ml.classification.OneVsRest.getParam" title="pyspark.ml.classification.OneVsRest.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getPredictionCol.html#pyspark.ml.classification.OneVsRest.getPredictionCol" title="pyspark.ml.classification.OneVsRest.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
-<td>Gets the value of predictionCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.hasDefault.html#pyspark.ml.classification.OneVsRest.hasDefault" title="pyspark.ml.classification.OneVsRest.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.hasParam.html#pyspark.ml.classification.OneVsRest.hasParam" title="pyspark.ml.classification.OneVsRest.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.isDefined.html#pyspark.ml.classification.OneVsRest.isDefined" title="pyspark.ml.classification.OneVsRest.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.isSet.html#pyspark.ml.classification.OneVsRest.isSet" title="pyspark.ml.classification.OneVsRest.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.load.html#pyspark.ml.classification.OneVsRest.load" title="pyspark.ml.classification.OneVsRest.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.read.html#pyspark.ml.classification.OneVsRest.read" title="pyspark.ml.classification.OneVsRest.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.save.html#pyspark.ml.classification.OneVsRest.save" title="pyspark.ml.classification.OneVsRest.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setClassifier.html#pyspark.ml.classification.OneVsRest.setClassifier" title="pyspark.ml.classification.OneVsRest.setClassifier"><code class="xref py py-obj docutils literal"><span class="pre">setClassifier</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.OneVsRest.classifier.html#pyspark.ml.classification.OneVsRest.classifier" title="pyspark.ml.classification.OneVsRest.classifier"><code class="xref py py-attr docutils literal"><span class="pre">classifier</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setFeaturesCol.html#pyspark.ml.classification.OneVsRest.setFeaturesCol" title="pyspark.ml.classification.OneVsRest.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.OneVsRest.featuresCol.html#pyspark.ml.classification.OneVsRest.featuresCol" title="pyspark.ml.classification.OneVsRest.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setLabelCol.html#pyspark.ml.classification.OneVsRest.setLabelCol" title="pyspark.ml.classification.OneVsRest.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.OneVsRest.labelCol.html#pyspark.ml.classification.OneVsRest.labelCol" title="pyspark.ml.classification.OneVsRest.labelCol"><code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setParams.html#pyspark.ml.classification.OneVsRest.setParams" title="pyspark.ml.classification.OneVsRest.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(*args,&nbsp;**kwargs)</td>
-<td>setParams(self, featuresCol=None, labelCol=None, predictionCol=None, classifier=None):</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setPredictionCol.html#pyspark.ml.classification.OneVsRest.setPredictionCol" title="pyspark.ml.classification.OneVsRest.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.OneVsRest.predictionCol.html#pyspark.ml.classification.OneVsRest.predictionCol" title="pyspark.ml.classification.OneVsRest.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.write.html#pyspark.ml.classification.OneVsRest.write" title="pyspark.ml.classification.OneVsRest.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.classification.OneVsRest.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>featuresCol=&quot;features&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>classifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/classification.html#OneVsRest.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.classification.OneVsRest.__init__" title="Permalink to this definition">¶</a></dt>
@@ -385,6 +291,118 @@ is picked to label the example.</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.4.2.60.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.__init__.html#pyspark.ml.classification.OneVsRest.__init__" title="pyspark.ml.classification.OneVsRest.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.copy.html#pyspark.ml.classification.OneVsRest.copy" title="pyspark.ml.classification.OneVsRest.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with a randomly generated uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.explainParam.html#pyspark.ml.classification.OneVsRest.explainParam" title="pyspark.ml.classification.OneVsRest.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.explainParams.html#pyspark.ml.classification.OneVsRest.explainParams" title="pyspark.ml.classification.OneVsRest.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.extractParamMap.html#pyspark.ml.classification.OneVsRest.extractParamMap" title="pyspark.ml.classification.OneVsRest.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.fit.html#pyspark.ml.classification.OneVsRest.fit" title="pyspark.ml.classification.OneVsRest.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getClassifier.html#pyspark.ml.classification.OneVsRest.getClassifier" title="pyspark.ml.classification.OneVsRest.getClassifier"><code class="xref py py-obj docutils literal"><span class="pre">getClassifier</span></code></a>()</td>
+<td>Gets the value of classifier or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getFeaturesCol.html#pyspark.ml.classification.OneVsRest.getFeaturesCol" title="pyspark.ml.classification.OneVsRest.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getLabelCol.html#pyspark.ml.classification.OneVsRest.getLabelCol" title="pyspark.ml.classification.OneVsRest.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getOrDefault.html#pyspark.ml.classification.OneVsRest.getOrDefault" title="pyspark.ml.classification.OneVsRest.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getParam.html#pyspark.ml.classification.OneVsRest.getParam" title="pyspark.ml.classification.OneVsRest.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.getPredictionCol.html#pyspark.ml.classification.OneVsRest.getPredictionCol" title="pyspark.ml.classification.OneVsRest.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.hasDefault.html#pyspark.ml.classification.OneVsRest.hasDefault" title="pyspark.ml.classification.OneVsRest.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.hasParam.html#pyspark.ml.classification.OneVsRest.hasParam" title="pyspark.ml.classification.OneVsRest.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.isDefined.html#pyspark.ml.classification.OneVsRest.isDefined" title="pyspark.ml.classification.OneVsRest.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.isSet.html#pyspark.ml.classification.OneVsRest.isSet" title="pyspark.ml.classification.OneVsRest.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.load.html#pyspark.ml.classification.OneVsRest.load" title="pyspark.ml.classification.OneVsRest.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.read.html#pyspark.ml.classification.OneVsRest.read" title="pyspark.ml.classification.OneVsRest.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.save.html#pyspark.ml.classification.OneVsRest.save" title="pyspark.ml.classification.OneVsRest.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setClassifier.html#pyspark.ml.classification.OneVsRest.setClassifier" title="pyspark.ml.classification.OneVsRest.setClassifier"><code class="xref py py-obj docutils literal"><span class="pre">setClassifier</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">classifier</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setFeaturesCol.html#pyspark.ml.classification.OneVsRest.setFeaturesCol" title="pyspark.ml.classification.OneVsRest.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setLabelCol.html#pyspark.ml.classification.OneVsRest.setLabelCol" title="pyspark.ml.classification.OneVsRest.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setParams.html#pyspark.ml.classification.OneVsRest.setParams" title="pyspark.ml.classification.OneVsRest.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>setParams(self, featuresCol=None, labelCol=None, predictionCol=None, classifier=None):</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.setPredictionCol.html#pyspark.ml.classification.OneVsRest.setPredictionCol" title="pyspark.ml.classification.OneVsRest.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.write.html#pyspark.ml.classification.OneVsRest.write" title="pyspark.ml.classification.OneVsRest.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.4.2.60.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.classifier.html#pyspark.ml.classification.OneVsRest.classifier" title="pyspark.ml.classification.OneVsRest.classifier"><code class="xref py py-obj docutils literal"><span class="pre">classifier</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.featuresCol.html#pyspark.ml.classification.OneVsRest.featuresCol" title="pyspark.ml.classification.OneVsRest.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.labelCol.html#pyspark.ml.classification.OneVsRest.labelCol" title="pyspark.ml.classification.OneVsRest.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.params.html#pyspark.ml.classification.OneVsRest.params" title="pyspark.ml.classification.OneVsRest.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.OneVsRest.predictionCol.html#pyspark.ml.classification.OneVsRest.predictionCol" title="pyspark.ml.classification.OneVsRest.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -394,10 +412,10 @@ is picked to label the example.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.classification.OneVsRest.params.html" class="btn btn-neutral float-right" title="3.4.2.60.1. pyspark.ml.classification.OneVsRest.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.classification.OneVsRest.__init__.html" class="btn btn-neutral float-right" title="3.4.2.60.1.1. pyspark.ml.classification.OneVsRest.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.classification.NaiveBayesModel.write.html" class="btn btn-neutral" title="3.4.2.59.18. pyspark.ml.classification.NaiveBayesModel.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.classification.NaiveBayesModel.theta.html" class="btn btn-neutral" title="3.4.2.59.2.3. pyspark.ml.classification.NaiveBayesModel.theta" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

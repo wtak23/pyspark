@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="next" title="1.2.1.1. pyspark.Accumulator.value" href="pyspark.Accumulator.value.html"/>
-        <link rel="prev" title="1.1.4. pyspark.wraps" href="../pyspark.wraps.html"/> 
+        <link rel="next" title="1.2.1.1.1. pyspark.Accumulator.__init__" href="pyspark.Accumulator.__init__.html"/>
+        <link rel="prev" title="1.1.3. pyspark.since" href="../pyspark.since.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -89,8 +89,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.html#functions">1.1. Functions</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../pyspark.html#classes">1.2. Classes</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.1. pyspark.Accumulator</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Accumulator.value.html">1.2.1.1. pyspark.Accumulator.value</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Accumulator.add.html">1.2.1.2. pyspark.Accumulator.add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.1.1. Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">1.2.1.2. Attributes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.AccumulatorParam.html">1.2.2. pyspark.AccumulatorParam</a></li>
@@ -182,7 +182,6 @@
             
   <div class="section" id="pyspark-accumulator">
 <h1>1.2.1. pyspark.Accumulator<a class="headerlink" href="#pyspark-accumulator" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.Accumulator.__init__.html#pyspark.Accumulator.__init__" title="pyspark.Accumulator.__init__"><code class="xref py py-func docutils literal"><span class="pre">Accumulator.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.Accumulator">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">Accumulator</code><span class="sig-paren">(</span><em>aid</em>, <em>value</em>, <em>accum_param</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/accumulators.html#Accumulator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Accumulator" title="Permalink to this definition">¶</a></dt>
@@ -193,7 +192,33 @@ Updates from the workers get propagated automatically to the driver program.</p>
 <p>While C{SparkContext} supports accumulators for primitive data types like C{int} and
 C{float}, users can also define accumulators for custom types by providing a custom
 L{AccumulatorParam} object. Refer to the doctest of this module for an example.</p>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.Accumulator.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>aid</em>, <em>value</em>, <em>accum_param</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/accumulators.html#Accumulator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Accumulator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new Accumulator with a given initial value and AccumulatorParam object</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>1.2.1.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Accumulator.__init__.html#pyspark.Accumulator.__init__" title="pyspark.Accumulator.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(aid,&nbsp;value,&nbsp;accum_param)</td>
+<td>Create a new Accumulator with a given initial value and AccumulatorParam object</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.Accumulator.add.html#pyspark.Accumulator.add" title="pyspark.Accumulator.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(term)</td>
+<td>Adds a term to this accumulator&#8217;s value</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>1.2.1.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -205,26 +230,7 @@ L{AccumulatorParam} object. Refer to the doctest of this module for an example.<
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.Accumulator.add.html#pyspark.Accumulator.add" title="pyspark.Accumulator.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(term)</td>
-<td>Adds a term to this accumulator&#8217;s value</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="pyspark.Accumulator.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>aid</em>, <em>value</em>, <em>accum_param</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/accumulators.html#Accumulator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Accumulator.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new Accumulator with a given initial value and AccumulatorParam object</p>
-</dd></dl>
-
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -234,10 +240,10 @@ L{AccumulatorParam} object. Refer to the doctest of this module for an example.<
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.Accumulator.value.html" class="btn btn-neutral float-right" title="1.2.1.1. pyspark.Accumulator.value" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.Accumulator.__init__.html" class="btn btn-neutral float-right" title="1.2.1.1.1. pyspark.Accumulator.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../pyspark.wraps.html" class="btn btn-neutral" title="1.1.4. pyspark.wraps" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../pyspark.since.html" class="btn btn-neutral" title="1.1.3. pyspark.since" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

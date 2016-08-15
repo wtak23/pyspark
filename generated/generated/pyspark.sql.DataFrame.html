@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="2.1. pyspark.sql" href="../pyspark.sql.html"/>
-        <link rel="next" title="2.1.1.2.1. pyspark.sql.DataFrame.columns" href="pyspark.sql.DataFrame.columns.html"/>
-        <link rel="prev" title="2.1.1.1.23. pyspark.sql.Column.when" href="pyspark.sql.Column.when.html"/> 
+        <link rel="next" title="2.1.1.2.1.1. pyspark.sql.DataFrame.__init__" href="pyspark.sql.DataFrame.__init__.html"/>
+        <link rel="prev" title="2.1.1.1.1.24. pyspark.sql.Column.when" href="pyspark.sql.Column.when.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -178,7 +178,6 @@
             
   <div class="section" id="pyspark-sql-dataframe">
 <h1>2.1.1.2. pyspark.sql.DataFrame<a class="headerlink" href="#pyspark-sql-dataframe" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.sql.DataFrame.__init__.html#pyspark.sql.DataFrame.__init__" title="pyspark.sql.DataFrame.__init__"><code class="xref py py-func docutils literal"><span class="pre">DataFrame.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.sql.DataFrame">
 <em class="property">class </em><code class="descclassname">pyspark.sql.</code><code class="descname">DataFrame</code><span class="sig-paren">(</span><em>jdf</em>, <em>sql_ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/dataframe.html#DataFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.DataFrame" title="Permalink to this definition">¶</a></dt>
@@ -205,7 +204,209 @@ and can be created using various functions in <a class="reference internal" href
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.3.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.sql.DataFrame.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>jdf</em>, <em>sql_ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/dataframe.html#DataFrame.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.DataFrame.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>2.1.1.2.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.__init__.html#pyspark.sql.DataFrame.__init__" title="pyspark.sql.DataFrame.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(jdf,&nbsp;sql_ctx)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.agg.html#pyspark.sql.DataFrame.agg" title="pyspark.sql.DataFrame.agg"><code class="xref py py-obj docutils literal"><span class="pre">agg</span></code></a>(*exprs)</td>
+<td>Aggregate on the entire <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> without groups (shorthand for <code class="docutils literal"><span class="pre">df.groupBy.agg()</span></code>).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.alias.html#pyspark.sql.DataFrame.alias" title="pyspark.sql.DataFrame.alias"><code class="xref py py-obj docutils literal"><span class="pre">alias</span></code></a>(alias)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with an alias set.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.approxQuantile.html#pyspark.sql.DataFrame.approxQuantile" title="pyspark.sql.DataFrame.approxQuantile"><code class="xref py py-obj docutils literal"><span class="pre">approxQuantile</span></code></a>(col,&nbsp;probabilities,&nbsp;relativeError)</td>
+<td>Calculates the approximate quantiles of a numerical column of a DataFrame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.cache.html#pyspark.sql.DataFrame.cache" title="pyspark.sql.DataFrame.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<td>Persists with the default storage level (C{MEMORY_ONLY}).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.coalesce.html#pyspark.sql.DataFrame.coalesce" title="pyspark.sql.DataFrame.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(numPartitions)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> that has exactly <cite>numPartitions</cite> partitions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.collect.html#pyspark.sql.DataFrame.collect" title="pyspark.sql.DataFrame.collect"><code class="xref py py-obj docutils literal"><span class="pre">collect</span></code></a>()</td>
+<td>Returns all the records as a list of <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.corr.html#pyspark.sql.DataFrame.corr" title="pyspark.sql.DataFrame.corr"><code class="xref py py-obj docutils literal"><span class="pre">corr</span></code></a>(col1,&nbsp;col2[,&nbsp;method])</td>
+<td>Calculates the correlation of two columns of a DataFrame as a double value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.count.html#pyspark.sql.DataFrame.count" title="pyspark.sql.DataFrame.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<td>Returns the number of rows in this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.cov.html#pyspark.sql.DataFrame.cov" title="pyspark.sql.DataFrame.cov"><code class="xref py py-obj docutils literal"><span class="pre">cov</span></code></a>(col1,&nbsp;col2)</td>
+<td>Calculate the sample covariance for the given columns, specified by their names, as a double value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.createOrReplaceTempView.html#pyspark.sql.DataFrame.createOrReplaceTempView" title="pyspark.sql.DataFrame.createOrReplaceTempView"><code class="xref py py-obj docutils literal"><span class="pre">createOrReplaceTempView</span></code></a>(name)</td>
+<td>Creates or replaces a temporary view with this DataFrame.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.createTempView.html#pyspark.sql.DataFrame.createTempView" title="pyspark.sql.DataFrame.createTempView"><code class="xref py py-obj docutils literal"><span class="pre">createTempView</span></code></a>(name)</td>
+<td>Creates a temporary view with this DataFrame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.crosstab.html#pyspark.sql.DataFrame.crosstab" title="pyspark.sql.DataFrame.crosstab"><code class="xref py py-obj docutils literal"><span class="pre">crosstab</span></code></a>(col1,&nbsp;col2)</td>
+<td>Computes a pair-wise frequency table of the given columns.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.cube.html#pyspark.sql.DataFrame.cube" title="pyspark.sql.DataFrame.cube"><code class="xref py py-obj docutils literal"><span class="pre">cube</span></code></a>(*cols)</td>
+<td>Create a multi-dimensional cube for the current <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.describe.html#pyspark.sql.DataFrame.describe" title="pyspark.sql.DataFrame.describe"><code class="xref py py-obj docutils literal"><span class="pre">describe</span></code></a>(*cols)</td>
+<td>Computes statistics for numeric columns.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.distinct.html#pyspark.sql.DataFrame.distinct" title="pyspark.sql.DataFrame.distinct"><code class="xref py py-obj docutils literal"><span class="pre">distinct</span></code></a>()</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing the distinct rows in this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.drop.html#pyspark.sql.DataFrame.drop" title="pyspark.sql.DataFrame.drop"><code class="xref py py-obj docutils literal"><span class="pre">drop</span></code></a>(col)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> that drops the specified column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.dropDuplicates.html#pyspark.sql.DataFrame.dropDuplicates" title="pyspark.sql.DataFrame.dropDuplicates"><code class="xref py py-obj docutils literal"><span class="pre">dropDuplicates</span></code></a>([subset])</td>
+<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with duplicate rows removed, optionally only considering certain columns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.drop_duplicates.html#pyspark.sql.DataFrame.drop_duplicates" title="pyspark.sql.DataFrame.drop_duplicates"><code class="xref py py-obj docutils literal"><span class="pre">drop_duplicates</span></code></a>([subset])</td>
+<td><code class="xref py py-func docutils literal"><span class="pre">drop_duplicates()</span></code> is an alias for <code class="xref py py-func docutils literal"><span class="pre">dropDuplicates()</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.dropna.html#pyspark.sql.DataFrame.dropna" title="pyspark.sql.DataFrame.dropna"><code class="xref py py-obj docutils literal"><span class="pre">dropna</span></code></a>([how,&nbsp;thresh,&nbsp;subset])</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> omitting rows with null values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.explain.html#pyspark.sql.DataFrame.explain" title="pyspark.sql.DataFrame.explain"><code class="xref py py-obj docutils literal"><span class="pre">explain</span></code></a>([extended])</td>
+<td>Prints the (logical and physical) plans to the console for debugging purpose.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.fillna.html#pyspark.sql.DataFrame.fillna" title="pyspark.sql.DataFrame.fillna"><code class="xref py py-obj docutils literal"><span class="pre">fillna</span></code></a>(value[,&nbsp;subset])</td>
+<td>Replace null values, alias for <code class="docutils literal"><span class="pre">na.fill()</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.filter.html#pyspark.sql.DataFrame.filter" title="pyspark.sql.DataFrame.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(condition)</td>
+<td>Filters rows using the given condition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.first.html#pyspark.sql.DataFrame.first" title="pyspark.sql.DataFrame.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>()</td>
+<td>Returns the first row as a <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.foreach.html#pyspark.sql.DataFrame.foreach" title="pyspark.sql.DataFrame.foreach"><code class="xref py py-obj docutils literal"><span class="pre">foreach</span></code></a>(f)</td>
+<td>Applies the <code class="docutils literal"><span class="pre">f</span></code> function to all <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a> of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.foreachPartition.html#pyspark.sql.DataFrame.foreachPartition" title="pyspark.sql.DataFrame.foreachPartition"><code class="xref py py-obj docutils literal"><span class="pre">foreachPartition</span></code></a>(f)</td>
+<td>Applies the <code class="docutils literal"><span class="pre">f</span></code> function to each partition of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.freqItems.html#pyspark.sql.DataFrame.freqItems" title="pyspark.sql.DataFrame.freqItems"><code class="xref py py-obj docutils literal"><span class="pre">freqItems</span></code></a>(cols[,&nbsp;support])</td>
+<td>Finding frequent items for columns, possibly with false positives.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.groupBy.html#pyspark.sql.DataFrame.groupBy" title="pyspark.sql.DataFrame.groupBy"><code class="xref py py-obj docutils literal"><span class="pre">groupBy</span></code></a>(*cols)</td>
+<td>Groups the <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.groupby.html#pyspark.sql.DataFrame.groupby" title="pyspark.sql.DataFrame.groupby"><code class="xref py py-obj docutils literal"><span class="pre">groupby</span></code></a>(*cols)</td>
+<td><code class="xref py py-func docutils literal"><span class="pre">groupby()</span></code> is an alias for <code class="xref py py-func docutils literal"><span class="pre">groupBy()</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.head.html#pyspark.sql.DataFrame.head" title="pyspark.sql.DataFrame.head"><code class="xref py py-obj docutils literal"><span class="pre">head</span></code></a>([n])</td>
+<td>Returns the first <code class="docutils literal"><span class="pre">n</span></code> rows.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.intersect.html#pyspark.sql.DataFrame.intersect" title="pyspark.sql.DataFrame.intersect"><code class="xref py py-obj docutils literal"><span class="pre">intersect</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing rows only in both this frame and another frame.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.isLocal.html#pyspark.sql.DataFrame.isLocal" title="pyspark.sql.DataFrame.isLocal"><code class="xref py py-obj docutils literal"><span class="pre">isLocal</span></code></a>()</td>
+<td>Returns <code class="docutils literal"><span class="pre">True</span></code> if the <code class="xref py py-func docutils literal"><span class="pre">collect()</span></code> and <code class="xref py py-func docutils literal"><span class="pre">take()</span></code> methods can be run locally (without any Spark executors).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.join.html#pyspark.sql.DataFrame.join" title="pyspark.sql.DataFrame.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;on,&nbsp;how])</td>
+<td>Joins with another <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>, using the given join expression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.limit.html#pyspark.sql.DataFrame.limit" title="pyspark.sql.DataFrame.limit"><code class="xref py py-obj docutils literal"><span class="pre">limit</span></code></a>(num)</td>
+<td>Limits the result count to the number specified.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.orderBy.html#pyspark.sql.DataFrame.orderBy" title="pyspark.sql.DataFrame.orderBy"><code class="xref py py-obj docutils literal"><span class="pre">orderBy</span></code></a>(*cols,&nbsp;**kwargs)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> sorted by the specified column(s).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.persist.html#pyspark.sql.DataFrame.persist" title="pyspark.sql.DataFrame.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>([storageLevel])</td>
+<td>Sets the storage level to persist its values across operations after the first time it is computed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.printSchema.html#pyspark.sql.DataFrame.printSchema" title="pyspark.sql.DataFrame.printSchema"><code class="xref py py-obj docutils literal"><span class="pre">printSchema</span></code></a>()</td>
+<td>Prints out the schema in the tree format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.randomSplit.html#pyspark.sql.DataFrame.randomSplit" title="pyspark.sql.DataFrame.randomSplit"><code class="xref py py-obj docutils literal"><span class="pre">randomSplit</span></code></a>(weights[,&nbsp;seed])</td>
+<td>Randomly splits this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with the provided weights.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.registerTempTable.html#pyspark.sql.DataFrame.registerTempTable" title="pyspark.sql.DataFrame.registerTempTable"><code class="xref py py-obj docutils literal"><span class="pre">registerTempTable</span></code></a>(name)</td>
+<td>Registers this RDD as a temporary table using the given name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.repartition.html#pyspark.sql.DataFrame.repartition" title="pyspark.sql.DataFrame.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions,&nbsp;*cols)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> partitioned by the given partitioning expressions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.replace.html#pyspark.sql.DataFrame.replace" title="pyspark.sql.DataFrame.replace"><code class="xref py py-obj docutils literal"><span class="pre">replace</span></code></a>(to_replace,&nbsp;value[,&nbsp;subset])</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> replacing a value with another value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.rollup.html#pyspark.sql.DataFrame.rollup" title="pyspark.sql.DataFrame.rollup"><code class="xref py py-obj docutils literal"><span class="pre">rollup</span></code></a>(*cols)</td>
+<td>Create a multi-dimensional rollup for the current <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.sample.html#pyspark.sql.DataFrame.sample" title="pyspark.sql.DataFrame.sample"><code class="xref py py-obj docutils literal"><span class="pre">sample</span></code></a>(withReplacement,&nbsp;fraction[,&nbsp;seed])</td>
+<td>Returns a sampled subset of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.sampleBy.html#pyspark.sql.DataFrame.sampleBy" title="pyspark.sql.DataFrame.sampleBy"><code class="xref py py-obj docutils literal"><span class="pre">sampleBy</span></code></a>(col,&nbsp;fractions[,&nbsp;seed])</td>
+<td>Returns a stratified sample without replacement based on the fraction given on each stratum.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.select.html#pyspark.sql.DataFrame.select" title="pyspark.sql.DataFrame.select"><code class="xref py py-obj docutils literal"><span class="pre">select</span></code></a>(*cols)</td>
+<td>Projects a set of expressions and returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.selectExpr.html#pyspark.sql.DataFrame.selectExpr" title="pyspark.sql.DataFrame.selectExpr"><code class="xref py py-obj docutils literal"><span class="pre">selectExpr</span></code></a>(*expr)</td>
+<td>Projects a set of SQL expressions and returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.show.html#pyspark.sql.DataFrame.show" title="pyspark.sql.DataFrame.show"><code class="xref py py-obj docutils literal"><span class="pre">show</span></code></a>([n,&nbsp;truncate])</td>
+<td>Prints the first <code class="docutils literal"><span class="pre">n</span></code> rows to the console.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.sort.html#pyspark.sql.DataFrame.sort" title="pyspark.sql.DataFrame.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a>(*cols,&nbsp;**kwargs)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> sorted by the specified column(s).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.sortWithinPartitions.html#pyspark.sql.DataFrame.sortWithinPartitions" title="pyspark.sql.DataFrame.sortWithinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">sortWithinPartitions</span></code></a>(*cols,&nbsp;**kwargs)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with each partition sorted by the specified column(s).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.subtract.html#pyspark.sql.DataFrame.subtract" title="pyspark.sql.DataFrame.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing rows in this frame but not in another frame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.take.html#pyspark.sql.DataFrame.take" title="pyspark.sql.DataFrame.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a>(num)</td>
+<td>Returns the first <code class="docutils literal"><span class="pre">num</span></code> rows as a <code class="xref py py-class docutils literal"><span class="pre">list</span></code> of <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.toDF.html#pyspark.sql.DataFrame.toDF" title="pyspark.sql.DataFrame.toDF"><code class="xref py py-obj docutils literal"><span class="pre">toDF</span></code></a>(*cols)</td>
+<td>Returns a new class:<cite>DataFrame</cite> that with new specified column names</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.toJSON.html#pyspark.sql.DataFrame.toJSON" title="pyspark.sql.DataFrame.toJSON"><code class="xref py py-obj docutils literal"><span class="pre">toJSON</span></code></a>([use_unicode])</td>
+<td>Converts a <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> into a <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code> of string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.toLocalIterator.html#pyspark.sql.DataFrame.toLocalIterator" title="pyspark.sql.DataFrame.toLocalIterator"><code class="xref py py-obj docutils literal"><span class="pre">toLocalIterator</span></code></a>()</td>
+<td>Returns an iterator that contains all of the rows in this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.toPandas.html#pyspark.sql.DataFrame.toPandas" title="pyspark.sql.DataFrame.toPandas"><code class="xref py py-obj docutils literal"><span class="pre">toPandas</span></code></a>()</td>
+<td>Returns the contents of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as Pandas <code class="docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.union.html#pyspark.sql.DataFrame.union" title="pyspark.sql.DataFrame.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing union of rows in this frame and another frame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.unionAll.html#pyspark.sql.DataFrame.unionAll" title="pyspark.sql.DataFrame.unionAll"><code class="xref py py-obj docutils literal"><span class="pre">unionAll</span></code></a>(other)</td>
+<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing union of rows in this frame and another frame.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.unpersist.html#pyspark.sql.DataFrame.unpersist" title="pyspark.sql.DataFrame.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>([blocking])</td>
+<td>Marks the <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as non-persistent, and remove all blocks for it from memory and disk.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.where.html#pyspark.sql.DataFrame.where" title="pyspark.sql.DataFrame.where"><code class="xref py py-obj docutils literal"><span class="pre">where</span></code></a>(condition)</td>
+<td><code class="xref py py-func docutils literal"><span class="pre">where()</span></code> is an alias for <code class="xref py py-func docutils literal"><span class="pre">filter()</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.withColumn.html#pyspark.sql.DataFrame.withColumn" title="pyspark.sql.DataFrame.withColumn"><code class="xref py py-obj docutils literal"><span class="pre">withColumn</span></code></a>(colName,&nbsp;col)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> by adding a column or replacing the existing column that has the same name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.withColumnRenamed.html#pyspark.sql.DataFrame.withColumnRenamed" title="pyspark.sql.DataFrame.withColumnRenamed"><code class="xref py py-obj docutils literal"><span class="pre">withColumnRenamed</span></code></a>(existing,&nbsp;new)</td>
+<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> by renaming an existing column.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>2.1.1.2.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -241,197 +442,7 @@ and can be created using various functions in <a class="reference internal" href
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.agg.html#pyspark.sql.DataFrame.agg" title="pyspark.sql.DataFrame.agg"><code class="xref py py-obj docutils literal"><span class="pre">agg</span></code></a>(*exprs)</td>
-<td>Aggregate on the entire <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> without groups (shorthand for <code class="docutils literal"><span class="pre">df.groupBy.agg()</span></code>).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.alias.html#pyspark.sql.DataFrame.alias" title="pyspark.sql.DataFrame.alias"><code class="xref py py-obj docutils literal"><span class="pre">alias</span></code></a>(alias)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with an alias set.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.approxQuantile.html#pyspark.sql.DataFrame.approxQuantile" title="pyspark.sql.DataFrame.approxQuantile"><code class="xref py py-obj docutils literal"><span class="pre">approxQuantile</span></code></a>(col,&nbsp;probabilities,&nbsp;relativeError)</td>
-<td>Calculates the approximate quantiles of a numerical column of a DataFrame.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.cache.html#pyspark.sql.DataFrame.cache" title="pyspark.sql.DataFrame.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
-<td>Persists with the default storage level (C{MEMORY_ONLY}).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.coalesce.html#pyspark.sql.DataFrame.coalesce" title="pyspark.sql.DataFrame.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(numPartitions)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> that has exactly <cite>numPartitions</cite> partitions.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.collect.html#pyspark.sql.DataFrame.collect" title="pyspark.sql.DataFrame.collect"><code class="xref py py-obj docutils literal"><span class="pre">collect</span></code></a>()</td>
-<td>Returns all the records as a list of <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.corr.html#pyspark.sql.DataFrame.corr" title="pyspark.sql.DataFrame.corr"><code class="xref py py-obj docutils literal"><span class="pre">corr</span></code></a>(col1,&nbsp;col2[,&nbsp;method])</td>
-<td>Calculates the correlation of two columns of a DataFrame as a double value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.count.html#pyspark.sql.DataFrame.count" title="pyspark.sql.DataFrame.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
-<td>Returns the number of rows in this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.cov.html#pyspark.sql.DataFrame.cov" title="pyspark.sql.DataFrame.cov"><code class="xref py py-obj docutils literal"><span class="pre">cov</span></code></a>(col1,&nbsp;col2)</td>
-<td>Calculate the sample covariance for the given columns, specified by their names, as a double value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.createOrReplaceTempView.html#pyspark.sql.DataFrame.createOrReplaceTempView" title="pyspark.sql.DataFrame.createOrReplaceTempView"><code class="xref py py-obj docutils literal"><span class="pre">createOrReplaceTempView</span></code></a>(name)</td>
-<td>Creates or replaces a temporary view with this DataFrame.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.createTempView.html#pyspark.sql.DataFrame.createTempView" title="pyspark.sql.DataFrame.createTempView"><code class="xref py py-obj docutils literal"><span class="pre">createTempView</span></code></a>(name)</td>
-<td>Creates a temporary view with this DataFrame.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.crosstab.html#pyspark.sql.DataFrame.crosstab" title="pyspark.sql.DataFrame.crosstab"><code class="xref py py-obj docutils literal"><span class="pre">crosstab</span></code></a>(col1,&nbsp;col2)</td>
-<td>Computes a pair-wise frequency table of the given columns.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.cube.html#pyspark.sql.DataFrame.cube" title="pyspark.sql.DataFrame.cube"><code class="xref py py-obj docutils literal"><span class="pre">cube</span></code></a>(*cols)</td>
-<td>Create a multi-dimensional cube for the current <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.describe.html#pyspark.sql.DataFrame.describe" title="pyspark.sql.DataFrame.describe"><code class="xref py py-obj docutils literal"><span class="pre">describe</span></code></a>(*cols)</td>
-<td>Computes statistics for numeric columns.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.distinct.html#pyspark.sql.DataFrame.distinct" title="pyspark.sql.DataFrame.distinct"><code class="xref py py-obj docutils literal"><span class="pre">distinct</span></code></a>()</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing the distinct rows in this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.drop.html#pyspark.sql.DataFrame.drop" title="pyspark.sql.DataFrame.drop"><code class="xref py py-obj docutils literal"><span class="pre">drop</span></code></a>(col)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> that drops the specified column.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.dropDuplicates.html#pyspark.sql.DataFrame.dropDuplicates" title="pyspark.sql.DataFrame.dropDuplicates"><code class="xref py py-obj docutils literal"><span class="pre">dropDuplicates</span></code></a>([subset])</td>
-<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with duplicate rows removed, optionally only considering certain columns.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.drop_duplicates.html#pyspark.sql.DataFrame.drop_duplicates" title="pyspark.sql.DataFrame.drop_duplicates"><code class="xref py py-obj docutils literal"><span class="pre">drop_duplicates</span></code></a>([subset])</td>
-<td><a class="reference internal" href="pyspark.sql.DataFrame.drop_duplicates.html#pyspark.sql.DataFrame.drop_duplicates" title="pyspark.sql.DataFrame.drop_duplicates"><code class="xref py py-func docutils literal"><span class="pre">drop_duplicates()</span></code></a> is an alias for <a class="reference internal" href="pyspark.sql.DataFrame.dropDuplicates.html#pyspark.sql.DataFrame.dropDuplicates" title="pyspark.sql.DataFrame.dropDuplicates"><code class="xref py py-func docutils literal"><span class="pre">dropDuplicates()</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.dropna.html#pyspark.sql.DataFrame.dropna" title="pyspark.sql.DataFrame.dropna"><code class="xref py py-obj docutils literal"><span class="pre">dropna</span></code></a>([how,&nbsp;thresh,&nbsp;subset])</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> omitting rows with null values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.explain.html#pyspark.sql.DataFrame.explain" title="pyspark.sql.DataFrame.explain"><code class="xref py py-obj docutils literal"><span class="pre">explain</span></code></a>([extended])</td>
-<td>Prints the (logical and physical) plans to the console for debugging purpose.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.fillna.html#pyspark.sql.DataFrame.fillna" title="pyspark.sql.DataFrame.fillna"><code class="xref py py-obj docutils literal"><span class="pre">fillna</span></code></a>(value[,&nbsp;subset])</td>
-<td>Replace null values, alias for <code class="docutils literal"><span class="pre">na.fill()</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.filter.html#pyspark.sql.DataFrame.filter" title="pyspark.sql.DataFrame.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(condition)</td>
-<td>Filters rows using the given condition.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.first.html#pyspark.sql.DataFrame.first" title="pyspark.sql.DataFrame.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>()</td>
-<td>Returns the first row as a <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.foreach.html#pyspark.sql.DataFrame.foreach" title="pyspark.sql.DataFrame.foreach"><code class="xref py py-obj docutils literal"><span class="pre">foreach</span></code></a>(f)</td>
-<td>Applies the <code class="docutils literal"><span class="pre">f</span></code> function to all <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a> of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.foreachPartition.html#pyspark.sql.DataFrame.foreachPartition" title="pyspark.sql.DataFrame.foreachPartition"><code class="xref py py-obj docutils literal"><span class="pre">foreachPartition</span></code></a>(f)</td>
-<td>Applies the <code class="docutils literal"><span class="pre">f</span></code> function to each partition of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.freqItems.html#pyspark.sql.DataFrame.freqItems" title="pyspark.sql.DataFrame.freqItems"><code class="xref py py-obj docutils literal"><span class="pre">freqItems</span></code></a>(cols[,&nbsp;support])</td>
-<td>Finding frequent items for columns, possibly with false positives.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.groupBy.html#pyspark.sql.DataFrame.groupBy" title="pyspark.sql.DataFrame.groupBy"><code class="xref py py-obj docutils literal"><span class="pre">groupBy</span></code></a>(*cols)</td>
-<td>Groups the <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.groupby.html#pyspark.sql.DataFrame.groupby" title="pyspark.sql.DataFrame.groupby"><code class="xref py py-obj docutils literal"><span class="pre">groupby</span></code></a>(*cols)</td>
-<td><a class="reference internal" href="pyspark.sql.DataFrame.groupby.html#pyspark.sql.DataFrame.groupby" title="pyspark.sql.DataFrame.groupby"><code class="xref py py-func docutils literal"><span class="pre">groupby()</span></code></a> is an alias for <a class="reference internal" href="pyspark.sql.DataFrame.groupBy.html#pyspark.sql.DataFrame.groupBy" title="pyspark.sql.DataFrame.groupBy"><code class="xref py py-func docutils literal"><span class="pre">groupBy()</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.head.html#pyspark.sql.DataFrame.head" title="pyspark.sql.DataFrame.head"><code class="xref py py-obj docutils literal"><span class="pre">head</span></code></a>([n])</td>
-<td>Returns the first <code class="docutils literal"><span class="pre">n</span></code> rows.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.intersect.html#pyspark.sql.DataFrame.intersect" title="pyspark.sql.DataFrame.intersect"><code class="xref py py-obj docutils literal"><span class="pre">intersect</span></code></a>(other)</td>
-<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing rows only in both this frame and another frame.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.isLocal.html#pyspark.sql.DataFrame.isLocal" title="pyspark.sql.DataFrame.isLocal"><code class="xref py py-obj docutils literal"><span class="pre">isLocal</span></code></a>()</td>
-<td>Returns <code class="docutils literal"><span class="pre">True</span></code> if the <a class="reference internal" href="pyspark.sql.DataFrame.collect.html#pyspark.sql.DataFrame.collect" title="pyspark.sql.DataFrame.collect"><code class="xref py py-func docutils literal"><span class="pre">collect()</span></code></a> and <a class="reference internal" href="pyspark.sql.DataFrame.take.html#pyspark.sql.DataFrame.take" title="pyspark.sql.DataFrame.take"><code class="xref py py-func docutils literal"><span class="pre">take()</span></code></a> methods can be run locally (without any Spark executors).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.join.html#pyspark.sql.DataFrame.join" title="pyspark.sql.DataFrame.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;on,&nbsp;how])</td>
-<td>Joins with another <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>, using the given join expression.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.limit.html#pyspark.sql.DataFrame.limit" title="pyspark.sql.DataFrame.limit"><code class="xref py py-obj docutils literal"><span class="pre">limit</span></code></a>(num)</td>
-<td>Limits the result count to the number specified.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.orderBy.html#pyspark.sql.DataFrame.orderBy" title="pyspark.sql.DataFrame.orderBy"><code class="xref py py-obj docutils literal"><span class="pre">orderBy</span></code></a>(*cols,&nbsp;**kwargs)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> sorted by the specified column(s).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.persist.html#pyspark.sql.DataFrame.persist" title="pyspark.sql.DataFrame.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>([storageLevel])</td>
-<td>Sets the storage level to persist its values across operations after the first time it is computed.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.printSchema.html#pyspark.sql.DataFrame.printSchema" title="pyspark.sql.DataFrame.printSchema"><code class="xref py py-obj docutils literal"><span class="pre">printSchema</span></code></a>()</td>
-<td>Prints out the schema in the tree format.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.randomSplit.html#pyspark.sql.DataFrame.randomSplit" title="pyspark.sql.DataFrame.randomSplit"><code class="xref py py-obj docutils literal"><span class="pre">randomSplit</span></code></a>(weights[,&nbsp;seed])</td>
-<td>Randomly splits this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with the provided weights.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.registerTempTable.html#pyspark.sql.DataFrame.registerTempTable" title="pyspark.sql.DataFrame.registerTempTable"><code class="xref py py-obj docutils literal"><span class="pre">registerTempTable</span></code></a>(name)</td>
-<td>Registers this RDD as a temporary table using the given name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.repartition.html#pyspark.sql.DataFrame.repartition" title="pyspark.sql.DataFrame.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions,&nbsp;*cols)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> partitioned by the given partitioning expressions.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.replace.html#pyspark.sql.DataFrame.replace" title="pyspark.sql.DataFrame.replace"><code class="xref py py-obj docutils literal"><span class="pre">replace</span></code></a>(to_replace,&nbsp;value[,&nbsp;subset])</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> replacing a value with another value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.rollup.html#pyspark.sql.DataFrame.rollup" title="pyspark.sql.DataFrame.rollup"><code class="xref py py-obj docutils literal"><span class="pre">rollup</span></code></a>(*cols)</td>
-<td>Create a multi-dimensional rollup for the current <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> using the specified columns, so we can run aggregation on them.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.sample.html#pyspark.sql.DataFrame.sample" title="pyspark.sql.DataFrame.sample"><code class="xref py py-obj docutils literal"><span class="pre">sample</span></code></a>(withReplacement,&nbsp;fraction[,&nbsp;seed])</td>
-<td>Returns a sampled subset of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.sampleBy.html#pyspark.sql.DataFrame.sampleBy" title="pyspark.sql.DataFrame.sampleBy"><code class="xref py py-obj docutils literal"><span class="pre">sampleBy</span></code></a>(col,&nbsp;fractions[,&nbsp;seed])</td>
-<td>Returns a stratified sample without replacement based on the fraction given on each stratum.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.select.html#pyspark.sql.DataFrame.select" title="pyspark.sql.DataFrame.select"><code class="xref py py-obj docutils literal"><span class="pre">select</span></code></a>(*cols)</td>
-<td>Projects a set of expressions and returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.selectExpr.html#pyspark.sql.DataFrame.selectExpr" title="pyspark.sql.DataFrame.selectExpr"><code class="xref py py-obj docutils literal"><span class="pre">selectExpr</span></code></a>(*expr)</td>
-<td>Projects a set of SQL expressions and returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.show.html#pyspark.sql.DataFrame.show" title="pyspark.sql.DataFrame.show"><code class="xref py py-obj docutils literal"><span class="pre">show</span></code></a>([n,&nbsp;truncate])</td>
-<td>Prints the first <code class="docutils literal"><span class="pre">n</span></code> rows to the console.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.sort.html#pyspark.sql.DataFrame.sort" title="pyspark.sql.DataFrame.sort"><code class="xref py py-obj docutils literal"><span class="pre">sort</span></code></a>(*cols,&nbsp;**kwargs)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> sorted by the specified column(s).</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.sortWithinPartitions.html#pyspark.sql.DataFrame.sortWithinPartitions" title="pyspark.sql.DataFrame.sortWithinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">sortWithinPartitions</span></code></a>(*cols,&nbsp;**kwargs)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with each partition sorted by the specified column(s).</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.subtract.html#pyspark.sql.DataFrame.subtract" title="pyspark.sql.DataFrame.subtract"><code class="xref py py-obj docutils literal"><span class="pre">subtract</span></code></a>(other)</td>
-<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing rows in this frame but not in another frame.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.take.html#pyspark.sql.DataFrame.take" title="pyspark.sql.DataFrame.take"><code class="xref py py-obj docutils literal"><span class="pre">take</span></code></a>(num)</td>
-<td>Returns the first <code class="docutils literal"><span class="pre">num</span></code> rows as a <code class="xref py py-class docutils literal"><span class="pre">list</span></code> of <a class="reference internal" href="pyspark.sql.Row.html#pyspark.sql.Row" title="pyspark.sql.Row"><code class="xref py py-class docutils literal"><span class="pre">Row</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.toDF.html#pyspark.sql.DataFrame.toDF" title="pyspark.sql.DataFrame.toDF"><code class="xref py py-obj docutils literal"><span class="pre">toDF</span></code></a>(*cols)</td>
-<td>Returns a new class:<cite>DataFrame</cite> that with new specified column names</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.toJSON.html#pyspark.sql.DataFrame.toJSON" title="pyspark.sql.DataFrame.toJSON"><code class="xref py py-obj docutils literal"><span class="pre">toJSON</span></code></a>([use_unicode])</td>
-<td>Converts a <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> into a <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code> of string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.toLocalIterator.html#pyspark.sql.DataFrame.toLocalIterator" title="pyspark.sql.DataFrame.toLocalIterator"><code class="xref py py-obj docutils literal"><span class="pre">toLocalIterator</span></code></a>()</td>
-<td>Returns an iterator that contains all of the rows in this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.toPandas.html#pyspark.sql.DataFrame.toPandas" title="pyspark.sql.DataFrame.toPandas"><code class="xref py py-obj docutils literal"><span class="pre">toPandas</span></code></a>()</td>
-<td>Returns the contents of this <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as Pandas <code class="docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.union.html#pyspark.sql.DataFrame.union" title="pyspark.sql.DataFrame.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
-<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing union of rows in this frame and another frame.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.unionAll.html#pyspark.sql.DataFrame.unionAll" title="pyspark.sql.DataFrame.unionAll"><code class="xref py py-obj docutils literal"><span class="pre">unionAll</span></code></a>(other)</td>
-<td>Return a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing union of rows in this frame and another frame.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.unpersist.html#pyspark.sql.DataFrame.unpersist" title="pyspark.sql.DataFrame.unpersist"><code class="xref py py-obj docutils literal"><span class="pre">unpersist</span></code></a>([blocking])</td>
-<td>Marks the <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as non-persistent, and remove all blocks for it from memory and disk.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.where.html#pyspark.sql.DataFrame.where" title="pyspark.sql.DataFrame.where"><code class="xref py py-obj docutils literal"><span class="pre">where</span></code></a>(condition)</td>
-<td><a class="reference internal" href="pyspark.sql.DataFrame.where.html#pyspark.sql.DataFrame.where" title="pyspark.sql.DataFrame.where"><code class="xref py py-func docutils literal"><span class="pre">where()</span></code></a> is an alias for <a class="reference internal" href="pyspark.sql.DataFrame.filter.html#pyspark.sql.DataFrame.filter" title="pyspark.sql.DataFrame.filter"><code class="xref py py-func docutils literal"><span class="pre">filter()</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.DataFrame.withColumn.html#pyspark.sql.DataFrame.withColumn" title="pyspark.sql.DataFrame.withColumn"><code class="xref py py-obj docutils literal"><span class="pre">withColumn</span></code></a>(colName,&nbsp;col)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> by adding a column or replacing the existing column that has the same name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.DataFrame.withColumnRenamed.html#pyspark.sql.DataFrame.withColumnRenamed" title="pyspark.sql.DataFrame.withColumnRenamed"><code class="xref py py-obj docutils literal"><span class="pre">withColumnRenamed</span></code></a>(existing,&nbsp;new)</td>
-<td>Returns a new <a class="reference internal" href="#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> by renaming an existing column.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -441,10 +452,10 @@ and can be created using various functions in <a class="reference internal" href
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.sql.DataFrame.columns.html" class="btn btn-neutral float-right" title="2.1.1.2.1. pyspark.sql.DataFrame.columns" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.sql.DataFrame.__init__.html" class="btn btn-neutral float-right" title="2.1.1.2.1.1. pyspark.sql.DataFrame.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.sql.Column.when.html" class="btn btn-neutral" title="2.1.1.1.23. pyspark.sql.Column.when" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.sql.Column.when.html" class="btn btn-neutral" title="2.1.1.1.1.24. pyspark.sql.Column.when" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

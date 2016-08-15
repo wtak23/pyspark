@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.10. pyspark.mllib.recommendation" href="../pyspark.mllib.recommendation.html"/>
-        <link rel="next" title="4.10.2.6.1. pyspark.mllib.recommendation.MatrixFactorizationModel.rank" href="pyspark.mllib.recommendation.MatrixFactorizationModel.rank.html"/>
-        <link rel="prev" title="4.10.2.5.1. pyspark.mllib.recommendation.JavaSaveable.save" href="pyspark.mllib.recommendation.JavaSaveable.save.html"/> 
+        <link rel="next" title="4.10.2.6.1.1. pyspark.mllib.recommendation.MatrixFactorizationModel.__init__" href="pyspark.mllib.recommendation.MatrixFactorizationModel.__init__.html"/>
+        <link rel="prev" title="4.10.2.5.1.1. pyspark.mllib.recommendation.JavaSaveable.save" href="pyspark.mllib.recommendation.JavaSaveable.save.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -185,7 +185,6 @@
             
   <div class="section" id="pyspark-mllib-recommendation-matrixfactorizationmodel">
 <h1>4.10.2.6. pyspark.mllib.recommendation.MatrixFactorizationModel<a class="headerlink" href="#pyspark-mllib-recommendation-matrixfactorizationmodel" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.__init__.html#pyspark.mllib.recommendation.MatrixFactorizationModel.__init__" title="pyspark.mllib.recommendation.MatrixFactorizationModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">MatrixFactorizationModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.recommendation.MatrixFactorizationModel">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.recommendation.</code><code class="descname">MatrixFactorizationModel</code><span class="sig-paren">(</span><em>java_model</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/recommendation.html#MatrixFactorizationModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.recommendation.MatrixFactorizationModel" title="Permalink to this definition">¶</a></dt>
@@ -283,7 +282,62 @@ least-squares.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.9.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.mllib.recommendation.MatrixFactorizationModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.mllib.recommendation.MatrixFactorizationModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.10.2.6.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.__init__.html#pyspark.mllib.recommendation.MatrixFactorizationModel.__init__" title="pyspark.mllib.recommendation.MatrixFactorizationModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(java_model)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.call.html#pyspark.mllib.recommendation.MatrixFactorizationModel.call" title="pyspark.mllib.recommendation.MatrixFactorizationModel.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(name,&nbsp;*a)</td>
+<td>Call method of java_model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.load.html#pyspark.mllib.recommendation.MatrixFactorizationModel.load" title="pyspark.mllib.recommendation.MatrixFactorizationModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(sc,&nbsp;path)</td>
+<td>Load a model from the given path</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.predict.html#pyspark.mllib.recommendation.MatrixFactorizationModel.predict" title="pyspark.mllib.recommendation.MatrixFactorizationModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(user,&nbsp;product)</td>
+<td>Predicts rating for the given user and product.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.predictAll.html#pyspark.mllib.recommendation.MatrixFactorizationModel.predictAll" title="pyspark.mllib.recommendation.MatrixFactorizationModel.predictAll"><code class="xref py py-obj docutils literal"><span class="pre">predictAll</span></code></a>(user_product)</td>
+<td>Returns a list of predicted ratings for input user and product pairs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.productFeatures.html#pyspark.mllib.recommendation.MatrixFactorizationModel.productFeatures" title="pyspark.mllib.recommendation.MatrixFactorizationModel.productFeatures"><code class="xref py py-obj docutils literal"><span class="pre">productFeatures</span></code></a>()</td>
+<td>Returns a paired RDD, where the first element is the product and the second is an array of features corresponding to that product.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProducts.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProducts" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProducts"><code class="xref py py-obj docutils literal"><span class="pre">recommendProducts</span></code></a>(user,&nbsp;num)</td>
+<td>Recommends the top &#8220;num&#8221; number of products for a given user and returns a list of Rating objects sorted by the predicted rating in descending order.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProductsForUsers.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProductsForUsers" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProductsForUsers"><code class="xref py py-obj docutils literal"><span class="pre">recommendProductsForUsers</span></code></a>(num)</td>
+<td>Recommends the top &#8220;num&#8221; number of products for all users.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsers.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsers" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsers"><code class="xref py py-obj docutils literal"><span class="pre">recommendUsers</span></code></a>(product,&nbsp;num)</td>
+<td>Recommends the top &#8220;num&#8221; number of users for a given product and returns a list of Rating objects sorted by the predicted rating in descending order.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsersForProducts.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsersForProducts" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsersForProducts"><code class="xref py py-obj docutils literal"><span class="pre">recommendUsersForProducts</span></code></a>(num)</td>
+<td>Recommends the top &#8220;num&#8221; number of users for all products.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.save.html#pyspark.mllib.recommendation.MatrixFactorizationModel.save" title="pyspark.mllib.recommendation.MatrixFactorizationModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(sc,&nbsp;path)</td>
+<td>Save this model to the given path.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.userFeatures.html#pyspark.mllib.recommendation.MatrixFactorizationModel.userFeatures" title="pyspark.mllib.recommendation.MatrixFactorizationModel.userFeatures"><code class="xref py py-obj docutils literal"><span class="pre">userFeatures</span></code></a>()</td>
+<td>Returns a paired RDD, where the first element is the user and the second is an array of features corresponding to that user.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.10.2.6.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -295,50 +349,7 @@ least-squares.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.call.html#pyspark.mllib.recommendation.MatrixFactorizationModel.call" title="pyspark.mllib.recommendation.MatrixFactorizationModel.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(name,&nbsp;*a)</td>
-<td>Call method of java_model</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.load.html#pyspark.mllib.recommendation.MatrixFactorizationModel.load" title="pyspark.mllib.recommendation.MatrixFactorizationModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(sc,&nbsp;path)</td>
-<td>Load a model from the given path</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.predict.html#pyspark.mllib.recommendation.MatrixFactorizationModel.predict" title="pyspark.mllib.recommendation.MatrixFactorizationModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(user,&nbsp;product)</td>
-<td>Predicts rating for the given user and product.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.predictAll.html#pyspark.mllib.recommendation.MatrixFactorizationModel.predictAll" title="pyspark.mllib.recommendation.MatrixFactorizationModel.predictAll"><code class="xref py py-obj docutils literal"><span class="pre">predictAll</span></code></a>(user_product)</td>
-<td>Returns a list of predicted ratings for input user and product pairs.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.productFeatures.html#pyspark.mllib.recommendation.MatrixFactorizationModel.productFeatures" title="pyspark.mllib.recommendation.MatrixFactorizationModel.productFeatures"><code class="xref py py-obj docutils literal"><span class="pre">productFeatures</span></code></a>()</td>
-<td>Returns a paired RDD, where the first element is the product and the second is an array of features corresponding to that product.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProducts.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProducts" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProducts"><code class="xref py py-obj docutils literal"><span class="pre">recommendProducts</span></code></a>(user,&nbsp;num)</td>
-<td>Recommends the top &#8220;num&#8221; number of products for a given user and returns a list of Rating objects sorted by the predicted rating in descending order.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProductsForUsers.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProductsForUsers" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendProductsForUsers"><code class="xref py py-obj docutils literal"><span class="pre">recommendProductsForUsers</span></code></a>(num)</td>
-<td>Recommends the top &#8220;num&#8221; number of products for all users.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsers.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsers" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsers"><code class="xref py py-obj docutils literal"><span class="pre">recommendUsers</span></code></a>(product,&nbsp;num)</td>
-<td>Recommends the top &#8220;num&#8221; number of users for a given product and returns a list of Rating objects sorted by the predicted rating in descending order.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsersForProducts.html#pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsersForProducts" title="pyspark.mllib.recommendation.MatrixFactorizationModel.recommendUsersForProducts"><code class="xref py py-obj docutils literal"><span class="pre">recommendUsersForProducts</span></code></a>(num)</td>
-<td>Recommends the top &#8220;num&#8221; number of users for all products.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.save.html#pyspark.mllib.recommendation.MatrixFactorizationModel.save" title="pyspark.mllib.recommendation.MatrixFactorizationModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(sc,&nbsp;path)</td>
-<td>Save this model to the given path.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.recommendation.MatrixFactorizationModel.userFeatures.html#pyspark.mllib.recommendation.MatrixFactorizationModel.userFeatures" title="pyspark.mllib.recommendation.MatrixFactorizationModel.userFeatures"><code class="xref py py-obj docutils literal"><span class="pre">userFeatures</span></code></a>()</td>
-<td>Returns a paired RDD, where the first element is the user and the second is an array of features corresponding to that user.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -348,10 +359,10 @@ least-squares.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.recommendation.MatrixFactorizationModel.rank.html" class="btn btn-neutral float-right" title="4.10.2.6.1. pyspark.mllib.recommendation.MatrixFactorizationModel.rank" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.recommendation.MatrixFactorizationModel.__init__.html" class="btn btn-neutral float-right" title="4.10.2.6.1.1. pyspark.mllib.recommendation.MatrixFactorizationModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.recommendation.JavaSaveable.save.html" class="btn btn-neutral" title="4.10.2.5.1. pyspark.mllib.recommendation.JavaSaveable.save" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.recommendation.JavaSaveable.save.html" class="btn btn-neutral" title="4.10.2.5.1.1. pyspark.mllib.recommendation.JavaSaveable.save" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

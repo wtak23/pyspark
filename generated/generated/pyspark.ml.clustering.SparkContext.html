@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.5. pyspark.ml.clustering" href="../pyspark.ml.clustering.html"/>
-        <link rel="next" title="3.5.2.48.1. pyspark.ml.clustering.SparkContext.applicationId" href="pyspark.ml.clustering.SparkContext.applicationId.html"/>
-        <link rel="prev" title="3.5.2.47.11. pyspark.ml.clustering.Params.isSet" href="pyspark.ml.clustering.Params.isSet.html"/> 
+        <link rel="next" title="3.5.2.48.1.1. pyspark.ml.clustering.SparkContext.__init__" href="pyspark.ml.clustering.SparkContext.__init__.html"/>
+        <link rel="prev" title="3.5.2.47.2.1. pyspark.ml.clustering.Params.params" href="pyspark.ml.clustering.Params.params.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -221,159 +221,12 @@
             
   <div class="section" id="pyspark-ml-clustering-sparkcontext">
 <h1>3.5.2.48. pyspark.ml.clustering.SparkContext<a class="headerlink" href="#pyspark-ml-clustering-sparkcontext" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.clustering.SparkContext.__init__.html#pyspark.ml.clustering.SparkContext.__init__" title="pyspark.ml.clustering.SparkContext.__init__"><code class="xref py py-func docutils literal"><span class="pre">SparkContext.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.clustering.SparkContext">
 <em class="property">class </em><code class="descclassname">pyspark.ml.clustering.</code><code class="descname">SparkContext</code><span class="sig-paren">(</span><em>master=None</em>, <em>appName=None</em>, <em>sparkHome=None</em>, <em>pyFiles=None</em>, <em>environment=None</em>, <em>batchSize=0</em>, <em>serializer=PickleSerializer()</em>, <em>conf=None</em>, <em>gateway=None</em>, <em>jsc=None</em>, <em>profiler_cls=&lt;class 'pyspark.profiler.BasicProfiler'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.SparkContext" title="Permalink to this definition">¶</a></dt>
 <dd><p>Main entry point for Spark functionality. A SparkContext represents the
 connection to a Spark cluster, and can be used to create L{RDD} and
 broadcast variables on that cluster.</p>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.applicationId.html#pyspark.ml.clustering.SparkContext.applicationId" title="pyspark.ml.clustering.SparkContext.applicationId"><code class="xref py py-obj docutils literal"><span class="pre">applicationId</span></code></a></td>
-<td>A unique identifier for the Spark application.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.defaultMinPartitions.html#pyspark.ml.clustering.SparkContext.defaultMinPartitions" title="pyspark.ml.clustering.SparkContext.defaultMinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">defaultMinPartitions</span></code></a></td>
-<td>Default min number of partitions for Hadoop RDDs when not given by user</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.defaultParallelism.html#pyspark.ml.clustering.SparkContext.defaultParallelism" title="pyspark.ml.clustering.SparkContext.defaultParallelism"><code class="xref py py-obj docutils literal"><span class="pre">defaultParallelism</span></code></a></td>
-<td>Default level of parallelism to use when not given by user (e.g.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.startTime.html#pyspark.ml.clustering.SparkContext.startTime" title="pyspark.ml.clustering.SparkContext.startTime"><code class="xref py py-obj docutils literal"><span class="pre">startTime</span></code></a></td>
-<td>Return the epoch time when the Spark Context was started.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.version.html#pyspark.ml.clustering.SparkContext.version" title="pyspark.ml.clustering.SparkContext.version"><code class="xref py py-obj docutils literal"><span class="pre">version</span></code></a></td>
-<td>The version of Spark on which this application is running.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.accumulator.html#pyspark.ml.clustering.SparkContext.accumulator" title="pyspark.ml.clustering.SparkContext.accumulator"><code class="xref py py-obj docutils literal"><span class="pre">accumulator</span></code></a>(value[,&nbsp;accum_param])</td>
-<td>Create an L{Accumulator} with the given initial value, using a given L{AccumulatorParam} helper object to define how to add values of the data type if provided.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.addFile.html#pyspark.ml.clustering.SparkContext.addFile" title="pyspark.ml.clustering.SparkContext.addFile"><code class="xref py py-obj docutils literal"><span class="pre">addFile</span></code></a>(path)</td>
-<td>Add a file to be downloaded with this Spark job on every node.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.addPyFile.html#pyspark.ml.clustering.SparkContext.addPyFile" title="pyspark.ml.clustering.SparkContext.addPyFile"><code class="xref py py-obj docutils literal"><span class="pre">addPyFile</span></code></a>(path)</td>
-<td>Add a .py or .zip dependency for all tasks to be executed on this SparkContext in the future.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.binaryFiles.html#pyspark.ml.clustering.SparkContext.binaryFiles" title="pyspark.ml.clustering.SparkContext.binaryFiles"><code class="xref py py-obj docutils literal"><span class="pre">binaryFiles</span></code></a>(path[,&nbsp;minPartitions])</td>
-<td><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Experimental</p>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.binaryRecords.html#pyspark.ml.clustering.SparkContext.binaryRecords" title="pyspark.ml.clustering.SparkContext.binaryRecords"><code class="xref py py-obj docutils literal"><span class="pre">binaryRecords</span></code></a>(path,&nbsp;recordLength)</td>
-<td><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Experimental</p>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.broadcast.html#pyspark.ml.clustering.SparkContext.broadcast" title="pyspark.ml.clustering.SparkContext.broadcast"><code class="xref py py-obj docutils literal"><span class="pre">broadcast</span></code></a>(value)</td>
-<td>Broadcast a read-only variable to the cluster, returning a L{Broadcast&lt;pyspark.broadcast.Broadcast&gt;} object for reading it in distributed functions.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.cancelAllJobs.html#pyspark.ml.clustering.SparkContext.cancelAllJobs" title="pyspark.ml.clustering.SparkContext.cancelAllJobs"><code class="xref py py-obj docutils literal"><span class="pre">cancelAllJobs</span></code></a>()</td>
-<td>Cancel all jobs that have been scheduled or are running.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.cancelJobGroup.html#pyspark.ml.clustering.SparkContext.cancelJobGroup" title="pyspark.ml.clustering.SparkContext.cancelJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">cancelJobGroup</span></code></a>(groupId)</td>
-<td>Cancel active jobs for the specified group.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.clearFiles.html#pyspark.ml.clustering.SparkContext.clearFiles" title="pyspark.ml.clustering.SparkContext.clearFiles"><code class="xref py py-obj docutils literal"><span class="pre">clearFiles</span></code></a>()</td>
-<td>Clear the job&#8217;s list of files added by L{addFile} or L{addPyFile} so that they do not get downloaded to any new nodes.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.dump_profiles.html#pyspark.ml.clustering.SparkContext.dump_profiles" title="pyspark.ml.clustering.SparkContext.dump_profiles"><code class="xref py py-obj docutils literal"><span class="pre">dump_profiles</span></code></a>(path)</td>
-<td>Dump the profile stats into directory <cite>path</cite></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.emptyRDD.html#pyspark.ml.clustering.SparkContext.emptyRDD" title="pyspark.ml.clustering.SparkContext.emptyRDD"><code class="xref py py-obj docutils literal"><span class="pre">emptyRDD</span></code></a>()</td>
-<td>Create an RDD that has no partitions or elements.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.getConf.html#pyspark.ml.clustering.SparkContext.getConf" title="pyspark.ml.clustering.SparkContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>()</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.getLocalProperty.html#pyspark.ml.clustering.SparkContext.getLocalProperty" title="pyspark.ml.clustering.SparkContext.getLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">getLocalProperty</span></code></a>(key)</td>
-<td>Get a local property set in this thread, or null if it is missing.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.getOrCreate.html#pyspark.ml.clustering.SparkContext.getOrCreate" title="pyspark.ml.clustering.SparkContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>([conf])</td>
-<td>Get or instantiate a SparkContext and register it as a singleton object.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.hadoopFile.html#pyspark.ml.clustering.SparkContext.hadoopFile" title="pyspark.ml.clustering.SparkContext.hadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">hadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
-<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.hadoopRDD.html#pyspark.ml.clustering.SparkContext.hadoopRDD" title="pyspark.ml.clustering.SparkContext.hadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">hadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;valueClass)</td>
-<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.newAPIHadoopFile.html#pyspark.ml.clustering.SparkContext.newAPIHadoopFile" title="pyspark.ml.clustering.SparkContext.newAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;...)</td>
-<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.newAPIHadoopRDD.html#pyspark.ml.clustering.SparkContext.newAPIHadoopRDD" title="pyspark.ml.clustering.SparkContext.newAPIHadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
-<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.parallelize.html#pyspark.ml.clustering.SparkContext.parallelize" title="pyspark.ml.clustering.SparkContext.parallelize"><code class="xref py py-obj docutils literal"><span class="pre">parallelize</span></code></a>(c[,&nbsp;numSlices])</td>
-<td>Distribute a local Python collection to form an RDD.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.pickleFile.html#pyspark.ml.clustering.SparkContext.pickleFile" title="pyspark.ml.clustering.SparkContext.pickleFile"><code class="xref py py-obj docutils literal"><span class="pre">pickleFile</span></code></a>(name[,&nbsp;minPartitions])</td>
-<td>Load an RDD previously saved using L{RDD.saveAsPickleFile} method.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.range.html#pyspark.ml.clustering.SparkContext.range" title="pyspark.ml.clustering.SparkContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numSlices])</td>
-<td>Create a new RDD of int containing elements from <cite>start</cite> to <cite>end</cite> (exclusive), increased by <cite>step</cite> every element.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.runJob.html#pyspark.ml.clustering.SparkContext.runJob" title="pyspark.ml.clustering.SparkContext.runJob"><code class="xref py py-obj docutils literal"><span class="pre">runJob</span></code></a>(rdd,&nbsp;partitionFunc[,&nbsp;partitions,&nbsp;...])</td>
-<td>Executes the given partitionFunc on the specified set of partitions, returning the result as an array of elements.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.sequenceFile.html#pyspark.ml.clustering.SparkContext.sequenceFile" title="pyspark.ml.clustering.SparkContext.sequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">sequenceFile</span></code></a>(path[,&nbsp;keyClass,&nbsp;valueClass,&nbsp;...])</td>
-<td>Read a Hadoop SequenceFile with arbitrary key and value Writable class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setCheckpointDir.html#pyspark.ml.clustering.SparkContext.setCheckpointDir" title="pyspark.ml.clustering.SparkContext.setCheckpointDir"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointDir</span></code></a>(dirName)</td>
-<td>Set the directory under which RDDs are going to be checkpointed.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setJobGroup.html#pyspark.ml.clustering.SparkContext.setJobGroup" title="pyspark.ml.clustering.SparkContext.setJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">setJobGroup</span></code></a>(groupId,&nbsp;description[,&nbsp;...])</td>
-<td>Assigns a group ID to all the jobs started by this thread until the group ID is set to a different value or cleared.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setLocalProperty.html#pyspark.ml.clustering.SparkContext.setLocalProperty" title="pyspark.ml.clustering.SparkContext.setLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">setLocalProperty</span></code></a>(key,&nbsp;value)</td>
-<td>Set a local property that affects jobs submitted from this thread, such as the Spark fair scheduler pool.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setLogLevel.html#pyspark.ml.clustering.SparkContext.setLogLevel" title="pyspark.ml.clustering.SparkContext.setLogLevel"><code class="xref py py-obj docutils literal"><span class="pre">setLogLevel</span></code></a>(logLevel)</td>
-<td>Control our logLevel.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setSystemProperty.html#pyspark.ml.clustering.SparkContext.setSystemProperty" title="pyspark.ml.clustering.SparkContext.setSystemProperty"><code class="xref py py-obj docutils literal"><span class="pre">setSystemProperty</span></code></a>(key,&nbsp;value)</td>
-<td>Set a Java system property, such as spark.executor.memory.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.show_profiles.html#pyspark.ml.clustering.SparkContext.show_profiles" title="pyspark.ml.clustering.SparkContext.show_profiles"><code class="xref py py-obj docutils literal"><span class="pre">show_profiles</span></code></a>()</td>
-<td>Print the profile stats to stdout</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.sparkUser.html#pyspark.ml.clustering.SparkContext.sparkUser" title="pyspark.ml.clustering.SparkContext.sparkUser"><code class="xref py py-obj docutils literal"><span class="pre">sparkUser</span></code></a>()</td>
-<td>Get SPARK_USER for user who is running SparkContext.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.statusTracker.html#pyspark.ml.clustering.SparkContext.statusTracker" title="pyspark.ml.clustering.SparkContext.statusTracker"><code class="xref py py-obj docutils literal"><span class="pre">statusTracker</span></code></a>()</td>
-<td>Return <code class="xref py py-class docutils literal"><span class="pre">StatusTracker</span></code> object</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.stop.html#pyspark.ml.clustering.SparkContext.stop" title="pyspark.ml.clustering.SparkContext.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>()</td>
-<td>Shut down the SparkContext.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.textFile.html#pyspark.ml.clustering.SparkContext.textFile" title="pyspark.ml.clustering.SparkContext.textFile"><code class="xref py py-obj docutils literal"><span class="pre">textFile</span></code></a>(name[,&nbsp;minPartitions,&nbsp;use_unicode])</td>
-<td>Read a text file from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI, and return it as an RDD of Strings.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.union.html#pyspark.ml.clustering.SparkContext.union" title="pyspark.ml.clustering.SparkContext.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(rdds)</td>
-<td>Build the union of a list of RDDs.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.wholeTextFiles.html#pyspark.ml.clustering.SparkContext.wholeTextFiles" title="pyspark.ml.clustering.SparkContext.wholeTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">wholeTextFiles</span></code></a>(path[,&nbsp;minPartitions,&nbsp;...])</td>
-<td>Read a directory of text files from HDFS, a local file system (available on all nodes), or any  Hadoop-supported file system URI.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.clustering.SparkContext.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>master=None</em>, <em>appName=None</em>, <em>sparkHome=None</em>, <em>pyFiles=None</em>, <em>environment=None</em>, <em>batchSize=0</em>, <em>serializer=PickleSerializer()</em>, <em>conf=None</em>, <em>gateway=None</em>, <em>jsc=None</em>, <em>profiler_cls=&lt;class 'pyspark.profiler.BasicProfiler'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.SparkContext.__init__" title="Permalink to this definition">¶</a></dt>
@@ -423,6 +276,162 @@ ValueError:...
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.5.2.48.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.__init__.html#pyspark.ml.clustering.SparkContext.__init__" title="pyspark.ml.clustering.SparkContext.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Create a new SparkContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.accumulator.html#pyspark.ml.clustering.SparkContext.accumulator" title="pyspark.ml.clustering.SparkContext.accumulator"><code class="xref py py-obj docutils literal"><span class="pre">accumulator</span></code></a>(value[,&nbsp;accum_param])</td>
+<td>Create an L{Accumulator} with the given initial value, using a given L{AccumulatorParam} helper object to define how to add values of the data type if provided.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.addFile.html#pyspark.ml.clustering.SparkContext.addFile" title="pyspark.ml.clustering.SparkContext.addFile"><code class="xref py py-obj docutils literal"><span class="pre">addFile</span></code></a>(path)</td>
+<td>Add a file to be downloaded with this Spark job on every node.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.addPyFile.html#pyspark.ml.clustering.SparkContext.addPyFile" title="pyspark.ml.clustering.SparkContext.addPyFile"><code class="xref py py-obj docutils literal"><span class="pre">addPyFile</span></code></a>(path)</td>
+<td>Add a .py or .zip dependency for all tasks to be executed on this SparkContext in the future.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.binaryFiles.html#pyspark.ml.clustering.SparkContext.binaryFiles" title="pyspark.ml.clustering.SparkContext.binaryFiles"><code class="xref py py-obj docutils literal"><span class="pre">binaryFiles</span></code></a>(path[,&nbsp;minPartitions])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.binaryRecords.html#pyspark.ml.clustering.SparkContext.binaryRecords" title="pyspark.ml.clustering.SparkContext.binaryRecords"><code class="xref py py-obj docutils literal"><span class="pre">binaryRecords</span></code></a>(path,&nbsp;recordLength)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.broadcast.html#pyspark.ml.clustering.SparkContext.broadcast" title="pyspark.ml.clustering.SparkContext.broadcast"><code class="xref py py-obj docutils literal"><span class="pre">broadcast</span></code></a>(value)</td>
+<td>Broadcast a read-only variable to the cluster, returning a L{Broadcast&lt;pyspark.broadcast.Broadcast&gt;} object for reading it in distributed functions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.cancelAllJobs.html#pyspark.ml.clustering.SparkContext.cancelAllJobs" title="pyspark.ml.clustering.SparkContext.cancelAllJobs"><code class="xref py py-obj docutils literal"><span class="pre">cancelAllJobs</span></code></a>()</td>
+<td>Cancel all jobs that have been scheduled or are running.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.cancelJobGroup.html#pyspark.ml.clustering.SparkContext.cancelJobGroup" title="pyspark.ml.clustering.SparkContext.cancelJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">cancelJobGroup</span></code></a>(groupId)</td>
+<td>Cancel active jobs for the specified group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.clearFiles.html#pyspark.ml.clustering.SparkContext.clearFiles" title="pyspark.ml.clustering.SparkContext.clearFiles"><code class="xref py py-obj docutils literal"><span class="pre">clearFiles</span></code></a>()</td>
+<td>Clear the job&#8217;s list of files added by L{addFile} or L{addPyFile} so that they do not get downloaded to any new nodes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.dump_profiles.html#pyspark.ml.clustering.SparkContext.dump_profiles" title="pyspark.ml.clustering.SparkContext.dump_profiles"><code class="xref py py-obj docutils literal"><span class="pre">dump_profiles</span></code></a>(path)</td>
+<td>Dump the profile stats into directory <cite>path</cite></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.emptyRDD.html#pyspark.ml.clustering.SparkContext.emptyRDD" title="pyspark.ml.clustering.SparkContext.emptyRDD"><code class="xref py py-obj docutils literal"><span class="pre">emptyRDD</span></code></a>()</td>
+<td>Create an RDD that has no partitions or elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.getConf.html#pyspark.ml.clustering.SparkContext.getConf" title="pyspark.ml.clustering.SparkContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.getLocalProperty.html#pyspark.ml.clustering.SparkContext.getLocalProperty" title="pyspark.ml.clustering.SparkContext.getLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">getLocalProperty</span></code></a>(key)</td>
+<td>Get a local property set in this thread, or null if it is missing.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.getOrCreate.html#pyspark.ml.clustering.SparkContext.getOrCreate" title="pyspark.ml.clustering.SparkContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>([conf])</td>
+<td>Get or instantiate a SparkContext and register it as a singleton object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.hadoopFile.html#pyspark.ml.clustering.SparkContext.hadoopFile" title="pyspark.ml.clustering.SparkContext.hadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">hadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
+<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.hadoopRDD.html#pyspark.ml.clustering.SparkContext.hadoopRDD" title="pyspark.ml.clustering.SparkContext.hadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">hadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;valueClass)</td>
+<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.newAPIHadoopFile.html#pyspark.ml.clustering.SparkContext.newAPIHadoopFile" title="pyspark.ml.clustering.SparkContext.newAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;...)</td>
+<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.newAPIHadoopRDD.html#pyspark.ml.clustering.SparkContext.newAPIHadoopRDD" title="pyspark.ml.clustering.SparkContext.newAPIHadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
+<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.parallelize.html#pyspark.ml.clustering.SparkContext.parallelize" title="pyspark.ml.clustering.SparkContext.parallelize"><code class="xref py py-obj docutils literal"><span class="pre">parallelize</span></code></a>(c[,&nbsp;numSlices])</td>
+<td>Distribute a local Python collection to form an RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.pickleFile.html#pyspark.ml.clustering.SparkContext.pickleFile" title="pyspark.ml.clustering.SparkContext.pickleFile"><code class="xref py py-obj docutils literal"><span class="pre">pickleFile</span></code></a>(name[,&nbsp;minPartitions])</td>
+<td>Load an RDD previously saved using L{RDD.saveAsPickleFile} method.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.range.html#pyspark.ml.clustering.SparkContext.range" title="pyspark.ml.clustering.SparkContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numSlices])</td>
+<td>Create a new RDD of int containing elements from <cite>start</cite> to <cite>end</cite> (exclusive), increased by <cite>step</cite> every element.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.runJob.html#pyspark.ml.clustering.SparkContext.runJob" title="pyspark.ml.clustering.SparkContext.runJob"><code class="xref py py-obj docutils literal"><span class="pre">runJob</span></code></a>(rdd,&nbsp;partitionFunc[,&nbsp;partitions,&nbsp;...])</td>
+<td>Executes the given partitionFunc on the specified set of partitions, returning the result as an array of elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.sequenceFile.html#pyspark.ml.clustering.SparkContext.sequenceFile" title="pyspark.ml.clustering.SparkContext.sequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">sequenceFile</span></code></a>(path[,&nbsp;keyClass,&nbsp;valueClass,&nbsp;...])</td>
+<td>Read a Hadoop SequenceFile with arbitrary key and value Writable class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setCheckpointDir.html#pyspark.ml.clustering.SparkContext.setCheckpointDir" title="pyspark.ml.clustering.SparkContext.setCheckpointDir"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointDir</span></code></a>(dirName)</td>
+<td>Set the directory under which RDDs are going to be checkpointed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setJobGroup.html#pyspark.ml.clustering.SparkContext.setJobGroup" title="pyspark.ml.clustering.SparkContext.setJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">setJobGroup</span></code></a>(groupId,&nbsp;description[,&nbsp;...])</td>
+<td>Assigns a group ID to all the jobs started by this thread until the group ID is set to a different value or cleared.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setLocalProperty.html#pyspark.ml.clustering.SparkContext.setLocalProperty" title="pyspark.ml.clustering.SparkContext.setLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">setLocalProperty</span></code></a>(key,&nbsp;value)</td>
+<td>Set a local property that affects jobs submitted from this thread, such as the Spark fair scheduler pool.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setLogLevel.html#pyspark.ml.clustering.SparkContext.setLogLevel" title="pyspark.ml.clustering.SparkContext.setLogLevel"><code class="xref py py-obj docutils literal"><span class="pre">setLogLevel</span></code></a>(logLevel)</td>
+<td>Control our logLevel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.setSystemProperty.html#pyspark.ml.clustering.SparkContext.setSystemProperty" title="pyspark.ml.clustering.SparkContext.setSystemProperty"><code class="xref py py-obj docutils literal"><span class="pre">setSystemProperty</span></code></a>(key,&nbsp;value)</td>
+<td>Set a Java system property, such as spark.executor.memory.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.show_profiles.html#pyspark.ml.clustering.SparkContext.show_profiles" title="pyspark.ml.clustering.SparkContext.show_profiles"><code class="xref py py-obj docutils literal"><span class="pre">show_profiles</span></code></a>()</td>
+<td>Print the profile stats to stdout</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.sparkUser.html#pyspark.ml.clustering.SparkContext.sparkUser" title="pyspark.ml.clustering.SparkContext.sparkUser"><code class="xref py py-obj docutils literal"><span class="pre">sparkUser</span></code></a>()</td>
+<td>Get SPARK_USER for user who is running SparkContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.statusTracker.html#pyspark.ml.clustering.SparkContext.statusTracker" title="pyspark.ml.clustering.SparkContext.statusTracker"><code class="xref py py-obj docutils literal"><span class="pre">statusTracker</span></code></a>()</td>
+<td>Return <code class="xref py py-class docutils literal"><span class="pre">StatusTracker</span></code> object</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.stop.html#pyspark.ml.clustering.SparkContext.stop" title="pyspark.ml.clustering.SparkContext.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>()</td>
+<td>Shut down the SparkContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.textFile.html#pyspark.ml.clustering.SparkContext.textFile" title="pyspark.ml.clustering.SparkContext.textFile"><code class="xref py py-obj docutils literal"><span class="pre">textFile</span></code></a>(name[,&nbsp;minPartitions,&nbsp;use_unicode])</td>
+<td>Read a text file from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI, and return it as an RDD of Strings.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.union.html#pyspark.ml.clustering.SparkContext.union" title="pyspark.ml.clustering.SparkContext.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(rdds)</td>
+<td>Build the union of a list of RDDs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.wholeTextFiles.html#pyspark.ml.clustering.SparkContext.wholeTextFiles" title="pyspark.ml.clustering.SparkContext.wholeTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">wholeTextFiles</span></code></a>(path[,&nbsp;minPartitions,&nbsp;...])</td>
+<td>Read a directory of text files from HDFS, a local file system (available on all nodes), or any  Hadoop-supported file system URI.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.5.2.48.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.PACKAGE_EXTENSIONS.html#pyspark.ml.clustering.SparkContext.PACKAGE_EXTENSIONS" title="pyspark.ml.clustering.SparkContext.PACKAGE_EXTENSIONS"><code class="xref py py-obj docutils literal"><span class="pre">PACKAGE_EXTENSIONS</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.applicationId.html#pyspark.ml.clustering.SparkContext.applicationId" title="pyspark.ml.clustering.SparkContext.applicationId"><code class="xref py py-obj docutils literal"><span class="pre">applicationId</span></code></a></td>
+<td>A unique identifier for the Spark application.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.defaultMinPartitions.html#pyspark.ml.clustering.SparkContext.defaultMinPartitions" title="pyspark.ml.clustering.SparkContext.defaultMinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">defaultMinPartitions</span></code></a></td>
+<td>Default min number of partitions for Hadoop RDDs when not given by user</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.defaultParallelism.html#pyspark.ml.clustering.SparkContext.defaultParallelism" title="pyspark.ml.clustering.SparkContext.defaultParallelism"><code class="xref py py-obj docutils literal"><span class="pre">defaultParallelism</span></code></a></td>
+<td>Default level of parallelism to use when not given by user (e.g.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.startTime.html#pyspark.ml.clustering.SparkContext.startTime" title="pyspark.ml.clustering.SparkContext.startTime"><code class="xref py py-obj docutils literal"><span class="pre">startTime</span></code></a></td>
+<td>Return the epoch time when the Spark Context was started.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.SparkContext.version.html#pyspark.ml.clustering.SparkContext.version" title="pyspark.ml.clustering.SparkContext.version"><code class="xref py py-obj docutils literal"><span class="pre">version</span></code></a></td>
+<td>The version of Spark on which this application is running.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -432,10 +441,10 @@ ValueError:...
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.clustering.SparkContext.applicationId.html" class="btn btn-neutral float-right" title="3.5.2.48.1. pyspark.ml.clustering.SparkContext.applicationId" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.clustering.SparkContext.__init__.html" class="btn btn-neutral float-right" title="3.5.2.48.1.1. pyspark.ml.clustering.SparkContext.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.clustering.Params.isSet.html" class="btn btn-neutral" title="3.5.2.47.11. pyspark.ml.clustering.Params.isSet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.clustering.Params.params.html" class="btn btn-neutral" title="3.5.2.47.2.1. pyspark.ml.clustering.Params.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

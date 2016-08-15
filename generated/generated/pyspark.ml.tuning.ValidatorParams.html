@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.9. pyspark.ml.tuning" href="../pyspark.ml.tuning.html"/>
-        <link rel="next" title="3.9.2.14.1. pyspark.ml.tuning.ValidatorParams.params" href="pyspark.ml.tuning.ValidatorParams.params.html"/>
-        <link rel="prev" title="3.9.2.13.10. pyspark.ml.tuning.TypeConverters.toVector" href="pyspark.ml.tuning.TypeConverters.toVector.html"/> 
+        <link rel="next" title="3.9.2.14.1.1. pyspark.ml.tuning.ValidatorParams.__init__" href="pyspark.ml.tuning.ValidatorParams.__init__.html"/>
+        <link rel="prev" title="3.9.2.13.1.10. pyspark.ml.tuning.TypeConverters.toVector" href="pyspark.ml.tuning.TypeConverters.toVector.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -186,88 +186,111 @@
             
   <div class="section" id="pyspark-ml-tuning-validatorparams">
 <h1>3.9.2.14. pyspark.ml.tuning.ValidatorParams<a class="headerlink" href="#pyspark-ml-tuning-validatorparams" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.__init__.html#pyspark.ml.tuning.ValidatorParams.__init__" title="pyspark.ml.tuning.ValidatorParams.__init__"><code class="xref py py-func docutils literal"><span class="pre">ValidatorParams.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.tuning.ValidatorParams">
 <em class="property">class </em><code class="descclassname">pyspark.ml.tuning.</code><code class="descname">ValidatorParams</code><a class="reference internal" href="../../_modules/pyspark/ml/tuning.html#ValidatorParams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.tuning.ValidatorParams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Common params for TrainValidationSplit and CrossValidator.</p>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.params.html#pyspark.ml.tuning.ValidatorParams.params" title="pyspark.ml.tuning.ValidatorParams.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.copy.html#pyspark.ml.tuning.ValidatorParams.copy" title="pyspark.ml.tuning.ValidatorParams.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.explainParam.html#pyspark.ml.tuning.ValidatorParams.explainParam" title="pyspark.ml.tuning.ValidatorParams.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.explainParams.html#pyspark.ml.tuning.ValidatorParams.explainParams" title="pyspark.ml.tuning.ValidatorParams.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.extractParamMap.html#pyspark.ml.tuning.ValidatorParams.extractParamMap" title="pyspark.ml.tuning.ValidatorParams.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getEstimator.html#pyspark.ml.tuning.ValidatorParams.getEstimator" title="pyspark.ml.tuning.ValidatorParams.getEstimator"><code class="xref py py-obj docutils literal"><span class="pre">getEstimator</span></code></a>()</td>
-<td>Gets the value of estimator or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getEstimatorParamMaps.html#pyspark.ml.tuning.ValidatorParams.getEstimatorParamMaps" title="pyspark.ml.tuning.ValidatorParams.getEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">getEstimatorParamMaps</span></code></a>()</td>
-<td>Gets the value of estimatorParamMaps or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getEvaluator.html#pyspark.ml.tuning.ValidatorParams.getEvaluator" title="pyspark.ml.tuning.ValidatorParams.getEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluator</span></code></a>()</td>
-<td>Gets the value of evaluator or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getOrDefault.html#pyspark.ml.tuning.ValidatorParams.getOrDefault" title="pyspark.ml.tuning.ValidatorParams.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getParam.html#pyspark.ml.tuning.ValidatorParams.getParam" title="pyspark.ml.tuning.ValidatorParams.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getSeed.html#pyspark.ml.tuning.ValidatorParams.getSeed" title="pyspark.ml.tuning.ValidatorParams.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
-<td>Gets the value of seed or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.hasDefault.html#pyspark.ml.tuning.ValidatorParams.hasDefault" title="pyspark.ml.tuning.ValidatorParams.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.hasParam.html#pyspark.ml.tuning.ValidatorParams.hasParam" title="pyspark.ml.tuning.ValidatorParams.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.isDefined.html#pyspark.ml.tuning.ValidatorParams.isDefined" title="pyspark.ml.tuning.ValidatorParams.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.isSet.html#pyspark.ml.tuning.ValidatorParams.isSet" title="pyspark.ml.tuning.ValidatorParams.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setEstimator.html#pyspark.ml.tuning.ValidatorParams.setEstimator" title="pyspark.ml.tuning.ValidatorParams.setEstimator"><code class="xref py py-obj docutils literal"><span class="pre">setEstimator</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.estimator.html#pyspark.ml.tuning.ValidatorParams.estimator" title="pyspark.ml.tuning.ValidatorParams.estimator"><code class="xref py py-attr docutils literal"><span class="pre">estimator</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setEstimatorParamMaps.html#pyspark.ml.tuning.ValidatorParams.setEstimatorParamMaps" title="pyspark.ml.tuning.ValidatorParams.setEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">setEstimatorParamMaps</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.estimatorParamMaps.html#pyspark.ml.tuning.ValidatorParams.estimatorParamMaps" title="pyspark.ml.tuning.ValidatorParams.estimatorParamMaps"><code class="xref py py-attr docutils literal"><span class="pre">estimatorParamMaps</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setEvaluator.html#pyspark.ml.tuning.ValidatorParams.setEvaluator" title="pyspark.ml.tuning.ValidatorParams.setEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluator</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.evaluator.html#pyspark.ml.tuning.ValidatorParams.evaluator" title="pyspark.ml.tuning.ValidatorParams.evaluator"><code class="xref py py-attr docutils literal"><span class="pre">evaluator</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setSeed.html#pyspark.ml.tuning.ValidatorParams.setSeed" title="pyspark.ml.tuning.ValidatorParams.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.seed.html#pyspark.ml.tuning.ValidatorParams.seed" title="pyspark.ml.tuning.ValidatorParams.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="method">
+<dt id="pyspark.ml.tuning.ValidatorParams.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.tuning.ValidatorParams.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.9.2.14.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.__init__.html#pyspark.ml.tuning.ValidatorParams.__init__" title="pyspark.ml.tuning.ValidatorParams.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.copy.html#pyspark.ml.tuning.ValidatorParams.copy" title="pyspark.ml.tuning.ValidatorParams.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.explainParam.html#pyspark.ml.tuning.ValidatorParams.explainParam" title="pyspark.ml.tuning.ValidatorParams.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.explainParams.html#pyspark.ml.tuning.ValidatorParams.explainParams" title="pyspark.ml.tuning.ValidatorParams.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.extractParamMap.html#pyspark.ml.tuning.ValidatorParams.extractParamMap" title="pyspark.ml.tuning.ValidatorParams.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getEstimator.html#pyspark.ml.tuning.ValidatorParams.getEstimator" title="pyspark.ml.tuning.ValidatorParams.getEstimator"><code class="xref py py-obj docutils literal"><span class="pre">getEstimator</span></code></a>()</td>
+<td>Gets the value of estimator or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getEstimatorParamMaps.html#pyspark.ml.tuning.ValidatorParams.getEstimatorParamMaps" title="pyspark.ml.tuning.ValidatorParams.getEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">getEstimatorParamMaps</span></code></a>()</td>
+<td>Gets the value of estimatorParamMaps or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getEvaluator.html#pyspark.ml.tuning.ValidatorParams.getEvaluator" title="pyspark.ml.tuning.ValidatorParams.getEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluator</span></code></a>()</td>
+<td>Gets the value of evaluator or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getOrDefault.html#pyspark.ml.tuning.ValidatorParams.getOrDefault" title="pyspark.ml.tuning.ValidatorParams.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getParam.html#pyspark.ml.tuning.ValidatorParams.getParam" title="pyspark.ml.tuning.ValidatorParams.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.getSeed.html#pyspark.ml.tuning.ValidatorParams.getSeed" title="pyspark.ml.tuning.ValidatorParams.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.hasDefault.html#pyspark.ml.tuning.ValidatorParams.hasDefault" title="pyspark.ml.tuning.ValidatorParams.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.hasParam.html#pyspark.ml.tuning.ValidatorParams.hasParam" title="pyspark.ml.tuning.ValidatorParams.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.isDefined.html#pyspark.ml.tuning.ValidatorParams.isDefined" title="pyspark.ml.tuning.ValidatorParams.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.isSet.html#pyspark.ml.tuning.ValidatorParams.isSet" title="pyspark.ml.tuning.ValidatorParams.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setEstimator.html#pyspark.ml.tuning.ValidatorParams.setEstimator" title="pyspark.ml.tuning.ValidatorParams.setEstimator"><code class="xref py py-obj docutils literal"><span class="pre">setEstimator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setEstimatorParamMaps.html#pyspark.ml.tuning.ValidatorParams.setEstimatorParamMaps" title="pyspark.ml.tuning.ValidatorParams.setEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">setEstimatorParamMaps</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimatorParamMaps</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setEvaluator.html#pyspark.ml.tuning.ValidatorParams.setEvaluator" title="pyspark.ml.tuning.ValidatorParams.setEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">evaluator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.setSeed.html#pyspark.ml.tuning.ValidatorParams.setSeed" title="pyspark.ml.tuning.ValidatorParams.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">seed</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.9.2.14.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.estimator.html#pyspark.ml.tuning.ValidatorParams.estimator" title="pyspark.ml.tuning.ValidatorParams.estimator"><code class="xref py py-obj docutils literal"><span class="pre">estimator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.estimatorParamMaps.html#pyspark.ml.tuning.ValidatorParams.estimatorParamMaps" title="pyspark.ml.tuning.ValidatorParams.estimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">estimatorParamMaps</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.evaluator.html#pyspark.ml.tuning.ValidatorParams.evaluator" title="pyspark.ml.tuning.ValidatorParams.evaluator"><code class="xref py py-obj docutils literal"><span class="pre">evaluator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.params.html#pyspark.ml.tuning.ValidatorParams.params" title="pyspark.ml.tuning.ValidatorParams.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.ValidatorParams.seed.html#pyspark.ml.tuning.ValidatorParams.seed" title="pyspark.ml.tuning.ValidatorParams.seed"><code class="xref py py-obj docutils literal"><span class="pre">seed</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -277,10 +300,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.tuning.ValidatorParams.params.html" class="btn btn-neutral float-right" title="3.9.2.14.1. pyspark.ml.tuning.ValidatorParams.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.tuning.ValidatorParams.__init__.html" class="btn btn-neutral float-right" title="3.9.2.14.1.1. pyspark.ml.tuning.ValidatorParams.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.tuning.TypeConverters.toVector.html" class="btn btn-neutral" title="3.9.2.13.10. pyspark.ml.tuning.TypeConverters.toVector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.tuning.TypeConverters.toVector.html" class="btn btn-neutral" title="3.9.2.13.1.10. pyspark.ml.tuning.TypeConverters.toVector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

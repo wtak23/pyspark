@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.9. pyspark.ml.tuning" href="../pyspark.ml.tuning.html"/>
-        <link rel="next" title="3.9.2.11.1. pyspark.ml.tuning.TrainValidationSplit.params" href="pyspark.ml.tuning.TrainValidationSplit.params.html"/>
-        <link rel="prev" title="3.9.2.10.40. pyspark.ml.tuning.SparkContext.wholeTextFiles" href="pyspark.ml.tuning.SparkContext.wholeTextFiles.html"/> 
+        <link rel="next" title="3.9.2.11.1.1. pyspark.ml.tuning.TrainValidationSplit.__init__" href="pyspark.ml.tuning.TrainValidationSplit.__init__.html"/>
+        <link rel="prev" title="3.9.2.10.2.6. pyspark.ml.tuning.SparkContext.version" href="pyspark.ml.tuning.SparkContext.version.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -186,7 +186,6 @@
             
   <div class="section" id="pyspark-ml-tuning-trainvalidationsplit">
 <h1>3.9.2.11. pyspark.ml.tuning.TrainValidationSplit<a class="headerlink" href="#pyspark-ml-tuning-trainvalidationsplit" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.__init__.html#pyspark.ml.tuning.TrainValidationSplit.__init__" title="pyspark.ml.tuning.TrainValidationSplit.__init__"><code class="xref py py-func docutils literal"><span class="pre">TrainValidationSplit.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.tuning.TrainValidationSplit">
 <em class="property">class </em><code class="descclassname">pyspark.ml.tuning.</code><code class="descname">TrainValidationSplit</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/tuning.html#TrainValidationSplit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.tuning.TrainValidationSplit" title="Permalink to this definition">¶</a></dt>
@@ -219,93 +218,6 @@ Similar to <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.
 <div class="versionadded">
 <p><span class="versionmodified">New in version 2.0.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.params.html#pyspark.ml.tuning.TrainValidationSplit.params" title="pyspark.ml.tuning.TrainValidationSplit.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.copy.html#pyspark.ml.tuning.TrainValidationSplit.copy" title="pyspark.ml.tuning.TrainValidationSplit.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with a randomly generated uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.explainParam.html#pyspark.ml.tuning.TrainValidationSplit.explainParam" title="pyspark.ml.tuning.TrainValidationSplit.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.explainParams.html#pyspark.ml.tuning.TrainValidationSplit.explainParams" title="pyspark.ml.tuning.TrainValidationSplit.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.extractParamMap.html#pyspark.ml.tuning.TrainValidationSplit.extractParamMap" title="pyspark.ml.tuning.TrainValidationSplit.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.fit.html#pyspark.ml.tuning.TrainValidationSplit.fit" title="pyspark.ml.tuning.TrainValidationSplit.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getEstimator.html#pyspark.ml.tuning.TrainValidationSplit.getEstimator" title="pyspark.ml.tuning.TrainValidationSplit.getEstimator"><code class="xref py py-obj docutils literal"><span class="pre">getEstimator</span></code></a>()</td>
-<td>Gets the value of estimator or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getEstimatorParamMaps.html#pyspark.ml.tuning.TrainValidationSplit.getEstimatorParamMaps" title="pyspark.ml.tuning.TrainValidationSplit.getEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">getEstimatorParamMaps</span></code></a>()</td>
-<td>Gets the value of estimatorParamMaps or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getEvaluator.html#pyspark.ml.tuning.TrainValidationSplit.getEvaluator" title="pyspark.ml.tuning.TrainValidationSplit.getEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluator</span></code></a>()</td>
-<td>Gets the value of evaluator or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getOrDefault.html#pyspark.ml.tuning.TrainValidationSplit.getOrDefault" title="pyspark.ml.tuning.TrainValidationSplit.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getParam.html#pyspark.ml.tuning.TrainValidationSplit.getParam" title="pyspark.ml.tuning.TrainValidationSplit.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getSeed.html#pyspark.ml.tuning.TrainValidationSplit.getSeed" title="pyspark.ml.tuning.TrainValidationSplit.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
-<td>Gets the value of seed or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getTrainRatio.html#pyspark.ml.tuning.TrainValidationSplit.getTrainRatio" title="pyspark.ml.tuning.TrainValidationSplit.getTrainRatio"><code class="xref py py-obj docutils literal"><span class="pre">getTrainRatio</span></code></a>()</td>
-<td>Gets the value of trainRatio or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.hasDefault.html#pyspark.ml.tuning.TrainValidationSplit.hasDefault" title="pyspark.ml.tuning.TrainValidationSplit.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.hasParam.html#pyspark.ml.tuning.TrainValidationSplit.hasParam" title="pyspark.ml.tuning.TrainValidationSplit.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.isDefined.html#pyspark.ml.tuning.TrainValidationSplit.isDefined" title="pyspark.ml.tuning.TrainValidationSplit.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.isSet.html#pyspark.ml.tuning.TrainValidationSplit.isSet" title="pyspark.ml.tuning.TrainValidationSplit.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setEstimator.html#pyspark.ml.tuning.TrainValidationSplit.setEstimator" title="pyspark.ml.tuning.TrainValidationSplit.setEstimator"><code class="xref py py-obj docutils literal"><span class="pre">setEstimator</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.estimator.html#pyspark.ml.tuning.TrainValidationSplit.estimator" title="pyspark.ml.tuning.TrainValidationSplit.estimator"><code class="xref py py-attr docutils literal"><span class="pre">estimator</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setEstimatorParamMaps.html#pyspark.ml.tuning.TrainValidationSplit.setEstimatorParamMaps" title="pyspark.ml.tuning.TrainValidationSplit.setEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">setEstimatorParamMaps</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.estimatorParamMaps.html#pyspark.ml.tuning.TrainValidationSplit.estimatorParamMaps" title="pyspark.ml.tuning.TrainValidationSplit.estimatorParamMaps"><code class="xref py py-attr docutils literal"><span class="pre">estimatorParamMaps</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setEvaluator.html#pyspark.ml.tuning.TrainValidationSplit.setEvaluator" title="pyspark.ml.tuning.TrainValidationSplit.setEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluator</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.evaluator.html#pyspark.ml.tuning.TrainValidationSplit.evaluator" title="pyspark.ml.tuning.TrainValidationSplit.evaluator"><code class="xref py py-attr docutils literal"><span class="pre">evaluator</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setParams.html#pyspark.ml.tuning.TrainValidationSplit.setParams" title="pyspark.ml.tuning.TrainValidationSplit.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(*args,&nbsp;**kwargs)</td>
-<td>setParams(self, estimator=None, estimatorParamMaps=None, evaluator=None, trainRatio=0.75,                  seed=None):</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setSeed.html#pyspark.ml.tuning.TrainValidationSplit.setSeed" title="pyspark.ml.tuning.TrainValidationSplit.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.seed.html#pyspark.ml.tuning.TrainValidationSplit.seed" title="pyspark.ml.tuning.TrainValidationSplit.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setTrainRatio.html#pyspark.ml.tuning.TrainValidationSplit.setTrainRatio" title="pyspark.ml.tuning.TrainValidationSplit.setTrainRatio"><code class="xref py py-obj docutils literal"><span class="pre">setTrainRatio</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.trainRatio.html#pyspark.ml.tuning.TrainValidationSplit.trainRatio" title="pyspark.ml.tuning.TrainValidationSplit.trainRatio"><code class="xref py py-attr docutils literal"><span class="pre">trainRatio</span></code></a>.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.tuning.TrainValidationSplit.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>estimator=None</em>, <em>estimatorParamMaps=None</em>, <em>evaluator=None</em>, <em>trainRatio=0.75</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/tuning.html#TrainValidationSplit.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.tuning.TrainValidationSplit.__init__" title="Permalink to this definition">¶</a></dt>
@@ -313,6 +225,115 @@ Similar to <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.9.2.11.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.__init__.html#pyspark.ml.tuning.TrainValidationSplit.__init__" title="pyspark.ml.tuning.TrainValidationSplit.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;estimator,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.copy.html#pyspark.ml.tuning.TrainValidationSplit.copy" title="pyspark.ml.tuning.TrainValidationSplit.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with a randomly generated uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.explainParam.html#pyspark.ml.tuning.TrainValidationSplit.explainParam" title="pyspark.ml.tuning.TrainValidationSplit.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.explainParams.html#pyspark.ml.tuning.TrainValidationSplit.explainParams" title="pyspark.ml.tuning.TrainValidationSplit.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.extractParamMap.html#pyspark.ml.tuning.TrainValidationSplit.extractParamMap" title="pyspark.ml.tuning.TrainValidationSplit.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.fit.html#pyspark.ml.tuning.TrainValidationSplit.fit" title="pyspark.ml.tuning.TrainValidationSplit.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getEstimator.html#pyspark.ml.tuning.TrainValidationSplit.getEstimator" title="pyspark.ml.tuning.TrainValidationSplit.getEstimator"><code class="xref py py-obj docutils literal"><span class="pre">getEstimator</span></code></a>()</td>
+<td>Gets the value of estimator or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getEstimatorParamMaps.html#pyspark.ml.tuning.TrainValidationSplit.getEstimatorParamMaps" title="pyspark.ml.tuning.TrainValidationSplit.getEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">getEstimatorParamMaps</span></code></a>()</td>
+<td>Gets the value of estimatorParamMaps or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getEvaluator.html#pyspark.ml.tuning.TrainValidationSplit.getEvaluator" title="pyspark.ml.tuning.TrainValidationSplit.getEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluator</span></code></a>()</td>
+<td>Gets the value of evaluator or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getOrDefault.html#pyspark.ml.tuning.TrainValidationSplit.getOrDefault" title="pyspark.ml.tuning.TrainValidationSplit.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getParam.html#pyspark.ml.tuning.TrainValidationSplit.getParam" title="pyspark.ml.tuning.TrainValidationSplit.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getSeed.html#pyspark.ml.tuning.TrainValidationSplit.getSeed" title="pyspark.ml.tuning.TrainValidationSplit.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.getTrainRatio.html#pyspark.ml.tuning.TrainValidationSplit.getTrainRatio" title="pyspark.ml.tuning.TrainValidationSplit.getTrainRatio"><code class="xref py py-obj docutils literal"><span class="pre">getTrainRatio</span></code></a>()</td>
+<td>Gets the value of trainRatio or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.hasDefault.html#pyspark.ml.tuning.TrainValidationSplit.hasDefault" title="pyspark.ml.tuning.TrainValidationSplit.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.hasParam.html#pyspark.ml.tuning.TrainValidationSplit.hasParam" title="pyspark.ml.tuning.TrainValidationSplit.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.isDefined.html#pyspark.ml.tuning.TrainValidationSplit.isDefined" title="pyspark.ml.tuning.TrainValidationSplit.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.isSet.html#pyspark.ml.tuning.TrainValidationSplit.isSet" title="pyspark.ml.tuning.TrainValidationSplit.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setEstimator.html#pyspark.ml.tuning.TrainValidationSplit.setEstimator" title="pyspark.ml.tuning.TrainValidationSplit.setEstimator"><code class="xref py py-obj docutils literal"><span class="pre">setEstimator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setEstimatorParamMaps.html#pyspark.ml.tuning.TrainValidationSplit.setEstimatorParamMaps" title="pyspark.ml.tuning.TrainValidationSplit.setEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">setEstimatorParamMaps</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimatorParamMaps</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setEvaluator.html#pyspark.ml.tuning.TrainValidationSplit.setEvaluator" title="pyspark.ml.tuning.TrainValidationSplit.setEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">evaluator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setParams.html#pyspark.ml.tuning.TrainValidationSplit.setParams" title="pyspark.ml.tuning.TrainValidationSplit.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>setParams(self, estimator=None, estimatorParamMaps=None, evaluator=None, trainRatio=0.75,                  seed=None):</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setSeed.html#pyspark.ml.tuning.TrainValidationSplit.setSeed" title="pyspark.ml.tuning.TrainValidationSplit.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">seed</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.setTrainRatio.html#pyspark.ml.tuning.TrainValidationSplit.setTrainRatio" title="pyspark.ml.tuning.TrainValidationSplit.setTrainRatio"><code class="xref py py-obj docutils literal"><span class="pre">setTrainRatio</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">trainRatio</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.9.2.11.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.estimator.html#pyspark.ml.tuning.TrainValidationSplit.estimator" title="pyspark.ml.tuning.TrainValidationSplit.estimator"><code class="xref py py-obj docutils literal"><span class="pre">estimator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.estimatorParamMaps.html#pyspark.ml.tuning.TrainValidationSplit.estimatorParamMaps" title="pyspark.ml.tuning.TrainValidationSplit.estimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">estimatorParamMaps</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.evaluator.html#pyspark.ml.tuning.TrainValidationSplit.evaluator" title="pyspark.ml.tuning.TrainValidationSplit.evaluator"><code class="xref py py-obj docutils literal"><span class="pre">evaluator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.params.html#pyspark.ml.tuning.TrainValidationSplit.params" title="pyspark.ml.tuning.TrainValidationSplit.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.seed.html#pyspark.ml.tuning.TrainValidationSplit.seed" title="pyspark.ml.tuning.TrainValidationSplit.seed"><code class="xref py py-obj docutils literal"><span class="pre">seed</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.TrainValidationSplit.trainRatio.html#pyspark.ml.tuning.TrainValidationSplit.trainRatio" title="pyspark.ml.tuning.TrainValidationSplit.trainRatio"><code class="xref py py-obj docutils literal"><span class="pre">trainRatio</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -322,10 +343,10 @@ Similar to <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.tuning.TrainValidationSplit.params.html" class="btn btn-neutral float-right" title="3.9.2.11.1. pyspark.ml.tuning.TrainValidationSplit.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.tuning.TrainValidationSplit.__init__.html" class="btn btn-neutral float-right" title="3.9.2.11.1.1. pyspark.ml.tuning.TrainValidationSplit.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.tuning.SparkContext.wholeTextFiles.html" class="btn btn-neutral" title="3.9.2.10.40. pyspark.ml.tuning.SparkContext.wholeTextFiles" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.tuning.SparkContext.version.html" class="btn btn-neutral" title="3.9.2.10.2.6. pyspark.ml.tuning.SparkContext.version" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

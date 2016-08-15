@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.8.2.8. pyspark.mllib.linalg.distributed.Matrix &mdash; PySpark API 1 documentation</title>
+  <title>4.8.2.7. pyspark.mllib.linalg.distributed.Matrix &mdash; PySpark API 1 documentation</title>
   
 
   
@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.8. pyspark.mllib.linalg.distributed" href="../pyspark.mllib.linalg.distributed.html"/>
-        <link rel="next" title="4.8.2.8.1. pyspark.mllib.linalg.distributed.Matrix.asML" href="pyspark.mllib.linalg.distributed.Matrix.asML.html"/>
-        <link rel="prev" title="4.8.2.7. pyspark.mllib.linalg.distributed.JavaObject" href="pyspark.mllib.linalg.distributed.JavaObject.html"/> 
+        <link rel="next" title="4.8.2.7.1.1. pyspark.mllib.linalg.distributed.Matrix.__init__" href="pyspark.mllib.linalg.distributed.Matrix.__init__.html"/>
+        <link rel="prev" title="4.8.2.6.1.2. pyspark.mllib.linalg.distributed.JavaModelWrapper.call" href="pyspark.mllib.linalg.distributed.JavaModelWrapper.call.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -105,14 +105,13 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.IndexedRow.html">4.8.2.4. pyspark.mllib.linalg.distributed.IndexedRow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.IndexedRowMatrix.html">4.8.2.5. pyspark.mllib.linalg.distributed.IndexedRowMatrix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.JavaModelWrapper.html">4.8.2.6. pyspark.mllib.linalg.distributed.JavaModelWrapper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.JavaObject.html">4.8.2.7. pyspark.mllib.linalg.distributed.JavaObject</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.8.2.8. pyspark.mllib.linalg.distributed.Matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MatrixEntry.html">4.8.2.9. pyspark.mllib.linalg.distributed.MatrixEntry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html">4.8.2.10. pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.QRDecomposition.html">4.8.2.11. pyspark.mllib.linalg.distributed.QRDecomposition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RDD.html">4.8.2.12. pyspark.mllib.linalg.distributed.RDD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RowMatrix.html">4.8.2.13. pyspark.mllib.linalg.distributed.RowMatrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.StorageLevel.html">4.8.2.14. pyspark.mllib.linalg.distributed.StorageLevel</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.8.2.7. pyspark.mllib.linalg.distributed.Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MatrixEntry.html">4.8.2.8. pyspark.mllib.linalg.distributed.MatrixEntry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html">4.8.2.9. pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.QRDecomposition.html">4.8.2.10. pyspark.mllib.linalg.distributed.QRDecomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RDD.html">4.8.2.11. pyspark.mllib.linalg.distributed.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RowMatrix.html">4.8.2.12. pyspark.mllib.linalg.distributed.RowMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.StorageLevel.html">4.8.2.13. pyspark.mllib.linalg.distributed.StorageLevel</a></li>
 </ul>
 </li>
 </ul>
@@ -171,7 +170,7 @@
         
           <li><a href="../pyspark.mllib.linalg.distributed.html">4.8. pyspark.mllib.linalg.distributed</a> &raquo;</li>
         
-      <li>4.8.2.8. pyspark.mllib.linalg.distributed.Matrix</li>
+      <li>4.8.2.7. pyspark.mllib.linalg.distributed.Matrix</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,28 +188,37 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pyspark-mllib-linalg-distributed-matrix">
-<h1>4.8.2.8. pyspark.mllib.linalg.distributed.Matrix<a class="headerlink" href="#pyspark-mllib-linalg-distributed-matrix" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.__init__.html#pyspark.mllib.linalg.distributed.Matrix.__init__" title="pyspark.mllib.linalg.distributed.Matrix.__init__"><code class="xref py py-func docutils literal"><span class="pre">Matrix.__init__()</span></code></a></p>
+<h1>4.8.2.7. pyspark.mllib.linalg.distributed.Matrix<a class="headerlink" href="#pyspark-mllib-linalg-distributed-matrix" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="pyspark.mllib.linalg.distributed.Matrix">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.linalg.distributed.</code><code class="descname">Matrix</code><span class="sig-paren">(</span><em>numRows</em>, <em>numCols</em>, <em>isTransposed=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg.html#Matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.linalg.distributed.Matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p class="rubric">Methods</p>
+<dd><dl class="method">
+<dt id="pyspark.mllib.linalg.distributed.Matrix.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>numRows</em>, <em>numCols</em>, <em>isTransposed=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg.html#Matrix.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.linalg.distributed.Matrix.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.8.2.7.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.asML.html#pyspark.mllib.linalg.distributed.Matrix.asML" title="pyspark.mllib.linalg.distributed.Matrix.asML"><code class="xref py py-obj docutils literal"><span class="pre">asML</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.__init__.html#pyspark.mllib.linalg.distributed.Matrix.__init__" title="pyspark.mllib.linalg.distributed.Matrix.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(numRows,&nbsp;numCols[,&nbsp;isTransposed])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.asML.html#pyspark.mllib.linalg.distributed.Matrix.asML" title="pyspark.mllib.linalg.distributed.Matrix.asML"><code class="xref py py-obj docutils literal"><span class="pre">asML</span></code></a>()</td>
 <td>Convert this matrix to the new mllib-local representation.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.toArray.html#pyspark.mllib.linalg.distributed.Matrix.toArray" title="pyspark.mllib.linalg.distributed.Matrix.toArray"><code class="xref py py-obj docutils literal"><span class="pre">toArray</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.toArray.html#pyspark.mllib.linalg.distributed.Matrix.toArray" title="pyspark.mllib.linalg.distributed.Matrix.toArray"><code class="xref py py-obj docutils literal"><span class="pre">toArray</span></code></a>()</td>
 <td>Returns its elements in a NumPy ndarray.</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -220,10 +228,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.linalg.distributed.Matrix.asML.html" class="btn btn-neutral float-right" title="4.8.2.8.1. pyspark.mllib.linalg.distributed.Matrix.asML" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.linalg.distributed.Matrix.__init__.html" class="btn btn-neutral float-right" title="4.8.2.7.1.1. pyspark.mllib.linalg.distributed.Matrix.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.linalg.distributed.JavaObject.html" class="btn btn-neutral" title="4.8.2.7. pyspark.mllib.linalg.distributed.JavaObject" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.linalg.distributed.JavaModelWrapper.call.html" class="btn btn-neutral" title="4.8.2.6.1.2. pyspark.mllib.linalg.distributed.JavaModelWrapper.call" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

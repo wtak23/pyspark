@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="2.1. pyspark.sql" href="../pyspark.sql.html"/>
-        <link rel="next" title="2.1.1.11.1. pyspark.sql.SparkSession.catalog" href="pyspark.sql.SparkSession.catalog.html"/>
-        <link rel="prev" title="2.1.1.10.21. pyspark.sql.SQLContext.uncacheTable" href="pyspark.sql.SQLContext.uncacheTable.html"/> 
+        <link rel="next" title="2.1.1.11.1.1. pyspark.sql.SparkSession.__init__" href="pyspark.sql.SparkSession.__init__.html"/>
+        <link rel="prev" title="2.1.1.10.2.4. pyspark.sql.SQLContext.udf" href="pyspark.sql.SQLContext.udf.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -178,7 +178,6 @@
             
   <div class="section" id="pyspark-sql-sparksession">
 <h1>2.1.1.11. pyspark.sql.SparkSession<a class="headerlink" href="#pyspark-sql-sparksession" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.sql.SparkSession.__init__.html#pyspark.sql.SparkSession.__init__" title="pyspark.sql.SparkSession.__init__"><code class="xref py py-func docutils literal"><span class="pre">SparkSession.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.sql.SparkSession">
 <em class="property">class </em><code class="descclassname">pyspark.sql.</code><code class="descname">SparkSession</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>jsparkSession=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/session.html#SparkSession"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.SparkSession" title="Permalink to this definition">¶</a></dt>
@@ -193,69 +192,6 @@ To create a SparkSession, use the following builder pattern:</p>
 <span class="gp">... </span>    <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.catalog.html#pyspark.sql.SparkSession.catalog" title="pyspark.sql.SparkSession.catalog"><code class="xref py py-obj docutils literal"><span class="pre">catalog</span></code></a></td>
-<td>Interface through which the user may create, drop, alter or query underlying databases, tables, functions etc.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.conf.html#pyspark.sql.SparkSession.conf" title="pyspark.sql.SparkSession.conf"><code class="xref py py-obj docutils literal"><span class="pre">conf</span></code></a></td>
-<td>Runtime configuration interface for Spark.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.read.html#pyspark.sql.SparkSession.read" title="pyspark.sql.SparkSession.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a></td>
-<td>Returns a <a class="reference internal" href="pyspark.sql.DataFrameReader.html#pyspark.sql.DataFrameReader" title="pyspark.sql.DataFrameReader"><code class="xref py py-class docutils literal"><span class="pre">DataFrameReader</span></code></a> that can be used to read data in as a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.readStream.html#pyspark.sql.SparkSession.readStream" title="pyspark.sql.SparkSession.readStream"><code class="xref py py-obj docutils literal"><span class="pre">readStream</span></code></a></td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataStreamReader</span></code> that can be used to read data streams as a streaming <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.sparkContext.html#pyspark.sql.SparkSession.sparkContext" title="pyspark.sql.SparkSession.sparkContext"><code class="xref py py-obj docutils literal"><span class="pre">sparkContext</span></code></a></td>
-<td>Returns the underlying <code class="xref py py-class docutils literal"><span class="pre">SparkContext</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.streams.html#pyspark.sql.SparkSession.streams" title="pyspark.sql.SparkSession.streams"><code class="xref py py-obj docutils literal"><span class="pre">streams</span></code></a></td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">StreamingQueryManager</span></code> that allows managing all the <code class="xref py py-class docutils literal"><span class="pre">StreamingQuery</span></code> StreamingQueries active on <cite>this</cite> context.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.udf.html#pyspark.sql.SparkSession.udf" title="pyspark.sql.SparkSession.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a></td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">UDFRegistration</span></code> for UDF registration.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.version.html#pyspark.sql.SparkSession.version" title="pyspark.sql.SparkSession.version"><code class="xref py py-obj docutils literal"><span class="pre">version</span></code></a></td>
-<td>The version of Spark on which this application is running.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><code class="xref py py-obj docutils literal"><span class="pre">Builder</span></code></td>
-<td>Builder for <a class="reference internal" href="#pyspark.sql.SparkSession" title="pyspark.sql.SparkSession"><code class="xref py py-class docutils literal"><span class="pre">SparkSession</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.createDataFrame.html#pyspark.sql.SparkSession.createDataFrame" title="pyspark.sql.SparkSession.createDataFrame"><code class="xref py py-obj docutils literal"><span class="pre">createDataFrame</span></code></a>(data[,&nbsp;schema,&nbsp;samplingRatio])</td>
-<td>Creates a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> from an <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.newSession.html#pyspark.sql.SparkSession.newSession" title="pyspark.sql.SparkSession.newSession"><code class="xref py py-obj docutils literal"><span class="pre">newSession</span></code></a>()</td>
-<td>Returns a new SparkSession as new session, that has separate SQLConf, registered temporary views and UDFs, but shared SparkContext and table cache.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.range.html#pyspark.sql.SparkSession.range" title="pyspark.sql.SparkSession.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numPartitions])</td>
-<td>Create a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with single LongType column named <cite>id</cite>, containing elements in a range from <cite>start</cite> to <cite>end</cite> (exclusive) with step value <cite>step</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.sql.html#pyspark.sql.SparkSession.sql" title="pyspark.sql.SparkSession.sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a>(sqlQuery)</td>
-<td>Returns a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> representing the result of the given query.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.stop.html#pyspark.sql.SparkSession.stop" title="pyspark.sql.SparkSession.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>()</td>
-<td>Stop the underlying <code class="xref py py-class docutils literal"><span class="pre">SparkContext</span></code>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.table.html#pyspark.sql.SparkSession.table" title="pyspark.sql.SparkSession.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
-<td>Returns the specified table as a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.sql.SparkSession.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>jsparkSession=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/session.html#SparkSession.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.SparkSession.__init__" title="Permalink to this definition">¶</a></dt>
@@ -278,6 +214,76 @@ To create a SparkSession, use the following builder pattern:</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>2.1.1.11.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.__init__.html#pyspark.sql.SparkSession.__init__" title="pyspark.sql.SparkSession.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(sparkContext[,&nbsp;jsparkSession])</td>
+<td>Creates a new SparkSession.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.createDataFrame.html#pyspark.sql.SparkSession.createDataFrame" title="pyspark.sql.SparkSession.createDataFrame"><code class="xref py py-obj docutils literal"><span class="pre">createDataFrame</span></code></a>(data[,&nbsp;schema,&nbsp;samplingRatio])</td>
+<td>Creates a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> from an <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.newSession.html#pyspark.sql.SparkSession.newSession" title="pyspark.sql.SparkSession.newSession"><code class="xref py py-obj docutils literal"><span class="pre">newSession</span></code></a>()</td>
+<td>Returns a new SparkSession as new session, that has separate SQLConf, registered temporary views and UDFs, but shared SparkContext and table cache.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.range.html#pyspark.sql.SparkSession.range" title="pyspark.sql.SparkSession.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numPartitions])</td>
+<td>Create a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with single LongType column named <cite>id</cite>, containing elements in a range from <cite>start</cite> to <cite>end</cite> (exclusive) with step value <cite>step</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.sql.html#pyspark.sql.SparkSession.sql" title="pyspark.sql.SparkSession.sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a>(sqlQuery)</td>
+<td>Returns a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> representing the result of the given query.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.stop.html#pyspark.sql.SparkSession.stop" title="pyspark.sql.SparkSession.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>()</td>
+<td>Stop the underlying <code class="xref py py-class docutils literal"><span class="pre">SparkContext</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.table.html#pyspark.sql.SparkSession.table" title="pyspark.sql.SparkSession.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
+<td>Returns the specified table as a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>2.1.1.11.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.builder.html#pyspark.sql.SparkSession.builder" title="pyspark.sql.SparkSession.builder"><code class="xref py py-obj docutils literal"><span class="pre">builder</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.catalog.html#pyspark.sql.SparkSession.catalog" title="pyspark.sql.SparkSession.catalog"><code class="xref py py-obj docutils literal"><span class="pre">catalog</span></code></a></td>
+<td>Interface through which the user may create, drop, alter or query underlying databases, tables, functions etc.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.conf.html#pyspark.sql.SparkSession.conf" title="pyspark.sql.SparkSession.conf"><code class="xref py py-obj docutils literal"><span class="pre">conf</span></code></a></td>
+<td>Runtime configuration interface for Spark.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.read.html#pyspark.sql.SparkSession.read" title="pyspark.sql.SparkSession.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a></td>
+<td>Returns a <a class="reference internal" href="pyspark.sql.DataFrameReader.html#pyspark.sql.DataFrameReader" title="pyspark.sql.DataFrameReader"><code class="xref py py-class docutils literal"><span class="pre">DataFrameReader</span></code></a> that can be used to read data in as a <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.readStream.html#pyspark.sql.SparkSession.readStream" title="pyspark.sql.SparkSession.readStream"><code class="xref py py-obj docutils literal"><span class="pre">readStream</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataStreamReader</span></code> that can be used to read data streams as a streaming <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.sparkContext.html#pyspark.sql.SparkSession.sparkContext" title="pyspark.sql.SparkSession.sparkContext"><code class="xref py py-obj docutils literal"><span class="pre">sparkContext</span></code></a></td>
+<td>Returns the underlying <code class="xref py py-class docutils literal"><span class="pre">SparkContext</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.streams.html#pyspark.sql.SparkSession.streams" title="pyspark.sql.SparkSession.streams"><code class="xref py py-obj docutils literal"><span class="pre">streams</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">StreamingQueryManager</span></code> that allows managing all the <code class="xref py py-class docutils literal"><span class="pre">StreamingQuery</span></code> StreamingQueries active on <cite>this</cite> context.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.sql.SparkSession.udf.html#pyspark.sql.SparkSession.udf" title="pyspark.sql.SparkSession.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">UDFRegistration</span></code> for UDF registration.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.sql.SparkSession.version.html#pyspark.sql.SparkSession.version" title="pyspark.sql.SparkSession.version"><code class="xref py py-obj docutils literal"><span class="pre">version</span></code></a></td>
+<td>The version of Spark on which this application is running.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -287,10 +293,10 @@ To create a SparkSession, use the following builder pattern:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.sql.SparkSession.catalog.html" class="btn btn-neutral float-right" title="2.1.1.11.1. pyspark.sql.SparkSession.catalog" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.sql.SparkSession.__init__.html" class="btn btn-neutral float-right" title="2.1.1.11.1.1. pyspark.sql.SparkSession.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.sql.SQLContext.uncacheTable.html" class="btn btn-neutral" title="2.1.1.10.21. pyspark.sql.SQLContext.uncacheTable" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.sql.SQLContext.udf.html" class="btn btn-neutral" title="2.1.1.10.2.4. pyspark.sql.SQLContext.udf" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

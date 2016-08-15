@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.5. pyspark.ml.clustering" href="../pyspark.ml.clustering.html"/>
-        <link rel="next" title="3.5.2.11.1. pyspark.ml.clustering.HasHandleInvalid.params" href="pyspark.ml.clustering.HasHandleInvalid.params.html"/>
-        <link rel="prev" title="3.5.2.10.13. pyspark.ml.clustering.HasFitIntercept.setFitIntercept" href="pyspark.ml.clustering.HasFitIntercept.setFitIntercept.html"/> 
+        <link rel="next" title="3.5.2.11.1.1. pyspark.ml.clustering.HasHandleInvalid.__init__" href="pyspark.ml.clustering.HasHandleInvalid.__init__.html"/>
+        <link rel="prev" title="3.5.2.10.2.2. pyspark.ml.clustering.HasFitIntercept.params" href="pyspark.ml.clustering.HasFitIntercept.params.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -221,70 +221,84 @@
             
   <div class="section" id="pyspark-ml-clustering-hashandleinvalid">
 <h1>3.5.2.11. pyspark.ml.clustering.HasHandleInvalid<a class="headerlink" href="#pyspark-ml-clustering-hashandleinvalid" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.__init__.html#pyspark.ml.clustering.HasHandleInvalid.__init__" title="pyspark.ml.clustering.HasHandleInvalid.__init__"><code class="xref py py-func docutils literal"><span class="pre">HasHandleInvalid.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.clustering.HasHandleInvalid">
 <em class="property">class </em><code class="descclassname">pyspark.ml.clustering.</code><code class="descname">HasHandleInvalid</code><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasHandleInvalid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.HasHandleInvalid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mixin for param handleInvalid: how to handle invalid entries. Options are skip (which will filter out rows with bad values), or error (which will throw an error). More options may be added later.</p>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.ml.clustering.HasHandleInvalid.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasHandleInvalid.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.clustering.HasHandleInvalid.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>3.5.2.11.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.params.html#pyspark.ml.clustering.HasHandleInvalid.params" title="pyspark.ml.clustering.HasHandleInvalid.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.__init__.html#pyspark.ml.clustering.HasHandleInvalid.__init__" title="pyspark.ml.clustering.HasHandleInvalid.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.copy.html#pyspark.ml.clustering.HasHandleInvalid.copy" title="pyspark.ml.clustering.HasHandleInvalid.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.explainParam.html#pyspark.ml.clustering.HasHandleInvalid.explainParam" title="pyspark.ml.clustering.HasHandleInvalid.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.explainParams.html#pyspark.ml.clustering.HasHandleInvalid.explainParams" title="pyspark.ml.clustering.HasHandleInvalid.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.extractParamMap.html#pyspark.ml.clustering.HasHandleInvalid.extractParamMap" title="pyspark.ml.clustering.HasHandleInvalid.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.getHandleInvalid.html#pyspark.ml.clustering.HasHandleInvalid.getHandleInvalid" title="pyspark.ml.clustering.HasHandleInvalid.getHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">getHandleInvalid</span></code></a>()</td>
+<td>Gets the value of handleInvalid or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.getOrDefault.html#pyspark.ml.clustering.HasHandleInvalid.getOrDefault" title="pyspark.ml.clustering.HasHandleInvalid.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.getParam.html#pyspark.ml.clustering.HasHandleInvalid.getParam" title="pyspark.ml.clustering.HasHandleInvalid.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.hasDefault.html#pyspark.ml.clustering.HasHandleInvalid.hasDefault" title="pyspark.ml.clustering.HasHandleInvalid.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.hasParam.html#pyspark.ml.clustering.HasHandleInvalid.hasParam" title="pyspark.ml.clustering.HasHandleInvalid.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.isDefined.html#pyspark.ml.clustering.HasHandleInvalid.isDefined" title="pyspark.ml.clustering.HasHandleInvalid.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.isSet.html#pyspark.ml.clustering.HasHandleInvalid.isSet" title="pyspark.ml.clustering.HasHandleInvalid.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.setHandleInvalid.html#pyspark.ml.clustering.HasHandleInvalid.setHandleInvalid" title="pyspark.ml.clustering.HasHandleInvalid.setHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">setHandleInvalid</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">handleInvalid</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.5.2.11.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.handleInvalid.html#pyspark.ml.clustering.HasHandleInvalid.handleInvalid" title="pyspark.ml.clustering.HasHandleInvalid.handleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">handleInvalid</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.params.html#pyspark.ml.clustering.HasHandleInvalid.params" title="pyspark.ml.clustering.HasHandleInvalid.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
 <td>Returns all params ordered by name.</td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.copy.html#pyspark.ml.clustering.HasHandleInvalid.copy" title="pyspark.ml.clustering.HasHandleInvalid.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.explainParam.html#pyspark.ml.clustering.HasHandleInvalid.explainParam" title="pyspark.ml.clustering.HasHandleInvalid.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.explainParams.html#pyspark.ml.clustering.HasHandleInvalid.explainParams" title="pyspark.ml.clustering.HasHandleInvalid.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.extractParamMap.html#pyspark.ml.clustering.HasHandleInvalid.extractParamMap" title="pyspark.ml.clustering.HasHandleInvalid.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.getHandleInvalid.html#pyspark.ml.clustering.HasHandleInvalid.getHandleInvalid" title="pyspark.ml.clustering.HasHandleInvalid.getHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">getHandleInvalid</span></code></a>()</td>
-<td>Gets the value of handleInvalid or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.getOrDefault.html#pyspark.ml.clustering.HasHandleInvalid.getOrDefault" title="pyspark.ml.clustering.HasHandleInvalid.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.getParam.html#pyspark.ml.clustering.HasHandleInvalid.getParam" title="pyspark.ml.clustering.HasHandleInvalid.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.hasDefault.html#pyspark.ml.clustering.HasHandleInvalid.hasDefault" title="pyspark.ml.clustering.HasHandleInvalid.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.hasParam.html#pyspark.ml.clustering.HasHandleInvalid.hasParam" title="pyspark.ml.clustering.HasHandleInvalid.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.isDefined.html#pyspark.ml.clustering.HasHandleInvalid.isDefined" title="pyspark.ml.clustering.HasHandleInvalid.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.isSet.html#pyspark.ml.clustering.HasHandleInvalid.isSet" title="pyspark.ml.clustering.HasHandleInvalid.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.setHandleInvalid.html#pyspark.ml.clustering.HasHandleInvalid.setHandleInvalid" title="pyspark.ml.clustering.HasHandleInvalid.setHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">setHandleInvalid</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.clustering.HasHandleInvalid.handleInvalid.html#pyspark.ml.clustering.HasHandleInvalid.handleInvalid" title="pyspark.ml.clustering.HasHandleInvalid.handleInvalid"><code class="xref py py-attr docutils literal"><span class="pre">handleInvalid</span></code></a>.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -294,10 +308,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.clustering.HasHandleInvalid.params.html" class="btn btn-neutral float-right" title="3.5.2.11.1. pyspark.ml.clustering.HasHandleInvalid.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.clustering.HasHandleInvalid.__init__.html" class="btn btn-neutral float-right" title="3.5.2.11.1.1. pyspark.ml.clustering.HasHandleInvalid.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.clustering.HasFitIntercept.setFitIntercept.html" class="btn btn-neutral" title="3.5.2.10.13. pyspark.ml.clustering.HasFitIntercept.setFitIntercept" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.clustering.HasFitIntercept.params.html" class="btn btn-neutral" title="3.5.2.10.2.2. pyspark.ml.clustering.HasFitIntercept.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

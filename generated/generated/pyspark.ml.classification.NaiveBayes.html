@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.4. pyspark.ml.classification" href="../pyspark.ml.classification.html"/>
-        <link rel="next" title="3.4.2.58.1. pyspark.ml.classification.NaiveBayes.params" href="pyspark.ml.classification.NaiveBayes.params.html"/>
-        <link rel="prev" title="3.4.2.57.39. pyspark.ml.classification.MultilayerPerceptronClassifier.write" href="pyspark.ml.classification.MultilayerPerceptronClassifier.write.html"/> 
+        <link rel="next" title="3.4.2.58.1.1. pyspark.ml.classification.NaiveBayes.__init__" href="pyspark.ml.classification.NaiveBayes.__init__.html"/>
+        <link rel="prev" title="3.4.2.57.2.12. pyspark.ml.classification.MultilayerPerceptronClassifier.tol" href="pyspark.ml.classification.MultilayerPerceptronClassifier.tol.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -245,7 +245,6 @@
             
   <div class="section" id="pyspark-ml-classification-naivebayes">
 <h1>3.4.2.58. pyspark.ml.classification.NaiveBayes<a class="headerlink" href="#pyspark-ml-classification-naivebayes" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.__init__.html#pyspark.ml.classification.NaiveBayes.__init__" title="pyspark.ml.classification.NaiveBayes.__init__"><code class="xref py py-func docutils literal"><span class="pre">NaiveBayes.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.classification.NaiveBayes">
 <em class="property">class </em><code class="descclassname">pyspark.ml.classification.</code><code class="descname">NaiveBayes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/classification.html#NaiveBayes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.classification.NaiveBayes" title="Permalink to this definition">¶</a></dt>
@@ -300,123 +299,6 @@ The input feature values must be nonnegative.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.5.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.params.html#pyspark.ml.classification.NaiveBayes.params" title="pyspark.ml.classification.NaiveBayes.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.copy.html#pyspark.ml.classification.NaiveBayes.copy" title="pyspark.ml.classification.NaiveBayes.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.explainParam.html#pyspark.ml.classification.NaiveBayes.explainParam" title="pyspark.ml.classification.NaiveBayes.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.explainParams.html#pyspark.ml.classification.NaiveBayes.explainParams" title="pyspark.ml.classification.NaiveBayes.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.extractParamMap.html#pyspark.ml.classification.NaiveBayes.extractParamMap" title="pyspark.ml.classification.NaiveBayes.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.fit.html#pyspark.ml.classification.NaiveBayes.fit" title="pyspark.ml.classification.NaiveBayes.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getFeaturesCol.html#pyspark.ml.classification.NaiveBayes.getFeaturesCol" title="pyspark.ml.classification.NaiveBayes.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
-<td>Gets the value of featuresCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getLabelCol.html#pyspark.ml.classification.NaiveBayes.getLabelCol" title="pyspark.ml.classification.NaiveBayes.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
-<td>Gets the value of labelCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getModelType.html#pyspark.ml.classification.NaiveBayes.getModelType" title="pyspark.ml.classification.NaiveBayes.getModelType"><code class="xref py py-obj docutils literal"><span class="pre">getModelType</span></code></a>()</td>
-<td>Gets the value of modelType or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getOrDefault.html#pyspark.ml.classification.NaiveBayes.getOrDefault" title="pyspark.ml.classification.NaiveBayes.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getParam.html#pyspark.ml.classification.NaiveBayes.getParam" title="pyspark.ml.classification.NaiveBayes.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getPredictionCol.html#pyspark.ml.classification.NaiveBayes.getPredictionCol" title="pyspark.ml.classification.NaiveBayes.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
-<td>Gets the value of predictionCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getProbabilityCol.html#pyspark.ml.classification.NaiveBayes.getProbabilityCol" title="pyspark.ml.classification.NaiveBayes.getProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">getProbabilityCol</span></code></a>()</td>
-<td>Gets the value of probabilityCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getRawPredictionCol.html#pyspark.ml.classification.NaiveBayes.getRawPredictionCol" title="pyspark.ml.classification.NaiveBayes.getRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getRawPredictionCol</span></code></a>()</td>
-<td>Gets the value of rawPredictionCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getSmoothing.html#pyspark.ml.classification.NaiveBayes.getSmoothing" title="pyspark.ml.classification.NaiveBayes.getSmoothing"><code class="xref py py-obj docutils literal"><span class="pre">getSmoothing</span></code></a>()</td>
-<td>Gets the value of smoothing or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getThresholds.html#pyspark.ml.classification.NaiveBayes.getThresholds" title="pyspark.ml.classification.NaiveBayes.getThresholds"><code class="xref py py-obj docutils literal"><span class="pre">getThresholds</span></code></a>()</td>
-<td>Gets the value of thresholds or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.hasDefault.html#pyspark.ml.classification.NaiveBayes.hasDefault" title="pyspark.ml.classification.NaiveBayes.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.hasParam.html#pyspark.ml.classification.NaiveBayes.hasParam" title="pyspark.ml.classification.NaiveBayes.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.isDefined.html#pyspark.ml.classification.NaiveBayes.isDefined" title="pyspark.ml.classification.NaiveBayes.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.isSet.html#pyspark.ml.classification.NaiveBayes.isSet" title="pyspark.ml.classification.NaiveBayes.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.load.html#pyspark.ml.classification.NaiveBayes.load" title="pyspark.ml.classification.NaiveBayes.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.read.html#pyspark.ml.classification.NaiveBayes.read" title="pyspark.ml.classification.NaiveBayes.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.save.html#pyspark.ml.classification.NaiveBayes.save" title="pyspark.ml.classification.NaiveBayes.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setFeaturesCol.html#pyspark.ml.classification.NaiveBayes.setFeaturesCol" title="pyspark.ml.classification.NaiveBayes.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.featuresCol.html#pyspark.ml.classification.NaiveBayes.featuresCol" title="pyspark.ml.classification.NaiveBayes.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setLabelCol.html#pyspark.ml.classification.NaiveBayes.setLabelCol" title="pyspark.ml.classification.NaiveBayes.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.labelCol.html#pyspark.ml.classification.NaiveBayes.labelCol" title="pyspark.ml.classification.NaiveBayes.labelCol"><code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setModelType.html#pyspark.ml.classification.NaiveBayes.setModelType" title="pyspark.ml.classification.NaiveBayes.setModelType"><code class="xref py py-obj docutils literal"><span class="pre">setModelType</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.modelType.html#pyspark.ml.classification.NaiveBayes.modelType" title="pyspark.ml.classification.NaiveBayes.modelType"><code class="xref py py-attr docutils literal"><span class="pre">modelType</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setParams.html#pyspark.ml.classification.NaiveBayes.setParams" title="pyspark.ml.classification.NaiveBayes.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
-<td>Sets params for Naive Bayes.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setPredictionCol.html#pyspark.ml.classification.NaiveBayes.setPredictionCol" title="pyspark.ml.classification.NaiveBayes.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.predictionCol.html#pyspark.ml.classification.NaiveBayes.predictionCol" title="pyspark.ml.classification.NaiveBayes.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setProbabilityCol.html#pyspark.ml.classification.NaiveBayes.setProbabilityCol" title="pyspark.ml.classification.NaiveBayes.setProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">setProbabilityCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.probabilityCol.html#pyspark.ml.classification.NaiveBayes.probabilityCol" title="pyspark.ml.classification.NaiveBayes.probabilityCol"><code class="xref py py-attr docutils literal"><span class="pre">probabilityCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setRawPredictionCol.html#pyspark.ml.classification.NaiveBayes.setRawPredictionCol" title="pyspark.ml.classification.NaiveBayes.setRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setRawPredictionCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.rawPredictionCol.html#pyspark.ml.classification.NaiveBayes.rawPredictionCol" title="pyspark.ml.classification.NaiveBayes.rawPredictionCol"><code class="xref py py-attr docutils literal"><span class="pre">rawPredictionCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setSmoothing.html#pyspark.ml.classification.NaiveBayes.setSmoothing" title="pyspark.ml.classification.NaiveBayes.setSmoothing"><code class="xref py py-obj docutils literal"><span class="pre">setSmoothing</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.smoothing.html#pyspark.ml.classification.NaiveBayes.smoothing" title="pyspark.ml.classification.NaiveBayes.smoothing"><code class="xref py py-attr docutils literal"><span class="pre">smoothing</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setThresholds.html#pyspark.ml.classification.NaiveBayes.setThresholds" title="pyspark.ml.classification.NaiveBayes.setThresholds"><code class="xref py py-obj docutils literal"><span class="pre">setThresholds</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.classification.NaiveBayes.thresholds.html#pyspark.ml.classification.NaiveBayes.thresholds" title="pyspark.ml.classification.NaiveBayes.thresholds"><code class="xref py py-attr docutils literal"><span class="pre">thresholds</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.write.html#pyspark.ml.classification.NaiveBayes.write" title="pyspark.ml.classification.NaiveBayes.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.classification.NaiveBayes.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>featuresCol=&quot;features&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>probabilityCol=&quot;probability&quot;</em>, <em>rawPredictionCol=&quot;rawPrediction&quot;</em>, <em>smoothing=1.0</em>, <em>modelType=&quot;multinomial&quot;</em>, <em>thresholds=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/classification.html#NaiveBayes.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.classification.NaiveBayes.__init__" title="Permalink to this definition">¶</a></dt>
@@ -424,6 +306,154 @@ The input feature values must be nonnegative.</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.4.2.58.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.__init__.html#pyspark.ml.classification.NaiveBayes.__init__" title="pyspark.ml.classification.NaiveBayes.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.copy.html#pyspark.ml.classification.NaiveBayes.copy" title="pyspark.ml.classification.NaiveBayes.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.explainParam.html#pyspark.ml.classification.NaiveBayes.explainParam" title="pyspark.ml.classification.NaiveBayes.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.explainParams.html#pyspark.ml.classification.NaiveBayes.explainParams" title="pyspark.ml.classification.NaiveBayes.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.extractParamMap.html#pyspark.ml.classification.NaiveBayes.extractParamMap" title="pyspark.ml.classification.NaiveBayes.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.fit.html#pyspark.ml.classification.NaiveBayes.fit" title="pyspark.ml.classification.NaiveBayes.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getFeaturesCol.html#pyspark.ml.classification.NaiveBayes.getFeaturesCol" title="pyspark.ml.classification.NaiveBayes.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getLabelCol.html#pyspark.ml.classification.NaiveBayes.getLabelCol" title="pyspark.ml.classification.NaiveBayes.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getModelType.html#pyspark.ml.classification.NaiveBayes.getModelType" title="pyspark.ml.classification.NaiveBayes.getModelType"><code class="xref py py-obj docutils literal"><span class="pre">getModelType</span></code></a>()</td>
+<td>Gets the value of modelType or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getOrDefault.html#pyspark.ml.classification.NaiveBayes.getOrDefault" title="pyspark.ml.classification.NaiveBayes.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getParam.html#pyspark.ml.classification.NaiveBayes.getParam" title="pyspark.ml.classification.NaiveBayes.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getPredictionCol.html#pyspark.ml.classification.NaiveBayes.getPredictionCol" title="pyspark.ml.classification.NaiveBayes.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getProbabilityCol.html#pyspark.ml.classification.NaiveBayes.getProbabilityCol" title="pyspark.ml.classification.NaiveBayes.getProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">getProbabilityCol</span></code></a>()</td>
+<td>Gets the value of probabilityCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getRawPredictionCol.html#pyspark.ml.classification.NaiveBayes.getRawPredictionCol" title="pyspark.ml.classification.NaiveBayes.getRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getRawPredictionCol</span></code></a>()</td>
+<td>Gets the value of rawPredictionCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getSmoothing.html#pyspark.ml.classification.NaiveBayes.getSmoothing" title="pyspark.ml.classification.NaiveBayes.getSmoothing"><code class="xref py py-obj docutils literal"><span class="pre">getSmoothing</span></code></a>()</td>
+<td>Gets the value of smoothing or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.getThresholds.html#pyspark.ml.classification.NaiveBayes.getThresholds" title="pyspark.ml.classification.NaiveBayes.getThresholds"><code class="xref py py-obj docutils literal"><span class="pre">getThresholds</span></code></a>()</td>
+<td>Gets the value of thresholds or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.hasDefault.html#pyspark.ml.classification.NaiveBayes.hasDefault" title="pyspark.ml.classification.NaiveBayes.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.hasParam.html#pyspark.ml.classification.NaiveBayes.hasParam" title="pyspark.ml.classification.NaiveBayes.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.isDefined.html#pyspark.ml.classification.NaiveBayes.isDefined" title="pyspark.ml.classification.NaiveBayes.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.isSet.html#pyspark.ml.classification.NaiveBayes.isSet" title="pyspark.ml.classification.NaiveBayes.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.load.html#pyspark.ml.classification.NaiveBayes.load" title="pyspark.ml.classification.NaiveBayes.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.read.html#pyspark.ml.classification.NaiveBayes.read" title="pyspark.ml.classification.NaiveBayes.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.save.html#pyspark.ml.classification.NaiveBayes.save" title="pyspark.ml.classification.NaiveBayes.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setFeaturesCol.html#pyspark.ml.classification.NaiveBayes.setFeaturesCol" title="pyspark.ml.classification.NaiveBayes.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setLabelCol.html#pyspark.ml.classification.NaiveBayes.setLabelCol" title="pyspark.ml.classification.NaiveBayes.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setModelType.html#pyspark.ml.classification.NaiveBayes.setModelType" title="pyspark.ml.classification.NaiveBayes.setModelType"><code class="xref py py-obj docutils literal"><span class="pre">setModelType</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">modelType</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setParams.html#pyspark.ml.classification.NaiveBayes.setParams" title="pyspark.ml.classification.NaiveBayes.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td>Sets params for Naive Bayes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setPredictionCol.html#pyspark.ml.classification.NaiveBayes.setPredictionCol" title="pyspark.ml.classification.NaiveBayes.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setProbabilityCol.html#pyspark.ml.classification.NaiveBayes.setProbabilityCol" title="pyspark.ml.classification.NaiveBayes.setProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">setProbabilityCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">probabilityCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setRawPredictionCol.html#pyspark.ml.classification.NaiveBayes.setRawPredictionCol" title="pyspark.ml.classification.NaiveBayes.setRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setRawPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">rawPredictionCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setSmoothing.html#pyspark.ml.classification.NaiveBayes.setSmoothing" title="pyspark.ml.classification.NaiveBayes.setSmoothing"><code class="xref py py-obj docutils literal"><span class="pre">setSmoothing</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">smoothing</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.setThresholds.html#pyspark.ml.classification.NaiveBayes.setThresholds" title="pyspark.ml.classification.NaiveBayes.setThresholds"><code class="xref py py-obj docutils literal"><span class="pre">setThresholds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">thresholds</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.write.html#pyspark.ml.classification.NaiveBayes.write" title="pyspark.ml.classification.NaiveBayes.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.4.2.58.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.featuresCol.html#pyspark.ml.classification.NaiveBayes.featuresCol" title="pyspark.ml.classification.NaiveBayes.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.labelCol.html#pyspark.ml.classification.NaiveBayes.labelCol" title="pyspark.ml.classification.NaiveBayes.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.modelType.html#pyspark.ml.classification.NaiveBayes.modelType" title="pyspark.ml.classification.NaiveBayes.modelType"><code class="xref py py-obj docutils literal"><span class="pre">modelType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.params.html#pyspark.ml.classification.NaiveBayes.params" title="pyspark.ml.classification.NaiveBayes.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.predictionCol.html#pyspark.ml.classification.NaiveBayes.predictionCol" title="pyspark.ml.classification.NaiveBayes.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.probabilityCol.html#pyspark.ml.classification.NaiveBayes.probabilityCol" title="pyspark.ml.classification.NaiveBayes.probabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">probabilityCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.rawPredictionCol.html#pyspark.ml.classification.NaiveBayes.rawPredictionCol" title="pyspark.ml.classification.NaiveBayes.rawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">rawPredictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.smoothing.html#pyspark.ml.classification.NaiveBayes.smoothing" title="pyspark.ml.classification.NaiveBayes.smoothing"><code class="xref py py-obj docutils literal"><span class="pre">smoothing</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.classification.NaiveBayes.thresholds.html#pyspark.ml.classification.NaiveBayes.thresholds" title="pyspark.ml.classification.NaiveBayes.thresholds"><code class="xref py py-obj docutils literal"><span class="pre">thresholds</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -433,10 +463,10 @@ The input feature values must be nonnegative.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.classification.NaiveBayes.params.html" class="btn btn-neutral float-right" title="3.4.2.58.1. pyspark.ml.classification.NaiveBayes.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.classification.NaiveBayes.__init__.html" class="btn btn-neutral float-right" title="3.4.2.58.1.1. pyspark.ml.classification.NaiveBayes.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.classification.MultilayerPerceptronClassifier.write.html" class="btn btn-neutral" title="3.4.2.57.39. pyspark.ml.classification.MultilayerPerceptronClassifier.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.classification.MultilayerPerceptronClassifier.tol.html" class="btn btn-neutral" title="3.4.2.57.2.12. pyspark.ml.classification.MultilayerPerceptronClassifier.tol" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
-        <link rel="next" title="3.3.2.54.1. pyspark.ml.feature.QuantileDiscretizer.params" href="pyspark.ml.feature.QuantileDiscretizer.params.html"/>
-        <link rel="prev" title="3.3.2.53.23. pyspark.ml.feature.PolynomialExpansion.write" href="pyspark.ml.feature.PolynomialExpansion.write.html"/> 
+        <link rel="next" title="3.3.2.54.1.1. pyspark.ml.feature.QuantileDiscretizer.__init__" href="pyspark.ml.feature.QuantileDiscretizer.__init__.html"/>
+        <link rel="prev" title="3.3.2.53.2.4. pyspark.ml.feature.PolynomialExpansion.params" href="pyspark.ml.feature.PolynomialExpansion.params.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -243,7 +243,6 @@
             
   <div class="section" id="pyspark-ml-feature-quantilediscretizer">
 <h1>3.3.2.54. pyspark.ml.feature.QuantileDiscretizer<a class="headerlink" href="#pyspark-ml-feature-quantilediscretizer" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.__init__.html#pyspark.ml.feature.QuantileDiscretizer.__init__" title="pyspark.ml.feature.QuantileDiscretizer.__init__"><code class="xref py py-func docutils literal"><span class="pre">QuantileDiscretizer.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.feature.QuantileDiscretizer">
 <em class="property">class </em><code class="descclassname">pyspark.ml.feature.</code><code class="descname">QuantileDiscretizer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#QuantileDiscretizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.QuantileDiscretizer" title="Permalink to this definition">¶</a></dt>
@@ -282,99 +281,6 @@ The lower and upper bin bounds will be <cite>-Infinity</cite> and <cite>+Infinit
 <div class="versionadded">
 <p><span class="versionmodified">New in version 2.0.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.params.html#pyspark.ml.feature.QuantileDiscretizer.params" title="pyspark.ml.feature.QuantileDiscretizer.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.copy.html#pyspark.ml.feature.QuantileDiscretizer.copy" title="pyspark.ml.feature.QuantileDiscretizer.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.explainParam.html#pyspark.ml.feature.QuantileDiscretizer.explainParam" title="pyspark.ml.feature.QuantileDiscretizer.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.explainParams.html#pyspark.ml.feature.QuantileDiscretizer.explainParams" title="pyspark.ml.feature.QuantileDiscretizer.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.extractParamMap.html#pyspark.ml.feature.QuantileDiscretizer.extractParamMap" title="pyspark.ml.feature.QuantileDiscretizer.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.fit.html#pyspark.ml.feature.QuantileDiscretizer.fit" title="pyspark.ml.feature.QuantileDiscretizer.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getInputCol.html#pyspark.ml.feature.QuantileDiscretizer.getInputCol" title="pyspark.ml.feature.QuantileDiscretizer.getInputCol"><code class="xref py py-obj docutils literal"><span class="pre">getInputCol</span></code></a>()</td>
-<td>Gets the value of inputCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getNumBuckets.html#pyspark.ml.feature.QuantileDiscretizer.getNumBuckets" title="pyspark.ml.feature.QuantileDiscretizer.getNumBuckets"><code class="xref py py-obj docutils literal"><span class="pre">getNumBuckets</span></code></a>()</td>
-<td>Gets the value of numBuckets or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getOrDefault.html#pyspark.ml.feature.QuantileDiscretizer.getOrDefault" title="pyspark.ml.feature.QuantileDiscretizer.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getOutputCol.html#pyspark.ml.feature.QuantileDiscretizer.getOutputCol" title="pyspark.ml.feature.QuantileDiscretizer.getOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCol</span></code></a>()</td>
-<td>Gets the value of outputCol or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getParam.html#pyspark.ml.feature.QuantileDiscretizer.getParam" title="pyspark.ml.feature.QuantileDiscretizer.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getRelativeError.html#pyspark.ml.feature.QuantileDiscretizer.getRelativeError" title="pyspark.ml.feature.QuantileDiscretizer.getRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">getRelativeError</span></code></a>()</td>
-<td>Gets the value of relativeError or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.hasDefault.html#pyspark.ml.feature.QuantileDiscretizer.hasDefault" title="pyspark.ml.feature.QuantileDiscretizer.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.hasParam.html#pyspark.ml.feature.QuantileDiscretizer.hasParam" title="pyspark.ml.feature.QuantileDiscretizer.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.isDefined.html#pyspark.ml.feature.QuantileDiscretizer.isDefined" title="pyspark.ml.feature.QuantileDiscretizer.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.isSet.html#pyspark.ml.feature.QuantileDiscretizer.isSet" title="pyspark.ml.feature.QuantileDiscretizer.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.load.html#pyspark.ml.feature.QuantileDiscretizer.load" title="pyspark.ml.feature.QuantileDiscretizer.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.read.html#pyspark.ml.feature.QuantileDiscretizer.read" title="pyspark.ml.feature.QuantileDiscretizer.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.save.html#pyspark.ml.feature.QuantileDiscretizer.save" title="pyspark.ml.feature.QuantileDiscretizer.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setInputCol.html#pyspark.ml.feature.QuantileDiscretizer.setInputCol" title="pyspark.ml.feature.QuantileDiscretizer.setInputCol"><code class="xref py py-obj docutils literal"><span class="pre">setInputCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.inputCol.html#pyspark.ml.feature.QuantileDiscretizer.inputCol" title="pyspark.ml.feature.QuantileDiscretizer.inputCol"><code class="xref py py-attr docutils literal"><span class="pre">inputCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setNumBuckets.html#pyspark.ml.feature.QuantileDiscretizer.setNumBuckets" title="pyspark.ml.feature.QuantileDiscretizer.setNumBuckets"><code class="xref py py-obj docutils literal"><span class="pre">setNumBuckets</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.numBuckets.html#pyspark.ml.feature.QuantileDiscretizer.numBuckets" title="pyspark.ml.feature.QuantileDiscretizer.numBuckets"><code class="xref py py-attr docutils literal"><span class="pre">numBuckets</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setOutputCol.html#pyspark.ml.feature.QuantileDiscretizer.setOutputCol" title="pyspark.ml.feature.QuantileDiscretizer.setOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.outputCol.html#pyspark.ml.feature.QuantileDiscretizer.outputCol" title="pyspark.ml.feature.QuantileDiscretizer.outputCol"><code class="xref py py-attr docutils literal"><span class="pre">outputCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setParams.html#pyspark.ml.feature.QuantileDiscretizer.setParams" title="pyspark.ml.feature.QuantileDiscretizer.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;numBuckets,&nbsp;inputCol,&nbsp;...])</td>
-<td>Set the params for the QuantileDiscretizer</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setRelativeError.html#pyspark.ml.feature.QuantileDiscretizer.setRelativeError" title="pyspark.ml.feature.QuantileDiscretizer.setRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">setRelativeError</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.relativeError.html#pyspark.ml.feature.QuantileDiscretizer.relativeError" title="pyspark.ml.feature.QuantileDiscretizer.relativeError"><code class="xref py py-attr docutils literal"><span class="pre">relativeError</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.write.html#pyspark.ml.feature.QuantileDiscretizer.write" title="pyspark.ml.feature.QuantileDiscretizer.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.feature.QuantileDiscretizer.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>numBuckets=2</em>, <em>inputCol=None</em>, <em>outputCol=None</em>, <em>relativeError=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#QuantileDiscretizer.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.QuantileDiscretizer.__init__" title="Permalink to this definition">¶</a></dt>
@@ -382,6 +288,118 @@ The lower and upper bin bounds will be <cite>-Infinity</cite> and <cite>+Infinit
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.3.2.54.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.__init__.html#pyspark.ml.feature.QuantileDiscretizer.__init__" title="pyspark.ml.feature.QuantileDiscretizer.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;numBuckets,&nbsp;inputCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.copy.html#pyspark.ml.feature.QuantileDiscretizer.copy" title="pyspark.ml.feature.QuantileDiscretizer.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.explainParam.html#pyspark.ml.feature.QuantileDiscretizer.explainParam" title="pyspark.ml.feature.QuantileDiscretizer.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.explainParams.html#pyspark.ml.feature.QuantileDiscretizer.explainParams" title="pyspark.ml.feature.QuantileDiscretizer.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.extractParamMap.html#pyspark.ml.feature.QuantileDiscretizer.extractParamMap" title="pyspark.ml.feature.QuantileDiscretizer.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.fit.html#pyspark.ml.feature.QuantileDiscretizer.fit" title="pyspark.ml.feature.QuantileDiscretizer.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getInputCol.html#pyspark.ml.feature.QuantileDiscretizer.getInputCol" title="pyspark.ml.feature.QuantileDiscretizer.getInputCol"><code class="xref py py-obj docutils literal"><span class="pre">getInputCol</span></code></a>()</td>
+<td>Gets the value of inputCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getNumBuckets.html#pyspark.ml.feature.QuantileDiscretizer.getNumBuckets" title="pyspark.ml.feature.QuantileDiscretizer.getNumBuckets"><code class="xref py py-obj docutils literal"><span class="pre">getNumBuckets</span></code></a>()</td>
+<td>Gets the value of numBuckets or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getOrDefault.html#pyspark.ml.feature.QuantileDiscretizer.getOrDefault" title="pyspark.ml.feature.QuantileDiscretizer.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getOutputCol.html#pyspark.ml.feature.QuantileDiscretizer.getOutputCol" title="pyspark.ml.feature.QuantileDiscretizer.getOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCol</span></code></a>()</td>
+<td>Gets the value of outputCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getParam.html#pyspark.ml.feature.QuantileDiscretizer.getParam" title="pyspark.ml.feature.QuantileDiscretizer.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.getRelativeError.html#pyspark.ml.feature.QuantileDiscretizer.getRelativeError" title="pyspark.ml.feature.QuantileDiscretizer.getRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">getRelativeError</span></code></a>()</td>
+<td>Gets the value of relativeError or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.hasDefault.html#pyspark.ml.feature.QuantileDiscretizer.hasDefault" title="pyspark.ml.feature.QuantileDiscretizer.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.hasParam.html#pyspark.ml.feature.QuantileDiscretizer.hasParam" title="pyspark.ml.feature.QuantileDiscretizer.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.isDefined.html#pyspark.ml.feature.QuantileDiscretizer.isDefined" title="pyspark.ml.feature.QuantileDiscretizer.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.isSet.html#pyspark.ml.feature.QuantileDiscretizer.isSet" title="pyspark.ml.feature.QuantileDiscretizer.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.load.html#pyspark.ml.feature.QuantileDiscretizer.load" title="pyspark.ml.feature.QuantileDiscretizer.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.read.html#pyspark.ml.feature.QuantileDiscretizer.read" title="pyspark.ml.feature.QuantileDiscretizer.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.save.html#pyspark.ml.feature.QuantileDiscretizer.save" title="pyspark.ml.feature.QuantileDiscretizer.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setInputCol.html#pyspark.ml.feature.QuantileDiscretizer.setInputCol" title="pyspark.ml.feature.QuantileDiscretizer.setInputCol"><code class="xref py py-obj docutils literal"><span class="pre">setInputCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">inputCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setNumBuckets.html#pyspark.ml.feature.QuantileDiscretizer.setNumBuckets" title="pyspark.ml.feature.QuantileDiscretizer.setNumBuckets"><code class="xref py py-obj docutils literal"><span class="pre">setNumBuckets</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">numBuckets</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setOutputCol.html#pyspark.ml.feature.QuantileDiscretizer.setOutputCol" title="pyspark.ml.feature.QuantileDiscretizer.setOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">outputCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setParams.html#pyspark.ml.feature.QuantileDiscretizer.setParams" title="pyspark.ml.feature.QuantileDiscretizer.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;numBuckets,&nbsp;inputCol,&nbsp;...])</td>
+<td>Set the params for the QuantileDiscretizer</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.setRelativeError.html#pyspark.ml.feature.QuantileDiscretizer.setRelativeError" title="pyspark.ml.feature.QuantileDiscretizer.setRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">setRelativeError</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">relativeError</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.write.html#pyspark.ml.feature.QuantileDiscretizer.write" title="pyspark.ml.feature.QuantileDiscretizer.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.3.2.54.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.inputCol.html#pyspark.ml.feature.QuantileDiscretizer.inputCol" title="pyspark.ml.feature.QuantileDiscretizer.inputCol"><code class="xref py py-obj docutils literal"><span class="pre">inputCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.numBuckets.html#pyspark.ml.feature.QuantileDiscretizer.numBuckets" title="pyspark.ml.feature.QuantileDiscretizer.numBuckets"><code class="xref py py-obj docutils literal"><span class="pre">numBuckets</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.outputCol.html#pyspark.ml.feature.QuantileDiscretizer.outputCol" title="pyspark.ml.feature.QuantileDiscretizer.outputCol"><code class="xref py py-obj docutils literal"><span class="pre">outputCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.params.html#pyspark.ml.feature.QuantileDiscretizer.params" title="pyspark.ml.feature.QuantileDiscretizer.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.relativeError.html#pyspark.ml.feature.QuantileDiscretizer.relativeError" title="pyspark.ml.feature.QuantileDiscretizer.relativeError"><code class="xref py py-obj docutils literal"><span class="pre">relativeError</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -391,10 +409,10 @@ The lower and upper bin bounds will be <cite>-Infinity</cite> and <cite>+Infinit
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.feature.QuantileDiscretizer.params.html" class="btn btn-neutral float-right" title="3.3.2.54.1. pyspark.ml.feature.QuantileDiscretizer.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.feature.QuantileDiscretizer.__init__.html" class="btn btn-neutral float-right" title="3.3.2.54.1.1. pyspark.ml.feature.QuantileDiscretizer.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.feature.PolynomialExpansion.write.html" class="btn btn-neutral" title="3.3.2.53.23. pyspark.ml.feature.PolynomialExpansion.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.feature.PolynomialExpansion.params.html" class="btn btn-neutral" title="3.3.2.53.2.4. pyspark.ml.feature.PolynomialExpansion.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

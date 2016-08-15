@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="next" title="1.2.6.1. pyspark.MarshalSerializer.dump_stream" href="pyspark.MarshalSerializer.dump_stream.html"/>
-        <link rel="prev" title="1.2.5.22. pyspark.HiveContext.uncacheTable" href="pyspark.HiveContext.uncacheTable.html"/> 
+        <link rel="next" title="1.2.6.1.1. pyspark.MarshalSerializer.__init__" href="pyspark.MarshalSerializer.__init__.html"/>
+        <link rel="prev" title="1.2.5.2.4. pyspark.HiveContext.udf" href="pyspark.HiveContext.udf.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -94,10 +94,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.Broadcast.html">1.2.4. pyspark.Broadcast</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.HiveContext.html">1.2.5. pyspark.HiveContext</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.6. pyspark.MarshalSerializer</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.MarshalSerializer.dump_stream.html">1.2.6.1. pyspark.MarshalSerializer.dump_stream</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.MarshalSerializer.dumps.html">1.2.6.2. pyspark.MarshalSerializer.dumps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.MarshalSerializer.load_stream.html">1.2.6.3. pyspark.MarshalSerializer.load_stream</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.MarshalSerializer.loads.html">1.2.6.4. pyspark.MarshalSerializer.loads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.6.1. Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.PickleSerializer.html">1.2.7. pyspark.PickleSerializer</a></li>
@@ -184,7 +181,6 @@
             
   <div class="section" id="pyspark-marshalserializer">
 <h1>1.2.6. pyspark.MarshalSerializer<a class="headerlink" href="#pyspark-marshalserializer" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.MarshalSerializer.__init__.html#pyspark.MarshalSerializer.__init__" title="pyspark.MarshalSerializer.__init__"><code class="xref py py-func docutils literal"><span class="pre">MarshalSerializer.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.MarshalSerializer">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">MarshalSerializer</code><a class="reference internal" href="../../_modules/pyspark/serializers.html#MarshalSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.MarshalSerializer" title="Permalink to this definition">¶</a></dt>
@@ -192,29 +188,39 @@
 <blockquote>
 <div><a class="reference external" href="http://docs.python.org/2/library/marshal.html">http://docs.python.org/2/library/marshal.html</a></div></blockquote>
 <p>This serializer is faster than PickleSerializer but supports fewer datatypes.</p>
-<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="pyspark.MarshalSerializer.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.MarshalSerializer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>1.2.6.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.MarshalSerializer.dump_stream.html#pyspark.MarshalSerializer.dump_stream" title="pyspark.MarshalSerializer.dump_stream"><code class="xref py py-obj docutils literal"><span class="pre">dump_stream</span></code></a>(iterator,&nbsp;stream)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.MarshalSerializer.__init__.html#pyspark.MarshalSerializer.__init__" title="pyspark.MarshalSerializer.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.MarshalSerializer.dumps.html#pyspark.MarshalSerializer.dumps" title="pyspark.MarshalSerializer.dumps"><code class="xref py py-obj docutils literal"><span class="pre">dumps</span></code></a>(obj)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.MarshalSerializer.dump_stream.html#pyspark.MarshalSerializer.dump_stream" title="pyspark.MarshalSerializer.dump_stream"><code class="xref py py-obj docutils literal"><span class="pre">dump_stream</span></code></a>(iterator,&nbsp;stream)</td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.MarshalSerializer.load_stream.html#pyspark.MarshalSerializer.load_stream" title="pyspark.MarshalSerializer.load_stream"><code class="xref py py-obj docutils literal"><span class="pre">load_stream</span></code></a>(stream)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.MarshalSerializer.dumps.html#pyspark.MarshalSerializer.dumps" title="pyspark.MarshalSerializer.dumps"><code class="xref py py-obj docutils literal"><span class="pre">dumps</span></code></a>(obj)</td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.MarshalSerializer.loads.html#pyspark.MarshalSerializer.loads" title="pyspark.MarshalSerializer.loads"><code class="xref py py-obj docutils literal"><span class="pre">loads</span></code></a>(obj)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.MarshalSerializer.load_stream.html#pyspark.MarshalSerializer.load_stream" title="pyspark.MarshalSerializer.load_stream"><code class="xref py py-obj docutils literal"><span class="pre">load_stream</span></code></a>(stream)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.MarshalSerializer.loads.html#pyspark.MarshalSerializer.loads" title="pyspark.MarshalSerializer.loads"><code class="xref py py-obj docutils literal"><span class="pre">loads</span></code></a>(obj)</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -224,10 +230,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.MarshalSerializer.dump_stream.html" class="btn btn-neutral float-right" title="1.2.6.1. pyspark.MarshalSerializer.dump_stream" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.MarshalSerializer.__init__.html" class="btn btn-neutral float-right" title="1.2.6.1.1. pyspark.MarshalSerializer.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.HiveContext.uncacheTable.html" class="btn btn-neutral" title="1.2.5.22. pyspark.HiveContext.uncacheTable" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.HiveContext.udf.html" class="btn btn-neutral" title="1.2.5.2.4. pyspark.HiveContext.udf" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

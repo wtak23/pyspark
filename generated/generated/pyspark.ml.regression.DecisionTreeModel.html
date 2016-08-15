@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.8. pyspark.ml.regression" href="../pyspark.ml.regression.html"/>
-        <link rel="next" title="3.8.2.4.1. pyspark.ml.regression.DecisionTreeModel.depth" href="pyspark.ml.regression.DecisionTreeModel.depth.html"/>
-        <link rel="prev" title="3.8.2.3.69. pyspark.ml.regression.DataFrame.withColumnRenamed" href="pyspark.ml.regression.DataFrame.withColumnRenamed.html"/> 
+        <link rel="next" title="3.8.2.4.1.1. pyspark.ml.regression.DecisionTreeModel.__init__" href="pyspark.ml.regression.DecisionTreeModel.__init__.html"/>
+        <link rel="prev" title="3.8.2.3.2.9. pyspark.ml.regression.DataFrame.writeStream" href="pyspark.ml.regression.DataFrame.writeStream.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -237,7 +237,6 @@
             
   <div class="section" id="pyspark-ml-regression-decisiontreemodel">
 <h1>3.8.2.4. pyspark.ml.regression.DecisionTreeModel<a class="headerlink" href="#pyspark-ml-regression-decisiontreemodel" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.__init__.html#pyspark.ml.regression.DecisionTreeModel.__init__" title="pyspark.ml.regression.DecisionTreeModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">DecisionTreeModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.DecisionTreeModel">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">DecisionTreeModel</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#DecisionTreeModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.DecisionTreeModel" title="Permalink to this definition">¶</a></dt>
@@ -245,7 +244,72 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.5.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.ml.regression.DecisionTreeModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.regression.DecisionTreeModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize this instance with a Java model object.
+Subclasses should call this constructor, initialize params,
+and then call _transfer_params_from_java.</p>
+<p>This instance can be instantiated without specifying java_model,
+it will be assigned after that, but this scenario only used by
+<a class="reference internal" href="pyspark.ml.regression.JavaMLReader.html#pyspark.ml.regression.JavaMLReader" title="pyspark.ml.regression.JavaMLReader"><code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code></a> to load models.  This is a bit of a
+hack, but it is easiest since a proper fix would require
+MLReader (in pyspark.ml.util) to depend on these wrappers, but
+these wrappers depend on pyspark.ml.util (both directly and via
+other ML classes).</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>3.8.2.4.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.__init__.html#pyspark.ml.regression.DecisionTreeModel.__init__" title="pyspark.ml.regression.DecisionTreeModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([java_model])</td>
+<td>Initialize this instance with a Java model object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.copy.html#pyspark.ml.regression.DecisionTreeModel.copy" title="pyspark.ml.regression.DecisionTreeModel.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.explainParam.html#pyspark.ml.regression.DecisionTreeModel.explainParam" title="pyspark.ml.regression.DecisionTreeModel.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.explainParams.html#pyspark.ml.regression.DecisionTreeModel.explainParams" title="pyspark.ml.regression.DecisionTreeModel.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.extractParamMap.html#pyspark.ml.regression.DecisionTreeModel.extractParamMap" title="pyspark.ml.regression.DecisionTreeModel.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.getOrDefault.html#pyspark.ml.regression.DecisionTreeModel.getOrDefault" title="pyspark.ml.regression.DecisionTreeModel.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.getParam.html#pyspark.ml.regression.DecisionTreeModel.getParam" title="pyspark.ml.regression.DecisionTreeModel.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.hasDefault.html#pyspark.ml.regression.DecisionTreeModel.hasDefault" title="pyspark.ml.regression.DecisionTreeModel.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.hasParam.html#pyspark.ml.regression.DecisionTreeModel.hasParam" title="pyspark.ml.regression.DecisionTreeModel.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.isDefined.html#pyspark.ml.regression.DecisionTreeModel.isDefined" title="pyspark.ml.regression.DecisionTreeModel.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.isSet.html#pyspark.ml.regression.DecisionTreeModel.isSet" title="pyspark.ml.regression.DecisionTreeModel.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.transform.html#pyspark.ml.regression.DecisionTreeModel.transform" title="pyspark.ml.regression.DecisionTreeModel.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Transforms the input dataset with optional parameters.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.8.2.4.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -266,65 +330,7 @@
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.copy.html#pyspark.ml.regression.DecisionTreeModel.copy" title="pyspark.ml.regression.DecisionTreeModel.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.explainParam.html#pyspark.ml.regression.DecisionTreeModel.explainParam" title="pyspark.ml.regression.DecisionTreeModel.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.explainParams.html#pyspark.ml.regression.DecisionTreeModel.explainParams" title="pyspark.ml.regression.DecisionTreeModel.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.extractParamMap.html#pyspark.ml.regression.DecisionTreeModel.extractParamMap" title="pyspark.ml.regression.DecisionTreeModel.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.getOrDefault.html#pyspark.ml.regression.DecisionTreeModel.getOrDefault" title="pyspark.ml.regression.DecisionTreeModel.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.getParam.html#pyspark.ml.regression.DecisionTreeModel.getParam" title="pyspark.ml.regression.DecisionTreeModel.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.hasDefault.html#pyspark.ml.regression.DecisionTreeModel.hasDefault" title="pyspark.ml.regression.DecisionTreeModel.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.hasParam.html#pyspark.ml.regression.DecisionTreeModel.hasParam" title="pyspark.ml.regression.DecisionTreeModel.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.isDefined.html#pyspark.ml.regression.DecisionTreeModel.isDefined" title="pyspark.ml.regression.DecisionTreeModel.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.isSet.html#pyspark.ml.regression.DecisionTreeModel.isSet" title="pyspark.ml.regression.DecisionTreeModel.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeModel.transform.html#pyspark.ml.regression.DecisionTreeModel.transform" title="pyspark.ml.regression.DecisionTreeModel.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Transforms the input dataset with optional parameters.</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="pyspark.ml.regression.DecisionTreeModel.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.ml.regression.DecisionTreeModel.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initialize this instance with a Java model object.
-Subclasses should call this constructor, initialize params,
-and then call _transfer_params_from_java.</p>
-<p>This instance can be instantiated without specifying java_model,
-it will be assigned after that, but this scenario only used by
-<a class="reference internal" href="pyspark.ml.regression.JavaMLReader.html#pyspark.ml.regression.JavaMLReader" title="pyspark.ml.regression.JavaMLReader"><code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code></a> to load models.  This is a bit of a
-hack, but it is easiest since a proper fix would require
-MLReader (in pyspark.ml.util) to depend on these wrappers, but
-these wrappers depend on pyspark.ml.util (both directly and via
-other ML classes).</p>
-</dd></dl>
-
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -334,10 +340,10 @@ other ML classes).</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.regression.DecisionTreeModel.depth.html" class="btn btn-neutral float-right" title="3.8.2.4.1. pyspark.ml.regression.DecisionTreeModel.depth" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.regression.DecisionTreeModel.__init__.html" class="btn btn-neutral float-right" title="3.8.2.4.1.1. pyspark.ml.regression.DecisionTreeModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.regression.DataFrame.withColumnRenamed.html" class="btn btn-neutral" title="3.8.2.3.69. pyspark.ml.regression.DataFrame.withColumnRenamed" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.regression.DataFrame.writeStream.html" class="btn btn-neutral" title="3.8.2.3.2.9. pyspark.ml.regression.DataFrame.writeStream" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

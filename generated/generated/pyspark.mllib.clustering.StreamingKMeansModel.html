@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.3. pyspark.mllib.clustering" href="../pyspark.mllib.clustering.html"/>
-        <link rel="next" title="4.3.2.24.1. pyspark.mllib.clustering.StreamingKMeansModel.clusterCenters" href="pyspark.mllib.clustering.StreamingKMeansModel.clusterCenters.html"/>
-        <link rel="prev" title="4.3.2.23.9. pyspark.mllib.clustering.StreamingKMeans.trainOn" href="pyspark.mllib.clustering.StreamingKMeans.trainOn.html"/> 
+        <link rel="next" title="4.3.2.24.1.1. pyspark.mllib.clustering.StreamingKMeansModel.__init__" href="pyspark.mllib.clustering.StreamingKMeansModel.__init__.html"/>
+        <link rel="prev" title="4.3.2.23.1.10. pyspark.mllib.clustering.StreamingKMeans.trainOn" href="pyspark.mllib.clustering.StreamingKMeans.trainOn.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -200,7 +200,6 @@
             
   <div class="section" id="pyspark-mllib-clustering-streamingkmeansmodel">
 <h1>4.3.2.24. pyspark.mllib.clustering.StreamingKMeansModel<a class="headerlink" href="#pyspark-mllib-clustering-streamingkmeansmodel" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.__init__.html#pyspark.mllib.clustering.StreamingKMeansModel.__init__" title="pyspark.mllib.clustering.StreamingKMeansModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">StreamingKMeansModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.clustering.StreamingKMeansModel">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.clustering.</code><code class="descname">StreamingKMeansModel</code><span class="sig-paren">(</span><em>clusterCenters</em>, <em>clusterWeights</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/clustering.html#StreamingKMeansModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.clustering.StreamingKMeansModel" title="Permalink to this definition">¶</a></dt>
@@ -278,7 +277,44 @@ forgotten.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.5.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.mllib.clustering.StreamingKMeansModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>clusterCenters</em>, <em>clusterWeights</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/clustering.html#StreamingKMeansModel.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.clustering.StreamingKMeansModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.3.2.24.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.__init__.html#pyspark.mllib.clustering.StreamingKMeansModel.__init__" title="pyspark.mllib.clustering.StreamingKMeansModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(clusterCenters,&nbsp;clusterWeights)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.computeCost.html#pyspark.mllib.clustering.StreamingKMeansModel.computeCost" title="pyspark.mllib.clustering.StreamingKMeansModel.computeCost"><code class="xref py py-obj docutils literal"><span class="pre">computeCost</span></code></a>(rdd)</td>
+<td>Return the K-means cost (sum of squared distances of points to their nearest center) for this model on the given data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.load.html#pyspark.mllib.clustering.StreamingKMeansModel.load" title="pyspark.mllib.clustering.StreamingKMeansModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(sc,&nbsp;path)</td>
+<td>Load a model from the given path.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.predict.html#pyspark.mllib.clustering.StreamingKMeansModel.predict" title="pyspark.mllib.clustering.StreamingKMeansModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(x)</td>
+<td>Find the cluster that each of the points belongs to in this model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.save.html#pyspark.mllib.clustering.StreamingKMeansModel.save" title="pyspark.mllib.clustering.StreamingKMeansModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(sc,&nbsp;path)</td>
+<td>Save this model to the given path.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.update.html#pyspark.mllib.clustering.StreamingKMeansModel.update" title="pyspark.mllib.clustering.StreamingKMeansModel.update"><code class="xref py py-obj docutils literal"><span class="pre">update</span></code></a>(data,&nbsp;decayFactor,&nbsp;timeUnit)</td>
+<td>Update the centroids, according to data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.3.2.24.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -296,32 +332,7 @@ forgotten.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.computeCost.html#pyspark.mllib.clustering.StreamingKMeansModel.computeCost" title="pyspark.mllib.clustering.StreamingKMeansModel.computeCost"><code class="xref py py-obj docutils literal"><span class="pre">computeCost</span></code></a>(rdd)</td>
-<td>Return the K-means cost (sum of squared distances of points to their nearest center) for this model on the given data.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.load.html#pyspark.mllib.clustering.StreamingKMeansModel.load" title="pyspark.mllib.clustering.StreamingKMeansModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(sc,&nbsp;path)</td>
-<td>Load a model from the given path.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.predict.html#pyspark.mllib.clustering.StreamingKMeansModel.predict" title="pyspark.mllib.clustering.StreamingKMeansModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(x)</td>
-<td>Find the cluster that each of the points belongs to in this model.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.save.html#pyspark.mllib.clustering.StreamingKMeansModel.save" title="pyspark.mllib.clustering.StreamingKMeansModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(sc,&nbsp;path)</td>
-<td>Save this model to the given path.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.clustering.StreamingKMeansModel.update.html#pyspark.mllib.clustering.StreamingKMeansModel.update" title="pyspark.mllib.clustering.StreamingKMeansModel.update"><code class="xref py py-obj docutils literal"><span class="pre">update</span></code></a>(data,&nbsp;decayFactor,&nbsp;timeUnit)</td>
-<td>Update the centroids, according to data</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -331,10 +342,10 @@ forgotten.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.clustering.StreamingKMeansModel.clusterCenters.html" class="btn btn-neutral float-right" title="4.3.2.24.1. pyspark.mllib.clustering.StreamingKMeansModel.clusterCenters" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.clustering.StreamingKMeansModel.__init__.html" class="btn btn-neutral float-right" title="4.3.2.24.1.1. pyspark.mllib.clustering.StreamingKMeansModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.clustering.StreamingKMeans.trainOn.html" class="btn btn-neutral" title="4.3.2.23.9. pyspark.mllib.clustering.StreamingKMeans.trainOn" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.clustering.StreamingKMeans.trainOn.html" class="btn btn-neutral" title="4.3.2.23.1.10. pyspark.mllib.clustering.StreamingKMeans.trainOn" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.8. pyspark.mllib.linalg.distributed" href="../pyspark.mllib.linalg.distributed.html"/>
-        <link rel="next" title="4.8.2.2.1. pyspark.mllib.linalg.distributed.CoordinateMatrix.entries" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.entries.html"/>
-        <link rel="prev" title="4.8.2.1.17. pyspark.mllib.linalg.distributed.BlockMatrix.validate" href="pyspark.mllib.linalg.distributed.BlockMatrix.validate.html"/> 
+        <link rel="next" title="4.8.2.2.1.1. pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__.html"/>
+        <link rel="prev" title="4.8.2.1.2.5. pyspark.mllib.linalg.distributed.BlockMatrix.rowsPerBlock" href="pyspark.mllib.linalg.distributed.BlockMatrix.rowsPerBlock.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -105,14 +105,13 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.IndexedRow.html">4.8.2.4. pyspark.mllib.linalg.distributed.IndexedRow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.IndexedRowMatrix.html">4.8.2.5. pyspark.mllib.linalg.distributed.IndexedRowMatrix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.JavaModelWrapper.html">4.8.2.6. pyspark.mllib.linalg.distributed.JavaModelWrapper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.JavaObject.html">4.8.2.7. pyspark.mllib.linalg.distributed.JavaObject</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.html">4.8.2.8. pyspark.mllib.linalg.distributed.Matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MatrixEntry.html">4.8.2.9. pyspark.mllib.linalg.distributed.MatrixEntry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html">4.8.2.10. pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.QRDecomposition.html">4.8.2.11. pyspark.mllib.linalg.distributed.QRDecomposition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RDD.html">4.8.2.12. pyspark.mllib.linalg.distributed.RDD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RowMatrix.html">4.8.2.13. pyspark.mllib.linalg.distributed.RowMatrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.StorageLevel.html">4.8.2.14. pyspark.mllib.linalg.distributed.StorageLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.html">4.8.2.7. pyspark.mllib.linalg.distributed.Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MatrixEntry.html">4.8.2.8. pyspark.mllib.linalg.distributed.MatrixEntry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html">4.8.2.9. pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.QRDecomposition.html">4.8.2.10. pyspark.mllib.linalg.distributed.QRDecomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RDD.html">4.8.2.11. pyspark.mllib.linalg.distributed.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RowMatrix.html">4.8.2.12. pyspark.mllib.linalg.distributed.RowMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.StorageLevel.html">4.8.2.13. pyspark.mllib.linalg.distributed.StorageLevel</a></li>
 </ul>
 </li>
 </ul>
@@ -190,7 +189,6 @@
             
   <div class="section" id="pyspark-mllib-linalg-distributed-coordinatematrix">
 <h1>4.8.2.2. pyspark.mllib.linalg.distributed.CoordinateMatrix<a class="headerlink" href="#pyspark-mllib-linalg-distributed-coordinatematrix" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__"><code class="xref py py-func docutils literal"><span class="pre">CoordinateMatrix.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.linalg.distributed.CoordinateMatrix">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.linalg.distributed.</code><code class="descname">CoordinateMatrix</code><span class="sig-paren">(</span><em>entries</em>, <em>numRows=0</em>, <em>numCols=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg/distributed.html#CoordinateMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.linalg.distributed.CoordinateMatrix" title="Permalink to this definition">¶</a></dt>
@@ -212,45 +210,6 @@ of columns will be determined by the max row
 index plus one.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.entries.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.entries" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.entries"><code class="xref py py-obj docutils literal"><span class="pre">entries</span></code></a></td>
-<td>Entries of the CoordinateMatrix stored as an RDD of MatrixEntries.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols"><code class="xref py py-obj docutils literal"><span class="pre">numCols</span></code></a>()</td>
-<td>Get or compute the number of cols.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.numRows.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.numRows" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.numRows"><code class="xref py py-obj docutils literal"><span class="pre">numRows</span></code></a>()</td>
-<td>Get or compute the number of rows.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.toBlockMatrix.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.toBlockMatrix" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.toBlockMatrix"><code class="xref py py-obj docutils literal"><span class="pre">toBlockMatrix</span></code></a>([rowsPerBlock,&nbsp;colsPerBlock])</td>
-<td>Convert this matrix to a BlockMatrix.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.toIndexedRowMatrix.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.toIndexedRowMatrix" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.toIndexedRowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">toIndexedRowMatrix</span></code></a>()</td>
-<td>Convert this matrix to an IndexedRowMatrix.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.toRowMatrix.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.toRowMatrix" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.toRowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">toRowMatrix</span></code></a>()</td>
-<td>Convert this matrix to a RowMatrix.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.transpose.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.transpose" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.transpose"><code class="xref py py-obj docutils literal"><span class="pre">transpose</span></code></a>()</td>
-<td>Transpose this CoordinateMatrix.</td>
 </tr>
 </tbody>
 </table>
@@ -284,6 +243,52 @@ assists in clean matrix conversions.</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>4.8.2.2.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(entries[,&nbsp;numRows,&nbsp;numCols])</td>
+<td>Note: This docstring is not shown publicly.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols"><code class="xref py py-obj docutils literal"><span class="pre">numCols</span></code></a>()</td>
+<td>Get or compute the number of cols.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.numRows.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.numRows" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.numRows"><code class="xref py py-obj docutils literal"><span class="pre">numRows</span></code></a>()</td>
+<td>Get or compute the number of rows.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.toBlockMatrix.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.toBlockMatrix" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.toBlockMatrix"><code class="xref py py-obj docutils literal"><span class="pre">toBlockMatrix</span></code></a>([rowsPerBlock,&nbsp;colsPerBlock])</td>
+<td>Convert this matrix to a BlockMatrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.toIndexedRowMatrix.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.toIndexedRowMatrix" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.toIndexedRowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">toIndexedRowMatrix</span></code></a>()</td>
+<td>Convert this matrix to an IndexedRowMatrix.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.toRowMatrix.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.toRowMatrix" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.toRowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">toRowMatrix</span></code></a>()</td>
+<td>Convert this matrix to a RowMatrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.transpose.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.transpose" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.transpose"><code class="xref py py-obj docutils literal"><span class="pre">transpose</span></code></a>()</td>
+<td>Transpose this CoordinateMatrix.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.8.2.2.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.entries.html#pyspark.mllib.linalg.distributed.CoordinateMatrix.entries" title="pyspark.mllib.linalg.distributed.CoordinateMatrix.entries"><code class="xref py py-obj docutils literal"><span class="pre">entries</span></code></a></td>
+<td>Entries of the CoordinateMatrix stored as an RDD of MatrixEntries.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -293,10 +298,10 @@ assists in clean matrix conversions.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.linalg.distributed.CoordinateMatrix.entries.html" class="btn btn-neutral float-right" title="4.8.2.2.1. pyspark.mllib.linalg.distributed.CoordinateMatrix.entries" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__.html" class="btn btn-neutral float-right" title="4.8.2.2.1.1. pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.linalg.distributed.BlockMatrix.validate.html" class="btn btn-neutral" title="4.8.2.1.17. pyspark.mllib.linalg.distributed.BlockMatrix.validate" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.linalg.distributed.BlockMatrix.rowsPerBlock.html" class="btn btn-neutral" title="4.8.2.1.2.5. pyspark.mllib.linalg.distributed.BlockMatrix.rowsPerBlock" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

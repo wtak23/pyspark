@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.8. pyspark.ml.regression" href="../pyspark.ml.regression.html"/>
-        <link rel="next" title="3.8.2.7.1. pyspark.ml.regression.DecisionTreeRegressor.params" href="pyspark.ml.regression.DecisionTreeRegressor.params.html"/>
-        <link rel="prev" title="3.8.2.6.20. pyspark.ml.regression.DecisionTreeRegressionModel.write" href="pyspark.ml.regression.DecisionTreeRegressionModel.write.html"/> 
+        <link rel="next" title="3.8.2.7.1.1. pyspark.ml.regression.DecisionTreeRegressor.__init__" href="pyspark.ml.regression.DecisionTreeRegressor.__init__.html"/>
+        <link rel="prev" title="3.8.2.6.2.5. pyspark.ml.regression.DecisionTreeRegressionModel.toDebugString" href="pyspark.ml.regression.DecisionTreeRegressionModel.toDebugString.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -237,7 +237,6 @@
             
   <div class="section" id="pyspark-ml-regression-decisiontreeregressor">
 <h1>3.8.2.7. pyspark.ml.regression.DecisionTreeRegressor<a class="headerlink" href="#pyspark-ml-regression-decisiontreeregressor" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.__init__.html#pyspark.ml.regression.DecisionTreeRegressor.__init__" title="pyspark.ml.regression.DecisionTreeRegressor.__init__"><code class="xref py py-func docutils literal"><span class="pre">DecisionTreeRegressor.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.regression.DecisionTreeRegressor">
 <em class="property">class </em><code class="descclassname">pyspark.ml.regression.</code><code class="descname">DecisionTreeRegressor</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#DecisionTreeRegressor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.DecisionTreeRegressor" title="Permalink to this definition">¶</a></dt>
@@ -281,153 +280,6 @@ It supports both continuous and categorical features.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.params.html#pyspark.ml.regression.DecisionTreeRegressor.params" title="pyspark.ml.regression.DecisionTreeRegressor.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.copy.html#pyspark.ml.regression.DecisionTreeRegressor.copy" title="pyspark.ml.regression.DecisionTreeRegressor.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with the same uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.explainParam.html#pyspark.ml.regression.DecisionTreeRegressor.explainParam" title="pyspark.ml.regression.DecisionTreeRegressor.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.explainParams.html#pyspark.ml.regression.DecisionTreeRegressor.explainParams" title="pyspark.ml.regression.DecisionTreeRegressor.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.extractParamMap.html#pyspark.ml.regression.DecisionTreeRegressor.extractParamMap" title="pyspark.ml.regression.DecisionTreeRegressor.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.fit.html#pyspark.ml.regression.DecisionTreeRegressor.fit" title="pyspark.ml.regression.DecisionTreeRegressor.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getCacheNodeIds.html#pyspark.ml.regression.DecisionTreeRegressor.getCacheNodeIds" title="pyspark.ml.regression.DecisionTreeRegressor.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
-<td>Gets the value of cacheNodeIds or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getCheckpointInterval.html#pyspark.ml.regression.DecisionTreeRegressor.getCheckpointInterval" title="pyspark.ml.regression.DecisionTreeRegressor.getCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointInterval</span></code></a>()</td>
-<td>Gets the value of checkpointInterval or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getFeaturesCol.html#pyspark.ml.regression.DecisionTreeRegressor.getFeaturesCol" title="pyspark.ml.regression.DecisionTreeRegressor.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
-<td>Gets the value of featuresCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getImpurity.html#pyspark.ml.regression.DecisionTreeRegressor.getImpurity" title="pyspark.ml.regression.DecisionTreeRegressor.getImpurity"><code class="xref py py-obj docutils literal"><span class="pre">getImpurity</span></code></a>()</td>
-<td>Gets the value of impurity or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getLabelCol.html#pyspark.ml.regression.DecisionTreeRegressor.getLabelCol" title="pyspark.ml.regression.DecisionTreeRegressor.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
-<td>Gets the value of labelCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMaxBins.html#pyspark.ml.regression.DecisionTreeRegressor.getMaxBins" title="pyspark.ml.regression.DecisionTreeRegressor.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
-<td>Gets the value of maxBins or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMaxDepth.html#pyspark.ml.regression.DecisionTreeRegressor.getMaxDepth" title="pyspark.ml.regression.DecisionTreeRegressor.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
-<td>Gets the value of maxDepth or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMaxMemoryInMB.html#pyspark.ml.regression.DecisionTreeRegressor.getMaxMemoryInMB" title="pyspark.ml.regression.DecisionTreeRegressor.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
-<td>Gets the value of maxMemoryInMB or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMinInfoGain.html#pyspark.ml.regression.DecisionTreeRegressor.getMinInfoGain" title="pyspark.ml.regression.DecisionTreeRegressor.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
-<td>Gets the value of minInfoGain or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMinInstancesPerNode.html#pyspark.ml.regression.DecisionTreeRegressor.getMinInstancesPerNode" title="pyspark.ml.regression.DecisionTreeRegressor.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
-<td>Gets the value of minInstancesPerNode or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getOrDefault.html#pyspark.ml.regression.DecisionTreeRegressor.getOrDefault" title="pyspark.ml.regression.DecisionTreeRegressor.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getParam.html#pyspark.ml.regression.DecisionTreeRegressor.getParam" title="pyspark.ml.regression.DecisionTreeRegressor.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getPredictionCol.html#pyspark.ml.regression.DecisionTreeRegressor.getPredictionCol" title="pyspark.ml.regression.DecisionTreeRegressor.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
-<td>Gets the value of predictionCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getSeed.html#pyspark.ml.regression.DecisionTreeRegressor.getSeed" title="pyspark.ml.regression.DecisionTreeRegressor.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
-<td>Gets the value of seed or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getVarianceCol.html#pyspark.ml.regression.DecisionTreeRegressor.getVarianceCol" title="pyspark.ml.regression.DecisionTreeRegressor.getVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">getVarianceCol</span></code></a>()</td>
-<td>Gets the value of varianceCol or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.hasDefault.html#pyspark.ml.regression.DecisionTreeRegressor.hasDefault" title="pyspark.ml.regression.DecisionTreeRegressor.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.hasParam.html#pyspark.ml.regression.DecisionTreeRegressor.hasParam" title="pyspark.ml.regression.DecisionTreeRegressor.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.isDefined.html#pyspark.ml.regression.DecisionTreeRegressor.isDefined" title="pyspark.ml.regression.DecisionTreeRegressor.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.isSet.html#pyspark.ml.regression.DecisionTreeRegressor.isSet" title="pyspark.ml.regression.DecisionTreeRegressor.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.load.html#pyspark.ml.regression.DecisionTreeRegressor.load" title="pyspark.ml.regression.DecisionTreeRegressor.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
-<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.read.html#pyspark.ml.regression.DecisionTreeRegressor.read" title="pyspark.ml.regression.DecisionTreeRegressor.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
-<td>Returns an MLReader instance for this class.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.save.html#pyspark.ml.regression.DecisionTreeRegressor.save" title="pyspark.ml.regression.DecisionTreeRegressor.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
-<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setCacheNodeIds.html#pyspark.ml.regression.DecisionTreeRegressor.setCacheNodeIds" title="pyspark.ml.regression.DecisionTreeRegressor.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.cacheNodeIds.html#pyspark.ml.regression.DecisionTreeRegressor.cacheNodeIds" title="pyspark.ml.regression.DecisionTreeRegressor.cacheNodeIds"><code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setCheckpointInterval.html#pyspark.ml.regression.DecisionTreeRegressor.setCheckpointInterval" title="pyspark.ml.regression.DecisionTreeRegressor.setCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointInterval</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.checkpointInterval.html#pyspark.ml.regression.DecisionTreeRegressor.checkpointInterval" title="pyspark.ml.regression.DecisionTreeRegressor.checkpointInterval"><code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setFeaturesCol.html#pyspark.ml.regression.DecisionTreeRegressor.setFeaturesCol" title="pyspark.ml.regression.DecisionTreeRegressor.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.featuresCol.html#pyspark.ml.regression.DecisionTreeRegressor.featuresCol" title="pyspark.ml.regression.DecisionTreeRegressor.featuresCol"><code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setImpurity.html#pyspark.ml.regression.DecisionTreeRegressor.setImpurity" title="pyspark.ml.regression.DecisionTreeRegressor.setImpurity"><code class="xref py py-obj docutils literal"><span class="pre">setImpurity</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.impurity.html#pyspark.ml.regression.DecisionTreeRegressor.impurity" title="pyspark.ml.regression.DecisionTreeRegressor.impurity"><code class="xref py py-attr docutils literal"><span class="pre">impurity</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setLabelCol.html#pyspark.ml.regression.DecisionTreeRegressor.setLabelCol" title="pyspark.ml.regression.DecisionTreeRegressor.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.labelCol.html#pyspark.ml.regression.DecisionTreeRegressor.labelCol" title="pyspark.ml.regression.DecisionTreeRegressor.labelCol"><code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMaxBins.html#pyspark.ml.regression.DecisionTreeRegressor.setMaxBins" title="pyspark.ml.regression.DecisionTreeRegressor.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.maxBins.html#pyspark.ml.regression.DecisionTreeRegressor.maxBins" title="pyspark.ml.regression.DecisionTreeRegressor.maxBins"><code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMaxDepth.html#pyspark.ml.regression.DecisionTreeRegressor.setMaxDepth" title="pyspark.ml.regression.DecisionTreeRegressor.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.maxDepth.html#pyspark.ml.regression.DecisionTreeRegressor.maxDepth" title="pyspark.ml.regression.DecisionTreeRegressor.maxDepth"><code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMaxMemoryInMB.html#pyspark.ml.regression.DecisionTreeRegressor.setMaxMemoryInMB" title="pyspark.ml.regression.DecisionTreeRegressor.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.maxMemoryInMB.html#pyspark.ml.regression.DecisionTreeRegressor.maxMemoryInMB" title="pyspark.ml.regression.DecisionTreeRegressor.maxMemoryInMB"><code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMinInfoGain.html#pyspark.ml.regression.DecisionTreeRegressor.setMinInfoGain" title="pyspark.ml.regression.DecisionTreeRegressor.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.minInfoGain.html#pyspark.ml.regression.DecisionTreeRegressor.minInfoGain" title="pyspark.ml.regression.DecisionTreeRegressor.minInfoGain"><code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMinInstancesPerNode.html#pyspark.ml.regression.DecisionTreeRegressor.setMinInstancesPerNode" title="pyspark.ml.regression.DecisionTreeRegressor.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.minInstancesPerNode.html#pyspark.ml.regression.DecisionTreeRegressor.minInstancesPerNode" title="pyspark.ml.regression.DecisionTreeRegressor.minInstancesPerNode"><code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setParams.html#pyspark.ml.regression.DecisionTreeRegressor.setParams" title="pyspark.ml.regression.DecisionTreeRegressor.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
-<td>Sets params for the DecisionTreeRegressor.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setPredictionCol.html#pyspark.ml.regression.DecisionTreeRegressor.setPredictionCol" title="pyspark.ml.regression.DecisionTreeRegressor.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.predictionCol.html#pyspark.ml.regression.DecisionTreeRegressor.predictionCol" title="pyspark.ml.regression.DecisionTreeRegressor.predictionCol"><code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setSeed.html#pyspark.ml.regression.DecisionTreeRegressor.setSeed" title="pyspark.ml.regression.DecisionTreeRegressor.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.seed.html#pyspark.ml.regression.DecisionTreeRegressor.seed" title="pyspark.ml.regression.DecisionTreeRegressor.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setVarianceCol.html#pyspark.ml.regression.DecisionTreeRegressor.setVarianceCol" title="pyspark.ml.regression.DecisionTreeRegressor.setVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">setVarianceCol</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.varianceCol.html#pyspark.ml.regression.DecisionTreeRegressor.varianceCol" title="pyspark.ml.regression.DecisionTreeRegressor.varianceCol"><code class="xref py py-attr docutils literal"><span class="pre">varianceCol</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.write.html#pyspark.ml.regression.DecisionTreeRegressor.write" title="pyspark.ml.regression.DecisionTreeRegressor.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
-<td>Returns an MLWriter instance for this ML instance.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.regression.DecisionTreeRegressor.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>featuresCol=&quot;features&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>maxDepth=5</em>, <em>maxBins=32</em>, <em>minInstancesPerNode=1</em>, <em>minInfoGain=0.0</em>, <em>maxMemoryInMB=256</em>, <em>cacheNodeIds=False</em>, <em>checkpointInterval=10</em>, <em>impurity=&quot;variance&quot;</em>, <em>seed=None</em>, <em>varianceCol=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/regression.html#DecisionTreeRegressor.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.DecisionTreeRegressor.__init__" title="Permalink to this definition">¶</a></dt>
@@ -435,6 +287,202 @@ It supports both continuous and categorical features.</p>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.8.2.7.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.__init__.html#pyspark.ml.regression.DecisionTreeRegressor.__init__" title="pyspark.ml.regression.DecisionTreeRegressor.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.copy.html#pyspark.ml.regression.DecisionTreeRegressor.copy" title="pyspark.ml.regression.DecisionTreeRegressor.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.explainParam.html#pyspark.ml.regression.DecisionTreeRegressor.explainParam" title="pyspark.ml.regression.DecisionTreeRegressor.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.explainParams.html#pyspark.ml.regression.DecisionTreeRegressor.explainParams" title="pyspark.ml.regression.DecisionTreeRegressor.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.extractParamMap.html#pyspark.ml.regression.DecisionTreeRegressor.extractParamMap" title="pyspark.ml.regression.DecisionTreeRegressor.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.fit.html#pyspark.ml.regression.DecisionTreeRegressor.fit" title="pyspark.ml.regression.DecisionTreeRegressor.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getCacheNodeIds.html#pyspark.ml.regression.DecisionTreeRegressor.getCacheNodeIds" title="pyspark.ml.regression.DecisionTreeRegressor.getCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">getCacheNodeIds</span></code></a>()</td>
+<td>Gets the value of cacheNodeIds or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getCheckpointInterval.html#pyspark.ml.regression.DecisionTreeRegressor.getCheckpointInterval" title="pyspark.ml.regression.DecisionTreeRegressor.getCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointInterval</span></code></a>()</td>
+<td>Gets the value of checkpointInterval or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getFeaturesCol.html#pyspark.ml.regression.DecisionTreeRegressor.getFeaturesCol" title="pyspark.ml.regression.DecisionTreeRegressor.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getImpurity.html#pyspark.ml.regression.DecisionTreeRegressor.getImpurity" title="pyspark.ml.regression.DecisionTreeRegressor.getImpurity"><code class="xref py py-obj docutils literal"><span class="pre">getImpurity</span></code></a>()</td>
+<td>Gets the value of impurity or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getLabelCol.html#pyspark.ml.regression.DecisionTreeRegressor.getLabelCol" title="pyspark.ml.regression.DecisionTreeRegressor.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMaxBins.html#pyspark.ml.regression.DecisionTreeRegressor.getMaxBins" title="pyspark.ml.regression.DecisionTreeRegressor.getMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">getMaxBins</span></code></a>()</td>
+<td>Gets the value of maxBins or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMaxDepth.html#pyspark.ml.regression.DecisionTreeRegressor.getMaxDepth" title="pyspark.ml.regression.DecisionTreeRegressor.getMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">getMaxDepth</span></code></a>()</td>
+<td>Gets the value of maxDepth or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMaxMemoryInMB.html#pyspark.ml.regression.DecisionTreeRegressor.getMaxMemoryInMB" title="pyspark.ml.regression.DecisionTreeRegressor.getMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">getMaxMemoryInMB</span></code></a>()</td>
+<td>Gets the value of maxMemoryInMB or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMinInfoGain.html#pyspark.ml.regression.DecisionTreeRegressor.getMinInfoGain" title="pyspark.ml.regression.DecisionTreeRegressor.getMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">getMinInfoGain</span></code></a>()</td>
+<td>Gets the value of minInfoGain or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getMinInstancesPerNode.html#pyspark.ml.regression.DecisionTreeRegressor.getMinInstancesPerNode" title="pyspark.ml.regression.DecisionTreeRegressor.getMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">getMinInstancesPerNode</span></code></a>()</td>
+<td>Gets the value of minInstancesPerNode or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getOrDefault.html#pyspark.ml.regression.DecisionTreeRegressor.getOrDefault" title="pyspark.ml.regression.DecisionTreeRegressor.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getParam.html#pyspark.ml.regression.DecisionTreeRegressor.getParam" title="pyspark.ml.regression.DecisionTreeRegressor.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getPredictionCol.html#pyspark.ml.regression.DecisionTreeRegressor.getPredictionCol" title="pyspark.ml.regression.DecisionTreeRegressor.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getSeed.html#pyspark.ml.regression.DecisionTreeRegressor.getSeed" title="pyspark.ml.regression.DecisionTreeRegressor.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.getVarianceCol.html#pyspark.ml.regression.DecisionTreeRegressor.getVarianceCol" title="pyspark.ml.regression.DecisionTreeRegressor.getVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">getVarianceCol</span></code></a>()</td>
+<td>Gets the value of varianceCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.hasDefault.html#pyspark.ml.regression.DecisionTreeRegressor.hasDefault" title="pyspark.ml.regression.DecisionTreeRegressor.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.hasParam.html#pyspark.ml.regression.DecisionTreeRegressor.hasParam" title="pyspark.ml.regression.DecisionTreeRegressor.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.isDefined.html#pyspark.ml.regression.DecisionTreeRegressor.isDefined" title="pyspark.ml.regression.DecisionTreeRegressor.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.isSet.html#pyspark.ml.regression.DecisionTreeRegressor.isSet" title="pyspark.ml.regression.DecisionTreeRegressor.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.load.html#pyspark.ml.regression.DecisionTreeRegressor.load" title="pyspark.ml.regression.DecisionTreeRegressor.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.read.html#pyspark.ml.regression.DecisionTreeRegressor.read" title="pyspark.ml.regression.DecisionTreeRegressor.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.save.html#pyspark.ml.regression.DecisionTreeRegressor.save" title="pyspark.ml.regression.DecisionTreeRegressor.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setCacheNodeIds.html#pyspark.ml.regression.DecisionTreeRegressor.setCacheNodeIds" title="pyspark.ml.regression.DecisionTreeRegressor.setCacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">setCacheNodeIds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">cacheNodeIds</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setCheckpointInterval.html#pyspark.ml.regression.DecisionTreeRegressor.setCheckpointInterval" title="pyspark.ml.regression.DecisionTreeRegressor.setCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointInterval</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setFeaturesCol.html#pyspark.ml.regression.DecisionTreeRegressor.setFeaturesCol" title="pyspark.ml.regression.DecisionTreeRegressor.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setImpurity.html#pyspark.ml.regression.DecisionTreeRegressor.setImpurity" title="pyspark.ml.regression.DecisionTreeRegressor.setImpurity"><code class="xref py py-obj docutils literal"><span class="pre">setImpurity</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">impurity</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setLabelCol.html#pyspark.ml.regression.DecisionTreeRegressor.setLabelCol" title="pyspark.ml.regression.DecisionTreeRegressor.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMaxBins.html#pyspark.ml.regression.DecisionTreeRegressor.setMaxBins" title="pyspark.ml.regression.DecisionTreeRegressor.setMaxBins"><code class="xref py py-obj docutils literal"><span class="pre">setMaxBins</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxBins</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMaxDepth.html#pyspark.ml.regression.DecisionTreeRegressor.setMaxDepth" title="pyspark.ml.regression.DecisionTreeRegressor.setMaxDepth"><code class="xref py py-obj docutils literal"><span class="pre">setMaxDepth</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxDepth</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMaxMemoryInMB.html#pyspark.ml.regression.DecisionTreeRegressor.setMaxMemoryInMB" title="pyspark.ml.regression.DecisionTreeRegressor.setMaxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">setMaxMemoryInMB</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">maxMemoryInMB</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMinInfoGain.html#pyspark.ml.regression.DecisionTreeRegressor.setMinInfoGain" title="pyspark.ml.regression.DecisionTreeRegressor.setMinInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">setMinInfoGain</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInfoGain</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setMinInstancesPerNode.html#pyspark.ml.regression.DecisionTreeRegressor.setMinInstancesPerNode" title="pyspark.ml.regression.DecisionTreeRegressor.setMinInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">setMinInstancesPerNode</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">minInstancesPerNode</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setParams.html#pyspark.ml.regression.DecisionTreeRegressor.setParams" title="pyspark.ml.regression.DecisionTreeRegressor.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td>Sets params for the DecisionTreeRegressor.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setPredictionCol.html#pyspark.ml.regression.DecisionTreeRegressor.setPredictionCol" title="pyspark.ml.regression.DecisionTreeRegressor.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setSeed.html#pyspark.ml.regression.DecisionTreeRegressor.setSeed" title="pyspark.ml.regression.DecisionTreeRegressor.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">seed</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.setVarianceCol.html#pyspark.ml.regression.DecisionTreeRegressor.setVarianceCol" title="pyspark.ml.regression.DecisionTreeRegressor.setVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">setVarianceCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">varianceCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.write.html#pyspark.ml.regression.DecisionTreeRegressor.write" title="pyspark.ml.regression.DecisionTreeRegressor.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.8.2.7.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.cacheNodeIds.html#pyspark.ml.regression.DecisionTreeRegressor.cacheNodeIds" title="pyspark.ml.regression.DecisionTreeRegressor.cacheNodeIds"><code class="xref py py-obj docutils literal"><span class="pre">cacheNodeIds</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.checkpointInterval.html#pyspark.ml.regression.DecisionTreeRegressor.checkpointInterval" title="pyspark.ml.regression.DecisionTreeRegressor.checkpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">checkpointInterval</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.featuresCol.html#pyspark.ml.regression.DecisionTreeRegressor.featuresCol" title="pyspark.ml.regression.DecisionTreeRegressor.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.impurity.html#pyspark.ml.regression.DecisionTreeRegressor.impurity" title="pyspark.ml.regression.DecisionTreeRegressor.impurity"><code class="xref py py-obj docutils literal"><span class="pre">impurity</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.labelCol.html#pyspark.ml.regression.DecisionTreeRegressor.labelCol" title="pyspark.ml.regression.DecisionTreeRegressor.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.maxBins.html#pyspark.ml.regression.DecisionTreeRegressor.maxBins" title="pyspark.ml.regression.DecisionTreeRegressor.maxBins"><code class="xref py py-obj docutils literal"><span class="pre">maxBins</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.maxDepth.html#pyspark.ml.regression.DecisionTreeRegressor.maxDepth" title="pyspark.ml.regression.DecisionTreeRegressor.maxDepth"><code class="xref py py-obj docutils literal"><span class="pre">maxDepth</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.maxMemoryInMB.html#pyspark.ml.regression.DecisionTreeRegressor.maxMemoryInMB" title="pyspark.ml.regression.DecisionTreeRegressor.maxMemoryInMB"><code class="xref py py-obj docutils literal"><span class="pre">maxMemoryInMB</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.minInfoGain.html#pyspark.ml.regression.DecisionTreeRegressor.minInfoGain" title="pyspark.ml.regression.DecisionTreeRegressor.minInfoGain"><code class="xref py py-obj docutils literal"><span class="pre">minInfoGain</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.minInstancesPerNode.html#pyspark.ml.regression.DecisionTreeRegressor.minInstancesPerNode" title="pyspark.ml.regression.DecisionTreeRegressor.minInstancesPerNode"><code class="xref py py-obj docutils literal"><span class="pre">minInstancesPerNode</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.params.html#pyspark.ml.regression.DecisionTreeRegressor.params" title="pyspark.ml.regression.DecisionTreeRegressor.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.predictionCol.html#pyspark.ml.regression.DecisionTreeRegressor.predictionCol" title="pyspark.ml.regression.DecisionTreeRegressor.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.seed.html#pyspark.ml.regression.DecisionTreeRegressor.seed" title="pyspark.ml.regression.DecisionTreeRegressor.seed"><code class="xref py py-obj docutils literal"><span class="pre">seed</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.supportedImpurities.html#pyspark.ml.regression.DecisionTreeRegressor.supportedImpurities" title="pyspark.ml.regression.DecisionTreeRegressor.supportedImpurities"><code class="xref py py-obj docutils literal"><span class="pre">supportedImpurities</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.regression.DecisionTreeRegressor.varianceCol.html#pyspark.ml.regression.DecisionTreeRegressor.varianceCol" title="pyspark.ml.regression.DecisionTreeRegressor.varianceCol"><code class="xref py py-obj docutils literal"><span class="pre">varianceCol</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -444,10 +492,10 @@ It supports both continuous and categorical features.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.regression.DecisionTreeRegressor.params.html" class="btn btn-neutral float-right" title="3.8.2.7.1. pyspark.ml.regression.DecisionTreeRegressor.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.regression.DecisionTreeRegressor.__init__.html" class="btn btn-neutral float-right" title="3.8.2.7.1.1. pyspark.ml.regression.DecisionTreeRegressor.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.ml.regression.DecisionTreeRegressionModel.write.html" class="btn btn-neutral" title="3.8.2.6.20. pyspark.ml.regression.DecisionTreeRegressionModel.write" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.regression.DecisionTreeRegressionModel.toDebugString.html" class="btn btn-neutral" title="3.8.2.6.2.5. pyspark.ml.regression.DecisionTreeRegressionModel.toDebugString" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

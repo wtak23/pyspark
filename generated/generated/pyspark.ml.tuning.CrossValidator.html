@@ -32,7 +32,7 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="3.9. pyspark.ml.tuning" href="../pyspark.ml.tuning.html"/>
-        <link rel="next" title="3.9.2.1.1. pyspark.ml.tuning.CrossValidator.params" href="pyspark.ml.tuning.CrossValidator.params.html"/>
+        <link rel="next" title="3.9.2.1.1.1. pyspark.ml.tuning.CrossValidator.__init__" href="pyspark.ml.tuning.CrossValidator.__init__.html"/>
         <link rel="prev" title="3.9.1.4. pyspark.ml.tuning.since" href="../pyspark.ml.tuning.since.html"/> 
 
   
@@ -186,7 +186,6 @@
             
   <div class="section" id="pyspark-ml-tuning-crossvalidator">
 <h1>3.9.2.1. pyspark.ml.tuning.CrossValidator<a class="headerlink" href="#pyspark-ml-tuning-crossvalidator" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.__init__.html#pyspark.ml.tuning.CrossValidator.__init__" title="pyspark.ml.tuning.CrossValidator.__init__"><code class="xref py py-func docutils literal"><span class="pre">CrossValidator.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.ml.tuning.CrossValidator">
 <em class="property">class </em><code class="descclassname">pyspark.ml.tuning.</code><code class="descname">CrossValidator</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/tuning.html#CrossValidator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.tuning.CrossValidator" title="Permalink to this definition">¶</a></dt>
@@ -213,93 +212,6 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.4.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.params.html#pyspark.ml.tuning.CrossValidator.params" title="pyspark.ml.tuning.CrossValidator.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
-<td>Returns all params ordered by name.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.copy.html#pyspark.ml.tuning.CrossValidator.copy" title="pyspark.ml.tuning.CrossValidator.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
-<td>Creates a copy of this instance with a randomly generated uid and some extra params.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.explainParam.html#pyspark.ml.tuning.CrossValidator.explainParam" title="pyspark.ml.tuning.CrossValidator.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
-<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.explainParams.html#pyspark.ml.tuning.CrossValidator.explainParams" title="pyspark.ml.tuning.CrossValidator.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
-<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.extractParamMap.html#pyspark.ml.tuning.CrossValidator.extractParamMap" title="pyspark.ml.tuning.CrossValidator.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
-<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.fit.html#pyspark.ml.tuning.CrossValidator.fit" title="pyspark.ml.tuning.CrossValidator.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
-<td>Fits a model to the input dataset with optional parameters.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getEstimator.html#pyspark.ml.tuning.CrossValidator.getEstimator" title="pyspark.ml.tuning.CrossValidator.getEstimator"><code class="xref py py-obj docutils literal"><span class="pre">getEstimator</span></code></a>()</td>
-<td>Gets the value of estimator or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getEstimatorParamMaps.html#pyspark.ml.tuning.CrossValidator.getEstimatorParamMaps" title="pyspark.ml.tuning.CrossValidator.getEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">getEstimatorParamMaps</span></code></a>()</td>
-<td>Gets the value of estimatorParamMaps or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getEvaluator.html#pyspark.ml.tuning.CrossValidator.getEvaluator" title="pyspark.ml.tuning.CrossValidator.getEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluator</span></code></a>()</td>
-<td>Gets the value of evaluator or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getNumFolds.html#pyspark.ml.tuning.CrossValidator.getNumFolds" title="pyspark.ml.tuning.CrossValidator.getNumFolds"><code class="xref py py-obj docutils literal"><span class="pre">getNumFolds</span></code></a>()</td>
-<td>Gets the value of numFolds or its default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getOrDefault.html#pyspark.ml.tuning.CrossValidator.getOrDefault" title="pyspark.ml.tuning.CrossValidator.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
-<td>Gets the value of a param in the user-supplied param map or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getParam.html#pyspark.ml.tuning.CrossValidator.getParam" title="pyspark.ml.tuning.CrossValidator.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
-<td>Gets a param by its name.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getSeed.html#pyspark.ml.tuning.CrossValidator.getSeed" title="pyspark.ml.tuning.CrossValidator.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
-<td>Gets the value of seed or its default value.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.hasDefault.html#pyspark.ml.tuning.CrossValidator.hasDefault" title="pyspark.ml.tuning.CrossValidator.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
-<td>Checks whether a param has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.hasParam.html#pyspark.ml.tuning.CrossValidator.hasParam" title="pyspark.ml.tuning.CrossValidator.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
-<td>Tests whether this instance contains a param with a given (string) name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.isDefined.html#pyspark.ml.tuning.CrossValidator.isDefined" title="pyspark.ml.tuning.CrossValidator.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user or has a default value.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.isSet.html#pyspark.ml.tuning.CrossValidator.isSet" title="pyspark.ml.tuning.CrossValidator.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
-<td>Checks whether a param is explicitly set by user.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setEstimator.html#pyspark.ml.tuning.CrossValidator.setEstimator" title="pyspark.ml.tuning.CrossValidator.setEstimator"><code class="xref py py-obj docutils literal"><span class="pre">setEstimator</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.estimator.html#pyspark.ml.tuning.CrossValidator.estimator" title="pyspark.ml.tuning.CrossValidator.estimator"><code class="xref py py-attr docutils literal"><span class="pre">estimator</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setEstimatorParamMaps.html#pyspark.ml.tuning.CrossValidator.setEstimatorParamMaps" title="pyspark.ml.tuning.CrossValidator.setEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">setEstimatorParamMaps</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.estimatorParamMaps.html#pyspark.ml.tuning.CrossValidator.estimatorParamMaps" title="pyspark.ml.tuning.CrossValidator.estimatorParamMaps"><code class="xref py py-attr docutils literal"><span class="pre">estimatorParamMaps</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setEvaluator.html#pyspark.ml.tuning.CrossValidator.setEvaluator" title="pyspark.ml.tuning.CrossValidator.setEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluator</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.evaluator.html#pyspark.ml.tuning.CrossValidator.evaluator" title="pyspark.ml.tuning.CrossValidator.evaluator"><code class="xref py py-attr docutils literal"><span class="pre">evaluator</span></code></a>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setNumFolds.html#pyspark.ml.tuning.CrossValidator.setNumFolds" title="pyspark.ml.tuning.CrossValidator.setNumFolds"><code class="xref py py-obj docutils literal"><span class="pre">setNumFolds</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.numFolds.html#pyspark.ml.tuning.CrossValidator.numFolds" title="pyspark.ml.tuning.CrossValidator.numFolds"><code class="xref py py-attr docutils literal"><span class="pre">numFolds</span></code></a>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setParams.html#pyspark.ml.tuning.CrossValidator.setParams" title="pyspark.ml.tuning.CrossValidator.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(*args,&nbsp;**kwargs)</td>
-<td>setParams(self, estimator=None, estimatorParamMaps=None, evaluator=None, numFolds=3,                  seed=None):</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setSeed.html#pyspark.ml.tuning.CrossValidator.setSeed" title="pyspark.ml.tuning.CrossValidator.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
-<td>Sets the value of <a class="reference internal" href="pyspark.ml.tuning.CrossValidator.seed.html#pyspark.ml.tuning.CrossValidator.seed" title="pyspark.ml.tuning.CrossValidator.seed"><code class="xref py py-attr docutils literal"><span class="pre">seed</span></code></a>.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.ml.tuning.CrossValidator.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>estimator=None</em>, <em>estimatorParamMaps=None</em>, <em>evaluator=None</em>, <em>numFolds=3</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/tuning.html#CrossValidator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.tuning.CrossValidator.__init__" title="Permalink to this definition">¶</a></dt>
@@ -307,6 +219,115 @@
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>3.9.2.1.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.__init__.html#pyspark.ml.tuning.CrossValidator.__init__" title="pyspark.ml.tuning.CrossValidator.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;estimator,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.copy.html#pyspark.ml.tuning.CrossValidator.copy" title="pyspark.ml.tuning.CrossValidator.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with a randomly generated uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.explainParam.html#pyspark.ml.tuning.CrossValidator.explainParam" title="pyspark.ml.tuning.CrossValidator.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.explainParams.html#pyspark.ml.tuning.CrossValidator.explainParams" title="pyspark.ml.tuning.CrossValidator.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.extractParamMap.html#pyspark.ml.tuning.CrossValidator.extractParamMap" title="pyspark.ml.tuning.CrossValidator.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.fit.html#pyspark.ml.tuning.CrossValidator.fit" title="pyspark.ml.tuning.CrossValidator.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getEstimator.html#pyspark.ml.tuning.CrossValidator.getEstimator" title="pyspark.ml.tuning.CrossValidator.getEstimator"><code class="xref py py-obj docutils literal"><span class="pre">getEstimator</span></code></a>()</td>
+<td>Gets the value of estimator or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getEstimatorParamMaps.html#pyspark.ml.tuning.CrossValidator.getEstimatorParamMaps" title="pyspark.ml.tuning.CrossValidator.getEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">getEstimatorParamMaps</span></code></a>()</td>
+<td>Gets the value of estimatorParamMaps or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getEvaluator.html#pyspark.ml.tuning.CrossValidator.getEvaluator" title="pyspark.ml.tuning.CrossValidator.getEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluator</span></code></a>()</td>
+<td>Gets the value of evaluator or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getNumFolds.html#pyspark.ml.tuning.CrossValidator.getNumFolds" title="pyspark.ml.tuning.CrossValidator.getNumFolds"><code class="xref py py-obj docutils literal"><span class="pre">getNumFolds</span></code></a>()</td>
+<td>Gets the value of numFolds or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getOrDefault.html#pyspark.ml.tuning.CrossValidator.getOrDefault" title="pyspark.ml.tuning.CrossValidator.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getParam.html#pyspark.ml.tuning.CrossValidator.getParam" title="pyspark.ml.tuning.CrossValidator.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.getSeed.html#pyspark.ml.tuning.CrossValidator.getSeed" title="pyspark.ml.tuning.CrossValidator.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.hasDefault.html#pyspark.ml.tuning.CrossValidator.hasDefault" title="pyspark.ml.tuning.CrossValidator.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.hasParam.html#pyspark.ml.tuning.CrossValidator.hasParam" title="pyspark.ml.tuning.CrossValidator.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.isDefined.html#pyspark.ml.tuning.CrossValidator.isDefined" title="pyspark.ml.tuning.CrossValidator.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.isSet.html#pyspark.ml.tuning.CrossValidator.isSet" title="pyspark.ml.tuning.CrossValidator.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setEstimator.html#pyspark.ml.tuning.CrossValidator.setEstimator" title="pyspark.ml.tuning.CrossValidator.setEstimator"><code class="xref py py-obj docutils literal"><span class="pre">setEstimator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setEstimatorParamMaps.html#pyspark.ml.tuning.CrossValidator.setEstimatorParamMaps" title="pyspark.ml.tuning.CrossValidator.setEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">setEstimatorParamMaps</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimatorParamMaps</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setEvaluator.html#pyspark.ml.tuning.CrossValidator.setEvaluator" title="pyspark.ml.tuning.CrossValidator.setEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">evaluator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setNumFolds.html#pyspark.ml.tuning.CrossValidator.setNumFolds" title="pyspark.ml.tuning.CrossValidator.setNumFolds"><code class="xref py py-obj docutils literal"><span class="pre">setNumFolds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">numFolds</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setParams.html#pyspark.ml.tuning.CrossValidator.setParams" title="pyspark.ml.tuning.CrossValidator.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>setParams(self, estimator=None, estimatorParamMaps=None, evaluator=None, numFolds=3,                  seed=None):</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.setSeed.html#pyspark.ml.tuning.CrossValidator.setSeed" title="pyspark.ml.tuning.CrossValidator.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">seed</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>3.9.2.1.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.estimator.html#pyspark.ml.tuning.CrossValidator.estimator" title="pyspark.ml.tuning.CrossValidator.estimator"><code class="xref py py-obj docutils literal"><span class="pre">estimator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.estimatorParamMaps.html#pyspark.ml.tuning.CrossValidator.estimatorParamMaps" title="pyspark.ml.tuning.CrossValidator.estimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">estimatorParamMaps</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.evaluator.html#pyspark.ml.tuning.CrossValidator.evaluator" title="pyspark.ml.tuning.CrossValidator.evaluator"><code class="xref py py-obj docutils literal"><span class="pre">evaluator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.numFolds.html#pyspark.ml.tuning.CrossValidator.numFolds" title="pyspark.ml.tuning.CrossValidator.numFolds"><code class="xref py py-obj docutils literal"><span class="pre">numFolds</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.params.html#pyspark.ml.tuning.CrossValidator.params" title="pyspark.ml.tuning.CrossValidator.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.tuning.CrossValidator.seed.html#pyspark.ml.tuning.CrossValidator.seed" title="pyspark.ml.tuning.CrossValidator.seed"><code class="xref py py-obj docutils literal"><span class="pre">seed</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -316,7 +337,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.tuning.CrossValidator.params.html" class="btn btn-neutral float-right" title="3.9.2.1.1. pyspark.ml.tuning.CrossValidator.params" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.tuning.CrossValidator.__init__.html" class="btn btn-neutral float-right" title="3.9.2.1.1.1. pyspark.ml.tuning.CrossValidator.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../pyspark.ml.tuning.since.html" class="btn btn-neutral" title="3.9.1.4. pyspark.ml.tuning.since" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

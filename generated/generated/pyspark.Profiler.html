@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="next" title="1.2.8.1. pyspark.Profiler.dump" href="pyspark.Profiler.dump.html"/>
-        <link rel="prev" title="1.2.7.4. pyspark.PickleSerializer.loads" href="pyspark.PickleSerializer.loads.html"/> 
+        <link rel="next" title="1.2.8.1.1. pyspark.Profiler.__init__" href="pyspark.Profiler.__init__.html"/>
+        <link rel="prev" title="1.2.7.1.5. pyspark.PickleSerializer.loads" href="pyspark.PickleSerializer.loads.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -96,10 +96,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.MarshalSerializer.html">1.2.6. pyspark.MarshalSerializer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.PickleSerializer.html">1.2.7. pyspark.PickleSerializer</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.8. pyspark.Profiler</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Profiler.dump.html">1.2.8.1. pyspark.Profiler.dump</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Profiler.profile.html">1.2.8.2. pyspark.Profiler.profile</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Profiler.show.html">1.2.8.3. pyspark.Profiler.show</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.Profiler.stats.html">1.2.8.4. pyspark.Profiler.stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.8.1. Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.RDD.html">1.2.9. pyspark.RDD</a></li>
@@ -184,7 +181,6 @@
             
   <div class="section" id="pyspark-profiler">
 <h1>1.2.8. pyspark.Profiler<a class="headerlink" href="#pyspark-profiler" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.Profiler.__init__.html#pyspark.Profiler.__init__" title="pyspark.Profiler.__init__"><code class="xref py py-func docutils literal"><span class="pre">Profiler.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.Profiler">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">Profiler</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/profiler.html#Profiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Profiler" title="Permalink to this definition">¶</a></dt>
@@ -221,29 +217,39 @@ add - adds a profile to the existing accumulated profile</dd>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="pyspark.Profiler.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>ctx</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/profiler.html#Profiler.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.Profiler.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>1.2.8.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.Profiler.dump.html#pyspark.Profiler.dump" title="pyspark.Profiler.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a>(id,&nbsp;path)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Profiler.__init__.html#pyspark.Profiler.__init__" title="pyspark.Profiler.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(ctx)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.Profiler.dump.html#pyspark.Profiler.dump" title="pyspark.Profiler.dump"><code class="xref py py-obj docutils literal"><span class="pre">dump</span></code></a>(id,&nbsp;path)</td>
 <td>Dump the profile into path, id is the RDD id</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.Profiler.profile.html#pyspark.Profiler.profile" title="pyspark.Profiler.profile"><code class="xref py py-obj docutils literal"><span class="pre">profile</span></code></a>(func)</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Profiler.profile.html#pyspark.Profiler.profile" title="pyspark.Profiler.profile"><code class="xref py py-obj docutils literal"><span class="pre">profile</span></code></a>(func)</td>
 <td>Do profiling on the function <cite>func</cite></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.Profiler.show.html#pyspark.Profiler.show" title="pyspark.Profiler.show"><code class="xref py py-obj docutils literal"><span class="pre">show</span></code></a>(id)</td>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.Profiler.show.html#pyspark.Profiler.show" title="pyspark.Profiler.show"><code class="xref py py-obj docutils literal"><span class="pre">show</span></code></a>(id)</td>
 <td>Print the profile stats to stdout, id is the RDD id</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.Profiler.stats.html#pyspark.Profiler.stats" title="pyspark.Profiler.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.Profiler.stats.html#pyspark.Profiler.stats" title="pyspark.Profiler.stats"><code class="xref py py-obj docutils literal"><span class="pre">stats</span></code></a>()</td>
 <td>Return the collected profiling stats (pstats.Stats)</td>
 </tr>
 </tbody>
 </table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -253,10 +259,10 @@ add - adds a profile to the existing accumulated profile</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.Profiler.dump.html" class="btn btn-neutral float-right" title="1.2.8.1. pyspark.Profiler.dump" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.Profiler.__init__.html" class="btn btn-neutral float-right" title="1.2.8.1.1. pyspark.Profiler.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.PickleSerializer.loads.html" class="btn btn-neutral" title="1.2.7.4. pyspark.PickleSerializer.loads" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.PickleSerializer.loads.html" class="btn btn-neutral" title="1.2.7.1.5. pyspark.PickleSerializer.loads" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

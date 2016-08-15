@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.4. pyspark.mllib.evaluation" href="../pyspark.mllib.evaluation.html"/>
-        <link rel="next" title="4.4.2.10.1. pyspark.mllib.evaluation.SQLContext.read" href="pyspark.mllib.evaluation.SQLContext.read.html"/>
-        <link rel="prev" title="4.4.2.9.6. pyspark.mllib.evaluation.RegressionMetrics.call" href="pyspark.mllib.evaluation.RegressionMetrics.call.html"/> 
+        <link rel="next" title="4.4.2.10.1.1. pyspark.mllib.evaluation.SQLContext.__init__" href="pyspark.mllib.evaluation.SQLContext.__init__.html"/>
+        <link rel="prev" title="4.4.2.9.2.5. pyspark.mllib.evaluation.RegressionMetrics.rootMeanSquaredError" href="pyspark.mllib.evaluation.RegressionMetrics.rootMeanSquaredError.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -188,7 +188,6 @@
             
   <div class="section" id="pyspark-mllib-evaluation-sqlcontext">
 <h1>4.4.2.10. pyspark.mllib.evaluation.SQLContext<a class="headerlink" href="#pyspark-mllib-evaluation-sqlcontext" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.__init__.html#pyspark.mllib.evaluation.SQLContext.__init__" title="pyspark.mllib.evaluation.SQLContext.__init__"><code class="xref py py-func docutils literal"><span class="pre">SQLContext.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.evaluation.SQLContext">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.evaluation.</code><code class="descname">SQLContext</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>sparkSession=None</em>, <em>jsqlContext=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#SQLContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.SQLContext" title="Permalink to this definition">¶</a></dt>
@@ -208,87 +207,6 @@ tables, execute SQL over tables, cache tables, and read parquet files.</p>
 SQLContext in the JVM, instead we make all calls to this object.</li>
 </ul>
 </td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.read.html#pyspark.mllib.evaluation.SQLContext.read" title="pyspark.mllib.evaluation.SQLContext.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a></td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrameReader</span></code> that can be used to read data in as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.readStream.html#pyspark.mllib.evaluation.SQLContext.readStream" title="pyspark.mllib.evaluation.SQLContext.readStream"><code class="xref py py-obj docutils literal"><span class="pre">readStream</span></code></a></td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataStreamReader</span></code> that can be used to read data streams as a streaming <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.streams.html#pyspark.mllib.evaluation.SQLContext.streams" title="pyspark.mllib.evaluation.SQLContext.streams"><code class="xref py py-obj docutils literal"><span class="pre">streams</span></code></a></td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">StreamingQueryManager</span></code> that allows managing all the <code class="xref py py-class docutils literal"><span class="pre">StreamingQuery</span></code> StreamingQueries active on <cite>this</cite> context.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.udf.html#pyspark.mllib.evaluation.SQLContext.udf" title="pyspark.mllib.evaluation.SQLContext.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a></td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">UDFRegistration</span></code> for UDF registration.</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.cacheTable.html#pyspark.mllib.evaluation.SQLContext.cacheTable" title="pyspark.mllib.evaluation.SQLContext.cacheTable"><code class="xref py py-obj docutils literal"><span class="pre">cacheTable</span></code></a>(tableName)</td>
-<td>Caches the specified table in-memory.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.clearCache.html#pyspark.mllib.evaluation.SQLContext.clearCache" title="pyspark.mllib.evaluation.SQLContext.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
-<td>Removes all cached tables from the in-memory cache.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.createDataFrame.html#pyspark.mllib.evaluation.SQLContext.createDataFrame" title="pyspark.mllib.evaluation.SQLContext.createDataFrame"><code class="xref py py-obj docutils literal"><span class="pre">createDataFrame</span></code></a>(data[,&nbsp;schema,&nbsp;samplingRatio])</td>
-<td>Creates a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from an <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.createExternalTable.html#pyspark.mllib.evaluation.SQLContext.createExternalTable" title="pyspark.mllib.evaluation.SQLContext.createExternalTable"><code class="xref py py-obj docutils literal"><span class="pre">createExternalTable</span></code></a>(tableName[,&nbsp;path,&nbsp;...])</td>
-<td>Creates an external table based on the dataset in a data source.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.dropTempTable.html#pyspark.mllib.evaluation.SQLContext.dropTempTable" title="pyspark.mllib.evaluation.SQLContext.dropTempTable"><code class="xref py py-obj docutils literal"><span class="pre">dropTempTable</span></code></a>(tableName)</td>
-<td>Remove the temp table from catalog.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.getConf.html#pyspark.mllib.evaluation.SQLContext.getConf" title="pyspark.mllib.evaluation.SQLContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>(key[,&nbsp;defaultValue])</td>
-<td>Returns the value of Spark SQL configuration property for the given key.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.getOrCreate.html#pyspark.mllib.evaluation.SQLContext.getOrCreate" title="pyspark.mllib.evaluation.SQLContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>(sc)</td>
-<td>Get the existing SQLContext or create a new one with given SparkContext.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.newSession.html#pyspark.mllib.evaluation.SQLContext.newSession" title="pyspark.mllib.evaluation.SQLContext.newSession"><code class="xref py py-obj docutils literal"><span class="pre">newSession</span></code></a>()</td>
-<td>Returns a new SQLContext as new session, that has separate SQLConf, registered temporary views and UDFs, but shared SparkContext and table cache.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.range.html#pyspark.mllib.evaluation.SQLContext.range" title="pyspark.mllib.evaluation.SQLContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numPartitions])</td>
-<td>Create a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> with single LongType column named <cite>id</cite>, containing elements in a range from <cite>start</cite> to <cite>end</cite> (exclusive) with step value <cite>step</cite>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.registerDataFrameAsTable.html#pyspark.mllib.evaluation.SQLContext.registerDataFrameAsTable" title="pyspark.mllib.evaluation.SQLContext.registerDataFrameAsTable"><code class="xref py py-obj docutils literal"><span class="pre">registerDataFrameAsTable</span></code></a>(df,&nbsp;tableName)</td>
-<td>Registers the given <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> as a temporary table in the catalog.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.registerFunction.html#pyspark.mllib.evaluation.SQLContext.registerFunction" title="pyspark.mllib.evaluation.SQLContext.registerFunction"><code class="xref py py-obj docutils literal"><span class="pre">registerFunction</span></code></a>(name,&nbsp;f[,&nbsp;returnType])</td>
-<td>Registers a python function (including lambda function) as a UDF so it can be used in SQL statements.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.setConf.html#pyspark.mllib.evaluation.SQLContext.setConf" title="pyspark.mllib.evaluation.SQLContext.setConf"><code class="xref py py-obj docutils literal"><span class="pre">setConf</span></code></a>(key,&nbsp;value)</td>
-<td>Sets the given Spark SQL configuration property.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.sql.html#pyspark.mllib.evaluation.SQLContext.sql" title="pyspark.mllib.evaluation.SQLContext.sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a>(sqlQuery)</td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> representing the result of the given query.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.table.html#pyspark.mllib.evaluation.SQLContext.table" title="pyspark.mllib.evaluation.SQLContext.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
-<td>Returns the specified table as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.tableNames.html#pyspark.mllib.evaluation.SQLContext.tableNames" title="pyspark.mllib.evaluation.SQLContext.tableNames"><code class="xref py py-obj docutils literal"><span class="pre">tableNames</span></code></a>([dbName])</td>
-<td>Returns a list of names of tables in the database <code class="docutils literal"><span class="pre">dbName</span></code>.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.tables.html#pyspark.mllib.evaluation.SQLContext.tables" title="pyspark.mllib.evaluation.SQLContext.tables"><code class="xref py py-obj docutils literal"><span class="pre">tables</span></code></a>([dbName])</td>
-<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> containing names of tables in the given database.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.uncacheTable.html#pyspark.mllib.evaluation.SQLContext.uncacheTable" title="pyspark.mllib.evaluation.SQLContext.uncacheTable"><code class="xref py py-obj docutils literal"><span class="pre">uncacheTable</span></code></a>(tableName)</td>
-<td>Removes the specified table from the in-memory cache.</td>
 </tr>
 </tbody>
 </table>
@@ -314,6 +232,94 @@ SQLContext in the JVM, instead we make all calls to this object.</li>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>4.4.2.10.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.__init__.html#pyspark.mllib.evaluation.SQLContext.__init__" title="pyspark.mllib.evaluation.SQLContext.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(sparkContext[,&nbsp;sparkSession,&nbsp;...])</td>
+<td>Creates a new SQLContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.cacheTable.html#pyspark.mllib.evaluation.SQLContext.cacheTable" title="pyspark.mllib.evaluation.SQLContext.cacheTable"><code class="xref py py-obj docutils literal"><span class="pre">cacheTable</span></code></a>(tableName)</td>
+<td>Caches the specified table in-memory.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.clearCache.html#pyspark.mllib.evaluation.SQLContext.clearCache" title="pyspark.mllib.evaluation.SQLContext.clearCache"><code class="xref py py-obj docutils literal"><span class="pre">clearCache</span></code></a>()</td>
+<td>Removes all cached tables from the in-memory cache.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.createDataFrame.html#pyspark.mllib.evaluation.SQLContext.createDataFrame" title="pyspark.mllib.evaluation.SQLContext.createDataFrame"><code class="xref py py-obj docutils literal"><span class="pre">createDataFrame</span></code></a>(data[,&nbsp;schema,&nbsp;samplingRatio])</td>
+<td>Creates a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from an <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.createExternalTable.html#pyspark.mllib.evaluation.SQLContext.createExternalTable" title="pyspark.mllib.evaluation.SQLContext.createExternalTable"><code class="xref py py-obj docutils literal"><span class="pre">createExternalTable</span></code></a>(tableName[,&nbsp;path,&nbsp;...])</td>
+<td>Creates an external table based on the dataset in a data source.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.dropTempTable.html#pyspark.mllib.evaluation.SQLContext.dropTempTable" title="pyspark.mllib.evaluation.SQLContext.dropTempTable"><code class="xref py py-obj docutils literal"><span class="pre">dropTempTable</span></code></a>(tableName)</td>
+<td>Remove the temp table from catalog.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.getConf.html#pyspark.mllib.evaluation.SQLContext.getConf" title="pyspark.mllib.evaluation.SQLContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>(key[,&nbsp;defaultValue])</td>
+<td>Returns the value of Spark SQL configuration property for the given key.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.getOrCreate.html#pyspark.mllib.evaluation.SQLContext.getOrCreate" title="pyspark.mllib.evaluation.SQLContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>(sc)</td>
+<td>Get the existing SQLContext or create a new one with given SparkContext.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.newSession.html#pyspark.mllib.evaluation.SQLContext.newSession" title="pyspark.mllib.evaluation.SQLContext.newSession"><code class="xref py py-obj docutils literal"><span class="pre">newSession</span></code></a>()</td>
+<td>Returns a new SQLContext as new session, that has separate SQLConf, registered temporary views and UDFs, but shared SparkContext and table cache.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.range.html#pyspark.mllib.evaluation.SQLContext.range" title="pyspark.mllib.evaluation.SQLContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numPartitions])</td>
+<td>Create a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> with single LongType column named <cite>id</cite>, containing elements in a range from <cite>start</cite> to <cite>end</cite> (exclusive) with step value <cite>step</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.registerDataFrameAsTable.html#pyspark.mllib.evaluation.SQLContext.registerDataFrameAsTable" title="pyspark.mllib.evaluation.SQLContext.registerDataFrameAsTable"><code class="xref py py-obj docutils literal"><span class="pre">registerDataFrameAsTable</span></code></a>(df,&nbsp;tableName)</td>
+<td>Registers the given <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> as a temporary table in the catalog.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.registerFunction.html#pyspark.mllib.evaluation.SQLContext.registerFunction" title="pyspark.mllib.evaluation.SQLContext.registerFunction"><code class="xref py py-obj docutils literal"><span class="pre">registerFunction</span></code></a>(name,&nbsp;f[,&nbsp;returnType])</td>
+<td>Registers a python function (including lambda function) as a UDF so it can be used in SQL statements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.setConf.html#pyspark.mllib.evaluation.SQLContext.setConf" title="pyspark.mllib.evaluation.SQLContext.setConf"><code class="xref py py-obj docutils literal"><span class="pre">setConf</span></code></a>(key,&nbsp;value)</td>
+<td>Sets the given Spark SQL configuration property.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.sql.html#pyspark.mllib.evaluation.SQLContext.sql" title="pyspark.mllib.evaluation.SQLContext.sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a>(sqlQuery)</td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> representing the result of the given query.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.table.html#pyspark.mllib.evaluation.SQLContext.table" title="pyspark.mllib.evaluation.SQLContext.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
+<td>Returns the specified table as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.tableNames.html#pyspark.mllib.evaluation.SQLContext.tableNames" title="pyspark.mllib.evaluation.SQLContext.tableNames"><code class="xref py py-obj docutils literal"><span class="pre">tableNames</span></code></a>([dbName])</td>
+<td>Returns a list of names of tables in the database <code class="docutils literal"><span class="pre">dbName</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.tables.html#pyspark.mllib.evaluation.SQLContext.tables" title="pyspark.mllib.evaluation.SQLContext.tables"><code class="xref py py-obj docutils literal"><span class="pre">tables</span></code></a>([dbName])</td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> containing names of tables in the given database.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.uncacheTable.html#pyspark.mllib.evaluation.SQLContext.uncacheTable" title="pyspark.mllib.evaluation.SQLContext.uncacheTable"><code class="xref py py-obj docutils literal"><span class="pre">uncacheTable</span></code></a>(tableName)</td>
+<td>Removes the specified table from the in-memory cache.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.4.2.10.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.read.html#pyspark.mllib.evaluation.SQLContext.read" title="pyspark.mllib.evaluation.SQLContext.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataFrameReader</span></code> that can be used to read data in as a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.readStream.html#pyspark.mllib.evaluation.SQLContext.readStream" title="pyspark.mllib.evaluation.SQLContext.readStream"><code class="xref py py-obj docutils literal"><span class="pre">readStream</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">DataStreamReader</span></code> that can be used to read data streams as a streaming <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.streams.html#pyspark.mllib.evaluation.SQLContext.streams" title="pyspark.mllib.evaluation.SQLContext.streams"><code class="xref py py-obj docutils literal"><span class="pre">streams</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">StreamingQueryManager</span></code> that allows managing all the <code class="xref py py-class docutils literal"><span class="pre">StreamingQuery</span></code> StreamingQueries active on <cite>this</cite> context.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.evaluation.SQLContext.udf.html#pyspark.mllib.evaluation.SQLContext.udf" title="pyspark.mllib.evaluation.SQLContext.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a></td>
+<td>Returns a <code class="xref py py-class docutils literal"><span class="pre">UDFRegistration</span></code> for UDF registration.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -323,10 +329,10 @@ SQLContext in the JVM, instead we make all calls to this object.</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.evaluation.SQLContext.read.html" class="btn btn-neutral float-right" title="4.4.2.10.1. pyspark.mllib.evaluation.SQLContext.read" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.evaluation.SQLContext.__init__.html" class="btn btn-neutral float-right" title="4.4.2.10.1.1. pyspark.mllib.evaluation.SQLContext.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.evaluation.RegressionMetrics.call.html" class="btn btn-neutral" title="4.4.2.9.6. pyspark.mllib.evaluation.RegressionMetrics.call" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.evaluation.RegressionMetrics.rootMeanSquaredError.html" class="btn btn-neutral" title="4.4.2.9.2.5. pyspark.mllib.evaluation.RegressionMetrics.rootMeanSquaredError" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

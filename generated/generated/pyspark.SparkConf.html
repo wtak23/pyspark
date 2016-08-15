@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
-        <link rel="next" title="1.2.12.1. pyspark.SparkConf.contains" href="pyspark.SparkConf.contains.html"/>
-        <link rel="prev" title="1.2.11.21. pyspark.SQLContext.uncacheTable" href="pyspark.SQLContext.uncacheTable.html"/> 
+        <link rel="next" title="1.2.12.1.1. pyspark.SparkConf.__init__" href="pyspark.SparkConf.__init__.html"/>
+        <link rel="prev" title="1.2.11.2.4. pyspark.SQLContext.udf" href="pyspark.SQLContext.udf.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -100,17 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.Row.html">1.2.10. pyspark.Row</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.SQLContext.html">1.2.11. pyspark.SQLContext</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.12. pyspark.SparkConf</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.contains.html">1.2.12.1. pyspark.SparkConf.contains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.get.html">1.2.12.2. pyspark.SparkConf.get</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.getAll.html">1.2.12.3. pyspark.SparkConf.getAll</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.set.html">1.2.12.4. pyspark.SparkConf.set</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.setAll.html">1.2.12.5. pyspark.SparkConf.setAll</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.setAppName.html">1.2.12.6. pyspark.SparkConf.setAppName</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.setExecutorEnv.html">1.2.12.7. pyspark.SparkConf.setExecutorEnv</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.setIfMissing.html">1.2.12.8. pyspark.SparkConf.setIfMissing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.setMaster.html">1.2.12.9. pyspark.SparkConf.setMaster</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.setSparkHome.html">1.2.12.10. pyspark.SparkConf.setSparkHome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.SparkConf.toDebugString.html">1.2.12.11. pyspark.SparkConf.toDebugString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#methods">1.2.12.1. Methods</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.SparkContext.html">1.2.13. pyspark.SparkContext</a></li>
@@ -191,7 +181,6 @@
             
   <div class="section" id="pyspark-sparkconf">
 <h1>1.2.12. pyspark.SparkConf<a class="headerlink" href="#pyspark-sparkconf" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.SparkConf.__init__.html#pyspark.SparkConf.__init__" title="pyspark.SparkConf.__init__"><code class="xref py py-func docutils literal"><span class="pre">SparkConf.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.SparkConf">
 <em class="property">class </em><code class="descclassname">pyspark.</code><code class="descname">SparkConf</code><span class="sig-paren">(</span><em>loadDefaults=True</em>, <em>_jvm=None</em>, <em>_jconf=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/conf.html#SparkConf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.SparkConf" title="Permalink to this definition">¶</a></dt>
@@ -208,48 +197,6 @@ what the system properties are.</p>
 you can write C{conf.setMaster(&#8220;local&#8221;).setAppName(&#8220;My app&#8221;)}.</p>
 <p>Note that once a SparkConf object is passed to Spark, it is cloned
 and can no longer be modified by the user.</p>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.contains.html#pyspark.SparkConf.contains" title="pyspark.SparkConf.contains"><code class="xref py py-obj docutils literal"><span class="pre">contains</span></code></a>(key)</td>
-<td>Does this configuration contain a given key?</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.get.html#pyspark.SparkConf.get" title="pyspark.SparkConf.get"><code class="xref py py-obj docutils literal"><span class="pre">get</span></code></a>(key[,&nbsp;defaultValue])</td>
-<td>Get the configured value for some key, or return a default otherwise.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.getAll.html#pyspark.SparkConf.getAll" title="pyspark.SparkConf.getAll"><code class="xref py py-obj docutils literal"><span class="pre">getAll</span></code></a>()</td>
-<td>Get all values as a list of key-value pairs.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.set.html#pyspark.SparkConf.set" title="pyspark.SparkConf.set"><code class="xref py py-obj docutils literal"><span class="pre">set</span></code></a>(key,&nbsp;value)</td>
-<td>Set a configuration property.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.setAll.html#pyspark.SparkConf.setAll" title="pyspark.SparkConf.setAll"><code class="xref py py-obj docutils literal"><span class="pre">setAll</span></code></a>(pairs)</td>
-<td>Set multiple parameters, passed as a list of key-value pairs.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.setAppName.html#pyspark.SparkConf.setAppName" title="pyspark.SparkConf.setAppName"><code class="xref py py-obj docutils literal"><span class="pre">setAppName</span></code></a>(value)</td>
-<td>Set application name.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.setExecutorEnv.html#pyspark.SparkConf.setExecutorEnv" title="pyspark.SparkConf.setExecutorEnv"><code class="xref py py-obj docutils literal"><span class="pre">setExecutorEnv</span></code></a>([key,&nbsp;value,&nbsp;pairs])</td>
-<td>Set an environment variable to be passed to executors.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.setIfMissing.html#pyspark.SparkConf.setIfMissing" title="pyspark.SparkConf.setIfMissing"><code class="xref py py-obj docutils literal"><span class="pre">setIfMissing</span></code></a>(key,&nbsp;value)</td>
-<td>Set a configuration property, if not already set.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.setMaster.html#pyspark.SparkConf.setMaster" title="pyspark.SparkConf.setMaster"><code class="xref py py-obj docutils literal"><span class="pre">setMaster</span></code></a>(value)</td>
-<td>Set master URL to connect to.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.setSparkHome.html#pyspark.SparkConf.setSparkHome" title="pyspark.SparkConf.setSparkHome"><code class="xref py py-obj docutils literal"><span class="pre">setSparkHome</span></code></a>(value)</td>
-<td>Set path where Spark is installed on worker nodes.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.toDebugString.html#pyspark.SparkConf.toDebugString" title="pyspark.SparkConf.toDebugString"><code class="xref py py-obj docutils literal"><span class="pre">toDebugString</span></code></a>()</td>
-<td>Returns a printable version of the configuration, as a list of key=value pairs, one per line.</td>
-</tr>
-</tbody>
-</table>
 <dl class="method">
 <dt id="pyspark.SparkConf.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>loadDefaults=True</em>, <em>_jvm=None</em>, <em>_jconf=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/conf.html#SparkConf.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.SparkConf.__init__" title="Permalink to this definition">¶</a></dt>
@@ -274,6 +221,53 @@ to use its parameters</li>
 
 </dd></dl>
 
+<div class="section" id="methods">
+<h2>1.2.12.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.__init__.html#pyspark.SparkConf.__init__" title="pyspark.SparkConf.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([loadDefaults,&nbsp;_jvm,&nbsp;_jconf])</td>
+<td>Create a new Spark configuration.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.contains.html#pyspark.SparkConf.contains" title="pyspark.SparkConf.contains"><code class="xref py py-obj docutils literal"><span class="pre">contains</span></code></a>(key)</td>
+<td>Does this configuration contain a given key?</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.get.html#pyspark.SparkConf.get" title="pyspark.SparkConf.get"><code class="xref py py-obj docutils literal"><span class="pre">get</span></code></a>(key[,&nbsp;defaultValue])</td>
+<td>Get the configured value for some key, or return a default otherwise.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.getAll.html#pyspark.SparkConf.getAll" title="pyspark.SparkConf.getAll"><code class="xref py py-obj docutils literal"><span class="pre">getAll</span></code></a>()</td>
+<td>Get all values as a list of key-value pairs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.set.html#pyspark.SparkConf.set" title="pyspark.SparkConf.set"><code class="xref py py-obj docutils literal"><span class="pre">set</span></code></a>(key,&nbsp;value)</td>
+<td>Set a configuration property.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.setAll.html#pyspark.SparkConf.setAll" title="pyspark.SparkConf.setAll"><code class="xref py py-obj docutils literal"><span class="pre">setAll</span></code></a>(pairs)</td>
+<td>Set multiple parameters, passed as a list of key-value pairs.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.setAppName.html#pyspark.SparkConf.setAppName" title="pyspark.SparkConf.setAppName"><code class="xref py py-obj docutils literal"><span class="pre">setAppName</span></code></a>(value)</td>
+<td>Set application name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.setExecutorEnv.html#pyspark.SparkConf.setExecutorEnv" title="pyspark.SparkConf.setExecutorEnv"><code class="xref py py-obj docutils literal"><span class="pre">setExecutorEnv</span></code></a>([key,&nbsp;value,&nbsp;pairs])</td>
+<td>Set an environment variable to be passed to executors.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.setIfMissing.html#pyspark.SparkConf.setIfMissing" title="pyspark.SparkConf.setIfMissing"><code class="xref py py-obj docutils literal"><span class="pre">setIfMissing</span></code></a>(key,&nbsp;value)</td>
+<td>Set a configuration property, if not already set.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.setMaster.html#pyspark.SparkConf.setMaster" title="pyspark.SparkConf.setMaster"><code class="xref py py-obj docutils literal"><span class="pre">setMaster</span></code></a>(value)</td>
+<td>Set master URL to connect to.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.SparkConf.setSparkHome.html#pyspark.SparkConf.setSparkHome" title="pyspark.SparkConf.setSparkHome"><code class="xref py py-obj docutils literal"><span class="pre">setSparkHome</span></code></a>(value)</td>
+<td>Set path where Spark is installed on worker nodes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.SparkConf.toDebugString.html#pyspark.SparkConf.toDebugString" title="pyspark.SparkConf.toDebugString"><code class="xref py py-obj docutils literal"><span class="pre">toDebugString</span></code></a>()</td>
+<td>Returns a printable version of the configuration, as a list of key=value pairs, one per line.</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -283,10 +277,10 @@ to use its parameters</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.SparkConf.contains.html" class="btn btn-neutral float-right" title="1.2.12.1. pyspark.SparkConf.contains" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.SparkConf.__init__.html" class="btn btn-neutral float-right" title="1.2.12.1.1. pyspark.SparkConf.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.SQLContext.uncacheTable.html" class="btn btn-neutral" title="1.2.11.21. pyspark.SQLContext.uncacheTable" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.SQLContext.udf.html" class="btn btn-neutral" title="1.2.11.2.4. pyspark.SQLContext.udf" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -32,8 +32,8 @@
   
     <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
         <link rel="up" title="4.2. pyspark.mllib.classification" href="../pyspark.mllib.classification.html"/>
-        <link rel="next" title="4.2.2.13.1. pyspark.mllib.classification.SVMModel.intercept" href="pyspark.mllib.classification.SVMModel.intercept.html"/>
-        <link rel="prev" title="4.2.2.12.98. pyspark.mllib.classification.RDD.zipWithUniqueId" href="pyspark.mllib.classification.RDD.zipWithUniqueId.html"/> 
+        <link rel="next" title="4.2.2.13.1.1. pyspark.mllib.classification.SVMModel.__init__" href="pyspark.mllib.classification.SVMModel.__init__.html"/>
+        <link rel="prev" title="4.2.2.12.2.1. pyspark.mllib.classification.RDD.context" href="pyspark.mllib.classification.RDD.context.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -194,7 +194,6 @@
             
   <div class="section" id="pyspark-mllib-classification-svmmodel">
 <h1>4.2.2.13. pyspark.mllib.classification.SVMModel<a class="headerlink" href="#pyspark-mllib-classification-svmmodel" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="pyspark.mllib.classification.SVMModel.__init__.html#pyspark.mllib.classification.SVMModel.__init__" title="pyspark.mllib.classification.SVMModel.__init__"><code class="xref py py-func docutils literal"><span class="pre">SVMModel.__init__()</span></code></a></p>
 <dl class="class">
 <dt id="pyspark.mllib.classification.SVMModel">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.classification.</code><code class="descname">SVMModel</code><span class="sig-paren">(</span><em>weights</em>, <em>intercept</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/classification.html#SVMModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.classification.SVMModel" title="Permalink to this definition">¶</a></dt>
@@ -256,7 +255,44 @@
 <div class="versionadded">
 <p><span class="versionmodified">New in version 0.9.0.</span></p>
 </div>
-<p class="rubric">Attributes</p>
+<dl class="method">
+<dt id="pyspark.mllib.classification.SVMModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>weights</em>, <em>intercept</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/classification.html#SVMModel.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.classification.SVMModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>4.2.2.13.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.__init__.html#pyspark.mllib.classification.SVMModel.__init__" title="pyspark.mllib.classification.SVMModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(weights,&nbsp;intercept)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.clearThreshold.html#pyspark.mllib.classification.SVMModel.clearThreshold" title="pyspark.mllib.classification.SVMModel.clearThreshold"><code class="xref py py-obj docutils literal"><span class="pre">clearThreshold</span></code></a>()</td>
+<td>Clears the threshold so that <cite>predict</cite> will output raw prediction scores.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.load.html#pyspark.mllib.classification.SVMModel.load" title="pyspark.mllib.classification.SVMModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(sc,&nbsp;path)</td>
+<td>Load a model from the given path.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.predict.html#pyspark.mllib.classification.SVMModel.predict" title="pyspark.mllib.classification.SVMModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(x)</td>
+<td>Predict values for a single data point or an RDD of points using the model trained.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.save.html#pyspark.mllib.classification.SVMModel.save" title="pyspark.mllib.classification.SVMModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(sc,&nbsp;path)</td>
+<td>Save this model to the given path.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.setThreshold.html#pyspark.mllib.classification.SVMModel.setThreshold" title="pyspark.mllib.classification.SVMModel.setThreshold"><code class="xref py py-obj docutils literal"><span class="pre">setThreshold</span></code></a>(value)</td>
+<td>Sets the threshold that separates positive predictions from negative predictions.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>4.2.2.13.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -274,32 +310,7 @@
 </tr>
 </tbody>
 </table>
-<p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.clearThreshold.html#pyspark.mllib.classification.SVMModel.clearThreshold" title="pyspark.mllib.classification.SVMModel.clearThreshold"><code class="xref py py-obj docutils literal"><span class="pre">clearThreshold</span></code></a>()</td>
-<td>Clears the threshold so that <cite>predict</cite> will output raw prediction scores.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.load.html#pyspark.mllib.classification.SVMModel.load" title="pyspark.mllib.classification.SVMModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(sc,&nbsp;path)</td>
-<td>Load a model from the given path.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.predict.html#pyspark.mllib.classification.SVMModel.predict" title="pyspark.mllib.classification.SVMModel.predict"><code class="xref py py-obj docutils literal"><span class="pre">predict</span></code></a>(x)</td>
-<td>Predict values for a single data point or an RDD of points using the model trained.</td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.save.html#pyspark.mllib.classification.SVMModel.save" title="pyspark.mllib.classification.SVMModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(sc,&nbsp;path)</td>
-<td>Save this model to the given path.</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.mllib.classification.SVMModel.setThreshold.html#pyspark.mllib.classification.SVMModel.setThreshold" title="pyspark.mllib.classification.SVMModel.setThreshold"><code class="xref py py-obj docutils literal"><span class="pre">setThreshold</span></code></a>(value)</td>
-<td>Sets the threshold that separates positive predictions from negative predictions.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+</div>
 </div>
 
 
@@ -309,10 +320,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.mllib.classification.SVMModel.intercept.html" class="btn btn-neutral float-right" title="4.2.2.13.1. pyspark.mllib.classification.SVMModel.intercept" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.mllib.classification.SVMModel.__init__.html" class="btn btn-neutral float-right" title="4.2.2.13.1.1. pyspark.mllib.classification.SVMModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="pyspark.mllib.classification.RDD.zipWithUniqueId.html" class="btn btn-neutral" title="4.2.2.12.98. pyspark.mllib.classification.RDD.zipWithUniqueId" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.mllib.classification.RDD.context.html" class="btn btn-neutral" title="4.2.2.12.2.1. pyspark.mllib.classification.RDD.context" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
