@@ -161,6 +161,7 @@ html_theme_options = {
 # "<project> v<release> documentation" by default.
 #
 # html_title = u'PROJECT_NAME v1'
+html_title = project
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -175,7 +176,7 @@ html_theme_options = {
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #
-# html_favicon = None
+html_favicon = '_static/img/favicon-umich.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -363,3 +364,6 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #
 # texinfo_no_detailmenu = False
+def setup(app):
+    # to hide/show the prompt in code examples:
+    app.add_javascript('copybutton.js')
