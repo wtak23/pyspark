@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.2.2.1.13. pyspark.sql.functions.Column.getItem &mdash; PySpark API 1 documentation</title>
+  <title>2.3.2.2.1.13. pyspark.sql.functions.Column.getItem &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="2.3.2.2. pyspark.sql.functions.Column" href="pyspark.sql.functions.Column.html"/>
         <link rel="next" title="2.3.2.2.1.14. pyspark.sql.functions.Column.isNotNull" href="pyspark.sql.functions.Column.isNotNull.html"/>
         <link rel="prev" title="2.3.2.2.1.12. pyspark.sql.functions.Column.getField" href="pyspark.sql.functions.Column.getField.html"/> 
@@ -101,6 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.SparkContext.html">2.3.2.5. pyspark.sql.functions.SparkContext</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.StringType.html">2.3.2.6. pyspark.sql.functions.StringType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.UserDefinedFunction.html">2.3.2.7. pyspark.sql.functions.UserDefinedFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.map.html">2.3.2.8. pyspark.sql.functions.map</a></li>
 </ul>
 </li>
 </ul>
@@ -182,7 +183,7 @@
 <code class="descclassname">Column.</code><code class="descname">getItem</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/column.html#Column.getItem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.Column.getItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>An expression that gets an item at position <code class="docutils literal"><span class="pre">ordinal</span></code> out of a list,
 or gets an item by key out of a dict.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">})])</span><span class="o">.</span><span class="n">toDF</span><span class="p">([</span><span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">{</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">})])</span><span class="o">.</span><span class="n">toDF</span><span class="p">([</span><span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">l</span><span class="o">.</span><span class="n">getItem</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">df</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">getItem</span><span class="p">(</span><span class="s2">&quot;key&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">+----+------+</span>
 <span class="go">|l[0]|d[key]|</span>
@@ -254,6 +255,7 @@ or gets an item by key out of a dict.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

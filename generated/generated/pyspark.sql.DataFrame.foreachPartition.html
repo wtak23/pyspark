@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.1.1.2.1.26. pyspark.sql.DataFrame.foreachPartition &mdash; PySpark API 1 documentation</title>
+  <title>2.1.1.2.1.26. pyspark.sql.DataFrame.foreachPartition &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="2.1.1.2. pyspark.sql.DataFrame" href="pyspark.sql.DataFrame.html"/>
         <link rel="next" title="2.1.1.2.1.27. pyspark.sql.DataFrame.freqItems" href="pyspark.sql.DataFrame.freqItems.html"/>
         <link rel="prev" title="2.1.1.2.1.25. pyspark.sql.DataFrame.foreach" href="pyspark.sql.DataFrame.foreach.html"/> 
@@ -187,9 +187,9 @@
 <code class="descclassname">DataFrame.</code><code class="descname">foreachPartition</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/dataframe.html#DataFrame.foreachPartition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.DataFrame.foreachPartition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies the <code class="docutils literal"><span class="pre">f</span></code> function to each partition of this <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</p>
 <p>This a shorthand for <code class="docutils literal"><span class="pre">df.rdd.foreachPartition()</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">people</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">people</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
-<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">foreachPartition</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -250,6 +250,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

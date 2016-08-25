@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.59. pyspark.ml.feature.StandardScaler &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.59. pyspark.ml.feature.StandardScaler &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.59.1.1. pyspark.ml.feature.StandardScaler.__init__" href="pyspark.ml.feature.StandardScaler.__init__.html"/>
         <link rel="prev" title="3.3.2.58.2.2. pyspark.ml.feature.SQLTransformer.statement" href="pyspark.ml.feature.SQLTransformer.statement.html"/> 
@@ -153,7 +153,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RFormulaModel.html">3.3.2.56. pyspark.ml.feature.RFormulaModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RegexTokenizer.html">3.3.2.57. pyspark.ml.feature.RegexTokenizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.SQLTransformer.html">3.3.2.58. pyspark.ml.feature.SQLTransformer</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.59. pyspark.ml.feature.StandardScaler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.59. pyspark.ml.feature.StandardScaler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StandardScalerModel.html">3.3.2.60. pyspark.ml.feature.StandardScalerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StopWordsRemover.html">3.3.2.61. pyspark.ml.feature.StopWordsRemover</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StringIndexer.html">3.3.2.62. pyspark.ml.feature.StringIndexer</a></li>
@@ -252,7 +252,7 @@
 statistics on the samples in the training set.</p>
 <p>The &#8220;unit std&#8221; is computed using the <a class="reference external" href="https://en.wikipedia.org/wiki/Standard_deviation#Corrected_sample_standard_deviation">corrected sample standard deviation</a>,
 which is computed as the square root of the unbiased sample variance.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="k">import</span> <span class="n">Vectors</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),),</span> <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">2.0</span><span class="p">]),)],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">standardScaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;scaled&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">standardScaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -452,6 +452,7 @@ which is computed as the square root of the unbiased sample variance.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

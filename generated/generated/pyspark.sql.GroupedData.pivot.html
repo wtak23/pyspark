@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.1.1.7.1.8. pyspark.sql.GroupedData.pivot &mdash; PySpark API 1 documentation</title>
+  <title>2.1.1.7.1.8. pyspark.sql.GroupedData.pivot &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="2.1.1.7. pyspark.sql.GroupedData" href="pyspark.sql.GroupedData.html"/>
         <link rel="next" title="2.1.1.7.1.9. pyspark.sql.GroupedData.sum" href="pyspark.sql.GroupedData.sum.html"/>
         <link rel="prev" title="2.1.1.7.1.7. pyspark.sql.GroupedData.min" href="pyspark.sql.GroupedData.min.html"/> 
@@ -202,12 +202,12 @@ efficient, because Spark needs to first compute the list of distinct values inte
 </tbody>
 </table>
 <p># Compute the sum of earnings for each year by course with each course as a separate column</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df4</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&quot;course&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;dotNET&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;earnings&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df4</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&quot;course&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;dotNET&quot;</span><span class="p">,</span> <span class="s2">&quot;Java&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;earnings&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(year=2012, dotNET=15000, Java=20000), Row(year=2013, dotNET=48000, Java=30000)]</span>
 </pre></div>
 </div>
 <p># Or without specifying column values (less efficient)</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df4</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&quot;course&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;earnings&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df4</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s2">&quot;course&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="s2">&quot;earnings&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(year=2012, Java=20000, dotNET=15000), Row(year=2013, Java=30000, dotNET=48000)]</span>
 </pre></div>
 </div>
@@ -268,6 +268,7 @@ efficient, because Spark needs to first compute the list of distinct values inte
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

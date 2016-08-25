@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.1.1.11. pyspark.sql.SparkSession &mdash; PySpark API 1 documentation</title>
+  <title>2.1.1.11. pyspark.sql.SparkSession &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="2.1. pyspark.sql" href="../pyspark.sql.html"/>
         <link rel="next" title="2.1.1.11.1.1. pyspark.sql.SparkSession.__init__" href="pyspark.sql.SparkSession.__init__.html"/>
         <link rel="prev" title="2.1.1.10.2.4. pyspark.sql.SQLContext.udf" href="pyspark.sql.SQLContext.udf.html"/> 
@@ -101,7 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.HiveContext.html">2.1.1.8. pyspark.sql.HiveContext</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.Row.html">2.1.1.9. pyspark.sql.Row</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.SQLContext.html">2.1.1.10. pyspark.sql.SQLContext</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.1.1.11. pyspark.sql.SparkSession</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.1.1.11. pyspark.sql.SparkSession</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.Window.html">2.1.1.12. pyspark.sql.Window</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.WindowSpec.html">2.1.1.13. pyspark.sql.WindowSpec</a></li>
 </ul>
@@ -187,7 +187,7 @@
 <p>A SparkSession can be used create <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>, register <a class="reference internal" href="pyspark.sql.DataFrame.html#pyspark.sql.DataFrame" title="pyspark.sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> as
 tables, execute SQL over tables, cache tables, and read parquet files.
 To create a SparkSession, use the following builder pattern:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span> \
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span> \
 <span class="gp">... </span>    <span class="o">.</span><span class="n">master</span><span class="p">(</span><span class="s2">&quot;local&quot;</span><span class="p">)</span> \
 <span class="gp">... </span>    <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="s2">&quot;Word Count&quot;</span><span class="p">)</span> \
 <span class="gp">... </span>    <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">&quot;spark.some.config.option&quot;</span><span class="p">,</span> <span class="s2">&quot;some-value&quot;</span><span class="p">)</span> \
@@ -198,10 +198,10 @@ To create a SparkSession, use the following builder pattern:</p>
 <dt id="pyspark.sql.SparkSession.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>jsparkSession=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/session.html#SparkSession.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.SparkSession.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new SparkSession.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">allTypes</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">row</span><span class="o">=</span><span class="n">Row</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">b</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">row</span><span class="o">=</span><span class="n">Row</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
 <span class="gp">... </span>    <span class="n">time</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">allTypes</span><span class="o">.</span><span class="n">toDF</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s2">&quot;allTypes&quot;</span><span class="p">)</span>
@@ -338,6 +338,7 @@ To create a SparkSession, use the following builder pattern:</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.ml.tuning &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.ml.tuning &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -169,16 +169,16 @@
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">since</span><span class="p">,</span> <span class="n">keyword_only</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="k">import</span> <span class="n">Estimator</span><span class="p">,</span> <span class="n">Model</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.param</span> <span class="k">import</span> <span class="n">Params</span><span class="p">,</span> <span class="n">Param</span><span class="p">,</span> <span class="n">TypeConverters</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.param.shared</span> <span class="k">import</span> <span class="n">HasSeed</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.wrapper</span> <span class="k">import</span> <span class="n">JavaParams</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="n">rand</span>
-<span class="kn">from</span> <span class="nn">pyspark.ml.common</span> <span class="k">import</span> <span class="n">inherit_doc</span><span class="p">,</span> <span class="n">_py2java</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">since</span><span class="p">,</span> <span class="n">keyword_only</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml</span> <span class="kn">import</span> <span class="n">Estimator</span><span class="p">,</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.param</span> <span class="kn">import</span> <span class="n">Params</span><span class="p">,</span> <span class="n">Param</span><span class="p">,</span> <span class="n">TypeConverters</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.param.shared</span> <span class="kn">import</span> <span class="n">HasSeed</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.wrapper</span> <span class="kn">import</span> <span class="n">JavaParams</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">rand</span>
+<span class="kn">from</span> <span class="nn">pyspark.ml.common</span> <span class="kn">import</span> <span class="n">inherit_doc</span><span class="p">,</span> <span class="n">_py2java</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ParamGridBuilder&#39;</span><span class="p">,</span> <span class="s1">&#39;CrossValidator&#39;</span><span class="p">,</span> <span class="s1">&#39;CrossValidatorModel&#39;</span><span class="p">,</span> <span class="s1">&#39;TrainValidationSplit&#39;</span><span class="p">,</span>
            <span class="s1">&#39;TrainValidationSplitModel&#39;</span><span class="p">]</span>
@@ -323,8 +323,8 @@
                      <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="CrossValidator.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidator.__init__.html#pyspark.ml.tuning.CrossValidator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numFolds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                 <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CrossValidator.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidator.__init__.html#pyspark.ml.tuning.CrossValidator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">numFolds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                 <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        __init__(self, estimator=None, estimatorParamMaps=None, evaluator=None, numFolds=3,\</span>
 <span class="sd">                 seed=None)</span>
@@ -336,8 +336,8 @@
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="CrossValidator.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidator.setParams.html#pyspark.ml.tuning.CrossValidator.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numFolds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-                  <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CrossValidator.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidator.setParams.html#pyspark.ml.tuning.CrossValidator.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">numFolds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                  <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        setParams(self, estimator=None, estimatorParamMaps=None, evaluator=None, numFolds=3,\</span>
 <span class="sd">                  seed=None):</span>
@@ -391,7 +391,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copyValues</span><span class="p">(</span><span class="n">CrossValidatorModel</span><span class="p">(</span><span class="n">bestModel</span><span class="p">,</span> <span class="n">metrics</span><span class="p">))</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="CrossValidator.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidator.copy.html#pyspark.ml.tuning.CrossValidator.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CrossValidator.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidator.copy.html#pyspark.ml.tuning.CrossValidator.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a copy of this instance with a randomly generated uid</span>
 <span class="sd">        and some extra params. This copies creates a deep copy of</span>
@@ -400,7 +400,7 @@
 <span class="sd">        :param extra: Extra parameters to copy to the new instance</span>
 <span class="sd">        :return: Copy of this instance</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">extra</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">newCV</span> <span class="o">=</span> <span class="n">Params</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">):</span>
@@ -430,7 +430,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bestModel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="CrossValidatorModel.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidatorModel.copy.html#pyspark.ml.tuning.CrossValidatorModel.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CrossValidatorModel.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.CrossValidatorModel.copy.html#pyspark.ml.tuning.CrossValidatorModel.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a copy of this instance with a randomly generated uid</span>
 <span class="sd">        and some extra params. This copies the underlying bestModel,</span>
@@ -440,7 +440,7 @@
 <span class="sd">        :param extra: Extra parameters to copy to the new instance</span>
 <span class="sd">        :return: Copy of this instance</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">extra</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">bestModel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bestModel</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span>
         <span class="n">avgMetrics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">avgMetrics</span>
@@ -480,8 +480,8 @@
 <span class="s2">     validation data. Must be between 0 and 1.&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toFloat</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="TrainValidationSplit.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplit.__init__.html#pyspark.ml.tuning.TrainValidationSplit.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trainRatio</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
-                 <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TrainValidationSplit.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplit.__init__.html#pyspark.ml.tuning.TrainValidationSplit.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trainRatio</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+                 <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        __init__(self, estimator=None, estimatorParamMaps=None, evaluator=None, trainRatio=0.75,\</span>
 <span class="sd">                 seed=None)</span>
@@ -493,8 +493,8 @@
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="TrainValidationSplit.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplit.setParams.html#pyspark.ml.tuning.TrainValidationSplit.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trainRatio</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
-                  <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TrainValidationSplit.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplit.setParams.html#pyspark.ml.tuning.TrainValidationSplit.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">trainRatio</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+                  <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        setParams(self, estimator=None, estimatorParamMaps=None, evaluator=None, trainRatio=0.75,\</span>
 <span class="sd">                  seed=None):</span>
@@ -542,7 +542,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_copyValues</span><span class="p">(</span><span class="n">TrainValidationSplitModel</span><span class="p">(</span><span class="n">bestModel</span><span class="p">,</span> <span class="n">metrics</span><span class="p">))</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="TrainValidationSplit.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplit.copy.html#pyspark.ml.tuning.TrainValidationSplit.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TrainValidationSplit.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplit.copy.html#pyspark.ml.tuning.TrainValidationSplit.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a copy of this instance with a randomly generated uid</span>
 <span class="sd">        and some extra params. This copies creates a deep copy of</span>
@@ -551,7 +551,7 @@
 <span class="sd">        :param extra: Extra parameters to copy to the new instance</span>
 <span class="sd">        :return: Copy of this instance</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">extra</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">newTVS</span> <span class="o">=</span> <span class="n">Params</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimator</span><span class="p">):</span>
@@ -582,7 +582,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">bestModel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="TrainValidationSplitModel.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplitModel.copy.html#pyspark.ml.tuning.TrainValidationSplitModel.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TrainValidationSplitModel.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TrainValidationSplitModel.copy.html#pyspark.ml.tuning.TrainValidationSplitModel.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a copy of this instance with a randomly generated uid</span>
 <span class="sd">        and some extra params. This copies the underlying bestModel,</span>
@@ -593,7 +593,7 @@
 <span class="sd">        :param extra: Extra parameters to copy to the new instance</span>
 <span class="sd">        :return: Copy of this instance</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">extra</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">extra</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">bestModel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bestModel</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">extra</span><span class="p">)</span>
         <span class="n">validationMetrics</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">validationMetrics</span><span class="p">)</span>
@@ -603,7 +603,7 @@
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
 
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
     <span class="n">globs</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
     <span class="c1"># The small batch size here ensures that we see multiple batches,</span>
@@ -618,7 +618,7 @@
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">globs</span><span class="o">=</span><span class="n">globs</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
     <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
            </div>
@@ -661,6 +661,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

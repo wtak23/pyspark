@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.mllib.stat._statistics &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.mllib.stat._statistics &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../../index.html"/>
         <link rel="up" title="pyspark" href="../../../pyspark.html"/> 
 
   
@@ -170,13 +170,13 @@
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="n">basestring</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="nb">str</span>
 
-<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="k">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">ignore_unicode_prefix</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.common</span> <span class="k">import</span> <span class="n">callMLlibFunc</span><span class="p">,</span> <span class="n">JavaModelWrapper</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.linalg</span> <span class="k">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">_convert_to_vector</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.regression</span> <span class="k">import</span> <span class="n">LabeledPoint</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.stat.test</span> <span class="k">import</span> <span class="n">ChiSqTestResult</span><span class="p">,</span> <span class="n">KolmogorovSmirnovTestResult</span>
+<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="kn">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">ignore_unicode_prefix</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.common</span> <span class="kn">import</span> <span class="n">callMLlibFunc</span><span class="p">,</span> <span class="n">JavaModelWrapper</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.linalg</span> <span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">_convert_to_vector</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.regression</span> <span class="kn">import</span> <span class="n">LabeledPoint</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.stat.test</span> <span class="kn">import</span> <span class="n">ChiSqTestResult</span><span class="p">,</span> <span class="n">KolmogorovSmirnovTestResult</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MultivariateStatisticalSummary&#39;</span><span class="p">,</span> <span class="s1">&#39;Statistics&#39;</span><span class="p">]</span>
@@ -247,7 +247,7 @@
         <span class="k">return</span> <span class="n">MultivariateStatisticalSummary</span><span class="p">(</span><span class="n">cStats</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Statistics.corr"><a class="viewcode-back" href="../../../../generated/generated/pyspark.mllib.stat.Statistics.corr.html#pyspark.mllib.linalg.distributed.Statistics.corr">[docs]</a>    <span class="k">def</span> <span class="nf">corr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statistics.corr"><a class="viewcode-back" href="../../../../generated/generated/pyspark.mllib.stat.Statistics.corr.html#pyspark.mllib.linalg.distributed.Statistics.corr">[docs]</a>    <span class="k">def</span> <span class="nf">corr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the correlation (matrix) for the input RDD(s) using the</span>
 <span class="sd">        specified method.</span>
@@ -311,7 +311,7 @@
 
     <span class="nd">@staticmethod</span>
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="Statistics.chiSqTest"><a class="viewcode-back" href="../../../../generated/generated/pyspark.mllib.stat.Statistics.chiSqTest.html#pyspark.mllib.linalg.distributed.Statistics.chiSqTest">[docs]</a>    <span class="k">def</span> <span class="nf">chiSqTest</span><span class="p">(</span><span class="n">observed</span><span class="p">,</span> <span class="n">expected</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Statistics.chiSqTest"><a class="viewcode-back" href="../../../../generated/generated/pyspark.mllib.stat.Statistics.chiSqTest.html#pyspark.mllib.linalg.distributed.Statistics.chiSqTest">[docs]</a>    <span class="k">def</span> <span class="nf">chiSqTest</span><span class="p">(</span><span class="n">observed</span><span class="p">,</span> <span class="n">expected</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        If `observed` is Vector, conduct Pearson&#39;s chi-squared goodness</span>
 <span class="sd">        of fit test of the observed data against the expected distribution,</span>
@@ -445,7 +445,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">RDD</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;data should be an RDD, got </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">distName</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">distName</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;distName should be a string, got </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">distName</span><span class="p">))</span>
 
         <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">params</span><span class="p">]</span>
@@ -455,7 +455,7 @@
 
 <span class="k">def</span> <span class="nf">_test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
     <span class="n">globs</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span>\
         <span class="o">.</span><span class="n">master</span><span class="p">(</span><span class="s2">&quot;local[4]&quot;</span><span class="p">)</span>\
@@ -465,7 +465,7 @@
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">globs</span><span class="o">=</span><span class="n">globs</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
     <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -512,6 +512,7 @@
       <script type="text/javascript" src="../../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

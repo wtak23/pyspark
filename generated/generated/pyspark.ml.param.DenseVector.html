@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.2.2.1. pyspark.ml.param.DenseVector &mdash; PySpark API 1 documentation</title>
+  <title>3.2.2.2. pyspark.ml.param.DenseVector &mdash; PySpark API</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.2. pyspark.ml.param" href="../pyspark.ml.param.html"/>
-        <link rel="next" title="3.2.2.1.1.1. pyspark.ml.param.DenseVector.__init__" href="pyspark.ml.param.DenseVector.__init__.html"/>
-        <link rel="prev" title="3.2.1.1. pyspark.ml.param.since" href="../pyspark.ml.param.since.html"/> 
+        <link rel="next" title="3.2.2.2.1.1. pyspark.ml.param.DenseVector.__init__" href="pyspark.ml.param.DenseVector.__init__.html"/>
+        <link rel="prev" title="3.2.2.1.1.2. pyspark.ml.param.ABCMeta.register" href="pyspark.ml.param.ABCMeta.register.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -94,12 +94,14 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../pyspark.ml.param.html#functions">3.2.1. Functions</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../pyspark.ml.param.html#classes">3.2.2. Classes</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.2.2.1. pyspark.ml.param.DenseVector</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Identifiable.html">3.2.2.2. pyspark.ml.param.Identifiable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Param.html">3.2.2.3. pyspark.ml.param.Param</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Params.html">3.2.2.4. pyspark.ml.param.Params</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.TypeConverters.html">3.2.2.5. pyspark.ml.param.TypeConverters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Vector.html">3.2.2.6. pyspark.ml.param.Vector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.ABCMeta.html">3.2.2.1. pyspark.ml.param.ABCMeta</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.2.2.2. pyspark.ml.param.DenseVector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Identifiable.html">3.2.2.3. pyspark.ml.param.Identifiable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.JavaObject.html">3.2.2.4. pyspark.ml.param.JavaObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Param.html">3.2.2.5. pyspark.ml.param.Param</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Params.html">3.2.2.6. pyspark.ml.param.Params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.TypeConverters.html">3.2.2.7. pyspark.ml.param.TypeConverters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.Vector.html">3.2.2.8. pyspark.ml.param.Vector</a></li>
 </ul>
 </li>
 </ul>
@@ -161,7 +163,7 @@
         
           <li><a href="../pyspark.ml.param.html">3.2. pyspark.ml.param</a> &raquo;</li>
         
-      <li>3.2.2.1. pyspark.ml.param.DenseVector</li>
+      <li>3.2.2.2. pyspark.ml.param.DenseVector</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,14 +181,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pyspark-ml-param-densevector">
-<h1>3.2.2.1. pyspark.ml.param.DenseVector<a class="headerlink" href="#pyspark-ml-param-densevector" title="Permalink to this headline">¶</a></h1>
+<h1>3.2.2.2. pyspark.ml.param.DenseVector<a class="headerlink" href="#pyspark-ml-param-densevector" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="pyspark.ml.param.DenseVector">
 <em class="property">class </em><code class="descclassname">pyspark.ml.param.</code><code class="descname">DenseVector</code><span class="sig-paren">(</span><em>ar</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/linalg.html#DenseVector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.param.DenseVector" title="Permalink to this definition">¶</a></dt>
 <dd><p>A dense vector represented by a value array. We use numpy array for
 storage and arithmetics will be delegated to the underlying numpy
 array.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">u</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">+</span> <span class="n">u</span>
 <span class="go">DenseVector([4.0, 6.0])</span>
@@ -210,7 +212,7 @@ array.</p>
 </dd></dl>
 
 <div class="section" id="methods">
-<h2>3.2.2.1.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.2.2.1. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -239,7 +241,7 @@ array.</p>
 </table>
 </div>
 <div class="section" id="attributes">
-<h2>3.2.2.1.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.2.2.2. Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -261,10 +263,10 @@ array.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.param.DenseVector.__init__.html" class="btn btn-neutral float-right" title="3.2.2.1.1.1. pyspark.ml.param.DenseVector.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pyspark.ml.param.DenseVector.__init__.html" class="btn btn-neutral float-right" title="3.2.2.2.1.1. pyspark.ml.param.DenseVector.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../pyspark.ml.param.since.html" class="btn btn-neutral" title="3.2.1.1. pyspark.ml.param.since" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.ml.param.ABCMeta.register.html" class="btn btn-neutral" title="3.2.2.1.1.2. pyspark.ml.param.ABCMeta.register" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -304,6 +306,7 @@ array.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

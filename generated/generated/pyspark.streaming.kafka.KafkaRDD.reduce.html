@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.2.2.6.1.59. pyspark.streaming.kafka.KafkaRDD.reduce &mdash; PySpark API 1 documentation</title>
+  <title>5.2.2.6.1.59. pyspark.streaming.kafka.KafkaRDD.reduce &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="5.2.2.6. pyspark.streaming.kafka.KafkaRDD" href="pyspark.streaming.kafka.KafkaRDD.html"/>
         <link rel="next" title="5.2.2.6.1.60. pyspark.streaming.kafka.KafkaRDD.reduceByKey" href="pyspark.streaming.kafka.KafkaRDD.reduceByKey.html"/>
         <link rel="prev" title="5.2.2.6.1.58. pyspark.streaming.kafka.KafkaRDD.randomSplit" href="pyspark.streaming.kafka.KafkaRDD.randomSplit.html"/> 
@@ -115,6 +115,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.html">5.2.2.17. pyspark.streaming.kafka.TransformedDStream</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#exceptions">5.2.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
@@ -192,7 +193,7 @@
 <code class="descclassname">KafkaRDD.</code><code class="descname">reduce</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#pyspark.streaming.kafka.KafkaRDD.reduce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reduces the elements of this RDD using the specified commutative and
 associative binary operator. Currently reduces partitions locally.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
 <span class="go">15</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">((</span><span class="mi">2</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
@@ -257,6 +258,7 @@ associative binary operator. Currently reduces partitions locally.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

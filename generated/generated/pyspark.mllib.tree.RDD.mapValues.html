@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.13.2.9.1.48. pyspark.mllib.tree.RDD.mapValues &mdash; PySpark API 1 documentation</title>
+  <title>4.13.2.9.1.48. pyspark.mllib.tree.RDD.mapValues &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.13.2.9. pyspark.mllib.tree.RDD" href="pyspark.mllib.tree.RDD.html"/>
         <link rel="next" title="4.13.2.9.1.49. pyspark.mllib.tree.RDD.max" href="pyspark.mllib.tree.RDD.max.html"/>
         <link rel="prev" title="4.13.2.9.1.47. pyspark.mllib.tree.RDD.mapPartitionsWithSplit" href="pyspark.mllib.tree.RDD.mapPartitionsWithSplit.html"/> 
@@ -199,7 +199,7 @@
 <dd><p>Pass each value in the key-value pair RDD through a map function
 without changing the keys; this also retains the original RDD&#8217;s
 partitioning.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;lemon&quot;</span><span class="p">]),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;grapes&quot;</span><span class="p">])])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;lemon&quot;</span><span class="p">]),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;grapes&quot;</span><span class="p">])])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">mapValues</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[(&#39;a&#39;, 3), (&#39;b&#39;, 1)]</span>
@@ -259,6 +259,7 @@ partitioning.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

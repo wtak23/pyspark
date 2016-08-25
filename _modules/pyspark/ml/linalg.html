@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.ml.linalg &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.ml.linalg &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -181,18 +181,18 @@
 <span class="kn">import</span> <span class="nn">struct</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="n">basestring</span> <span class="o">=</span> <span class="nb">str</span>
-    <span class="n">xrange</span> <span class="o">=</span> <span class="nb">range</span>
-    <span class="kn">import</span> <span class="nn">copyreg</span> <span class="k">as</span> <span class="nn">copy_reg</span>
-    <span class="n">long</span> <span class="o">=</span> <span class="nb">int</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">xrange</span> <span class="o">=</span> <span class="nb">range</span>
+    <span class="kn">import</span> <span class="nn">copyreg</span> <span class="kn">as</span> <span class="nn">copy_reg</span>
+    <span class="nb">long</span> <span class="o">=</span> <span class="nb">int</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">izip</span> <span class="k">as</span> <span class="nb">zip</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">izip</span> <span class="k">as</span> <span class="nb">zip</span>
     <span class="kn">import</span> <span class="nn">copy_reg</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">since</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="n">UserDefinedType</span><span class="p">,</span> <span class="n">StructField</span><span class="p">,</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">,</span> \
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">since</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">UserDefinedType</span><span class="p">,</span> <span class="n">StructField</span><span class="p">,</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">,</span> \
     <span class="n">IntegerType</span><span class="p">,</span> <span class="n">ByteType</span><span class="p">,</span> <span class="n">BooleanType</span>
 
 
@@ -212,16 +212,16 @@
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">scipy.sparse</span>
-    <span class="n">_have_scipy</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">_have_scipy</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="k">except</span><span class="p">:</span>
     <span class="c1"># No SciPy in environment, but that&#39;s okay</span>
-    <span class="n">_have_scipy</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">_have_scipy</span> <span class="o">=</span> <span class="bp">False</span>
 
 
 <span class="k">def</span> <span class="nf">_convert_to_vector</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">l</span>
-    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">xrange</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">xrange</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">DenseVector</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">_have_scipy</span> <span class="ow">and</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">issparse</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">l</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Expected column vector&quot;</span>
@@ -252,7 +252,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">xrange</span><span class="p">):</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">,</span> <span class="nb">xrange</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
     <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
@@ -292,10 +292,10 @@
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="VectorUDT.sqlType"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.VectorUDT.sqlType.html#pyspark.ml.linalg.VectorUDT.sqlType">[docs]</a>    <span class="k">def</span> <span class="nf">sqlType</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">StructType</span><span class="p">([</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">ByteType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">True</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;indices&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span> <span class="kc">True</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span> <span class="kc">True</span><span class="p">)])</span></div>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">ByteType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;indices&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">)])</span></div>
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="VectorUDT.module"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.VectorUDT.module.html#pyspark.ml.linalg.VectorUDT.module">[docs]</a>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -312,7 +312,7 @@
             <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">DenseVector</span><span class="p">):</span>
             <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">]</span>
-            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot serialize </span><span class="si">%r</span><span class="s2"> of type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span></div>
 
@@ -339,13 +339,13 @@
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="MatrixUDT.sqlType"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.MatrixUDT.sqlType.html#pyspark.ml.linalg.MatrixUDT.sqlType">[docs]</a>    <span class="k">def</span> <span class="nf">sqlType</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">StructType</span><span class="p">([</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">ByteType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;numRows&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;numCols&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;colPtrs&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span> <span class="kc">True</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;rowIndices&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span> <span class="kc">True</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">),</span> <span class="kc">True</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;isTransposed&quot;</span><span class="p">,</span> <span class="n">BooleanType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)])</span></div>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">ByteType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;numRows&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;numCols&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;colPtrs&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;rowIndices&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;isTransposed&quot;</span><span class="p">,</span> <span class="n">BooleanType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">)])</span></div>
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="MatrixUDT.module"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.MatrixUDT.module.html#pyspark.ml.linalg.MatrixUDT.module">[docs]</a>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -364,7 +364,7 @@
                     <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">))</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">DenseMatrix</span><span class="p">):</span>
             <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
-            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span>
+            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span>
                     <span class="nb">bool</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot serialize type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span></div>
@@ -562,9 +562,9 @@
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">SparseVector</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
-                <span class="k">return</span> <span class="kc">False</span>
-            <span class="k">return</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">_equals</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))),</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">_equals</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))),</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">False</span>
 
     <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span> <span class="o">==</span> <span class="n">other</span>
@@ -658,7 +658,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
             <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="s2">&quot;index and value arrays not same length&quot;</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
                 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
                     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                         <span class="s2">&quot;Indices </span><span class="si">%s</span><span class="s2"> and </span><span class="si">%s</span><span class="s2"> are not strictly increasing&quot;</span>
@@ -732,12 +732,12 @@
 
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">SparseVector</span><span class="p">):</span>
             <span class="c1"># Find out common indices.</span>
-            <span class="n">self_cmind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">self_cmind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
             <span class="n">self_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">self_cmind</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">self_values</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">return</span> <span class="mf">0.0</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">other_cmind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">other_cmind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">in1d</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">self_values</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">other_cmind</span><span class="p">])</span>
 
         <span class="k">else</span><span class="p">:</span>
@@ -777,7 +777,7 @@
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">DenseVector</span><span class="p">):</span>
                 <span class="n">other</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">array</span>
             <span class="n">sparse_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
-            <span class="n">sparse_ind</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">sparse_ind</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="n">dist</span> <span class="o">=</span> <span class="n">other</span><span class="p">[</span><span class="n">sparse_ind</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
 
@@ -829,9 +829,9 @@
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">inds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span>
         <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">: </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">inds</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">_format_float</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-                             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inds</span><span class="p">))])</span>
-        <span class="k">return</span> <span class="s2">&quot;SparseVector(</span><span class="si">{0}</span><span class="s2">, {{</span><span class="si">{1}</span><span class="s2">}})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">entries</span><span class="p">)</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;{0}: {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">inds</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">_format_float</span><span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+                             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inds</span><span class="p">))])</span>
+        <span class="k">return</span> <span class="s2">&quot;SparseVector({0}, {{{1}}})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">entries</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">SparseVector</span><span class="p">):</span>
@@ -839,9 +839,9 @@
                 <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">DenseVector</span><span class="p">):</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">):</span>
-                <span class="k">return</span> <span class="kc">False</span>
-            <span class="k">return</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">_equals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">))),</span> <span class="n">other</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span>
+                <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">_equals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">))),</span> <span class="n">other</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">False</span>
 
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="n">inds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span>
@@ -921,7 +921,7 @@
 <span class="sd">        &gt;&gt;&gt; Vectors.dense(1.0, 2.0)</span>
 <span class="sd">        DenseVector([1.0, 2.0])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="n">long</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">long</span><span class="p">)):</span>
             <span class="c1"># it&#39;s list, numpy.array or other iterable object.</span>
             <span class="n">elements</span> <span class="o">=</span> <span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">DenseVector</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span></div>
@@ -962,7 +962,7 @@
         <span class="n">v2_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v2_values</span><span class="p">)</span>
         <span class="n">k1</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">k2</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">all_equal</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">all_equal</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="k">while</span> <span class="n">all_equal</span><span class="p">:</span>
             <span class="k">while</span> <span class="n">k1</span> <span class="o">&lt;</span> <span class="n">v1_size</span> <span class="ow">and</span> <span class="n">v1_values</span><span class="p">[</span><span class="n">k1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">k1</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -985,7 +985,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents a local matrix.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="Matrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.Matrix.__init__.html#pyspark.ml.linalg.Matrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Matrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.Matrix.__init__.html#pyspark.ml.linalg.Matrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">numRows</span> <span class="o">=</span> <span class="n">numRows</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span> <span class="o">=</span> <span class="n">numCols</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span> <span class="o">=</span> <span class="n">isTransposed</span></div>
@@ -1010,7 +1010,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Column-major dense matrix.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="DenseMatrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.DenseMatrix.__init__.html#pyspark.ml.linalg.DenseMatrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseMatrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.DenseMatrix.__init__.html#pyspark.ml.linalg.DenseMatrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="n">Matrix</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="p">)</span>
         <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
         <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="n">numRows</span> <span class="o">*</span> <span class="n">numCols</span>
@@ -1062,7 +1062,7 @@
             <span class="p">)</span>
 
         <span class="n">entries</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s2">&quot;DenseMatrix(</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">, [</span><span class="si">{2}</span><span class="s2">], </span><span class="si">{3}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="k">return</span> <span class="s2">&quot;DenseMatrix({0}, {1}, [{2}], {3})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">entries</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span>
 
 <div class="viewcode-block" id="DenseMatrix.toArray"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.DenseMatrix.toArray.html#pyspark.ml.linalg.DenseMatrix.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1113,7 +1113,7 @@
         <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">DenseMatrix</span><span class="p">)</span> <span class="ow">or</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">numRows</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">numRows</span> <span class="ow">or</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">numCols</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">False</span>
+            <span class="k">return</span> <span class="bp">False</span>
 
         <span class="n">self_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">(),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
         <span class="n">other_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">toArray</span><span class="p">(),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
@@ -1123,7 +1123,7 @@
 <div class="viewcode-block" id="SparseMatrix"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.SparseMatrix.html#pyspark.ml.linalg.SparseMatrix">[docs]</a><span class="k">class</span> <span class="nc">SparseMatrix</span><span class="p">(</span><span class="n">Matrix</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sparse Matrix stored in CSC format.&quot;&quot;&quot;</span>
 <div class="viewcode-block" id="SparseMatrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.linalg.SparseMatrix.__init__.html#pyspark.ml.linalg.SparseMatrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span>
-                 <span class="n">isTransposed</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+                 <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="n">Matrix</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_array</span><span class="p">(</span><span class="n">colPtrs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rowIndices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_array</span><span class="p">(</span><span class="n">rowIndices</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -1158,7 +1158,7 @@
 <span class="sd">        (0,1) 3.0</span>
 <span class="sd">        (1,1) 4.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">spstr</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> X </span><span class="si">{1}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">)</span>
+        <span class="n">spstr</span> <span class="o">=</span> <span class="s2">&quot;{0} X {1} &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">:</span>
             <span class="n">spstr</span> <span class="o">+=</span> <span class="s2">&quot;CSRMatrix</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1176,10 +1176,10 @@
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span><span class="p">[</span><span class="n">cur_col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">i</span><span class="p">:</span>
                 <span class="n">cur_col</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">:</span>
-                <span class="n">smlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">{0}</span><span class="s1">,</span><span class="si">{1}</span><span class="s1">) </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">smlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;({0},{1}) {2}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="n">cur_col</span><span class="p">,</span> <span class="n">rowInd</span><span class="p">,</span> <span class="n">_format_float</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">smlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">{0}</span><span class="s1">,</span><span class="si">{1}</span><span class="s1">) </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">smlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;({0},{1}) {2}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="n">rowInd</span><span class="p">,</span> <span class="n">cur_col</span><span class="p">,</span> <span class="n">_format_float</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
         <span class="n">spstr</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">smlist</span><span class="p">)</span>
 
@@ -1215,7 +1215,7 @@
         <span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
         <span class="n">rowIndices</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">rowIndices</span><span class="p">])</span>
         <span class="n">colPtrs</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="k">for</span> <span class="n">ptr</span> <span class="ow">in</span> <span class="n">colPtrs</span><span class="p">])</span>
-        <span class="k">return</span> <span class="s2">&quot;SparseMatrix(</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">, [</span><span class="si">{2}</span><span class="s2">], [</span><span class="si">{3}</span><span class="s2">], [</span><span class="si">{4}</span><span class="s2">], </span><span class="si">{5}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="k">return</span> <span class="s2">&quot;SparseMatrix({0}, {1}, [{2}], [{3}], [{4}], {5})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span>
             <span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span>
 
@@ -1254,7 +1254,7 @@
 <span class="sd">        Return an numpy.ndarray</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
             <span class="n">startptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
             <span class="n">endptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">:</span>
@@ -1292,7 +1292,7 @@
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">_test</span><span class="p">()</span>
@@ -1338,6 +1338,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.10.1.3. pyspark.mllib.recommendation.namedtuple &mdash; PySpark API 1 documentation</title>
+  <title>4.10.1.3. pyspark.mllib.recommendation.namedtuple &mdash; PySpark API</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
   
 
   
@@ -30,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="4.10. pyspark.mllib.recommendation" href="pyspark.mllib.recommendation.html"/>
         <link rel="next" title="4.10.1.4. pyspark.mllib.recommendation.since" href="pyspark.mllib.recommendation.since.html"/>
         <link rel="prev" title="4.10.1.2. pyspark.mllib.recommendation.inherit_doc" href="pyspark.mllib.recommendation.inherit_doc.html"/> 
@@ -102,7 +104,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="pyspark.mllib.recommendation.html#functions">4.10.1. Functions</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.callMLlibFunc.html">4.10.1.1. pyspark.mllib.recommendation.callMLlibFunc</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.inherit_doc.html">4.10.1.2. pyspark.mllib.recommendation.inherit_doc</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.10.1.3. pyspark.mllib.recommendation.namedtuple</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">4.10.1.3. pyspark.mllib.recommendation.namedtuple</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.recommendation.since.html">4.10.1.4. pyspark.mllib.recommendation.since</a></li>
 </ul>
 </li>
@@ -184,7 +186,7 @@
 <dt id="pyspark.mllib.recommendation.namedtuple">
 <code class="descclassname">pyspark.mllib.recommendation.</code><code class="descname">namedtuple</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/collections.html#namedtuple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.recommendation.namedtuple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a new subclass of tuple with named fields.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="o">.</span><span class="n">__doc__</span>                   <span class="c1"># docstring for the new class</span>
 <span class="go">&#39;Point(x, y)&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>             <span class="c1"># instantiate with positional args or keywords</span>
@@ -193,7 +195,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span>                        <span class="c1"># unpack like a regular tuple</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 <span class="go">(11, 22)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span>                       <span class="c1"># fields also accessable by name</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span>                       <span class="c1"># fields also accessible by name</span>
 <span class="go">33</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span>                 <span class="c1"># convert to a dictionary</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
@@ -258,6 +260,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

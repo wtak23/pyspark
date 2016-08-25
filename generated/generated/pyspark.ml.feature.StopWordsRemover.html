@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.61. pyspark.ml.feature.StopWordsRemover &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.61. pyspark.ml.feature.StopWordsRemover &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.61.1.1. pyspark.ml.feature.StopWordsRemover.__init__" href="pyspark.ml.feature.StopWordsRemover.__init__.html"/>
         <link rel="prev" title="3.3.2.60.2.3. pyspark.ml.feature.StandardScalerModel.std" href="pyspark.ml.feature.StandardScalerModel.std.html"/> 
@@ -155,7 +155,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.SQLTransformer.html">3.3.2.58. pyspark.ml.feature.SQLTransformer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StandardScaler.html">3.3.2.59. pyspark.ml.feature.StandardScaler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StandardScalerModel.html">3.3.2.60. pyspark.ml.feature.StandardScalerModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.61. pyspark.ml.feature.StopWordsRemover</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.61. pyspark.ml.feature.StopWordsRemover</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StringIndexer.html">3.3.2.62. pyspark.ml.feature.StringIndexer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StringIndexerModel.html">3.3.2.63. pyspark.ml.feature.StringIndexerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Tokenizer.html">3.3.2.64. pyspark.ml.feature.Tokenizer</a></li>
@@ -250,7 +250,7 @@
 <em class="property">class </em><code class="descclassname">pyspark.ml.feature.</code><code class="descname">StopWordsRemover</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#StopWordsRemover"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.StopWordsRemover" title="Permalink to this definition">¶</a></dt>
 <dd><p>A feature transformer that filters out stop words from input.
 Note: null values from input array are preserved unless adding null to stopWords explicitly.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],)],</span> <span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],)],</span> <span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">remover</span> <span class="o">=</span> <span class="n">StopWordsRemover</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;words&quot;</span><span class="p">,</span> <span class="n">stopWords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">remover</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">words</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 <span class="go">True</span>
@@ -440,6 +440,7 @@ Note: null values from input array are preserved unless adding null to stopWords
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

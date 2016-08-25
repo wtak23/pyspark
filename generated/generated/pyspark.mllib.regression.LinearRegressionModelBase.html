@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.11.2.9. pyspark.mllib.regression.LinearRegressionModelBase &mdash; PySpark API 1 documentation</title>
+  <title>4.11.2.9. pyspark.mllib.regression.LinearRegressionModelBase &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.11. pyspark.mllib.regression" href="../pyspark.mllib.regression.html"/>
         <link rel="next" title="4.11.2.9.1.1. pyspark.mllib.regression.LinearRegressionModelBase.__init__" href="pyspark.mllib.regression.LinearRegressionModelBase.__init__.html"/>
         <link rel="prev" title="4.11.2.8.2.2. pyspark.mllib.regression.LinearRegressionModel.weights" href="pyspark.mllib.regression.LinearRegressionModel.weights.html"/> 
@@ -112,7 +112,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LassoWithSGD.html">4.11.2.6. pyspark.mllib.regression.LassoWithSGD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LinearModel.html">4.11.2.7. pyspark.mllib.regression.LinearModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LinearRegressionModel.html">4.11.2.8. pyspark.mllib.regression.LinearRegressionModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.11.2.9. pyspark.mllib.regression.LinearRegressionModelBase</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">4.11.2.9. pyspark.mllib.regression.LinearRegressionModelBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.LinearRegressionWithSGD.html">4.11.2.10. pyspark.mllib.regression.LinearRegressionWithSGD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.Loader.html">4.11.2.11. pyspark.mllib.regression.Loader</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.regression.RDD.html">4.11.2.12. pyspark.mllib.regression.RDD</a></li>
@@ -201,10 +201,10 @@
 <dt id="pyspark.mllib.regression.LinearRegressionModelBase">
 <em class="property">class </em><code class="descclassname">pyspark.mllib.regression.</code><code class="descname">LinearRegressionModelBase</code><span class="sig-paren">(</span><em>weights</em>, <em>intercept</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/regression.html#LinearRegressionModelBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.regression.LinearRegressionModelBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>A linear regression model.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lrmb</span> <span class="o">=</span> <span class="n">LinearRegressionModelBase</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]),</span> <span class="mf">0.1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">lrmb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.03</span><span class="p">,</span> <span class="mf">7.777</span><span class="p">]))</span> <span class="o">-</span> <span class="mf">14.624</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">6</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lrmb</span> <span class="o">=</span> <span class="n">LinearRegressionModelBase</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]),</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">lrmb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.03</span><span class="p">,</span> <span class="mf">7.777</span><span class="p">]))</span> <span class="o">-</span> <span class="mf">14.624</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">lrmb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">SparseVector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">7.777</span><span class="p">}))</span> <span class="o">-</span> <span class="mf">14.624</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">lrmb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">SparseVector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">7.777</span><span class="p">}))</span> <span class="o">-</span> <span class="mf">14.624</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -304,6 +304,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

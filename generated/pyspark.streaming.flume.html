@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.4. pyspark.streaming.flume &mdash; PySpark API 1 documentation</title>
+  <title>5.4. pyspark.streaming.flume &mdash; PySpark API</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="5. pyspark.streaming" href="../pyspark.streaming.html"/>
         <link rel="next" title="5.4.1.1. pyspark.streaming.flume.read_int" href="pyspark.streaming.flume.read_int.html"/>
-        <link rel="prev" title="5.3.2.6.2.11. pyspark.streaming.kinesis.StorageLevel.OFF_HEAP" href="generated/pyspark.streaming.kinesis.StorageLevel.OFF_HEAP.html"/> 
+        <link rel="prev" title="5.3.3.1. pyspark.streaming.kinesis.Py4JJavaError" href="pyspark.streaming.kinesis.Py4JJavaError.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pyspark.streaming.html">5.1. pyspark.streaming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.4. pyspark.streaming.flume</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="">5.4. pyspark.streaming.flume</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#functions">5.4.1. Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.read_int.html">5.4.1.1. pyspark.streaming.flume.read_int</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.utf8_decoder.html">5.4.1.2. pyspark.streaming.flume.utf8_decoder</a></li>
@@ -107,7 +107,12 @@
 <li class="toctree-l4"><a class="reference internal" href="generated/pyspark.streaming.flume.NoOpSerializer.html">5.4.2.3. pyspark.streaming.flume.NoOpSerializer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/pyspark.streaming.flume.PairDeserializer.html">5.4.2.4. pyspark.streaming.flume.PairDeserializer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="generated/pyspark.streaming.flume.StorageLevel.html">5.4.2.5. pyspark.streaming.flume.StorageLevel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.streaming.flume.UTF8Deserializer.html">5.4.2.6. pyspark.streaming.flume.UTF8Deserializer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.streaming.flume.StringIO.html">5.4.2.6. pyspark.streaming.flume.StringIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.streaming.flume.UTF8Deserializer.html">5.4.2.7. pyspark.streaming.flume.UTF8Deserializer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">5.4.3. Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.flume.Py4JJavaError.html">5.4.3.1. pyspark.streaming.flume.Py4JJavaError</a></li>
 </ul>
 </li>
 </ul>
@@ -216,13 +221,30 @@
 <tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.streaming.flume.StorageLevel.html#pyspark.streaming.flume.StorageLevel" title="pyspark.streaming.flume.StorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">StorageLevel</span></code></a>(useDisk,&nbsp;useMemory,&nbsp;useOffHeap,&nbsp;...)</td>
 <td>Flags for controlling the storage of an RDD.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.streaming.flume.UTF8Deserializer.html#pyspark.streaming.flume.UTF8Deserializer" title="pyspark.streaming.flume.UTF8Deserializer"><code class="xref py py-obj docutils literal"><span class="pre">UTF8Deserializer</span></code></a>([use_unicode])</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.streaming.flume.StringIO.html#pyspark.streaming.flume.StringIO" title="pyspark.streaming.flume.StringIO"><code class="xref py py-obj docutils literal"><span class="pre">StringIO</span></code></a>([buf])</td>
+<td>class StringIO([buffer])</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.streaming.flume.UTF8Deserializer.html#pyspark.streaming.flume.UTF8Deserializer" title="pyspark.streaming.flume.UTF8Deserializer"><code class="xref py py-obj docutils literal"><span class="pre">UTF8Deserializer</span></code></a>([use_unicode])</td>
 <td>Deserializes streams written by String.getBytes.</td>
 </tr>
 </tbody>
 </table>
 <div class="toctree-wrapper compound">
 </div>
+</div>
+<div class="section" id="exceptions">
+<h2>5.4.3. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="pyspark.streaming.flume.Py4JJavaError.html#pyspark.streaming.flume.Py4JJavaError" title="pyspark.streaming.flume.Py4JJavaError"><code class="xref py py-obj docutils literal"><span class="pre">Py4JJavaError</span></code></a>(msg,&nbsp;java_exception)</td>
+<td>Exception raised when an exception occurs in the client code.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -236,7 +258,7 @@
         <a href="pyspark.streaming.flume.read_int.html" class="btn btn-neutral float-right" title="5.4.1.1. pyspark.streaming.flume.read_int" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/pyspark.streaming.kinesis.StorageLevel.OFF_HEAP.html" class="btn btn-neutral" title="5.3.2.6.2.11. pyspark.streaming.kinesis.StorageLevel.OFF_HEAP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pyspark.streaming.kinesis.Py4JJavaError.html" class="btn btn-neutral" title="5.3.3.1. pyspark.streaming.kinesis.Py4JJavaError" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -276,6 +298,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

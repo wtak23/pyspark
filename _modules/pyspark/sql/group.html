@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.group &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.sql.group &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -168,11 +168,11 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">since</span>
-<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="k">import</span> <span class="n">ignore_unicode_prefix</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.column</span> <span class="k">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">_to_seq</span><span class="p">,</span> <span class="n">_to_java_column</span><span class="p">,</span> <span class="n">_create_column_from_literal</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="k">import</span> <span class="n">DataFrame</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">since</span>
+<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="kn">import</span> <span class="n">ignore_unicode_prefix</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.column</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">_to_seq</span><span class="p">,</span> <span class="n">_to_java_column</span><span class="p">,</span> <span class="n">_create_column_from_literal</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;GroupedData&quot;</span><span class="p">]</span>
 
@@ -321,7 +321,7 @@
 <span class="sd">        &quot;&quot;&quot;</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="GroupedData.pivot"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.GroupedData.pivot.html#pyspark.sql.GroupedData.pivot">[docs]</a>    <span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pivot_col</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="GroupedData.pivot"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.GroupedData.pivot.html#pyspark.sql.GroupedData.pivot">[docs]</a>    <span class="k">def</span> <span class="nf">pivot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pivot_col</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pivots a column of the current [[DataFrame]] and perform the specified aggregation.</span>
 <span class="sd">        There are two versions of pivot function: one that requires the caller to specify the list</span>
@@ -341,7 +341,7 @@
 <span class="sd">        &gt;&gt;&gt; df4.groupBy(&quot;year&quot;).pivot(&quot;course&quot;).sum(&quot;earnings&quot;).collect()</span>
 <span class="sd">        [Row(year=2012, Java=20000, dotNET=15000), Row(year=2013, Java=30000, dotNET=48000)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">jgd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jgd</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">pivot_col</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">jgd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jgd</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">pivot_col</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
@@ -350,7 +350,7 @@
 
 <span class="k">def</span> <span class="nf">_test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">SparkSession</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">SparkSession</span>
     <span class="kn">import</span> <span class="nn">pyspark.sql.group</span>
     <span class="n">globs</span> <span class="o">=</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span>\
@@ -375,7 +375,7 @@
         <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">NORMALIZE_WHITESPACE</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">REPORT_NDIFF</span><span class="p">)</span>
     <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -422,6 +422,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

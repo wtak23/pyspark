@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.2.3.1.18. pyspark.sql.functions.DataFrame.dropDuplicates &mdash; PySpark API 1 documentation</title>
+  <title>2.3.2.3.1.18. pyspark.sql.functions.DataFrame.dropDuplicates &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="2.3.2.3. pyspark.sql.functions.DataFrame" href="pyspark.sql.functions.DataFrame.html"/>
         <link rel="next" title="2.3.2.3.1.19. pyspark.sql.functions.DataFrame.drop_duplicates" href="pyspark.sql.functions.DataFrame.drop_duplicates.html"/>
         <link rel="prev" title="2.3.2.3.1.17. pyspark.sql.functions.DataFrame.drop" href="pyspark.sql.functions.DataFrame.drop.html"/> 
@@ -101,6 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.SparkContext.html">2.3.2.5. pyspark.sql.functions.SparkContext</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.StringType.html">2.3.2.6. pyspark.sql.functions.StringType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.UserDefinedFunction.html">2.3.2.7. pyspark.sql.functions.UserDefinedFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.map.html">2.3.2.8. pyspark.sql.functions.map</a></li>
 </ul>
 </li>
 </ul>
@@ -183,7 +184,7 @@
 <dd><p>Return a new <a class="reference internal" href="pyspark.sql.functions.DataFrame.html#pyspark.sql.functions.DataFrame" title="pyspark.sql.functions.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> with duplicate rows removed,
 optionally only considering certain columns.</p>
 <p><a class="reference internal" href="pyspark.sql.functions.DataFrame.drop_duplicates.html#pyspark.sql.functions.DataFrame.drop_duplicates" title="pyspark.sql.functions.DataFrame.drop_duplicates"><code class="xref py py-func docutils literal"><span class="pre">drop_duplicates()</span></code></a> is an alias for <a class="reference internal" href="#pyspark.sql.functions.DataFrame.dropDuplicates" title="pyspark.sql.functions.DataFrame.dropDuplicates"><code class="xref py py-func docutils literal"><span class="pre">dropDuplicates()</span></code></a>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Row</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span> \
 <span class="gp">... </span>    <span class="n">Row</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">80</span><span class="p">),</span> \
 <span class="gp">... </span>    <span class="n">Row</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">80</span><span class="p">),</span> \
@@ -197,7 +198,7 @@ optionally only considering certain columns.</p>
 <span class="go">+---+------+-----+</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">dropDuplicates</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">dropDuplicates</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">+---+------+-----+</span>
 <span class="go">|age|height| name|</span>
 <span class="go">+---+------+-----+</span>
@@ -262,6 +263,7 @@ optionally only considering certain columns.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

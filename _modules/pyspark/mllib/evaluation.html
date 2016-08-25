@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.mllib.evaluation &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.mllib.evaluation &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -170,10 +170,10 @@
 
 <span class="kn">import</span> <span class="nn">warnings</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">since</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.common</span> <span class="k">import</span> <span class="n">JavaModelWrapper</span><span class="p">,</span> <span class="n">callMLlibFunc</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SQLContext</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="n">StructField</span><span class="p">,</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">ArrayType</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">since</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.common</span> <span class="kn">import</span> <span class="n">JavaModelWrapper</span><span class="p">,</span> <span class="n">callMLlibFunc</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SQLContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StructField</span><span class="p">,</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">ArrayType</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;BinaryClassificationMetrics&#39;</span><span class="p">,</span> <span class="s1">&#39;RegressionMetrics&#39;</span><span class="p">,</span>
            <span class="s1">&#39;MulticlassMetrics&#39;</span><span class="p">,</span> <span class="s1">&#39;RankingMetrics&#39;</span><span class="p">]</span>
@@ -201,8 +201,8 @@
         <span class="n">sc</span> <span class="o">=</span> <span class="n">scoreAndLabels</span><span class="o">.</span><span class="n">ctx</span>
         <span class="n">sql_ctx</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">sql_ctx</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">scoreAndLabels</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">StructType</span><span class="p">([</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)]))</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)]))</span>
         <span class="n">java_class</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">spark</span><span class="o">.</span><span class="n">mllib</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">BinaryClassificationMetrics</span>
         <span class="n">java_model</span> <span class="o">=</span> <span class="n">java_class</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">BinaryClassificationMetrics</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span></div>
@@ -260,8 +260,8 @@
         <span class="n">sc</span> <span class="o">=</span> <span class="n">predictionAndObservations</span><span class="o">.</span><span class="n">ctx</span>
         <span class="n">sql_ctx</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">sql_ctx</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">predictionAndObservations</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">StructType</span><span class="p">([</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;observation&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)]))</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;observation&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)]))</span>
         <span class="n">java_class</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">spark</span><span class="o">.</span><span class="n">mllib</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">RegressionMetrics</span>
         <span class="n">java_model</span> <span class="o">=</span> <span class="n">java_class</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">RegressionMetrics</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span></div>
@@ -352,8 +352,8 @@
         <span class="n">sc</span> <span class="o">=</span> <span class="n">predictionAndLabels</span><span class="o">.</span><span class="n">ctx</span>
         <span class="n">sql_ctx</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">sql_ctx</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">predictionAndLabels</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="n">StructType</span><span class="p">([</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)]))</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">DoubleType</span><span class="p">(),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)]))</span>
         <span class="n">java_class</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">spark</span><span class="o">.</span><span class="n">mllib</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">MulticlassMetrics</span>
         <span class="n">java_model</span> <span class="o">=</span> <span class="n">java_class</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="p">)</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MulticlassMetrics</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span></div>
@@ -381,11 +381,11 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;falsePositiveRate&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="MulticlassMetrics.precision"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.precision.html#pyspark.mllib.evaluation.MulticlassMetrics.precision">[docs]</a>    <span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MulticlassMetrics.precision"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.precision.html#pyspark.mllib.evaluation.MulticlassMetrics.precision">[docs]</a>    <span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns precision or precision for a given label (category) if specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="c1"># note:: Deprecated in 2.0.0. Use accuracy.</span>
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Deprecated in 2.0.0. Use accuracy.&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;precision&quot;</span><span class="p">)</span>
@@ -393,11 +393,11 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;precision&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">label</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="MulticlassMetrics.recall"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.recall.html#pyspark.mllib.evaluation.MulticlassMetrics.recall">[docs]</a>    <span class="k">def</span> <span class="nf">recall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MulticlassMetrics.recall"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.recall.html#pyspark.mllib.evaluation.MulticlassMetrics.recall">[docs]</a>    <span class="k">def</span> <span class="nf">recall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns recall or recall for a given label (category) if specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="c1"># note:: Deprecated in 2.0.0. Use accuracy.</span>
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Deprecated in 2.0.0. Use accuracy.&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;recall&quot;</span><span class="p">)</span>
@@ -405,19 +405,19 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;recall&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">label</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="MulticlassMetrics.fMeasure"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.fMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.fMeasure">[docs]</a>    <span class="k">def</span> <span class="nf">fMeasure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MulticlassMetrics.fMeasure"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.fMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.fMeasure">[docs]</a>    <span class="k">def</span> <span class="nf">fMeasure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns f-measure or f-measure for a given label (category) if specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">beta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">beta</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="c1"># note:: Deprecated in 2.0.0. Use accuracy.</span>
                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Deprecated in 2.0.0. Use accuracy.&quot;</span><span class="p">)</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;fMeasure&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;fMeasure&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;If the beta parameter is specified, label can not be none&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;fMeasure&quot;</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span></div>
@@ -466,11 +466,11 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;weightedPrecision&quot;</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="MulticlassMetrics.weightedFMeasure"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure">[docs]</a>    <span class="k">def</span> <span class="nf">weightedFMeasure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MulticlassMetrics.weightedFMeasure"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure.html#pyspark.mllib.evaluation.MulticlassMetrics.weightedFMeasure">[docs]</a>    <span class="k">def</span> <span class="nf">weightedFMeasure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns weighted averaged f-measure.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">beta</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">beta</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;weightedFMeasure&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;weightedFMeasure&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span></div></div>
@@ -600,31 +600,31 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">MultilabelMetrics</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="MultilabelMetrics.precision"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MultilabelMetrics.precision.html#pyspark.mllib.evaluation.MultilabelMetrics.precision">[docs]</a>    <span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MultilabelMetrics.precision"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MultilabelMetrics.precision.html#pyspark.mllib.evaluation.MultilabelMetrics.precision">[docs]</a>    <span class="k">def</span> <span class="nf">precision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns precision or precision for a given label (category) if specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;precision&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;precision&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">label</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="MultilabelMetrics.recall"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MultilabelMetrics.recall.html#pyspark.mllib.evaluation.MultilabelMetrics.recall">[docs]</a>    <span class="k">def</span> <span class="nf">recall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MultilabelMetrics.recall"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MultilabelMetrics.recall.html#pyspark.mllib.evaluation.MultilabelMetrics.recall">[docs]</a>    <span class="k">def</span> <span class="nf">recall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns recall or recall for a given label (category) if specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;recall&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;recall&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">label</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="MultilabelMetrics.f1Measure"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MultilabelMetrics.f1Measure.html#pyspark.mllib.evaluation.MultilabelMetrics.f1Measure">[docs]</a>    <span class="k">def</span> <span class="nf">f1Measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="MultilabelMetrics.f1Measure"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.evaluation.MultilabelMetrics.f1Measure.html#pyspark.mllib.evaluation.MultilabelMetrics.f1Measure">[docs]</a>    <span class="k">def</span> <span class="nf">f1Measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns f1Measure or f1Measure for a given label (category) if specified.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;f1Measure&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;f1Measure&quot;</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">label</span><span class="p">))</span></div>
@@ -684,7 +684,7 @@
 
 <span class="k">def</span> <span class="nf">_test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
     <span class="kn">import</span> <span class="nn">pyspark.mllib.evaluation</span>
     <span class="n">globs</span> <span class="o">=</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">mllib</span><span class="o">.</span><span class="n">evaluation</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span>\
@@ -695,7 +695,7 @@
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">globs</span><span class="o">=</span><span class="n">globs</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
     <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -742,6 +742,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

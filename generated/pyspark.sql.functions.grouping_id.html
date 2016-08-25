@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.1.64. pyspark.sql.functions.grouping_id &mdash; PySpark API 1 documentation</title>
+  <title>2.3.1.64. pyspark.sql.functions.grouping_id &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
         <link rel="next" title="2.3.1.65. pyspark.sql.functions.hash" href="pyspark.sql.functions.hash.html"/>
         <link rel="prev" title="2.3.1.63. pyspark.sql.functions.grouping" href="pyspark.sql.functions.grouping.html"/> 
@@ -156,7 +156,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.get_json_object.html">2.3.1.61. pyspark.sql.functions.get_json_object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.greatest.html">2.3.1.62. pyspark.sql.functions.greatest</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.grouping.html">2.3.1.63. pyspark.sql.functions.grouping</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.64. pyspark.sql.functions.grouping_id</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.3.1.64. pyspark.sql.functions.grouping_id</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hash.html">2.3.1.65. pyspark.sql.functions.hash</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hex.html">2.3.1.66. pyspark.sql.functions.hex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.hour.html">2.3.1.67. pyspark.sql.functions.hour</a></li>
@@ -342,7 +342,7 @@
 <div>(grouping(c1) &lt;&lt; (n-1)) + (grouping(c2) &lt;&lt; (n-2)) + ... + grouping(cn)</div></blockquote>
 <p>Note: the list of columns should match with grouping columns exactly, or empty (means all the
 grouping columns).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">cube</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">grouping_id</span><span class="p">(),</span> <span class="nb">sum</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">cube</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">grouping_id</span><span class="p">(),</span> <span class="nb">sum</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">+-----+-------------+--------+</span>
 <span class="go">| name|grouping_id()|sum(age)|</span>
 <span class="go">+-----+-------------+--------+</span>
@@ -409,6 +409,7 @@ grouping columns).</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

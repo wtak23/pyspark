@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.6.2.2. pyspark.mllib.fpm.FPGrowthModel &mdash; PySpark API 1 documentation</title>
+  <title>4.6.2.2. pyspark.mllib.fpm.FPGrowthModel &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.6. pyspark.mllib.fpm" href="../pyspark.mllib.fpm.html"/>
         <link rel="next" title="4.6.2.2.1.1. pyspark.mllib.fpm.FPGrowthModel.__init__" href="pyspark.mllib.fpm.FPGrowthModel.__init__.html"/>
         <link rel="prev" title="4.6.2.1.1.1. pyspark.mllib.fpm.FPGrowth.train" href="pyspark.mllib.fpm.FPGrowth.train.html"/> 
@@ -100,7 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.fpm.html#functions">4.6.1. Functions</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../pyspark.mllib.fpm.html#classes">4.6.2. Classes</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.FPGrowth.html">4.6.2.1. pyspark.mllib.fpm.FPGrowth</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.6.2.2. pyspark.mllib.fpm.FPGrowthModel</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">4.6.2.2. pyspark.mllib.fpm.FPGrowthModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.JavaLoader.html">4.6.2.3. pyspark.mllib.fpm.JavaLoader</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.JavaModelWrapper.html">4.6.2.4. pyspark.mllib.fpm.JavaModelWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.fpm.JavaSaveable.html">4.6.2.5. pyspark.mllib.fpm.JavaSaveable</a></li>
@@ -191,7 +191,7 @@
 <em class="property">class </em><code class="descclassname">pyspark.mllib.fpm.</code><code class="descname">FPGrowthModel</code><span class="sig-paren">(</span><em>java_model</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/fpm.html#FPGrowthModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.fpm.FPGrowthModel" title="Permalink to this definition">¶</a></dt>
 <dd><p>A FP-Growth model for mining frequent itemsets
 using the Parallel FP-Growth algorithm.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]]</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">FPGrowth</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">freqItemsets</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
@@ -291,6 +291,7 @@ using the Parallel FP-Growth algorithm.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

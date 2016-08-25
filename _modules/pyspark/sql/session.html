@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.session &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.sql.session &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -168,33 +168,33 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
-<span class="kn">from</span> <span class="nn">threading</span> <span class="k">import</span> <span class="n">RLock</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">RLock</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="n">basestring</span> <span class="o">=</span> <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="nb">unicode</span> <span class="o">=</span> <span class="nb">str</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">imap</span> <span class="k">as</span> <span class="nb">map</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">imap</span> <span class="k">as</span> <span class="nb">map</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">since</span>
-<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="k">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">ignore_unicode_prefix</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.catalog</span> <span class="k">import</span> <span class="n">Catalog</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.conf</span> <span class="k">import</span> <span class="n">RuntimeConfig</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="k">import</span> <span class="n">DataFrame</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.readwriter</span> <span class="k">import</span> <span class="n">DataFrameReader</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="k">import</span> <span class="n">DataStreamReader</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">DataType</span><span class="p">,</span> <span class="n">StringType</span><span class="p">,</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">_verify_type</span><span class="p">,</span> \
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">since</span>
+<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="kn">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">ignore_unicode_prefix</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.catalog</span> <span class="kn">import</span> <span class="n">Catalog</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.conf</span> <span class="kn">import</span> <span class="n">RuntimeConfig</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.readwriter</span> <span class="kn">import</span> <span class="n">DataFrameReader</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="kn">import</span> <span class="n">DataStreamReader</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">DataType</span><span class="p">,</span> <span class="n">StringType</span><span class="p">,</span> <span class="n">StructType</span><span class="p">,</span> <span class="n">_verify_type</span><span class="p">,</span> \
     <span class="n">_infer_schema</span><span class="p">,</span> <span class="n">_has_nulltype</span><span class="p">,</span> <span class="n">_merge_type</span><span class="p">,</span> <span class="n">_create_converter</span><span class="p">,</span> <span class="n">_parse_datatype_string</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.utils</span> <span class="k">import</span> <span class="n">install_exception_handler</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.utils</span> <span class="kn">import</span> <span class="n">install_exception_handler</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SparkSession&quot;</span><span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">_monkey_patch_RDD</span><span class="p">(</span><span class="n">sparkSession</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">toDF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sampleRatio</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">toDF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sampleRatio</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts current :class:`RDD` into a :class:`DataFrame`</span>
 
@@ -234,7 +234,7 @@
         <span class="n">_options</span> <span class="o">=</span> <span class="p">{}</span>
 
         <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;Sets a config option. Options set using this method are automatically propagated to</span>
 <span class="sd">            both :class:`SparkConf` and :class:`SparkSession`&#39;s own configuration.</span>
 
@@ -254,7 +254,7 @@
 <span class="sd">            :param conf: an instance of :class:`SparkConf`</span>
 <span class="sd">            &quot;&quot;&quot;</span>
             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">conf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">conf</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">conf</span><span class="o">.</span><span class="n">getAll</span><span class="p">():</span>
@@ -312,10 +312,10 @@
 <span class="sd">            True</span>
 <span class="sd">            &quot;&quot;&quot;</span>
             <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
-                <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
-                <span class="kn">from</span> <span class="nn">pyspark.conf</span> <span class="k">import</span> <span class="n">SparkConf</span>
+                <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+                <span class="kn">from</span> <span class="nn">pyspark.conf</span> <span class="kn">import</span> <span class="n">SparkConf</span>
                 <span class="n">session</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">_instantiatedContext</span>
-                <span class="k">if</span> <span class="n">session</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">session</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                     <span class="n">sparkConf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span>
                     <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                         <span class="n">sparkConf</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
@@ -336,10 +336,10 @@
 
     <span class="n">builder</span> <span class="o">=</span> <span class="n">Builder</span><span class="p">()</span>
 
-    <span class="n">_instantiatedContext</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_instantiatedContext</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="SparkSession.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.__init__.html#pyspark.sql.SparkSession.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">jsparkSession</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.__init__.html#pyspark.sql.SparkSession.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">jsparkSession</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new SparkSession.</span>
 
 <span class="sd">        &gt;&gt;&gt; from datetime import datetime</span>
@@ -356,18 +356,18 @@
 <span class="sd">        &gt;&gt;&gt; df.rdd.map(lambda x: (x.i, x.s, x.d, x.l, x.b, x.time, x.row.a, x.list)).collect()</span>
 <span class="sd">        [(1, u&#39;string&#39;, 1.0, 1, True, datetime.datetime(2014, 8, 1, 14, 1, 5), 1, [1, 2, 3])]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.context</span> <span class="k">import</span> <span class="n">SQLContext</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.context</span> <span class="kn">import</span> <span class="n">SQLContext</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span> <span class="o">=</span> <span class="n">sparkContext</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jsc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jsc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span>
-        <span class="k">if</span> <span class="n">jsparkSession</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">jsparkSession</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">jsparkSession</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">SparkSession</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">sc</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jsparkSession</span> <span class="o">=</span> <span class="n">jsparkSession</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrapped</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jsparkSession</span><span class="o">.</span><span class="n">sqlContext</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_wrapped</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jwrapped</span><span class="p">)</span>
         <span class="n">_monkey_patch_RDD</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">install_exception_handler</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">_instantiatedContext</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">_instantiatedContext</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">SparkSession</span><span class="o">.</span><span class="n">_instantiatedContext</span> <span class="o">=</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
@@ -421,11 +421,11 @@
 
 <span class="sd">        :return: :class:`UDFRegistration`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.context</span> <span class="k">import</span> <span class="n">UDFRegistration</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.context</span> <span class="kn">import</span> <span class="n">UDFRegistration</span>
         <span class="k">return</span> <span class="n">UDFRegistration</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wrapped</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SparkSession.range"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.range.html#pyspark.sql.SparkSession.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.range"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.range.html#pyspark.sql.SparkSession.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a :class:`DataFrame` with single LongType column named `id`,</span>
 <span class="sd">        containing elements in a range from `start` to `end` (exclusive) with</span>
@@ -445,10 +445,10 @@
 <span class="sd">        &gt;&gt;&gt; spark.range(3).collect()</span>
 <span class="sd">        [Row(id=0), Row(id=1), Row(id=2)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
 
-        <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">jdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jsparkSession</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">start</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">step</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">jdf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jsparkSession</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">start</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">end</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">step</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">))</span>
@@ -468,12 +468,12 @@
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">first</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">dict</span><span class="p">:</span>
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;inferring schema from dict is deprecated,&quot;</span>
                           <span class="s2">&quot;please use pyspark.sql.Row instead&quot;</span><span class="p">)</span>
-        <span class="n">schema</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">_merge_type</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="n">_infer_schema</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+        <span class="n">schema</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">_merge_type</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="n">_infer_schema</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">_has_nulltype</span><span class="p">(</span><span class="n">schema</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Some of types cannot be determined after inferring&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">schema</span>
 
-    <span class="k">def</span> <span class="nf">_inferSchema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rdd</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_inferSchema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rdd</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Infer schema from an RDD of Row or tuple.</span>
 
@@ -489,7 +489,7 @@
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Using RDD of dict to inferSchema is deprecated. &quot;</span>
                           <span class="s2">&quot;Use pyspark.sql.Row instead&quot;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">samplingRatio</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">samplingRatio</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">schema</span> <span class="o">=</span> <span class="n">_infer_schema</span><span class="p">(</span><span class="n">first</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_has_nulltype</span><span class="p">(</span><span class="n">schema</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rdd</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">100</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>
@@ -501,7 +501,7 @@
                                      <span class="s2">&quot;first 100 rows, please try again with sampling&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">samplingRatio</span> <span class="o">&lt;</span> <span class="mf">0.99</span><span class="p">:</span>
-                <span class="n">rdd</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">samplingRatio</span><span class="p">))</span>
+                <span class="n">rdd</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">samplingRatio</span><span class="p">))</span>
             <span class="n">schema</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">_infer_schema</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">_merge_type</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">schema</span>
 
@@ -509,7 +509,7 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an RDD for DataFrame from an existing RDD, returns the RDD and schema.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
             <span class="n">struct</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inferSchema</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="p">)</span>
             <span class="n">converter</span> <span class="o">=</span> <span class="n">_create_converter</span><span class="p">(</span><span class="n">struct</span><span class="p">)</span>
             <span class="n">rdd</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">converter</span><span class="p">)</span>
@@ -535,7 +535,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
             <span class="n">struct</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_inferSchemaFromList</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
                 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">schema</span><span class="p">):</span>
@@ -556,7 +556,7 @@
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="SparkSession.createDataFrame"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.createDataFrame.html#pyspark.sql.SparkSession.createDataFrame">[docs]</a>    <span class="k">def</span> <span class="nf">createDataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.createDataFrame"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.createDataFrame.html#pyspark.sql.SparkSession.createDataFrame">[docs]</a>    <span class="k">def</span> <span class="nf">createDataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a :class:`DataFrame` from an :class:`RDD`, a list or a :class:`pandas.DataFrame`.</span>
 
@@ -640,18 +640,18 @@
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;data is already a DataFrame&quot;</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="n">schema</span> <span class="o">=</span> <span class="n">_parse_datatype_string</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">pandas</span>
-            <span class="n">has_pandas</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">has_pandas</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-            <span class="n">has_pandas</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">has_pandas</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="k">if</span> <span class="n">has_pandas</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="n">schema</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">to_records</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">to_records</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)]</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">StructType</span><span class="p">):</span>
             <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
@@ -740,7 +740,7 @@
 
 <span class="sd">        :return: :class:`StreamingQueryManager`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="k">import</span> <span class="n">StreamingQueryManager</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="kn">import</span> <span class="n">StreamingQueryManager</span>
         <span class="k">return</span> <span class="n">StreamingQueryManager</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jsparkSession</span><span class="o">.</span><span class="n">streams</span><span class="p">())</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
@@ -769,8 +769,8 @@
 <span class="k">def</span> <span class="nf">_test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">os</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
-    <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Row</span>
+    <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span>
     <span class="kn">import</span> <span class="nn">pyspark.sql.session</span>
 
     <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SPARK_HOME&quot;</span><span class="p">])</span>
@@ -789,7 +789,7 @@
         <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">NORMALIZE_WHITESPACE</span><span class="p">)</span>
     <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;sc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">_test</span><span class="p">()</span>
@@ -835,6 +835,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.2.2.12.1.81. pyspark.mllib.classification.RDD.subtractByKey &mdash; PySpark API 1 documentation</title>
+  <title>4.2.2.12.1.81. pyspark.mllib.classification.RDD.subtractByKey &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.2.2.12. pyspark.mllib.classification.RDD" href="pyspark.mllib.classification.RDD.html"/>
         <link rel="next" title="4.2.2.12.1.82. pyspark.mllib.classification.RDD.sum" href="pyspark.mllib.classification.RDD.sum.html"/>
         <link rel="prev" title="4.2.2.12.1.80. pyspark.mllib.classification.RDD.subtract" href="pyspark.mllib.classification.RDD.subtract.html"/> 
@@ -203,8 +203,8 @@
 <code class="descclassname">RDD.</code><code class="descname">subtractByKey</code><span class="sig-paren">(</span><em>other</em>, <em>numPartitions=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD.subtractByKey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.classification.RDD.subtractByKey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return each (key, value) pair in C{self} that has no pair with matching
 key in C{other}.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">subtractByKey</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
 <span class="go">[(&#39;b&#39;, 4), (&#39;b&#39;, 5)]</span>
 </pre></div>
@@ -263,6 +263,7 @@ key in C{other}.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

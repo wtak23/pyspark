@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.12.1.5.1.1. pyspark.mllib.stat.Statistics.chiSqTest &mdash; PySpark API 1 documentation</title>
+  <title>4.12.1.5.1.1. pyspark.mllib.stat.Statistics.chiSqTest &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.12.1.5. pyspark.mllib.stat.Statistics" href="pyspark.mllib.stat.Statistics.html"/>
         <link rel="next" title="4.12.1.5.1.2. pyspark.mllib.stat.Statistics.colStats" href="pyspark.mllib.stat.Statistics.colStats.html"/>
         <link rel="prev" title="4.12.1.5. pyspark.mllib.stat.Statistics" href="pyspark.mllib.stat.Statistics.html"/> 
@@ -223,14 +223,14 @@ of freedom, p-value, the method used, and the null hypothesis.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.linalg</span> <span class="k">import</span> <span class="n">Vectors</span><span class="p">,</span> <span class="n">Matrices</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span><span class="p">,</span> <span class="n">Matrices</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">observed</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pearson</span> <span class="o">=</span> <span class="n">Statistics</span><span class="o">.</span><span class="n">chiSqTest</span><span class="p">(</span><span class="n">observed</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">pearson</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">pearson</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
 <span class="go">0.4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pearson</span><span class="o">.</span><span class="n">degreesOfFreedom</span>
 <span class="go">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pearson</span><span class="o">.</span><span class="n">pValue</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pearson</span><span class="o">.</span><span class="n">pValue</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="go">0.8187</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pearson</span><span class="o">.</span><span class="n">method</span>
 <span class="go">u&#39;pearson&#39;</span>
@@ -238,20 +238,20 @@ of freedom, p-value, the method used, and the null hypothesis.</p>
 <span class="go">u&#39;observed follows the same distribution as expected.&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">observed</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mi">21</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">observed</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mi">21</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">80</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">expected</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pearson</span> <span class="o">=</span> <span class="n">Statistics</span><span class="o">.</span><span class="n">chiSqTest</span><span class="p">(</span><span class="n">observed</span><span class="p">,</span> <span class="n">expected</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pearson</span><span class="o">.</span><span class="n">pValue</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pearson</span><span class="o">.</span><span class="n">pValue</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="go">0.0027</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">40.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">29.0</span><span class="p">,</span> <span class="mf">56.0</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">42.0</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">]</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">40.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">29.0</span><span class="p">,</span> <span class="mf">56.0</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">42.0</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">chi</span> <span class="o">=</span> <span class="n">Statistics</span><span class="o">.</span><span class="n">chiSqTest</span><span class="p">(</span><span class="n">Matrices</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">chi</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">chi</span><span class="o">.</span><span class="n">statistic</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="go">21.9958</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])),</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])),</span>
 <span class="gp">... </span>        <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">])),</span>
 <span class="gp">... </span>        <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">])),</span>
 <span class="gp">... </span>        <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">])),</span>
@@ -259,9 +259,9 @@ of freedom, p-value, the method used, and the null hypothesis.</p>
 <span class="gp">... </span>        <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">])),]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">chi</span> <span class="o">=</span> <span class="n">Statistics</span><span class="o">.</span><span class="n">chiSqTest</span><span class="p">(</span><span class="n">rdd</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">chi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">chi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
 <span class="go">0.75</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">chi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">chi</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">statistic</span><span class="p">)</span>
 <span class="go">1.5</span>
 </pre></div>
 </div>
@@ -319,6 +319,7 @@ of freedom, p-value, the method used, and the null hypothesis.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

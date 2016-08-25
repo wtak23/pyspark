@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>StringIO &mdash; PySpark API 1 documentation</title>
+  <title>StringIO &mdash; PySpark API</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
   
 
   
@@ -30,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="Module code" href="index.html"/> 
 
   
@@ -178,7 +180,7 @@
 <span class="sd">- There&#39;s a simple test set (see end of this file).</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">errno</span> <span class="k">import</span> <span class="n">EINVAL</span>
+    <span class="kn">from</span> <span class="nn">errno</span> <span class="kn">import</span> <span class="n">EINVAL</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="n">EINVAL</span> <span class="o">=</span> <span class="mi">22</span>
 
@@ -202,13 +204,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="StringIO.__init__"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.__init__.html#pyspark.streaming.flume.StringIO.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="c1"># Force self.buf to be a string or unicode</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="n">buf</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">buf</span> <span class="o">=</span> <span class="n">buf</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">buflist</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">closed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">closed</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">softspace</span> <span class="o">=</span> <span class="mi">0</span></div>
 
     <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -231,7 +233,7 @@
         <span class="sd">&quot;&quot;&quot;Free the memory buffer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">closed</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">closed</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span></div>
 
 <div class="viewcode-block" id="StringIO.isatty"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.isatty.html#pyspark.streaming.flume.StringIO.isatty">[docs]</a>    <span class="k">def</span> <span class="nf">isatty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -239,7 +241,7 @@
 <span class="sd">        tty-like device.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_complain_ifclosed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">False</span></div>
+        <span class="k">return</span> <span class="bp">False</span></div>
 
 <div class="viewcode-block" id="StringIO.seek"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.seek.html#pyspark.streaming.flume.StringIO.seek">[docs]</a>    <span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the file&#39;s current position.</span>
@@ -277,7 +279,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">buflist</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">buf</span> <span class="o">+=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buflist</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">buflist</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">newpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">newpos</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span><span class="p">)</span>
@@ -285,7 +287,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">newpos</span>
         <span class="k">return</span> <span class="n">r</span></div>
 
-<div class="viewcode-block" id="StringIO.readline"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.readline.html#pyspark.streaming.flume.StringIO.readline">[docs]</a>    <span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.readline"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.readline.html#pyspark.streaming.flume.StringIO.readline">[docs]</a>    <span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot;Read one entire line from the file.</span>
 
 <span class="sd">        A trailing newline character is kept in the string (but may be absent</span>
@@ -307,7 +309,7 @@
             <span class="n">newpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">newpos</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
-        <span class="k">if</span> <span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">length</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">length</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">+</span> <span class="n">length</span> <span class="o">&lt;</span> <span class="n">newpos</span><span class="p">:</span>
                 <span class="n">newpos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">+</span> <span class="n">length</span>
         <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">:</span><span class="n">newpos</span><span class="p">]</span>
@@ -333,7 +335,7 @@
             <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">lines</span></div>
 
-<div class="viewcode-block" id="StringIO.truncate"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.truncate.html#pyspark.streaming.flume.StringIO.truncate">[docs]</a>    <span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.truncate"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.truncate.html#pyspark.streaming.flume.StringIO.truncate">[docs]</a>    <span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Truncate the file&#39;s size.</span>
 
 <span class="sd">        If the optional size argument is present, the file is truncated to</span>
@@ -345,7 +347,7 @@
 <span class="sd">        file remains unchanged.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_complain_ifclosed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
         <span class="k">elif</span> <span class="n">size</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="n">EINVAL</span><span class="p">,</span> <span class="s2">&quot;Negative size not allowed&quot;</span><span class="p">)</span>
@@ -362,7 +364,7 @@
         <span class="n">_complain_ifclosed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">:</span> <span class="k">return</span>
         <span class="c1"># Force s to be a string or unicode</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
         <span class="n">spos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
         <span class="n">slen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span>
@@ -427,11 +429,11 @@
 <span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">sys</span>
     <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-        <span class="n">file</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">file</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;/etc/passwd&#39;</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="nb">file</span> <span class="o">=</span> <span class="s1">&#39;/etc/passwd&#39;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
@@ -439,14 +441,14 @@
     <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span> <span class="o">!=</span> <span class="n">text</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s1">&#39;write failed&#39;</span>
     <span class="n">length</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
-    <span class="nb">print</span> <span class="s1">&#39;File length =&#39;</span><span class="p">,</span> <span class="n">length</span>
+    <span class="k">print</span> <span class="s1">&#39;File length =&#39;</span><span class="p">,</span> <span class="n">length</span>
     <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
     <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s1">&#39;First line =&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
-    <span class="nb">print</span> <span class="s1">&#39;Position =&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s1">&#39;First line =&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+    <span class="k">print</span> <span class="s1">&#39;Position =&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-    <span class="nb">print</span> <span class="s1">&#39;Second line =&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s1">&#39;Second line =&#39;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">line2</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">line</span> <span class="o">!=</span> <span class="n">line2</span><span class="p">:</span>
@@ -458,13 +460,13 @@
     <span class="n">line2</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">line</span> <span class="o">!=</span> <span class="n">line2</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s1">&#39;bad result after seek back from EOF&#39;</span>
-    <span class="nb">print</span> <span class="s1">&#39;Read&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">),</span> <span class="s1">&#39;more lines&#39;</span>
-    <span class="nb">print</span> <span class="s1">&#39;File length =&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s1">&#39;Read&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">),</span> <span class="s1">&#39;more lines&#39;</span>
+    <span class="k">print</span> <span class="s1">&#39;File length =&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">!=</span> <span class="n">length</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s1">&#39;bad length&#39;</span>
     <span class="n">f</span><span class="o">.</span><span class="n">truncate</span><span class="p">(</span><span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="s1">&#39;Truncated length =&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s1">&#39;Truncated length =&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">!=</span> <span class="n">length</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">,</span> <span class="s1">&#39;truncate did not adjust length&#39;</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -513,6 +515,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

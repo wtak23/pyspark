@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.7. pyspark.ml.feature.DCT &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.7. pyspark.ml.feature.DCT &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.7.1.1. pyspark.ml.feature.DCT.__init__" href="pyspark.ml.feature.DCT.__init__.html"/>
         <link rel="prev" title="3.3.2.6.2.2. pyspark.ml.feature.CountVectorizerModel.vocabulary" href="pyspark.ml.feature.CountVectorizerModel.vocabulary.html"/> 
@@ -101,7 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.ChiSqSelectorModel.html">3.3.2.4. pyspark.ml.feature.ChiSqSelectorModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.CountVectorizer.html">3.3.2.5. pyspark.ml.feature.CountVectorizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.CountVectorizerModel.html">3.3.2.6. pyspark.ml.feature.CountVectorizerModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.7. pyspark.ml.feature.DCT</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.7. pyspark.ml.feature.DCT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.DecisionTreeParams.html">3.3.2.8. pyspark.ml.feature.DecisionTreeParams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.ElementwiseProduct.html">3.3.2.9. pyspark.ml.feature.ElementwiseProduct</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasCheckpointInterval.html">3.3.2.10. pyspark.ml.feature.HasCheckpointInterval</a></li>
@@ -257,13 +257,13 @@ unitary (aka scaled DCT-II).</p>
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_cosine_transform#DCT-IIWikipedia">More information on Wikipedia</a>.</p>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="k">import</span> <span class="n">Vectors</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">]),)],</span> <span class="p">[</span><span class="s2">&quot;vec&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dct</span> <span class="o">=</span> <span class="n">DCT</span><span class="p">(</span><span class="n">inverse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;vec&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;resultVec&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dct</span> <span class="o">=</span> <span class="n">DCT</span><span class="p">(</span><span class="n">inverse</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;vec&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;resultVec&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">dct</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">resultVec</span>
 <span class="go">DenseVector([10.969..., -0.707..., -2.041...])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span> <span class="o">=</span> <span class="n">DCT</span><span class="p">(</span><span class="n">inverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;resultVec&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;origVec&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span> <span class="o">=</span> <span class="n">DCT</span><span class="p">(</span><span class="n">inverse</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;resultVec&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;origVec&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">origVec</span>
 <span class="go">DenseVector([5.0, 8.0, 6.0])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dctPath</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/dct&quot;</span>
@@ -438,6 +438,7 @@ unitary (aka scaled DCT-II).</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

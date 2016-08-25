@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.2.2.1.24. pyspark.sql.functions.Column.when &mdash; PySpark API 1 documentation</title>
+  <title>2.3.2.2.1.24. pyspark.sql.functions.Column.when &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="2.3.2.2. pyspark.sql.functions.Column" href="pyspark.sql.functions.Column.html"/>
         <link rel="next" title="2.3.2.3. pyspark.sql.functions.DataFrame" href="pyspark.sql.functions.DataFrame.html"/>
         <link rel="prev" title="2.3.2.2.1.23. pyspark.sql.functions.Column.substr" href="pyspark.sql.functions.Column.substr.html"/> 
@@ -101,6 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.SparkContext.html">2.3.2.5. pyspark.sql.functions.SparkContext</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.StringType.html">2.3.2.6. pyspark.sql.functions.StringType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.UserDefinedFunction.html">2.3.2.7. pyspark.sql.functions.UserDefinedFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.map.html">2.3.2.8. pyspark.sql.functions.map</a></li>
 </ul>
 </li>
 </ul>
@@ -195,7 +196,7 @@ If <a class="reference internal" href="pyspark.sql.functions.Column.otherwise.ht
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">otherwise</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">+-----+------------------------------------------------------------+</span>
 <span class="go">| name|CASE WHEN (age &gt; 4) THEN 1 WHEN (age &lt; 3) THEN -1 ELSE 0 END|</span>
@@ -262,6 +263,7 @@ If <a class="reference internal" href="pyspark.sql.functions.Column.otherwise.ht
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

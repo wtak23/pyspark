@@ -1,12 +1,9 @@
-.. Documentation master file, created by
-   sphinx-quickstart on Wed Aug  3 13:00:32 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 PySpark API
 ===========
 PySpark API I created for myself so that page layout is more 
 navigation-friendly for me.
+
+All modules for which code is available (`link <./_modules/index.html>`_)
 
 .. toctree::
    :maxdepth: 2

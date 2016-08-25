@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.5.2.16.1.23. pyspark.mllib.feature.RDD.foldByKey &mdash; PySpark API 1 documentation</title>
+  <title>4.5.2.16.1.23. pyspark.mllib.feature.RDD.foldByKey &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.5.2.16. pyspark.mllib.feature.RDD" href="pyspark.mllib.feature.RDD.html"/>
         <link rel="next" title="4.5.2.16.1.24. pyspark.mllib.feature.RDD.foreach" href="pyspark.mllib.feature.RDD.foreach.html"/>
         <link rel="prev" title="4.5.2.16.1.22. pyspark.mllib.feature.RDD.fold" href="pyspark.mllib.feature.RDD.fold.html"/> 
@@ -124,6 +124,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.Word2VecModel.html">4.5.2.24. pyspark.mllib.feature.Word2VecModel</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.feature.html#exceptions">4.5.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
@@ -211,8 +212,8 @@
 and a neutral &#8220;zeroValue&#8221; which may be added to the result an
 arbitrary number of times, and must not change the result
 (e.g., 0 for addition, or 1 for multiplication.).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">foldByKey</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">add</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
 <span class="go">[(&#39;a&#39;, 2), (&#39;b&#39;, 1)]</span>
 </pre></div>
@@ -271,6 +272,7 @@ arbitrary number of times, and must not change the result
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

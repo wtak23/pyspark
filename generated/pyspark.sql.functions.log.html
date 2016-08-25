@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.1.86. pyspark.sql.functions.log &mdash; PySpark API 1 documentation</title>
+  <title>2.3.1.86. pyspark.sql.functions.log &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
         <link rel="next" title="2.3.1.87. pyspark.sql.functions.log10" href="pyspark.sql.functions.log10.html"/>
         <link rel="prev" title="2.3.1.85. pyspark.sql.functions.locate" href="pyspark.sql.functions.locate.html"/> 
@@ -178,7 +178,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.levenshtein.html">2.3.1.83. pyspark.sql.functions.levenshtein</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.lit.html">2.3.1.84. pyspark.sql.functions.lit</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.locate.html">2.3.1.85. pyspark.sql.functions.locate</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.86. pyspark.sql.functions.log</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.3.1.86. pyspark.sql.functions.log</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log10.html">2.3.1.87. pyspark.sql.functions.log10</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log1p.html">2.3.1.88. pyspark.sql.functions.log1p</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.log2.html">2.3.1.89. pyspark.sql.functions.log2</a></li>
@@ -339,11 +339,11 @@
 <code class="descclassname">pyspark.sql.functions.</code><code class="descname">log</code><span class="sig-paren">(</span><em>arg1</em>, <em>arg2=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyspark/sql/functions.html#log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the first argument-based logarithm of the second argument.</p>
 <p>If there is only one argument, then this takes the natural logarithm of the argument.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;ten&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">ten</span><span class="p">)[:</span><span class="mi">7</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;ten&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">ten</span><span class="p">)[:</span><span class="mi">7</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[&#39;0.30102&#39;, &#39;0.69897&#39;]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">e</span><span class="p">)[:</span><span class="mi">7</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">e</span><span class="p">)[:</span><span class="mi">7</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[&#39;0.69314&#39;, &#39;1.60943&#39;]</span>
 </pre></div>
 </div>
@@ -404,6 +404,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

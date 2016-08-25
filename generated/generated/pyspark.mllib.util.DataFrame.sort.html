@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.14.2.1.1.48. pyspark.mllib.util.DataFrame.sort &mdash; PySpark API 1 documentation</title>
+  <title>4.14.2.1.1.48. pyspark.mllib.util.DataFrame.sort &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.14.2.1. pyspark.mllib.util.DataFrame" href="pyspark.mllib.util.DataFrame.html"/>
         <link rel="next" title="4.14.2.1.1.49. pyspark.mllib.util.DataFrame.sortWithinPartitions" href="pyspark.mllib.util.DataFrame.sortWithinPartitions.html"/>
         <link rel="prev" title="4.14.2.1.1.47. pyspark.mllib.util.DataFrame.show" href="pyspark.mllib.util.DataFrame.show.html"/> 
@@ -208,13 +208,13 @@ If a list is specified, length of the list must equal length of the <cite>cols</
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(age=5, name=u&#39;Bob&#39;), Row(age=2, name=u&#39;Alice&#39;)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(age=5, name=u&#39;Bob&#39;), Row(age=2, name=u&#39;Alice&#39;)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(age=5, name=u&#39;Bob&#39;), Row(age=2, name=u&#39;Alice&#39;)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">asc</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(age=2, name=u&#39;Alice&#39;), Row(age=5, name=u&#39;Bob&#39;)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="n">desc</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">),</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
@@ -280,6 +280,7 @@ If a list is specified, length of the list must equal length of the <cite>cols</
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

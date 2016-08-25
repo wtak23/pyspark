@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.2.2.12.1.65. pyspark.mllib.classification.RDD.sampleByKey &mdash; PySpark API 1 documentation</title>
+  <title>4.2.2.12.1.65. pyspark.mllib.classification.RDD.sampleByKey &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.2.2.12. pyspark.mllib.classification.RDD" href="pyspark.mllib.classification.RDD.html"/>
         <link rel="next" title="4.2.2.12.1.66. pyspark.mllib.classification.RDD.sampleStdev" href="pyspark.mllib.classification.RDD.sampleStdev.html"/>
         <link rel="prev" title="4.2.2.12.1.64. pyspark.mllib.classification.RDD.sample" href="pyspark.mllib.classification.RDD.sample.html"/> 
@@ -204,9 +204,9 @@
 <dd><p>Return a subset of this RDD sampled by key (via stratified sampling).
 Create a sample of this RDD using variable sampling rates for
 different keys as specified by fractions, a key to sampling rate map.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fractions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fractions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">fractions</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">cartesian</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">sampleByKey</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">groupByKey</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">sampleByKey</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">groupByKey</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">100</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">300</span> <span class="ow">and</span> <span class="mi">50</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">150</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mi">999</span> <span class="ow">and</span> <span class="nb">min</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">0</span>
@@ -269,6 +269,7 @@ different keys as specified by fractions, a key to sampling rate map.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

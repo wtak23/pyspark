@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.5.2.13. pyspark.mllib.feature.Normalizer &mdash; PySpark API 1 documentation</title>
+  <title>4.5.2.13. pyspark.mllib.feature.Normalizer &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.5. pyspark.mllib.feature" href="../pyspark.mllib.feature.html"/>
         <link rel="next" title="4.5.2.13.1.1. pyspark.mllib.feature.Normalizer.__init__" href="pyspark.mllib.feature.Normalizer.__init__.html"/>
         <link rel="prev" title="4.5.2.12.1.1. pyspark.mllib.feature.LabeledPoint.__init__" href="pyspark.mllib.feature.LabeledPoint.__init__.html"/> 
@@ -110,7 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.JavaSaveable.html">4.5.2.10. pyspark.mllib.feature.JavaSaveable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.JavaVectorTransformer.html">4.5.2.11. pyspark.mllib.feature.JavaVectorTransformer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.LabeledPoint.html">4.5.2.12. pyspark.mllib.feature.LabeledPoint</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.5.2.13. pyspark.mllib.feature.Normalizer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">4.5.2.13. pyspark.mllib.feature.Normalizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.PCA.html">4.5.2.14. pyspark.mllib.feature.PCA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.PCAModel.html">4.5.2.15. pyspark.mllib.feature.PCAModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.RDD.html">4.5.2.16. pyspark.mllib.feature.RDD</a></li>
@@ -124,6 +124,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.Word2VecModel.html">4.5.2.24. pyspark.mllib.feature.Word2VecModel</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.feature.html#exceptions">4.5.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
@@ -218,18 +219,18 @@ normalization.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nor</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="go">DenseVector([0.0, 0.3333, 0.6667])</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">v</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">v</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nor</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">rdd</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[DenseVector([0.0, 0.3333, 0.6667])]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nor2</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nor2</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nor2</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 <span class="go">DenseVector([0.0, 0.5, 1.0])</span>
 </pre></div>
@@ -313,6 +314,7 @@ normalization.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

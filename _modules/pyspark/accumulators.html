@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.accumulators &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.accumulators &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="pyspark" href="../pyspark.html"/> 
 
   
@@ -245,10 +245,10 @@
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&lt;</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">SocketServer</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">socketserver</span> <span class="k">as</span> <span class="nn">SocketServer</span>
+    <span class="kn">import</span> <span class="nn">socketserver</span> <span class="kn">as</span> <span class="nn">SocketServer</span>
 <span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">from</span> <span class="nn">pyspark.cloudpickle</span> <span class="k">import</span> <span class="n">CloudPickler</span>
-<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="k">import</span> <span class="n">read_int</span><span class="p">,</span> <span class="n">PickleSerializer</span>
+<span class="kn">from</span> <span class="nn">pyspark.cloudpickle</span> <span class="kn">import</span> <span class="n">CloudPickler</span>
+<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="kn">import</span> <span class="n">read_int</span><span class="p">,</span> <span class="n">PickleSerializer</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Accumulator&#39;</span><span class="p">,</span> <span class="s1">&#39;AccumulatorParam&#39;</span><span class="p">]</span>
@@ -262,9 +262,9 @@
 
 
 <span class="k">def</span> <span class="nf">_deserialize_accumulator</span><span class="p">(</span><span class="n">aid</span><span class="p">,</span> <span class="n">zero_value</span><span class="p">,</span> <span class="n">accum_param</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="k">import</span> <span class="n">_accumulatorRegistry</span>
+    <span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="kn">import</span> <span class="n">_accumulatorRegistry</span>
     <span class="n">accum</span> <span class="o">=</span> <span class="n">Accumulator</span><span class="p">(</span><span class="n">aid</span><span class="p">,</span> <span class="n">zero_value</span><span class="p">,</span> <span class="n">accum_param</span><span class="p">)</span>
-    <span class="n">accum</span><span class="o">.</span><span class="n">_deserialized</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">accum</span><span class="o">.</span><span class="n">_deserialized</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">_accumulatorRegistry</span><span class="p">[</span><span class="n">aid</span><span class="p">]</span> <span class="o">=</span> <span class="n">accum</span>
     <span class="k">return</span> <span class="n">accum</span>
 
@@ -284,11 +284,11 @@
 
 <div class="viewcode-block" id="Accumulator.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.Accumulator.__init__.html#pyspark.Accumulator.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aid</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">accum_param</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a new Accumulator with a given initial value and AccumulatorParam object&quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="k">import</span> <span class="n">_accumulatorRegistry</span>
+        <span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="kn">import</span> <span class="n">_accumulatorRegistry</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">aid</span> <span class="o">=</span> <span class="n">aid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">accum_param</span> <span class="o">=</span> <span class="n">accum_param</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_value</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_deserialized</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_deserialized</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="n">_accumulatorRegistry</span><span class="p">[</span><span class="n">aid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span></div>
 
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -303,7 +303,7 @@
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Accumulator.value cannot be accessed inside tasks&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value</span>
 
-    <span class="nd">@value</span><span class="o">.</span><span class="n">setter</span>
+    <span class="nd">@value.setter</span>
     <span class="k">def</span> <span class="nf">value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets the accumulator&#39;s value; only usable in driver program&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deserialized</span><span class="p">:</span>
@@ -369,7 +369,7 @@
 <span class="c1"># Singleton accumulator params for some standard types</span>
 <span class="n">INT_ACCUMULATOR_PARAM</span> <span class="o">=</span> <span class="n">AddingAccumulatorParam</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">FLOAT_ACCUMULATOR_PARAM</span> <span class="o">=</span> <span class="n">AddingAccumulatorParam</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
-<span class="n">COMPLEX_ACCUMULATOR_PARAM</span> <span class="o">=</span> <span class="n">AddingAccumulatorParam</span><span class="p">(</span><span class="mf">0.0</span><span class="n">j</span><span class="p">)</span>
+<span class="n">COMPLEX_ACCUMULATOR_PARAM</span> <span class="o">=</span> <span class="n">AddingAccumulatorParam</span><span class="p">(</span><span class="mf">0.0j</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">_UpdateRequestHandler</span><span class="p">(</span><span class="n">SocketServer</span><span class="o">.</span><span class="n">StreamRequestHandler</span><span class="p">):</span>
@@ -380,7 +380,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="k">import</span> <span class="n">_accumulatorRegistry</span>
+        <span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="kn">import</span> <span class="n">_accumulatorRegistry</span>
         <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">server_shutdown</span><span class="p">:</span>
             <span class="c1"># Poll every 1 second for new data -- don&#39;t block in case of shutdown.</span>
             <span class="n">r</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">select</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="mi">1</span><span class="p">)</span>
@@ -399,10 +399,10 @@
 <span class="sd">    A simple TCP server that intercepts shutdown() in order to interrupt</span>
 <span class="sd">    our continuous polling on the handler.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">server_shutdown</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">server_shutdown</span> <span class="o">=</span> <span class="bp">False</span>
 
     <span class="k">def</span> <span class="nf">shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">server_shutdown</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server_shutdown</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="n">SocketServer</span><span class="o">.</span><span class="n">TCPServer</span><span class="o">.</span><span class="n">shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">server_close</span><span class="p">()</span>
 
@@ -411,7 +411,7 @@
     <span class="sd">&quot;&quot;&quot;Start a TCP server to receive accumulator updates in a daemon thread, and returns it&quot;&quot;&quot;</span>
     <span class="n">server</span> <span class="o">=</span> <span class="n">AccumulatorServer</span><span class="p">((</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">_UpdateRequestHandler</span><span class="p">)</span>
     <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">)</span>
-    <span class="n">thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">server</span>
 
@@ -419,7 +419,7 @@
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
            </div>
@@ -462,6 +462,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

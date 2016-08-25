@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.46. pyspark.ml.feature.NGram &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.46. pyspark.ml.feature.NGram &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.46.1.1. pyspark.ml.feature.NGram.__init__" href="pyspark.ml.feature.NGram.__init__.html"/>
         <link rel="prev" title="3.3.2.45.2.3. pyspark.ml.feature.MinMaxScalerModel.params" href="pyspark.ml.feature.MinMaxScalerModel.params.html"/> 
@@ -140,7 +140,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MaxAbsScalerModel.html">3.3.2.43. pyspark.ml.feature.MaxAbsScalerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MinMaxScaler.html">3.3.2.44. pyspark.ml.feature.MinMaxScaler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MinMaxScalerModel.html">3.3.2.45. pyspark.ml.feature.MinMaxScalerModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.46. pyspark.ml.feature.NGram</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.46. pyspark.ml.feature.NGram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Normalizer.html">3.3.2.47. pyspark.ml.feature.Normalizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.OneHotEncoder.html">3.3.2.48. pyspark.ml.feature.OneHotEncoder</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.PCA.html">3.3.2.49. pyspark.ml.feature.PCA</a></li>
@@ -255,7 +255,7 @@ words.
 When the input is empty, an empty array is returned.
 When the input array length is less than n (number of elements per n-gram), no n-grams are
 returned.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">inputTokens</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">])])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">inputTokens</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">])])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ngram</span> <span class="o">=</span> <span class="n">NGram</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;inputTokens&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;nGrams&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ngram</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">Row(inputTokens=[u&#39;a&#39;, u&#39;b&#39;, u&#39;c&#39;, u&#39;d&#39;, u&#39;e&#39;], nGrams=[u&#39;a b&#39;, u&#39;b c&#39;, u&#39;c d&#39;, u&#39;d e&#39;])</span>
@@ -444,6 +444,7 @@ returned.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

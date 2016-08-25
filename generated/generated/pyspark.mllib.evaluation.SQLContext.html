@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.4.2.10. pyspark.mllib.evaluation.SQLContext &mdash; PySpark API 1 documentation</title>
+  <title>4.4.2.10. pyspark.mllib.evaluation.SQLContext &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.4. pyspark.mllib.evaluation" href="../pyspark.mllib.evaluation.html"/>
         <link rel="next" title="4.4.2.10.1.1. pyspark.mllib.evaluation.SQLContext.__init__" href="pyspark.mllib.evaluation.SQLContext.__init__.html"/>
         <link rel="prev" title="4.4.2.9.2.5. pyspark.mllib.evaluation.RegressionMetrics.rootMeanSquaredError" href="pyspark.mllib.evaluation.RegressionMetrics.rootMeanSquaredError.html"/> 
@@ -106,7 +106,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.evaluation.MultilabelMetrics.html">4.4.2.7. pyspark.mllib.evaluation.MultilabelMetrics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.evaluation.RankingMetrics.html">4.4.2.8. pyspark.mllib.evaluation.RankingMetrics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.evaluation.RegressionMetrics.html">4.4.2.9. pyspark.mllib.evaluation.RegressionMetrics</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.4.2.10. pyspark.mllib.evaluation.SQLContext</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">4.4.2.10. pyspark.mllib.evaluation.SQLContext</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.evaluation.StructField.html">4.4.2.11. pyspark.mllib.evaluation.StructField</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.evaluation.StructType.html">4.4.2.12. pyspark.mllib.evaluation.StructType</a></li>
 </ul>
@@ -216,10 +216,10 @@ SQLContext in the JVM, instead we make all calls to this object.</li>
 <dt id="pyspark.mllib.evaluation.SQLContext.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>sparkContext</em>, <em>sparkSession=None</em>, <em>jsqlContext=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#SQLContext.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.evaluation.SQLContext.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new SQLContext.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">allTypes</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<span class="gp">... </span>    <span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">row</span><span class="o">=</span><span class="n">Row</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">b</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="nb">dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;s&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">row</span><span class="o">=</span><span class="n">Row</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
 <span class="gp">... </span>    <span class="n">time</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">allTypes</span><span class="o">.</span><span class="n">toDF</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="s2">&quot;allTypes&quot;</span><span class="p">)</span>
@@ -374,6 +374,7 @@ SQLContext in the JVM, instead we make all calls to this object.</li>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

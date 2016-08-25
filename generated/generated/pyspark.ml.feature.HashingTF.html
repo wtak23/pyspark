@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.33. pyspark.ml.feature.HashingTF &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.33. pyspark.ml.feature.HashingTF &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.33.1.1. pyspark.ml.feature.HashingTF.__init__" href="pyspark.ml.feature.HashingTF.__init__.html"/>
         <link rel="prev" title="3.3.2.32.2.2. pyspark.ml.feature.HasWeightCol.weightCol" href="pyspark.ml.feature.HasWeightCol.weightCol.html"/> 
@@ -127,7 +127,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasTol.html">3.3.2.30. pyspark.ml.feature.HasTol</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasVarianceCol.html">3.3.2.31. pyspark.ml.feature.HasVarianceCol</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.HasWeightCol.html">3.3.2.32. pyspark.ml.feature.HasWeightCol</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.33. pyspark.ml.feature.HashingTF</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.33. pyspark.ml.feature.HashingTF</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.IDF.html">3.3.2.34. pyspark.ml.feature.IDF</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.IDFModel.html">3.3.2.35. pyspark.ml.feature.IDFModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.IndexToString.html">3.3.2.36. pyspark.ml.feature.IndexToString</a></li>
@@ -254,7 +254,7 @@ to calculate the hash code value for the term object.
 Since a simple modulo is used to transform the hash function to a column index,
 it is advisable to use a power of two as the numFeatures parameter;
 otherwise the features will not be mapped evenly to the columns.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],)],</span> <span class="p">[</span><span class="s2">&quot;words&quot;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],)],</span> <span class="p">[</span><span class="s2">&quot;words&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hashingTF</span> <span class="o">=</span> <span class="n">HashingTF</span><span class="p">(</span><span class="n">numFeatures</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;words&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hashingTF</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">features</span>
 <span class="go">SparseVector(10, {0: 1.0, 1: 1.0, 2: 1.0})</span>
@@ -444,6 +444,7 @@ otherwise the features will not be mapped evenly to the columns.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

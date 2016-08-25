@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.rdd &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.rdd &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="pyspark" href="../pyspark.html"/> 
 
   
@@ -179,33 +179,33 @@
 <span class="kn">import</span> <span class="nn">bisect</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">import</span> <span class="nn">socket</span>
-<span class="kn">from</span> <span class="nn">subprocess</span> <span class="k">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
-<span class="kn">from</span> <span class="nn">tempfile</span> <span class="k">import</span> <span class="n">NamedTemporaryFile</span>
-<span class="kn">from</span> <span class="nn">threading</span> <span class="k">import</span> <span class="n">Thread</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">isinf</span><span class="p">,</span> <span class="n">isnan</span><span class="p">,</span> <span class="nb">pow</span><span class="p">,</span> <span class="n">ceil</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">NamedTemporaryFile</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">isinf</span><span class="p">,</span> <span class="n">isnan</span><span class="p">,</span> <span class="nb">pow</span><span class="p">,</span> <span class="n">ceil</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="n">basestring</span> <span class="o">=</span> <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="nb">unicode</span> <span class="o">=</span> <span class="nb">str</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">imap</span> <span class="k">as</span> <span class="nb">map</span><span class="p">,</span> <span class="n">ifilter</span> <span class="k">as</span> <span class="nb">filter</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">imap</span> <span class="k">as</span> <span class="nb">map</span><span class="p">,</span> <span class="n">ifilter</span> <span class="k">as</span> <span class="nb">filter</span>
 
-<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="k">import</span> <span class="n">NoOpSerializer</span><span class="p">,</span> <span class="n">CartesianDeserializer</span><span class="p">,</span> \
+<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="kn">import</span> <span class="n">NoOpSerializer</span><span class="p">,</span> <span class="n">CartesianDeserializer</span><span class="p">,</span> \
     <span class="n">BatchedSerializer</span><span class="p">,</span> <span class="n">CloudPickleSerializer</span><span class="p">,</span> <span class="n">PairDeserializer</span><span class="p">,</span> \
     <span class="n">PickleSerializer</span><span class="p">,</span> <span class="n">pack_long</span><span class="p">,</span> <span class="n">AutoBatchedSerializer</span>
-<span class="kn">from</span> <span class="nn">pyspark.join</span> <span class="k">import</span> <span class="n">python_join</span><span class="p">,</span> <span class="n">python_left_outer_join</span><span class="p">,</span> \
+<span class="kn">from</span> <span class="nn">pyspark.join</span> <span class="kn">import</span> <span class="n">python_join</span><span class="p">,</span> <span class="n">python_left_outer_join</span><span class="p">,</span> \
     <span class="n">python_right_outer_join</span><span class="p">,</span> <span class="n">python_full_outer_join</span><span class="p">,</span> <span class="n">python_cogroup</span>
-<span class="kn">from</span> <span class="nn">pyspark.statcounter</span> <span class="k">import</span> <span class="n">StatCounter</span>
-<span class="kn">from</span> <span class="nn">pyspark.rddsampler</span> <span class="k">import</span> <span class="n">RDDSampler</span><span class="p">,</span> <span class="n">RDDRangeSampler</span><span class="p">,</span> <span class="n">RDDStratifiedSampler</span>
-<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="k">import</span> <span class="n">StorageLevel</span>
-<span class="kn">from</span> <span class="nn">pyspark.resultiterable</span> <span class="k">import</span> <span class="n">ResultIterable</span>
-<span class="kn">from</span> <span class="nn">pyspark.shuffle</span> <span class="k">import</span> <span class="n">Aggregator</span><span class="p">,</span> <span class="n">ExternalMerger</span><span class="p">,</span> \
+<span class="kn">from</span> <span class="nn">pyspark.statcounter</span> <span class="kn">import</span> <span class="n">StatCounter</span>
+<span class="kn">from</span> <span class="nn">pyspark.rddsampler</span> <span class="kn">import</span> <span class="n">RDDSampler</span><span class="p">,</span> <span class="n">RDDRangeSampler</span><span class="p">,</span> <span class="n">RDDStratifiedSampler</span>
+<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="kn">import</span> <span class="n">StorageLevel</span>
+<span class="kn">from</span> <span class="nn">pyspark.resultiterable</span> <span class="kn">import</span> <span class="n">ResultIterable</span>
+<span class="kn">from</span> <span class="nn">pyspark.shuffle</span> <span class="kn">import</span> <span class="n">Aggregator</span><span class="p">,</span> <span class="n">ExternalMerger</span><span class="p">,</span> \
     <span class="n">get_used_memory</span><span class="p">,</span> <span class="n">ExternalSorter</span><span class="p">,</span> <span class="n">ExternalGroupBy</span>
-<span class="kn">from</span> <span class="nn">pyspark.traceback_utils</span> <span class="k">import</span> <span class="n">SCCallSiteSync</span>
+<span class="kn">from</span> <span class="nn">pyspark.traceback_utils</span> <span class="kn">import</span> <span class="n">SCCallSiteSync</span>
 
-<span class="kn">from</span> <span class="nn">py4j.java_collections</span> <span class="k">import</span> <span class="n">ListConverter</span><span class="p">,</span> <span class="n">MapConverter</span>
+<span class="kn">from</span> <span class="nn">py4j.java_collections</span> <span class="kn">import</span> <span class="n">ListConverter</span><span class="p">,</span> <span class="n">MapConverter</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;RDD&quot;</span><span class="p">]</span>
@@ -226,7 +226,7 @@
     <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s1">&#39;3.3&#39;</span> <span class="ow">and</span> <span class="s1">&#39;PYTHONHASHSEED&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Randomness of hash of string should be disabled via PYTHONHASHSEED&quot;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
         <span class="n">h</span> <span class="o">=</span> <span class="mh">0x345678</span>
@@ -274,7 +274,7 @@
 
 
 <span class="k">def</span> <span class="nf">_load_from_socket</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">serializer</span><span class="p">):</span>
-    <span class="n">sock</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">sock</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="c1"># Support for both IPv4 and IPv6.</span>
     <span class="c1"># On most of IPv6-ready systems, IPv6 will take precedence.</span>
     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">AF_UNSPEC</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">):</span>
@@ -285,7 +285,7 @@
             <span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sa</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
             <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="n">sock</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">sock</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">continue</span>
         <span class="k">break</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">sock</span><span class="p">:</span>
@@ -334,12 +334,12 @@
 
 <div class="viewcode-block" id="RDD.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.__init__.html#pyspark.RDD.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jrdd</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">jrdd_deserializer</span><span class="o">=</span><span class="n">AutoBatchedSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">())):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span> <span class="o">=</span> <span class="n">jrdd</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">ctx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span> <span class="o">=</span> <span class="n">jrdd_deserializer</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="n">jrdd</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span> <span class="o">=</span> <span class="bp">None</span></div>
 
     <span class="k">def</span> <span class="nf">_pickled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reserialize</span><span class="p">(</span><span class="n">AutoBatchedSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">()))</span>
@@ -375,7 +375,7 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Persist this RDD with the default storage level (C{MEMORY_ONLY}).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_ONLY</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -390,7 +390,7 @@
 <span class="sd">        &gt;&gt;&gt; rdd.persist().is_cached</span>
 <span class="sd">        True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="n">javaStorageLevel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_getJavaStorageLevel</span><span class="p">(</span><span class="n">storageLevel</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">javaStorageLevel</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
@@ -400,7 +400,7 @@
 <span class="sd">        Mark the RDD as non-persistent, and remove all blocks for it from</span>
 <span class="sd">        memory and disk.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">unpersist</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -413,7 +413,7 @@
 <span class="sd">        recommended that this RDD is persisted in memory, otherwise saving it</span>
 <span class="sd">        on a file will require recomputation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">rdd</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="RDD.isCheckpointed"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.isCheckpointed.html#pyspark.RDD.isCheckpointed">[docs]</a>    <span class="k">def</span> <span class="nf">isCheckpointed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -430,7 +430,7 @@
         <span class="k">if</span> <span class="n">checkpointFile</span><span class="o">.</span><span class="n">isDefined</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">checkpointFile</span><span class="o">.</span><span class="n">get</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.map"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.map.html#pyspark.RDD.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.map"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.map.html#pyspark.RDD.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by applying a function to each element of this RDD.</span>
 
@@ -442,7 +442,7 @@
             <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.flatMap"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.flatMap.html#pyspark.RDD.flatMap">[docs]</a>    <span class="k">def</span> <span class="nf">flatMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.flatMap"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.flatMap.html#pyspark.RDD.flatMap">[docs]</a>    <span class="k">def</span> <span class="nf">flatMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by first applying a function to all elements of this</span>
 <span class="sd">        RDD, and then flattening the results.</span>
@@ -457,7 +457,7 @@
             <span class="k">return</span> <span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mapPartitions"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.mapPartitions.html#pyspark.RDD.mapPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mapPartitions"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.mapPartitions.html#pyspark.RDD.mapPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by applying a function to each partition of this RDD.</span>
 
@@ -470,7 +470,7 @@
             <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mapPartitionsWithIndex"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.mapPartitionsWithIndex.html#pyspark.RDD.mapPartitionsWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mapPartitionsWithIndex"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.mapPartitionsWithIndex.html#pyspark.RDD.mapPartitionsWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by applying a function to each partition of this RDD,</span>
 <span class="sd">        while tracking the index of the original partition.</span>
@@ -482,7 +482,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">PipelinedRDD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mapPartitionsWithSplit"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.mapPartitionsWithSplit.html#pyspark.RDD.mapPartitionsWithSplit">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mapPartitionsWithSplit"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.mapPartitionsWithSplit.html#pyspark.RDD.mapPartitionsWithSplit">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Deprecated: use mapPartitionsWithIndex instead.</span>
 
@@ -518,20 +518,20 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
             <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.distinct"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.distinct.html#pyspark.RDD.distinct">[docs]</a>    <span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.distinct"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.distinct.html#pyspark.RDD.distinct">[docs]</a>    <span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD containing the distinct elements in this RDD.</span>
 
 <span class="sd">        &gt;&gt;&gt; sorted(sc.parallelize([1, 1, 2, 3]).distinct().collect())</span>
 <span class="sd">        [1, 2, 3]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> \
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span> \
                    <span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span> \
                    <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RDD.sample"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sample.html#pyspark.RDD.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sample"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sample.html#pyspark.RDD.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a sampled subset of this RDD.</span>
 
@@ -546,9 +546,9 @@
 <span class="sd">        True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="n">fraction</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;Negative fraction value: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">fraction</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">RDDSampler</span><span class="p">(</span><span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">RDDSampler</span><span class="p">(</span><span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.randomSplit"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.randomSplit.html#pyspark.RDD.randomSplit">[docs]</a>    <span class="k">def</span> <span class="nf">randomSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.randomSplit"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.randomSplit.html#pyspark.RDD.randomSplit">[docs]</a>    <span class="k">def</span> <span class="nf">randomSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Randomly splits this RDD with the provided weights.</span>
 
@@ -569,13 +569,13 @@
         <span class="n">cweights</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">weights</span><span class="p">:</span>
             <span class="n">cweights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cweights</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span> <span class="o">/</span> <span class="n">s</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">seed</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">RDDRangeSampler</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">RDDRangeSampler</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cweights</span><span class="p">,</span> <span class="n">cweights</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span></div>
 
     <span class="c1"># this is ported from scala/spark/RDD.scala</span>
-<div class="viewcode-block" id="RDD.takeSample"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.takeSample.html#pyspark.RDD.takeSample">[docs]</a>    <span class="k">def</span> <span class="nf">takeSample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.takeSample"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.takeSample.html#pyspark.RDD.takeSample">[docs]</a>    <span class="k">def</span> <span class="nf">takeSample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a fixed-size sampled subset of this RDD.</span>
 
@@ -698,15 +698,15 @@
 <span class="sd">        &gt;&gt;&gt; rdd1.intersection(rdd2).collect()</span>
 <span class="sd">        [1, 2, 3]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> \
-            <span class="o">.</span><span class="n">cogroup</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="kc">None</span><span class="p">)))</span> \
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">None</span><span class="p">))</span> \
+            <span class="o">.</span><span class="n">cogroup</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">None</span><span class="p">)))</span> \
             <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k_vs</span><span class="p">:</span> <span class="nb">all</span><span class="p">(</span><span class="n">k_vs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> \
             <span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
 
-    <span class="k">def</span> <span class="nf">_reserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_reserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">serializer</span> <span class="o">=</span> <span class="n">serializer</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">serializer</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span> <span class="o">!=</span> <span class="n">serializer</span><span class="p">:</span>
-            <span class="bp">self</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span> <span class="o">=</span> <span class="n">serializer</span>
         <span class="k">return</span> <span class="bp">self</span>
 
@@ -722,8 +722,8 @@
             <span class="k">raise</span> <span class="ne">TypeError</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-<div class="viewcode-block" id="RDD.repartitionAndSortWithinPartitions"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.repartitionAndSortWithinPartitions.html#pyspark.RDD.repartitionAndSortWithinPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">repartitionAndSortWithinPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">,</span>
-                                           <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.repartitionAndSortWithinPartitions"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.repartitionAndSortWithinPartitions.html#pyspark.RDD.repartitionAndSortWithinPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">repartitionAndSortWithinPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">,</span>
+                                           <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Repartition the RDD according to the given partitioner and, within each resulting partition,</span>
 <span class="sd">        sort records by their keys.</span>
@@ -733,7 +733,7 @@
 <span class="sd">        &gt;&gt;&gt; rdd2.glom().collect()</span>
 <span class="sd">        [[(0, 5), (0, 8), (2, 6)], [(1, 3), (3, 8), (3, 8)]]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultReducePartitions</span><span class="p">()</span>
 
         <span class="n">memory</span> <span class="o">=</span> <span class="n">_parse_memory</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;spark.python.worker.memory&quot;</span><span class="p">,</span> <span class="s2">&quot;512m&quot;</span><span class="p">))</span>
@@ -743,9 +743,9 @@
             <span class="n">sort</span> <span class="o">=</span> <span class="n">ExternalSorter</span><span class="p">(</span><span class="n">memory</span> <span class="o">*</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">serializer</span><span class="p">)</span><span class="o">.</span><span class="n">sorted</span>
             <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="n">sort</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k_v</span><span class="p">:</span> <span class="n">keyfunc</span><span class="p">(</span><span class="n">k_v</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">reverse</span><span class="o">=</span><span class="p">(</span><span class="ow">not</span> <span class="n">ascending</span><span class="p">)))</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.sortByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sortByKey.html#pyspark.RDD.sortByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sortByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sortByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sortByKey.html#pyspark.RDD.sortByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sortByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sorts this RDD, which is assumed to consist of (key, value) pairs.</span>
 <span class="sd">        # noqa</span>
@@ -762,7 +762,7 @@
 <span class="sd">        &gt;&gt;&gt; sc.parallelize(tmp2).sortByKey(True, 3, keyfunc=lambda k: k.lower()).collect()</span>
 <span class="sd">        [(&#39;a&#39;, 3), (&#39;fleece&#39;, 7), (&#39;had&#39;, 2), (&#39;lamb&#39;, 5),...(&#39;white&#39;, 9), (&#39;whose&#39;, 6)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultReducePartitions</span><span class="p">()</span>
 
         <span class="n">memory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_memory_limit</span><span class="p">()</span>
@@ -775,7 +775,7 @@
         <span class="k">if</span> <span class="n">numPartitions</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">getNumPartitions</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="bp">self</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coalesce</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 
         <span class="c1"># first compute the boundary of each part via sampling: we want to partition</span>
         <span class="c1"># the key-space into bins such that the bins have roughly the same</span>
@@ -785,7 +785,7 @@
             <span class="k">return</span> <span class="bp">self</span>  <span class="c1"># empty RDD</span>
         <span class="n">maxSampleSize</span> <span class="o">=</span> <span class="n">numPartitions</span> <span class="o">*</span> <span class="mf">20.0</span>  <span class="c1"># constant from Spark&#39;s RangePartitioner</span>
         <span class="n">fraction</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">maxSampleSize</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">rddSize</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
-        <span class="n">samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
         <span class="n">samples</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">keyfunc</span><span class="p">)</span>
 
         <span class="c1"># we have numPartitions many parts but one of the them has</span>
@@ -800,9 +800,9 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">numPartitions</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">p</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">rangePartitioner</span><span class="p">)</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">rangePartitioner</span><span class="p">)</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.sortBy"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sortBy.html#pyspark.RDD.sortBy">[docs]</a>    <span class="k">def</span> <span class="nf">sortBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyfunc</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sortBy"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sortBy.html#pyspark.RDD.sortBy">[docs]</a>    <span class="k">def</span> <span class="nf">sortBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyfunc</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sorts this RDD by the given keyfunc</span>
 
@@ -842,7 +842,7 @@
                                              <span class="n">other</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">RDD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">cartesian</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.groupBy"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.groupBy.html#pyspark.RDD.groupBy">[docs]</a>    <span class="k">def</span> <span class="nf">groupBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.groupBy"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.groupBy.html#pyspark.RDD.groupBy">[docs]</a>    <span class="k">def</span> <span class="nf">groupBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD of grouped items.</span>
 
@@ -854,7 +854,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">groupByKey</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="RDD.pipe"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.pipe.html#pyspark.RDD.pipe">[docs]</a>    <span class="k">def</span> <span class="nf">pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">checkCode</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.pipe"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.pipe.html#pyspark.RDD.pipe">[docs]</a>    <span class="k">def</span> <span class="nf">pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">checkCode</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD created by piping elements to a forked external process.</span>
 
@@ -863,7 +863,7 @@
 
 <span class="sd">        :param checkCode: whether or not to check the return value of the shell command.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">env</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">env</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">env</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 
         <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
@@ -950,11 +950,11 @@
                 <span class="n">initial</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
                 <span class="k">return</span>
-            <span class="k">yield</span> <span class="n">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">initial</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">initial</span><span class="p">)</span>
 
         <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">vals</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can not reduce() empty RDD&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RDD.treeReduce"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.treeReduce.html#pyspark.RDD.treeReduce">[docs]</a>    <span class="k">def</span> <span class="nf">treeReduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
@@ -979,7 +979,7 @@
         <span class="k">if</span> <span class="n">depth</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Depth cannot be smaller than 1 but got </span><span class="si">%d</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">depth</span><span class="p">)</span>
 
-        <span class="n">zeroValue</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">True</span>  <span class="c1"># Use the second entry to indicate whether this is a dummy value.</span>
+        <span class="n">zeroValue</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">True</span>  <span class="c1"># Use the second entry to indicate whether this is a dummy value.</span>
 
         <span class="k">def</span> <span class="nf">op</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
@@ -987,9 +987,9 @@
             <span class="k">elif</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
                 <span class="k">return</span> <span class="n">x</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="kc">False</span>
+                <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">False</span>
 
-        <span class="n">reduced</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">treeAggregate</span><span class="p">(</span><span class="n">zeroValue</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span>
+        <span class="n">reduced</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span><span class="o">.</span><span class="n">treeAggregate</span><span class="p">(</span><span class="n">zeroValue</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">reduced</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot reduce empty RDD.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">reduced</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
@@ -1024,7 +1024,7 @@
         <span class="c1"># zeroValue provided to each partition is unique from the one provided</span>
         <span class="c1"># to the final reduce call</span>
         <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RDD.aggregate"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.aggregate.html#pyspark.RDD.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqOp</span><span class="p">,</span> <span class="n">combOp</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1056,7 +1056,7 @@
         <span class="c1"># zeroValue provided to each partition is unique from the one provided</span>
         <span class="c1"># to the final reduce call</span>
         <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="n">combOp</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">combOp</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RDD.treeAggregate"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.treeAggregate.html#pyspark.RDD.treeAggregate">[docs]</a>    <span class="k">def</span> <span class="nf">treeAggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqOp</span><span class="p">,</span> <span class="n">combOp</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1110,7 +1110,7 @@
 
         <span class="k">return</span> <span class="n">partiallyAggregated</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">combOp</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.max"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.max.html#pyspark.RDD.max">[docs]</a>    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.max"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.max.html#pyspark.RDD.max">[docs]</a>    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the maximum item in this RDD.</span>
 
@@ -1122,11 +1122,11 @@
 <span class="sd">        &gt;&gt;&gt; rdd.max(key=str)</span>
 <span class="sd">        5.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="RDD.min"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.min.html#pyspark.RDD.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.min"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.min.html#pyspark.RDD.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the minimum item in this RDD.</span>
 
@@ -1138,7 +1138,7 @@
 <span class="sd">        &gt;&gt;&gt; rdd.min(key=str)</span>
 <span class="sd">        10.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">))</span></div>
 
@@ -1213,11 +1213,11 @@
 
             <span class="c1"># filter out non-comparable elements</span>
             <span class="k">def</span> <span class="nf">comparable</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="kc">False</span>
+                <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">False</span>
                 <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">float</span> <span class="ow">and</span> <span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-                    <span class="k">return</span> <span class="kc">False</span>
-                <span class="k">return</span> <span class="kc">True</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+                <span class="k">return</span> <span class="bp">True</span>
 
             <span class="n">filtered</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">comparable</span><span class="p">)</span>
 
@@ -1249,13 +1249,13 @@
 
             <span class="n">buckets</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">inc</span> <span class="o">+</span> <span class="n">minv</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">buckets</span><span class="p">)]</span>
             <span class="n">buckets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">maxv</span><span class="p">)</span>  <span class="c1"># fix accumulated error</span>
-            <span class="n">even</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">even</span> <span class="o">=</span> <span class="bp">True</span>
 
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">buckets</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">buckets</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;buckets should have more than one value&quot;</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">i</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">buckets</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">i</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">buckets</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;can not have None or NaN in buckets&quot;</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">buckets</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">(</span><span class="n">buckets</span><span class="p">):</span>
@@ -1266,15 +1266,15 @@
 
             <span class="n">minv</span> <span class="o">=</span> <span class="n">buckets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">maxv</span> <span class="o">=</span> <span class="n">buckets</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">even</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="n">inc</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">even</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">inc</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">steps</span> <span class="o">=</span> <span class="p">[</span><span class="n">buckets</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">buckets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">buckets</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
             <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
                 <span class="k">pass</span>  <span class="c1"># objects in buckets do not support &#39;-&#39;</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">10</span><span class="p">:</span>  <span class="c1"># handle precision errors</span>
-                    <span class="n">even</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-10</span><span class="p">:</span>  <span class="c1"># handle precision errors</span>
+                    <span class="n">even</span> <span class="o">=</span> <span class="bp">True</span>
                     <span class="n">inc</span> <span class="o">=</span> <span class="p">(</span><span class="n">maxv</span> <span class="o">-</span> <span class="n">minv</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">buckets</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
@@ -1283,7 +1283,7 @@
         <span class="k">def</span> <span class="nf">histogram</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
             <span class="n">counters</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">buckets</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">i</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">float</span> <span class="ow">and</span> <span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">maxv</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">minv</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">float</span> <span class="ow">and</span> <span class="n">isnan</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">maxv</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">minv</span><span class="p">:</span>
                     <span class="k">continue</span>
                 <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">i</span> <span class="o">-</span> <span class="n">minv</span><span class="p">)</span> <span class="o">/</span> <span class="n">inc</span><span class="p">)</span> <span class="k">if</span> <span class="n">even</span>
                      <span class="k">else</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">buckets</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
@@ -1366,7 +1366,7 @@
             <span class="k">return</span> <span class="n">m1</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">countPartition</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">mergeMaps</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.top"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.top.html#pyspark.RDD.top">[docs]</a>    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.top"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.top.html#pyspark.RDD.top">[docs]</a>    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the top N elements from a RDD.</span>
 
@@ -1390,7 +1390,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">topIterator</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">merge</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.takeOrdered"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.takeOrdered.html#pyspark.RDD.takeOrdered">[docs]</a>    <span class="k">def</span> <span class="nf">takeOrdered</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.takeOrdered"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.takeOrdered.html#pyspark.RDD.takeOrdered">[docs]</a>    <span class="k">def</span> <span class="nf">takeOrdered</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the N elements from a RDD ordered in ascending order or as</span>
 <span class="sd">        specified by the optional key function.</span>
@@ -1495,7 +1495,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getNumPartitions</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopDataset"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopDataset.html#pyspark.RDD.saveAsNewAPIHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopDataset"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopDataset.html#pyspark.RDD.saveAsNewAPIHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the new Hadoop OutputFormat API (mapreduce package). Keys/values are</span>
@@ -1508,11 +1508,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">jconf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_dictToJavaMap</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
         <span class="n">pickledRDD</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pickled</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopDataset</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">jconf</span><span class="p">,</span>
-                                                    <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopDataset</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">jconf</span><span class="p">,</span>
+                                                    <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopFile.html#pyspark.RDD.saveAsNewAPIHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                               <span class="n">keyConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsNewAPIHadoopFile.html#pyspark.RDD.saveAsNewAPIHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                               <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the new Hadoop OutputFormat API (mapreduce package). Key and value types</span>
@@ -1534,12 +1534,12 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">jconf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_dictToJavaMap</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
         <span class="n">pickledRDD</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pickled</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsNewAPIHadoopFile</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsNewAPIHadoopFile</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span>
                                                        <span class="n">outputFormatClass</span><span class="p">,</span>
                                                        <span class="n">keyClass</span><span class="p">,</span> <span class="n">valueClass</span><span class="p">,</span>
                                                        <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="n">jconf</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsHadoopDataset"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsHadoopDataset.html#pyspark.RDD.saveAsHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsHadoopDataset"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsHadoopDataset.html#pyspark.RDD.saveAsHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the old Hadoop OutputFormat API (mapred package). Keys/values are</span>
@@ -1552,12 +1552,12 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">jconf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_dictToJavaMap</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
         <span class="n">pickledRDD</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pickled</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopDataset</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">jconf</span><span class="p">,</span>
-                                                    <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopDataset</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">jconf</span><span class="p">,</span>
+                                                    <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsHadoopFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsHadoopFile.html#pyspark.RDD.saveAsHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                         <span class="n">keyConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                         <span class="n">compressionCodecClass</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsHadoopFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsHadoopFile.html#pyspark.RDD.saveAsHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                         <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the old Hadoop OutputFormat API (mapred package). Key and value types</span>
@@ -1580,13 +1580,13 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">jconf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_dictToJavaMap</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
         <span class="n">pickledRDD</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pickled</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopFile</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopFile</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span>
                                                  <span class="n">outputFormatClass</span><span class="p">,</span>
                                                  <span class="n">keyClass</span><span class="p">,</span> <span class="n">valueClass</span><span class="p">,</span>
                                                  <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span>
                                                  <span class="n">jconf</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsSequenceFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsSequenceFile.html#pyspark.RDD.saveAsSequenceFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsSequenceFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsSequenceFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsSequenceFile.html#pyspark.RDD.saveAsSequenceFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsSequenceFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the L{org.apache.hadoop.io.Writable} types that we convert from the</span>
@@ -1599,7 +1599,7 @@
 <span class="sd">        :param compressionCodecClass: (None by default)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">pickledRDD</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pickled</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsSequenceFile</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsSequenceFile</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span>
                                                    <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RDD.saveAsPickleFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsPickleFile.html#pyspark.RDD.saveAsPickleFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsPickleFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">batchSize</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
@@ -1621,7 +1621,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_reserialize</span><span class="p">(</span><span class="n">ser</span><span class="p">)</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">saveAsObjectFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="RDD.saveAsTextFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsTextFile.html#pyspark.RDD.saveAsTextFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTextFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsTextFile"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.saveAsTextFile.html#pyspark.RDD.saveAsTextFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTextFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save this RDD as a text file, using string representations of elements.</span>
 
@@ -1658,13 +1658,13 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">split</span><span class="p">,</span> <span class="n">iterator</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">unicode</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)):</span>
-                    <span class="n">x</span> <span class="o">=</span> <span class="n">unicode</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">unicode</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)):</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
                     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
                 <span class="k">yield</span> <span class="n">x</span>
         <span class="n">keyed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-        <span class="n">keyed</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">keyed</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="k">if</span> <span class="n">compressionCodecClass</span><span class="p">:</span>
             <span class="n">compressionCodec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">Class</span><span class="o">.</span><span class="n">forName</span><span class="p">(</span><span class="n">compressionCodecClass</span><span class="p">)</span>
             <span class="n">keyed</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">BytesToString</span><span class="p">())</span><span class="o">.</span><span class="n">saveAsTextFile</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">compressionCodec</span><span class="p">)</span>
@@ -1708,7 +1708,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RDD.reduceByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.reduceByKey.html#pyspark.RDD.reduceByKey">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.reduceByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.reduceByKey.html#pyspark.RDD.reduceByKey">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge the values for each key using an associative and commutative reduce function.</span>
 
@@ -1762,7 +1762,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">countByValue</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.join"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.join.html#pyspark.RDD.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.join"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.join.html#pyspark.RDD.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD containing all pairs of elements with matching keys in</span>
 <span class="sd">        C{self} and C{other}.</span>
@@ -1779,7 +1779,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.leftOuterJoin"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.leftOuterJoin.html#pyspark.RDD.leftOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">leftOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.leftOuterJoin"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.leftOuterJoin.html#pyspark.RDD.leftOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">leftOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a left outer join of C{self} and C{other}.</span>
 
@@ -1796,7 +1796,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_left_outer_join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.rightOuterJoin"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.rightOuterJoin.html#pyspark.RDD.rightOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">rightOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.rightOuterJoin"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.rightOuterJoin.html#pyspark.RDD.rightOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">rightOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a right outer join of C{self} and C{other}.</span>
 
@@ -1813,7 +1813,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_right_outer_join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.fullOuterJoin"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.fullOuterJoin.html#pyspark.RDD.fullOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">fullOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.fullOuterJoin"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.fullOuterJoin.html#pyspark.RDD.fullOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">fullOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a right outer join of C{self} and C{other}.</span>
 
@@ -1846,7 +1846,7 @@
 <span class="sd">        &gt;&gt;&gt; len(set(sets[0]).intersection(set(sets[1])))</span>
 <span class="sd">        0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultReducePartitions</span><span class="p">()</span>
         <span class="n">partitioner</span> <span class="o">=</span> <span class="n">Partitioner</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span> <span class="o">==</span> <span class="n">partitioner</span><span class="p">:</span>
@@ -1895,8 +1895,8 @@
                 <span class="k">yield</span> <span class="n">pack_long</span><span class="p">(</span><span class="n">split</span><span class="p">)</span>
                 <span class="k">yield</span> <span class="n">outputSerializer</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
 
-        <span class="n">keyed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">add_shuffle_key</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">keyed</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">keyed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">add_shuffle_key</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">keyed</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="k">with</span> <span class="n">SCCallSiteSync</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="p">)</span> <span class="k">as</span> <span class="n">css</span><span class="p">:</span>
             <span class="n">pairRDD</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PairwiseRDD</span><span class="p">(</span>
                 <span class="n">keyed</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">rdd</span><span class="p">())</span><span class="o">.</span><span class="n">asJavaPairRDD</span><span class="p">()</span>
@@ -1909,7 +1909,7 @@
 
     <span class="c1"># TODO: add control over map-side aggregation</span>
 <div class="viewcode-block" id="RDD.combineByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.combineByKey.html#pyspark.RDD.combineByKey">[docs]</a>    <span class="k">def</span> <span class="nf">combineByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">createCombiner</span><span class="p">,</span> <span class="n">mergeValue</span><span class="p">,</span> <span class="n">mergeCombiners</span><span class="p">,</span>
-                     <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+                     <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generic function to combine the elements for each key using a custom</span>
 <span class="sd">        set of aggregation functions.</span>
@@ -1933,7 +1933,7 @@
 <span class="sd">        &gt;&gt;&gt; sorted(x.combineByKey(str, add, add).collect())</span>
 <span class="sd">        [(&#39;a&#39;, &#39;11&#39;), (&#39;b&#39;, &#39;1&#39;)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultReducePartitions</span><span class="p">()</span>
 
         <span class="n">serializer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">serializer</span>
@@ -1945,7 +1945,7 @@
             <span class="n">merger</span><span class="o">.</span><span class="n">mergeValues</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">merger</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 
-        <span class="n">locally_combined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">combineLocally</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">locally_combined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">combineLocally</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         <span class="n">shuffled</span> <span class="o">=</span> <span class="n">locally_combined</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">_mergeCombiners</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
@@ -1953,9 +1953,9 @@
             <span class="n">merger</span><span class="o">.</span><span class="n">mergeCombiners</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">merger</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">shuffled</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">_mergeCombiners</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">shuffled</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">_mergeCombiners</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.aggregateByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.aggregateByKey.html#pyspark.RDD.aggregateByKey">[docs]</a>    <span class="k">def</span> <span class="nf">aggregateByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqFunc</span><span class="p">,</span> <span class="n">combFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="RDD.aggregateByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.aggregateByKey.html#pyspark.RDD.aggregateByKey">[docs]</a>    <span class="k">def</span> <span class="nf">aggregateByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqFunc</span><span class="p">,</span> <span class="n">combFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                        <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Aggregate the values of each key, using given combine functions and a neutral</span>
@@ -1972,7 +1972,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">combineByKey</span><span class="p">(</span>
             <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">seqFunc</span><span class="p">(</span><span class="n">createZero</span><span class="p">(),</span> <span class="n">v</span><span class="p">),</span> <span class="n">seqFunc</span><span class="p">,</span> <span class="n">combFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.foldByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.foldByKey.html#pyspark.RDD.foldByKey">[docs]</a>    <span class="k">def</span> <span class="nf">foldByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.foldByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.foldByKey.html#pyspark.RDD.foldByKey">[docs]</a>    <span class="k">def</span> <span class="nf">foldByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge the values for each key using an associative function &quot;func&quot;</span>
 <span class="sd">        and a neutral &quot;zeroValue&quot; which may be added to the result an</span>
@@ -1994,7 +1994,7 @@
         <span class="k">return</span> <span class="n">_parse_memory</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;spark.python.worker.memory&quot;</span><span class="p">,</span> <span class="s2">&quot;512m&quot;</span><span class="p">))</span>
 
     <span class="c1"># TODO: support variant with custom partitioner</span>
-<div class="viewcode-block" id="RDD.groupByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.groupByKey.html#pyspark.RDD.groupByKey">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.groupByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.groupByKey.html#pyspark.RDD.groupByKey">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Group the values for each key in the RDD into a single sequence.</span>
 <span class="sd">        Hash-partitions the resulting RDD with numPartitions partitions.</span>
@@ -2029,7 +2029,7 @@
             <span class="n">merger</span><span class="o">.</span><span class="n">mergeValues</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">merger</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 
-        <span class="n">locally_combined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">combine</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">locally_combined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">combine</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         <span class="n">shuffled</span> <span class="o">=</span> <span class="n">locally_combined</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">groupByKey</span><span class="p">(</span><span class="n">it</span><span class="p">):</span>
@@ -2037,7 +2037,7 @@
             <span class="n">merger</span><span class="o">.</span><span class="n">mergeCombiners</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">merger</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="n">shuffled</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">groupByKey</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mapValues</span><span class="p">(</span><span class="n">ResultIterable</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">shuffled</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">groupByKey</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">mapValues</span><span class="p">(</span><span class="n">ResultIterable</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RDD.flatMapValues"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.flatMapValues.html#pyspark.RDD.flatMapValues">[docs]</a>    <span class="k">def</span> <span class="nf">flatMapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2051,7 +2051,7 @@
 <span class="sd">        [(&#39;a&#39;, &#39;x&#39;), (&#39;a&#39;, &#39;y&#39;), (&#39;a&#39;, &#39;z&#39;), (&#39;b&#39;, &#39;p&#39;), (&#39;b&#39;, &#39;r&#39;)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">flat_map_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="p">((</span><span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="n">flat_map_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="n">flat_map_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RDD.mapValues"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.mapValues.html#pyspark.RDD.mapValues">[docs]</a>    <span class="k">def</span> <span class="nf">mapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2065,7 +2065,7 @@
 <span class="sd">        [(&#39;a&#39;, 3), (&#39;b&#39;, 1)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">map_values_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f</span><span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">map_values_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">map_values_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RDD.groupWith"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.groupWith.html#pyspark.RDD.groupWith">[docs]</a>    <span class="k">def</span> <span class="nf">groupWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2079,10 +2079,10 @@
 <span class="sd">        [(&#39;a&#39;, ([5], [1], [2], [])), (&#39;b&#39;, ([6], [4], [], [42]))]</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">python_cogroup</span><span class="p">((</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">+</span> <span class="n">others</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">python_cogroup</span><span class="p">((</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">+</span> <span class="n">others</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></div>
 
     <span class="c1"># TODO: add variant with custom parittioner</span>
-<div class="viewcode-block" id="RDD.cogroup"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.cogroup.html#pyspark.RDD.cogroup">[docs]</a>    <span class="k">def</span> <span class="nf">cogroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.cogroup"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.cogroup.html#pyspark.RDD.cogroup">[docs]</a>    <span class="k">def</span> <span class="nf">cogroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        For each key k in C{self} or C{other}, return a resulting RDD that</span>
 <span class="sd">        contains a tuple with the list of values for that key in C{self} as</span>
@@ -2095,7 +2095,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_cogroup</span><span class="p">((</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.sampleByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sampleByKey.html#pyspark.RDD.sampleByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sampleByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sampleByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.sampleByKey.html#pyspark.RDD.sampleByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sampleByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a subset of this RDD sampled by key (via stratified sampling).</span>
 <span class="sd">        Create a sample of this RDD using variable sampling rates for</span>
@@ -2114,9 +2114,9 @@
         <span class="k">for</span> <span class="n">fraction</span> <span class="ow">in</span> <span class="n">fractions</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="k">assert</span> <span class="n">fraction</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;Negative fraction value: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">fraction</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span>
-            <span class="n">RDDStratifiedSampler</span><span class="p">(</span><span class="n">withReplacement</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span></div>
+            <span class="n">RDDStratifiedSampler</span><span class="p">(</span><span class="n">withReplacement</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.subtractByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.subtractByKey.html#pyspark.RDD.subtractByKey">[docs]</a>    <span class="k">def</span> <span class="nf">subtractByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.subtractByKey"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.subtractByKey.html#pyspark.RDD.subtractByKey">[docs]</a>    <span class="k">def</span> <span class="nf">subtractByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return each (key, value) pair in C{self} that has no pair with matching</span>
 <span class="sd">        key in C{other}.</span>
@@ -2131,7 +2131,7 @@
             <span class="k">return</span> <span class="n">val1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">val2</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cogroup</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">filter_func</span><span class="p">)</span><span class="o">.</span><span class="n">flatMapValues</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RDD.subtract"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.subtract.html#pyspark.RDD.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.subtract"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.subtract.html#pyspark.RDD.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return each value in C{self} that is not contained in C{other}.</span>
 
@@ -2141,8 +2141,8 @@
 <span class="sd">        [(&#39;a&#39;, 1), (&#39;b&#39;, 4), (&#39;b&#39;, 5)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># note: here &#39;True&#39; is just a placeholder</span>
-        <span class="n">rdd</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">subtractByKey</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
+        <span class="n">rdd</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span><span class="o">.</span><span class="n">subtractByKey</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="RDD.keyBy"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.keyBy.html#pyspark.RDD.keyBy">[docs]</a>    <span class="k">def</span> <span class="nf">keyBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2175,7 +2175,7 @@
         <span class="n">jrdd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">RDD</span><span class="p">(</span><span class="n">jrdd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.coalesce"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.coalesce.html#pyspark.RDD.coalesce">[docs]</a>    <span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.coalesce"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.coalesce.html#pyspark.RDD.coalesce">[docs]</a>    <span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD that is reduced into `numPartitions` partitions.</span>
 
@@ -2358,7 +2358,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">runJob</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span><span class="p">(</span><span class="n">key</span><span class="p">)])</span>
 
         <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></div>
@@ -2370,7 +2370,7 @@
 <span class="sd">        RDD is serialized in batch or not.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">rdd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pickled</span><span class="p">()</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">SerDeUtil</span><span class="o">.</span><span class="n">pythonToJava</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">SerDeUtil</span><span class="o">.</span><span class="n">pythonToJava</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 
 <div class="viewcode-block" id="RDD.countApprox"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.RDD.countApprox.html#pyspark.RDD.countApprox">[docs]</a>    <span class="k">def</span> <span class="nf">countApprox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -2482,7 +2482,7 @@
     <span class="k">return</span> <span class="n">pickled_command</span><span class="p">,</span> <span class="n">broadcast_vars</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">includes</span>
 
 
-<span class="k">def</span> <span class="nf">_wrap_function</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">deserializer</span><span class="p">,</span> <span class="n">serializer</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_wrap_function</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">deserializer</span><span class="p">,</span> <span class="n">serializer</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">deserializer</span><span class="p">,</span> <span class="s2">&quot;deserializer should not be empty&quot;</span>
     <span class="k">assert</span> <span class="n">serializer</span><span class="p">,</span> <span class="s2">&quot;serializer should not be empty&quot;</span>
     <span class="n">command</span> <span class="o">=</span> <span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">profiler</span><span class="p">,</span> <span class="n">deserializer</span><span class="p">,</span> <span class="n">serializer</span><span class="p">)</span>
@@ -2510,7 +2510,7 @@
 <span class="sd">    20</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prev</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prev</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prev</span><span class="p">,</span> <span class="n">PipelinedRDD</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">prev</span><span class="o">.</span><span class="n">_is_pipelinable</span><span class="p">():</span>
             <span class="c1"># This transformation is the first in its stage:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
@@ -2527,15 +2527,15 @@
                 <span class="n">prev</span><span class="o">.</span><span class="n">preservesPartitioning</span> <span class="ow">and</span> <span class="n">preservesPartitioning</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_prev_jrdd</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">_prev_jrdd</span>  <span class="c1"># maintain the pipeline</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_prev_jrdd_deserializer</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">_prev_jrdd_deserializer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">ctx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">prev</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_val</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_val</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">serializer</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">partitioner</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">preservesPartitioning</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">partitioner</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">preservesPartitioning</span> <span class="k">else</span> <span class="bp">None</span>
 
     <span class="k">def</span> <span class="nf">getNumPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prev_jrdd</span><span class="o">.</span><span class="n">partitions</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
@@ -2550,7 +2550,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">profiler_collector</span><span class="p">:</span>
             <span class="n">profiler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">profiler_collector</span><span class="o">.</span><span class="n">new_profiler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">profiler</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">profiler</span> <span class="o">=</span> <span class="bp">None</span>
 
         <span class="n">wrapped_func</span> <span class="o">=</span> <span class="n">_wrap_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prev_jrdd_deserializer</span><span class="p">,</span>
                                       <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">,</span> <span class="n">profiler</span><span class="p">)</span>
@@ -2564,7 +2564,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_val</span>
 
     <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span>
 
@@ -2574,7 +2574,7 @@
 
 <span class="k">def</span> <span class="nf">_test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
-    <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
+    <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="kn">import</span> <span class="n">SparkContext</span>
     <span class="n">globs</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="c1"># The small batch size here ensures that we see multiple batches,</span>
     <span class="c1"># even in these small test examples:</span>
@@ -2583,7 +2583,7 @@
         <span class="n">globs</span><span class="o">=</span><span class="n">globs</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
     <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;sc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -2630,6 +2630,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

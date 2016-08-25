@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.11.2.12.1.77. pyspark.mllib.regression.RDD.sortByKey &mdash; PySpark API 1 documentation</title>
+  <title>4.11.2.12.1.77. pyspark.mllib.regression.RDD.sortByKey &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.11.2.12. pyspark.mllib.regression.RDD" href="pyspark.mllib.regression.RDD.html"/>
         <link rel="next" title="4.11.2.12.1.78. pyspark.mllib.regression.RDD.stats" href="pyspark.mllib.regression.RDD.stats.html"/>
         <link rel="prev" title="4.11.2.12.1.76. pyspark.mllib.regression.RDD.sortBy" href="pyspark.mllib.regression.RDD.sortBy.html"/> 
@@ -204,16 +204,16 @@
 <code class="descclassname">RDD.</code><code class="descname">sortByKey</code><span class="sig-paren">(</span><em>ascending=True</em>, <em>numPartitions=None</em>, <em>keyfunc=&lt;function &lt;lambda&gt;&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD.sortByKey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.regression.RDD.sortByKey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts this RDD, which is assumed to consist of (key, value) pairs.
 # noqa</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmp</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmp</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">()</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
 <span class="go">(&#39;1&#39;, 3)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[(&#39;1&#39;, 3), (&#39;2&#39;, 5), (&#39;a&#39;, 1), (&#39;b&#39;, 2), (&#39;d&#39;, 4)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[(&#39;1&#39;, 3), (&#39;2&#39;, 5), (&#39;a&#39;, 1), (&#39;b&#39;, 2), (&#39;d&#39;, 4)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmp2</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Mary&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;had&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;little&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;lamb&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmp2</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="s1">&#39;whose&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;fleece&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;was&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">)])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">tmp2</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">tmp2</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[(&#39;a&#39;, 3), (&#39;fleece&#39;, 7), (&#39;had&#39;, 2), (&#39;lamb&#39;, 5),...(&#39;white&#39;, 9), (&#39;whose&#39;, 6)]</span>
 </pre></div>
 </div>
@@ -271,6 +271,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

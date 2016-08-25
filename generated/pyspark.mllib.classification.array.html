@@ -8,10 +8,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.2.1.1. pyspark.mllib.classification.array &mdash; PySpark API 1 documentation</title>
+  <title>4.2.1.1. pyspark.mllib.classification.array &mdash; PySpark API</title>
   
 
   
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
   
 
   
@@ -30,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="4.2. pyspark.mllib.classification" href="pyspark.mllib.classification.html"/>
         <link rel="next" title="4.2.1.2. pyspark.mllib.classification.callMLlibFunc" href="pyspark.mllib.classification.callMLlibFunc.html"/>
         <link rel="prev" title="4.2. pyspark.mllib.classification" href="pyspark.mllib.classification.html"/> 
@@ -92,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pyspark.mllib.html">4.1. pyspark.mllib</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="pyspark.mllib.classification.html">4.2. pyspark.mllib.classification</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="pyspark.mllib.classification.html#functions">4.2.1. Functions</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.2.1.1. pyspark.mllib.classification.array</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">4.2.1.1. pyspark.mllib.classification.array</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.callMLlibFunc.html">4.2.1.2. pyspark.mllib.classification.callMLlibFunc</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.exp.html">4.2.1.3. pyspark.mllib.classification.exp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.inherit_doc.html">4.2.1.4. pyspark.mllib.classification.inherit_doc</a></li>
@@ -246,44 +248,44 @@ needed to meet this requirement.</p>
 <p class="last"><code class="xref py py-obj docutils literal"><span class="pre">empty</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">empty_like</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">zeros</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">zeros_like</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">ones</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">ones_like</span></code>, <code class="xref py py-obj docutils literal"><span class="pre">fill</span></code></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="go">array([1, 2, 3])</span>
 </pre></div>
 </div>
 <p>Upcasting:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="go">array([ 1.,  2.,  3.])</span>
 </pre></div>
 </div>
 <p>More than one dimension:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 <span class="go">array([[1, 2],</span>
 <span class="go">       [3, 4]])</span>
 </pre></div>
 </div>
 <p>Minimum dimensions 2:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">ndmin</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="go">array([[1, 2, 3]])</span>
 </pre></div>
 </div>
 <p>Type provided:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
 <span class="go">array([ 1.+0.j,  2.+0.j,  3.+0.j])</span>
 </pre></div>
 </div>
 <p>Data-type consisting of more than one element:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)],</span><span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;i4&#39;</span><span class="p">),(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;i4&#39;</span><span class="p">)])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)],</span><span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;i4&#39;</span><span class="p">),(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;i4&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
 <span class="go">array([1, 3])</span>
 </pre></div>
 </div>
 <p>Creating an array from sub-classes:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2; 3 4&#39;</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2; 3 4&#39;</span><span class="p">))</span>
 <span class="go">array([[1, 2],</span>
 <span class="go">       [3, 4]])</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2; 3 4&#39;</span><span class="p">),</span> <span class="n">subok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mat</span><span class="p">(</span><span class="s1">&#39;1 2; 3 4&#39;</span><span class="p">),</span> <span class="n">subok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="go">matrix([[1, 2],</span>
 <span class="go">        [3, 4]])</span>
 </pre></div>
@@ -342,6 +344,7 @@ needed to meet this requirement.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

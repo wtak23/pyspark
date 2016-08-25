@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.2.9.1.46. pyspark.RDD.mapPartitionsWithIndex &mdash; PySpark API 1 documentation</title>
+  <title>1.2.9.1.46. pyspark.RDD.mapPartitionsWithIndex &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="1.2.9. pyspark.RDD" href="pyspark.RDD.html"/>
         <link rel="next" title="1.2.9.1.47. pyspark.RDD.mapPartitionsWithSplit" href="pyspark.RDD.mapPartitionsWithSplit.html"/>
         <link rel="prev" title="1.2.9.1.45. pyspark.RDD.mapPartitions" href="pyspark.RDD.mapPartitions.html"/> 
@@ -191,7 +191,7 @@
 <code class="descclassname">RDD.</code><code class="descname">mapPartitionsWithIndex</code><span class="sig-paren">(</span><em>f</em>, <em>preservesPartitioning=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD.mapPartitionsWithIndex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.RDD.mapPartitionsWithIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new RDD by applying a function to each partition of this RDD,
 while tracking the index of the original partition.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">splitIndex</span><span class="p">,</span> <span class="n">iterator</span><span class="p">):</span> <span class="k">yield</span> <span class="n">splitIndex</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="go">6</span>
@@ -251,6 +251,7 @@ while tracking the index of the original partition.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

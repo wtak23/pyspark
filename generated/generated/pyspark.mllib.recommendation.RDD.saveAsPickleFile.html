@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.10.2.7.1.72. pyspark.mllib.recommendation.RDD.saveAsPickleFile &mdash; PySpark API 1 documentation</title>
+  <title>4.10.2.7.1.72. pyspark.mllib.recommendation.RDD.saveAsPickleFile &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.10.2.7. pyspark.mllib.recommendation.RDD" href="pyspark.mllib.recommendation.RDD.html"/>
         <link rel="next" title="4.10.2.7.1.73. pyspark.mllib.recommendation.RDD.saveAsSequenceFile" href="pyspark.mllib.recommendation.RDD.saveAsSequenceFile.html"/>
         <link rel="prev" title="4.10.2.7.1.71. pyspark.mllib.recommendation.RDD.saveAsNewAPIHadoopFile" href="pyspark.mllib.recommendation.RDD.saveAsNewAPIHadoopFile.html"/> 
@@ -195,7 +195,7 @@
 <dd><p>Save this RDD as a SequenceFile of serialized objects. The serializer
 used is L{pyspark.serializers.PickleSerializer}, default batch size
 is 10.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmpFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmpFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmpFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;spark&#39;</span><span class="p">,</span> <span class="s1">&#39;rdd&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">saveAsPickleFile</span><span class="p">(</span><span class="n">tmpFile</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">pickleFile</span><span class="p">(</span><span class="n">tmpFile</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
@@ -256,6 +256,7 @@ is 10.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

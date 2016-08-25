@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.66. pyspark.ml.feature.VectorAssembler &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.66. pyspark.ml.feature.VectorAssembler &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.66.1.1. pyspark.ml.feature.VectorAssembler.__init__" href="pyspark.ml.feature.VectorAssembler.__init__.html"/>
         <link rel="prev" title="3.3.2.65.1.10. pyspark.ml.feature.TypeConverters.toVector" href="pyspark.ml.feature.TypeConverters.toVector.html"/> 
@@ -160,7 +160,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StringIndexerModel.html">3.3.2.63. pyspark.ml.feature.StringIndexerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Tokenizer.html">3.3.2.64. pyspark.ml.feature.Tokenizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.TypeConverters.html">3.3.2.65. pyspark.ml.feature.TypeConverters</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.66. pyspark.ml.feature.VectorAssembler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.66. pyspark.ml.feature.VectorAssembler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorIndexer.html">3.3.2.67. pyspark.ml.feature.VectorIndexer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorIndexerModel.html">3.3.2.68. pyspark.ml.feature.VectorIndexerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorSlicer.html">3.3.2.69. pyspark.ml.feature.VectorSlicer</a></li>
@@ -249,7 +249,7 @@
 <dt id="pyspark.ml.feature.VectorAssembler">
 <em class="property">class </em><code class="descclassname">pyspark.ml.feature.</code><code class="descname">VectorAssembler</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#VectorAssembler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.VectorAssembler" title="Permalink to this definition">¶</a></dt>
 <dd><p>A feature transformer that merges multiple columns into a vector column.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vecAssembler</span> <span class="o">=</span> <span class="n">VectorAssembler</span><span class="p">(</span><span class="n">inputCols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vecAssembler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">features</span>
 <span class="go">DenseVector([1.0, 0.0, 3.0])</span>
@@ -421,6 +421,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

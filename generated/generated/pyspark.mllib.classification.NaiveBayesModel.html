@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.2.2.11. pyspark.mllib.classification.NaiveBayesModel &mdash; PySpark API 1 documentation</title>
+  <title>4.2.2.11. pyspark.mllib.classification.NaiveBayesModel &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.2. pyspark.mllib.classification" href="../pyspark.mllib.classification.html"/>
         <link rel="next" title="4.2.2.11.1.1. pyspark.mllib.classification.NaiveBayesModel.__init__" href="pyspark.mllib.classification.NaiveBayesModel.__init__.html"/>
         <link rel="prev" title="4.2.2.10.1.1. pyspark.mllib.classification.NaiveBayes.train" href="pyspark.mllib.classification.NaiveBayes.train.html"/> 
@@ -105,7 +105,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.LogisticRegressionWithLBFGS.html">4.2.2.8. pyspark.mllib.classification.LogisticRegressionWithLBFGS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.LogisticRegressionWithSGD.html">4.2.2.9. pyspark.mllib.classification.LogisticRegressionWithSGD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.NaiveBayes.html">4.2.2.10. pyspark.mllib.classification.NaiveBayes</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.2.2.11. pyspark.mllib.classification.NaiveBayesModel</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">4.2.2.11. pyspark.mllib.classification.NaiveBayesModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.RDD.html">4.2.2.12. pyspark.mllib.classification.RDD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.SVMModel.html">4.2.2.13. pyspark.mllib.classification.SVMModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.classification.SVMWithSGD.html">4.2.2.14. pyspark.mllib.classification.SVMWithSGD</a></li>
@@ -214,7 +214,7 @@ where D is number of features.</li>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
 <span class="gp">... </span>    <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span>
 <span class="gp">... </span>    <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]),</span>
 <span class="gp">... </span>    <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]),</span>
@@ -242,7 +242,7 @@ where D is number of features.</li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sameModel</span> <span class="o">=</span> <span class="n">NaiveBayesModel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sameModel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">SparseVector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">}))</span> <span class="o">==</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">SparseVector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">}))</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">shutil</span> <span class="k">import</span> <span class="n">rmtree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">rmtree</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">rmtree</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
@@ -334,6 +334,7 @@ where D is number of features.</li>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

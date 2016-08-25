@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.1.25. pyspark.sql.functions.concat &mdash; PySpark API 1 documentation</title>
+  <title>2.3.1.25. pyspark.sql.functions.concat &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
         <link rel="next" title="2.3.1.26. pyspark.sql.functions.concat_ws" href="pyspark.sql.functions.concat_ws.html"/>
         <link rel="prev" title="2.3.1.24. pyspark.sql.functions.column" href="pyspark.sql.functions.column.html"/> 
@@ -117,7 +117,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.collect_list.html">2.3.1.22. pyspark.sql.functions.collect_list</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.collect_set.html">2.3.1.23. pyspark.sql.functions.collect_set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.column.html">2.3.1.24. pyspark.sql.functions.column</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.25. pyspark.sql.functions.concat</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.3.1.25. pyspark.sql.functions.concat</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.concat_ws.html">2.3.1.26. pyspark.sql.functions.concat_ws</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.conv.html">2.3.1.27. pyspark.sql.functions.conv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.corr.html">2.3.1.28. pyspark.sql.functions.corr</a></li>
@@ -338,7 +338,7 @@
 <dt id="pyspark.sql.functions.concat">
 <code class="descclassname">pyspark.sql.functions.</code><code class="descname">concat</code><span class="sig-paren">(</span><em>*cols</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyspark/sql/functions.html#concat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.concat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Concatenates multiple input string columns together into a single string column.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;abcd&#39;</span><span class="p">,</span><span class="s1">&#39;123&#39;</span><span class="p">)],</span> <span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;abcd&#39;</span><span class="p">,</span><span class="s1">&#39;123&#39;</span><span class="p">)],</span> <span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">concat</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(s=u&#39;abcd123&#39;)]</span>
 </pre></div>
@@ -400,6 +400,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.profiler &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.profiler &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="pyspark" href="../pyspark.html"/> 
 
   
@@ -173,7 +173,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">atexit</span>
 
-<span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="k">import</span> <span class="n">AccumulatorParam</span>
+<span class="kn">from</span> <span class="nn">pyspark.accumulators</span> <span class="kn">import</span> <span class="n">AccumulatorParam</span>
 
 
 <span class="k">class</span> <span class="nc">ProfilerCollector</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -183,7 +183,7 @@
 <span class="sd">    the different stages.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler_cls</span><span class="p">,</span> <span class="n">dump_path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler_cls</span><span class="p">,</span> <span class="n">dump_path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">profiler_cls</span> <span class="o">=</span> <span class="n">profiler_cls</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">profile_dump_path</span> <span class="o">=</span> <span class="n">dump_path</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">profilers</span> <span class="o">=</span> <span class="p">[]</span>
@@ -200,7 +200,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">atexit</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">show_profiles</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">profilers</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">id</span><span class="p">,</span> <span class="n">profiler</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profilers</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">id</span><span class="p">,</span> <span class="n">profiler</span><span class="p">,</span> <span class="bp">False</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">dump_profiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Dump the profile stats into directory `path` &quot;&quot;&quot;</span>
@@ -214,7 +214,7 @@
             <span class="k">if</span> <span class="ow">not</span> <span class="n">showed</span> <span class="ow">and</span> <span class="n">profiler</span><span class="p">:</span>
                 <span class="n">profiler</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
                 <span class="c1"># mark it as showed</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">profilers</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">profilers</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
 
 
 <div class="viewcode-block" id="Profiler"><a class="viewcode-back" href="../../generated/generated/pyspark.Profiler.html#pyspark.Profiler">[docs]</a><span class="k">class</span> <span class="nc">Profiler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -266,9 +266,9 @@
         <span class="sd">&quot;&quot;&quot; Print the profile stats to stdout, id is the RDD id &quot;&quot;&quot;</span>
         <span class="n">stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">stats</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Profile of RDD&lt;id=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Profile of RDD&lt;id=</span><span class="si">%d</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
             <span class="n">stats</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;cumulative&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="Profiler.dump"><a class="viewcode-back" href="../../generated/generated/pyspark.Profiler.dump.html#pyspark.Profiler.dump">[docs]</a>    <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
@@ -286,11 +286,11 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">zero</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-        <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">None</span>
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">addInPlace</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">value1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">value1</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">value2</span>
         <span class="n">value1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">value1</span>
@@ -305,14 +305,14 @@
         <span class="n">Profiler</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">)</span>
         <span class="c1"># Creates a new accumulator for combining the profiles of different</span>
         <span class="c1"># partitions of a stage</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_accumulator</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">PStatsParam</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_accumulator</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">accumulator</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">PStatsParam</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="BasicProfiler.profile"><a class="viewcode-back" href="../../generated/generated/pyspark.BasicProfiler.profile.html#pyspark.BasicProfiler.profile">[docs]</a>    <span class="k">def</span> <span class="nf">profile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Runs and profiles the method to_profile passed in. A profile object is returned. &quot;&quot;&quot;</span>
         <span class="n">pr</span> <span class="o">=</span> <span class="n">cProfile</span><span class="o">.</span><span class="n">Profile</span><span class="p">()</span>
         <span class="n">pr</span><span class="o">.</span><span class="n">runcall</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
         <span class="n">st</span> <span class="o">=</span> <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="n">pr</span><span class="p">)</span>
-        <span class="n">st</span><span class="o">.</span><span class="n">stream</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># make it picklable</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">stream</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># make it picklable</span>
         <span class="n">st</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span>
 
         <span class="c1"># Adds a new profile to the existing accumulated value</span>
@@ -326,7 +326,7 @@
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
            </div>
@@ -369,6 +369,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

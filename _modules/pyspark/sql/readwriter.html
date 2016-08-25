@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.readwriter &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.sql.readwriter &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -171,15 +171,15 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="n">basestring</span> <span class="o">=</span> <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="nb">unicode</span> <span class="o">=</span> <span class="nb">str</span>
 
-<span class="kn">from</span> <span class="nn">py4j.java_gateway</span> <span class="k">import</span> <span class="n">JavaClass</span>
+<span class="kn">from</span> <span class="nn">py4j.java_gateway</span> <span class="kn">import</span> <span class="n">JavaClass</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">keyword_only</span>
-<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="k">import</span> <span class="n">ignore_unicode_prefix</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.column</span> <span class="k">import</span> <span class="n">_to_seq</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">since</span><span class="p">,</span> <span class="n">keyword_only</span>
+<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="kn">import</span> <span class="n">ignore_unicode_prefix</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.column</span> <span class="kn">import</span> <span class="n">_to_seq</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">utils</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DataFrameReader&quot;</span><span class="p">,</span> <span class="s2">&quot;DataFrameWriter&quot;</span><span class="p">]</span>
 
@@ -191,7 +191,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">value</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">value</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
@@ -199,14 +199,14 @@
 
 <div class="viewcode-block" id="OptionUtils"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.OptionUtils.html#pyspark.sql.OptionUtils">[docs]</a><span class="k">class</span> <span class="nc">OptionUtils</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">_set_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_set_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set named options (filter out those the value is None)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">options</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
 
 
@@ -224,7 +224,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span> <span class="o">=</span> <span class="n">spark</span></div>
 
     <span class="k">def</span> <span class="nf">_df</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jdf</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="k">import</span> <span class="n">DataFrame</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="kn">import</span> <span class="n">DataFrame</span>
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
@@ -273,7 +273,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.load.html#pyspark.sql.DataFrameReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.load.html#pyspark.sql.DataFrameReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Loads data from a data source and returns it as a :class`DataFrame`.</span>
 
 <span class="sd">        :param path: optional string or a list of string for file-system backed data sources.</span>
@@ -291,14 +291,14 @@
 <span class="sd">        &gt;&gt;&gt; df.dtypes</span>
 <span class="sd">        [(&#39;age&#39;, &#39;bigint&#39;), (&#39;aka&#39;, &#39;string&#39;), (&#39;name&#39;, &#39;string&#39;)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">format</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">:</span>
                 <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonUtils</span><span class="o">.</span><span class="n">toSeq</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span>
@@ -306,10 +306,10 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">load</span><span class="p">())</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.json.html#pyspark.sql.DataFrameReader.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">primitivesAsString</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefersDecimal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-             <span class="n">allowComments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowUnquotedFieldNames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowSingleQuotes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-             <span class="n">allowNumericLeadingZero</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowBackslashEscapingAnyCharacter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-             <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">columnNameOfCorruptRecord</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.json.html#pyspark.sql.DataFrameReader.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">primitivesAsString</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">prefersDecimal</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">allowComments</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowUnquotedFieldNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowSingleQuotes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">allowNumericLeadingZero</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowBackslashEscapingAnyCharacter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">columnNameOfCorruptRecord</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads a JSON file (one object per line) or an RDD of Strings storing JSON objects</span>
 <span class="sd">        (one object per record) and returns the result as a :class`DataFrame`.</span>
@@ -367,20 +367,20 @@
             <span class="n">allowSingleQuotes</span><span class="o">=</span><span class="n">allowSingleQuotes</span><span class="p">,</span> <span class="n">allowNumericLeadingZero</span><span class="o">=</span><span class="n">allowNumericLeadingZero</span><span class="p">,</span>
             <span class="n">allowBackslashEscapingAnyCharacter</span><span class="o">=</span><span class="n">allowBackslashEscapingAnyCharacter</span><span class="p">,</span>
             <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">columnNameOfCorruptRecord</span><span class="o">=</span><span class="n">columnNameOfCorruptRecord</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonUtils</span><span class="o">.</span><span class="n">toSeq</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">RDD</span><span class="p">):</span>
             <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span>
                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterator</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
-                        <span class="n">x</span> <span class="o">=</span> <span class="n">unicode</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
+                        <span class="n">x</span> <span class="o">=</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">):</span>
                         <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
                     <span class="k">yield</span> <span class="n">x</span>
             <span class="n">keyed</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-            <span class="n">keyed</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">keyed</span><span class="o">.</span><span class="n">_bypass_serializer</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="n">jrdd</span> <span class="o">=</span> <span class="n">keyed</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">BytesToString</span><span class="p">())</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">jrdd</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
@@ -430,16 +430,16 @@
 <span class="sd">        &gt;&gt;&gt; df.collect()</span>
 <span class="sd">        [Row(value=u&#39;hello&#39;), Row(value=u&#39;this&#39;)]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">paths</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonUtils</span><span class="o">.</span><span class="n">toSeq</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.csv.html#pyspark.sql.DataFrameReader.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inferSchema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignoreLeadingWhiteSpace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">ignoreTrailingWhiteSpace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nanValue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positiveInf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">negativeInf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dateFormat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxColumns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxCharsPerColumn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">maxMalformedLogPerPartition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.csv.html#pyspark.sql.DataFrameReader.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">comment</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">inferSchema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ignoreLeadingWhiteSpace</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">ignoreTrailingWhiteSpace</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nanValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">positiveInf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">negativeInf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dateFormat</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">maxColumns</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">maxCharsPerColumn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">maxMalformedLogPerPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Loads a CSV file and returns the result as a  :class:`DataFrame`.</span>
 
 <span class="sd">        This function will go through the input once to determine the input schema if</span>
@@ -511,7 +511,7 @@
             <span class="n">nanValue</span><span class="o">=</span><span class="n">nanValue</span><span class="p">,</span> <span class="n">positiveInf</span><span class="o">=</span><span class="n">positiveInf</span><span class="p">,</span> <span class="n">negativeInf</span><span class="o">=</span><span class="n">negativeInf</span><span class="p">,</span>
             <span class="n">dateFormat</span><span class="o">=</span><span class="n">dateFormat</span><span class="p">,</span> <span class="n">maxColumns</span><span class="o">=</span><span class="n">maxColumns</span><span class="p">,</span> <span class="n">maxCharsPerColumn</span><span class="o">=</span><span class="n">maxCharsPerColumn</span><span class="p">,</span>
             <span class="n">maxMalformedLogPerPartition</span><span class="o">=</span><span class="n">maxMalformedLogPerPartition</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="n">path</span><span class="p">]</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonUtils</span><span class="o">.</span><span class="n">toSeq</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span></div>
 
@@ -528,8 +528,8 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">orc</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.jdbc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.jdbc.html#pyspark.sql.DataFrameReader.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lowerBound</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">upperBound</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-             <span class="n">predicates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.jdbc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.jdbc.html#pyspark.sql.DataFrameReader.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">lowerBound</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">upperBound</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">predicates</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Construct a :class:`DataFrame` representing the database table named ``table``</span>
 <span class="sd">        accessible via JDBC URL ``url`` and connection ``properties``.</span>
@@ -558,17 +558,17 @@
 <span class="sd">                           at least a &quot;user&quot; and &quot;password&quot; property should be included</span>
 <span class="sd">        :return: a DataFrame</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">jprop</span> <span class="o">=</span> <span class="n">JavaClass</span><span class="p">(</span><span class="s2">&quot;java.util.Properties&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_gateway</span><span class="o">.</span><span class="n">_gateway_client</span><span class="p">)()</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
             <span class="n">jprop</span><span class="o">.</span><span class="n">setProperty</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">properties</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">column</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">numPartitions</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">jdbc</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">lowerBound</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">upperBound</span><span class="p">),</span>
                                                <span class="nb">int</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">),</span> <span class="n">jprop</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">predicates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">predicates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">gateway</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_gateway</span>
             <span class="n">jpredicates</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">toJArray</span><span class="p">(</span><span class="n">gateway</span><span class="p">,</span> <span class="n">gateway</span><span class="o">.</span><span class="n">jvm</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">predicates</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">jdbc</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">jpredicates</span><span class="p">,</span> <span class="n">jprop</span><span class="p">))</span>
@@ -589,7 +589,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">write</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_sq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jsq</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="k">import</span> <span class="n">StreamingQuery</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="kn">import</span> <span class="n">StreamingQuery</span>
         <span class="k">return</span> <span class="n">StreamingQuery</span><span class="p">(</span><span class="n">jsq</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
@@ -607,7 +607,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># At the JVM side, the default value of mode is already set to &quot;error&quot;.</span>
         <span class="c1"># So, if the given saveMode is None, we will not call JVM-side&#39;s mode method.</span>
-        <span class="k">if</span> <span class="n">saveMode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">saveMode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">saveMode</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -654,7 +654,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.save"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.save.html#pyspark.sql.DataFrameWriter.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.save"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.save.html#pyspark.sql.DataFrameWriter.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the contents of the :class:`DataFrame` to a data source.</span>
 
 <span class="sd">        The data source is specified by the ``format`` and a set of ``options``.</span>
@@ -675,17 +675,17 @@
 <span class="sd">        &gt;&gt;&gt; df.write.mode(&#39;append&#39;).parquet(os.path.join(tempfile.mkdtemp(), &#39;data&#39;))</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">partitionBy</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">format</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.insertInto"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.insertInto.html#pyspark.sql.DataFrameWriter.insertInto">[docs]</a>    <span class="k">def</span> <span class="nf">insertInto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.insertInto"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.insertInto.html#pyspark.sql.DataFrameWriter.insertInto">[docs]</a>    <span class="k">def</span> <span class="nf">insertInto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Inserts the content of the :class:`DataFrame` to the specified table.</span>
 
 <span class="sd">        It requires that the schema of the class:`DataFrame` is the same as the</span>
@@ -696,7 +696,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span> <span class="k">if</span> <span class="n">overwrite</span> <span class="k">else</span> <span class="s2">&quot;append&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">insertInto</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.saveAsTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.saveAsTable.html#pyspark.sql.DataFrameWriter.saveAsTable">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.saveAsTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.saveAsTable.html#pyspark.sql.DataFrameWriter.saveAsTable">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` as the specified table.</span>
 
 <span class="sd">        In the case the table already exists, behavior of this function depends on the</span>
@@ -716,14 +716,14 @@
 <span class="sd">        :param options: all other string options</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">partitionBy</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">format</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">saveAsTable</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.json.html#pyspark.sql.DataFrameWriter.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.json.html#pyspark.sql.DataFrameWriter.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in JSON format at the specified path.</span>
 
 <span class="sd">        :param path: the path in any Hadoop supported file system</span>
@@ -744,7 +744,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.parquet"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.parquet.html#pyspark.sql.DataFrameWriter.parquet">[docs]</a>    <span class="k">def</span> <span class="nf">parquet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.parquet"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.parquet.html#pyspark.sql.DataFrameWriter.parquet">[docs]</a>    <span class="k">def</span> <span class="nf">parquet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in Parquet format at the specified path.</span>
 
 <span class="sd">        :param path: the path in any Hadoop supported file system</span>
@@ -764,13 +764,13 @@
 <span class="sd">        &gt;&gt;&gt; df.write.parquet(os.path.join(tempfile.mkdtemp(), &#39;data&#39;))</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">partitionBy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_opts</span><span class="p">(</span><span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.text"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.text.html#pyspark.sql.DataFrameWriter.text">[docs]</a>    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.text"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.text.html#pyspark.sql.DataFrameWriter.text">[docs]</a>    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the DataFrame in a text file at the specified path.</span>
 
 <span class="sd">        :param path: the path in any Hadoop supported file system</span>
@@ -785,8 +785,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.csv.html#pyspark.sql.DataFrameWriter.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">escapeQuotes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quoteAll</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.csv.html#pyspark.sql.DataFrameWriter.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escapeQuotes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quoteAll</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in CSV format at the specified path.</span>
 
 <span class="sd">        :param path: the path in any Hadoop supported file system</span>
@@ -827,7 +827,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.orc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.orc.html#pyspark.sql.DataFrameWriter.orc">[docs]</a>    <span class="k">def</span> <span class="nf">orc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.orc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.orc.html#pyspark.sql.DataFrameWriter.orc">[docs]</a>    <span class="k">def</span> <span class="nf">orc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in ORC format at the specified path.</span>
 
 <span class="sd">        .. note:: Currently ORC support is only available together with Hive support.</span>
@@ -849,13 +849,13 @@
 <span class="sd">        &gt;&gt;&gt; orc_df.write.orc(os.path.join(tempfile.mkdtemp(), &#39;data&#39;))</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">partitionBy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_set_opts</span><span class="p">(</span><span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">orc</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.jdbc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.jdbc.html#pyspark.sql.DataFrameWriter.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.jdbc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.jdbc.html#pyspark.sql.DataFrameWriter.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` to an external database table via JDBC.</span>
 
 <span class="sd">        .. note:: Don&#39;t create too many partitions in parallel on a large cluster; \</span>
@@ -873,7 +873,7 @@
 <span class="sd">                           arbitrary string tag/value. Normally at least a</span>
 <span class="sd">                           &quot;user&quot; and &quot;password&quot; property should be included.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">properties</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">properties</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">jprop</span> <span class="o">=</span> <span class="n">JavaClass</span><span class="p">(</span><span class="s2">&quot;java.util.Properties&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_gateway</span><span class="o">.</span><span class="n">_gateway_client</span><span class="p">)()</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
@@ -886,8 +886,8 @@
     <span class="kn">import</span> <span class="nn">os</span>
     <span class="kn">import</span> <span class="nn">tempfile</span>
     <span class="kn">import</span> <span class="nn">py4j</span>
-    <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
+    <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">Row</span>
     <span class="kn">import</span> <span class="nn">pyspark.sql.readwriter</span>
 
     <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SPARK_HOME&quot;</span><span class="p">])</span>
@@ -909,7 +909,7 @@
         <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">NORMALIZE_WHITESPACE</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">REPORT_NDIFF</span><span class="p">)</span>
     <span class="n">sc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -956,6 +956,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

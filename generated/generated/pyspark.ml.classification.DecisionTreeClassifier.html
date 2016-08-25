@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.4.2.6. pyspark.ml.classification.DecisionTreeClassifier &mdash; PySpark API 1 documentation</title>
+  <title>3.4.2.6. pyspark.ml.classification.DecisionTreeClassifier &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.4. pyspark.ml.classification" href="../pyspark.ml.classification.html"/>
         <link rel="next" title="3.4.2.6.1.1. pyspark.ml.classification.DecisionTreeClassifier.__init__" href="pyspark.ml.classification.DecisionTreeClassifier.__init__.html"/>
         <link rel="prev" title="3.4.2.5.2.5. pyspark.ml.classification.DecisionTreeClassificationModel.toDebugString" href="pyspark.ml.classification.DecisionTreeClassificationModel.toDebugString.html"/> 
@@ -101,7 +101,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.BinaryLogisticRegressionTrainingSummary.html">3.4.2.3. pyspark.ml.classification.BinaryLogisticRegressionTrainingSummary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.DataFrame.html">3.4.2.4. pyspark.ml.classification.DataFrame</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.DecisionTreeClassificationModel.html">3.4.2.5. pyspark.ml.classification.DecisionTreeClassificationModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.6. pyspark.ml.classification.DecisionTreeClassifier</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.4.2.6. pyspark.ml.classification.DecisionTreeClassifier</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.DecisionTreeModel.html">3.4.2.7. pyspark.ml.classification.DecisionTreeModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.DecisionTreeParams.html">3.4.2.8. pyspark.ml.classification.DecisionTreeParams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.DecisionTreeRegressionModel.html">3.4.2.9. pyspark.ml.classification.DecisionTreeRegressionModel</a></li>
@@ -254,8 +254,8 @@
 learning algorithm for classification.
 It supports both binary and multiclass labels, as well as both continuous and categorical
 features.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="k">import</span> <span class="n">Vectors</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">StringIndexer</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">StringIndexer</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
 <span class="gp">... </span>    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)),</span>
 <span class="gp">... </span>    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]))],</span> <span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">])</span>
@@ -270,7 +270,7 @@ features.</p>
 <span class="go">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">featureImportances</span>
 <span class="go">SparseVector(1, {0: 1.0})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">toDebugString</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">toDebugString</span><span class="p">)</span>
 <span class="go">DecisionTreeClassificationModel (uid=...) of depth 1 with 3 nodes...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">test0</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">),)],</span> <span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test0</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -285,7 +285,7 @@ features.</p>
 <span class="go">1.0</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dtc_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/dtc&quot;</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dtc_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/dtc&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">dtc_path</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dt2</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">dtc_path</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dt2</span><span class="o">.</span><span class="n">getMaxDepth</span><span class="p">()</span>
@@ -564,6 +564,7 @@ features.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

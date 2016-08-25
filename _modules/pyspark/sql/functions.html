@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.functions &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.sql.functions &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -175,14 +175,14 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&lt;</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">imap</span> <span class="k">as</span> <span class="nb">map</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">imap</span> <span class="k">as</span> <span class="nb">map</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">since</span><span class="p">,</span> <span class="n">SparkContext</span>
-<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="k">import</span> <span class="n">_prepare_for_python_RDD</span><span class="p">,</span> <span class="n">ignore_unicode_prefix</span>
-<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="k">import</span> <span class="n">PickleSerializer</span><span class="p">,</span> <span class="n">AutoBatchedSerializer</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="n">StringType</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.column</span> <span class="k">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">_to_java_column</span><span class="p">,</span> <span class="n">_to_seq</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="k">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">since</span><span class="p">,</span> <span class="n">SparkContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="kn">import</span> <span class="n">_prepare_for_python_RDD</span><span class="p">,</span> <span class="n">ignore_unicode_prefix</span>
+<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="kn">import</span> <span class="n">PickleSerializer</span><span class="p">,</span> <span class="n">AutoBatchedSerializer</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">StringType</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.column</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">_to_java_column</span><span class="p">,</span> <span class="n">_to_seq</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="kn">import</span> <span class="n">DataFrame</span>
 
 
 <span class="k">def</span> <span class="nf">_create_function</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
@@ -339,14 +339,14 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="approxCountDistinct"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.approxCountDistinct.html#pyspark.sql.functions.approxCountDistinct">[docs]</a><span class="k">def</span> <span class="nf">approxCountDistinct</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">rsd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="approxCountDistinct"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.approxCountDistinct.html#pyspark.sql.functions.approxCountDistinct">[docs]</a><span class="k">def</span> <span class="nf">approxCountDistinct</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">rsd</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns a new :class:`Column` for approximate distinct count of ``col``.</span>
 
 <span class="sd">    &gt;&gt;&gt; df.agg(approxCountDistinct(df.age).alias(&#39;c&#39;)).collect()</span>
 <span class="sd">    [Row(c=2)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">if</span> <span class="n">rsd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">rsd</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">approxCountDistinct</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">col</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">approxCountDistinct</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">col</span><span class="p">),</span> <span class="n">rsd</span><span class="p">)</span>
@@ -459,7 +459,7 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="first"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.first.html#pyspark.sql.functions.first">[docs]</a><span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">ignorenulls</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="first"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.first.html#pyspark.sql.functions.first">[docs]</a><span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">ignorenulls</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Aggregate function: returns the first value in a group.</span>
 
 <span class="sd">    The function by default returns the first values it sees. It will return the first non-null</span>
@@ -547,7 +547,7 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="last"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.last.html#pyspark.sql.functions.last">[docs]</a><span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">ignorenulls</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="last"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.last.html#pyspark.sql.functions.last">[docs]</a><span class="k">def</span> <span class="nf">last</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">ignorenulls</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Aggregate function: returns the last value in a group.</span>
 
 <span class="sd">    The function by default returns the last values it sees. It will return the last non-null</span>
@@ -594,11 +594,11 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="rand"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.rand.html#pyspark.sql.functions.rand">[docs]</a><span class="k">def</span> <span class="nf">rand</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="rand"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.rand.html#pyspark.sql.functions.rand">[docs]</a><span class="k">def</span> <span class="nf">rand</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Generates a random column with i.i.d. samples from U[0.0, 1.0].</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
@@ -606,11 +606,11 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="randn"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.randn.html#pyspark.sql.functions.randn">[docs]</a><span class="k">def</span> <span class="nf">randn</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="randn"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.randn.html#pyspark.sql.functions.randn">[docs]</a><span class="k">def</span> <span class="nf">randn</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Generates a column with i.i.d. samples from the standard normal distribution.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">randn</span><span class="p">()</span>
@@ -777,7 +777,7 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="log"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.log.html#pyspark.sql.functions.log">[docs]</a><span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="log"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.log.html#pyspark.sql.functions.log">[docs]</a><span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the first argument-based logarithm of the second argument.</span>
 
 <span class="sd">    If there is only one argument, then this takes the natural logarithm of the argument.</span>
@@ -789,7 +789,7 @@
 <span class="sd">    [&#39;0.69314&#39;, &#39;1.60943&#39;]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">if</span> <span class="n">arg2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">arg2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">arg1</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">jc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">_to_java_column</span><span class="p">(</span><span class="n">arg2</span><span class="p">))</span>
@@ -837,7 +837,7 @@
 <span class="c1"># ---------------  Window functions ------------------------</span>
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="lag"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.lag.html#pyspark.sql.functions.lag">[docs]</a><span class="k">def</span> <span class="nf">lag</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="lag"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.lag.html#pyspark.sql.functions.lag">[docs]</a><span class="k">def</span> <span class="nf">lag</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Window function: returns the value that is `offset` rows before the current row, and</span>
 <span class="sd">    `defaultValue` if there is less than `offset` rows before the current row. For example,</span>
@@ -854,7 +854,7 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="lead"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.lead.html#pyspark.sql.functions.lead">[docs]</a><span class="k">def</span> <span class="nf">lead</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="lead"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.lead.html#pyspark.sql.functions.lead">[docs]</a><span class="k">def</span> <span class="nf">lead</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Window function: returns the value that is `offset` rows after the current row, and</span>
 <span class="sd">    `defaultValue` if there is less than `offset` rows after the current row. For example,</span>
@@ -907,7 +907,7 @@
 
 <span class="nd">@ignore_unicode_prefix</span>
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="date_format"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.date_format.html#pyspark.sql.functions.date_format">[docs]</a><span class="k">def</span> <span class="nf">date_format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+<div class="viewcode-block" id="date_format"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.date_format.html#pyspark.sql.functions.date_format">[docs]</a><span class="k">def</span> <span class="nf">date_format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">format</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts a date/timestamp/string to a value of string in the format specified by the date</span>
 <span class="sd">    format given by the second argument.</span>
@@ -923,7 +923,7 @@
 <span class="sd">    [Row(date=u&#39;04/08/2015&#39;)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">date_format</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">date</span><span class="p">),</span> <span class="nb">format</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">date_format</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">date</span><span class="p">),</span> <span class="n">format</span><span class="p">))</span></div>
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
@@ -1122,7 +1122,7 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="trunc"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.trunc.html#pyspark.sql.functions.trunc">[docs]</a><span class="k">def</span> <span class="nf">trunc</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+<div class="viewcode-block" id="trunc"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.trunc.html#pyspark.sql.functions.trunc">[docs]</a><span class="k">def</span> <span class="nf">trunc</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">format</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns date truncated to the unit specified by the format.</span>
 
@@ -1135,7 +1135,7 @@
 <span class="sd">    [Row(month=datetime.date(1997, 2, 1))]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">date</span><span class="p">),</span> <span class="nb">format</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">date</span><span class="p">),</span> <span class="n">format</span><span class="p">))</span></div>
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
@@ -1168,18 +1168,18 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="from_unixtime"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.from_unixtime.html#pyspark.sql.functions.from_unixtime">[docs]</a><span class="k">def</span> <span class="nf">from_unixtime</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="from_unixtime"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.from_unixtime.html#pyspark.sql.functions.from_unixtime">[docs]</a><span class="k">def</span> <span class="nf">from_unixtime</span><span class="p">(</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s2">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Converts the number of seconds from unix epoch (1970-01-01 00:00:00 UTC) to a string</span>
 <span class="sd">    representing the timestamp of that moment in the current system time zone in the given</span>
 <span class="sd">    format.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">from_unixtime</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">timestamp</span><span class="p">),</span> <span class="nb">format</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">from_unixtime</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">timestamp</span><span class="p">),</span> <span class="n">format</span><span class="p">))</span></div>
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="unix_timestamp"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.unix_timestamp.html#pyspark.sql.functions.unix_timestamp">[docs]</a><span class="k">def</span> <span class="nf">unix_timestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;yyyy-MM-dd HH:mm:ss&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="unix_timestamp"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.unix_timestamp.html#pyspark.sql.functions.unix_timestamp">[docs]</a><span class="k">def</span> <span class="nf">unix_timestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;yyyy-MM-dd HH:mm:ss&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert time string with given pattern (&#39;yyyy-MM-dd HH:mm:ss&#39;, by default)</span>
 <span class="sd">    to Unix time stamp (in seconds), using the default timezone and the default</span>
@@ -1188,9 +1188,9 @@
 <span class="sd">    if `timestamp` is None, then it returns current timestamp.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">if</span> <span class="n">timestamp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">timestamp</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">unix_timestamp</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">unix_timestamp</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">timestamp</span><span class="p">),</span> <span class="nb">format</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">unix_timestamp</span><span class="p">(</span><span class="n">_to_java_column</span><span class="p">(</span><span class="n">timestamp</span><span class="p">),</span> <span class="n">format</span><span class="p">))</span></div>
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
@@ -1221,7 +1221,7 @@
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
 <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="window"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.window.html#pyspark.sql.functions.window">[docs]</a><span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="n">timeColumn</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">startTime</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="window"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.window.html#pyspark.sql.functions.window">[docs]</a><span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="n">timeColumn</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">startTime</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Bucketize rows into one or more time windows given a timestamp specifying column. Window</span>
 <span class="sd">    starts are inclusive but the window ends are exclusive, e.g. 12:05 will be in the window</span>
 <span class="sd">    [12:05,12:10) but not in [12:00,12:05). Windows can support microsecond precision. Windows in</span>
@@ -1430,7 +1430,7 @@
 
 <span class="nd">@ignore_unicode_prefix</span>
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="format_string"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.format_string.html#pyspark.sql.functions.format_string">[docs]</a><span class="k">def</span> <span class="nf">format_string</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="format_string"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.format_string.html#pyspark.sql.functions.format_string">[docs]</a><span class="k">def</span> <span class="nf">format_string</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Formats the arguments in printf-style and returns the result as a string column.</span>
 
@@ -1442,7 +1442,7 @@
 <span class="sd">    [Row(v=u&#39;5 hello&#39;)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
-    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">format_string</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="n">_to_seq</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">_to_java_column</span><span class="p">)))</span></div>
+    <span class="k">return</span> <span class="n">Column</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">format_string</span><span class="p">(</span><span class="n">format</span><span class="p">,</span> <span class="n">_to_seq</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">_to_java_column</span><span class="p">)))</span></div>
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
@@ -1866,7 +1866,7 @@
 
 
 <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="sort_array"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.sort_array.html#pyspark.sql.functions.sort_array">[docs]</a><span class="k">def</span> <span class="nf">sort_array</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">asc</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="sort_array"><a class="viewcode-back" href="../../../generated/pyspark.sql.functions.sort_array.html#pyspark.sql.functions.sort_array">[docs]</a><span class="k">def</span> <span class="nf">sort_array</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">asc</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Collection function: sorts the input array for the given column in ascending order.</span>
 
@@ -1897,19 +1897,19 @@
 
 <span class="sd">    .. versionadded:: 1.3</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="UserDefinedFunction.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.functions.UserDefinedFunction.__init__.html#pyspark.sql.functions.UserDefinedFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">returnType</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="UserDefinedFunction.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.functions.UserDefinedFunction.__init__.html#pyspark.sql.functions.UserDefinedFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">returnType</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">returnType</span> <span class="o">=</span> <span class="n">returnType</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_broadcast</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_broadcast</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_judf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_judf</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_create_judf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SQLContext</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SQLContext</span>
         <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
         <span class="n">wrapped_func</span> <span class="o">=</span> <span class="n">_wrap_function</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">returnType</span><span class="p">)</span>
         <span class="n">ctx</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
         <span class="n">jdt</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">parseDataType</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">returnType</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">__name__</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;__name__&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">f</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span>
         <span class="n">judf</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">execution</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">UserDefinedPythonFunction</span><span class="p">(</span>
@@ -1917,9 +1917,9 @@
         <span class="k">return</span> <span class="n">judf</span>
 
     <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_broadcast</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_broadcast</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_broadcast</span><span class="o">.</span><span class="n">unpersist</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_broadcast</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_broadcast</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span>
@@ -1943,13 +1943,13 @@
 
 <span class="n">blacklist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;map&#39;</span><span class="p">,</span> <span class="s1">&#39;since&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore_unicode_prefix&#39;</span><span class="p">]</span>
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-           <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span> <span class="ow">and</span> <span class="n">callable</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">]</span>
+           <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">blacklist</span><span class="p">]</span>
 <span class="n">__all__</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">_test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">SparkSession</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">SparkSession</span>
     <span class="kn">import</span> <span class="nn">pyspark.sql.functions</span>
     <span class="n">globs</span> <span class="o">=</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span>\
@@ -1965,7 +1965,7 @@
         <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">NORMALIZE_WHITESPACE</span><span class="p">)</span>
     <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -2012,6 +2012,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

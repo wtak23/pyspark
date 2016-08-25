@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.70. pyspark.ml.feature.Word2Vec &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.70. pyspark.ml.feature.Word2Vec &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.70.1.1. pyspark.ml.feature.Word2Vec.__init__" href="pyspark.ml.feature.Word2Vec.__init__.html"/>
         <link rel="prev" title="3.3.2.69.2.5. pyspark.ml.feature.VectorSlicer.params" href="pyspark.ml.feature.VectorSlicer.params.html"/> 
@@ -164,7 +164,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorIndexer.html">3.3.2.67. pyspark.ml.feature.VectorIndexer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorIndexerModel.html">3.3.2.68. pyspark.ml.feature.VectorIndexerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.VectorSlicer.html">3.3.2.69. pyspark.ml.feature.VectorSlicer</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.70. pyspark.ml.feature.Word2Vec</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.70. pyspark.ml.feature.Word2Vec</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Word2VecModel.html">3.3.2.71. pyspark.ml.feature.Word2VecModel</a></li>
 </ul>
 </li>
@@ -250,7 +250,7 @@
 <em class="property">class </em><code class="descclassname">pyspark.ml.feature.</code><code class="descname">Word2Vec</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/feature.html#Word2Vec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.feature.Word2Vec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Word2Vec trains a model of <cite>Map(String, Vector)</cite>, i.e. transforms a word into a code for further
 natural language processing or machine learning process.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sent</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a b &quot;</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="s2">&quot;a c &quot;</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sent</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;a b &quot;</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="s2">&quot;a c &quot;</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">doc</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="n">sent</span><span class="p">,),</span> <span class="p">(</span><span class="n">sent</span><span class="p">,)],</span> <span class="p">[</span><span class="s2">&quot;sentence&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">word2Vec</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span><span class="n">vectorSize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;sentence&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">word2Vec</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
@@ -263,7 +263,7 @@ natural language processing or machine learning process.</p>
 <span class="go">|   c|[-0.3794820010662...|</span>
 <span class="go">+----+--------------------+</span>
 <span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="k">import</span> <span class="n">format_number</span> <span class="k">as</span> <span class="n">fmt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">format_number</span> <span class="k">as</span> <span class="n">fmt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">findSynonyms</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="p">(</span><span class="s2">&quot;similarity&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;similarity&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">+----+----------+</span>
 <span class="go">|word|similarity|</span>
@@ -520,6 +520,7 @@ natural language processing or machine learning process.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

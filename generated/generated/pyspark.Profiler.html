@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.2.8. pyspark.Profiler &mdash; PySpark API 1 documentation</title>
+  <title>1.2.8. pyspark.Profiler &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="1. pyspark" href="../pyspark.html"/>
         <link rel="next" title="1.2.8.1.1. pyspark.Profiler.__init__" href="pyspark.Profiler.__init__.html"/>
         <link rel="prev" title="1.2.7.1.5. pyspark.PickleSerializer.loads" href="pyspark.PickleSerializer.loads.html"/> 
@@ -97,7 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="pyspark.HiveContext.html">1.2.5. pyspark.HiveContext</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.MarshalSerializer.html">1.2.6. pyspark.MarshalSerializer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.PickleSerializer.html">1.2.7. pyspark.PickleSerializer</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.8. pyspark.Profiler</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="">1.2.8. pyspark.Profiler</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#methods">1.2.8.1. Methods</a></li>
 </ul>
 </li>
@@ -201,11 +201,11 @@ dump - dumps the profiles to a path
 add - adds a profile to the existing accumulated profile</dd>
 </dl>
 <p>The profiler class is chosen when creating a SparkContext</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkConf</span><span class="p">,</span> <span class="n">SparkContext</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">BasicProfiler</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkConf</span><span class="p">,</span> <span class="n">SparkContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">BasicProfiler</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyCustomProfiler</span><span class="p">(</span><span class="n">BasicProfiler</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My custom profiles for RDD:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;My custom profiles for RDD:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">)</span>
 <span class="gp">...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span> <span class="o">=</span> <span class="n">SparkConf</span><span class="p">()</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;spark.python.profile&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">(</span><span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="n">conf</span><span class="p">,</span> <span class="n">profiler_cls</span><span class="o">=</span><span class="n">MyCustomProfiler</span><span class="p">)</span>
@@ -304,6 +304,7 @@ add - adds a profile to the existing accumulated profile</dd>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

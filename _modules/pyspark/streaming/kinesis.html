@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.streaming.kinesis &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.streaming.kinesis &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -168,19 +168,19 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">py4j.protocol</span> <span class="k">import</span> <span class="n">Py4JJavaError</span>
+<span class="kn">from</span> <span class="nn">py4j.protocol</span> <span class="kn">import</span> <span class="n">Py4JJavaError</span>
 
-<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="k">import</span> <span class="n">PairDeserializer</span><span class="p">,</span> <span class="n">NoOpSerializer</span>
-<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="k">import</span> <span class="n">StorageLevel</span>
-<span class="kn">from</span> <span class="nn">pyspark.streaming</span> <span class="k">import</span> <span class="n">DStream</span>
+<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="kn">import</span> <span class="n">PairDeserializer</span><span class="p">,</span> <span class="n">NoOpSerializer</span>
+<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="kn">import</span> <span class="n">StorageLevel</span>
+<span class="kn">from</span> <span class="nn">pyspark.streaming</span> <span class="kn">import</span> <span class="n">DStream</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;KinesisUtils&#39;</span><span class="p">,</span> <span class="s1">&#39;InitialPositionInStream&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8_decoder&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="utf8_decoder"><a class="viewcode-back" href="../../../generated/pyspark.streaming.kinesis.utf8_decoder.html#pyspark.streaming.kinesis.utf8_decoder">[docs]</a><span class="k">def</span> <span class="nf">utf8_decoder</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Decode the unicode as UTF-8 &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></div>
 
 
@@ -190,7 +190,7 @@
 <div class="viewcode-block" id="KinesisUtils.createStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.KinesisUtils.createStream.html#pyspark.streaming.kinesis.KinesisUtils.createStream">[docs]</a>    <span class="k">def</span> <span class="nf">createStream</span><span class="p">(</span><span class="n">ssc</span><span class="p">,</span> <span class="n">kinesisAppName</span><span class="p">,</span> <span class="n">streamName</span><span class="p">,</span> <span class="n">endpointUrl</span><span class="p">,</span> <span class="n">regionName</span><span class="p">,</span>
                      <span class="n">initialPositionInStream</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="p">,</span>
                      <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_AND_DISK_2</span><span class="p">,</span>
-                     <span class="n">awsAccessKeyId</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">awsSecretKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">decoder</span><span class="o">=</span><span class="n">utf8_decoder</span><span class="p">):</span>
+                     <span class="n">awsAccessKeyId</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">awsSecretKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">decoder</span><span class="o">=</span><span class="n">utf8_decoder</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an input stream that pulls messages from a Kinesis stream. This uses the</span>
 <span class="sd">        Kinesis Client Library (KCL) to pull messages from Kinesis.</span>
@@ -240,7 +240,7 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_printErrorMsg</span><span class="p">(</span><span class="n">sc</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">________________________________________________________________________________________________</span>
 
 <span class="s2">  Spark Streaming&#39;s Kinesis libraries not found in class path. Try one of the following.</span>
@@ -305,6 +305,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

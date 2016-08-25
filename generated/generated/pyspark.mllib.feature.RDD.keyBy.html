@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.5.2.16.1.40. pyspark.mllib.feature.RDD.keyBy &mdash; PySpark API 1 documentation</title>
+  <title>4.5.2.16.1.40. pyspark.mllib.feature.RDD.keyBy &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.5.2.16. pyspark.mllib.feature.RDD" href="pyspark.mllib.feature.RDD.html"/>
         <link rel="next" title="4.5.2.16.1.41. pyspark.mllib.feature.RDD.keys" href="pyspark.mllib.feature.RDD.keys.html"/>
         <link rel="prev" title="4.5.2.16.1.39. pyspark.mllib.feature.RDD.join" href="pyspark.mllib.feature.RDD.join.html"/> 
@@ -124,6 +124,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.Word2VecModel.html">4.5.2.24. pyspark.mllib.feature.Word2VecModel</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.feature.html#exceptions">4.5.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
@@ -208,7 +209,7 @@
 <dt id="pyspark.mllib.feature.RDD.keyBy">
 <code class="descclassname">RDD.</code><code class="descname">keyBy</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD.keyBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.feature.RDD.keyBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates tuples of the elements in this RDD by applying C{f}.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">keyBy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">keyBy</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">y</span><span class="p">)))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">cogroup</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())]</span>
 <span class="go">[(0, [[0], [0]]), (1, [[1], [1]]), (2, [[], [2]]), (3, [[], [3]]), (4, [[2], [4]])]</span>
@@ -268,6 +269,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

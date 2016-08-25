@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.5.2.39. pyspark.ml.clustering.LDA &mdash; PySpark API 1 documentation</title>
+  <title>3.5.2.39. pyspark.ml.clustering.LDA &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.5. pyspark.ml.clustering" href="../pyspark.ml.clustering.html"/>
         <link rel="next" title="3.5.2.39.1.1. pyspark.ml.clustering.LDA.__init__" href="pyspark.ml.clustering.LDA.__init__.html"/>
         <link rel="prev" title="3.5.2.38.2.1. pyspark.ml.clustering.KMeansModel.params" href="pyspark.ml.clustering.KMeansModel.params.html"/> 
@@ -135,7 +135,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.JavaModel.html">3.5.2.36. pyspark.ml.clustering.JavaModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.KMeans.html">3.5.2.37. pyspark.ml.clustering.KMeans</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.KMeansModel.html">3.5.2.38. pyspark.ml.clustering.KMeansModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.5.2.39. pyspark.ml.clustering.LDA</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.5.2.39. pyspark.ml.clustering.LDA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LDAModel.html">3.5.2.40. pyspark.ml.clustering.LDAModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.LocalLDAModel.html">3.5.2.41. pyspark.ml.clustering.LocalLDAModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.clustering.MLReadable.html">3.5.2.42. pyspark.ml.clustering.MLReadable</a></li>
@@ -250,8 +250,8 @@ Each document is specified as a <code class="xref py py-class docutils literal">
 count for the corresponding term (word) in the document.  Feature transformers such as
 <a class="reference internal" href="pyspark.ml.feature.Tokenizer.html#pyspark.ml.feature.Tokenizer" title="pyspark.ml.feature.Tokenizer"><code class="xref py py-class docutils literal"><span class="pre">pyspark.ml.feature.Tokenizer</span></code></a> and <a class="reference internal" href="pyspark.ml.feature.CountVectorizer.html#pyspark.ml.feature.CountVectorizer" title="pyspark.ml.feature.CountVectorizer"><code class="xref py py-class docutils literal"><span class="pre">pyspark.ml.feature.CountVectorizer</span></code></a>
 can be useful for converting text to word count vectors.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="k">import</span> <span class="n">Vectors</span><span class="p">,</span> <span class="n">SparseVector</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.clustering</span> <span class="k">import</span> <span class="n">LDA</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span><span class="p">,</span> <span class="n">SparseVector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.clustering</span> <span class="kn">import</span> <span class="n">LDA</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])],</span>
 <span class="gp">... </span>     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">SparseVector</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">})],],</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lda</span> <span class="o">=</span> <span class="n">LDA</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;em&quot;</span><span class="p">)</span>
@@ -549,6 +549,7 @@ can be useful for converting text to word count vectors.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.streaming.context &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.streaming.context &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -168,19 +168,19 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="kn">from</span> <span class="nn">py4j.java_gateway</span> <span class="k">import</span> <span class="n">java_import</span><span class="p">,</span> <span class="n">JavaObject</span>
+<span class="kn">from</span> <span class="nn">py4j.java_gateway</span> <span class="kn">import</span> <span class="n">java_import</span><span class="p">,</span> <span class="n">JavaObject</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">SparkConf</span>
-<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="k">import</span> <span class="n">NoOpSerializer</span><span class="p">,</span> <span class="n">UTF8Deserializer</span><span class="p">,</span> <span class="n">CloudPickleSerializer</span>
-<span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
-<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="k">import</span> <span class="n">StorageLevel</span>
-<span class="kn">from</span> <span class="nn">pyspark.streaming.dstream</span> <span class="k">import</span> <span class="n">DStream</span>
-<span class="kn">from</span> <span class="nn">pyspark.streaming.util</span> <span class="k">import</span> <span class="n">TransformFunction</span><span class="p">,</span> <span class="n">TransformFunctionSerializer</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">SparkConf</span>
+<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="kn">import</span> <span class="n">NoOpSerializer</span><span class="p">,</span> <span class="n">UTF8Deserializer</span><span class="p">,</span> <span class="n">CloudPickleSerializer</span>
+<span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="kn">import</span> <span class="n">StorageLevel</span>
+<span class="kn">from</span> <span class="nn">pyspark.streaming.dstream</span> <span class="kn">import</span> <span class="n">DStream</span>
+<span class="kn">from</span> <span class="nn">pyspark.streaming.util</span> <span class="kn">import</span> <span class="n">TransformFunction</span><span class="p">,</span> <span class="n">TransformFunctionSerializer</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;StreamingContext&quot;</span><span class="p">]</span>
 
@@ -195,12 +195,12 @@
 <span class="sd">    respectively. `context.awaitTermination()` allows the current thread</span>
 <span class="sd">    to wait for the termination of the context by `stop()` or by an exception.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">_transformerSerializer</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_transformerSerializer</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="c1"># Reference to a currently active StreamingContext</span>
-    <span class="n">_activeContext</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_activeContext</span> <span class="o">=</span> <span class="bp">None</span>
 
-<div class="viewcode-block" id="StreamingContext.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.__init__.html#pyspark.streaming.StreamingContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">batchDuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">jssc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.__init__.html#pyspark.streaming.StreamingContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">batchDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">jssc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new StreamingContext.</span>
 
@@ -234,10 +234,10 @@
 
         <span class="c1"># start callback server</span>
         <span class="c1"># getattr will fallback to JVM, so we cannot test by hasattr()</span>
-        <span class="k">if</span> <span class="s2">&quot;_callback_server&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gw</span><span class="o">.</span><span class="n">__dict__</span> <span class="ow">or</span> <span class="n">gw</span><span class="o">.</span><span class="n">_callback_server</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="o">.</span><span class="n">eager_load</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="o">.</span><span class="n">daemonize</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="o">.</span><span class="n">daemonize_connections</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="s2">&quot;_callback_server&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">gw</span><span class="o">.</span><span class="n">__dict__</span> <span class="ow">or</span> <span class="n">gw</span><span class="o">.</span><span class="n">_callback_server</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="o">.</span><span class="n">eager_load</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="o">.</span><span class="n">daemonize</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="o">.</span><span class="n">daemonize_connections</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="n">gw</span><span class="o">.</span><span class="n">start_callback_server</span><span class="p">(</span><span class="n">gw</span><span class="o">.</span><span class="n">callback_server_parameters</span><span class="p">)</span>
             <span class="n">cbport</span> <span class="o">=</span> <span class="n">gw</span><span class="o">.</span><span class="n">_callback_server</span><span class="o">.</span><span class="n">server_socket</span><span class="o">.</span><span class="n">getsockname</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
@@ -287,7 +287,7 @@
 
         <span class="c1"># update ctx in serializer</span>
         <span class="n">cls</span><span class="o">.</span><span class="n">_transformerSerializer</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">sc</span>
-        <span class="k">return</span> <span class="n">StreamingContext</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">jssc</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">StreamingContext</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">jssc</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
 <div class="viewcode-block" id="StreamingContext.getActive"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.getActive.html#pyspark.streaming.StreamingContext.getActive">[docs]</a>    <span class="k">def</span> <span class="nf">getActive</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
@@ -296,16 +296,16 @@
 <span class="sd">        but not stopped) or None.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">activePythonContext</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">_activeContext</span>
-        <span class="k">if</span> <span class="n">activePythonContext</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">activePythonContext</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="c1"># Verify that the current running Java StreamingContext is active and is the same one</span>
             <span class="c1"># backing the supposedly active Python context</span>
             <span class="n">activePythonContextJavaId</span> <span class="o">=</span> <span class="n">activePythonContext</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">ssc</span><span class="p">()</span><span class="o">.</span><span class="n">hashCode</span><span class="p">()</span>
             <span class="n">activeJvmContextOption</span> <span class="o">=</span> <span class="n">activePythonContext</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">StreamingContext</span><span class="o">.</span><span class="n">getActive</span><span class="p">()</span>
 
             <span class="k">if</span> <span class="n">activeJvmContextOption</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">():</span>
-                <span class="n">cls</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">elif</span> <span class="n">activeJvmContextOption</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">hashCode</span><span class="p">()</span> <span class="o">!=</span> <span class="n">activePythonContextJavaId</span><span class="p">:</span>
-                <span class="n">cls</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">cls</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="bp">None</span>
                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;JVM&#39;s active JavaStreamingContext is not the JavaStreamingContext &quot;</span>
                                 <span class="s2">&quot;backing the action Python StreamingContext. This is unexpected.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_activeContext</span></div>
@@ -325,12 +325,12 @@
 <span class="sd">        @param setupFunc:      Function to create a new JavaStreamingContext and setup DStreams</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="n">setupFunc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">setupFunc</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;setupFunc cannot be None&quot;</span><span class="p">)</span>
         <span class="n">activeContext</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">getActive</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">activeContext</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">activeContext</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">activeContext</span>
-        <span class="k">elif</span> <span class="n">checkpointPath</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">checkpointPath</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">(</span><span class="n">checkpointPath</span><span class="p">,</span> <span class="n">setupFunc</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">setupFunc</span><span class="p">()</span></div>
@@ -349,13 +349,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">StreamingContext</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="StreamingContext.awaitTermination"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.awaitTermination.html#pyspark.streaming.StreamingContext.awaitTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.awaitTermination"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.awaitTermination.html#pyspark.streaming.StreamingContext.awaitTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Wait for the execution to stop.</span>
 
 <span class="sd">        @param timeout: time to wait in seconds</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">awaitTermination</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">awaitTerminationOrTimeout</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">timeout</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span></div>
@@ -370,7 +370,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">awaitTerminationOrTimeout</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">timeout</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="StreamingContext.stop"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.stop.html#pyspark.streaming.StreamingContext.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stopSparkContext</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stopGraceFully</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.stop"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.stop.html#pyspark.streaming.StreamingContext.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stopSparkContext</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stopGraceFully</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Stop the execution of the streams, with option of ensuring all</span>
 <span class="sd">        received data has been processed.</span>
@@ -380,7 +380,7 @@
 <span class="sd">                              of all received data to be completed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">stopSparkContext</span><span class="p">,</span> <span class="n">stopGraceFully</span><span class="p">)</span>
-        <span class="n">StreamingContext</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">StreamingContext</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">if</span> <span class="n">stopSparkContext</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 
@@ -452,7 +452,7 @@
                 <span class="c1"># reset them to sc.serializer</span>
                 <span class="n">rdds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rdds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_reserialize</span><span class="p">()</span>
 
-<div class="viewcode-block" id="StreamingContext.queueStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.queueStream.html#pyspark.streaming.StreamingContext.queueStream">[docs]</a>    <span class="k">def</span> <span class="nf">queueStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rdds</span><span class="p">,</span> <span class="n">oneAtATime</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.queueStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.queueStream.html#pyspark.streaming.StreamingContext.queueStream">[docs]</a>    <span class="k">def</span> <span class="nf">queueStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rdds</span><span class="p">,</span> <span class="n">oneAtATime</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an input stream from an queue of RDDs or list. In each batch,</span>
 <span class="sd">        it will process either one or all of the RDDs returned by the queue.</span>
@@ -563,6 +563,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.6.2.8.1.20. pyspark.mllib.fpm.SparkContext.parallelize &mdash; PySpark API 1 documentation</title>
+  <title>4.6.2.8.1.20. pyspark.mllib.fpm.SparkContext.parallelize &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.6.2.8. pyspark.mllib.fpm.SparkContext" href="pyspark.mllib.fpm.SparkContext.html"/>
         <link rel="next" title="4.6.2.8.1.21. pyspark.mllib.fpm.SparkContext.pickleFile" href="pyspark.mllib.fpm.SparkContext.pickleFile.html"/>
         <link rel="prev" title="4.6.2.8.1.19. pyspark.mllib.fpm.SparkContext.newAPIHadoopRDD" href="pyspark.mllib.fpm.SparkContext.newAPIHadoopRDD.html"/> 
@@ -193,9 +193,9 @@
 <code class="descclassname">SparkContext.</code><code class="descname">parallelize</code><span class="sig-paren">(</span><em>c</em>, <em>numSlices=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext.parallelize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.fpm.SparkContext.parallelize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Distribute a local Python collection to form an RDD. Using xrange
 is recommended if the input represents a range for performance.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">glom</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">glom</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[[0], [2], [3], [4], [6]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">glom</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">glom</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[[], [0], [], [2], [4]]</span>
 </pre></div>
 </div>
@@ -253,6 +253,7 @@ is recommended if the input represents a range for performance.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

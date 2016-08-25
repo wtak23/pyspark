@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.8.2.2.1.1. pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__ &mdash; PySpark API 1 documentation</title>
+  <title>4.8.2.2.1.1. pyspark.mllib.linalg.distributed.CoordinateMatrix.__init__ &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.8.2.2. pyspark.mllib.linalg.distributed.CoordinateMatrix" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.html"/>
         <link rel="next" title="4.8.2.2.1.2. pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.numCols.html"/>
         <link rel="prev" title="4.8.2.2. pyspark.mllib.linalg.distributed.CoordinateMatrix" href="pyspark.mllib.linalg.distributed.CoordinateMatrix.html"/> 
@@ -107,13 +107,14 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.IndexedRow.html">4.8.2.4. pyspark.mllib.linalg.distributed.IndexedRow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.IndexedRowMatrix.html">4.8.2.5. pyspark.mllib.linalg.distributed.IndexedRowMatrix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.JavaModelWrapper.html">4.8.2.6. pyspark.mllib.linalg.distributed.JavaModelWrapper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.html">4.8.2.7. pyspark.mllib.linalg.distributed.Matrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MatrixEntry.html">4.8.2.8. pyspark.mllib.linalg.distributed.MatrixEntry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html">4.8.2.9. pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.QRDecomposition.html">4.8.2.10. pyspark.mllib.linalg.distributed.QRDecomposition</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RDD.html">4.8.2.11. pyspark.mllib.linalg.distributed.RDD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RowMatrix.html">4.8.2.12. pyspark.mllib.linalg.distributed.RowMatrix</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.StorageLevel.html">4.8.2.13. pyspark.mllib.linalg.distributed.StorageLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.JavaObject.html">4.8.2.7. pyspark.mllib.linalg.distributed.JavaObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.Matrix.html">4.8.2.8. pyspark.mllib.linalg.distributed.Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MatrixEntry.html">4.8.2.9. pyspark.mllib.linalg.distributed.MatrixEntry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary.html">4.8.2.10. pyspark.mllib.linalg.distributed.MultivariateStatisticalSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.QRDecomposition.html">4.8.2.11. pyspark.mllib.linalg.distributed.QRDecomposition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RDD.html">4.8.2.12. pyspark.mllib.linalg.distributed.RDD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.RowMatrix.html">4.8.2.13. pyspark.mllib.linalg.distributed.RowMatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.linalg.distributed.StorageLevel.html">4.8.2.14. pyspark.mllib.linalg.distributed.StorageLevel</a></li>
 </ul>
 </li>
 </ul>
@@ -202,18 +203,18 @@
 internal usage, <cite>rows</cite> can also be a Java CoordinateMatrix
 object, in which case we can wrap it directly.  This
 assists in clean matrix conversions.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">entries</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">MatrixEntry</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">entries</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">MatrixEntry</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span>
 <span class="gp">... </span>                          <span class="n">MatrixEntry</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mat</span> <span class="o">=</span> <span class="n">CoordinateMatrix</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_diff</span> <span class="o">=</span> <span class="n">CoordinateMatrix</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_diff</span> <span class="o">=</span> <span class="n">CoordinateMatrix</span><span class="p">(</span><span class="n">entries</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">mat_diff</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span> <span class="o">==</span>
 <span class="gp">... </span> <span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
 <span class="go">False</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_same</span> <span class="o">=</span> <span class="n">CoordinateMatrix</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mat_same</span> <span class="o">=</span> <span class="n">CoordinateMatrix</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">mat_same</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span> <span class="o">==</span>
 <span class="gp">... </span> <span class="n">mat</span><span class="o">.</span><span class="n">_java_matrix_wrapper</span><span class="o">.</span><span class="n">_java_model</span><span class="p">)</span>
 <span class="go">True</span>
@@ -273,6 +274,7 @@ assists in clean matrix conversions.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

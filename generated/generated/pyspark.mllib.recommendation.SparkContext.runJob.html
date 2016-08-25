@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.10.2.9.1.23. pyspark.mllib.recommendation.SparkContext.runJob &mdash; PySpark API 1 documentation</title>
+  <title>4.10.2.9.1.23. pyspark.mllib.recommendation.SparkContext.runJob &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.10.2.9. pyspark.mllib.recommendation.SparkContext" href="pyspark.mllib.recommendation.SparkContext.html"/>
         <link rel="next" title="4.10.2.9.1.24. pyspark.mllib.recommendation.SparkContext.sequenceFile" href="pyspark.mllib.recommendation.SparkContext.sequenceFile.html"/>
         <link rel="prev" title="4.10.2.9.1.22. pyspark.mllib.recommendation.SparkContext.range" href="pyspark.mllib.recommendation.SparkContext.range.html"/> 
@@ -195,13 +195,13 @@
 <dd><p>Executes the given partitionFunc on the specified set of partitions,
 returning the result as an array of elements.</p>
 <p>If &#8216;partitions&#8217; is not specified, this will run over all partitions.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myRDD</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myRDD</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">runJob</span><span class="p">(</span><span class="n">myRDD</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">part</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">part</span><span class="p">])</span>
 <span class="go">[0, 1, 4, 9, 16, 25]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myRDD</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">runJob</span><span class="p">(</span><span class="n">myRDD</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">part</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">part</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myRDD</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">runJob</span><span class="p">(</span><span class="n">myRDD</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">part</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">part</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="bp">True</span><span class="p">)</span>
 <span class="go">[0, 1, 16, 25]</span>
 </pre></div>
 </div>
@@ -259,6 +259,7 @@ returning the result as an array of elements.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

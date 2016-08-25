@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.streaming.flume &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.streaming.flume &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -170,22 +170,22 @@
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">io</span> <span class="k">import</span> <span class="n">BytesIO</span>
+    <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">StringIO</span> <span class="k">import</span> <span class="n">StringIO</span>
-<span class="kn">from</span> <span class="nn">py4j.protocol</span> <span class="k">import</span> <span class="n">Py4JJavaError</span>
+    <span class="kn">from</span> <span class="nn">StringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">from</span> <span class="nn">py4j.protocol</span> <span class="kn">import</span> <span class="n">Py4JJavaError</span>
 
-<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="k">import</span> <span class="n">StorageLevel</span>
-<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="k">import</span> <span class="n">PairDeserializer</span><span class="p">,</span> <span class="n">NoOpSerializer</span><span class="p">,</span> <span class="n">UTF8Deserializer</span><span class="p">,</span> <span class="n">read_int</span>
-<span class="kn">from</span> <span class="nn">pyspark.streaming</span> <span class="k">import</span> <span class="n">DStream</span>
+<span class="kn">from</span> <span class="nn">pyspark.storagelevel</span> <span class="kn">import</span> <span class="n">StorageLevel</span>
+<span class="kn">from</span> <span class="nn">pyspark.serializers</span> <span class="kn">import</span> <span class="n">PairDeserializer</span><span class="p">,</span> <span class="n">NoOpSerializer</span><span class="p">,</span> <span class="n">UTF8Deserializer</span><span class="p">,</span> <span class="n">read_int</span>
+<span class="kn">from</span> <span class="nn">pyspark.streaming</span> <span class="kn">import</span> <span class="n">DStream</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FlumeUtils&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8_decoder&#39;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="utf8_decoder"><a class="viewcode-back" href="../../../generated/pyspark.streaming.flume.utf8_decoder.html#pyspark.streaming.flume.utf8_decoder">[docs]</a><span class="k">def</span> <span class="nf">utf8_decoder</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Decode the unicode as UTF-8 &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
     <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></div>
 
 
@@ -194,7 +194,7 @@
     <span class="nd">@staticmethod</span>
 <div class="viewcode-block" id="FlumeUtils.createStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.flume.FlumeUtils.createStream.html#pyspark.streaming.flume.FlumeUtils.createStream">[docs]</a>    <span class="k">def</span> <span class="nf">createStream</span><span class="p">(</span><span class="n">ssc</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span>
                      <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_AND_DISK_2</span><span class="p">,</span>
-                     <span class="n">enableDecompression</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                     <span class="n">enableDecompression</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
                      <span class="n">bodyDecoder</span><span class="o">=</span><span class="n">utf8_decoder</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an input stream that pulls events from Flume.</span>
@@ -272,7 +272,7 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_printErrorMsg</span><span class="p">(</span><span class="n">sc</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">________________________________________________________________________________________________</span>
 
 <span class="s2">  Spark Streaming&#39;s Flume libraries not found in class path. Try one of the following.</span>
@@ -333,6 +333,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

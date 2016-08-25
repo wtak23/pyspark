@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.2.2.13.1.59. pyspark.streaming.kafka.RDD.reduceByKey &mdash; PySpark API 1 documentation</title>
+  <title>5.2.2.13.1.59. pyspark.streaming.kafka.RDD.reduceByKey &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="5.2.2.13. pyspark.streaming.kafka.RDD" href="pyspark.streaming.kafka.RDD.html"/>
         <link rel="next" title="5.2.2.13.1.60. pyspark.streaming.kafka.RDD.reduceByKeyLocally" href="pyspark.streaming.kafka.RDD.reduceByKeyLocally.html"/>
         <link rel="prev" title="5.2.2.13.1.58. pyspark.streaming.kafka.RDD.reduce" href="pyspark.streaming.kafka.RDD.reduce.html"/> 
@@ -115,6 +115,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.html">5.2.2.17. pyspark.streaming.kafka.TransformedDStream</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#exceptions">5.2.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
@@ -196,7 +197,7 @@ sending results to a reducer, similarly to a &#8220;combiner&#8221; in MapReduce
 <p>Output will be partitioned with C{numPartitions} partitions, or
 the default parallelism level if C{numPartitions} is not specified.
 Default partitioner is hash-partition.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">add</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">add</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="n">add</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
 <span class="go">[(&#39;a&#39;, 2), (&#39;b&#39;, 1)]</span>
@@ -256,6 +257,7 @@ Default partitioner is hash-partition.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

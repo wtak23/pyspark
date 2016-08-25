@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.44. pyspark.ml.feature.MinMaxScaler &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.44. pyspark.ml.feature.MinMaxScaler &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.44.1.1. pyspark.ml.feature.MinMaxScaler.__init__" href="pyspark.ml.feature.MinMaxScaler.__init__.html"/>
         <link rel="prev" title="3.3.2.43.2.2. pyspark.ml.feature.MaxAbsScalerModel.params" href="pyspark.ml.feature.MaxAbsScalerModel.params.html"/> 
@@ -138,7 +138,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.JavaTransformer.html">3.3.2.41. pyspark.ml.feature.JavaTransformer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MaxAbsScaler.html">3.3.2.42. pyspark.ml.feature.MaxAbsScaler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MaxAbsScalerModel.html">3.3.2.43. pyspark.ml.feature.MaxAbsScalerModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.44. pyspark.ml.feature.MinMaxScaler</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.44. pyspark.ml.feature.MinMaxScaler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MinMaxScalerModel.html">3.3.2.45. pyspark.ml.feature.MinMaxScalerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.NGram.html">3.3.2.46. pyspark.ml.feature.NGram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Normalizer.html">3.3.2.47. pyspark.ml.feature.Normalizer</a></li>
@@ -255,7 +255,7 @@ feature E is calculated as,</p>
 <p>For the case E_max == E_min, Rescaled(e_i) = 0.5 * (max + min)</p>
 <p>Note that since zero values will probably be transformed to non-zero values, output of the
 transformer will be DenseVector even for sparse input.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="k">import</span> <span class="n">Vectors</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),),</span> <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">2.0</span><span class="p">]),)],</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mmScaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;scaled&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">mmScaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -461,6 +461,7 @@ transformer will be DenseVector even for sparse input.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

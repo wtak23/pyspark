@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.1.60. pyspark.sql.functions.from_utc_timestamp &mdash; PySpark API 1 documentation</title>
+  <title>2.3.1.60. pyspark.sql.functions.from_utc_timestamp &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
         <link rel="next" title="2.3.1.61. pyspark.sql.functions.get_json_object" href="pyspark.sql.functions.get_json_object.html"/>
         <link rel="prev" title="2.3.1.59. pyspark.sql.functions.from_unixtime" href="pyspark.sql.functions.from_unixtime.html"/> 
@@ -152,7 +152,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.format_number.html">2.3.1.57. pyspark.sql.functions.format_number</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.format_string.html">2.3.1.58. pyspark.sql.functions.format_string</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.from_unixtime.html">2.3.1.59. pyspark.sql.functions.from_unixtime</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.60. pyspark.sql.functions.from_utc_timestamp</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.3.1.60. pyspark.sql.functions.from_utc_timestamp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.get_json_object.html">2.3.1.61. pyspark.sql.functions.get_json_object</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.greatest.html">2.3.1.62. pyspark.sql.functions.greatest</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.grouping.html">2.3.1.63. pyspark.sql.functions.grouping</a></li>
@@ -338,7 +338,7 @@
 <dt id="pyspark.sql.functions.from_utc_timestamp">
 <code class="descclassname">pyspark.sql.functions.</code><code class="descname">from_utc_timestamp</code><span class="sig-paren">(</span><em>timestamp</em>, <em>tz</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyspark/sql/functions.html#from_utc_timestamp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.from_utc_timestamp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assumes given timestamp is UTC and converts to given timezone.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;1997-02-28 10:30:00&#39;</span><span class="p">,)],</span> <span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;1997-02-28 10:30:00&#39;</span><span class="p">,)],</span> <span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">from_utc_timestamp</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;PST&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(t=datetime.datetime(1997, 2, 28, 2, 30))]</span>
 </pre></div>
@@ -400,6 +400,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

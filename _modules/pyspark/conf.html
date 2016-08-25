@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.conf &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.conf &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="pyspark" href="../pyspark.html"/> 
 
   
@@ -213,7 +213,7 @@
 <span class="kn">import</span> <span class="nn">re</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">unicode</span> <span class="o">=</span> <span class="nb">str</span>
     <span class="n">__doc__</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">r&quot;(\W|^)[uU]([&#39;])&quot;</span><span class="p">,</span> <span class="s1">r&#39;\1\2&#39;</span><span class="p">,</span> <span class="n">__doc__</span><span class="p">)</span>
 
 
@@ -239,7 +239,7 @@
 <span class="sd">    and can no longer be modified by the user.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="SparkConf.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.__init__.html#pyspark.SparkConf.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loadDefaults</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">_jvm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">_jconf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkConf.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.__init__.html#pyspark.SparkConf.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loadDefaults</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">_jvm</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">_jconf</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new Spark configuration.</span>
 
@@ -253,19 +253,19 @@
         <span class="k">if</span> <span class="n">_jconf</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span> <span class="o">=</span> <span class="n">_jconf</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="k">import</span> <span class="n">SparkContext</span>
+            <span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="kn">import</span> <span class="n">SparkContext</span>
             <span class="n">SparkContext</span><span class="o">.</span><span class="n">_ensure_initialized</span><span class="p">()</span>
             <span class="n">_jvm</span> <span class="o">=</span> <span class="n">_jvm</span> <span class="ow">or</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_jvm</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span> <span class="o">=</span> <span class="n">_jvm</span><span class="o">.</span><span class="n">SparkConf</span><span class="p">(</span><span class="n">loadDefaults</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="SparkConf.set"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.set.html#pyspark.SparkConf.set">[docs]</a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set a configuration property.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">unicode</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">unicode</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
 <div class="viewcode-block" id="SparkConf.setIfMissing"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.setIfMissing.html#pyspark.SparkConf.setIfMissing">[docs]</a>    <span class="k">def</span> <span class="nf">setIfMissing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set a configuration property, if not already set.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
@@ -284,13 +284,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">setSparkHome</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="SparkConf.setExecutorEnv"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.setExecutorEnv.html#pyspark.SparkConf.setExecutorEnv">[docs]</a>    <span class="k">def</span> <span class="nf">setExecutorEnv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pairs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkConf.setExecutorEnv"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.setExecutorEnv.html#pyspark.SparkConf.setExecutorEnv">[docs]</a>    <span class="k">def</span> <span class="nf">setExecutorEnv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pairs</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set an environment variable to be passed to executors.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">pairs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">key</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">pairs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Either pass one key-value pair or a list of pairs&quot;</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">setExecutorEnv</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">pairs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">setExecutorEnv</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
@@ -305,11 +305,11 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="SparkConf.get"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.get.html#pyspark.SparkConf.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">defaultValue</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkConf.get"><a class="viewcode-back" href="../../generated/generated/pyspark.SparkConf.get.html#pyspark.SparkConf.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">defaultValue</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the configured value for some key, or return a default otherwise.&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">defaultValue</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>   <span class="c1"># Py4J doesn&#39;t call the right get() if we pass None</span>
+        <span class="k">if</span> <span class="n">defaultValue</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>   <span class="c1"># Py4J doesn&#39;t call the right get() if we pass None</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-                <span class="k">return</span> <span class="kc">None</span>
+                <span class="k">return</span> <span class="bp">None</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jconf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">defaultValue</span><span class="p">)</span></div>
@@ -337,7 +337,7 @@
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -384,6 +384,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

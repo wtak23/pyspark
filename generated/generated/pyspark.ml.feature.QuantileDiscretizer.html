@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.54. pyspark.ml.feature.QuantileDiscretizer &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.54. pyspark.ml.feature.QuantileDiscretizer &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.54.1.1. pyspark.ml.feature.QuantileDiscretizer.__init__" href="pyspark.ml.feature.QuantileDiscretizer.__init__.html"/>
         <link rel="prev" title="3.3.2.53.2.4. pyspark.ml.feature.PolynomialExpansion.params" href="pyspark.ml.feature.PolynomialExpansion.params.html"/> 
@@ -148,7 +148,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Param.html">3.3.2.51. pyspark.ml.feature.Param</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Params.html">3.3.2.52. pyspark.ml.feature.Params</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.PolynomialExpansion.html">3.3.2.53. pyspark.ml.feature.PolynomialExpansion</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.54. pyspark.ml.feature.QuantileDiscretizer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.54. pyspark.ml.feature.QuantileDiscretizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RFormula.html">3.3.2.55. pyspark.ml.feature.RFormula</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RFormulaModel.html">3.3.2.56. pyspark.ml.feature.RFormulaModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RegexTokenizer.html">3.3.2.57. pyspark.ml.feature.RegexTokenizer</a></li>
@@ -259,7 +259,7 @@ The bin ranges are chosen using an approximate algorithm (see the documentation 
 The precision of the approximation can be controlled with the
 <a class="reference internal" href="pyspark.ml.feature.QuantileDiscretizer.relativeError.html#pyspark.ml.feature.QuantileDiscretizer.relativeError" title="pyspark.ml.feature.QuantileDiscretizer.relativeError"><code class="xref py py-attr docutils literal"><span class="pre">relativeError</span></code></a> parameter.
 The lower and upper bin bounds will be <cite>-Infinity</cite> and <cite>+Infinity</cite>, covering all real values.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mf">0.1</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,)],</span> <span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mf">0.1</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,)],</span> <span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qds</span> <span class="o">=</span> <span class="n">QuantileDiscretizer</span><span class="p">(</span><span class="n">numBuckets</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;buckets&quot;</span><span class="p">,</span> <span class="n">relativeError</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qds</span><span class="o">.</span><span class="n">getRelativeError</span><span class="p">()</span>
@@ -268,7 +268,7 @@ The lower and upper bin bounds will be <cite>-Infinity</cite> and <cite>+Infinit
 <span class="gp">&gt;&gt;&gt; </span><span class="n">splits</span> <span class="o">=</span> <span class="n">bucketizer</span><span class="o">.</span><span class="n">getSplits</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">-inf</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%2.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">round</span><span class="p">(</span><span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%2.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">round</span><span class="p">(</span><span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
 <span class="go">0.4</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bucketed</span> <span class="o">=</span> <span class="n">bucketizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">bucketed</span><span class="o">.</span><span class="n">buckets</span>
@@ -454,6 +454,7 @@ The lower and upper bin bounds will be <cite>-Infinity</cite> and <cite>+Infinit
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

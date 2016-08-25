@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.1.34. pyspark.sql.functions.covar_samp &mdash; PySpark API 1 documentation</title>
+  <title>2.3.1.34. pyspark.sql.functions.covar_samp &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
         <link rel="next" title="2.3.1.35. pyspark.sql.functions.crc32" href="pyspark.sql.functions.crc32.html"/>
         <link rel="prev" title="2.3.1.33. pyspark.sql.functions.covar_pop" href="pyspark.sql.functions.covar_pop.html"/> 
@@ -126,7 +126,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.count.html">2.3.1.31. pyspark.sql.functions.count</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.countDistinct.html">2.3.1.32. pyspark.sql.functions.countDistinct</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.covar_pop.html">2.3.1.33. pyspark.sql.functions.covar_pop</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.34. pyspark.sql.functions.covar_samp</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.3.1.34. pyspark.sql.functions.covar_samp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.crc32.html">2.3.1.35. pyspark.sql.functions.crc32</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.create_map.html">2.3.1.36. pyspark.sql.functions.create_map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.cume_dist.html">2.3.1.37. pyspark.sql.functions.cume_dist</a></li>
@@ -339,7 +339,7 @@
 <code class="descclassname">pyspark.sql.functions.</code><code class="descname">covar_samp</code><span class="sig-paren">(</span><em>col1</em>, <em>col2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyspark/sql/functions.html#covar_samp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.covar_samp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a new <a class="reference internal" href="generated/pyspark.sql.functions.Column.html#pyspark.sql.functions.Column" title="pyspark.sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for the sample covariance of <code class="docutils literal"><span class="pre">col1</span></code>
 and <code class="docutils literal"><span class="pre">col2</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">covar_samp</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
@@ -403,6 +403,7 @@ and <code class="docutils literal"><span class="pre">col2</span></code>.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

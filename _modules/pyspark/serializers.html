@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.serializers &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.serializers &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="pyspark" href="../pyspark.html"/> 
 
   
@@ -203,7 +203,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">product</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span><span class="p">,</span> <span class="n">product</span>
 <span class="kn">import</span> <span class="nn">marshal</span>
 <span class="kn">import</span> <span class="nn">struct</span>
 <span class="kn">import</span> <span class="nn">types</span>
@@ -212,15 +212,15 @@
 <span class="kn">import</span> <span class="nn">itertools</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&lt;</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">cPickle</span> <span class="k">as</span> <span class="nn">pickle</span>
+    <span class="kn">import</span> <span class="nn">cPickle</span> <span class="kn">as</span> <span class="nn">pickle</span>
     <span class="n">protocol</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">izip</span> <span class="k">as</span> <span class="nb">zip</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">izip</span> <span class="k">as</span> <span class="nb">zip</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">pickle</span>
     <span class="n">protocol</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="n">xrange</span> <span class="o">=</span> <span class="nb">range</span>
+    <span class="nb">xrange</span> <span class="o">=</span> <span class="nb">range</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">cloudpickle</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">cloudpickle</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PickleSerializer&quot;</span><span class="p">,</span> <span class="s2">&quot;MarshalSerializer&quot;</span><span class="p">,</span> <span class="s2">&quot;UTF8Deserializer&quot;</span><span class="p">]</span>
@@ -287,7 +287,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_write_with_length</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">load_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_with_length</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
@@ -295,7 +295,7 @@
 
     <span class="k">def</span> <span class="nf">_write_with_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
         <span class="n">serialized</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">serialized</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">serialized</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;serialized value should not be None&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">serialized</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">31</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;can not serialize object larger than 2G&quot;</span><span class="p">)</span>
@@ -310,7 +310,7 @@
         <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="n">SpecialLengths</span><span class="o">.</span><span class="n">END_OF_DATA_SECTION</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">EOFError</span>
         <span class="k">elif</span> <span class="n">length</span> <span class="o">==</span> <span class="n">SpecialLengths</span><span class="o">.</span><span class="n">NULL</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="bp">None</span>
         <span class="n">obj</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">EOFError</span>
@@ -349,7 +349,7 @@
             <span class="k">yield</span> <span class="nb">list</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="s2">&quot;__getslice__&quot;</span><span class="p">):</span>
             <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batchSize</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batchSize</span><span class="p">):</span>
                 <span class="k">yield</span> <span class="n">iterator</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">batchSize</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
@@ -412,7 +412,7 @@
 <div class="viewcode-block" id="AutoBatchedSerializer.dump_stream"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.AutoBatchedSerializer.dump_stream.html#pyspark.AutoBatchedSerializer.dump_stream">[docs]</a>    <span class="k">def</span> <span class="nf">dump_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
         <span class="n">batch</span><span class="p">,</span> <span class="n">best</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bestSize</span>
         <span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
             <span class="n">vs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">islice</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="n">batch</span><span class="p">))</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">vs</span><span class="p">:</span>
                 <span class="k">break</span>
@@ -498,7 +498,7 @@
     <span class="sd">&quot;&quot;&quot; Restore an object of namedtuple&quot;&quot;&quot;</span>
     <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
     <span class="n">cls</span> <span class="o">=</span> <span class="n">__cls</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">cls</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
         <span class="n">cls</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
         <span class="n">__cls</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">cls</span>
     <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span>
@@ -512,7 +512,7 @@
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">_restore</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fields</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span>
     <span class="n">cls</span><span class="o">.</span><span class="n">__reduce__</span> <span class="o">=</span> <span class="n">__reduce__</span>
-    <span class="n">cls</span><span class="o">.</span><span class="n">_is_namedtuple_</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">cls</span><span class="o">.</span><span class="n">_is_namedtuple_</span> <span class="o">=</span> <span class="bp">True</span>
     <span class="k">return</span> <span class="n">cls</span>
 
 
@@ -571,7 +571,7 @@
         <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;bytes&quot;</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-<div class="viewcode-block" id="PickleSerializer.loads"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.PickleSerializer.loads.html#pyspark.PickleSerializer.loads">[docs]</a>        <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PickleSerializer.loads"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.PickleSerializer.loads.html#pyspark.PickleSerializer.loads">[docs]</a>        <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div></div>
 
 
@@ -606,10 +606,10 @@
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">FramedSerializer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">b</span><span class="s1">&#39;P&#39;</span> <span class="o">+</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">b</span><span class="s1">&#39;M&#39;</span> <span class="o">+</span> <span class="n">marshal</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
@@ -652,7 +652,7 @@
 <span class="sd">    Deserializes streams written by String.getBytes.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="UTF8Deserializer.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.__init__.html#pyspark.UTF8Deserializer.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="UTF8Deserializer.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.__init__.html#pyspark.UTF8Deserializer.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">use_unicode</span> <span class="o">=</span> <span class="n">use_unicode</span></div>
 
 <div class="viewcode-block" id="UTF8Deserializer.loads"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.loads.html#pyspark.UTF8Deserializer.loads">[docs]</a>    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
@@ -660,13 +660,13 @@
         <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="n">SpecialLengths</span><span class="o">.</span><span class="n">END_OF_DATA_SECTION</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">EOFError</span>
         <span class="k">elif</span> <span class="n">length</span> <span class="o">==</span> <span class="n">SpecialLengths</span><span class="o">.</span><span class="n">NULL</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="bp">None</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_unicode</span> <span class="k">else</span> <span class="n">s</span></div>
 
 <div class="viewcode-block" id="UTF8Deserializer.load_stream"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.load_stream.html#pyspark.UTF8Deserializer.load_stream">[docs]</a>    <span class="k">def</span> <span class="nf">load_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">struct</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
             <span class="k">return</span>
@@ -712,7 +712,7 @@
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
            </div>
@@ -755,6 +755,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

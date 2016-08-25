@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.2.2.6.1.75. pyspark.streaming.kafka.KafkaRDD.saveAsTextFile &mdash; PySpark API 1 documentation</title>
+  <title>5.2.2.6.1.75. pyspark.streaming.kafka.KafkaRDD.saveAsTextFile &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="5.2.2.6. pyspark.streaming.kafka.KafkaRDD" href="pyspark.streaming.kafka.KafkaRDD.html"/>
         <link rel="next" title="5.2.2.6.1.76. pyspark.streaming.kafka.KafkaRDD.setName" href="pyspark.streaming.kafka.KafkaRDD.setName.html"/>
         <link rel="prev" title="5.2.2.6.1.74. pyspark.streaming.kafka.KafkaRDD.saveAsSequenceFile" href="pyspark.streaming.kafka.KafkaRDD.saveAsSequenceFile.html"/> 
@@ -115,6 +115,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.streaming.kafka.TransformedDStream.html">5.2.2.17. pyspark.streaming.kafka.TransformedDStream</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.streaming.kafka.html#exceptions">5.2.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
@@ -195,17 +196,17 @@
 &#64;param compressionCodecClass: (None by default) string i.e.</p>
 <blockquote>
 <div>&#8220;org.apache.hadoop.io.compress.GzipCodec&#8221;</div></blockquote>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">saveAsTextFile</span><span class="p">(</span><span class="n">tempFile</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fileinput</span> <span class="k">import</span> <span class="nb">input</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glob</span> <span class="k">import</span> <span class="n">glob</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fileinput</span> <span class="kn">import</span> <span class="nb">input</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">tempFile</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;/part-0000*&quot;</span><span class="p">))))</span>
 <span class="go">&#39;0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n&#39;</span>
 </pre></div>
 </div>
 <p>Empty lines are tolerated when saving to text files.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile2</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile2</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">saveAsTextFile</span><span class="p">(</span><span class="n">tempFile2</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">tempFile2</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;/part-0000*&quot;</span><span class="p">))))</span>
@@ -213,11 +214,11 @@
 </pre></div>
 </div>
 <p>Using compressionCodecClass</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile3</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile3</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile3</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">codec</span> <span class="o">=</span> <span class="s2">&quot;org.apache.hadoop.io.compress.GzipCodec&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">saveAsTextFile</span><span class="p">(</span><span class="n">tempFile3</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">codec</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fileinput</span> <span class="k">import</span> <span class="nb">input</span><span class="p">,</span> <span class="n">hook_compressed</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fileinput</span> <span class="kn">import</span> <span class="nb">input</span><span class="p">,</span> <span class="n">hook_compressed</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">tempFile3</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;/part*.gz&quot;</span><span class="p">),</span> <span class="n">openhook</span><span class="o">=</span><span class="n">hook_compressed</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 <span class="go">u&#39;bar\nfoo\n&#39;</span>
@@ -277,6 +278,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

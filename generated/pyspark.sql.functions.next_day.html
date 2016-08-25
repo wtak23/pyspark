@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.1.102. pyspark.sql.functions.next_day &mdash; PySpark API 1 documentation</title>
+  <title>2.3.1.102. pyspark.sql.functions.next_day &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
         <link rel="next" title="2.3.1.103. pyspark.sql.functions.ntile" href="pyspark.sql.functions.ntile.html"/>
         <link rel="prev" title="2.3.1.101. pyspark.sql.functions.nanvl" href="pyspark.sql.functions.nanvl.html"/> 
@@ -194,7 +194,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.month.html">2.3.1.99. pyspark.sql.functions.month</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.months_between.html">2.3.1.100. pyspark.sql.functions.months_between</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.nanvl.html">2.3.1.101. pyspark.sql.functions.nanvl</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.102. pyspark.sql.functions.next_day</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.3.1.102. pyspark.sql.functions.next_day</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ntile.html">2.3.1.103. pyspark.sql.functions.ntile</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.percent_rank.html">2.3.1.104. pyspark.sql.functions.percent_rank</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.posexplode.html">2.3.1.105. pyspark.sql.functions.posexplode</a></li>
@@ -342,7 +342,7 @@
 <dt>Day of the week parameter is case insensitive, and accepts:</dt>
 <dd>&#8220;Mon&#8221;, &#8220;Tue&#8221;, &#8220;Wed&#8221;, &#8220;Thu&#8221;, &#8220;Fri&#8221;, &#8220;Sat&#8221;, &#8220;Sun&#8221;.</dd>
 </dl>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;2015-07-27&#39;</span><span class="p">,)],</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;2015-07-27&#39;</span><span class="p">,)],</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">next_day</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="s1">&#39;Sun&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(date=datetime.date(2015, 8, 2))]</span>
 </pre></div>
@@ -404,6 +404,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

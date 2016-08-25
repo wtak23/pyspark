@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.10.2.7.1.7. pyspark.mllib.recommendation.RDD.coalesce &mdash; PySpark API 1 documentation</title>
+  <title>4.10.2.7.1.7. pyspark.mllib.recommendation.RDD.coalesce &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.10.2.7. pyspark.mllib.recommendation.RDD" href="pyspark.mllib.recommendation.RDD.html"/>
         <link rel="next" title="4.10.2.7.1.8. pyspark.mllib.recommendation.RDD.cogroup" href="pyspark.mllib.recommendation.RDD.cogroup.html"/>
         <link rel="prev" title="4.10.2.7.1.6. pyspark.mllib.recommendation.RDD.checkpoint" href="pyspark.mllib.recommendation.RDD.checkpoint.html"/> 
@@ -193,7 +193,7 @@
 <dt id="pyspark.mllib.recommendation.RDD.coalesce">
 <code class="descclassname">RDD.</code><code class="descname">coalesce</code><span class="sig-paren">(</span><em>numPartitions</em>, <em>shuffle=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD.coalesce"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.recommendation.RDD.coalesce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new RDD that is reduced into <cite>numPartitions</cite> partitions.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">glom</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">glom</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[[1], [2, 3], [4, 5]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">coalesce</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">glom</span><span class="p">()</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[[1, 2, 3, 4, 5]]</span>
@@ -253,6 +253,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

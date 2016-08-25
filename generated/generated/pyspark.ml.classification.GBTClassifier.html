@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.4.2.13. pyspark.ml.classification.GBTClassifier &mdash; PySpark API 1 documentation</title>
+  <title>3.4.2.13. pyspark.ml.classification.GBTClassifier &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.4. pyspark.ml.classification" href="../pyspark.ml.classification.html"/>
         <link rel="next" title="3.4.2.13.1.1. pyspark.ml.classification.GBTClassifier.__init__" href="pyspark.ml.classification.GBTClassifier.__init__.html"/>
         <link rel="prev" title="3.4.2.12.2.7. pyspark.ml.classification.GBTClassificationModel.trees" href="pyspark.ml.classification.GBTClassificationModel.trees.html"/> 
@@ -108,7 +108,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.DoubleType.html">3.4.2.10. pyspark.ml.classification.DoubleType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.Estimator.html">3.4.2.11. pyspark.ml.classification.Estimator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.GBTClassificationModel.html">3.4.2.12. pyspark.ml.classification.GBTClassificationModel</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.2.13. pyspark.ml.classification.GBTClassifier</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.4.2.13. pyspark.ml.classification.GBTClassifier</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.GBTParams.html">3.4.2.14. pyspark.ml.classification.GBTParams</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.HasCheckpointInterval.html">3.4.2.15. pyspark.ml.classification.HasCheckpointInterval</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.HasElasticNetParam.html">3.4.2.16. pyspark.ml.classification.HasElasticNetParam</a></li>
@@ -262,9 +262,9 @@ Note: Multiclass labels are not currently supported.</p>
 based on the loss function, whereas the original gradient boosting method does not.
 - We expect to implement TreeBoost in the future:
 <a class="reference external" href="https://issues.apache.org/jira/browse/SPARK-4240">SPARK-4240</a></p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">allclose</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="k">import</span> <span class="n">Vectors</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="k">import</span> <span class="n">StringIndexer</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">allclose</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.feature</span> <span class="kn">import</span> <span class="n">StringIndexer</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
 <span class="gp">... </span>    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)),</span>
 <span class="gp">... </span>    <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]))],</span> <span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="s2">&quot;features&quot;</span><span class="p">])</span>
@@ -285,7 +285,7 @@ based on the loss function, whereas the original gradient boosting method does n
 <span class="go">1.0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">totalNumNodes</span>
 <span class="go">15</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">toDebugString</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">toDebugString</span><span class="p">)</span>
 <span class="go">GBTClassificationModel (uid=...)...with 5 trees...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gbtc_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;gbtc&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gbt</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">gbtc_path</span><span class="p">)</span>
@@ -579,6 +579,7 @@ based on the loss function, whereas the original gradient boosting method does n
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.7.2.40.1.26. pyspark.ml.recommendation.SparkContext.setJobGroup &mdash; PySpark API 1 documentation</title>
+  <title>3.7.2.40.1.26. pyspark.ml.recommendation.SparkContext.setJobGroup &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.7.2.40. pyspark.ml.recommendation.SparkContext" href="pyspark.ml.recommendation.SparkContext.html"/>
         <link rel="next" title="3.7.2.40.1.27. pyspark.ml.recommendation.SparkContext.setLocalProperty" href="pyspark.ml.recommendation.SparkContext.setLocalProperty.html"/>
         <link rel="prev" title="3.7.2.40.1.25. pyspark.ml.recommendation.SparkContext.setCheckpointDir" href="pyspark.ml.recommendation.SparkContext.setCheckpointDir.html"/> 
@@ -227,8 +227,8 @@ Application programmers can use this method to group all those jobs together and
 group description. Once set, the Spark web UI will associate such jobs with this group.</p>
 <p>The application can use L{SparkContext.cancelJobGroup} to cancel all
 running jobs in this group.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">threading</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">threading</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;Not Set&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">map_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -249,7 +249,7 @@ running jobs in this group.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">supress</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">start_job</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">supress</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">stop_job</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">supress</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="go">Cancelled</span>
 </pre></div>
 </div>
@@ -311,6 +311,7 @@ to HDFS-1208, where HDFS may respond to Thread.interrupt() by marking nodes as d
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

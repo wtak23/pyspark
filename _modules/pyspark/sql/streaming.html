@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.streaming &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.sql.streaming &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -171,16 +171,16 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
     <span class="n">intlike</span> <span class="o">=</span> <span class="nb">int</span>
-    <span class="n">basestring</span> <span class="o">=</span> <span class="n">unicode</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="nb">basestring</span> <span class="o">=</span> <span class="nb">unicode</span> <span class="o">=</span> <span class="nb">str</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">intlike</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">long</span><span class="p">)</span>
+    <span class="n">intlike</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">long</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">abc</span> <span class="k">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">since</span><span class="p">,</span> <span class="n">keyword_only</span>
-<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="k">import</span> <span class="n">ignore_unicode_prefix</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.readwriter</span> <span class="k">import</span> <span class="n">OptionUtils</span><span class="p">,</span> <span class="n">to_str</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">since</span><span class="p">,</span> <span class="n">keyword_only</span>
+<span class="kn">from</span> <span class="nn">pyspark.rdd</span> <span class="kn">import</span> <span class="n">ignore_unicode_prefix</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.readwriter</span> <span class="kn">import</span> <span class="n">OptionUtils</span><span class="p">,</span> <span class="n">to_str</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;StreamingQuery&quot;</span><span class="p">,</span> <span class="s2">&quot;StreamingQueryManager&quot;</span><span class="p">,</span> <span class="s2">&quot;DataStreamReader&quot;</span><span class="p">,</span> <span class="s2">&quot;DataStreamWriter&quot;</span><span class="p">]</span>
 
@@ -221,7 +221,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jsq</span><span class="o">.</span><span class="n">isActive</span><span class="p">()</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="StreamingQuery.awaitTermination"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.StreamingQuery.awaitTermination.html#pyspark.sql.streaming.StreamingQuery.awaitTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingQuery.awaitTermination"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.StreamingQuery.awaitTermination.html#pyspark.sql.streaming.StreamingQuery.awaitTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Waits for the termination of `this` query, either by :func:`query.stop()` or by an</span>
 <span class="sd">        exception. If the query has terminated with an exception, then the exception will be thrown.</span>
 <span class="sd">        If `timeout` is set, it returns whether the query has terminated or not within the</span>
@@ -233,7 +233,7 @@
 
 <span class="sd">        throws :class:`StreamingQueryException`, if `this` query has terminated with an exception</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">timeout</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span> <span class="ow">or</span> <span class="n">timeout</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;timeout must be a positive integer or float. Got </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">timeout</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jsq</span><span class="o">.</span><span class="n">awaitTermination</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">timeout</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
@@ -305,7 +305,7 @@
         <span class="k">return</span> <span class="n">StreamingQuery</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jsqm</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="StreamingQueryManager.awaitAnyTermination"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.StreamingQueryManager.awaitAnyTermination.html#pyspark.sql.streaming.StreamingQueryManager.awaitAnyTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitAnyTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingQueryManager.awaitAnyTermination"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.StreamingQueryManager.awaitAnyTermination.html#pyspark.sql.streaming.StreamingQueryManager.awaitAnyTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitAnyTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Wait until any of the queries on the associated SQLContext has terminated since the</span>
 <span class="sd">        creation of the context, or since :func:`resetTerminated()` was called. If any query was</span>
 <span class="sd">        terminated with an exception, then the exception will be thrown.</span>
@@ -325,7 +325,7 @@
 
 <span class="sd">        throws :class:`StreamingQueryException`, if `this` query has terminated with an exception</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">timeout</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span> <span class="ow">or</span> <span class="n">timeout</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;timeout must be a positive integer or float. Got </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">timeout</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jsqm</span><span class="o">.</span><span class="n">awaitAnyTermination</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">timeout</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
@@ -396,7 +396,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span> <span class="o">=</span> <span class="n">spark</span></div>
 
     <span class="k">def</span> <span class="nf">_df</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jdf</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="k">import</span> <span class="n">DataFrame</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.dataframe</span> <span class="kn">import</span> <span class="n">DataFrame</span>
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
@@ -456,7 +456,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataStreamReader.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamReader.load.html#pyspark.sql.streaming.DataStreamReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataStreamReader.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamReader.load.html#pyspark.sql.streaming.DataStreamReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Loads a data stream from a data source and returns it as a :class`DataFrame`.</span>
 
 <span class="sd">        .. note:: Experimental.</span>
@@ -474,12 +474,12 @@
 <span class="sd">        &gt;&gt;&gt; json_sdf.schema == sdf_schema</span>
 <span class="sd">        True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">format</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">schema</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;If the path is provided for stream, it needs to be a &quot;</span> <span class="o">+</span>
                                  <span class="s2">&quot;non-empty string. List of paths are not supported.&quot;</span><span class="p">)</span>
@@ -488,10 +488,10 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">load</span><span class="p">())</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataStreamReader.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamReader.json.html#pyspark.sql.streaming.DataStreamReader.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">primitivesAsString</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefersDecimal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-             <span class="n">allowComments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowUnquotedFieldNames</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowSingleQuotes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-             <span class="n">allowNumericLeadingZero</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowBackslashEscapingAnyCharacter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-             <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">columnNameOfCorruptRecord</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataStreamReader.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamReader.json.html#pyspark.sql.streaming.DataStreamReader.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">primitivesAsString</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">prefersDecimal</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">allowComments</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowUnquotedFieldNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowSingleQuotes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">allowNumericLeadingZero</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowBackslashEscapingAnyCharacter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">columnNameOfCorruptRecord</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads a JSON file stream (one object per line) and returns a :class`DataFrame`.</span>
 
@@ -547,7 +547,7 @@
             <span class="n">allowSingleQuotes</span><span class="o">=</span><span class="n">allowSingleQuotes</span><span class="p">,</span> <span class="n">allowNumericLeadingZero</span><span class="o">=</span><span class="n">allowNumericLeadingZero</span><span class="p">,</span>
             <span class="n">allowBackslashEscapingAnyCharacter</span><span class="o">=</span><span class="n">allowBackslashEscapingAnyCharacter</span><span class="p">,</span>
             <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">columnNameOfCorruptRecord</span><span class="o">=</span><span class="n">columnNameOfCorruptRecord</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;path can be only a single string&quot;</span><span class="p">)</span></div>
@@ -569,7 +569,7 @@
 <span class="sd">        &gt;&gt;&gt; parquet_sdf.schema == sdf_schema</span>
 <span class="sd">        True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;path can be only a single string&quot;</span><span class="p">)</span></div>
@@ -594,17 +594,17 @@
 <span class="sd">        &gt;&gt;&gt; &quot;value&quot; in str(text_sdf.schema)</span>
 <span class="sd">        True</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;path can be only a single string&quot;</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataStreamReader.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamReader.csv.html#pyspark.sql.streaming.DataStreamReader.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inferSchema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignoreLeadingWhiteSpace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">ignoreTrailingWhiteSpace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nanValue</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">positiveInf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">negativeInf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dateFormat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxColumns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxCharsPerColumn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">maxMalformedLogPerPartition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataStreamReader.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamReader.csv.html#pyspark.sql.streaming.DataStreamReader.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">comment</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">inferSchema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ignoreLeadingWhiteSpace</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">ignoreTrailingWhiteSpace</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nanValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">positiveInf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">negativeInf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dateFormat</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">maxColumns</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">maxCharsPerColumn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+            <span class="n">maxMalformedLogPerPartition</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Loads a CSV file stream and returns the result as a  :class:`DataFrame`.</span>
 
 <span class="sd">        This function will go through the input once to determine the input schema if</span>
@@ -676,7 +676,7 @@
             <span class="n">nanValue</span><span class="o">=</span><span class="n">nanValue</span><span class="p">,</span> <span class="n">positiveInf</span><span class="o">=</span><span class="n">positiveInf</span><span class="p">,</span> <span class="n">negativeInf</span><span class="o">=</span><span class="n">negativeInf</span><span class="p">,</span>
             <span class="n">dateFormat</span><span class="o">=</span><span class="n">dateFormat</span><span class="p">,</span> <span class="n">maxColumns</span><span class="o">=</span><span class="n">maxColumns</span><span class="p">,</span> <span class="n">maxCharsPerColumn</span><span class="o">=</span><span class="n">maxCharsPerColumn</span><span class="p">,</span>
             <span class="n">maxMalformedLogPerPartition</span><span class="o">=</span><span class="n">maxMalformedLogPerPartition</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">basestring</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;path can be only a single string&quot;</span><span class="p">)</span></div></div>
@@ -699,7 +699,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">writeStream</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_sq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jsq</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="k">import</span> <span class="n">StreamingQuery</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="kn">import</span> <span class="n">StreamingQuery</span>
         <span class="k">return</span> <span class="n">StreamingQuery</span><span class="p">(</span><span class="n">jsq</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
@@ -790,7 +790,7 @@
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataStreamWriter.trigger"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamWriter.trigger.html#pyspark.sql.streaming.DataStreamWriter.trigger">[docs]</a>    <span class="k">def</span> <span class="nf">trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processingTime</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataStreamWriter.trigger"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamWriter.trigger.html#pyspark.sql.streaming.DataStreamWriter.trigger">[docs]</a>    <span class="k">def</span> <span class="nf">trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processingTime</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the trigger for the stream query. If this is not set it will run the query as fast</span>
 <span class="sd">        as possible, which is equivalent to setting the trigger to ``processingTime=&#39;0 seconds&#39;``.</span>
 
@@ -801,21 +801,21 @@
 <span class="sd">        &gt;&gt;&gt; # trigger the query for execution every 5 seconds</span>
 <span class="sd">        &gt;&gt;&gt; writer = sdf.writeStream.trigger(processingTime=&#39;5 seconds&#39;)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="k">import</span> <span class="n">ProcessingTime</span>
-        <span class="n">trigger</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="n">processingTime</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">pyspark.sql.streaming</span> <span class="kn">import</span> <span class="n">ProcessingTime</span>
+        <span class="n">trigger</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">if</span> <span class="n">processingTime</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">processingTime</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">processingTime</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;The processing time must be a non empty string. Got: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span>
                                  <span class="n">processingTime</span><span class="p">)</span>
             <span class="n">trigger</span> <span class="o">=</span> <span class="n">ProcessingTime</span><span class="p">(</span><span class="n">processingTime</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">trigger</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">trigger</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;A trigger was not provided. Supported triggers: processingTime.&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">trigger</span><span class="p">(</span><span class="n">trigger</span><span class="o">.</span><span class="n">_to_java_trigger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataStreamWriter.start"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamWriter.start.html#pyspark.sql.streaming.DataStreamWriter.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">queryName</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataStreamWriter.start"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.DataStreamWriter.start.html#pyspark.sql.streaming.DataStreamWriter.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">queryName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Streams the contents of the :class:`DataFrame` to a data source.</span>
 
 <span class="sd">        The data source is specified by the ``format`` and a set of ``options``.</span>
@@ -853,13 +853,13 @@
 <span class="sd">        &gt;&gt;&gt; sq.stop()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">partitionBy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">partitionBy</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">format</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">queryName</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">format</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">queryName</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">queryName</span><span class="p">(</span><span class="n">queryName</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">start</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div></div>
@@ -869,7 +869,7 @@
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="kn">import</span> <span class="nn">os</span>
     <span class="kn">import</span> <span class="nn">tempfile</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">SQLContext</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">SparkSession</span><span class="p">,</span> <span class="n">SQLContext</span>
     <span class="kn">import</span> <span class="nn">pyspark.sql.streaming</span>
 
     <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SPARK_HOME&quot;</span><span class="p">])</span>
@@ -886,7 +886,7 @@
     <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;sqlContext&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">sparkContext</span><span class="p">)</span>
     <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;sdf&#39;</span><span class="p">]</span> <span class="o">=</span> \
         <span class="n">spark</span><span class="o">.</span><span class="n">readStream</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;python/test_support/sql/streaming&#39;</span><span class="p">)</span>
-    <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;sdf_schema&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)])</span>
+    <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;sdf_schema&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">)])</span>
     <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;df&#39;</span><span class="p">]</span> <span class="o">=</span> \
         <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;spark&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">readStream</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;python/test_support/sql/streaming&#39;</span><span class="p">)</span>
 
@@ -895,7 +895,7 @@
         <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">NORMALIZE_WHITESPACE</span> <span class="o">|</span> <span class="n">doctest</span><span class="o">.</span><span class="n">REPORT_NDIFF</span><span class="p">)</span>
     <span class="n">globs</span><span class="p">[</span><span class="s1">&#39;spark&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -942,6 +942,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

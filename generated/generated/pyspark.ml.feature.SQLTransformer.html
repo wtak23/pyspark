@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.58. pyspark.ml.feature.SQLTransformer &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.58. pyspark.ml.feature.SQLTransformer &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.58.1.1. pyspark.ml.feature.SQLTransformer.__init__" href="pyspark.ml.feature.SQLTransformer.__init__.html"/>
         <link rel="prev" title="3.3.2.57.2.7. pyspark.ml.feature.RegexTokenizer.toLowercase" href="pyspark.ml.feature.RegexTokenizer.toLowercase.html"/> 
@@ -152,7 +152,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RFormula.html">3.3.2.55. pyspark.ml.feature.RFormula</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RFormulaModel.html">3.3.2.56. pyspark.ml.feature.RFormulaModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.RegexTokenizer.html">3.3.2.57. pyspark.ml.feature.RegexTokenizer</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.58. pyspark.ml.feature.SQLTransformer</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.58. pyspark.ml.feature.SQLTransformer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StandardScaler.html">3.3.2.59. pyspark.ml.feature.StandardScaler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StandardScalerModel.html">3.3.2.60. pyspark.ml.feature.StandardScalerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.StopWordsRemover.html">3.3.2.61. pyspark.ml.feature.StopWordsRemover</a></li>
@@ -251,7 +251,7 @@
 <dd><p>Implements the transforms which are defined by SQL statement.
 Currently we only support SQL syntax like &#8216;SELECT ... FROM __THIS__&#8217;
 where &#8216;__THIS__&#8217; represents the underlying table of the input dataset.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)],</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v2&quot;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)],</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span> <span class="s2">&quot;v2&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sqlTrans</span> <span class="o">=</span> <span class="n">SQLTransformer</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">statement</span><span class="o">=</span><span class="s2">&quot;SELECT *, (v1 + v2) AS v3, (v1 * v2) AS v4 FROM __THIS__&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sqlTrans</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -410,6 +410,7 @@ where &#8216;__THIS__&#8217; represents the underlying table of the input datase
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

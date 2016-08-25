@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.4.1.5. pyspark.ml.classification.when &mdash; PySpark API 1 documentation</title>
+  <title>3.4.1.5. pyspark.ml.classification.when &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="3.4. pyspark.ml.classification" href="pyspark.ml.classification.html"/>
         <link rel="next" title="3.4.2.1. pyspark.ml.classification.ArrayType" href="generated/pyspark.ml.classification.ArrayType.html"/>
         <link rel="prev" title="3.4.1.4. pyspark.ml.classification.udf" href="pyspark.ml.classification.udf.html"/> 
@@ -99,7 +99,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.keyword_only.html">3.4.1.2. pyspark.ml.classification.keyword_only</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.since.html">3.4.1.3. pyspark.ml.classification.since</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.classification.udf.html">3.4.1.4. pyspark.ml.classification.udf</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.4.1.5. pyspark.ml.classification.when</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.4.1.5. pyspark.ml.classification.when</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pyspark.ml.classification.html#classes">3.4.2. Classes</a></li>
@@ -196,11 +196,11 @@ If <code class="xref py py-func docutils literal"><span class="pre">Column.other
 </tr>
 </tbody>
 </table>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">otherwise</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">otherwise</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(age=3), Row(age=4)]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(age=3), Row(age=None)]</span>
 </pre></div>
 </div>
@@ -261,6 +261,7 @@ If <code class="xref py py-func docutils literal"><span class="pre">Column.other
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

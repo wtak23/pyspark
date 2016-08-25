@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.8.2.61.1.21. pyspark.ml.regression.SparkContext.pickleFile &mdash; PySpark API 1 documentation</title>
+  <title>3.8.2.61.1.21. pyspark.ml.regression.SparkContext.pickleFile &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.8.2.61. pyspark.ml.regression.SparkContext" href="pyspark.ml.regression.SparkContext.html"/>
         <link rel="next" title="3.8.2.61.1.22. pyspark.ml.regression.SparkContext.range" href="pyspark.ml.regression.SparkContext.range.html"/>
         <link rel="prev" title="3.8.2.61.1.20. pyspark.ml.regression.SparkContext.parallelize" href="pyspark.ml.regression.SparkContext.parallelize.html"/> 
@@ -245,7 +245,7 @@
 <dt id="pyspark.ml.regression.SparkContext.pickleFile">
 <code class="descclassname">SparkContext.</code><code class="descname">pickleFile</code><span class="sig-paren">(</span><em>name</em>, <em>minPartitions=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext.pickleFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.ml.regression.SparkContext.pickleFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an RDD previously saved using L{RDD.saveAsPickleFile} method.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmpFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tmpFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tmpFile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">saveAsPickleFile</span><span class="p">(</span><span class="n">tmpFile</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">pickleFile</span><span class="p">(</span><span class="n">tmpFile</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span>
@@ -306,6 +306,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

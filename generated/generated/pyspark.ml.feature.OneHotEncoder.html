@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.3.2.48. pyspark.ml.feature.OneHotEncoder &mdash; PySpark API 1 documentation</title>
+  <title>3.3.2.48. pyspark.ml.feature.OneHotEncoder &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.3. pyspark.ml.feature" href="../pyspark.ml.feature.html"/>
         <link rel="next" title="3.3.2.48.1.1. pyspark.ml.feature.OneHotEncoder.__init__" href="pyspark.ml.feature.OneHotEncoder.__init__.html"/>
         <link rel="prev" title="3.3.2.47.2.4. pyspark.ml.feature.Normalizer.params" href="pyspark.ml.feature.Normalizer.params.html"/> 
@@ -142,7 +142,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.MinMaxScalerModel.html">3.3.2.45. pyspark.ml.feature.MinMaxScalerModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.NGram.html">3.3.2.46. pyspark.ml.feature.NGram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Normalizer.html">3.3.2.47. pyspark.ml.feature.Normalizer</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">3.3.2.48. pyspark.ml.feature.OneHotEncoder</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">3.3.2.48. pyspark.ml.feature.OneHotEncoder</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.PCA.html">3.3.2.49. pyspark.ml.feature.PCA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.PCAModel.html">3.3.2.50. pyspark.ml.feature.PCAModel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.ml.feature.Param.html">3.3.2.51. pyspark.ml.feature.Param</a></li>
@@ -265,7 +265,7 @@ The output vectors are sparse.</p>
 <p class="last"><a class="reference internal" href="pyspark.ml.feature.StringIndexer.html#pyspark.ml.feature.StringIndexer" title="pyspark.ml.feature.StringIndexer"><code class="xref py py-class docutils literal"><span class="pre">StringIndexer</span></code></a> for converting categorical values into
 category indices</p>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stringIndexer</span> <span class="o">=</span> <span class="n">StringIndexer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;indexed&quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">stringIndexer</span> <span class="o">=</span> <span class="n">StringIndexer</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;indexed&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">stringIndexer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">stringIndDf</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">td</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">stringIndDf</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;indexed&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">)</span>
@@ -273,7 +273,7 @@ category indices</p>
 <span class="go">SparseVector(2, {0: 1.0})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">encoder</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;freqs&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">td</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">freqs</span>
 <span class="go">SparseVector(2, {0: 1.0})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">encoder</span><span class="o">.</span><span class="n">dropLast</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="n">encoder</span><span class="o">.</span><span class="n">outputCol</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">encoder</span><span class="o">.</span><span class="n">dropLast</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span> <span class="n">encoder</span><span class="o">.</span><span class="n">outputCol</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">td</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">test</span>
 <span class="go">SparseVector(3, {0: 1.0})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">onehotEncoderPath</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/onehot-encoder&quot;</span>
@@ -448,6 +448,7 @@ category indices</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

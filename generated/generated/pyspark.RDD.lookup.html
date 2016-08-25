@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.2.9.1.43. pyspark.RDD.lookup &mdash; PySpark API 1 documentation</title>
+  <title>1.2.9.1.43. pyspark.RDD.lookup &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="1.2.9. pyspark.RDD" href="pyspark.RDD.html"/>
         <link rel="next" title="1.2.9.1.44. pyspark.RDD.map" href="pyspark.RDD.map.html"/>
         <link rel="prev" title="1.2.9.1.42. pyspark.RDD.leftOuterJoin" href="pyspark.RDD.leftOuterJoin.html"/> 
@@ -192,7 +192,7 @@
 <dd><p>Return the list of values in the RDD for key <cite>key</cite>. This operation
 is done efficiently if the RDD has a known partitioner by only
 searching the partition that the key maps to.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># slow</span>
 <span class="go">[42]</span>
@@ -260,6 +260,7 @@ searching the partition that the key maps to.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

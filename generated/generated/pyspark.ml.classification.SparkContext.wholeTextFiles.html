@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.4.2.68.1.36. pyspark.ml.classification.SparkContext.wholeTextFiles &mdash; PySpark API 1 documentation</title>
+  <title>3.4.2.68.1.36. pyspark.ml.classification.SparkContext.wholeTextFiles &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="3.4.2.68. pyspark.ml.classification.SparkContext" href="pyspark.ml.classification.SparkContext.html"/>
         <link rel="next" title="3.4.2.68.2.1. pyspark.ml.classification.SparkContext.PACKAGE_EXTENSIONS" href="pyspark.ml.classification.SparkContext.PACKAGE_EXTENSIONS.html"/>
         <link rel="prev" title="3.4.2.68.1.35. pyspark.ml.classification.SparkContext.union" href="pyspark.ml.classification.SparkContext.union.html"/> 
@@ -261,23 +261,23 @@ value is the content of each file.</p>
 as <cite>utf-8</cite>), which is faster and smaller than unicode. (Added in
 Spark 1.2)</p>
 <p>For example, if you have the following files:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">hdfs</span><span class="p">:</span><span class="o">//</span><span class="n">a</span><span class="o">-</span><span class="n">hdfs</span><span class="o">-</span><span class="n">path</span><span class="o">/</span><span class="n">part</span><span class="o">-</span><span class="mi">00000</span>
-<span class="n">hdfs</span><span class="p">:</span><span class="o">//</span><span class="n">a</span><span class="o">-</span><span class="n">hdfs</span><span class="o">-</span><span class="n">path</span><span class="o">/</span><span class="n">part</span><span class="o">-</span><span class="mi">00001</span>
-<span class="o">...</span>
-<span class="n">hdfs</span><span class="p">:</span><span class="o">//</span><span class="n">a</span><span class="o">-</span><span class="n">hdfs</span><span class="o">-</span><span class="n">path</span><span class="o">/</span><span class="n">part</span><span class="o">-</span><span class="n">nnnnn</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>hdfs://a-hdfs-path/part-00000
+hdfs://a-hdfs-path/part-00001
+...
+hdfs://a-hdfs-path/part-nnnnn
 </pre></div>
 </div>
 <p>Do C{rdd = sparkContext.wholeTextFiles(&#8220;hdfs://a-hdfs-path&#8221;)},
 then C{rdd} contains:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">hdfs</span><span class="o">-</span><span class="n">path</span><span class="o">/</span><span class="n">part</span><span class="o">-</span><span class="mi">00000</span><span class="p">,</span> <span class="n">its</span> <span class="n">content</span><span class="p">)</span>
-<span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">hdfs</span><span class="o">-</span><span class="n">path</span><span class="o">/</span><span class="n">part</span><span class="o">-</span><span class="mi">00001</span><span class="p">,</span> <span class="n">its</span> <span class="n">content</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">hdfs</span><span class="o">-</span><span class="n">path</span><span class="o">/</span><span class="n">part</span><span class="o">-</span><span class="n">nnnnn</span><span class="p">,</span> <span class="n">its</span> <span class="n">content</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span>(a-hdfs-path/part-00000, its content)
+(a-hdfs-path/part-00001, its content)
+...
+(a-hdfs-path/part-nnnnn, its content)
 </pre></div>
 </div>
 <p>NOTE: Small files are preferred, as each file will be loaded
 fully in memory.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dirPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempdir</span><span class="p">,</span> <span class="s2">&quot;files&quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dirPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempdir</span><span class="p">,</span> <span class="s2">&quot;files&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">dirPath</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirPath</span><span class="p">,</span> <span class="s2">&quot;1.txt&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file1</span><span class="p">:</span>
 <span class="gp">... </span>   <span class="n">_</span> <span class="o">=</span> <span class="n">file1</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
@@ -342,6 +342,7 @@ fully in memory.</p>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

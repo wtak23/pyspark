@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.5.2.16.1.45. pyspark.mllib.feature.RDD.mapPartitions &mdash; PySpark API 1 documentation</title>
+  <title>4.5.2.16.1.45. pyspark.mllib.feature.RDD.mapPartitions &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.5.2.16. pyspark.mllib.feature.RDD" href="pyspark.mllib.feature.RDD.html"/>
         <link rel="next" title="4.5.2.16.1.46. pyspark.mllib.feature.RDD.mapPartitionsWithIndex" href="pyspark.mllib.feature.RDD.mapPartitionsWithIndex.html"/>
         <link rel="prev" title="4.5.2.16.1.44. pyspark.mllib.feature.RDD.map" href="pyspark.mllib.feature.RDD.map.html"/> 
@@ -124,6 +124,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.mllib.feature.Word2VecModel.html">4.5.2.24. pyspark.mllib.feature.Word2VecModel</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../pyspark.mllib.feature.html#exceptions">4.5.3. Exceptions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pyspark.mllib.fpm.html">4.6. pyspark.mllib.fpm</a></li>
@@ -208,7 +209,7 @@
 <dt id="pyspark.mllib.feature.RDD.mapPartitions">
 <code class="descclassname">RDD.</code><code class="descname">mapPartitions</code><span class="sig-paren">(</span><em>f</em>, <em>preservesPartitioning=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/rdd.html#RDD.mapPartitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.mllib.feature.RDD.mapPartitions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new RDD by applying a function to each partition of this RDD.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">iterator</span><span class="p">):</span> <span class="k">yield</span> <span class="nb">sum</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[3, 7]</span>
@@ -268,6 +269,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.status &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.status &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="pyspark" href="../pyspark.html"/> 
 
   
@@ -168,7 +168,7 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SparkJobInfo&quot;</span><span class="p">,</span> <span class="s2">&quot;SparkStageInfo&quot;</span><span class="p">,</span> <span class="s2">&quot;StatusTracker&quot;</span><span class="p">]</span>
 
@@ -204,7 +204,7 @@
 <div class="viewcode-block" id="StatusTracker.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.StatusTracker.__init__.html#pyspark.StatusTracker.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jtracker</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jtracker</span> <span class="o">=</span> <span class="n">jtracker</span></div>
 
-<div class="viewcode-block" id="StatusTracker.getJobIdsForGroup"><a class="viewcode-back" href="../../generated/generated/pyspark.StatusTracker.getJobIdsForGroup.html#pyspark.StatusTracker.getJobIdsForGroup">[docs]</a>    <span class="k">def</span> <span class="nf">getJobIdsForGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobGroup</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StatusTracker.getJobIdsForGroup"><a class="viewcode-back" href="../../generated/generated/pyspark.StatusTracker.getJobIdsForGroup.html#pyspark.StatusTracker.getJobIdsForGroup">[docs]</a>    <span class="k">def</span> <span class="nf">getJobIdsForGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobGroup</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list of all known jobs in a particular job group.  If</span>
 <span class="sd">        `jobGroup` is None, then returns all known jobs that are not</span>
@@ -234,7 +234,7 @@
 <span class="sd">        could not be found or was garbage collected.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">job</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jtracker</span><span class="o">.</span><span class="n">getJobInfo</span><span class="p">(</span><span class="n">jobId</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">job</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">job</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">SparkJobInfo</span><span class="p">(</span><span class="n">jobId</span><span class="p">,</span> <span class="n">job</span><span class="o">.</span><span class="n">stageIds</span><span class="p">(),</span> <span class="nb">str</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">status</span><span class="p">()))</span></div>
 
 <div class="viewcode-block" id="StatusTracker.getStageInfo"><a class="viewcode-back" href="../../generated/generated/pyspark.StatusTracker.getStageInfo.html#pyspark.StatusTracker.getStageInfo">[docs]</a>    <span class="k">def</span> <span class="nf">getStageInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stageId</span><span class="p">):</span>
@@ -243,7 +243,7 @@
 <span class="sd">        info could not be found or was garbage collected.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">stage</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jtracker</span><span class="o">.</span><span class="n">getStageInfo</span><span class="p">(</span><span class="n">stageId</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">stage</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">stage</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
             <span class="c1"># TODO: fetch them in batch for better performance</span>
             <span class="n">attrs</span> <span class="o">=</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span> <span class="n">f</span><span class="p">)()</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">SparkStageInfo</span><span class="o">.</span><span class="n">_fields</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
             <span class="k">return</span> <span class="n">SparkStageInfo</span><span class="p">(</span><span class="n">stageId</span><span class="p">,</span> <span class="o">*</span><span class="n">attrs</span><span class="p">)</span></div></div>
@@ -289,6 +289,7 @@
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2.3.1.105. pyspark.sql.functions.posexplode &mdash; PySpark API 1 documentation</title>
+  <title>2.3.1.105. pyspark.sql.functions.posexplode &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../index.html"/>
+    <link rel="top" title="PySpark API" href="../index.html"/>
         <link rel="up" title="2.3. pyspark.sql.functions" href="pyspark.sql.functions.html"/>
         <link rel="next" title="2.3.1.106. pyspark.sql.functions.pow" href="pyspark.sql.functions.pow.html"/>
         <link rel="prev" title="2.3.1.104. pyspark.sql.functions.percent_rank" href="pyspark.sql.functions.percent_rank.html"/> 
@@ -197,7 +197,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.next_day.html">2.3.1.102. pyspark.sql.functions.next_day</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.ntile.html">2.3.1.103. pyspark.sql.functions.ntile</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.percent_rank.html">2.3.1.104. pyspark.sql.functions.percent_rank</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.3.1.105. pyspark.sql.functions.posexplode</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">2.3.1.105. pyspark.sql.functions.posexplode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.pow.html">2.3.1.106. pyspark.sql.functions.pow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.quarter.html">2.3.1.107. pyspark.sql.functions.quarter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pyspark.sql.functions.rand.html">2.3.1.108. pyspark.sql.functions.rand</a></li>
@@ -338,13 +338,13 @@
 <dt id="pyspark.sql.functions.posexplode">
 <code class="descclassname">pyspark.sql.functions.</code><code class="descname">posexplode</code><span class="sig-paren">(</span><em>col</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyspark/sql/functions.html#posexplode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyspark.sql.functions.posexplode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a new row for each element with position in the given array or map.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">Row</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eDF</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">intlist</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">mapfield</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">})])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eDF</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">posexplode</span><span class="p">(</span><span class="n">eDF</span><span class="o">.</span><span class="n">intlist</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="go">[Row(pos=0, col=1), Row(pos=1, col=2), Row(pos=2, col=3)]</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eDF</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">posexplode</span><span class="p">(</span><span class="n">eDF</span><span class="o">.</span><span class="n">mapfield</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eDF</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">posexplode</span><span class="p">(</span><span class="n">eDF</span><span class="o">.</span><span class="n">mapfield</span><span class="p">))</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">+---+---+-----+</span>
 <span class="go">|pos|key|value|</span>
 <span class="go">+---+---+-----+</span>
@@ -409,6 +409,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

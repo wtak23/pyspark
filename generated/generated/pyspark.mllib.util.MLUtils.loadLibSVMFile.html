@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.14.2.6.1.7. pyspark.mllib.util.MLUtils.loadLibSVMFile &mdash; PySpark API 1 documentation</title>
+  <title>4.14.2.6.1.7. pyspark.mllib.util.MLUtils.loadLibSVMFile &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../index.html"/>
         <link rel="up" title="4.14.2.6. pyspark.mllib.util.MLUtils" href="pyspark.mllib.util.MLUtils.html"/>
         <link rel="next" title="4.14.2.6.1.8. pyspark.mllib.util.MLUtils.loadVectors" href="pyspark.mllib.util.MLUtils.loadVectors.html"/>
         <link rel="prev" title="4.14.2.6.1.6. pyspark.mllib.util.MLUtils.loadLabeledPoints" href="pyspark.mllib.util.MLUtils.loadLabeledPoints.html"/> 
@@ -224,10 +224,10 @@ dimensions.</li>
 </tbody>
 </table>
 <p>&#64;return: labeled data stored as an RDD of LabeledPoint</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="k">import</span> <span class="n">NamedTemporaryFile</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.util</span> <span class="k">import</span> <span class="n">MLUtils</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.regression</span> <span class="k">import</span> <span class="n">LabeledPoint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">NamedTemporaryFile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.util</span> <span class="kn">import</span> <span class="n">MLUtils</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.regression</span> <span class="kn">import</span> <span class="n">LabeledPoint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile</span> <span class="o">=</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">delete</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">tempFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">b</span><span class="s2">&quot;+1 1:1.0 3:2.0 5:3.0</span><span class="se">\n</span><span class="s2">-1</span><span class="se">\n</span><span class="s2">-1 2:4.0 4:5.0 6:6.0&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tempFile</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">examples</span> <span class="o">=</span> <span class="n">MLUtils</span><span class="o">.</span><span class="n">loadLibSVMFile</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">tempFile</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
@@ -297,6 +297,7 @@ dimensions.</li>
       <script type="text/javascript" src="../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   

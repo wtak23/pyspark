@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.mllib.classification &mdash; PySpark API 1 documentation</title>
+  <title>pyspark.mllib.classification &mdash; PySpark API</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API 1 documentation" href="../../../index.html"/>
+    <link rel="top" title="PySpark API" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -168,20 +168,20 @@
 <span class="c1"># limitations under the License.</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">exp</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">array</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>
 
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">since</span>
-<span class="kn">from</span> <span class="nn">pyspark.streaming</span> <span class="k">import</span> <span class="n">DStream</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.common</span> <span class="k">import</span> <span class="n">callMLlibFunc</span><span class="p">,</span> <span class="n">_py2java</span><span class="p">,</span> <span class="n">_java2py</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.linalg</span> <span class="k">import</span> <span class="n">DenseVector</span><span class="p">,</span> <span class="n">SparseVector</span><span class="p">,</span> <span class="n">_convert_to_vector</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.regression</span> <span class="k">import</span> <span class="p">(</span>
+<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">RDD</span><span class="p">,</span> <span class="n">since</span>
+<span class="kn">from</span> <span class="nn">pyspark.streaming</span> <span class="kn">import</span> <span class="n">DStream</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.common</span> <span class="kn">import</span> <span class="n">callMLlibFunc</span><span class="p">,</span> <span class="n">_py2java</span><span class="p">,</span> <span class="n">_java2py</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.linalg</span> <span class="kn">import</span> <span class="n">DenseVector</span><span class="p">,</span> <span class="n">SparseVector</span><span class="p">,</span> <span class="n">_convert_to_vector</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.regression</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">LabeledPoint</span><span class="p">,</span> <span class="n">LinearModel</span><span class="p">,</span> <span class="n">_regression_train_wrapper</span><span class="p">,</span>
     <span class="n">StreamingLinearAlgorithm</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">pyspark.mllib.util</span> <span class="k">import</span> <span class="n">Saveable</span><span class="p">,</span> <span class="n">Loader</span><span class="p">,</span> <span class="n">inherit_doc</span>
+<span class="kn">from</span> <span class="nn">pyspark.mllib.util</span> <span class="kn">import</span> <span class="n">Saveable</span><span class="p">,</span> <span class="n">Loader</span><span class="p">,</span> <span class="n">inherit_doc</span>
 
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LogisticRegressionModel&#39;</span><span class="p">,</span> <span class="s1">&#39;LogisticRegressionWithSGD&#39;</span><span class="p">,</span> <span class="s1">&#39;LogisticRegressionWithLBFGS&#39;</span><span class="p">,</span>
@@ -196,7 +196,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="LinearClassificationModel.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.classification.LinearClassificationModel.__init__.html#pyspark.mllib.classification.LinearClassificationModel.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">intercept</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">LinearClassificationModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="bp">None</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="LinearClassificationModel.setThreshold"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.classification.LinearClassificationModel.setThreshold.html#pyspark.mllib.classification.LinearClassificationModel.setThreshold">[docs]</a>    <span class="k">def</span> <span class="nf">setThreshold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
@@ -225,7 +225,7 @@
 <span class="sd">        Clears the threshold so that `predict` will output raw</span>
 <span class="sd">        prediction scores. It is used for binary classification only.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="kc">None</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="bp">None</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.4.0&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="LinearClassificationModel.predict"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.classification.LinearClassificationModel.predict.html#pyspark.mllib.classification.LinearClassificationModel.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
@@ -321,8 +321,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_numClasses</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numClasses</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="mf">0.5</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_numClasses</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_dataWithBiasSize</span> <span class="o">=</span> <span class="kc">None</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_weightsMatrix</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dataWithBiasSize</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_weightsMatrix</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_dataWithBiasSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coeff</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_numClasses</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_weightsMatrix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coeff</span><span class="o">.</span><span class="n">toArray</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_numClasses</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
@@ -362,7 +362,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">exp_margin</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">margin</span><span class="p">)</span>
                 <span class="n">prob</span> <span class="o">=</span> <span class="n">exp_margin</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">exp_margin</span><span class="p">)</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">prob</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">prob</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="k">else</span> <span class="mi">0</span>
@@ -420,8 +420,8 @@
     <span class="nd">@classmethod</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;0.9.0&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="LogisticRegressionWithSGD.train"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.classification.LogisticRegressionWithSGD.train.html#pyspark.mllib.classification.LogisticRegressionWithSGD.train">[docs]</a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">miniBatchFraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-              <span class="n">initialWeights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">regType</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span> <span class="n">intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-              <span class="n">validateData</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">convergenceTol</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+              <span class="n">initialWeights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">regType</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span> <span class="n">intercept</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+              <span class="n">validateData</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">convergenceTol</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Train a logistic regression model on the given data.</span>
 
@@ -480,8 +480,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@classmethod</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;1.2.0&#39;</span><span class="p">)</span>
-<div class="viewcode-block" id="LogisticRegressionWithLBFGS.train"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.classification.LogisticRegressionWithLBFGS.train.html#pyspark.mllib.classification.LogisticRegressionWithLBFGS.train">[docs]</a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">initialWeights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">regType</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span>
-              <span class="n">intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">corrections</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="n">validateData</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">numClasses</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="LogisticRegressionWithLBFGS.train"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.classification.LogisticRegressionWithLBFGS.train.html#pyspark.mllib.classification.LogisticRegressionWithLBFGS.train">[docs]</a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">initialWeights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">regType</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span>
+              <span class="n">intercept</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">corrections</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">validateData</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numClasses</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Train a logistic regression model on the given data.</span>
 
@@ -540,7 +540,7 @@
                                  <span class="nb">float</span><span class="p">(</span><span class="n">regParam</span><span class="p">),</span> <span class="n">regType</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">intercept</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">corrections</span><span class="p">),</span>
                                  <span class="nb">float</span><span class="p">(</span><span class="n">tolerance</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="n">validateData</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">numClasses</span><span class="p">))</span>
 
-        <span class="k">if</span> <span class="n">initialWeights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">initialWeights</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">numClasses</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
                 <span class="n">initialWeights</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">features</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -618,7 +618,7 @@
 
         <span class="n">x</span> <span class="o">=</span> <span class="n">_convert_to_vector</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">margin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">intercept</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">margin</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">margin</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="k">else</span> <span class="mi">0</span></div>
@@ -656,8 +656,8 @@
     <span class="nd">@classmethod</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s1">&#39;0.9.0&#39;</span><span class="p">)</span>
 <div class="viewcode-block" id="SVMWithSGD.train"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.classification.SVMWithSGD.train.html#pyspark.mllib.classification.SVMWithSGD.train">[docs]</a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
-              <span class="n">miniBatchFraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">initialWeights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">regType</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span>
-              <span class="n">intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">validateData</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">convergenceTol</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+              <span class="n">miniBatchFraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">initialWeights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">regType</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span>
+              <span class="n">intercept</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">validateData</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">convergenceTol</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Train a support vector machine on the given data.</span>
 
@@ -867,7 +867,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">regParam</span> <span class="o">=</span> <span class="n">regParam</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">miniBatchFraction</span> <span class="o">=</span> <span class="n">miniBatchFraction</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">convergenceTol</span> <span class="o">=</span> <span class="n">convergenceTol</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">StreamingLogisticRegressionWithSGD</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span>
             <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_model</span><span class="p">)</span></div>
 
@@ -903,7 +903,7 @@
 
 <span class="k">def</span> <span class="nf">_test</span><span class="p">():</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
-    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SparkSession</span>
+    <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
     <span class="kn">import</span> <span class="nn">pyspark.mllib.classification</span>
     <span class="n">globs</span> <span class="o">=</span> <span class="n">pyspark</span><span class="o">.</span><span class="n">mllib</span><span class="o">.</span><span class="n">classification</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span>\
@@ -914,7 +914,7 @@
     <span class="p">(</span><span class="n">failure_count</span><span class="p">,</span> <span class="n">test_count</span><span class="p">)</span> <span class="o">=</span> <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">globs</span><span class="o">=</span><span class="n">globs</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
     <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">failure_count</span><span class="p">:</span>
-        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">_test</span><span class="p">()</span>
@@ -960,6 +960,7 @@
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
       <script type="text/javascript" src="../../../_static/underscore.js"></script>
       <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/copybutton.js"></script>
       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
