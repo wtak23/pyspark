@@ -5,6 +5,8 @@
 pyspark.ml
 ##########
 
+.. curentmodule:: pyspark
+
 .. toctree::
     :maxdepth: 1
 

@@ -5,39 +5,41 @@
 pyspark.mllib
 #############
 
+.. curentmodule:: pyspark
+
 .. toctree::
     :maxdepth: 1
 
-    generated/pyspark.mllib
-    generated/pyspark.mllib.classification
-    generated/pyspark.mllib.clustering
-    generated/pyspark.mllib.evaluation
-    generated/pyspark.mllib.feature
-    generated/pyspark.mllib.fpm
-    generated/pyspark.mllib.linalg
-    generated/pyspark.mllib.linalg.distributed
-    generated/pyspark.mllib.random
-    generated/pyspark.mllib.recommendation
-    generated/pyspark.mllib.regression
-    generated/pyspark.mllib.stat
-    generated/pyspark.mllib.tree
-    generated/pyspark.mllib.util
+    generated/mllib
+    generated/mllib.classification
+    generated/mllib.clustering
+    generated/mllib.evaluation
+    generated/mllib.feature
+    generated/mllib.fpm
+    generated/mllib.linalg
+    generated/mllib.linalg.distributed
+    generated/mllib.random
+    generated/mllib.recommendation
+    generated/mllib.regression
+    generated/mllib.stat
+    generated/mllib.tree
+    generated/mllib.util
 
 .. autosummary::
    :toctree:generated/
    :template:module_custom.rst
 
-    pyspark.mllib
-    pyspark.mllib.classification
-    pyspark.mllib.clustering
-    pyspark.mllib.evaluation
-    pyspark.mllib.feature
-    pyspark.mllib.fpm
-    pyspark.mllib.linalg
-    pyspark.mllib.linalg.distributed
-    pyspark.mllib.random
-    pyspark.mllib.recommendation
-    pyspark.mllib.regression
-    pyspark.mllib.stat
-    pyspark.mllib.tree
-    pyspark.mllib.util
+    mllib
+    mllib.classification
+    mllib.clustering
+    mllib.evaluation
+    mllib.feature
+    mllib.fpm
+    mllib.linalg
+    mllib.linalg.distributed
+    mllib.random
+    mllib.recommendation
+    mllib.regression
+    mllib.stat
+    mllib.tree
+    mllib.util

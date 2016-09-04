@@ -5,19 +5,21 @@
 pyspark.streaming
 #################
 
+.. curentmodule:: pyspark
+
 .. toctree::
     :maxdepth: 1
 
-    generated/pyspark.streaming
-    generated/pyspark.streaming.kafka
-    generated/pyspark.streaming.kinesis
-    generated/pyspark.streaming.flume
+    generated/streaming
+    generated/streaming.kafka
+    generated/streaming.kinesis
+    generated/streaming.flume
 
 .. autosummary::
    :toctree:generated/
    :template:module_custom.rst
 
-    pyspark.streaming
-    pyspark.streaming.kafka
-    pyspark.streaming.kinesis
-    pyspark.streaming.flume
+    streaming
+    streaming.kafka
+    streaming.kinesis
+    streaming.flume
