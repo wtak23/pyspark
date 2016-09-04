@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>StringIO &mdash; PySpark API</title>
+  <title>StringIO</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../index.html"/>
+    <link rel="top" title="" href="../index.html"/>
         <link rel="up" title="Module code" href="index.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -190,7 +186,7 @@
     <span class="k">if</span> <span class="n">closed</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="s2">&quot;I/O operation on closed file&quot;</span>
 
-<div class="viewcode-block" id="StringIO"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.html#pyspark.streaming.flume.StringIO">[docs]</a><span class="k">class</span> <span class="nc">StringIO</span><span class="p">:</span>
+<div class="viewcode-block" id="StringIO"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.html#streaming.flume.StringIO">[docs]</a><span class="k">class</span> <span class="nc">StringIO</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;class StringIO([buffer])</span>
 
 <span class="sd">    When a StringIO object is created, it can be initialized to an existing</span>
@@ -202,7 +198,7 @@
 <span class="sd">    cannot be interpreted as 7-bit ASCII (that use the 8th bit) will cause</span>
 <span class="sd">    a UnicodeError to be raised when getvalue() is called.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="StringIO.__init__"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.__init__.html#pyspark.streaming.flume.StringIO.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.__init__"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.__init__.html#streaming.flume.StringIO.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buf</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
         <span class="c1"># Force self.buf to be a string or unicode</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
             <span class="n">buf</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
@@ -216,7 +212,7 @@
     <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-<div class="viewcode-block" id="StringIO.next"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.next.html#pyspark.streaming.flume.StringIO.next">[docs]</a>    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.next"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.next.html#streaming.flume.StringIO.next">[docs]</a>    <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;A file object is its own iterator, for example iter(f) returns f</span>
 <span class="sd">        (unless f is closed). When a file is used as an iterator, typically</span>
 <span class="sd">        in a for loop (for example, for line in f: print line), the next()</span>
@@ -229,21 +225,21 @@
             <span class="k">raise</span> <span class="ne">StopIteration</span>
         <span class="k">return</span> <span class="n">r</span></div>
 
-<div class="viewcode-block" id="StringIO.close"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.close.html#pyspark.streaming.flume.StringIO.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.close"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.close.html#streaming.flume.StringIO.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Free the memory buffer.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">closed</span> <span class="o">=</span> <span class="bp">True</span>
             <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">buf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span></div>
 
-<div class="viewcode-block" id="StringIO.isatty"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.isatty.html#pyspark.streaming.flume.StringIO.isatty">[docs]</a>    <span class="k">def</span> <span class="nf">isatty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.isatty"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.isatty.html#streaming.flume.StringIO.isatty">[docs]</a>    <span class="k">def</span> <span class="nf">isatty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns False because StringIO objects are not connected to a</span>
 <span class="sd">        tty-like device.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_complain_ifclosed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">False</span></div>
 
-<div class="viewcode-block" id="StringIO.seek"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.seek.html#pyspark.streaming.flume.StringIO.seek">[docs]</a>    <span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.seek"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.seek.html#streaming.flume.StringIO.seek">[docs]</a>    <span class="k">def</span> <span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the file&#39;s current position.</span>
 
 <span class="sd">        The mode argument is optional and defaults to 0 (absolute file</span>
@@ -262,12 +258,12 @@
             <span class="n">pos</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">len</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="StringIO.tell"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.tell.html#pyspark.streaming.flume.StringIO.tell">[docs]</a>    <span class="k">def</span> <span class="nf">tell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.tell"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.tell.html#streaming.flume.StringIO.tell">[docs]</a>    <span class="k">def</span> <span class="nf">tell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the file&#39;s current position.&quot;&quot;&quot;</span>
         <span class="n">_complain_ifclosed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span></div>
 
-<div class="viewcode-block" id="StringIO.read"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.read.html#pyspark.streaming.flume.StringIO.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.read"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.read.html#streaming.flume.StringIO.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Read at most size bytes from the file</span>
 <span class="sd">        (less if the read hits EOF before obtaining size bytes).</span>
 
@@ -287,7 +283,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">newpos</span>
         <span class="k">return</span> <span class="n">r</span></div>
 
-<div class="viewcode-block" id="StringIO.readline"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.readline.html#pyspark.streaming.flume.StringIO.readline">[docs]</a>    <span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.readline"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.readline.html#streaming.flume.StringIO.readline">[docs]</a>    <span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">r&quot;&quot;&quot;Read one entire line from the file.</span>
 
 <span class="sd">        A trailing newline character is kept in the string (but may be absent</span>
@@ -316,7 +312,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">newpos</span>
         <span class="k">return</span> <span class="n">r</span></div>
 
-<div class="viewcode-block" id="StringIO.readlines"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.readlines.html#pyspark.streaming.flume.StringIO.readlines">[docs]</a>    <span class="k">def</span> <span class="nf">readlines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sizehint</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.readlines"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.readlines.html#streaming.flume.StringIO.readlines">[docs]</a>    <span class="k">def</span> <span class="nf">readlines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sizehint</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Read until EOF using readline() and return a list containing the</span>
 <span class="sd">        lines thus read.</span>
 
@@ -335,7 +331,7 @@
             <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">lines</span></div>
 
-<div class="viewcode-block" id="StringIO.truncate"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.truncate.html#pyspark.streaming.flume.StringIO.truncate">[docs]</a>    <span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.truncate"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.truncate.html#streaming.flume.StringIO.truncate">[docs]</a>    <span class="k">def</span> <span class="nf">truncate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Truncate the file&#39;s size.</span>
 
 <span class="sd">        If the optional size argument is present, the file is truncated to</span>
@@ -356,7 +352,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()[:</span><span class="n">size</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">size</span></div>
 
-<div class="viewcode-block" id="StringIO.write"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.write.html#pyspark.streaming.flume.StringIO.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.write"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.write.html#streaming.flume.StringIO.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Write a string to the file.</span>
 
 <span class="sd">        There is no return value.</span>
@@ -389,7 +385,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">slen</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">newpos</span></div>
 
-<div class="viewcode-block" id="StringIO.writelines"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.writelines.html#pyspark.streaming.flume.StringIO.writelines">[docs]</a>    <span class="k">def</span> <span class="nf">writelines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.writelines"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.writelines.html#streaming.flume.StringIO.writelines">[docs]</a>    <span class="k">def</span> <span class="nf">writelines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterable</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Write a sequence of strings to the file. The sequence can be any</span>
 <span class="sd">        iterable object producing strings, typically a list of strings. There</span>
 <span class="sd">        is no return value.</span>
@@ -401,12 +397,12 @@
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
             <span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="StringIO.flush"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.flush.html#pyspark.streaming.flume.StringIO.flush">[docs]</a>    <span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.flush"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.flush.html#streaming.flume.StringIO.flush">[docs]</a>    <span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Flush the internal buffer</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">_complain_ifclosed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="StringIO.getvalue"><a class="viewcode-back" href="../generated/generated/pyspark.streaming.flume.StringIO.getvalue.html#pyspark.streaming.flume.StringIO.getvalue">[docs]</a>    <span class="k">def</span> <span class="nf">getvalue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="StringIO.getvalue"><a class="viewcode-back" href="../generated/generated/streaming.flume.StringIO.getvalue.html#streaming.flume.StringIO.getvalue">[docs]</a>    <span class="k">def</span> <span class="nf">getvalue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve the entire contents of the &quot;file&quot; at any time before</span>
 <span class="sd">        the StringIO object&#39;s close() method is called.</span>
@@ -506,7 +502,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

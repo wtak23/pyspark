@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.evaluation.MulticlassMetrics</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="mllib.evaluation" href="../mllib.evaluation.html"/>
+        <link rel="next" title="mllib.evaluation.MulticlassMetrics.__init__" href="mllib.evaluation.MulticlassMetrics.__init__.html"/>
+        <link rel="prev" title="mllib.evaluation.JavaModelWrapper.call" href="mllib.evaluation.JavaModelWrapper.call.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mllib.evaluation.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../mllib.evaluation.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.ArrayType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.BinaryClassificationMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.BinaryClassificationMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.DoubleType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.IntegerType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.IntegerType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.evaluation.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">mllib.evaluation.MulticlassMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.MultilabelMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.MultilabelMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.RankingMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.RankingMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.RegressionMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.RegressionMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.SQLContext.html"><code class="docutils literal"><span class="pre">mllib.evaluation.SQLContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.StructField.html"><code class="docutils literal"><span class="pre">mllib.evaluation.StructField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.StructType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.StructType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">mllib.evaluation.MulticlassMetrics</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/mllib.evaluation.MulticlassMetrics.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mllib-evaluation-multiclassmetrics">
+<h1><a class="reference internal" href="#mllib.evaluation.MulticlassMetrics" title="mllib.evaluation.MulticlassMetrics"><code class="xref py py-class docutils literal"><span class="pre">mllib.evaluation.MulticlassMetrics</span></code></a><a class="headerlink" href="#mllib-evaluation-multiclassmetrics" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mllib.evaluation.MulticlassMetrics">
+<em class="property">class </em><code class="descclassname">mllib.evaluation.</code><code class="descname">MulticlassMetrics</code><span class="sig-paren">(</span><em>predictionAndLabels</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/mllib/evaluation.html#MulticlassMetrics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.evaluation.MulticlassMetrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluator for multiclass classification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>predictionAndLabels</strong> &#8211; an RDD of (prediction, label) pairs.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">predictionAndLabels</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span> <span class="o">=</span> <span class="n">MulticlassMetrics</span><span class="p">(</span><span class="n">predictionAndLabels</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">confusionMatrix</span><span class="p">()</span><span class="o">.</span><span class="n">toArray</span><span class="p">()</span>
+<span class="go">array([[ 2.,  1.,  1.],</span>
+<span class="go">       [ 1.,  3.,  0.],</span>
+<span class="go">       [ 0.,  0.,  1.]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">falsePositiveRate</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="go">0.2...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">precision</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="go">0.75...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">recall</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="go">1.0...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">fMeasure</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="go">0.52...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy</span>
+<span class="go">0.66...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">weightedFalsePositiveRate</span>
+<span class="go">0.19...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">weightedPrecision</span>
+<span class="go">0.68...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">weightedRecall</span>
+<span class="go">0.66...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">weightedFMeasure</span><span class="p">()</span>
+<span class="go">0.66...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metrics</span><span class="o">.</span><span class="n">weightedFMeasure</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="go">0.65...</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.0.</span></p>
+</div>
+<dl class="method">
+<dt id="mllib.evaluation.MulticlassMetrics.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>predictionAndLabels</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/mllib/evaluation.html#MulticlassMetrics.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.evaluation.MulticlassMetrics.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.__init__.html#mllib.evaluation.MulticlassMetrics.__init__" title="mllib.evaluation.MulticlassMetrics.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(predictionAndLabels)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.call.html#mllib.evaluation.MulticlassMetrics.call" title="mllib.evaluation.MulticlassMetrics.call"><code class="xref py py-obj docutils literal"><span class="pre">call</span></code></a>(name,&nbsp;*a)</td>
+<td>Call method of java_model</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.confusionMatrix.html#mllib.evaluation.MulticlassMetrics.confusionMatrix" title="mllib.evaluation.MulticlassMetrics.confusionMatrix"><code class="xref py py-obj docutils literal"><span class="pre">confusionMatrix</span></code></a>()</td>
+<td>Returns confusion matrix: predicted classes are in columns, they are ordered by class label ascending, as in &#8220;labels&#8221;.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.fMeasure.html#mllib.evaluation.MulticlassMetrics.fMeasure" title="mllib.evaluation.MulticlassMetrics.fMeasure"><code class="xref py py-obj docutils literal"><span class="pre">fMeasure</span></code></a>([label,&nbsp;beta])</td>
+<td>Returns f-measure or f-measure for a given label (category) if specified.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.falsePositiveRate.html#mllib.evaluation.MulticlassMetrics.falsePositiveRate" title="mllib.evaluation.MulticlassMetrics.falsePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">falsePositiveRate</span></code></a>(label)</td>
+<td>Returns false positive rate for a given label (category).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.precision.html#mllib.evaluation.MulticlassMetrics.precision" title="mllib.evaluation.MulticlassMetrics.precision"><code class="xref py py-obj docutils literal"><span class="pre">precision</span></code></a>([label])</td>
+<td>Returns precision or precision for a given label (category) if specified.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.recall.html#mllib.evaluation.MulticlassMetrics.recall" title="mllib.evaluation.MulticlassMetrics.recall"><code class="xref py py-obj docutils literal"><span class="pre">recall</span></code></a>([label])</td>
+<td>Returns recall or recall for a given label (category) if specified.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.truePositiveRate.html#mllib.evaluation.MulticlassMetrics.truePositiveRate" title="mllib.evaluation.MulticlassMetrics.truePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">truePositiveRate</span></code></a>(label)</td>
+<td>Returns true positive rate for a given label (category).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.weightedFMeasure.html#mllib.evaluation.MulticlassMetrics.weightedFMeasure" title="mllib.evaluation.MulticlassMetrics.weightedFMeasure"><code class="xref py py-obj docutils literal"><span class="pre">weightedFMeasure</span></code></a>([beta])</td>
+<td>Returns weighted averaged f-measure.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.accuracy.html#mllib.evaluation.MulticlassMetrics.accuracy" title="mllib.evaluation.MulticlassMetrics.accuracy"><code class="xref py py-obj docutils literal"><span class="pre">accuracy</span></code></a></td>
+<td>Returns accuracy (equals to the total number of correctly classified instances out of the total number of instances).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.weightedFalsePositiveRate.html#mllib.evaluation.MulticlassMetrics.weightedFalsePositiveRate" title="mllib.evaluation.MulticlassMetrics.weightedFalsePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">weightedFalsePositiveRate</span></code></a></td>
+<td>Returns weighted false positive rate.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.weightedPrecision.html#mllib.evaluation.MulticlassMetrics.weightedPrecision" title="mllib.evaluation.MulticlassMetrics.weightedPrecision"><code class="xref py py-obj docutils literal"><span class="pre">weightedPrecision</span></code></a></td>
+<td>Returns weighted averaged precision.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.weightedRecall.html#mllib.evaluation.MulticlassMetrics.weightedRecall" title="mllib.evaluation.MulticlassMetrics.weightedRecall"><code class="xref py py-obj docutils literal"><span class="pre">weightedRecall</span></code></a></td>
+<td>Returns weighted averaged recall.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.weightedTruePositiveRate.html#mllib.evaluation.MulticlassMetrics.weightedTruePositiveRate" title="mllib.evaluation.MulticlassMetrics.weightedTruePositiveRate"><code class="xref py py-obj docutils literal"><span class="pre">weightedTruePositiveRate</span></code></a></td>
+<td>Returns weighted true positive rate.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mllib.evaluation.MulticlassMetrics.__init__.html" class="btn btn-neutral float-right" title="mllib.evaluation.MulticlassMetrics.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mllib.evaluation.JavaModelWrapper.call.html" class="btn btn-neutral" title="mllib.evaluation.JavaModelWrapper.call" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

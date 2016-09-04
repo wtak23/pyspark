@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.10. pyspark.ml.evaluation &mdash; PySpark API</title>
+  <title>pyspark.ml.evaluation</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../index.html"/>
-        <link rel="up" title="3. pyspark.ml" href="../pyspark.ml.html"/>
-        <link rel="next" title="3.10.1.1. pyspark.ml.evaluation.abstractmethod" href="pyspark.ml.evaluation.abstractmethod.html"/>
-        <link rel="prev" title="3.9.2.14.2.5. pyspark.ml.tuning.ValidatorParams.seed" href="generated/pyspark.ml.tuning.ValidatorParams.seed.html"/> 
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.ml" href="../pyspark.ml.html"/>
+        <link rel="next" title="pyspark.ml.evaluation.abstractmethod()" href="generated/pyspark.ml.evaluation.abstractmethod.html"/>
+        <link rel="prev" title="pyspark.ml.tuning.ValidatorParams.seed" href="generated/pyspark.ml.tuning.ValidatorParams.seed.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -63,10 +63,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -87,48 +83,48 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html">3.1. pyspark.ml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.param.html">3.2. pyspark.ml.param</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">3.10. pyspark.ml.evaluation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#functions">3.10.1. Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.evaluation.abstractmethod.html">3.10.1.1. pyspark.ml.evaluation.abstractmethod</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.evaluation.inherit_doc.html">3.10.1.2. pyspark.ml.evaluation.inherit_doc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.evaluation.keyword_only.html">3.10.1.3. pyspark.ml.evaluation.keyword_only</a></li>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.evaluation.since.html">3.10.1.4. pyspark.ml.evaluation.since</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html"><code class="docutils literal"><span class="pre">pyspark.ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.param.html"><code class="docutils literal"><span class="pre">pyspark.ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.feature.html"><code class="docutils literal"><span class="pre">pyspark.ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.classification.html"><code class="docutils literal"><span class="pre">pyspark.ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html"><code class="docutils literal"><span class="pre">pyspark.ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html"><code class="docutils literal"><span class="pre">pyspark.ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html"><code class="docutils literal"><span class="pre">pyspark.ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.regression.html"><code class="docutils literal"><span class="pre">pyspark.ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html"><code class="docutils literal"><span class="pre">pyspark.ml.tuning</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">pyspark.ml.evaluation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.abstractmethod.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.abstractmethod()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.inherit_doc.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.inherit_doc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.keyword_only.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.keyword_only()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.since.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.since()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#classes">3.10.2. Classes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.ABCMeta.html">3.10.2.1. pyspark.ml.evaluation.ABCMeta</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.BinaryClassificationEvaluator.html">3.10.2.2. pyspark.ml.evaluation.BinaryClassificationEvaluator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.Evaluator.html">3.10.2.3. pyspark.ml.evaluation.Evaluator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.HasLabelCol.html">3.10.2.4. pyspark.ml.evaluation.HasLabelCol</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.HasPredictionCol.html">3.10.2.5. pyspark.ml.evaluation.HasPredictionCol</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.HasRawPredictionCol.html">3.10.2.6. pyspark.ml.evaluation.HasRawPredictionCol</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.JavaEvaluator.html">3.10.2.7. pyspark.ml.evaluation.JavaEvaluator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.JavaParams.html">3.10.2.8. pyspark.ml.evaluation.JavaParams</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.MulticlassClassificationEvaluator.html">3.10.2.9. pyspark.ml.evaluation.MulticlassClassificationEvaluator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.Param.html">3.10.2.10. pyspark.ml.evaluation.Param</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.Params.html">3.10.2.11. pyspark.ml.evaluation.Params</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.RegressionEvaluator.html">3.10.2.12. pyspark.ml.evaluation.RegressionEvaluator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.TypeConverters.html">3.10.2.13. pyspark.ml.evaluation.TypeConverters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.ABCMeta.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.ABCMeta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.BinaryClassificationEvaluator.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.BinaryClassificationEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.Evaluator.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.Evaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.HasLabelCol.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.HasPredictionCol.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.JavaEvaluator.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.JavaEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.JavaParams.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.MulticlassClassificationEvaluator.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.MulticlassClassificationEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.Param.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.Params.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.RegressionEvaluator.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.RegressionEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.evaluation.TypeConverters.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation.TypeConverters</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -170,9 +166,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+          <li><a href="../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
         
-      <li>3.10. pyspark.ml.evaluation</li>
+      <li><code class="docutils literal"><span class="pre">pyspark.ml.evaluation</span></code></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,32 +186,34 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pyspark.ml.evaluation">
-<span id="pyspark-ml-evaluation"></span><h1>3.10. pyspark.ml.evaluation<a class="headerlink" href="#module-pyspark.ml.evaluation" title="Permalink to this headline">¶</a></h1>
+<span id="pyspark-ml-evaluation"></span><h1><a class="reference internal" href="#module-pyspark.ml.evaluation" title="pyspark.ml.evaluation"><code class="xref py py-mod docutils literal"><span class="pre">pyspark.ml.evaluation</span></code></a><a class="headerlink" href="#module-pyspark.ml.evaluation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="functions">
-<h2>3.10.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.evaluation.abstractmethod.html#pyspark.ml.evaluation.abstractmethod" title="pyspark.ml.evaluation.abstractmethod"><code class="xref py py-obj docutils literal"><span class="pre">abstractmethod</span></code></a>(funcobj)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.evaluation.abstractmethod.html#pyspark.ml.evaluation.abstractmethod" title="pyspark.ml.evaluation.abstractmethod"><code class="xref py py-obj docutils literal"><span class="pre">abstractmethod</span></code></a>(funcobj)</td>
 <td>A decorator indicating abstract methods.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.evaluation.inherit_doc.html#pyspark.ml.evaluation.inherit_doc" title="pyspark.ml.evaluation.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.evaluation.inherit_doc.html#pyspark.ml.evaluation.inherit_doc" title="pyspark.ml.evaluation.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
 <td>A decorator that makes a class inherit documentation from its parents.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.evaluation.keyword_only.html#pyspark.ml.evaluation.keyword_only" title="pyspark.ml.evaluation.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.evaluation.keyword_only.html#pyspark.ml.evaluation.keyword_only" title="pyspark.ml.evaluation.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
 <td>A decorator that forces keyword arguments in the wrapped method and saves actual input keyword arguments in <cite>_input_kwargs</cite>.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="pyspark.ml.evaluation.since.html#pyspark.ml.evaluation.since" title="pyspark.ml.evaluation.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.ml.evaluation.since.html#pyspark.ml.evaluation.since" title="pyspark.ml.evaluation.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
 <td>A decorator that annotates a function to append the version of Spark the function was added.</td>
 </tr>
 </tbody>
 </table>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 <div class="section" id="classes">
-<h2>3.10.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -291,10 +289,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.evaluation.abstractmethod.html" class="btn btn-neutral float-right" title="3.10.1.1. pyspark.ml.evaluation.abstractmethod" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="generated/pyspark.ml.evaluation.abstractmethod.html" class="btn btn-neutral float-right" title="pyspark.ml.evaluation.abstractmethod()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/pyspark.ml.tuning.ValidatorParams.seed.html" class="btn btn-neutral" title="3.9.2.14.2.5. pyspark.ml.tuning.ValidatorParams.seed" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/pyspark.ml.tuning.ValidatorParams.seed.html" class="btn btn-neutral" title="pyspark.ml.tuning.ValidatorParams.seed" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -325,7 +323,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

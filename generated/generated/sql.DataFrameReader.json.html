@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.DataFrameReader.json</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="sql.DataFrameReader" href="sql.DataFrameReader.html"/>
+        <link rel="next" title="sql.DataFrameReader.load" href="sql.DataFrameReader.load.html"/>
+        <link rel="prev" title="sql.DataFrameReader.jdbc" href="sql.DataFrameReader.jdbc.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../sql.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sql.Column.html"><code class="docutils literal"><span class="pre">sql.Column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrame.html"><code class="docutils literal"><span class="pre">sql.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameNaFunctions.html"><code class="docutils literal"><span class="pre">sql.DataFrameNaFunctions</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="sql.DataFrameReader.html"><code class="docutils literal"><span class="pre">sql.DataFrameReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameStatFunctions.html"><code class="docutils literal"><span class="pre">sql.DataFrameStatFunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameWriter.html"><code class="docutils literal"><span class="pre">sql.DataFrameWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.GroupedData.html"><code class="docutils literal"><span class="pre">sql.GroupedData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.HiveContext.html"><code class="docutils literal"><span class="pre">sql.HiveContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.Row.html"><code class="docutils literal"><span class="pre">sql.Row</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.SQLContext.html"><code class="docutils literal"><span class="pre">sql.SQLContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.SparkSession.html"><code class="docutils literal"><span class="pre">sql.SparkSession</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.Window.html"><code class="docutils literal"><span class="pre">sql.Window</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.WindowSpec.html"><code class="docutils literal"><span class="pre">sql.WindowSpec</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a> &raquo;</li>
+        
+          <li><a href="sql.DataFrameReader.html"><code class="docutils literal"><span class="pre">sql.DataFrameReader</span></code></a> &raquo;</li>
+        
+      <li>sql.DataFrameReader.json</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/sql.DataFrameReader.json.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql-dataframereader-json">
+<h1>sql.DataFrameReader.json<a class="headerlink" href="#sql-dataframereader-json" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="sql.DataFrameReader.json">
+<code class="descclassname">DataFrameReader.</code><code class="descname">json</code><span class="sig-paren">(</span><em>path</em>, <em>schema=None</em>, <em>primitivesAsString=None</em>, <em>prefersDecimal=None</em>, <em>allowComments=None</em>, <em>allowUnquotedFieldNames=None</em>, <em>allowSingleQuotes=None</em>, <em>allowNumericLeadingZero=None</em>, <em>allowBackslashEscapingAnyCharacter=None</em>, <em>mode=None</em>, <em>columnNameOfCorruptRecord=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/readwriter.html#DataFrameReader.json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sql.DataFrameReader.json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a JSON file (one object per line) or an RDD of Strings storing JSON objects
+(one object per record) and returns the result as a :class`DataFrame`.</p>
+<p>If the <code class="docutils literal"><span class="pre">schema</span></code> parameter is not specified, this function goes
+through the input once to determine the input schema.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> &#8211; string represents path to the JSON dataset,
+or RDD of Strings storing JSON objects.</li>
+<li><strong>schema</strong> &#8211; an optional <code class="xref py py-class docutils literal"><span class="pre">StructType</span></code> for the input schema.</li>
+<li><strong>primitivesAsString</strong> &#8211; infers all primitive values as a string type. If None is set,
+it uses the default value, <code class="docutils literal"><span class="pre">false</span></code>.</li>
+<li><strong>prefersDecimal</strong> &#8211; infers all floating-point values as a decimal type. If the values
+do not fit in decimal, then it infers them as doubles. If None is
+set, it uses the default value, <code class="docutils literal"><span class="pre">false</span></code>.</li>
+<li><strong>allowComments</strong> &#8211; ignores Java/C++ style comment in JSON records. If None is set,
+it uses the default value, <code class="docutils literal"><span class="pre">false</span></code>.</li>
+<li><strong>allowUnquotedFieldNames</strong> &#8211; allows unquoted JSON field names. If None is set,
+it uses the default value, <code class="docutils literal"><span class="pre">false</span></code>.</li>
+<li><strong>allowSingleQuotes</strong> &#8211; allows single quotes in addition to double quotes. If None is
+set, it uses the default value, <code class="docutils literal"><span class="pre">true</span></code>.</li>
+<li><strong>allowNumericLeadingZero</strong> &#8211; allows leading zeros in numbers (e.g. 00012). If None is
+set, it uses the default value, <code class="docutils literal"><span class="pre">false</span></code>.</li>
+<li><strong>allowBackslashEscapingAnyCharacter</strong> &#8211; allows accepting quoting of all character
+using backslash quoting mechanism. If None is
+set, it uses the default value, <code class="docutils literal"><span class="pre">false</span></code>.</li>
+<li><strong>mode</strong> &#8211; <dl class="docutils">
+<dt>allows a mode for dealing with corrupt records during parsing. If None is</dt>
+<dd>set, it uses the default value, <code class="docutils literal"><span class="pre">PERMISSIVE</span></code>.</dd>
+</dl>
+<ul>
+<li><code class="docutils literal"><span class="pre">PERMISSIVE</span></code> : sets other fields to <code class="docutils literal"><span class="pre">null</span></code> when it meets a corrupted                   record and puts the malformed string into a new field configured by                  <code class="docutils literal"><span class="pre">columnNameOfCorruptRecord</span></code>. When a schema is set by user, it sets                  <code class="docutils literal"><span class="pre">null</span></code> for extra fields.</li>
+<li><code class="docutils literal"><span class="pre">DROPMALFORMED</span></code> : ignores the whole corrupted records.</li>
+<li><code class="docutils literal"><span class="pre">FAILFAST</span></code> : throws an exception when it meets corrupted records.</li>
+</ul>
+</li>
+<li><strong>columnNameOfCorruptRecord</strong> &#8211; allows renaming the new field having malformed string
+created by <code class="docutils literal"><span class="pre">PERMISSIVE</span></code> mode. This overrides
+<code class="docutils literal"><span class="pre">spark.sql.columnNameOfCorruptRecord</span></code>. If None is set,
+it uses the value specified in
+<code class="docutils literal"><span class="pre">spark.sql.columnNameOfCorruptRecord</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="s1">&#39;python/test_support/sql/people.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="go">[(&#39;age&#39;, &#39;bigint&#39;), (&#39;name&#39;, &#39;string&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="p">(</span><span class="s1">&#39;python/test_support/sql/people.json&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">rdd</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="go">[(&#39;age&#39;, &#39;bigint&#39;), (&#39;name&#39;, &#39;string&#39;)]</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sql.DataFrameReader.load.html" class="btn btn-neutral float-right" title="sql.DataFrameReader.load" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql.DataFrameReader.jdbc.html" class="btn btn-neutral" title="sql.DataFrameReader.jdbc" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

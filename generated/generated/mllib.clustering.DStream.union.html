@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.clustering.DStream.union</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="mllib.clustering.DStream" href="mllib.clustering.DStream.html"/>
+        <link rel="next" title="mllib.clustering.DStream.updateStateByKey" href="mllib.clustering.DStream.updateStateByKey.html"/>
+        <link rel="prev" title="mllib.clustering.DStream.transformWith" href="mllib.clustering.DStream.transformWith.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mllib.clustering.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../mllib.clustering.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.BisectingKMeans.html"><code class="docutils literal"><span class="pre">mllib.clustering.BisectingKMeans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.BisectingKMeansModel.html"><code class="docutils literal"><span class="pre">mllib.clustering.BisectingKMeansModel</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mllib.clustering.DStream.html"><code class="docutils literal"><span class="pre">mllib.clustering.DStream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.DenseVector.html"><code class="docutils literal"><span class="pre">mllib.clustering.DenseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.GaussianMixture.html"><code class="docutils literal"><span class="pre">mllib.clustering.GaussianMixture</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.GaussianMixtureModel.html"><code class="docutils literal"><span class="pre">mllib.clustering.GaussianMixtureModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.JavaLoader.html"><code class="docutils literal"><span class="pre">mllib.clustering.JavaLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.clustering.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.JavaSaveable.html"><code class="docutils literal"><span class="pre">mllib.clustering.JavaSaveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.KMeans.html"><code class="docutils literal"><span class="pre">mllib.clustering.KMeans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.KMeansModel.html"><code class="docutils literal"><span class="pre">mllib.clustering.KMeansModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.LDA.html"><code class="docutils literal"><span class="pre">mllib.clustering.LDA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.LDAModel.html"><code class="docutils literal"><span class="pre">mllib.clustering.LDAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.LabeledPoint.html"><code class="docutils literal"><span class="pre">mllib.clustering.LabeledPoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.Loader.html"><code class="docutils literal"><span class="pre">mllib.clustering.Loader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.MultivariateGaussian.html"><code class="docutils literal"><span class="pre">mllib.clustering.MultivariateGaussian</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.PowerIterationClustering.html"><code class="docutils literal"><span class="pre">mllib.clustering.PowerIterationClustering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.PowerIterationClusteringModel.html"><code class="docutils literal"><span class="pre">mllib.clustering.PowerIterationClusteringModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.RDD.html"><code class="docutils literal"><span class="pre">mllib.clustering.RDD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.Saveable.html"><code class="docutils literal"><span class="pre">mllib.clustering.Saveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.SparkContext.html"><code class="docutils literal"><span class="pre">mllib.clustering.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.SparseVector.html"><code class="docutils literal"><span class="pre">mllib.clustering.SparseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.StreamingKMeans.html"><code class="docutils literal"><span class="pre">mllib.clustering.StreamingKMeans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.clustering.StreamingKMeansModel.html"><code class="docutils literal"><span class="pre">mllib.clustering.StreamingKMeansModel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a> &raquo;</li>
+        
+          <li><a href="mllib.clustering.DStream.html"><code class="docutils literal"><span class="pre">mllib.clustering.DStream</span></code></a> &raquo;</li>
+        
+      <li>mllib.clustering.DStream.union</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/mllib.clustering.DStream.union.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mllib-clustering-dstream-union">
+<h1>mllib.clustering.DStream.union<a class="headerlink" href="#mllib-clustering-dstream-union" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="mllib.clustering.DStream.union">
+<code class="descclassname">DStream.</code><code class="descname">union</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/dstream.html#DStream.union"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.clustering.DStream.union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new DStream by unifying data of another DStream with this DStream.</p>
+<dl class="docutils">
+<dt>&#64;param other: Another DStream having the same interval (i.e., slideDuration)</dt>
+<dd>as this DStream.</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mllib.clustering.DStream.updateStateByKey.html" class="btn btn-neutral float-right" title="mllib.clustering.DStream.updateStateByKey" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mllib.clustering.DStream.transformWith.html" class="btn btn-neutral" title="mllib.clustering.DStream.transformWith" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

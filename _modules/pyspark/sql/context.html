@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.context &mdash; PySpark API</title>
+  <title>pyspark.sql.context</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../../index.html"/>
+    <link rel="top" title="" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -187,7 +183,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SQLContext&quot;</span><span class="p">,</span> <span class="s2">&quot;HiveContext&quot;</span><span class="p">,</span> <span class="s2">&quot;UDFRegistration&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="SQLContext"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.html#pyspark.SQLContext">[docs]</a><span class="k">class</span> <span class="nc">SQLContext</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.html#mllib.evaluation.SQLContext">[docs]</a><span class="k">class</span> <span class="nc">SQLContext</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;The entry point for working with structured data (rows and columns) in Spark, in Spark 1.x.</span>
 
 <span class="sd">    As of Spark 2.0, this is replaced by :class:`SparkSession`. However, we are keeping the class</span>
@@ -205,7 +201,7 @@
     <span class="n">_instantiatedContext</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="SQLContext.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.__init__.html#pyspark.SQLContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">sparkSession</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">jsqlContext</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.__init__.html#mllib.evaluation.SQLContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">sparkSession</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">jsqlContext</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new SQLContext.</span>
 
 <span class="sd">        &gt;&gt;&gt; from datetime import datetime</span>
@@ -247,7 +243,7 @@
 
     <span class="nd">@classmethod</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.getOrCreate"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.getOrCreate.html#pyspark.SQLContext.getOrCreate">[docs]</a>    <span class="k">def</span> <span class="nf">getOrCreate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">sc</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.getOrCreate"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.getOrCreate.html#mllib.evaluation.SQLContext.getOrCreate">[docs]</a>    <span class="k">def</span> <span class="nf">getOrCreate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">sc</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the existing SQLContext or create a new one with given SparkContext.</span>
 
@@ -260,7 +256,7 @@
         <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_instantiatedContext</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.newSession"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.newSession.html#pyspark.SQLContext.newSession">[docs]</a>    <span class="k">def</span> <span class="nf">newSession</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.newSession"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.newSession.html#mllib.evaluation.SQLContext.newSession">[docs]</a>    <span class="k">def</span> <span class="nf">newSession</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a new SQLContext as new session, that has separate SQLConf,</span>
 <span class="sd">        registered temporary views and UDFs, but shared SparkContext and</span>
@@ -269,14 +265,14 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">newSession</span><span class="p">())</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.setConf"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.setConf.html#pyspark.SQLContext.setConf">[docs]</a>    <span class="k">def</span> <span class="nf">setConf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.setConf"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.setConf.html#mllib.evaluation.SQLContext.setConf">[docs]</a>    <span class="k">def</span> <span class="nf">setConf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets the given Spark SQL configuration property.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.getConf"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.getConf.html#pyspark.SQLContext.getConf">[docs]</a>    <span class="k">def</span> <span class="nf">getConf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">defaultValue</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.getConf"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.getConf.html#mllib.evaluation.SQLContext.getConf">[docs]</a>    <span class="k">def</span> <span class="nf">getConf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">defaultValue</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the value of Spark SQL configuration property for the given key.</span>
 
 <span class="sd">        If the key is not set and defaultValue is not None, return</span>
@@ -303,7 +299,7 @@
         <span class="k">return</span> <span class="n">UDFRegistration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.range"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.range.html#pyspark.SQLContext.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.range"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.range.html#mllib.evaluation.SQLContext.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a :class:`DataFrame` with single LongType column named `id`,</span>
 <span class="sd">        containing elements in a range from `start` to `end` (exclusive) with</span>
@@ -327,7 +323,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.registerFunction"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.registerFunction.html#pyspark.SQLContext.registerFunction">[docs]</a>    <span class="k">def</span> <span class="nf">registerFunction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">returnType</span><span class="o">=</span><span class="n">StringType</span><span class="p">()):</span>
+<div class="viewcode-block" id="SQLContext.registerFunction"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.registerFunction.html#mllib.evaluation.SQLContext.registerFunction">[docs]</a>    <span class="k">def</span> <span class="nf">registerFunction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">returnType</span><span class="o">=</span><span class="n">StringType</span><span class="p">()):</span>
         <span class="sd">&quot;&quot;&quot;Registers a python function (including lambda function) as a UDF</span>
 <span class="sd">        so it can be used in SQL statements.</span>
 
@@ -368,7 +364,7 @@
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="SQLContext.createDataFrame"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.createDataFrame.html#pyspark.SQLContext.createDataFrame">[docs]</a>    <span class="k">def</span> <span class="nf">createDataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.createDataFrame"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.createDataFrame.html#mllib.evaluation.SQLContext.createDataFrame">[docs]</a>    <span class="k">def</span> <span class="nf">createDataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a :class:`DataFrame` from an :class:`RDD`, a list or a :class:`pandas.DataFrame`.</span>
 
@@ -452,7 +448,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.registerDataFrameAsTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.registerDataFrameAsTable.html#pyspark.SQLContext.registerDataFrameAsTable">[docs]</a>    <span class="k">def</span> <span class="nf">registerDataFrameAsTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.registerDataFrameAsTable"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.registerDataFrameAsTable.html#mllib.evaluation.SQLContext.registerDataFrameAsTable">[docs]</a>    <span class="k">def</span> <span class="nf">registerDataFrameAsTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Registers the given :class:`DataFrame` as a temporary table in the catalog.</span>
 
 <span class="sd">        Temporary tables exist only during the lifetime of this instance of :class:`SQLContext`.</span>
@@ -462,7 +458,7 @@
         <span class="n">df</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.dropTempTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.dropTempTable.html#pyspark.SQLContext.dropTempTable">[docs]</a>    <span class="k">def</span> <span class="nf">dropTempTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.dropTempTable"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.dropTempTable.html#mllib.evaluation.SQLContext.dropTempTable">[docs]</a>    <span class="k">def</span> <span class="nf">dropTempTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Remove the temp table from catalog.</span>
 
 <span class="sd">        &gt;&gt;&gt; sqlContext.registerDataFrameAsTable(df, &quot;table1&quot;)</span>
@@ -471,7 +467,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">catalog</span><span class="o">.</span><span class="n">dropTempView</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.createExternalTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.createExternalTable.html#pyspark.SQLContext.createExternalTable">[docs]</a>    <span class="k">def</span> <span class="nf">createExternalTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.createExternalTable"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.createExternalTable.html#mllib.evaluation.SQLContext.createExternalTable">[docs]</a>    <span class="k">def</span> <span class="nf">createExternalTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates an external table based on the dataset in a data source.</span>
 
 <span class="sd">        It returns the DataFrame associated with the external table.</span>
@@ -490,7 +486,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.sql"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.sql.html#pyspark.SQLContext.sql">[docs]</a>    <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlQuery</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.sql"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.sql.html#mllib.evaluation.SQLContext.sql">[docs]</a>    <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlQuery</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a :class:`DataFrame` representing the result of the given query.</span>
 
 <span class="sd">        :return: :class:`DataFrame`</span>
@@ -503,7 +499,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="n">sqlQuery</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.table"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.table.html#pyspark.SQLContext.table">[docs]</a>    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.table"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.table.html#mllib.evaluation.SQLContext.table">[docs]</a>    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the specified table as a :class:`DataFrame`.</span>
 
 <span class="sd">        :return: :class:`DataFrame`</span>
@@ -517,7 +513,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.tables"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.tables.html#pyspark.SQLContext.tables">[docs]</a>    <span class="k">def</span> <span class="nf">tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dbName</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.tables"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.tables.html#mllib.evaluation.SQLContext.tables">[docs]</a>    <span class="k">def</span> <span class="nf">tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dbName</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a :class:`DataFrame` containing names of tables in the given database.</span>
 
 <span class="sd">        If ``dbName`` is not specified, the current database will be used.</span>
@@ -539,7 +535,7 @@
             <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">tables</span><span class="p">(</span><span class="n">dbName</span><span class="p">),</span> <span class="bp">self</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.tableNames"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.tableNames.html#pyspark.SQLContext.tableNames">[docs]</a>    <span class="k">def</span> <span class="nf">tableNames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dbName</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.tableNames"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.tableNames.html#mllib.evaluation.SQLContext.tableNames">[docs]</a>    <span class="k">def</span> <span class="nf">tableNames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dbName</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a list of names of tables in the database ``dbName``.</span>
 
 <span class="sd">        :param dbName: string, name of the database to use. Default to the current database.</span>
@@ -557,17 +553,17 @@
             <span class="k">return</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">tableNames</span><span class="p">(</span><span class="n">dbName</span><span class="p">)]</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.cacheTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.cacheTable.html#pyspark.SQLContext.cacheTable">[docs]</a>    <span class="k">def</span> <span class="nf">cacheTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.cacheTable"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.cacheTable.html#mllib.evaluation.SQLContext.cacheTable">[docs]</a>    <span class="k">def</span> <span class="nf">cacheTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Caches the specified table in-memory.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">cacheTable</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.uncacheTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.uncacheTable.html#pyspark.SQLContext.uncacheTable">[docs]</a>    <span class="k">def</span> <span class="nf">uncacheTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.uncacheTable"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.uncacheTable.html#mllib.evaluation.SQLContext.uncacheTable">[docs]</a>    <span class="k">def</span> <span class="nf">uncacheTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Removes the specified table from the in-memory cache.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">uncacheTable</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="SQLContext.clearCache"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SQLContext.clearCache.html#pyspark.SQLContext.clearCache">[docs]</a>    <span class="k">def</span> <span class="nf">clearCache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SQLContext.clearCache"><a class="viewcode-back" href="../../../generated/generated/sql.SQLContext.clearCache.html#mllib.evaluation.SQLContext.clearCache">[docs]</a>    <span class="k">def</span> <span class="nf">clearCache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Removes all cached tables from the in-memory cache. &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">clearCache</span><span class="p">()</span></div>
 
@@ -611,7 +607,7 @@
         <span class="k">return</span> <span class="n">StreamingQueryManager</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">streams</span><span class="p">())</span></div>
 
 
-<div class="viewcode-block" id="HiveContext"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.HiveContext.html#pyspark.HiveContext">[docs]</a><span class="k">class</span> <span class="nc">HiveContext</span><span class="p">(</span><span class="n">SQLContext</span><span class="p">):</span>
+<div class="viewcode-block" id="HiveContext"><a class="viewcode-back" href="../../../generated/generated/sql.HiveContext.html#mllib.evaluation.HiveContext">[docs]</a><span class="k">class</span> <span class="nc">HiveContext</span><span class="p">(</span><span class="n">SQLContext</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A variant of Spark SQL that integrates with data stored in Hive.</span>
 
 <span class="sd">    Configuration for Hive is read from ``hive-site.xml`` on the classpath.</span>
@@ -629,7 +625,7 @@
         <span class="s2">&quot;SparkSession.builder.enableHiveSupport().getOrCreate() instead.&quot;</span><span class="p">,</span>
         <span class="ne">DeprecationWarning</span><span class="p">)</span>
 
-<div class="viewcode-block" id="HiveContext.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.HiveContext.__init__.html#pyspark.HiveContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">jhiveContext</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="HiveContext.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.HiveContext.__init__.html#mllib.evaluation.HiveContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">jhiveContext</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">jhiveContext</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">sparkSession</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">enableHiveSupport</span><span class="p">()</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
@@ -648,7 +644,7 @@
         <span class="n">jtestHive</span> <span class="o">=</span> <span class="n">sparkContext</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">org</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">hive</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestHiveContext</span><span class="p">(</span><span class="n">jsc</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="n">sparkContext</span><span class="p">,</span> <span class="n">jtestHive</span><span class="p">)</span>
 
-<div class="viewcode-block" id="HiveContext.refreshTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.HiveContext.refreshTable.html#pyspark.HiveContext.refreshTable">[docs]</a>    <span class="k">def</span> <span class="nf">refreshTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="HiveContext.refreshTable"><a class="viewcode-back" href="../../../generated/generated/sql.HiveContext.refreshTable.html#mllib.evaluation.HiveContext.refreshTable">[docs]</a>    <span class="k">def</span> <span class="nf">refreshTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Invalidate and refresh all the cached the metadata of the given</span>
 <span class="sd">        table. For performance reasons, Spark SQL or the external data source</span>
 <span class="sd">        library it uses might cache certain metadata about a table, such as the</span>
@@ -744,7 +740,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

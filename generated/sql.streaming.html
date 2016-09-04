@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.streaming</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.sql" href="../pyspark.sql.html"/>
+        <link rel="next" title="sql.streaming.abstractmethod()" href="generated/sql.streaming.abstractmethod.html"/>
+        <link rel="prev" title="sql.functions.map.next" href="generated/sql.functions.map.next.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">sql.streaming</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.abstractmethod.html"><code class="docutils literal"><span class="pre">sql.streaming.abstractmethod()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.ignore_unicode_prefix.html"><code class="docutils literal"><span class="pre">sql.streaming.ignore_unicode_prefix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.keyword_only.html"><code class="docutils literal"><span class="pre">sql.streaming.keyword_only()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.since.html"><code class="docutils literal"><span class="pre">sql.streaming.since()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.to_str.html"><code class="docutils literal"><span class="pre">sql.streaming.to_str()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.ABCMeta.html"><code class="docutils literal"><span class="pre">sql.streaming.ABCMeta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.ArrayType.html"><code class="docutils literal"><span class="pre">sql.streaming.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.BinaryType.html"><code class="docutils literal"><span class="pre">sql.streaming.BinaryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.BooleanType.html"><code class="docutils literal"><span class="pre">sql.streaming.BooleanType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.ByteType.html"><code class="docutils literal"><span class="pre">sql.streaming.ByteType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.DataStreamReader.html"><code class="docutils literal"><span class="pre">sql.streaming.DataStreamReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.DataStreamWriter.html"><code class="docutils literal"><span class="pre">sql.streaming.DataStreamWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.DataType.html"><code class="docutils literal"><span class="pre">sql.streaming.DataType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.DateType.html"><code class="docutils literal"><span class="pre">sql.streaming.DateType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.DecimalType.html"><code class="docutils literal"><span class="pre">sql.streaming.DecimalType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.DoubleType.html"><code class="docutils literal"><span class="pre">sql.streaming.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.FloatType.html"><code class="docutils literal"><span class="pre">sql.streaming.FloatType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.IntegerType.html"><code class="docutils literal"><span class="pre">sql.streaming.IntegerType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.LongType.html"><code class="docutils literal"><span class="pre">sql.streaming.LongType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.MapType.html"><code class="docutils literal"><span class="pre">sql.streaming.MapType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.NullType.html"><code class="docutils literal"><span class="pre">sql.streaming.NullType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.OptionUtils.html"><code class="docutils literal"><span class="pre">sql.streaming.OptionUtils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.ProcessingTime.html"><code class="docutils literal"><span class="pre">sql.streaming.ProcessingTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.ShortType.html"><code class="docutils literal"><span class="pre">sql.streaming.ShortType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.StreamingQuery.html"><code class="docutils literal"><span class="pre">sql.streaming.StreamingQuery</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.StreamingQueryManager.html"><code class="docutils literal"><span class="pre">sql.streaming.StreamingQueryManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.StringType.html"><code class="docutils literal"><span class="pre">sql.streaming.StringType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.StructField.html"><code class="docutils literal"><span class="pre">sql.streaming.StructField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.StructType.html"><code class="docutils literal"><span class="pre">sql.streaming.StructType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.TimestampType.html"><code class="docutils literal"><span class="pre">sql.streaming.TimestampType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.streaming.Trigger.html"><code class="docutils literal"><span class="pre">sql.streaming.Trigger</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">sql.streaming</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/sql.streaming.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-sql.streaming">
+<span id="sql-streaming"></span><h1><a class="reference internal" href="#module-sql.streaming" title="sql.streaming"><code class="xref py py-mod docutils literal"><span class="pre">sql.streaming</span></code></a><a class="headerlink" href="#module-sql.streaming" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.abstractmethod.html#sql.streaming.abstractmethod" title="sql.streaming.abstractmethod"><code class="xref py py-obj docutils literal"><span class="pre">abstractmethod</span></code></a>(funcobj)</td>
+<td>A decorator indicating abstract methods.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.ignore_unicode_prefix.html#sql.streaming.ignore_unicode_prefix" title="sql.streaming.ignore_unicode_prefix"><code class="xref py py-obj docutils literal"><span class="pre">ignore_unicode_prefix</span></code></a>(f)</td>
+<td>Ignore the &#8216;u&#8217; prefix of string in doc tests, to make it works</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.keyword_only.html#sql.streaming.keyword_only" title="sql.streaming.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
+<td>A decorator that forces keyword arguments in the wrapped method and saves actual input keyword arguments in <cite>_input_kwargs</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.since.html#sql.streaming.since" title="sql.streaming.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.to_str.html#sql.streaming.to_str" title="sql.streaming.to_str"><code class="xref py py-obj docutils literal"><span class="pre">to_str</span></code></a>(value)</td>
+<td>A wrapper over str(), but converts bool values to lower case strings.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.ABCMeta.html#sql.streaming.ABCMeta" title="sql.streaming.ABCMeta"><code class="xref py py-obj docutils literal"><span class="pre">ABCMeta</span></code></a></td>
+<td>Metaclass for defining Abstract Base Classes (ABCs).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.ArrayType.html#sql.streaming.ArrayType" title="sql.streaming.ArrayType"><code class="xref py py-obj docutils literal"><span class="pre">ArrayType</span></code></a>(elementType[,&nbsp;containsNull])</td>
+<td>Array data type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.BinaryType.html#sql.streaming.BinaryType" title="sql.streaming.BinaryType"><code class="xref py py-obj docutils literal"><span class="pre">BinaryType</span></code></a></td>
+<td>Binary (byte array) data type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.BooleanType.html#sql.streaming.BooleanType" title="sql.streaming.BooleanType"><code class="xref py py-obj docutils literal"><span class="pre">BooleanType</span></code></a></td>
+<td>Boolean data type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.ByteType.html#sql.streaming.ByteType" title="sql.streaming.ByteType"><code class="xref py py-obj docutils literal"><span class="pre">ByteType</span></code></a></td>
+<td>Byte data type, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.DataStreamReader.html#sql.streaming.DataStreamReader" title="sql.streaming.DataStreamReader"><code class="xref py py-obj docutils literal"><span class="pre">DataStreamReader</span></code></a>(spark)</td>
+<td>Interface used to load a streaming <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from external storage systems (e.g.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.DataStreamWriter.html#sql.streaming.DataStreamWriter" title="sql.streaming.DataStreamWriter"><code class="xref py py-obj docutils literal"><span class="pre">DataStreamWriter</span></code></a>(df)</td>
+<td>Interface used to write a streaming <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> to external storage systems (e.g.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.DataType.html#sql.streaming.DataType" title="sql.streaming.DataType"><code class="xref py py-obj docutils literal"><span class="pre">DataType</span></code></a></td>
+<td>Base class for data types.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.DateType.html#sql.streaming.DateType" title="sql.streaming.DateType"><code class="xref py py-obj docutils literal"><span class="pre">DateType</span></code></a></td>
+<td>Date (datetime.date) data type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.DecimalType.html#sql.streaming.DecimalType" title="sql.streaming.DecimalType"><code class="xref py py-obj docutils literal"><span class="pre">DecimalType</span></code></a>([precision,&nbsp;scale])</td>
+<td>Decimal (decimal.Decimal) data type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.DoubleType.html#sql.streaming.DoubleType" title="sql.streaming.DoubleType"><code class="xref py py-obj docutils literal"><span class="pre">DoubleType</span></code></a></td>
+<td>Double data type, representing double precision floats.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.FloatType.html#sql.streaming.FloatType" title="sql.streaming.FloatType"><code class="xref py py-obj docutils literal"><span class="pre">FloatType</span></code></a></td>
+<td>Float data type, representing single precision floats.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.IntegerType.html#sql.streaming.IntegerType" title="sql.streaming.IntegerType"><code class="xref py py-obj docutils literal"><span class="pre">IntegerType</span></code></a></td>
+<td>Int data type, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.LongType.html#sql.streaming.LongType" title="sql.streaming.LongType"><code class="xref py py-obj docutils literal"><span class="pre">LongType</span></code></a></td>
+<td>Long data type, i.e.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.MapType.html#sql.streaming.MapType" title="sql.streaming.MapType"><code class="xref py py-obj docutils literal"><span class="pre">MapType</span></code></a>(keyType,&nbsp;valueType[,&nbsp;valueContainsNull])</td>
+<td>Map data type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.NullType.html#sql.streaming.NullType" title="sql.streaming.NullType"><code class="xref py py-obj docutils literal"><span class="pre">NullType</span></code></a></td>
+<td>Null type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.OptionUtils.html#sql.streaming.OptionUtils" title="sql.streaming.OptionUtils"><code class="xref py py-obj docutils literal"><span class="pre">OptionUtils</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.ProcessingTime.html#sql.streaming.ProcessingTime" title="sql.streaming.ProcessingTime"><code class="xref py py-obj docutils literal"><span class="pre">ProcessingTime</span></code></a>(interval)</td>
+<td>A trigger that runs a query periodically based on the processing time.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.ShortType.html#sql.streaming.ShortType" title="sql.streaming.ShortType"><code class="xref py py-obj docutils literal"><span class="pre">ShortType</span></code></a></td>
+<td>Short data type, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.StreamingQuery.html#sql.streaming.StreamingQuery" title="sql.streaming.StreamingQuery"><code class="xref py py-obj docutils literal"><span class="pre">StreamingQuery</span></code></a>(jsq)</td>
+<td>A handle to a query that is executing continuously in the background as new data arrives.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.StreamingQueryManager.html#sql.streaming.StreamingQueryManager" title="sql.streaming.StreamingQueryManager"><code class="xref py py-obj docutils literal"><span class="pre">StreamingQueryManager</span></code></a>(jsqm)</td>
+<td>A class to manage all the <a class="reference internal" href="generated/sql.streaming.StreamingQuery.html#sql.streaming.StreamingQuery" title="sql.streaming.StreamingQuery"><code class="xref py py-class docutils literal"><span class="pre">StreamingQuery</span></code></a> StreamingQueries active.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.StringType.html#sql.streaming.StringType" title="sql.streaming.StringType"><code class="xref py py-obj docutils literal"><span class="pre">StringType</span></code></a></td>
+<td>String data type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.StructField.html#sql.streaming.StructField" title="sql.streaming.StructField"><code class="xref py py-obj docutils literal"><span class="pre">StructField</span></code></a>(name,&nbsp;dataType[,&nbsp;nullable,&nbsp;metadata])</td>
+<td>A field in <a class="reference internal" href="generated/sql.streaming.StructType.html#sql.streaming.StructType" title="sql.streaming.StructType"><code class="xref py py-class docutils literal"><span class="pre">StructType</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.StructType.html#sql.streaming.StructType" title="sql.streaming.StructType"><code class="xref py py-obj docutils literal"><span class="pre">StructType</span></code></a>([fields])</td>
+<td>Struct type, consisting of a list of <a class="reference internal" href="generated/sql.streaming.StructField.html#sql.streaming.StructField" title="sql.streaming.StructField"><code class="xref py py-class docutils literal"><span class="pre">StructField</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.streaming.TimestampType.html#sql.streaming.TimestampType" title="sql.streaming.TimestampType"><code class="xref py py-obj docutils literal"><span class="pre">TimestampType</span></code></a></td>
+<td>Timestamp (datetime.datetime) data type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.Trigger.html#sql.streaming.Trigger" title="sql.streaming.Trigger"><code class="xref py py-obj docutils literal"><span class="pre">Trigger</span></code></a></td>
+<td>Used to indicate how often results should be produced by a <a class="reference internal" href="generated/sql.streaming.StreamingQuery.html#sql.streaming.StreamingQuery" title="sql.streaming.StreamingQuery"><code class="xref py py-class docutils literal"><span class="pre">StreamingQuery</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/sql.streaming.abstractmethod.html" class="btn btn-neutral float-right" title="sql.streaming.abstractmethod()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/sql.functions.map.next.html" class="btn btn-neutral" title="sql.functions.map.next" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

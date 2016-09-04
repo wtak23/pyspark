@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. pyspark.sql &mdash; PySpark API</title>
+  <title>pyspark.sql</title>
   
 
   
@@ -32,9 +32,9 @@
   
 
   
-    <link rel="top" title="PySpark API" href="index.html"/>
-        <link rel="next" title="2.1. pyspark.sql" href="generated/pyspark.sql.html"/>
-        <link rel="prev" title="1.2.18.2.11. pyspark.StorageLevel.OFF_HEAP" href="generated/generated/pyspark.StorageLevel.OFF_HEAP.html"/> 
+    <link rel="top" title="" href="index.html"/>
+        <link rel="next" title="sql" href="generated/sql.html"/>
+        <link rel="prev" title="pyspark.StorageLevel.OFF_HEAP" href="generated/generated/pyspark.StorageLevel.OFF_HEAP.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -62,10 +62,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -86,17 +82,17 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">2. pyspark.sql</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.sql.html">2.1. pyspark.sql</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.sql.functions.html">2.3. pyspark.sql.functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">pyspark.sql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -138,7 +134,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>2. pyspark.sql</li>
+      <li>pyspark.sql</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,13 +152,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pyspark-sql">
-<span id="id1"></span><h1>2. pyspark.sql<a class="headerlink" href="#pyspark-sql" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>pyspark.sql<a class="headerlink" href="#pyspark-sql" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.sql.html">2.1. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.sql.types.html">2.2. pyspark.sql.types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.sql.functions.html">2.3. pyspark.sql.functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.sql.streaming.html">2.4. pyspark.sql.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
 </ul>
 </div>
 <table border="1" class="longtable docutils">
@@ -171,16 +167,16 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.sql.html#module-pyspark.sql" title="pyspark.sql"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.sql</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.html#module-sql" title="sql"><code class="xref py py-obj docutils literal"><span class="pre">sql</span></code></a></td>
 <td>Important classes of Spark SQL and DataFrames:</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.sql.types.html#module-pyspark.sql.types" title="pyspark.sql.types"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.sql.types</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.types.html#module-sql.types" title="sql.types"><code class="xref py py-obj docutils literal"><span class="pre">sql.types</span></code></a></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.sql.functions.html#module-pyspark.sql.functions" title="pyspark.sql.functions"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.sql.functions</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.html#module-sql.functions" title="sql.functions"><code class="xref py py-obj docutils literal"><span class="pre">sql.functions</span></code></a></td>
 <td>A collections of builtin functions</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.sql.streaming.html#module-pyspark.sql.streaming" title="pyspark.sql.streaming"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.sql.streaming</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.streaming.html#module-sql.streaming" title="sql.streaming"><code class="xref py py-obj docutils literal"><span class="pre">sql.streaming</span></code></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -194,10 +190,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="generated/pyspark.sql.html" class="btn btn-neutral float-right" title="2.1. pyspark.sql" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="generated/sql.html" class="btn btn-neutral float-right" title="sql" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/generated/pyspark.StorageLevel.OFF_HEAP.html" class="btn btn-neutral" title="1.2.18.2.11. pyspark.StorageLevel.OFF_HEAP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/generated/pyspark.StorageLevel.OFF_HEAP.html" class="btn btn-neutral" title="pyspark.StorageLevel.OFF_HEAP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -228,7 +224,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

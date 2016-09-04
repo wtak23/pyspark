@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.DataFrameReader</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="sql" href="../sql.html"/>
+        <link rel="next" title="sql.DataFrameReader.__init__" href="sql.DataFrameReader.__init__.html"/>
+        <link rel="prev" title="sql.DataFrameNaFunctions.replace" href="sql.DataFrameNaFunctions.replace.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../sql.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sql.Column.html"><code class="docutils literal"><span class="pre">sql.Column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrame.html"><code class="docutils literal"><span class="pre">sql.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameNaFunctions.html"><code class="docutils literal"><span class="pre">sql.DataFrameNaFunctions</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">sql.DataFrameReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameStatFunctions.html"><code class="docutils literal"><span class="pre">sql.DataFrameStatFunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameWriter.html"><code class="docutils literal"><span class="pre">sql.DataFrameWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.GroupedData.html"><code class="docutils literal"><span class="pre">sql.GroupedData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.HiveContext.html"><code class="docutils literal"><span class="pre">sql.HiveContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.Row.html"><code class="docutils literal"><span class="pre">sql.Row</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.SQLContext.html"><code class="docutils literal"><span class="pre">sql.SQLContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.SparkSession.html"><code class="docutils literal"><span class="pre">sql.SparkSession</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.Window.html"><code class="docutils literal"><span class="pre">sql.Window</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.WindowSpec.html"><code class="docutils literal"><span class="pre">sql.WindowSpec</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">sql.DataFrameReader</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/sql.DataFrameReader.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql-dataframereader">
+<h1><a class="reference internal" href="#sql.DataFrameReader" title="sql.DataFrameReader"><code class="xref py py-class docutils literal"><span class="pre">sql.DataFrameReader</span></code></a><a class="headerlink" href="#sql-dataframereader" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="sql.DataFrameReader">
+<em class="property">class </em><code class="descclassname">sql.</code><code class="descname">DataFrameReader</code><span class="sig-paren">(</span><em>spark</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/readwriter.html#DataFrameReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sql.DataFrameReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interface used to load a <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> from external storage systems
+(e.g. file systems, key-value stores, etc). Use <code class="xref py py-func docutils literal"><span class="pre">spark.read()</span></code>
+to access this.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
+<dl class="method">
+<dt id="sql.DataFrameReader.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>spark</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/readwriter.html#DataFrameReader.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sql.DataFrameReader.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="sql.DataFrameReader.__init__.html#sql.DataFrameReader.__init__" title="sql.DataFrameReader.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(spark)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.DataFrameReader.csv.html#sql.DataFrameReader.csv" title="sql.DataFrameReader.csv"><code class="xref py py-obj docutils literal"><span class="pre">csv</span></code></a>(path[,&nbsp;schema,&nbsp;sep,&nbsp;encoding,&nbsp;quote,&nbsp;...])</td>
+<td>Loads a CSV file and returns the result as a  <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.DataFrameReader.format.html#sql.DataFrameReader.format" title="sql.DataFrameReader.format"><code class="xref py py-obj docutils literal"><span class="pre">format</span></code></a>(source)</td>
+<td>Specifies the input data source format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.DataFrameReader.jdbc.html#sql.DataFrameReader.jdbc" title="sql.DataFrameReader.jdbc"><code class="xref py py-obj docutils literal"><span class="pre">jdbc</span></code></a>(url,&nbsp;table[,&nbsp;column,&nbsp;lowerBound,&nbsp;...])</td>
+<td>Construct a <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> representing the database table named <code class="docutils literal"><span class="pre">table</span></code> accessible via JDBC URL <code class="docutils literal"><span class="pre">url</span></code> and connection <code class="docutils literal"><span class="pre">properties</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.DataFrameReader.json.html#sql.DataFrameReader.json" title="sql.DataFrameReader.json"><code class="xref py py-obj docutils literal"><span class="pre">json</span></code></a>(path[,&nbsp;schema,&nbsp;primitivesAsString,&nbsp;...])</td>
+<td>Loads a JSON file (one object per line) or an RDD of Strings storing JSON objects (one object per record) and returns the result as a :class`DataFrame`.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.DataFrameReader.load.html#sql.DataFrameReader.load" title="sql.DataFrameReader.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>([path,&nbsp;format,&nbsp;schema])</td>
+<td>Loads data from a data source and returns it as a :class`DataFrame`.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.DataFrameReader.option.html#sql.DataFrameReader.option" title="sql.DataFrameReader.option"><code class="xref py py-obj docutils literal"><span class="pre">option</span></code></a>(key,&nbsp;value)</td>
+<td>Adds an input option for the underlying data source.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.DataFrameReader.options.html#sql.DataFrameReader.options" title="sql.DataFrameReader.options"><code class="xref py py-obj docutils literal"><span class="pre">options</span></code></a>(**options)</td>
+<td>Adds input options for the underlying data source.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.DataFrameReader.orc.html#sql.DataFrameReader.orc" title="sql.DataFrameReader.orc"><code class="xref py py-obj docutils literal"><span class="pre">orc</span></code></a>(path)</td>
+<td>Loads an ORC file, returning the result as a <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.DataFrameReader.parquet.html#sql.DataFrameReader.parquet" title="sql.DataFrameReader.parquet"><code class="xref py py-obj docutils literal"><span class="pre">parquet</span></code></a>(*paths)</td>
+<td>Loads a Parquet file, returning the result as a <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.DataFrameReader.schema.html#sql.DataFrameReader.schema" title="sql.DataFrameReader.schema"><code class="xref py py-obj docutils literal"><span class="pre">schema</span></code></a>(schema)</td>
+<td>Specifies the input schema.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.DataFrameReader.table.html#sql.DataFrameReader.table" title="sql.DataFrameReader.table"><code class="xref py py-obj docutils literal"><span class="pre">table</span></code></a>(tableName)</td>
+<td>Returns the specified table as a <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.DataFrameReader.text.html#sql.DataFrameReader.text" title="sql.DataFrameReader.text"><code class="xref py py-obj docutils literal"><span class="pre">text</span></code></a>(paths)</td>
+<td>Loads text files and returns a <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> whose schema starts with a string column named &#8220;value&#8221;, and followed by partitioned columns if there are any.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sql.DataFrameReader.__init__.html" class="btn btn-neutral float-right" title="sql.DataFrameReader.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql.DataFrameNaFunctions.replace.html" class="btn btn-neutral" title="sql.DataFrameNaFunctions.replace" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

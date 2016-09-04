@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. pyspark.streaming &mdash; PySpark API</title>
+  <title>pyspark.streaming</title>
   
 
   
@@ -32,9 +32,9 @@
   
 
   
-    <link rel="top" title="PySpark API" href="index.html"/>
-        <link rel="next" title="5.1. pyspark.streaming" href="generated/pyspark.streaming.html"/>
-        <link rel="prev" title="4.14.2.10.1.8. pyspark.mllib.util.Vectors.zeros" href="generated/generated/pyspark.mllib.util.Vectors.zeros.html"/> 
+    <link rel="top" title="" href="index.html"/>
+        <link rel="next" title="streaming" href="generated/streaming.html"/>
+        <link rel="prev" title="mllib.util.Vectors.zeros" href="generated/generated/mllib.util.Vectors.zeros.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -62,10 +62,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -86,15 +82,15 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">5. pyspark.streaming</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.streaming.html">5.1. pyspark.streaming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="generated/pyspark.streaming.flume.html">5.4. pyspark.streaming.flume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">pyspark.streaming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/streaming.html"><code class="docutils literal"><span class="pre">streaming</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/streaming.kafka.html"><code class="docutils literal"><span class="pre">streaming.kafka</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/streaming.kinesis.html"><code class="docutils literal"><span class="pre">streaming.kinesis</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/streaming.flume.html"><code class="docutils literal"><span class="pre">streaming.flume</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -138,7 +134,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>5. pyspark.streaming</li>
+      <li>pyspark.streaming</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,13 +152,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pyspark-streaming">
-<span id="id1"></span><h1>5. pyspark.streaming<a class="headerlink" href="#pyspark-streaming" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>pyspark.streaming<a class="headerlink" href="#pyspark-streaming" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.streaming.html">5.1. pyspark.streaming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.streaming.kafka.html">5.2. pyspark.streaming.kafka</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.streaming.kinesis.html">5.3. pyspark.streaming.kinesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generated/pyspark.streaming.flume.html">5.4. pyspark.streaming.flume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/streaming.html"><code class="docutils literal"><span class="pre">streaming</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/streaming.kafka.html"><code class="docutils literal"><span class="pre">streaming.kafka</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/streaming.kinesis.html"><code class="docutils literal"><span class="pre">streaming.kinesis</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="generated/streaming.flume.html"><code class="docutils literal"><span class="pre">streaming.flume</span></code></a></li>
 </ul>
 </div>
 <table border="1" class="longtable docutils">
@@ -171,16 +167,16 @@
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.streaming.html#module-pyspark.streaming" title="pyspark.streaming"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.streaming</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/streaming.html#module-streaming" title="streaming"><code class="xref py py-obj docutils literal"><span class="pre">streaming</span></code></a></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.streaming.kafka.html#module-pyspark.streaming.kafka" title="pyspark.streaming.kafka"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.streaming.kafka</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="generated/streaming.kafka.html#module-streaming.kafka" title="streaming.kafka"><code class="xref py py-obj docutils literal"><span class="pre">streaming.kafka</span></code></a></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.streaming.kinesis.html#module-pyspark.streaming.kinesis" title="pyspark.streaming.kinesis"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.streaming.kinesis</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/streaming.kinesis.html#module-streaming.kinesis" title="streaming.kinesis"><code class="xref py py-obj docutils literal"><span class="pre">streaming.kinesis</span></code></a></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/pyspark.streaming.flume.html#module-pyspark.streaming.flume" title="pyspark.streaming.flume"><code class="xref py py-obj docutils literal"><span class="pre">pyspark.streaming.flume</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="generated/streaming.flume.html#module-streaming.flume" title="streaming.flume"><code class="xref py py-obj docutils literal"><span class="pre">streaming.flume</span></code></a></td>
 <td></td>
 </tr>
 </tbody>
@@ -194,10 +190,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="generated/pyspark.streaming.html" class="btn btn-neutral float-right" title="5.1. pyspark.streaming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="generated/streaming.html" class="btn btn-neutral float-right" title="streaming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/generated/pyspark.mllib.util.Vectors.zeros.html" class="btn btn-neutral" title="4.14.2.10.1.8. pyspark.mllib.util.Vectors.zeros" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/generated/mllib.util.Vectors.zeros.html" class="btn btn-neutral" title="mllib.util.Vectors.zeros" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -228,7 +224,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

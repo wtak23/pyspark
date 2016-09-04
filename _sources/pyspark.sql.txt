@@ -5,19 +5,21 @@
 pyspark.sql
 ###########
 
+.. curentmodule:: pyspark
+
 .. toctree::
     :maxdepth: 1
 
-    generated/pyspark.sql
-    generated/pyspark.sql.types
-    generated/pyspark.sql.functions
-    generated/pyspark.sql.streaming
+    generated/sql
+    generated/sql.types
+    generated/sql.functions
+    generated/sql.streaming
 
 .. autosummary::
    :toctree:generated/
    :template:module_custom.rst
 
-    pyspark.sql
-    pyspark.sql.types
-    pyspark.sql.functions
-    pyspark.sql.streaming
+    sql
+    sql.types
+    sql.functions
+    sql.streaming

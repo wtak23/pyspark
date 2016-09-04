@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.regression</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="mllib.regression.array()" href="generated/mllib.regression.array.html"/>
+        <link rel="prev" title="mllib.recommendation.SparkContext.version" href="generated/mllib.recommendation.SparkContext.version.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">mllib.regression</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.array.html"><code class="docutils literal"><span class="pre">mllib.regression.array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.callMLlibFunc.html"><code class="docutils literal"><span class="pre">mllib.regression.callMLlibFunc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.inherit_doc.html"><code class="docutils literal"><span class="pre">mllib.regression.inherit_doc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.since.html"><code class="docutils literal"><span class="pre">mllib.regression.since()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.DStream.html"><code class="docutils literal"><span class="pre">mllib.regression.DStream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.IsotonicRegression.html"><code class="docutils literal"><span class="pre">mllib.regression.IsotonicRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.IsotonicRegressionModel.html"><code class="docutils literal"><span class="pre">mllib.regression.IsotonicRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.LabeledPoint.html"><code class="docutils literal"><span class="pre">mllib.regression.LabeledPoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.LassoModel.html"><code class="docutils literal"><span class="pre">mllib.regression.LassoModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.LassoWithSGD.html"><code class="docutils literal"><span class="pre">mllib.regression.LassoWithSGD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.LinearModel.html"><code class="docutils literal"><span class="pre">mllib.regression.LinearModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.LinearRegressionModel.html"><code class="docutils literal"><span class="pre">mllib.regression.LinearRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.LinearRegressionModelBase.html"><code class="docutils literal"><span class="pre">mllib.regression.LinearRegressionModelBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.LinearRegressionWithSGD.html"><code class="docutils literal"><span class="pre">mllib.regression.LinearRegressionWithSGD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.Loader.html"><code class="docutils literal"><span class="pre">mllib.regression.Loader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.RDD.html"><code class="docutils literal"><span class="pre">mllib.regression.RDD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.RidgeRegressionModel.html"><code class="docutils literal"><span class="pre">mllib.regression.RidgeRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.RidgeRegressionWithSGD.html"><code class="docutils literal"><span class="pre">mllib.regression.RidgeRegressionWithSGD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.Saveable.html"><code class="docutils literal"><span class="pre">mllib.regression.Saveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.SparseVector.html"><code class="docutils literal"><span class="pre">mllib.regression.SparseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.StreamingLinearAlgorithm.html"><code class="docutils literal"><span class="pre">mllib.regression.StreamingLinearAlgorithm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.StreamingLinearRegressionWithSGD.html"><code class="docutils literal"><span class="pre">mllib.regression.StreamingLinearRegressionWithSGD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.regression.Vectors.html"><code class="docutils literal"><span class="pre">mllib.regression.Vectors</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">mllib.regression</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/mllib.regression.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mllib.regression">
+<span id="mllib-regression"></span><h1><a class="reference internal" href="#module-mllib.regression" title="mllib.regression"><code class="xref py py-mod docutils literal"><span class="pre">mllib.regression</span></code></a><a class="headerlink" href="#module-mllib.regression" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.array.html#mllib.regression.array" title="mllib.regression.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>(object[,&nbsp;dtype,&nbsp;copy,&nbsp;order,&nbsp;subok,&nbsp;ndmin])</td>
+<td>Create an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.callMLlibFunc.html#mllib.regression.callMLlibFunc" title="mllib.regression.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.inherit_doc.html#mllib.regression.inherit_doc" title="mllib.regression.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.since.html#mllib.regression.since" title="mllib.regression.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.DStream.html#mllib.regression.DStream" title="mllib.regression.DStream"><code class="xref py py-obj docutils literal"><span class="pre">DStream</span></code></a>(jdstream,&nbsp;ssc,&nbsp;jrdd_deserializer)</td>
+<td>A Discretized Stream (DStream), the basic abstraction in Spark Streaming, is a continuous sequence of RDDs (of the same type) representing a continuous stream of data (see L{RDD} in the Spark core documentation for more details on RDDs).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.IsotonicRegression.html#mllib.regression.IsotonicRegression" title="mllib.regression.IsotonicRegression"><code class="xref py py-obj docutils literal"><span class="pre">IsotonicRegression</span></code></a></td>
+<td>Isotonic regression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.IsotonicRegressionModel.html#mllib.regression.IsotonicRegressionModel" title="mllib.regression.IsotonicRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">IsotonicRegressionModel</span></code></a>(boundaries,&nbsp;...)</td>
+<td>Regression model for isotonic regression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.LabeledPoint.html#mllib.regression.LabeledPoint" title="mllib.regression.LabeledPoint"><code class="xref py py-obj docutils literal"><span class="pre">LabeledPoint</span></code></a>(label,&nbsp;features)</td>
+<td>Class that represents the features and labels of a data point.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.LassoModel.html#mllib.regression.LassoModel" title="mllib.regression.LassoModel"><code class="xref py py-obj docutils literal"><span class="pre">LassoModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A linear regression model derived from a least-squares fit with an l_1 penalty term.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.LassoWithSGD.html#mllib.regression.LassoWithSGD" title="mllib.regression.LassoWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">LassoWithSGD</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.LinearModel.html#mllib.regression.LinearModel" title="mllib.regression.LinearModel"><code class="xref py py-obj docutils literal"><span class="pre">LinearModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A linear model that has a vector of coefficients and an intercept.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.LinearRegressionModel.html#mllib.regression.LinearRegressionModel" title="mllib.regression.LinearRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">LinearRegressionModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A linear regression model derived from a least-squares fit.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.LinearRegressionModelBase.html#mllib.regression.LinearRegressionModelBase" title="mllib.regression.LinearRegressionModelBase"><code class="xref py py-obj docutils literal"><span class="pre">LinearRegressionModelBase</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A linear regression model.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.LinearRegressionWithSGD.html#mllib.regression.LinearRegressionWithSGD" title="mllib.regression.LinearRegressionWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">LinearRegressionWithSGD</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.Loader.html#mllib.regression.Loader" title="mllib.regression.Loader"><code class="xref py py-obj docutils literal"><span class="pre">Loader</span></code></a></td>
+<td>Mixin for classes which can load saved models from files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.RDD.html#mllib.regression.RDD" title="mllib.regression.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.RidgeRegressionModel.html#mllib.regression.RidgeRegressionModel" title="mllib.regression.RidgeRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">RidgeRegressionModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A linear regression model derived from a least-squares fit with an l_2 penalty term.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.RidgeRegressionWithSGD.html#mllib.regression.RidgeRegressionWithSGD" title="mllib.regression.RidgeRegressionWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">RidgeRegressionWithSGD</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.Saveable.html#mllib.regression.Saveable" title="mllib.regression.Saveable"><code class="xref py py-obj docutils literal"><span class="pre">Saveable</span></code></a></td>
+<td>Mixin for models and transformers which may be saved as files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.SparseVector.html#mllib.regression.SparseVector" title="mllib.regression.SparseVector"><code class="xref py py-obj docutils literal"><span class="pre">SparseVector</span></code></a>(size,&nbsp;*args)</td>
+<td>A simple sparse vector class for passing data to MLlib.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.StreamingLinearAlgorithm.html#mllib.regression.StreamingLinearAlgorithm" title="mllib.regression.StreamingLinearAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">StreamingLinearAlgorithm</span></code></a>(model)</td>
+<td>Base class that has to be inherited by any StreamingLinearAlgorithm.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.regression.StreamingLinearRegressionWithSGD.html#mllib.regression.StreamingLinearRegressionWithSGD" title="mllib.regression.StreamingLinearRegressionWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">StreamingLinearRegressionWithSGD</span></code></a>([stepSize,&nbsp;...])</td>
+<td>Train or predict a linear regression model on streaming data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.regression.Vectors.html#mllib.regression.Vectors" title="mllib.regression.Vectors"><code class="xref py py-obj docutils literal"><span class="pre">Vectors</span></code></a></td>
+<td>Factory methods for working with vectors.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/mllib.regression.array.html" class="btn btn-neutral float-right" title="mllib.regression.array()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/mllib.recommendation.SparkContext.version.html" class="btn btn-neutral" title="mllib.recommendation.SparkContext.version" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.SQLContext.tables</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="sql.SQLContext" href="sql.SQLContext.html"/>
+        <link rel="next" title="sql.SQLContext.uncacheTable" href="sql.SQLContext.uncacheTable.html"/>
+        <link rel="prev" title="sql.SQLContext.tableNames" href="sql.SQLContext.tableNames.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../sql.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sql.Column.html"><code class="docutils literal"><span class="pre">sql.Column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrame.html"><code class="docutils literal"><span class="pre">sql.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameNaFunctions.html"><code class="docutils literal"><span class="pre">sql.DataFrameNaFunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameReader.html"><code class="docutils literal"><span class="pre">sql.DataFrameReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameStatFunctions.html"><code class="docutils literal"><span class="pre">sql.DataFrameStatFunctions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.DataFrameWriter.html"><code class="docutils literal"><span class="pre">sql.DataFrameWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.GroupedData.html"><code class="docutils literal"><span class="pre">sql.GroupedData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.HiveContext.html"><code class="docutils literal"><span class="pre">sql.HiveContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.Row.html"><code class="docutils literal"><span class="pre">sql.Row</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="sql.SQLContext.html"><code class="docutils literal"><span class="pre">sql.SQLContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.SparkSession.html"><code class="docutils literal"><span class="pre">sql.SparkSession</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.Window.html"><code class="docutils literal"><span class="pre">sql.Window</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.WindowSpec.html"><code class="docutils literal"><span class="pre">sql.WindowSpec</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a> &raquo;</li>
+        
+          <li><a href="sql.SQLContext.html"><code class="docutils literal"><span class="pre">sql.SQLContext</span></code></a> &raquo;</li>
+        
+      <li>sql.SQLContext.tables</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/sql.SQLContext.tables.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql-sqlcontext-tables">
+<h1>sql.SQLContext.tables<a class="headerlink" href="#sql-sqlcontext-tables" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="sql.SQLContext.tables">
+<code class="descclassname">SQLContext.</code><code class="descname">tables</code><span class="sig-paren">(</span><em>dbName=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#SQLContext.tables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sql.SQLContext.tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a <a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a> containing names of tables in the given database.</p>
+<p>If <code class="docutils literal"><span class="pre">dbName</span></code> is not specified, the current database will be used.</p>
+<p>The returned DataFrame has two columns: <code class="docutils literal"><span class="pre">tableName</span></code> and <code class="docutils literal"><span class="pre">isTemporary</span></code>
+(a column with <code class="xref py py-class docutils literal"><span class="pre">BooleanType</span></code> indicating if a table is a temporary one or not).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dbName</strong> &#8211; string, name of the database to use.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="sql.DataFrame.html#sql.DataFrame" title="sql.DataFrame"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">registerDataFrameAsTable</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;table1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">tables</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="s2">&quot;tableName = &#39;table1&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="go">Row(tableName=u&#39;table1&#39;, isTemporary=True)</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sql.SQLContext.uncacheTable.html" class="btn btn-neutral float-right" title="sql.SQLContext.uncacheTable" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql.SQLContext.tableNames.html" class="btn btn-neutral" title="sql.SQLContext.tableNames" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

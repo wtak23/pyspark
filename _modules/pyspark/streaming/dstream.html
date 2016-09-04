@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.streaming.dstream &mdash; PySpark API</title>
+  <title>pyspark.streaming.dstream</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../../index.html"/>
+    <link rel="top" title="" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -188,7 +184,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DStream&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="DStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.html#pyspark.mllib.classification.DStream">[docs]</a><span class="k">class</span> <span class="nc">DStream</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.html#mllib.classification.DStream">[docs]</a><span class="k">class</span> <span class="nc">DStream</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A Discretized Stream (DStream), the basic abstraction in Spark Streaming,</span>
 <span class="sd">    is a continuous sequence of RDDs (of the same type) representing a</span>
@@ -207,7 +203,7 @@
 <span class="sd">     - A time interval at which the DStream generates an RDD</span>
 <span class="sd">     - A function that is used to generate an RDD after each time interval</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="DStream.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.__init__.html#pyspark.mllib.classification.DStream.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jdstream</span><span class="p">,</span> <span class="n">ssc</span><span class="p">,</span> <span class="n">jrdd_deserializer</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.__init__"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.__init__.html#mllib.classification.DStream.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jdstream</span><span class="p">,</span> <span class="n">ssc</span><span class="p">,</span> <span class="n">jrdd_deserializer</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jdstream</span> <span class="o">=</span> <span class="n">jdstream</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span> <span class="o">=</span> <span class="n">ssc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span> <span class="o">=</span> <span class="n">ssc</span><span class="o">.</span><span class="n">_sc</span>
@@ -215,20 +211,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="bp">False</span></div>
 
-<div class="viewcode-block" id="DStream.context"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.context.html#pyspark.mllib.classification.DStream.context">[docs]</a>    <span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.context"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.context.html#mllib.classification.DStream.context">[docs]</a>    <span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the StreamingContext associated with this DStream</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span></div>
 
-<div class="viewcode-block" id="DStream.count"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.count.html#pyspark.mllib.classification.DStream.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.count"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.count.html#mllib.classification.DStream.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD has a single element</span>
 <span class="sd">        generated by counting each RDD of this DStream.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">i</span><span class="p">)])</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.filter"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.filter.html#pyspark.mllib.classification.DStream.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.filter"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.filter.html#mllib.classification.DStream.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream containing only the elements that satisfy predicate.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -236,7 +232,7 @@
             <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.flatMap"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.flatMap.html#pyspark.mllib.classification.DStream.flatMap">[docs]</a>    <span class="k">def</span> <span class="nf">flatMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.flatMap"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.flatMap.html#mllib.classification.DStream.flatMap">[docs]</a>    <span class="k">def</span> <span class="nf">flatMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying a function to all elements of</span>
 <span class="sd">        this DStream, and then flattening the results</span>
@@ -245,7 +241,7 @@
             <span class="k">return</span> <span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.map"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.map.html#pyspark.mllib.classification.DStream.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.map"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.map.html#mllib.classification.DStream.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying a function to each element of DStream.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -253,7 +249,7 @@
             <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.mapPartitions"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.mapPartitions.html#pyspark.mllib.classification.DStream.mapPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.mapPartitions"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.mapPartitions.html#mllib.classification.DStream.mapPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD is generated by applying</span>
 <span class="sd">        mapPartitions() to each RDDs of this DStream.</span>
@@ -262,21 +258,21 @@
             <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.mapPartitionsWithIndex"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.mapPartitionsWithIndex.html#pyspark.mllib.classification.DStream.mapPartitionsWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.mapPartitionsWithIndex"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.mapPartitionsWithIndex.html#mllib.classification.DStream.mapPartitionsWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD is generated by applying</span>
 <span class="sd">        mapPartitionsWithIndex() to each RDDs of this DStream.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">rdd</span><span class="p">:</span> <span class="n">rdd</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="DStream.reduce"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.reduce.html#pyspark.mllib.classification.DStream.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.reduce"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.reduce.html#mllib.classification.DStream.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD has a single element</span>
 <span class="sd">        generated by reducing each RDD of this DStream.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="DStream.reduceByKey"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.reduceByKey.html#pyspark.mllib.classification.DStream.reduceByKey">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.reduceByKey"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.reduceByKey.html#mllib.classification.DStream.reduceByKey">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying reduceByKey to each RDD.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -284,7 +280,7 @@
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">combineByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.combineByKey"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.combineByKey.html#pyspark.mllib.classification.DStream.combineByKey">[docs]</a>    <span class="k">def</span> <span class="nf">combineByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">createCombiner</span><span class="p">,</span> <span class="n">mergeValue</span><span class="p">,</span> <span class="n">mergeCombiners</span><span class="p">,</span>
+<div class="viewcode-block" id="DStream.combineByKey"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.combineByKey.html#mllib.classification.DStream.combineByKey">[docs]</a>    <span class="k">def</span> <span class="nf">combineByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">createCombiner</span><span class="p">,</span> <span class="n">mergeValue</span><span class="p">,</span> <span class="n">mergeCombiners</span><span class="p">,</span>
                      <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying combineByKey to each RDD.</span>
@@ -296,14 +292,14 @@
             <span class="k">return</span> <span class="n">rdd</span><span class="o">.</span><span class="n">combineByKey</span><span class="p">(</span><span class="n">createCombiner</span><span class="p">,</span> <span class="n">mergeValue</span><span class="p">,</span> <span class="n">mergeCombiners</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.partitionBy"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.partitionBy.html#pyspark.mllib.classification.DStream.partitionBy">[docs]</a>    <span class="k">def</span> <span class="nf">partitionBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.partitionBy"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.partitionBy.html#mllib.classification.DStream.partitionBy">[docs]</a>    <span class="k">def</span> <span class="nf">partitionBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a copy of the DStream in which each RDD are partitioned</span>
 <span class="sd">        using the specified partitioner.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">rdd</span><span class="p">:</span> <span class="n">rdd</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="DStream.foreachRDD"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.foreachRDD.html#pyspark.mllib.classification.DStream.foreachRDD">[docs]</a>    <span class="k">def</span> <span class="nf">foreachRDD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.foreachRDD"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.foreachRDD.html#mllib.classification.DStream.foreachRDD">[docs]</a>    <span class="k">def</span> <span class="nf">foreachRDD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Apply a function to each RDD in this DStream.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -314,7 +310,7 @@
         <span class="n">api</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonDStream</span>
         <span class="n">api</span><span class="o">.</span><span class="n">callForeachRDD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdstream</span><span class="p">,</span> <span class="n">jfunc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.pprint"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.pprint.html#pyspark.mllib.classification.DStream.pprint">[docs]</a>    <span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.pprint"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.pprint.html#mllib.classification.DStream.pprint">[docs]</a>    <span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Print the first num elements of each RDD generated in this DStream.</span>
 
@@ -333,7 +329,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">foreachRDD</span><span class="p">(</span><span class="n">takeAndPrint</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.mapValues"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.mapValues.html#pyspark.mllib.classification.DStream.mapValues">[docs]</a>    <span class="k">def</span> <span class="nf">mapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.mapValues"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.mapValues.html#mllib.classification.DStream.mapValues">[docs]</a>    <span class="k">def</span> <span class="nf">mapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying a map function to the value of</span>
 <span class="sd">        each key-value pairs in this DStream without changing the key.</span>
@@ -341,7 +337,7 @@
         <span class="n">map_values_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f</span><span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">map_values_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.flatMapValues"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.flatMapValues.html#pyspark.mllib.classification.DStream.flatMapValues">[docs]</a>    <span class="k">def</span> <span class="nf">flatMapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.flatMapValues"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.flatMapValues.html#mllib.classification.DStream.flatMapValues">[docs]</a>    <span class="k">def</span> <span class="nf">flatMapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying a flatmap function to the value</span>
 <span class="sd">        of each key-value pairs in this DStream without changing the key.</span>
@@ -349,7 +345,7 @@
         <span class="n">flat_map_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="p">((</span><span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="n">flat_map_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.glom"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.glom.html#pyspark.mllib.classification.DStream.glom">[docs]</a>    <span class="k">def</span> <span class="nf">glom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.glom"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.glom.html#mllib.classification.DStream.glom">[docs]</a>    <span class="k">def</span> <span class="nf">glom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which RDD is generated by applying glom()</span>
 <span class="sd">        to RDD of this DStream.</span>
@@ -358,7 +354,7 @@
             <span class="k">yield</span> <span class="nb">list</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.cache"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.cache.html#pyspark.mllib.classification.DStream.cache">[docs]</a>    <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.cache"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.cache.html#mllib.classification.DStream.cache">[docs]</a>    <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Persist the RDDs of this DStream with the default storage level</span>
 <span class="sd">        (C{MEMORY_ONLY}).</span>
@@ -367,7 +363,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_ONLY</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="DStream.persist"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.persist.html#pyspark.mllib.classification.DStream.persist">[docs]</a>    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storageLevel</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.persist"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.persist.html#mllib.classification.DStream.persist">[docs]</a>    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storageLevel</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Persist the RDDs of this DStream with the given storage level</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -376,7 +372,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jdstream</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">javaStorageLevel</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="DStream.checkpoint"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.checkpoint.html#pyspark.mllib.classification.DStream.checkpoint">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.checkpoint"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.checkpoint.html#mllib.classification.DStream.checkpoint">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Enable periodic checkpointing of RDDs of this DStream</span>
 
@@ -387,7 +383,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jdstream</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span><span class="o">.</span><span class="n">_jduration</span><span class="p">(</span><span class="n">interval</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="DStream.groupByKey"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.groupByKey.html#pyspark.mllib.classification.DStream.groupByKey">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.groupByKey"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.groupByKey.html#mllib.classification.DStream.groupByKey">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying groupByKey on each RDD.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -395,14 +391,14 @@
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">rdd</span><span class="p">:</span> <span class="n">rdd</span><span class="o">.</span><span class="n">groupByKey</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="DStream.countByValue"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.countByValue.html#pyspark.mllib.classification.DStream.countByValue">[docs]</a>    <span class="k">def</span> <span class="nf">countByValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.countByValue"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.countByValue.html#mllib.classification.DStream.countByValue">[docs]</a>    <span class="k">def</span> <span class="nf">countByValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD contains the counts of each</span>
 <span class="sd">        distinct value in each RDD of this DStream.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.saveAsTextFiles"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.saveAsTextFiles.html#pyspark.mllib.classification.DStream.saveAsTextFiles">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTextFiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.saveAsTextFiles"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.saveAsTextFiles.html#mllib.classification.DStream.saveAsTextFiles">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTextFiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save each RDD in this DStream as at text file, using string</span>
 <span class="sd">        representation of elements.</span>
@@ -435,7 +431,7 @@
     <span class="c1">#                 raise</span>
     <span class="c1">#     return self.foreachRDD(saveAsPickleFile)</span>
 
-<div class="viewcode-block" id="DStream.transform"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.transform.html#pyspark.mllib.classification.DStream.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.transform"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.transform.html#mllib.classification.DStream.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD is generated by applying a function</span>
 <span class="sd">        on each RDD of this DStream.</span>
@@ -449,7 +445,7 @@
         <span class="k">assert</span> <span class="n">func</span><span class="o">.</span><span class="n">__code__</span><span class="o">.</span><span class="n">co_argcount</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;func should take one or two arguments&quot;</span>
         <span class="k">return</span> <span class="n">TransformedDStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.transformWith"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.transformWith.html#pyspark.mllib.classification.DStream.transformWith">[docs]</a>    <span class="k">def</span> <span class="nf">transformWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">keepSerializer</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.transformWith"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.transformWith.html#mllib.classification.DStream.transformWith">[docs]</a>    <span class="k">def</span> <span class="nf">transformWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">keepSerializer</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD is generated by applying a function</span>
 <span class="sd">        on each RDD of this DStream and &#39;other&#39; DStream.</span>
@@ -467,7 +463,7 @@
         <span class="n">jrdd_serializer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span> <span class="k">if</span> <span class="n">keepSerializer</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">serializer</span>
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="n">dstream</span><span class="o">.</span><span class="n">asJavaDStream</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span><span class="p">,</span> <span class="n">jrdd_serializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.repartition"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.repartition.html#pyspark.mllib.classification.DStream.repartition">[docs]</a>    <span class="k">def</span> <span class="nf">repartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.repartition"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.repartition.html#mllib.classification.DStream.repartition">[docs]</a>    <span class="k">def</span> <span class="nf">repartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream with an increased or decreased level of parallelism.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -480,7 +476,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jdstream</span><span class="o">.</span><span class="n">dstream</span><span class="p">()</span><span class="o">.</span><span class="n">slideDuration</span><span class="p">()</span><span class="o">.</span><span class="n">milliseconds</span><span class="p">()</span> <span class="o">/</span> <span class="mf">1000.0</span>
 
-<div class="viewcode-block" id="DStream.union"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.union.html#pyspark.mllib.classification.DStream.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.union"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.union.html#mllib.classification.DStream.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by unifying data of another DStream with this DStream.</span>
 
@@ -491,7 +487,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;the two DStream should have same slide duration&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transformWith</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="n">other</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.cogroup"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.cogroup.html#pyspark.mllib.classification.DStream.cogroup">[docs]</a>    <span class="k">def</span> <span class="nf">cogroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.cogroup"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.cogroup.html#mllib.classification.DStream.cogroup">[docs]</a>    <span class="k">def</span> <span class="nf">cogroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying &#39;cogroup&#39; between RDDs of this</span>
 <span class="sd">        DStream and `other` DStream.</span>
@@ -502,7 +498,7 @@
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transformWith</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">cogroup</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">),</span> <span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.join"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.join.html#pyspark.mllib.classification.DStream.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.join"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.join.html#mllib.classification.DStream.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying &#39;join&#39; between RDDs of this DStream and</span>
 <span class="sd">        `other` DStream.</span>
@@ -514,7 +510,7 @@
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transformWith</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">),</span> <span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.leftOuterJoin"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.leftOuterJoin.html#pyspark.mllib.classification.DStream.leftOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">leftOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.leftOuterJoin"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.leftOuterJoin.html#mllib.classification.DStream.leftOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">leftOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying &#39;left outer join&#39; between RDDs of this DStream and</span>
 <span class="sd">        `other` DStream.</span>
@@ -526,7 +522,7 @@
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transformWith</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">leftOuterJoin</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">),</span> <span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.rightOuterJoin"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.rightOuterJoin.html#pyspark.mllib.classification.DStream.rightOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">rightOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.rightOuterJoin"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.rightOuterJoin.html#mllib.classification.DStream.rightOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">rightOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying &#39;right outer join&#39; between RDDs of this DStream and</span>
 <span class="sd">        `other` DStream.</span>
@@ -538,7 +534,7 @@
             <span class="n">numPartitions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">defaultParallelism</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transformWith</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">rightOuterJoin</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">),</span> <span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.fullOuterJoin"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.fullOuterJoin.html#pyspark.mllib.classification.DStream.fullOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">fullOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.fullOuterJoin"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.fullOuterJoin.html#mllib.classification.DStream.fullOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">fullOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying &#39;full outer join&#39; between RDDs of this DStream and</span>
 <span class="sd">        `other` DStream.</span>
@@ -557,7 +553,7 @@
             <span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">timestamp</span><span class="o">.</span><span class="n">timetuple</span><span class="p">())</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">Time</span><span class="p">(</span><span class="nb">long</span><span class="p">(</span><span class="n">timestamp</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
 
-<div class="viewcode-block" id="DStream.slice"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.slice.html#pyspark.mllib.classification.DStream.slice">[docs]</a>    <span class="k">def</span> <span class="nf">slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.slice"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.slice.html#mllib.classification.DStream.slice">[docs]</a>    <span class="k">def</span> <span class="nf">slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return all the RDDs between &#39;begin&#39; to &#39;end&#39; (both included)</span>
 
@@ -575,7 +571,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;slideDuration must be multiple of the slide duration (</span><span class="si">%d</span><span class="s2"> ms)&quot;</span>
                              <span class="o">%</span> <span class="n">duration</span><span class="p">)</span>
 
-<div class="viewcode-block" id="DStream.window"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.window.html#pyspark.mllib.classification.DStream.window">[docs]</a>    <span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.window"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.window.html#mllib.classification.DStream.window">[docs]</a>    <span class="k">def</span> <span class="nf">window</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD contains all the elements in seen in a</span>
 <span class="sd">        sliding window of time over this DStream.</span>
@@ -593,7 +589,7 @@
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span><span class="o">.</span><span class="n">_jduration</span><span class="p">(</span><span class="n">slideDuration</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdstream</span><span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">s</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.reduceByWindow"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.reduceByWindow.html#pyspark.mllib.classification.DStream.reduceByWindow">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reduceFunc</span><span class="p">,</span> <span class="n">invReduceFunc</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.reduceByWindow"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.reduceByWindow.html#mllib.classification.DStream.reduceByWindow">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reduceFunc</span><span class="p">,</span> <span class="n">invReduceFunc</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD has a single element generated by reducing all</span>
 <span class="sd">        elements in a sliding window over this DStream.</span>
@@ -621,7 +617,7 @@
                                              <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">reduced</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="DStream.countByWindow"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.countByWindow.html#pyspark.mllib.classification.DStream.countByWindow">[docs]</a>    <span class="k">def</span> <span class="nf">countByWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.countByWindow"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.countByWindow.html#mllib.classification.DStream.countByWindow">[docs]</a>    <span class="k">def</span> <span class="nf">countByWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD has a single element generated</span>
 <span class="sd">        by counting the number of elements in a window over this DStream.</span>
@@ -633,7 +629,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reduceByWindow</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">sub</span><span class="p">,</span>
                                                     <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.countByValueAndWindow"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.countByValueAndWindow.html#pyspark.mllib.classification.DStream.countByValueAndWindow">[docs]</a>    <span class="k">def</span> <span class="nf">countByValueAndWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.countByValueAndWindow"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.countByValueAndWindow.html#mllib.classification.DStream.countByValueAndWindow">[docs]</a>    <span class="k">def</span> <span class="nf">countByValueAndWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream in which each RDD contains the count of distinct elements in</span>
 <span class="sd">        RDDs in a sliding window over this DStream.</span>
@@ -650,7 +646,7 @@
                                              <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">counted</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.groupByKeyAndWindow"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.groupByKeyAndWindow.html#pyspark.mllib.classification.DStream.groupByKeyAndWindow">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKeyAndWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.groupByKeyAndWindow"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.groupByKeyAndWindow.html#mllib.classification.DStream.groupByKeyAndWindow">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKeyAndWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying `groupByKey` over a sliding window.</span>
 <span class="sd">        Similar to `DStream.groupByKey()`, but applies it over a sliding window.</span>
@@ -667,7 +663,7 @@
                                           <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">grouped</span><span class="o">.</span><span class="n">mapValues</span><span class="p">(</span><span class="n">ResultIterable</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.reduceByKeyAndWindow"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.reduceByKeyAndWindow.html#pyspark.mllib.classification.DStream.reduceByKeyAndWindow">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKeyAndWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">invFunc</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="DStream.reduceByKeyAndWindow"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.reduceByKeyAndWindow.html#mllib.classification.DStream.reduceByKeyAndWindow">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKeyAndWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">invFunc</span><span class="p">,</span> <span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                              <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">filterFunc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new DStream by applying incremental `reduceByKey` over a sliding window.</span>
@@ -724,7 +720,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">reduced</span><span class="o">.</span><span class="n">window</span><span class="p">(</span><span class="n">windowDuration</span><span class="p">,</span> <span class="n">slideDuration</span><span class="p">)</span><span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DStream.updateStateByKey"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kinesis.DStream.updateStateByKey.html#pyspark.mllib.classification.DStream.updateStateByKey">[docs]</a>    <span class="k">def</span> <span class="nf">updateStateByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">updateFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">initialRDD</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DStream.updateStateByKey"><a class="viewcode-back" href="../../../generated/generated/streaming.kinesis.DStream.updateStateByKey.html#mllib.classification.DStream.updateStateByKey">[docs]</a>    <span class="k">def</span> <span class="nf">updateStateByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">updateFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">initialRDD</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new &quot;state&quot; DStream where the state for each key is updated by applying</span>
 <span class="sd">        the given function on the previous state of the key and the new values of the key.</span>
@@ -759,7 +755,7 @@
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="n">dstream</span><span class="o">.</span><span class="n">asJavaDStream</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">serializer</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="TransformedDStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformedDStream.html#pyspark.mllib.classification.TransformedDStream">[docs]</a><span class="k">class</span> <span class="nc">TransformedDStream</span><span class="p">(</span><span class="n">DStream</span><span class="p">):</span>
+<div class="viewcode-block" id="TransformedDStream"><a class="viewcode-back" href="../../../generated/generated/streaming.kafka.TransformedDStream.html#mllib.classification.TransformedDStream">[docs]</a><span class="k">class</span> <span class="nc">TransformedDStream</span><span class="p">(</span><span class="n">DStream</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    TransformedDStream is a DStream generated by an Python function</span>
 <span class="sd">    transforming each RDD of a DStream to another RDDs.</span>
@@ -767,7 +763,7 @@
 <span class="sd">    Multiple continuous transformations of DStream can be combined into</span>
 <span class="sd">    one transformation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="TransformedDStream.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformedDStream.__init__.html#pyspark.mllib.classification.TransformedDStream.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prev</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="TransformedDStream.__init__"><a class="viewcode-back" href="../../../generated/generated/streaming.kafka.TransformedDStream.__init__.html#mllib.classification.TransformedDStream.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prev</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span> <span class="o">=</span> <span class="n">prev</span><span class="o">.</span><span class="n">_ssc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ssc</span><span class="o">.</span><span class="n">_sc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">serializer</span>
@@ -829,7 +825,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.feature</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="mllib.feature.callMLlibFunc()" href="generated/mllib.feature.callMLlibFunc.html"/>
+        <link rel="prev" title="mllib.evaluation.StructType.typeName" href="generated/mllib.evaluation.StructType.typeName.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">mllib.feature</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.callMLlibFunc.html"><code class="docutils literal"><span class="pre">mllib.feature.callMLlibFunc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.ignore_unicode_prefix.html"><code class="docutils literal"><span class="pre">mllib.feature.ignore_unicode_prefix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.since.html"><code class="docutils literal"><span class="pre">mllib.feature.since()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.ChiSqSelector.html"><code class="docutils literal"><span class="pre">mllib.feature.ChiSqSelector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.ChiSqSelectorModel.html"><code class="docutils literal"><span class="pre">mllib.feature.ChiSqSelectorModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.DenseVector.html"><code class="docutils literal"><span class="pre">mllib.feature.DenseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.ElementwiseProduct.html"><code class="docutils literal"><span class="pre">mllib.feature.ElementwiseProduct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.HashingTF.html"><code class="docutils literal"><span class="pre">mllib.feature.HashingTF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.IDF.html"><code class="docutils literal"><span class="pre">mllib.feature.IDF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.IDFModel.html"><code class="docutils literal"><span class="pre">mllib.feature.IDFModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.JavaLoader.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.JavaSaveable.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaSaveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.JavaVectorTransformer.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaVectorTransformer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.LabeledPoint.html"><code class="docutils literal"><span class="pre">mllib.feature.LabeledPoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.Normalizer.html"><code class="docutils literal"><span class="pre">mllib.feature.Normalizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.PCA.html"><code class="docutils literal"><span class="pre">mllib.feature.PCA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.PCAModel.html"><code class="docutils literal"><span class="pre">mllib.feature.PCAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.RDD.html"><code class="docutils literal"><span class="pre">mllib.feature.RDD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.SparseVector.html"><code class="docutils literal"><span class="pre">mllib.feature.SparseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.StandardScaler.html"><code class="docutils literal"><span class="pre">mllib.feature.StandardScaler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.StandardScalerModel.html"><code class="docutils literal"><span class="pre">mllib.feature.StandardScalerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.Vector.html"><code class="docutils literal"><span class="pre">mllib.feature.Vector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.VectorTransformer.html"><code class="docutils literal"><span class="pre">mllib.feature.VectorTransformer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.Vectors.html"><code class="docutils literal"><span class="pre">mllib.feature.Vectors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.Word2Vec.html"><code class="docutils literal"><span class="pre">mllib.feature.Word2Vec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.feature.Word2VecModel.html"><code class="docutils literal"><span class="pre">mllib.feature.Word2VecModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.Py4JJavaError.html">mllib.feature.Py4JJavaError</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">mllib.feature</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/mllib.feature.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mllib.feature">
+<span id="mllib-feature"></span><h1><a class="reference internal" href="#module-mllib.feature" title="mllib.feature"><code class="xref py py-mod docutils literal"><span class="pre">mllib.feature</span></code></a><a class="headerlink" href="#module-mllib.feature" title="Permalink to this headline">¶</a></h1>
+<p>Python package for feature in MLlib.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.callMLlibFunc.html#mllib.feature.callMLlibFunc" title="mllib.feature.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.ignore_unicode_prefix.html#mllib.feature.ignore_unicode_prefix" title="mllib.feature.ignore_unicode_prefix"><code class="xref py py-obj docutils literal"><span class="pre">ignore_unicode_prefix</span></code></a>(f)</td>
+<td>Ignore the &#8216;u&#8217; prefix of string in doc tests, to make it works</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.since.html#mllib.feature.since" title="mllib.feature.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.ChiSqSelector.html#mllib.feature.ChiSqSelector" title="mllib.feature.ChiSqSelector"><code class="xref py py-obj docutils literal"><span class="pre">ChiSqSelector</span></code></a>(numTopFeatures)</td>
+<td>Creates a ChiSquared feature selector.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.ChiSqSelectorModel.html#mllib.feature.ChiSqSelectorModel" title="mllib.feature.ChiSqSelectorModel"><code class="xref py py-obj docutils literal"><span class="pre">ChiSqSelectorModel</span></code></a>(java_model)</td>
+<td>Represents a Chi Squared selector model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.DenseVector.html#mllib.feature.DenseVector" title="mllib.feature.DenseVector"><code class="xref py py-obj docutils literal"><span class="pre">DenseVector</span></code></a>(ar)</td>
+<td>A dense vector represented by a value array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.ElementwiseProduct.html#mllib.feature.ElementwiseProduct" title="mllib.feature.ElementwiseProduct"><code class="xref py py-obj docutils literal"><span class="pre">ElementwiseProduct</span></code></a>(scalingVector)</td>
+<td>Scales each column of the vector, with the supplied weight vector.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.HashingTF.html#mllib.feature.HashingTF" title="mllib.feature.HashingTF"><code class="xref py py-obj docutils literal"><span class="pre">HashingTF</span></code></a>([numFeatures])</td>
+<td>Maps a sequence of terms to their term frequencies using the hashing trick.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.IDF.html#mllib.feature.IDF" title="mllib.feature.IDF"><code class="xref py py-obj docutils literal"><span class="pre">IDF</span></code></a>([minDocFreq])</td>
+<td>Inverse document frequency (IDF).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.IDFModel.html#mllib.feature.IDFModel" title="mllib.feature.IDFModel"><code class="xref py py-obj docutils literal"><span class="pre">IDFModel</span></code></a>(java_model)</td>
+<td>Represents an IDF model that can transform term frequency vectors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.JavaLoader.html#mllib.feature.JavaLoader" title="mllib.feature.JavaLoader"><code class="xref py py-obj docutils literal"><span class="pre">JavaLoader</span></code></a></td>
+<td>Mixin for classes which can load saved models using its Scala implementation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.JavaModelWrapper.html#mllib.feature.JavaModelWrapper" title="mllib.feature.JavaModelWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaModelWrapper</span></code></a>(java_model)</td>
+<td>Wrapper for the model in JVM</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.JavaSaveable.html#mllib.feature.JavaSaveable" title="mllib.feature.JavaSaveable"><code class="xref py py-obj docutils literal"><span class="pre">JavaSaveable</span></code></a></td>
+<td>Mixin for models that provide save() through their Scala implementation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.JavaVectorTransformer.html#mllib.feature.JavaVectorTransformer" title="mllib.feature.JavaVectorTransformer"><code class="xref py py-obj docutils literal"><span class="pre">JavaVectorTransformer</span></code></a>(java_model)</td>
+<td>Wrapper for the model in JVM</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.LabeledPoint.html#mllib.feature.LabeledPoint" title="mllib.feature.LabeledPoint"><code class="xref py py-obj docutils literal"><span class="pre">LabeledPoint</span></code></a>(label,&nbsp;features)</td>
+<td>Class that represents the features and labels of a data point.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.Normalizer.html#mllib.feature.Normalizer" title="mllib.feature.Normalizer"><code class="xref py py-obj docutils literal"><span class="pre">Normalizer</span></code></a>([p])</td>
+<td>Normalizes samples individually to unit L<sup>p</sup> norm</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.PCA.html#mllib.feature.PCA" title="mllib.feature.PCA"><code class="xref py py-obj docutils literal"><span class="pre">PCA</span></code></a>(k)</td>
+<td>A feature transformer that projects vectors to a low-dimensional space using PCA.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.PCAModel.html#mllib.feature.PCAModel" title="mllib.feature.PCAModel"><code class="xref py py-obj docutils literal"><span class="pre">PCAModel</span></code></a>(java_model)</td>
+<td>Model fitted by [[PCA]] that can project vectors to a low-dimensional space using PCA.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.RDD.html#mllib.feature.RDD" title="mllib.feature.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.SparseVector.html#mllib.feature.SparseVector" title="mllib.feature.SparseVector"><code class="xref py py-obj docutils literal"><span class="pre">SparseVector</span></code></a>(size,&nbsp;*args)</td>
+<td>A simple sparse vector class for passing data to MLlib.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.StandardScaler.html#mllib.feature.StandardScaler" title="mllib.feature.StandardScaler"><code class="xref py py-obj docutils literal"><span class="pre">StandardScaler</span></code></a>([withMean,&nbsp;withStd])</td>
+<td>Standardizes features by removing the mean and scaling to unit variance using column summary statistics on the samples in the training set.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.StandardScalerModel.html#mllib.feature.StandardScalerModel" title="mllib.feature.StandardScalerModel"><code class="xref py py-obj docutils literal"><span class="pre">StandardScalerModel</span></code></a>(java_model)</td>
+<td>Represents a StandardScaler model that can transform vectors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.Vector.html#mllib.feature.Vector" title="mllib.feature.Vector"><code class="xref py py-obj docutils literal"><span class="pre">Vector</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.VectorTransformer.html#mllib.feature.VectorTransformer" title="mllib.feature.VectorTransformer"><code class="xref py py-obj docutils literal"><span class="pre">VectorTransformer</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DeveloperApi</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.Vectors.html#mllib.feature.Vectors" title="mllib.feature.Vectors"><code class="xref py py-obj docutils literal"><span class="pre">Vectors</span></code></a></td>
+<td>Factory methods for working with vectors.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.feature.Word2Vec.html#mllib.feature.Word2Vec" title="mllib.feature.Word2Vec"><code class="xref py py-obj docutils literal"><span class="pre">Word2Vec</span></code></a>()</td>
+<td>Word2Vec creates vector representation of words in a text corpus.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.feature.Word2VecModel.html#mllib.feature.Word2VecModel" title="mllib.feature.Word2VecModel"><code class="xref py py-obj docutils literal"><span class="pre">Word2VecModel</span></code></a>(java_model)</td>
+<td>class for Word2Vec model</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="mllib.feature.Py4JJavaError.html#mllib.feature.Py4JJavaError" title="mllib.feature.Py4JJavaError"><code class="xref py py-obj docutils literal"><span class="pre">Py4JJavaError</span></code></a>(msg,&nbsp;java_exception)</td>
+<td>Exception raised when an exception occurs in the client code.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/mllib.feature.callMLlibFunc.html" class="btn btn-neutral float-right" title="mllib.feature.callMLlibFunc()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/mllib.evaluation.StructType.typeName.html" class="btn btn-neutral" title="mllib.evaluation.StructType.typeName" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

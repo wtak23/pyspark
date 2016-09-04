@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.readwriter &mdash; PySpark API</title>
+  <title>pyspark.sql.readwriter</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../../index.html"/>
+    <link rel="top" title="" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -184,7 +180,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DataFrameReader&quot;</span><span class="p">,</span> <span class="s2">&quot;DataFrameWriter&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="to_str"><a class="viewcode-back" href="../../../generated/pyspark.sql.streaming.to_str.html#pyspark.sql.to_str">[docs]</a><span class="k">def</span> <span class="nf">to_str</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="to_str"><a class="viewcode-back" href="../../../generated/generated/sql.streaming.to_str.html#sql.to_str">[docs]</a><span class="k">def</span> <span class="nf">to_str</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A wrapper over str(), but converts bool values to lower case strings.</span>
 <span class="sd">    If None is given, just returns None, instead of converting it to string &quot;None&quot;.</span>
@@ -197,7 +193,7 @@
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="OptionUtils"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.streaming.OptionUtils.html#pyspark.sql.OptionUtils">[docs]</a><span class="k">class</span> <span class="nc">OptionUtils</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="OptionUtils"><a class="viewcode-back" href="../../../generated/generated/sql.streaming.OptionUtils.html#sql.OptionUtils">[docs]</a><span class="k">class</span> <span class="nc">OptionUtils</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">_set_opts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -210,7 +206,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="DataFrameReader"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.html#pyspark.sql.DataFrameReader">[docs]</a><span class="k">class</span> <span class="nc">DataFrameReader</span><span class="p">(</span><span class="n">OptionUtils</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.html#sql.DataFrameReader">[docs]</a><span class="k">class</span> <span class="nc">DataFrameReader</span><span class="p">(</span><span class="n">OptionUtils</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Interface used to load a :class:`DataFrame` from external storage systems</span>
 <span class="sd">    (e.g. file systems, key-value stores, etc). Use :func:`spark.read`</span>
@@ -219,7 +215,7 @@
 <span class="sd">    .. versionadded:: 1.4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="DataFrameReader.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.__init__.html#pyspark.sql.DataFrameReader.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spark</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.__init__.html#sql.DataFrameReader.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spark</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">_ssql_ctx</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span> <span class="o">=</span> <span class="n">spark</span></div>
 
@@ -228,7 +224,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.format"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.format.html#pyspark.sql.DataFrameReader.format">[docs]</a>    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.format"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.format.html#sql.DataFrameReader.format">[docs]</a>    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Specifies the input data source format.</span>
 
 <span class="sd">        :param source: string, name of the data source, e.g. &#39;json&#39;, &#39;parquet&#39;.</span>
@@ -242,7 +238,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.schema"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.schema.html#pyspark.sql.DataFrameReader.schema">[docs]</a>    <span class="k">def</span> <span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.schema"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.schema.html#sql.DataFrameReader.schema">[docs]</a>    <span class="k">def</span> <span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">schema</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Specifies the input schema.</span>
 
 <span class="sd">        Some data sources (e.g. JSON) can infer the input schema automatically from data.</span>
@@ -258,14 +254,14 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.option"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.option.html#pyspark.sql.DataFrameReader.option">[docs]</a>    <span class="k">def</span> <span class="nf">option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.option"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.option.html#sql.DataFrameReader.option">[docs]</a>    <span class="k">def</span> <span class="nf">option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds an input option for the underlying data source.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">to_str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.options"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.options.html#pyspark.sql.DataFrameReader.options">[docs]</a>    <span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.options"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.options.html#sql.DataFrameReader.options">[docs]</a>    <span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds input options for the underlying data source.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
@@ -273,7 +269,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.load"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.load.html#pyspark.sql.DataFrameReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.load"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.load.html#sql.DataFrameReader.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Loads data from a data source and returns it as a :class`DataFrame`.</span>
 
 <span class="sd">        :param path: optional string or a list of string for file-system backed data sources.</span>
@@ -306,7 +302,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">load</span><span class="p">())</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.json.html#pyspark.sql.DataFrameReader.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">primitivesAsString</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">prefersDecimal</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="DataFrameReader.json"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.json.html#sql.DataFrameReader.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">primitivesAsString</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">prefersDecimal</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
              <span class="n">allowComments</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowUnquotedFieldNames</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowSingleQuotes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
              <span class="n">allowNumericLeadingZero</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">allowBackslashEscapingAnyCharacter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
              <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">columnNameOfCorruptRecord</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -387,7 +383,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;path can be only string or RDD&quot;</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.table"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.table.html#pyspark.sql.DataFrameReader.table">[docs]</a>    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.table"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.table.html#sql.DataFrameReader.table">[docs]</a>    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the specified table as a :class:`DataFrame`.</span>
 
 <span class="sd">        :param tableName: string, name of the table.</span>
@@ -400,7 +396,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">tableName</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.parquet"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.parquet.html#pyspark.sql.DataFrameReader.parquet">[docs]</a>    <span class="k">def</span> <span class="nf">parquet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">paths</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.parquet"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.parquet.html#sql.DataFrameReader.parquet">[docs]</a>    <span class="k">def</span> <span class="nf">parquet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">paths</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Loads a Parquet file, returning the result as a :class:`DataFrame`.</span>
 
 <span class="sd">        You can set the following Parquet-specific option(s) for reading Parquet files:</span>
@@ -416,7 +412,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.text"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.text.html#pyspark.sql.DataFrameReader.text">[docs]</a>    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paths</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.text"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.text.html#sql.DataFrameReader.text">[docs]</a>    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paths</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Loads text files and returns a :class:`DataFrame` whose schema starts with a</span>
 <span class="sd">        string column named &quot;value&quot;, and followed by partitioned columns if there</span>
@@ -435,7 +431,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonUtils</span><span class="o">.</span><span class="n">toSeq</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.csv.html#pyspark.sql.DataFrameReader.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="DataFrameReader.csv"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.csv.html#sql.DataFrameReader.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
             <span class="n">comment</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">inferSchema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ignoreLeadingWhiteSpace</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
             <span class="n">ignoreTrailingWhiteSpace</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nanValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">positiveInf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
             <span class="n">negativeInf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">dateFormat</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">maxColumns</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">maxCharsPerColumn</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
@@ -516,7 +512,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spark</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonUtils</span><span class="o">.</span><span class="n">toSeq</span><span class="p">(</span><span class="n">path</span><span class="p">)))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.orc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.orc.html#pyspark.sql.DataFrameReader.orc">[docs]</a>    <span class="k">def</span> <span class="nf">orc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameReader.orc"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.orc.html#sql.DataFrameReader.orc">[docs]</a>    <span class="k">def</span> <span class="nf">orc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Loads an ORC file, returning the result as a :class:`DataFrame`.</span>
 
 <span class="sd">        .. note:: Currently ORC support is only available together with Hive support.</span>
@@ -528,7 +524,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">orc</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameReader.jdbc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameReader.jdbc.html#pyspark.sql.DataFrameReader.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">lowerBound</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">upperBound</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="DataFrameReader.jdbc"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameReader.jdbc.html#sql.DataFrameReader.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">lowerBound</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">upperBound</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
              <span class="n">predicates</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Construct a :class:`DataFrame` representing the database table named ``table``</span>
@@ -575,7 +571,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_df</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jreader</span><span class="o">.</span><span class="n">jdbc</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">jprop</span><span class="p">))</span></div></div>
 
 
-<div class="viewcode-block" id="DataFrameWriter"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.html#pyspark.sql.DataFrameWriter">[docs]</a><span class="k">class</span> <span class="nc">DataFrameWriter</span><span class="p">(</span><span class="n">OptionUtils</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.html#sql.DataFrameWriter">[docs]</a><span class="k">class</span> <span class="nc">DataFrameWriter</span><span class="p">(</span><span class="n">OptionUtils</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Interface used to write a :class:`DataFrame` to external storage systems</span>
 <span class="sd">    (e.g. file systems, key-value stores, etc). Use :func:`DataFrame.write`</span>
@@ -583,7 +579,7 @@
 
 <span class="sd">    .. versionadded:: 1.4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="DataFrameWriter.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.__init__.html#pyspark.sql.DataFrameWriter.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.__init__.html#sql.DataFrameWriter.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_df</span> <span class="o">=</span> <span class="n">df</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_spark</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sql_ctx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">write</span><span class="p">()</span></div>
@@ -593,7 +589,7 @@
         <span class="k">return</span> <span class="n">StreamingQuery</span><span class="p">(</span><span class="n">jsq</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.mode"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.mode.html#pyspark.sql.DataFrameWriter.mode">[docs]</a>    <span class="k">def</span> <span class="nf">mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">saveMode</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.mode"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.mode.html#sql.DataFrameWriter.mode">[docs]</a>    <span class="k">def</span> <span class="nf">mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">saveMode</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Specifies the behavior when data or table already exists.</span>
 
 <span class="sd">        Options include:</span>
@@ -612,7 +608,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.format"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.format.html#pyspark.sql.DataFrameWriter.format">[docs]</a>    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.format"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.format.html#sql.DataFrameWriter.format">[docs]</a>    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Specifies the underlying output data source.</span>
 
 <span class="sd">        :param source: string, name of the data source, e.g. &#39;json&#39;, &#39;parquet&#39;.</span>
@@ -623,14 +619,14 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.option"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.option.html#pyspark.sql.DataFrameWriter.option">[docs]</a>    <span class="k">def</span> <span class="nf">option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.option"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.option.html#sql.DataFrameWriter.option">[docs]</a>    <span class="k">def</span> <span class="nf">option</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds an output option for the underlying data source.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">to_str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.options"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.options.html#pyspark.sql.DataFrameWriter.options">[docs]</a>    <span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.options"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.options.html#sql.DataFrameWriter.options">[docs]</a>    <span class="k">def</span> <span class="nf">options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Adds output options for the underlying data source.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
@@ -638,7 +634,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.partitionBy"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.partitionBy.html#pyspark.sql.DataFrameWriter.partitionBy">[docs]</a>    <span class="k">def</span> <span class="nf">partitionBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.partitionBy"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.partitionBy.html#sql.DataFrameWriter.partitionBy">[docs]</a>    <span class="k">def</span> <span class="nf">partitionBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Partitions the output by the given columns on the file system.</span>
 
 <span class="sd">        If specified, the output is laid out on the file system similar</span>
@@ -654,7 +650,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.save"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.save.html#pyspark.sql.DataFrameWriter.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.save"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.save.html#sql.DataFrameWriter.save">[docs]</a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the contents of the :class:`DataFrame` to a data source.</span>
 
 <span class="sd">        The data source is specified by the ``format`` and a set of ``options``.</span>
@@ -685,7 +681,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.insertInto"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.insertInto.html#pyspark.sql.DataFrameWriter.insertInto">[docs]</a>    <span class="k">def</span> <span class="nf">insertInto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.insertInto"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.insertInto.html#sql.DataFrameWriter.insertInto">[docs]</a>    <span class="k">def</span> <span class="nf">insertInto</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Inserts the content of the :class:`DataFrame` to the specified table.</span>
 
 <span class="sd">        It requires that the schema of the class:`DataFrame` is the same as the</span>
@@ -696,7 +692,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span> <span class="k">if</span> <span class="n">overwrite</span> <span class="k">else</span> <span class="s2">&quot;append&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">insertInto</span><span class="p">(</span><span class="n">tableName</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.saveAsTable"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.saveAsTable.html#pyspark.sql.DataFrameWriter.saveAsTable">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.saveAsTable"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.saveAsTable.html#sql.DataFrameWriter.saveAsTable">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` as the specified table.</span>
 
 <span class="sd">        In the case the table already exists, behavior of this function depends on the</span>
@@ -723,7 +719,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">saveAsTable</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.json"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.json.html#pyspark.sql.DataFrameWriter.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.json"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.json.html#sql.DataFrameWriter.json">[docs]</a>    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in JSON format at the specified path.</span>
 
 <span class="sd">        :param path: the path in any Hadoop supported file system</span>
@@ -744,7 +740,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.parquet"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.parquet.html#pyspark.sql.DataFrameWriter.parquet">[docs]</a>    <span class="k">def</span> <span class="nf">parquet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.parquet"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.parquet.html#sql.DataFrameWriter.parquet">[docs]</a>    <span class="k">def</span> <span class="nf">parquet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in Parquet format at the specified path.</span>
 
 <span class="sd">        :param path: the path in any Hadoop supported file system</span>
@@ -770,7 +766,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">parquet</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.text"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.text.html#pyspark.sql.DataFrameWriter.text">[docs]</a>    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.text"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.text.html#sql.DataFrameWriter.text">[docs]</a>    <span class="k">def</span> <span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the DataFrame in a text file at the specified path.</span>
 
 <span class="sd">        :param path: the path in any Hadoop supported file system</span>
@@ -785,7 +781,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.csv"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.csv.html#pyspark.sql.DataFrameWriter.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="DataFrameWriter.csv"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.csv.html#sql.DataFrameWriter.csv">[docs]</a>    <span class="k">def</span> <span class="nf">csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
             <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nullValue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">escapeQuotes</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">quoteAll</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in CSV format at the specified path.</span>
 
@@ -827,7 +823,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.orc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.orc.html#pyspark.sql.DataFrameWriter.orc">[docs]</a>    <span class="k">def</span> <span class="nf">orc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.orc"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.orc.html#sql.DataFrameWriter.orc">[docs]</a>    <span class="k">def</span> <span class="nf">orc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` in ORC format at the specified path.</span>
 
 <span class="sd">        .. note:: Currently ORC support is only available together with Hive support.</span>
@@ -855,7 +851,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jwrite</span><span class="o">.</span><span class="n">orc</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrameWriter.jdbc"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.DataFrameWriter.jdbc.html#pyspark.sql.DataFrameWriter.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameWriter.jdbc"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameWriter.jdbc.html#sql.DataFrameWriter.jdbc">[docs]</a>    <span class="k">def</span> <span class="nf">jdbc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Saves the content of the :class:`DataFrame` to an external database table via JDBC.</span>
 
 <span class="sd">        .. note:: Don&#39;t create too many partitions in parallel on a large cluster; \</span>
@@ -947,7 +943,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

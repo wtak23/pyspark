@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>streaming.DStream</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="streaming" href="../streaming.html"/>
+        <link rel="next" title="streaming.DStream.__init__" href="streaming.DStream.__init__.html"/>
+        <link rel="prev" title="streaming" href="../streaming.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../streaming.html"><code class="docutils literal"><span class="pre">streaming</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../streaming.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">streaming.DStream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="streaming.StreamingContext.html"><code class="docutils literal"><span class="pre">streaming.StreamingContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="streaming.StreamingListener.html"><code class="docutils literal"><span class="pre">streaming.StreamingListener</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming.kafka.html"><code class="docutils literal"><span class="pre">streaming.kafka</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming.kinesis.html"><code class="docutils literal"><span class="pre">streaming.kinesis</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming.flume.html"><code class="docutils literal"><span class="pre">streaming.flume</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.streaming.html">pyspark.streaming</a> &raquo;</li>
+        
+          <li><a href="../streaming.html"><code class="docutils literal"><span class="pre">streaming</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">streaming.DStream</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/streaming.DStream.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="streaming-dstream">
+<h1><a class="reference internal" href="#streaming.DStream" title="streaming.DStream"><code class="xref py py-class docutils literal"><span class="pre">streaming.DStream</span></code></a><a class="headerlink" href="#streaming-dstream" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="streaming.DStream">
+<em class="property">class </em><code class="descclassname">streaming.</code><code class="descname">DStream</code><span class="sig-paren">(</span><em>jdstream</em>, <em>ssc</em>, <em>jrdd_deserializer</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/dstream.html#DStream"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#streaming.DStream" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Discretized Stream (DStream), the basic abstraction in Spark Streaming,
+is a continuous sequence of RDDs (of the same type) representing a
+continuous stream of data (see L{RDD} in the Spark core documentation
+for more details on RDDs).</p>
+<p>DStreams can either be created from live data (such as, data from TCP
+sockets, Kafka, Flume, etc.) using a L{StreamingContext} or it can be
+generated by transforming existing DStreams using operations such as
+<cite>map</cite>, <cite>window</cite> and <cite>reduceByKeyAndWindow</cite>. While a Spark Streaming
+program is running, each DStream periodically generates a RDD, either
+from live data or by transforming the RDD generated by a parent DStream.</p>
+<dl class="docutils">
+<dt>DStreams internally is characterized by a few basic properties:</dt>
+<dd><ul class="first last simple">
+<li>A list of other DStreams that the DStream depends on</li>
+<li>A time interval at which the DStream generates an RDD</li>
+<li>A function that is used to generate an RDD after each time interval</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="streaming.DStream.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>jdstream</em>, <em>ssc</em>, <em>jrdd_deserializer</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/dstream.html#DStream.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#streaming.DStream.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.__init__.html#streaming.DStream.__init__" title="streaming.DStream.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(jdstream,&nbsp;ssc,&nbsp;jrdd_deserializer)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.cache.html#streaming.DStream.cache" title="streaming.DStream.cache"><code class="xref py py-obj docutils literal"><span class="pre">cache</span></code></a>()</td>
+<td>Persist the RDDs of this DStream with the default storage level (C{MEMORY_ONLY}).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.checkpoint.html#streaming.DStream.checkpoint" title="streaming.DStream.checkpoint"><code class="xref py py-obj docutils literal"><span class="pre">checkpoint</span></code></a>(interval)</td>
+<td>Enable periodic checkpointing of RDDs of this DStream</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.cogroup.html#streaming.DStream.cogroup" title="streaming.DStream.cogroup"><code class="xref py py-obj docutils literal"><span class="pre">cogroup</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;cogroup&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.combineByKey.html#streaming.DStream.combineByKey" title="streaming.DStream.combineByKey"><code class="xref py py-obj docutils literal"><span class="pre">combineByKey</span></code></a>(createCombiner,&nbsp;mergeValue,&nbsp;...)</td>
+<td>Return a new DStream by applying combineByKey to each RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.context.html#streaming.DStream.context" title="streaming.DStream.context"><code class="xref py py-obj docutils literal"><span class="pre">context</span></code></a>()</td>
+<td>Return the StreamingContext associated with this DStream</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.count.html#streaming.DStream.count" title="streaming.DStream.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>()</td>
+<td>Return a new DStream in which each RDD has a single element generated by counting each RDD of this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.countByValue.html#streaming.DStream.countByValue" title="streaming.DStream.countByValue"><code class="xref py py-obj docutils literal"><span class="pre">countByValue</span></code></a>()</td>
+<td>Return a new DStream in which each RDD contains the counts of each distinct value in each RDD of this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.countByValueAndWindow.html#streaming.DStream.countByValueAndWindow" title="streaming.DStream.countByValueAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByValueAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
+<td>Return a new DStream in which each RDD contains the count of distinct elements in RDDs in a sliding window over this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.countByWindow.html#streaming.DStream.countByWindow" title="streaming.DStream.countByWindow"><code class="xref py py-obj docutils literal"><span class="pre">countByWindow</span></code></a>(windowDuration,&nbsp;slideDuration)</td>
+<td>Return a new DStream in which each RDD has a single element generated by counting the number of elements in a window over this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.filter.html#streaming.DStream.filter" title="streaming.DStream.filter"><code class="xref py py-obj docutils literal"><span class="pre">filter</span></code></a>(f)</td>
+<td>Return a new DStream containing only the elements that satisfy predicate.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.flatMap.html#streaming.DStream.flatMap" title="streaming.DStream.flatMap"><code class="xref py py-obj docutils literal"><span class="pre">flatMap</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new DStream by applying a function to all elements of</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.flatMapValues.html#streaming.DStream.flatMapValues" title="streaming.DStream.flatMapValues"><code class="xref py py-obj docutils literal"><span class="pre">flatMapValues</span></code></a>(f)</td>
+<td>Return a new DStream by applying a flatmap function to the value of each key-value pairs in this DStream without changing the key.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.foreachRDD.html#streaming.DStream.foreachRDD" title="streaming.DStream.foreachRDD"><code class="xref py py-obj docutils literal"><span class="pre">foreachRDD</span></code></a>(func)</td>
+<td>Apply a function to each RDD in this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.fullOuterJoin.html#streaming.DStream.fullOuterJoin" title="streaming.DStream.fullOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">fullOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;full outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.glom.html#streaming.DStream.glom" title="streaming.DStream.glom"><code class="xref py py-obj docutils literal"><span class="pre">glom</span></code></a>()</td>
+<td>Return a new DStream in which RDD is generated by applying glom() to RDD of this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.groupByKey.html#streaming.DStream.groupByKey" title="streaming.DStream.groupByKey"><code class="xref py py-obj docutils literal"><span class="pre">groupByKey</span></code></a>([numPartitions])</td>
+<td>Return a new DStream by applying groupByKey on each RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.groupByKeyAndWindow.html#streaming.DStream.groupByKeyAndWindow" title="streaming.DStream.groupByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">groupByKeyAndWindow</span></code></a>(windowDuration,&nbsp;...[,&nbsp;...])</td>
+<td>Return a new DStream by applying <cite>groupByKey</cite> over a sliding window.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.join.html#streaming.DStream.join" title="streaming.DStream.join"><code class="xref py py-obj docutils literal"><span class="pre">join</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.leftOuterJoin.html#streaming.DStream.leftOuterJoin" title="streaming.DStream.leftOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">leftOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;left outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.map.html#streaming.DStream.map" title="streaming.DStream.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new DStream by applying a function to each element of DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.mapPartitions.html#streaming.DStream.mapPartitions" title="streaming.DStream.mapPartitions"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitions</span></code></a>(f[,&nbsp;preservesPartitioning])</td>
+<td>Return a new DStream in which each RDD is generated by applying mapPartitions() to each RDDs of this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.mapPartitionsWithIndex.html#streaming.DStream.mapPartitionsWithIndex" title="streaming.DStream.mapPartitionsWithIndex"><code class="xref py py-obj docutils literal"><span class="pre">mapPartitionsWithIndex</span></code></a>(f[,&nbsp;...])</td>
+<td>Return a new DStream in which each RDD is generated by applying mapPartitionsWithIndex() to each RDDs of this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.mapValues.html#streaming.DStream.mapValues" title="streaming.DStream.mapValues"><code class="xref py py-obj docutils literal"><span class="pre">mapValues</span></code></a>(f)</td>
+<td>Return a new DStream by applying a map function to the value of each key-value pairs in this DStream without changing the key.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.partitionBy.html#streaming.DStream.partitionBy" title="streaming.DStream.partitionBy"><code class="xref py py-obj docutils literal"><span class="pre">partitionBy</span></code></a>(numPartitions[,&nbsp;partitionFunc])</td>
+<td>Return a copy of the DStream in which each RDD are partitioned using the specified partitioner.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.persist.html#streaming.DStream.persist" title="streaming.DStream.persist"><code class="xref py py-obj docutils literal"><span class="pre">persist</span></code></a>(storageLevel)</td>
+<td>Persist the RDDs of this DStream with the given storage level</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.pprint.html#streaming.DStream.pprint" title="streaming.DStream.pprint"><code class="xref py py-obj docutils literal"><span class="pre">pprint</span></code></a>([num])</td>
+<td>Print the first num elements of each RDD generated in this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.reduce.html#streaming.DStream.reduce" title="streaming.DStream.reduce"><code class="xref py py-obj docutils literal"><span class="pre">reduce</span></code></a>(func)</td>
+<td>Return a new DStream in which each RDD has a single element generated by reducing each RDD of this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.reduceByKey.html#streaming.DStream.reduceByKey" title="streaming.DStream.reduceByKey"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKey</span></code></a>(func[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying reduceByKey to each RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.reduceByKeyAndWindow.html#streaming.DStream.reduceByKeyAndWindow" title="streaming.DStream.reduceByKeyAndWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByKeyAndWindow</span></code></a>(func,&nbsp;invFunc,&nbsp;...[,&nbsp;...])</td>
+<td>Return a new DStream by applying incremental <cite>reduceByKey</cite> over a sliding window.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.reduceByWindow.html#streaming.DStream.reduceByWindow" title="streaming.DStream.reduceByWindow"><code class="xref py py-obj docutils literal"><span class="pre">reduceByWindow</span></code></a>(reduceFunc,&nbsp;invReduceFunc,&nbsp;...)</td>
+<td>Return a new DStream in which each RDD has a single element generated by reducing all elements in a sliding window over this DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.repartition.html#streaming.DStream.repartition" title="streaming.DStream.repartition"><code class="xref py py-obj docutils literal"><span class="pre">repartition</span></code></a>(numPartitions)</td>
+<td>Return a new DStream with an increased or decreased level of parallelism.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.rightOuterJoin.html#streaming.DStream.rightOuterJoin" title="streaming.DStream.rightOuterJoin"><code class="xref py py-obj docutils literal"><span class="pre">rightOuterJoin</span></code></a>(other[,&nbsp;numPartitions])</td>
+<td>Return a new DStream by applying &#8216;right outer join&#8217; between RDDs of this DStream and <cite>other</cite> DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.saveAsTextFiles.html#streaming.DStream.saveAsTextFiles" title="streaming.DStream.saveAsTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">saveAsTextFiles</span></code></a>(prefix[,&nbsp;suffix])</td>
+<td>Save each RDD in this DStream as at text file, using string representation of elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.slice.html#streaming.DStream.slice" title="streaming.DStream.slice"><code class="xref py py-obj docutils literal"><span class="pre">slice</span></code></a>(begin,&nbsp;end)</td>
+<td>Return all the RDDs between &#8216;begin&#8217; to &#8216;end&#8217; (both included)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.transform.html#streaming.DStream.transform" title="streaming.DStream.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(func)</td>
+<td>Return a new DStream in which each RDD is generated by applying a function on each RDD of this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.transformWith.html#streaming.DStream.transformWith" title="streaming.DStream.transformWith"><code class="xref py py-obj docutils literal"><span class="pre">transformWith</span></code></a>(func,&nbsp;other[,&nbsp;keepSerializer])</td>
+<td>Return a new DStream in which each RDD is generated by applying a function on each RDD of this DStream and &#8216;other&#8217; DStream.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.union.html#streaming.DStream.union" title="streaming.DStream.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(other)</td>
+<td>Return a new DStream by unifying data of another DStream with this DStream.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="streaming.DStream.updateStateByKey.html#streaming.DStream.updateStateByKey" title="streaming.DStream.updateStateByKey"><code class="xref py py-obj docutils literal"><span class="pre">updateStateByKey</span></code></a>(updateFunc[,&nbsp;...])</td>
+<td>Return a new &#8220;state&#8221; DStream where the state for each key is updated by applying the given function on the previous state of the key and the new values of the key.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="streaming.DStream.window.html#streaming.DStream.window" title="streaming.DStream.window"><code class="xref py py-obj docutils literal"><span class="pre">window</span></code></a>(windowDuration[,&nbsp;slideDuration])</td>
+<td>Return a new DStream in which each RDD contains all the elements in seen in a sliding window of time over this DStream.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="streaming.DStream.__init__.html" class="btn btn-neutral float-right" title="streaming.DStream.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../streaming.html" class="btn btn-neutral" title="streaming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

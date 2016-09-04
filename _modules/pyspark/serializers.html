@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.serializers &mdash; PySpark API</title>
+  <title>pyspark.serializers</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../index.html"/>
+    <link rel="top" title="" href="../../index.html"/>
         <link rel="up" title="pyspark" href="../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -400,16 +396,16 @@
         <span class="k">return</span> <span class="s2">&quot;FlattenedValuesSerializer(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%d</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">serializer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batchSize</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="AutoBatchedSerializer"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.AutoBatchedSerializer.html#pyspark.AutoBatchedSerializer">[docs]</a><span class="k">class</span> <span class="nc">AutoBatchedSerializer</span><span class="p">(</span><span class="n">BatchedSerializer</span><span class="p">):</span>
+<div class="viewcode-block" id="AutoBatchedSerializer"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.AutoBatchedSerializer.html#pyspark.AutoBatchedSerializer">[docs]</a><span class="k">class</span> <span class="nc">AutoBatchedSerializer</span><span class="p">(</span><span class="n">BatchedSerializer</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Choose the size of batch automatically based on the size of object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="AutoBatchedSerializer.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.AutoBatchedSerializer.__init__.html#pyspark.AutoBatchedSerializer.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">,</span> <span class="n">bestSize</span><span class="o">=</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">):</span>
+<div class="viewcode-block" id="AutoBatchedSerializer.__init__"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.AutoBatchedSerializer.__init__.html#pyspark.AutoBatchedSerializer.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">,</span> <span class="n">bestSize</span><span class="o">=</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">):</span>
         <span class="n">BatchedSerializer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">serializer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">UNKNOWN_BATCH_SIZE</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bestSize</span> <span class="o">=</span> <span class="n">bestSize</span></div>
 
-<div class="viewcode-block" id="AutoBatchedSerializer.dump_stream"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.AutoBatchedSerializer.dump_stream.html#pyspark.AutoBatchedSerializer.dump_stream">[docs]</a>    <span class="k">def</span> <span class="nf">dump_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
+<div class="viewcode-block" id="AutoBatchedSerializer.dump_stream"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.AutoBatchedSerializer.dump_stream.html#pyspark.AutoBatchedSerializer.dump_stream">[docs]</a>    <span class="k">def</span> <span class="nf">dump_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iterator</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
         <span class="n">batch</span><span class="p">,</span> <span class="n">best</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bestSize</span>
         <span class="n">iterator</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
         <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
@@ -462,13 +458,13 @@
                <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key_ser</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val_ser</span><span class="p">))</span>
 
 
-<div class="viewcode-block" id="PairDeserializer"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kinesis.PairDeserializer.html#pyspark.PairDeserializer">[docs]</a><span class="k">class</span> <span class="nc">PairDeserializer</span><span class="p">(</span><span class="n">CartesianDeserializer</span><span class="p">):</span>
+<div class="viewcode-block" id="PairDeserializer"><a class="viewcode-back" href="../../generated/generated/streaming.kinesis.PairDeserializer.html#pyspark.PairDeserializer">[docs]</a><span class="k">class</span> <span class="nc">PairDeserializer</span><span class="p">(</span><span class="n">CartesianDeserializer</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Deserializes the JavaRDD zip() of two PythonRDDs.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PairDeserializer.load_stream"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kinesis.PairDeserializer.load_stream.html#pyspark.PairDeserializer.load_stream">[docs]</a>    <span class="k">def</span> <span class="nf">load_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
+<div class="viewcode-block" id="PairDeserializer.load_stream"><a class="viewcode-back" href="../../generated/generated/streaming.kinesis.PairDeserializer.load_stream.html#pyspark.PairDeserializer.load_stream">[docs]</a>    <span class="k">def</span> <span class="nf">load_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_keys_values</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can not deserialize RDD with different number of items&quot;</span>
@@ -480,12 +476,12 @@
         <span class="k">return</span> <span class="s2">&quot;PairDeserializer(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key_ser</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val_ser</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="NoOpSerializer"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kinesis.NoOpSerializer.html#pyspark.NoOpSerializer">[docs]</a><span class="k">class</span> <span class="nc">NoOpSerializer</span><span class="p">(</span><span class="n">FramedSerializer</span><span class="p">):</span>
+<div class="viewcode-block" id="NoOpSerializer"><a class="viewcode-back" href="../../generated/generated/streaming.kinesis.NoOpSerializer.html#pyspark.NoOpSerializer">[docs]</a><span class="k">class</span> <span class="nc">NoOpSerializer</span><span class="p">(</span><span class="n">FramedSerializer</span><span class="p">):</span>
 
-<div class="viewcode-block" id="NoOpSerializer.loads"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kinesis.NoOpSerializer.loads.html#pyspark.NoOpSerializer.loads">[docs]</a>    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<div class="viewcode-block" id="NoOpSerializer.loads"><a class="viewcode-back" href="../../generated/generated/streaming.kinesis.NoOpSerializer.loads.html#pyspark.NoOpSerializer.loads">[docs]</a>    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">obj</span></div>
 
-<div class="viewcode-block" id="NoOpSerializer.dumps"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kinesis.NoOpSerializer.dumps.html#pyspark.NoOpSerializer.dumps">[docs]</a>    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<div class="viewcode-block" id="NoOpSerializer.dumps"><a class="viewcode-back" href="../../generated/generated/streaming.kinesis.NoOpSerializer.dumps.html#pyspark.NoOpSerializer.dumps">[docs]</a>    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">obj</span></div></div>
 
 
@@ -553,7 +549,7 @@
 <span class="n">_hijack_namedtuple</span><span class="p">()</span>
 
 
-<div class="viewcode-block" id="PickleSerializer"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.PickleSerializer.html#pyspark.PickleSerializer">[docs]</a><span class="k">class</span> <span class="nc">PickleSerializer</span><span class="p">(</span><span class="n">FramedSerializer</span><span class="p">):</span>
+<div class="viewcode-block" id="PickleSerializer"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.PickleSerializer.html#pyspark.PickleSerializer">[docs]</a><span class="k">class</span> <span class="nc">PickleSerializer</span><span class="p">(</span><span class="n">FramedSerializer</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Serializes objects using Python&#39;s pickle serializer:</span>
@@ -564,20 +560,20 @@
 <span class="sd">    not be as fast as more specialized serializers.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PickleSerializer.dumps"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.PickleSerializer.dumps.html#pyspark.PickleSerializer.dumps">[docs]</a>    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<div class="viewcode-block" id="PickleSerializer.dumps"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.PickleSerializer.dumps.html#pyspark.PickleSerializer.dumps">[docs]</a>    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">protocol</span><span class="p">)</span></div>
 
     <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span> <span class="o">&gt;=</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
         <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;bytes&quot;</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-<div class="viewcode-block" id="PickleSerializer.loads"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.kafka.PickleSerializer.loads.html#pyspark.PickleSerializer.loads">[docs]</a>        <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PickleSerializer.loads"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.PickleSerializer.loads.html#pyspark.PickleSerializer.loads">[docs]</a>        <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="CloudPickleSerializer"><a class="viewcode-back" href="../../generated/generated/pyspark.sql.types.CloudPickleSerializer.html#pyspark.CloudPickleSerializer">[docs]</a><span class="k">class</span> <span class="nc">CloudPickleSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">):</span>
+<div class="viewcode-block" id="CloudPickleSerializer"><a class="viewcode-back" href="../../generated/generated/sql.types.CloudPickleSerializer.html#pyspark.CloudPickleSerializer">[docs]</a><span class="k">class</span> <span class="nc">CloudPickleSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">):</span>
 
-<div class="viewcode-block" id="CloudPickleSerializer.dumps"><a class="viewcode-back" href="../../generated/generated/pyspark.sql.types.CloudPickleSerializer.dumps.html#pyspark.CloudPickleSerializer.dumps">[docs]</a>    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+<div class="viewcode-block" id="CloudPickleSerializer.dumps"><a class="viewcode-back" href="../../generated/generated/sql.types.CloudPickleSerializer.dumps.html#pyspark.CloudPickleSerializer.dumps">[docs]</a>    <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">cloudpickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></div></div>
 
 
@@ -646,16 +642,16 @@
         <span class="k">return</span> <span class="s2">&quot;CompressedSerializer(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">serializer</span>
 
 
-<div class="viewcode-block" id="UTF8Deserializer"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.html#pyspark.UTF8Deserializer">[docs]</a><span class="k">class</span> <span class="nc">UTF8Deserializer</span><span class="p">(</span><span class="n">Serializer</span><span class="p">):</span>
+<div class="viewcode-block" id="UTF8Deserializer"><a class="viewcode-back" href="../../generated/generated/streaming.flume.UTF8Deserializer.html#pyspark.UTF8Deserializer">[docs]</a><span class="k">class</span> <span class="nc">UTF8Deserializer</span><span class="p">(</span><span class="n">Serializer</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Deserializes streams written by String.getBytes.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="UTF8Deserializer.__init__"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.__init__.html#pyspark.UTF8Deserializer.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="UTF8Deserializer.__init__"><a class="viewcode-back" href="../../generated/generated/streaming.flume.UTF8Deserializer.__init__.html#pyspark.UTF8Deserializer.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">use_unicode</span> <span class="o">=</span> <span class="n">use_unicode</span></div>
 
-<div class="viewcode-block" id="UTF8Deserializer.loads"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.loads.html#pyspark.UTF8Deserializer.loads">[docs]</a>    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
+<div class="viewcode-block" id="UTF8Deserializer.loads"><a class="viewcode-back" href="../../generated/generated/streaming.flume.UTF8Deserializer.loads.html#pyspark.UTF8Deserializer.loads">[docs]</a>    <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
         <span class="n">length</span> <span class="o">=</span> <span class="n">read_int</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="n">SpecialLengths</span><span class="o">.</span><span class="n">END_OF_DATA_SECTION</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">EOFError</span>
@@ -664,7 +660,7 @@
         <span class="n">s</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_unicode</span> <span class="k">else</span> <span class="n">s</span></div>
 
-<div class="viewcode-block" id="UTF8Deserializer.load_stream"><a class="viewcode-back" href="../../generated/generated/pyspark.streaming.flume.UTF8Deserializer.load_stream.html#pyspark.UTF8Deserializer.load_stream">[docs]</a>    <span class="k">def</span> <span class="nf">load_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
+<div class="viewcode-block" id="UTF8Deserializer.load_stream"><a class="viewcode-back" href="../../generated/generated/streaming.flume.UTF8Deserializer.load_stream.html#pyspark.UTF8Deserializer.load_stream">[docs]</a>    <span class="k">def</span> <span class="nf">load_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
@@ -692,7 +688,7 @@
     <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;!q&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="read_int"><a class="viewcode-back" href="../../generated/pyspark.streaming.flume.read_int.html#pyspark.read_int">[docs]</a><span class="k">def</span> <span class="nf">read_int</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
+<div class="viewcode-block" id="read_int"><a class="viewcode-back" href="../../generated/generated/streaming.flume.read_int.html#pyspark.read_int">[docs]</a><span class="k">def</span> <span class="nf">read_int</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
     <span class="n">length</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">length</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">EOFError</span>
@@ -746,7 +742,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

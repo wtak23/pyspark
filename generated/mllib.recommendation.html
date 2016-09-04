@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.recommendation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="mllib.recommendation.callMLlibFunc()" href="generated/mllib.recommendation.callMLlibFunc.html"/>
+        <link rel="prev" title="mllib.random.RandomRDDs.uniformVectorRDD" href="generated/mllib.random.RandomRDDs.uniformVectorRDD.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.callMLlibFunc.html"><code class="docutils literal"><span class="pre">mllib.recommendation.callMLlibFunc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.inherit_doc.html"><code class="docutils literal"><span class="pre">mllib.recommendation.inherit_doc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.namedtuple.html"><code class="docutils literal"><span class="pre">mllib.recommendation.namedtuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.since.html"><code class="docutils literal"><span class="pre">mllib.recommendation.since()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.ALS.html"><code class="docutils literal"><span class="pre">mllib.recommendation.ALS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.DataFrame.html"><code class="docutils literal"><span class="pre">mllib.recommendation.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.JavaLoader.html"><code class="docutils literal"><span class="pre">mllib.recommendation.JavaLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.recommendation.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.JavaSaveable.html"><code class="docutils literal"><span class="pre">mllib.recommendation.JavaSaveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.MatrixFactorizationModel.html"><code class="docutils literal"><span class="pre">mllib.recommendation.MatrixFactorizationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.RDD.html"><code class="docutils literal"><span class="pre">mllib.recommendation.RDD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.Rating.html"><code class="docutils literal"><span class="pre">mllib.recommendation.Rating</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.recommendation.SparkContext.html"><code class="docutils literal"><span class="pre">mllib.recommendation.SparkContext</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/mllib.recommendation.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mllib.recommendation">
+<span id="mllib-recommendation"></span><h1><a class="reference internal" href="#module-mllib.recommendation" title="mllib.recommendation"><code class="xref py py-mod docutils literal"><span class="pre">mllib.recommendation</span></code></a><a class="headerlink" href="#module-mllib.recommendation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.recommendation.callMLlibFunc.html#mllib.recommendation.callMLlibFunc" title="mllib.recommendation.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.recommendation.inherit_doc.html#mllib.recommendation.inherit_doc" title="mllib.recommendation.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.recommendation.namedtuple.html#mllib.recommendation.namedtuple" title="mllib.recommendation.namedtuple"><code class="xref py py-obj docutils literal"><span class="pre">namedtuple</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Returns a new subclass of tuple with named fields.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.recommendation.since.html#mllib.recommendation.since" title="mllib.recommendation.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.recommendation.ALS.html#mllib.recommendation.ALS" title="mllib.recommendation.ALS"><code class="xref py py-obj docutils literal"><span class="pre">ALS</span></code></a></td>
+<td>Alternating Least Squares matrix factorization</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.recommendation.DataFrame.html#mllib.recommendation.DataFrame" title="mllib.recommendation.DataFrame"><code class="xref py py-obj docutils literal"><span class="pre">DataFrame</span></code></a>(jdf,&nbsp;sql_ctx)</td>
+<td>A distributed collection of data grouped into named columns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.recommendation.JavaLoader.html#mllib.recommendation.JavaLoader" title="mllib.recommendation.JavaLoader"><code class="xref py py-obj docutils literal"><span class="pre">JavaLoader</span></code></a></td>
+<td>Mixin for classes which can load saved models using its Scala implementation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.recommendation.JavaModelWrapper.html#mllib.recommendation.JavaModelWrapper" title="mllib.recommendation.JavaModelWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaModelWrapper</span></code></a>(java_model)</td>
+<td>Wrapper for the model in JVM</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.recommendation.JavaSaveable.html#mllib.recommendation.JavaSaveable" title="mllib.recommendation.JavaSaveable"><code class="xref py py-obj docutils literal"><span class="pre">JavaSaveable</span></code></a></td>
+<td>Mixin for models that provide save() through their Scala implementation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.recommendation.MatrixFactorizationModel.html#mllib.recommendation.MatrixFactorizationModel" title="mllib.recommendation.MatrixFactorizationModel"><code class="xref py py-obj docutils literal"><span class="pre">MatrixFactorizationModel</span></code></a>(java_model)</td>
+<td>A matrix factorisation model trained by regularized alternating least-squares.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.recommendation.RDD.html#mllib.recommendation.RDD" title="mllib.recommendation.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.recommendation.Rating.html#mllib.recommendation.Rating" title="mllib.recommendation.Rating"><code class="xref py py-obj docutils literal"><span class="pre">Rating</span></code></a></td>
+<td>Represents a (user, product, rating) tuple.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.recommendation.SparkContext.html#mllib.recommendation.SparkContext" title="mllib.recommendation.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/mllib.recommendation.callMLlibFunc.html" class="btn btn-neutral float-right" title="mllib.recommendation.callMLlibFunc()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/mllib.random.RandomRDDs.uniformVectorRDD.html" class="btn btn-neutral" title="mllib.random.RandomRDDs.uniformVectorRDD" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

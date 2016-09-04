@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3.2. pyspark.ml.param &mdash; PySpark API</title>
+  <title>pyspark.ml.param</title>
   
 
   
@@ -32,10 +32,10 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../index.html"/>
-        <link rel="up" title="3. pyspark.ml" href="../pyspark.ml.html"/>
-        <link rel="next" title="3.2.1.1. pyspark.ml.param.since" href="pyspark.ml.param.since.html"/>
-        <link rel="prev" title="3.1.1.5.2.1. pyspark.ml.Transformer.params" href="generated/pyspark.ml.Transformer.params.html"/> 
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.ml" href="../pyspark.ml.html"/>
+        <link rel="next" title="pyspark.ml.param.since()" href="generated/pyspark.ml.param.since.html"/>
+        <link rel="prev" title="pyspark.ml.Transformer.params" href="generated/pyspark.ml.Transformer.params.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -63,10 +63,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -87,40 +83,40 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">3. pyspark.ml</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html">3.1. pyspark.ml</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">3.2. pyspark.ml.param</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#functions">3.2.1. Functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="pyspark.ml.param.since.html">3.2.1.1. pyspark.ml.param.since</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.html"><code class="docutils literal"><span class="pre">pyspark.ml</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">pyspark.ml.param</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.since.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.since()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#classes">3.2.2. Classes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.ABCMeta.html">3.2.2.1. pyspark.ml.param.ABCMeta</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.DenseVector.html">3.2.2.2. pyspark.ml.param.DenseVector</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Identifiable.html">3.2.2.3. pyspark.ml.param.Identifiable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.JavaObject.html">3.2.2.4. pyspark.ml.param.JavaObject</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Param.html">3.2.2.5. pyspark.ml.param.Param</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Params.html">3.2.2.6. pyspark.ml.param.Params</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.TypeConverters.html">3.2.2.7. pyspark.ml.param.TypeConverters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Vector.html">3.2.2.8. pyspark.ml.param.Vector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.ABCMeta.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.ABCMeta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.DenseVector.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.DenseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Identifiable.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.JavaObject.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.JavaObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Param.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Params.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.TypeConverters.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.TypeConverters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/pyspark.ml.param.Vector.html"><code class="docutils literal"><span class="pre">pyspark.ml.param.Vector</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.feature.html">3.3. pyspark.ml.feature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.classification.html">3.4. pyspark.ml.classification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html">3.5. pyspark.ml.clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html">3.6. pyspark.ml.linalg</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html">3.7. pyspark.ml.recommendation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.regression.html">3.8. pyspark.ml.regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html">3.9. pyspark.ml.tuning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.evaluation.html">3.10. pyspark.ml.evaluation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.feature.html"><code class="docutils literal"><span class="pre">pyspark.ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.classification.html"><code class="docutils literal"><span class="pre">pyspark.ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.clustering.html"><code class="docutils literal"><span class="pre">pyspark.ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.linalg.html"><code class="docutils literal"><span class="pre">pyspark.ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.recommendation.html"><code class="docutils literal"><span class="pre">pyspark.ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.regression.html"><code class="docutils literal"><span class="pre">pyspark.ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.tuning.html"><code class="docutils literal"><span class="pre">pyspark.ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyspark.ml.evaluation.html"><code class="docutils literal"><span class="pre">pyspark.ml.evaluation</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -162,9 +158,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../pyspark.ml.html">3. pyspark.ml</a> &raquo;</li>
+          <li><a href="../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
         
-      <li>3.2. pyspark.ml.param</li>
+      <li><code class="docutils literal"><span class="pre">pyspark.ml.param</span></code></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -182,23 +178,25 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pyspark.ml.param">
-<span id="pyspark-ml-param"></span><h1>3.2. pyspark.ml.param<a class="headerlink" href="#module-pyspark.ml.param" title="Permalink to this headline">¶</a></h1>
+<span id="pyspark-ml-param"></span><h1><a class="reference internal" href="#module-pyspark.ml.param" title="pyspark.ml.param"><code class="xref py py-mod docutils literal"><span class="pre">pyspark.ml.param</span></code></a><a class="headerlink" href="#module-pyspark.ml.param" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="functions">
-<h2>3.2.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="pyspark.ml.param.since.html#pyspark.ml.param.since" title="pyspark.ml.param.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<tr class="row-odd"><td><a class="reference internal" href="generated/pyspark.ml.param.since.html#pyspark.ml.param.since" title="pyspark.ml.param.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
 <td>A decorator that annotates a function to append the version of Spark the function was added.</td>
 </tr>
 </tbody>
 </table>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 <div class="section" id="classes">
-<h2>3.2.2. Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="longtable docutils">
 <colgroup>
 <col width="10%" />
@@ -247,10 +245,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pyspark.ml.param.since.html" class="btn btn-neutral float-right" title="3.2.1.1. pyspark.ml.param.since" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="generated/pyspark.ml.param.since.html" class="btn btn-neutral float-right" title="pyspark.ml.param.since()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="generated/pyspark.ml.Transformer.params.html" class="btn btn-neutral" title="3.1.1.5.2.1. pyspark.ml.Transformer.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="generated/pyspark.ml.Transformer.params.html" class="btn btn-neutral" title="pyspark.ml.Transformer.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -281,7 +279,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

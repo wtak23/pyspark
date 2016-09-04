@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.functions.levenshtein()</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="sql.functions" href="../sql.functions.html"/>
+        <link rel="next" title="sql.functions.lit()" href="sql.functions.lit.html"/>
+        <link rel="prev" title="sql.functions.length()" href="sql.functions.length.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../sql.functions.html#functions">Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.abs.html"><code class="docutils literal"><span class="pre">sql.functions.abs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.acos.html"><code class="docutils literal"><span class="pre">sql.functions.acos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.add_months.html"><code class="docutils literal"><span class="pre">sql.functions.add_months()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.approxCountDistinct.html"><code class="docutils literal"><span class="pre">sql.functions.approxCountDistinct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.array.html"><code class="docutils literal"><span class="pre">sql.functions.array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.array_contains.html"><code class="docutils literal"><span class="pre">sql.functions.array_contains()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.asc.html"><code class="docutils literal"><span class="pre">sql.functions.asc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.ascii.html"><code class="docutils literal"><span class="pre">sql.functions.ascii()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.asin.html"><code class="docutils literal"><span class="pre">sql.functions.asin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.atan.html"><code class="docutils literal"><span class="pre">sql.functions.atan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.atan2.html"><code class="docutils literal"><span class="pre">sql.functions.atan2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.avg.html"><code class="docutils literal"><span class="pre">sql.functions.avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.base64.html"><code class="docutils literal"><span class="pre">sql.functions.base64()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.bin.html"><code class="docutils literal"><span class="pre">sql.functions.bin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.bitwiseNOT.html"><code class="docutils literal"><span class="pre">sql.functions.bitwiseNOT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.broadcast.html"><code class="docutils literal"><span class="pre">sql.functions.broadcast()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.bround.html"><code class="docutils literal"><span class="pre">sql.functions.bround()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.cbrt.html"><code class="docutils literal"><span class="pre">sql.functions.cbrt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.ceil.html"><code class="docutils literal"><span class="pre">sql.functions.ceil()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.coalesce.html"><code class="docutils literal"><span class="pre">sql.functions.coalesce()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.col.html"><code class="docutils literal"><span class="pre">sql.functions.col()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.collect_list.html"><code class="docutils literal"><span class="pre">sql.functions.collect_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.collect_set.html"><code class="docutils literal"><span class="pre">sql.functions.collect_set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.column.html"><code class="docutils literal"><span class="pre">sql.functions.column()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.concat.html"><code class="docutils literal"><span class="pre">sql.functions.concat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.concat_ws.html"><code class="docutils literal"><span class="pre">sql.functions.concat_ws()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.conv.html"><code class="docutils literal"><span class="pre">sql.functions.conv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.corr.html"><code class="docutils literal"><span class="pre">sql.functions.corr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.cos.html"><code class="docutils literal"><span class="pre">sql.functions.cos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.cosh.html"><code class="docutils literal"><span class="pre">sql.functions.cosh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.count.html"><code class="docutils literal"><span class="pre">sql.functions.count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.countDistinct.html"><code class="docutils literal"><span class="pre">sql.functions.countDistinct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.covar_pop.html"><code class="docutils literal"><span class="pre">sql.functions.covar_pop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.covar_samp.html"><code class="docutils literal"><span class="pre">sql.functions.covar_samp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.crc32.html"><code class="docutils literal"><span class="pre">sql.functions.crc32()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.create_map.html"><code class="docutils literal"><span class="pre">sql.functions.create_map()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.cume_dist.html"><code class="docutils literal"><span class="pre">sql.functions.cume_dist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.current_date.html"><code class="docutils literal"><span class="pre">sql.functions.current_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.current_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.current_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.date_add.html"><code class="docutils literal"><span class="pre">sql.functions.date_add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.date_format.html"><code class="docutils literal"><span class="pre">sql.functions.date_format()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.date_sub.html"><code class="docutils literal"><span class="pre">sql.functions.date_sub()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.datediff.html"><code class="docutils literal"><span class="pre">sql.functions.datediff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.dayofmonth.html"><code class="docutils literal"><span class="pre">sql.functions.dayofmonth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.dayofyear.html"><code class="docutils literal"><span class="pre">sql.functions.dayofyear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.decode.html"><code class="docutils literal"><span class="pre">sql.functions.decode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.dense_rank.html"><code class="docutils literal"><span class="pre">sql.functions.dense_rank()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.desc.html"><code class="docutils literal"><span class="pre">sql.functions.desc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.encode.html"><code class="docutils literal"><span class="pre">sql.functions.encode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.exp.html"><code class="docutils literal"><span class="pre">sql.functions.exp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.explode.html"><code class="docutils literal"><span class="pre">sql.functions.explode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.expm1.html"><code class="docutils literal"><span class="pre">sql.functions.expm1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.expr.html"><code class="docutils literal"><span class="pre">sql.functions.expr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.factorial.html"><code class="docutils literal"><span class="pre">sql.functions.factorial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.first.html"><code class="docutils literal"><span class="pre">sql.functions.first()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.floor.html"><code class="docutils literal"><span class="pre">sql.functions.floor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.format_number.html"><code class="docutils literal"><span class="pre">sql.functions.format_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.format_string.html"><code class="docutils literal"><span class="pre">sql.functions.format_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.from_unixtime.html"><code class="docutils literal"><span class="pre">sql.functions.from_unixtime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.from_utc_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.from_utc_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.get_json_object.html"><code class="docutils literal"><span class="pre">sql.functions.get_json_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.greatest.html"><code class="docutils literal"><span class="pre">sql.functions.greatest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.grouping.html"><code class="docutils literal"><span class="pre">sql.functions.grouping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.grouping_id.html"><code class="docutils literal"><span class="pre">sql.functions.grouping_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.hash.html"><code class="docutils literal"><span class="pre">sql.functions.hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.hex.html"><code class="docutils literal"><span class="pre">sql.functions.hex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.hour.html"><code class="docutils literal"><span class="pre">sql.functions.hour()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.hypot.html"><code class="docutils literal"><span class="pre">sql.functions.hypot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.ignore_unicode_prefix.html"><code class="docutils literal"><span class="pre">sql.functions.ignore_unicode_prefix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.initcap.html"><code class="docutils literal"><span class="pre">sql.functions.initcap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.input_file_name.html"><code class="docutils literal"><span class="pre">sql.functions.input_file_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.instr.html"><code class="docutils literal"><span class="pre">sql.functions.instr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.isnan.html"><code class="docutils literal"><span class="pre">sql.functions.isnan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.isnull.html"><code class="docutils literal"><span class="pre">sql.functions.isnull()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.json_tuple.html"><code class="docutils literal"><span class="pre">sql.functions.json_tuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.kurtosis.html"><code class="docutils literal"><span class="pre">sql.functions.kurtosis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.lag.html"><code class="docutils literal"><span class="pre">sql.functions.lag()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.last.html"><code class="docutils literal"><span class="pre">sql.functions.last()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.last_day.html"><code class="docutils literal"><span class="pre">sql.functions.last_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.lead.html"><code class="docutils literal"><span class="pre">sql.functions.lead()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.least.html"><code class="docutils literal"><span class="pre">sql.functions.least()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.length.html"><code class="docutils literal"><span class="pre">sql.functions.length()</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">sql.functions.levenshtein()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.lit.html"><code class="docutils literal"><span class="pre">sql.functions.lit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.locate.html"><code class="docutils literal"><span class="pre">sql.functions.locate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.log.html"><code class="docutils literal"><span class="pre">sql.functions.log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.log10.html"><code class="docutils literal"><span class="pre">sql.functions.log10()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.log1p.html"><code class="docutils literal"><span class="pre">sql.functions.log1p()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.log2.html"><code class="docutils literal"><span class="pre">sql.functions.log2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.lower.html"><code class="docutils literal"><span class="pre">sql.functions.lower()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.lpad.html"><code class="docutils literal"><span class="pre">sql.functions.lpad()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.ltrim.html"><code class="docutils literal"><span class="pre">sql.functions.ltrim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.max.html"><code class="docutils literal"><span class="pre">sql.functions.max()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.md5.html"><code class="docutils literal"><span class="pre">sql.functions.md5()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.mean.html"><code class="docutils literal"><span class="pre">sql.functions.mean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.min.html"><code class="docutils literal"><span class="pre">sql.functions.min()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.minute.html"><code class="docutils literal"><span class="pre">sql.functions.minute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.monotonically_increasing_id.html"><code class="docutils literal"><span class="pre">sql.functions.monotonically_increasing_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.month.html"><code class="docutils literal"><span class="pre">sql.functions.month()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.months_between.html"><code class="docutils literal"><span class="pre">sql.functions.months_between()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.nanvl.html"><code class="docutils literal"><span class="pre">sql.functions.nanvl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.next_day.html"><code class="docutils literal"><span class="pre">sql.functions.next_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.ntile.html"><code class="docutils literal"><span class="pre">sql.functions.ntile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.percent_rank.html"><code class="docutils literal"><span class="pre">sql.functions.percent_rank()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.posexplode.html"><code class="docutils literal"><span class="pre">sql.functions.posexplode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.pow.html"><code class="docutils literal"><span class="pre">sql.functions.pow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.quarter.html"><code class="docutils literal"><span class="pre">sql.functions.quarter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.rand.html"><code class="docutils literal"><span class="pre">sql.functions.rand()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.randn.html"><code class="docutils literal"><span class="pre">sql.functions.randn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.rank.html"><code class="docutils literal"><span class="pre">sql.functions.rank()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.regexp_extract.html"><code class="docutils literal"><span class="pre">sql.functions.regexp_extract()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.regexp_replace.html"><code class="docutils literal"><span class="pre">sql.functions.regexp_replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.repeat.html"><code class="docutils literal"><span class="pre">sql.functions.repeat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.reverse.html"><code class="docutils literal"><span class="pre">sql.functions.reverse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.rint.html"><code class="docutils literal"><span class="pre">sql.functions.rint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.round.html"><code class="docutils literal"><span class="pre">sql.functions.round()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.row_number.html"><code class="docutils literal"><span class="pre">sql.functions.row_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.rpad.html"><code class="docutils literal"><span class="pre">sql.functions.rpad()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.rtrim.html"><code class="docutils literal"><span class="pre">sql.functions.rtrim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.second.html"><code class="docutils literal"><span class="pre">sql.functions.second()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sha1.html"><code class="docutils literal"><span class="pre">sql.functions.sha1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sha2.html"><code class="docutils literal"><span class="pre">sql.functions.sha2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.shiftLeft.html"><code class="docutils literal"><span class="pre">sql.functions.shiftLeft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.shiftRight.html"><code class="docutils literal"><span class="pre">sql.functions.shiftRight()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.shiftRightUnsigned.html"><code class="docutils literal"><span class="pre">sql.functions.shiftRightUnsigned()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.signum.html"><code class="docutils literal"><span class="pre">sql.functions.signum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sin.html"><code class="docutils literal"><span class="pre">sql.functions.sin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.since.html"><code class="docutils literal"><span class="pre">sql.functions.since()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sinh.html"><code class="docutils literal"><span class="pre">sql.functions.sinh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.size.html"><code class="docutils literal"><span class="pre">sql.functions.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.skewness.html"><code class="docutils literal"><span class="pre">sql.functions.skewness()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sort_array.html"><code class="docutils literal"><span class="pre">sql.functions.sort_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.soundex.html"><code class="docutils literal"><span class="pre">sql.functions.soundex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.spark_partition_id.html"><code class="docutils literal"><span class="pre">sql.functions.spark_partition_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.split.html"><code class="docutils literal"><span class="pre">sql.functions.split()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sqrt.html"><code class="docutils literal"><span class="pre">sql.functions.sqrt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.stddev.html"><code class="docutils literal"><span class="pre">sql.functions.stddev()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.stddev_pop.html"><code class="docutils literal"><span class="pre">sql.functions.stddev_pop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.stddev_samp.html"><code class="docutils literal"><span class="pre">sql.functions.stddev_samp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.struct.html"><code class="docutils literal"><span class="pre">sql.functions.struct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.substring.html"><code class="docutils literal"><span class="pre">sql.functions.substring()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.substring_index.html"><code class="docutils literal"><span class="pre">sql.functions.substring_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sum.html"><code class="docutils literal"><span class="pre">sql.functions.sum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.sumDistinct.html"><code class="docutils literal"><span class="pre">sql.functions.sumDistinct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.tan.html"><code class="docutils literal"><span class="pre">sql.functions.tan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.tanh.html"><code class="docutils literal"><span class="pre">sql.functions.tanh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.toDegrees.html"><code class="docutils literal"><span class="pre">sql.functions.toDegrees()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.toRadians.html"><code class="docutils literal"><span class="pre">sql.functions.toRadians()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.to_date.html"><code class="docutils literal"><span class="pre">sql.functions.to_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.to_utc_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.to_utc_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.translate.html"><code class="docutils literal"><span class="pre">sql.functions.translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.trim.html"><code class="docutils literal"><span class="pre">sql.functions.trim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.trunc.html"><code class="docutils literal"><span class="pre">sql.functions.trunc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.udf.html"><code class="docutils literal"><span class="pre">sql.functions.udf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.unbase64.html"><code class="docutils literal"><span class="pre">sql.functions.unbase64()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.unhex.html"><code class="docutils literal"><span class="pre">sql.functions.unhex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.unix_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.unix_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.upper.html"><code class="docutils literal"><span class="pre">sql.functions.upper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.v.html"><code class="docutils literal"><span class="pre">sql.functions.v()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.var_pop.html"><code class="docutils literal"><span class="pre">sql.functions.var_pop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.var_samp.html"><code class="docutils literal"><span class="pre">sql.functions.var_samp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.variance.html"><code class="docutils literal"><span class="pre">sql.functions.variance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.weekofyear.html"><code class="docutils literal"><span class="pre">sql.functions.weekofyear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.when.html"><code class="docutils literal"><span class="pre">sql.functions.when()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.window.html"><code class="docutils literal"><span class="pre">sql.functions.window()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.functions.year.html"><code class="docutils literal"><span class="pre">sql.functions.year()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sql.functions.html#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">sql.functions.levenshtein()</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/sql.functions.levenshtein.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql-functions-levenshtein">
+<h1><a class="reference internal" href="#sql.functions.levenshtein" title="sql.functions.levenshtein"><code class="xref py py-func docutils literal"><span class="pre">sql.functions.levenshtein()</span></code></a><a class="headerlink" href="#sql-functions-levenshtein" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="sql.functions.levenshtein">
+<code class="descclassname">sql.functions.</code><code class="descname">levenshtein</code><span class="sig-paren">(</span><em>left</em>, <em>right</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/sql/functions.html#levenshtein"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sql.functions.levenshtein" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the Levenshtein distance of the two given strings.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df0</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="s1">&#39;kitten&#39;</span><span class="p">,</span> <span class="s1">&#39;sitting&#39;</span><span class="p">,)],</span> <span class="p">[</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df0</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">levenshtein</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(d=3)]</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sql.functions.lit.html" class="btn btn-neutral float-right" title="sql.functions.lit()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql.functions.length.html" class="btn btn-neutral" title="sql.functions.length()" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

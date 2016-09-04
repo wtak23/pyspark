@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.evaluation.SQLContext.createDataFrame</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="mllib.evaluation.SQLContext" href="mllib.evaluation.SQLContext.html"/>
+        <link rel="next" title="mllib.evaluation.SQLContext.createExternalTable" href="mllib.evaluation.SQLContext.createExternalTable.html"/>
+        <link rel="prev" title="mllib.evaluation.SQLContext.clearCache" href="mllib.evaluation.SQLContext.clearCache.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mllib.evaluation.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../mllib.evaluation.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.ArrayType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.BinaryClassificationMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.BinaryClassificationMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.DoubleType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.IntegerType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.IntegerType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.evaluation.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.MulticlassMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.MultilabelMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.MultilabelMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.RankingMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.RankingMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.RegressionMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.RegressionMetrics</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mllib.evaluation.SQLContext.html"><code class="docutils literal"><span class="pre">mllib.evaluation.SQLContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.StructField.html"><code class="docutils literal"><span class="pre">mllib.evaluation.StructField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.StructType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.StructType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a> &raquo;</li>
+        
+          <li><a href="mllib.evaluation.SQLContext.html"><code class="docutils literal"><span class="pre">mllib.evaluation.SQLContext</span></code></a> &raquo;</li>
+        
+      <li>mllib.evaluation.SQLContext.createDataFrame</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/mllib.evaluation.SQLContext.createDataFrame.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mllib-evaluation-sqlcontext-createdataframe">
+<h1>mllib.evaluation.SQLContext.createDataFrame<a class="headerlink" href="#mllib-evaluation-sqlcontext-createdataframe" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="mllib.evaluation.SQLContext.createDataFrame">
+<code class="descclassname">SQLContext.</code><code class="descname">createDataFrame</code><span class="sig-paren">(</span><em>data</em>, <em>schema=None</em>, <em>samplingRatio=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/context.html#SQLContext.createDataFrame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.evaluation.SQLContext.createDataFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a <code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code> from an <code class="xref py py-class docutils literal"><span class="pre">RDD</span></code>, a list or a <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</p>
+<p>When <code class="docutils literal"><span class="pre">schema</span></code> is a list of column names, the type of each column
+will be inferred from <code class="docutils literal"><span class="pre">data</span></code>.</p>
+<p>When <code class="docutils literal"><span class="pre">schema</span></code> is <code class="docutils literal"><span class="pre">None</span></code>, it will try to infer the schema (column names and types)
+from <code class="docutils literal"><span class="pre">data</span></code>, which should be an RDD of <code class="xref py py-class docutils literal"><span class="pre">Row</span></code>,
+or <code class="xref py py-class docutils literal"><span class="pre">namedtuple</span></code>, or <code class="xref py py-class docutils literal"><span class="pre">dict</span></code>.</p>
+<p>When <code class="docutils literal"><span class="pre">schema</span></code> is <code class="xref py py-class docutils literal"><span class="pre">DataType</span></code> or datatype string, it must match the real data, or
+exception will be thrown at runtime. If the given schema is not StructType, it will be
+wrapped into a StructType as its only field, and the field name will be &#8220;value&#8221;, each record
+will also be wrapped into a tuple, which can be converted to row later.</p>
+<p>If schema inference is needed, <code class="docutils literal"><span class="pre">samplingRatio</span></code> is used to determined the ratio of
+rows used for schema inference. The first row will be used if <code class="docutils literal"><span class="pre">samplingRatio</span></code> is <code class="docutils literal"><span class="pre">None</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; an RDD of any kind of SQL data representation(e.g. row, tuple, int, boolean,
+etc.), or <code class="xref py py-class docutils literal"><span class="pre">list</span></code>, or <code class="xref py py-class docutils literal"><span class="pre">pandas.DataFrame</span></code>.</li>
+<li><strong>schema</strong> &#8211; a <code class="xref py py-class docutils literal"><span class="pre">DataType</span></code> or a datatype string or a list of column names, default
+is None.  The data type string format equals to <cite>DataType.simpleString</cite>, except that
+top level struct type can omit the <cite>struct&lt;&gt;</cite> and atomic types use <cite>typeName()</cite> as
+their format, e.g. use <cite>byte</cite> instead of <cite>tinyint</cite> for ByteType. We can also use <cite>int</cite>
+as a short name for IntegerType.</li>
+<li><strong>samplingRatio</strong> &#8211; the sample ratio of rows used for inferring</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><code class="xref py py-class docutils literal"><span class="pre">DataFrame</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 2.0: </span>The schema parameter can be a DataType or a datatype string after 2.0. If it&#8217;s not a
+StructType, it will be wrapped into a StructType and each record will also be wrapped
+into a tuple.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(_1=u&#39;Alice&#39;, _2=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(age=1, name=u&#39;Alice&#39;)]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(_1=u&#39;Alice&#39;, _2=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Person</span> <span class="o">=</span> <span class="n">Row</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">Person</span><span class="p">(</span><span class="o">*</span><span class="n">r</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">schema</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span>
+<span class="gp">... </span>   <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span> <span class="o">=</span> <span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df3</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">toPandas</span><span class="p">())</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>  
+<span class="go">[Row(name=u&#39;Alice&#39;, age=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>  
+<span class="go">[Row(0=1, 1=2)]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="s2">&quot;a: string, b: int&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(a=u&#39;Alice&#39;, b=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">rdd</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[Row(value=1)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sqlContext</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span> 
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">Py4JJavaError</span>: <span class="n">...</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mllib.evaluation.SQLContext.createExternalTable.html" class="btn btn-neutral float-right" title="mllib.evaluation.SQLContext.createExternalTable" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mllib.evaluation.SQLContext.clearCache.html" class="btn btn-neutral" title="mllib.evaluation.SQLContext.clearCache" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

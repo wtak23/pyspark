@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.linalg.distributed</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="mllib.linalg.distributed.callMLlibFunc()" href="generated/mllib.linalg.distributed.callMLlibFunc.html"/>
+        <link rel="prev" title="mllib.linalg.zip.next" href="generated/mllib.linalg.zip.next.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.callMLlibFunc.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.callMLlibFunc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.since.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.since()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.BlockMatrix.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.BlockMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.CoordinateMatrix.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.CoordinateMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.DistributedMatrix.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.DistributedMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.IndexedRow.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.IndexedRow</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.IndexedRowMatrix.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.IndexedRowMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.JavaObject.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.JavaObject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.Matrix.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.Matrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.MatrixEntry.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.MatrixEntry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.MultivariateStatisticalSummary.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.MultivariateStatisticalSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.QRDecomposition.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.QRDecomposition</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.RDD.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.RDD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.RowMatrix.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.RowMatrix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.linalg.distributed.StorageLevel.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed.StorageLevel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/mllib.linalg.distributed.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mllib.linalg.distributed">
+<span id="mllib-linalg-distributed"></span><h1><a class="reference internal" href="#module-mllib.linalg.distributed" title="mllib.linalg.distributed"><code class="xref py py-mod docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a><a class="headerlink" href="#module-mllib.linalg.distributed" title="Permalink to this headline">¶</a></h1>
+<p>Package for distributed linear algebra.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.callMLlibFunc.html#mllib.linalg.distributed.callMLlibFunc" title="mllib.linalg.distributed.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.since.html#mllib.linalg.distributed.since" title="mllib.linalg.distributed.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.BlockMatrix.html#mllib.linalg.distributed.BlockMatrix" title="mllib.linalg.distributed.BlockMatrix"><code class="xref py py-obj docutils literal"><span class="pre">BlockMatrix</span></code></a>(blocks,&nbsp;rowsPerBlock,&nbsp;colsPerBlock)</td>
+<td>Represents a distributed matrix in blocks of local matrices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.CoordinateMatrix.html#mllib.linalg.distributed.CoordinateMatrix" title="mllib.linalg.distributed.CoordinateMatrix"><code class="xref py py-obj docutils literal"><span class="pre">CoordinateMatrix</span></code></a>(entries[,&nbsp;numRows,&nbsp;numCols])</td>
+<td>Represents a matrix in coordinate format.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.DistributedMatrix.html#mllib.linalg.distributed.DistributedMatrix" title="mllib.linalg.distributed.DistributedMatrix"><code class="xref py py-obj docutils literal"><span class="pre">DistributedMatrix</span></code></a></td>
+<td>Represents a distributively stored matrix backed by one or more RDDs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.IndexedRow.html#mllib.linalg.distributed.IndexedRow" title="mllib.linalg.distributed.IndexedRow"><code class="xref py py-obj docutils literal"><span class="pre">IndexedRow</span></code></a>(index,&nbsp;vector)</td>
+<td>Represents a row of an IndexedRowMatrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.IndexedRowMatrix.html#mllib.linalg.distributed.IndexedRowMatrix" title="mllib.linalg.distributed.IndexedRowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">IndexedRowMatrix</span></code></a>(rows[,&nbsp;numRows,&nbsp;numCols])</td>
+<td>Represents a row-oriented distributed Matrix with indexed rows.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.JavaModelWrapper.html#mllib.linalg.distributed.JavaModelWrapper" title="mllib.linalg.distributed.JavaModelWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaModelWrapper</span></code></a>(java_model)</td>
+<td>Wrapper for the model in JVM</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.JavaObject.html#mllib.linalg.distributed.JavaObject" title="mllib.linalg.distributed.JavaObject"><code class="xref py py-obj docutils literal"><span class="pre">JavaObject</span></code></a>(target_id,&nbsp;gateway_client)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.Matrix.html#mllib.linalg.distributed.Matrix" title="mllib.linalg.distributed.Matrix"><code class="xref py py-obj docutils literal"><span class="pre">Matrix</span></code></a>(numRows,&nbsp;numCols[,&nbsp;isTransposed])</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.MatrixEntry.html#mllib.linalg.distributed.MatrixEntry" title="mllib.linalg.distributed.MatrixEntry"><code class="xref py py-obj docutils literal"><span class="pre">MatrixEntry</span></code></a>(i,&nbsp;j,&nbsp;value)</td>
+<td>Represents an entry of a CoordinateMatrix.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.MultivariateStatisticalSummary.html#mllib.linalg.distributed.MultivariateStatisticalSummary" title="mllib.linalg.distributed.MultivariateStatisticalSummary"><code class="xref py py-obj docutils literal"><span class="pre">MultivariateStatisticalSummary</span></code></a>(java_model)</td>
+<td>Trait for multivariate statistical summary of a data matrix.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.QRDecomposition.html#mllib.linalg.distributed.QRDecomposition" title="mllib.linalg.distributed.QRDecomposition"><code class="xref py py-obj docutils literal"><span class="pre">QRDecomposition</span></code></a>(Q,&nbsp;R)</td>
+<td>Represents QR factors.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.RDD.html#mllib.linalg.distributed.RDD" title="mllib.linalg.distributed.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.linalg.distributed.RowMatrix.html#mllib.linalg.distributed.RowMatrix" title="mllib.linalg.distributed.RowMatrix"><code class="xref py py-obj docutils literal"><span class="pre">RowMatrix</span></code></a>(rows[,&nbsp;numRows,&nbsp;numCols])</td>
+<td>Represents a row-oriented distributed Matrix with no meaningful row indices.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.linalg.distributed.StorageLevel.html#mllib.linalg.distributed.StorageLevel" title="mllib.linalg.distributed.StorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">StorageLevel</span></code></a>(useDisk,&nbsp;useMemory,&nbsp;useOffHeap,&nbsp;...)</td>
+<td>Flags for controlling the storage of an RDD.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/mllib.linalg.distributed.callMLlibFunc.html" class="btn btn-neutral float-right" title="mllib.linalg.distributed.callMLlibFunc()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/mllib.linalg.zip.next.html" class="btn btn-neutral" title="mllib.linalg.zip.next" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

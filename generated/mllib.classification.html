@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.classification</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.mllib" href="../pyspark.mllib.html"/>
+        <link rel="next" title="mllib.classification.array()" href="generated/mllib.classification.array.html"/>
+        <link rel="prev" title="mllib" href="mllib.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">mllib.classification</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.array.html"><code class="docutils literal"><span class="pre">mllib.classification.array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.callMLlibFunc.html"><code class="docutils literal"><span class="pre">mllib.classification.callMLlibFunc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.exp.html"><code class="docutils literal"><span class="pre">mllib.classification.exp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.inherit_doc.html"><code class="docutils literal"><span class="pre">mllib.classification.inherit_doc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.since.html"><code class="docutils literal"><span class="pre">mllib.classification.since()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.DStream.html"><code class="docutils literal"><span class="pre">mllib.classification.DStream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.DenseVector.html"><code class="docutils literal"><span class="pre">mllib.classification.DenseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.LabeledPoint.html"><code class="docutils literal"><span class="pre">mllib.classification.LabeledPoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.LinearClassificationModel.html"><code class="docutils literal"><span class="pre">mllib.classification.LinearClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.LinearModel.html"><code class="docutils literal"><span class="pre">mllib.classification.LinearModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.Loader.html"><code class="docutils literal"><span class="pre">mllib.classification.Loader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.LogisticRegressionModel.html"><code class="docutils literal"><span class="pre">mllib.classification.LogisticRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.LogisticRegressionWithLBFGS.html"><code class="docutils literal"><span class="pre">mllib.classification.LogisticRegressionWithLBFGS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.LogisticRegressionWithSGD.html"><code class="docutils literal"><span class="pre">mllib.classification.LogisticRegressionWithSGD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.NaiveBayes.html"><code class="docutils literal"><span class="pre">mllib.classification.NaiveBayes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.NaiveBayesModel.html"><code class="docutils literal"><span class="pre">mllib.classification.NaiveBayesModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.RDD.html"><code class="docutils literal"><span class="pre">mllib.classification.RDD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.SVMModel.html"><code class="docutils literal"><span class="pre">mllib.classification.SVMModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.SVMWithSGD.html"><code class="docutils literal"><span class="pre">mllib.classification.SVMWithSGD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.Saveable.html"><code class="docutils literal"><span class="pre">mllib.classification.Saveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.SparseVector.html"><code class="docutils literal"><span class="pre">mllib.classification.SparseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.StreamingLinearAlgorithm.html"><code class="docutils literal"><span class="pre">mllib.classification.StreamingLinearAlgorithm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/mllib.classification.StreamingLogisticRegressionWithSGD.html"><code class="docutils literal"><span class="pre">mllib.classification.StreamingLogisticRegressionWithSGD</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">mllib.classification</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/mllib.classification.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-mllib.classification">
+<span id="mllib-classification"></span><h1><a class="reference internal" href="#module-mllib.classification" title="mllib.classification"><code class="xref py py-mod docutils literal"><span class="pre">mllib.classification</span></code></a><a class="headerlink" href="#module-mllib.classification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.array.html#mllib.classification.array" title="mllib.classification.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>(object[,&nbsp;dtype,&nbsp;copy,&nbsp;order,&nbsp;subok,&nbsp;ndmin])</td>
+<td>Create an array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.callMLlibFunc.html#mllib.classification.callMLlibFunc" title="mllib.classification.callMLlibFunc"><code class="xref py py-obj docutils literal"><span class="pre">callMLlibFunc</span></code></a>(name,&nbsp;*args)</td>
+<td>Call API in PythonMLLibAPI</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.exp.html#mllib.classification.exp" title="mllib.classification.exp"><code class="xref py py-obj docutils literal"><span class="pre">exp</span></code></a>(x)</td>
+<td>Return e raised to the power of x.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.inherit_doc.html#mllib.classification.inherit_doc" title="mllib.classification.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.since.html#mllib.classification.since" title="mllib.classification.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.DStream.html#mllib.classification.DStream" title="mllib.classification.DStream"><code class="xref py py-obj docutils literal"><span class="pre">DStream</span></code></a>(jdstream,&nbsp;ssc,&nbsp;jrdd_deserializer)</td>
+<td>A Discretized Stream (DStream), the basic abstraction in Spark Streaming, is a continuous sequence of RDDs (of the same type) representing a continuous stream of data (see L{RDD} in the Spark core documentation for more details on RDDs).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.DenseVector.html#mllib.classification.DenseVector" title="mllib.classification.DenseVector"><code class="xref py py-obj docutils literal"><span class="pre">DenseVector</span></code></a>(ar)</td>
+<td>A dense vector represented by a value array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.LabeledPoint.html#mllib.classification.LabeledPoint" title="mllib.classification.LabeledPoint"><code class="xref py py-obj docutils literal"><span class="pre">LabeledPoint</span></code></a>(label,&nbsp;features)</td>
+<td>Class that represents the features and labels of a data point.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.LinearClassificationModel.html#mllib.classification.LinearClassificationModel" title="mllib.classification.LinearClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">LinearClassificationModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A private abstract class representing a multiclass classification model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.LinearModel.html#mllib.classification.LinearModel" title="mllib.classification.LinearModel"><code class="xref py py-obj docutils literal"><span class="pre">LinearModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>A linear model that has a vector of coefficients and an intercept.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.Loader.html#mllib.classification.Loader" title="mllib.classification.Loader"><code class="xref py py-obj docutils literal"><span class="pre">Loader</span></code></a></td>
+<td>Mixin for classes which can load saved models from files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.LogisticRegressionModel.html#mllib.classification.LogisticRegressionModel" title="mllib.classification.LogisticRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionModel</span></code></a>(weights,&nbsp;intercept,&nbsp;...)</td>
+<td>Classification model trained using Multinomial/Binary Logistic Regression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.LogisticRegressionWithLBFGS.html#mllib.classification.LogisticRegressionWithLBFGS" title="mllib.classification.LogisticRegressionWithLBFGS"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionWithLBFGS</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.LogisticRegressionWithSGD.html#mllib.classification.LogisticRegressionWithSGD" title="mllib.classification.LogisticRegressionWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionWithSGD</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.NaiveBayes.html#mllib.classification.NaiveBayes" title="mllib.classification.NaiveBayes"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayes</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.NaiveBayesModel.html#mllib.classification.NaiveBayesModel" title="mllib.classification.NaiveBayesModel"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayesModel</span></code></a>(labels,&nbsp;pi,&nbsp;theta)</td>
+<td>Model for Naive Bayes classifiers.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.RDD.html#mllib.classification.RDD" title="mllib.classification.RDD"><code class="xref py py-obj docutils literal"><span class="pre">RDD</span></code></a>(jrdd,&nbsp;ctx[,&nbsp;jrdd_deserializer])</td>
+<td>A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.SVMModel.html#mllib.classification.SVMModel" title="mllib.classification.SVMModel"><code class="xref py py-obj docutils literal"><span class="pre">SVMModel</span></code></a>(weights,&nbsp;intercept)</td>
+<td>Model for Support Vector Machines (SVMs).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.SVMWithSGD.html#mllib.classification.SVMWithSGD" title="mllib.classification.SVMWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">SVMWithSGD</span></code></a></td>
+<td><div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.0.</span></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.Saveable.html#mllib.classification.Saveable" title="mllib.classification.Saveable"><code class="xref py py-obj docutils literal"><span class="pre">Saveable</span></code></a></td>
+<td>Mixin for models and transformers which may be saved as files.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.SparseVector.html#mllib.classification.SparseVector" title="mllib.classification.SparseVector"><code class="xref py py-obj docutils literal"><span class="pre">SparseVector</span></code></a>(size,&nbsp;*args)</td>
+<td>A simple sparse vector class for passing data to MLlib.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/mllib.classification.StreamingLinearAlgorithm.html#mllib.classification.StreamingLinearAlgorithm" title="mllib.classification.StreamingLinearAlgorithm"><code class="xref py py-obj docutils literal"><span class="pre">StreamingLinearAlgorithm</span></code></a>(model)</td>
+<td>Base class that has to be inherited by any StreamingLinearAlgorithm.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/mllib.classification.StreamingLogisticRegressionWithSGD.html#mllib.classification.StreamingLogisticRegressionWithSGD" title="mllib.classification.StreamingLogisticRegressionWithSGD"><code class="xref py py-obj docutils literal"><span class="pre">StreamingLogisticRegressionWithSGD</span></code></a>([...])</td>
+<td>Train or predict a logistic regression model on streaming data.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/mllib.classification.array.html" class="btn btn-neutral float-right" title="mllib.classification.array()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mllib.html" class="btn btn-neutral" title="mllib" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

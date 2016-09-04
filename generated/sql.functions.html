@@ -1,0 +1,962 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.functions</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.sql" href="../pyspark.sql.html"/>
+        <link rel="next" title="sql.functions.abs()" href="generated/sql.functions.abs.html"/>
+        <link rel="prev" title="sql.types.array.typecode" href="generated/sql.types.array.typecode.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">sql.functions</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.abs.html"><code class="docutils literal"><span class="pre">sql.functions.abs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.acos.html"><code class="docutils literal"><span class="pre">sql.functions.acos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.add_months.html"><code class="docutils literal"><span class="pre">sql.functions.add_months()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.approxCountDistinct.html"><code class="docutils literal"><span class="pre">sql.functions.approxCountDistinct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.array.html"><code class="docutils literal"><span class="pre">sql.functions.array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.array_contains.html"><code class="docutils literal"><span class="pre">sql.functions.array_contains()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.asc.html"><code class="docutils literal"><span class="pre">sql.functions.asc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.ascii.html"><code class="docutils literal"><span class="pre">sql.functions.ascii()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.asin.html"><code class="docutils literal"><span class="pre">sql.functions.asin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.atan.html"><code class="docutils literal"><span class="pre">sql.functions.atan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.atan2.html"><code class="docutils literal"><span class="pre">sql.functions.atan2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.avg.html"><code class="docutils literal"><span class="pre">sql.functions.avg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.base64.html"><code class="docutils literal"><span class="pre">sql.functions.base64()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.bin.html"><code class="docutils literal"><span class="pre">sql.functions.bin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.bitwiseNOT.html"><code class="docutils literal"><span class="pre">sql.functions.bitwiseNOT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.broadcast.html"><code class="docutils literal"><span class="pre">sql.functions.broadcast()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.bround.html"><code class="docutils literal"><span class="pre">sql.functions.bround()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.cbrt.html"><code class="docutils literal"><span class="pre">sql.functions.cbrt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.ceil.html"><code class="docutils literal"><span class="pre">sql.functions.ceil()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.coalesce.html"><code class="docutils literal"><span class="pre">sql.functions.coalesce()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.col.html"><code class="docutils literal"><span class="pre">sql.functions.col()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.collect_list.html"><code class="docutils literal"><span class="pre">sql.functions.collect_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.collect_set.html"><code class="docutils literal"><span class="pre">sql.functions.collect_set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.column.html"><code class="docutils literal"><span class="pre">sql.functions.column()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.concat.html"><code class="docutils literal"><span class="pre">sql.functions.concat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.concat_ws.html"><code class="docutils literal"><span class="pre">sql.functions.concat_ws()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.conv.html"><code class="docutils literal"><span class="pre">sql.functions.conv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.corr.html"><code class="docutils literal"><span class="pre">sql.functions.corr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.cos.html"><code class="docutils literal"><span class="pre">sql.functions.cos()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.cosh.html"><code class="docutils literal"><span class="pre">sql.functions.cosh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.count.html"><code class="docutils literal"><span class="pre">sql.functions.count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.countDistinct.html"><code class="docutils literal"><span class="pre">sql.functions.countDistinct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.covar_pop.html"><code class="docutils literal"><span class="pre">sql.functions.covar_pop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.covar_samp.html"><code class="docutils literal"><span class="pre">sql.functions.covar_samp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.crc32.html"><code class="docutils literal"><span class="pre">sql.functions.crc32()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.create_map.html"><code class="docutils literal"><span class="pre">sql.functions.create_map()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.cume_dist.html"><code class="docutils literal"><span class="pre">sql.functions.cume_dist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.current_date.html"><code class="docutils literal"><span class="pre">sql.functions.current_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.current_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.current_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.date_add.html"><code class="docutils literal"><span class="pre">sql.functions.date_add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.date_format.html"><code class="docutils literal"><span class="pre">sql.functions.date_format()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.date_sub.html"><code class="docutils literal"><span class="pre">sql.functions.date_sub()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.datediff.html"><code class="docutils literal"><span class="pre">sql.functions.datediff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.dayofmonth.html"><code class="docutils literal"><span class="pre">sql.functions.dayofmonth()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.dayofyear.html"><code class="docutils literal"><span class="pre">sql.functions.dayofyear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.decode.html"><code class="docutils literal"><span class="pre">sql.functions.decode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.dense_rank.html"><code class="docutils literal"><span class="pre">sql.functions.dense_rank()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.desc.html"><code class="docutils literal"><span class="pre">sql.functions.desc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.encode.html"><code class="docutils literal"><span class="pre">sql.functions.encode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.exp.html"><code class="docutils literal"><span class="pre">sql.functions.exp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.explode.html"><code class="docutils literal"><span class="pre">sql.functions.explode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.expm1.html"><code class="docutils literal"><span class="pre">sql.functions.expm1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.expr.html"><code class="docutils literal"><span class="pre">sql.functions.expr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.factorial.html"><code class="docutils literal"><span class="pre">sql.functions.factorial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.first.html"><code class="docutils literal"><span class="pre">sql.functions.first()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.floor.html"><code class="docutils literal"><span class="pre">sql.functions.floor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.format_number.html"><code class="docutils literal"><span class="pre">sql.functions.format_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.format_string.html"><code class="docutils literal"><span class="pre">sql.functions.format_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.from_unixtime.html"><code class="docutils literal"><span class="pre">sql.functions.from_unixtime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.from_utc_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.from_utc_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.get_json_object.html"><code class="docutils literal"><span class="pre">sql.functions.get_json_object()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.greatest.html"><code class="docutils literal"><span class="pre">sql.functions.greatest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.grouping.html"><code class="docutils literal"><span class="pre">sql.functions.grouping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.grouping_id.html"><code class="docutils literal"><span class="pre">sql.functions.grouping_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.hash.html"><code class="docutils literal"><span class="pre">sql.functions.hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.hex.html"><code class="docutils literal"><span class="pre">sql.functions.hex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.hour.html"><code class="docutils literal"><span class="pre">sql.functions.hour()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.hypot.html"><code class="docutils literal"><span class="pre">sql.functions.hypot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.ignore_unicode_prefix.html"><code class="docutils literal"><span class="pre">sql.functions.ignore_unicode_prefix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.initcap.html"><code class="docutils literal"><span class="pre">sql.functions.initcap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.input_file_name.html"><code class="docutils literal"><span class="pre">sql.functions.input_file_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.instr.html"><code class="docutils literal"><span class="pre">sql.functions.instr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.isnan.html"><code class="docutils literal"><span class="pre">sql.functions.isnan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.isnull.html"><code class="docutils literal"><span class="pre">sql.functions.isnull()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.json_tuple.html"><code class="docutils literal"><span class="pre">sql.functions.json_tuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.kurtosis.html"><code class="docutils literal"><span class="pre">sql.functions.kurtosis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.lag.html"><code class="docutils literal"><span class="pre">sql.functions.lag()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.last.html"><code class="docutils literal"><span class="pre">sql.functions.last()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.last_day.html"><code class="docutils literal"><span class="pre">sql.functions.last_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.lead.html"><code class="docutils literal"><span class="pre">sql.functions.lead()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.least.html"><code class="docutils literal"><span class="pre">sql.functions.least()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.length.html"><code class="docutils literal"><span class="pre">sql.functions.length()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.levenshtein.html"><code class="docutils literal"><span class="pre">sql.functions.levenshtein()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.lit.html"><code class="docutils literal"><span class="pre">sql.functions.lit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.locate.html"><code class="docutils literal"><span class="pre">sql.functions.locate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.log.html"><code class="docutils literal"><span class="pre">sql.functions.log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.log10.html"><code class="docutils literal"><span class="pre">sql.functions.log10()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.log1p.html"><code class="docutils literal"><span class="pre">sql.functions.log1p()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.log2.html"><code class="docutils literal"><span class="pre">sql.functions.log2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.lower.html"><code class="docutils literal"><span class="pre">sql.functions.lower()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.lpad.html"><code class="docutils literal"><span class="pre">sql.functions.lpad()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.ltrim.html"><code class="docutils literal"><span class="pre">sql.functions.ltrim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.max.html"><code class="docutils literal"><span class="pre">sql.functions.max()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.md5.html"><code class="docutils literal"><span class="pre">sql.functions.md5()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.mean.html"><code class="docutils literal"><span class="pre">sql.functions.mean()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.min.html"><code class="docutils literal"><span class="pre">sql.functions.min()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.minute.html"><code class="docutils literal"><span class="pre">sql.functions.minute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.monotonically_increasing_id.html"><code class="docutils literal"><span class="pre">sql.functions.monotonically_increasing_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.month.html"><code class="docutils literal"><span class="pre">sql.functions.month()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.months_between.html"><code class="docutils literal"><span class="pre">sql.functions.months_between()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.nanvl.html"><code class="docutils literal"><span class="pre">sql.functions.nanvl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.next_day.html"><code class="docutils literal"><span class="pre">sql.functions.next_day()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.ntile.html"><code class="docutils literal"><span class="pre">sql.functions.ntile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.percent_rank.html"><code class="docutils literal"><span class="pre">sql.functions.percent_rank()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.posexplode.html"><code class="docutils literal"><span class="pre">sql.functions.posexplode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.pow.html"><code class="docutils literal"><span class="pre">sql.functions.pow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.quarter.html"><code class="docutils literal"><span class="pre">sql.functions.quarter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.rand.html"><code class="docutils literal"><span class="pre">sql.functions.rand()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.randn.html"><code class="docutils literal"><span class="pre">sql.functions.randn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.rank.html"><code class="docutils literal"><span class="pre">sql.functions.rank()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.regexp_extract.html"><code class="docutils literal"><span class="pre">sql.functions.regexp_extract()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.regexp_replace.html"><code class="docutils literal"><span class="pre">sql.functions.regexp_replace()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.repeat.html"><code class="docutils literal"><span class="pre">sql.functions.repeat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.reverse.html"><code class="docutils literal"><span class="pre">sql.functions.reverse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.rint.html"><code class="docutils literal"><span class="pre">sql.functions.rint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.round.html"><code class="docutils literal"><span class="pre">sql.functions.round()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.row_number.html"><code class="docutils literal"><span class="pre">sql.functions.row_number()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.rpad.html"><code class="docutils literal"><span class="pre">sql.functions.rpad()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.rtrim.html"><code class="docutils literal"><span class="pre">sql.functions.rtrim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.second.html"><code class="docutils literal"><span class="pre">sql.functions.second()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sha1.html"><code class="docutils literal"><span class="pre">sql.functions.sha1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sha2.html"><code class="docutils literal"><span class="pre">sql.functions.sha2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.shiftLeft.html"><code class="docutils literal"><span class="pre">sql.functions.shiftLeft()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.shiftRight.html"><code class="docutils literal"><span class="pre">sql.functions.shiftRight()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.shiftRightUnsigned.html"><code class="docutils literal"><span class="pre">sql.functions.shiftRightUnsigned()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.signum.html"><code class="docutils literal"><span class="pre">sql.functions.signum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sin.html"><code class="docutils literal"><span class="pre">sql.functions.sin()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.since.html"><code class="docutils literal"><span class="pre">sql.functions.since()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sinh.html"><code class="docutils literal"><span class="pre">sql.functions.sinh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.size.html"><code class="docutils literal"><span class="pre">sql.functions.size()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.skewness.html"><code class="docutils literal"><span class="pre">sql.functions.skewness()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sort_array.html"><code class="docutils literal"><span class="pre">sql.functions.sort_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.soundex.html"><code class="docutils literal"><span class="pre">sql.functions.soundex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.spark_partition_id.html"><code class="docutils literal"><span class="pre">sql.functions.spark_partition_id()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.split.html"><code class="docutils literal"><span class="pre">sql.functions.split()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sqrt.html"><code class="docutils literal"><span class="pre">sql.functions.sqrt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.stddev.html"><code class="docutils literal"><span class="pre">sql.functions.stddev()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.stddev_pop.html"><code class="docutils literal"><span class="pre">sql.functions.stddev_pop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.stddev_samp.html"><code class="docutils literal"><span class="pre">sql.functions.stddev_samp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.struct.html"><code class="docutils literal"><span class="pre">sql.functions.struct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.substring.html"><code class="docutils literal"><span class="pre">sql.functions.substring()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.substring_index.html"><code class="docutils literal"><span class="pre">sql.functions.substring_index()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sum.html"><code class="docutils literal"><span class="pre">sql.functions.sum()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.sumDistinct.html"><code class="docutils literal"><span class="pre">sql.functions.sumDistinct()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.tan.html"><code class="docutils literal"><span class="pre">sql.functions.tan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.tanh.html"><code class="docutils literal"><span class="pre">sql.functions.tanh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.toDegrees.html"><code class="docutils literal"><span class="pre">sql.functions.toDegrees()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.toRadians.html"><code class="docutils literal"><span class="pre">sql.functions.toRadians()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.to_date.html"><code class="docutils literal"><span class="pre">sql.functions.to_date()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.to_utc_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.to_utc_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.translate.html"><code class="docutils literal"><span class="pre">sql.functions.translate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.trim.html"><code class="docutils literal"><span class="pre">sql.functions.trim()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.trunc.html"><code class="docutils literal"><span class="pre">sql.functions.trunc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.udf.html"><code class="docutils literal"><span class="pre">sql.functions.udf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.unbase64.html"><code class="docutils literal"><span class="pre">sql.functions.unbase64()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.unhex.html"><code class="docutils literal"><span class="pre">sql.functions.unhex()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.unix_timestamp.html"><code class="docutils literal"><span class="pre">sql.functions.unix_timestamp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.upper.html"><code class="docutils literal"><span class="pre">sql.functions.upper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.v.html"><code class="docutils literal"><span class="pre">sql.functions.v()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.var_pop.html"><code class="docutils literal"><span class="pre">sql.functions.var_pop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.var_samp.html"><code class="docutils literal"><span class="pre">sql.functions.var_samp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.variance.html"><code class="docutils literal"><span class="pre">sql.functions.variance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.weekofyear.html"><code class="docutils literal"><span class="pre">sql.functions.weekofyear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.when.html"><code class="docutils literal"><span class="pre">sql.functions.when()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.window.html"><code class="docutils literal"><span class="pre">sql.functions.window()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.year.html"><code class="docutils literal"><span class="pre">sql.functions.year()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.AutoBatchedSerializer.html"><code class="docutils literal"><span class="pre">sql.functions.AutoBatchedSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.Column.html"><code class="docutils literal"><span class="pre">sql.functions.Column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.DataFrame.html"><code class="docutils literal"><span class="pre">sql.functions.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.PickleSerializer.html"><code class="docutils literal"><span class="pre">sql.functions.PickleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.SparkContext.html"><code class="docutils literal"><span class="pre">sql.functions.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.StringType.html"><code class="docutils literal"><span class="pre">sql.functions.StringType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.UserDefinedFunction.html"><code class="docutils literal"><span class="pre">sql.functions.UserDefinedFunction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/sql.functions.map.html"><code class="docutils literal"><span class="pre">sql.functions.map</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">sql.functions</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/sql.functions.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-sql.functions">
+<span id="sql-functions"></span><h1><a class="reference internal" href="#module-sql.functions" title="sql.functions"><code class="xref py py-mod docutils literal"><span class="pre">sql.functions</span></code></a><a class="headerlink" href="#module-sql.functions" title="Permalink to this headline">¶</a></h1>
+<p>A collections of builtin functions</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.abs.html#sql.functions.abs" title="sql.functions.abs"><code class="xref py py-obj docutils literal"><span class="pre">abs</span></code></a>(col)</td>
+<td>Computes the absolute value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.acos.html#sql.functions.acos" title="sql.functions.acos"><code class="xref py py-obj docutils literal"><span class="pre">acos</span></code></a>(col)</td>
+<td>Computes the cosine inverse of the given value; the returned angle is in the range0.0 through pi.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.add_months.html#sql.functions.add_months" title="sql.functions.add_months"><code class="xref py py-obj docutils literal"><span class="pre">add_months</span></code></a>(start,&nbsp;months)</td>
+<td>Returns the date that is <cite>months</cite> months after <cite>start</cite></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.approxCountDistinct.html#sql.functions.approxCountDistinct" title="sql.functions.approxCountDistinct"><code class="xref py py-obj docutils literal"><span class="pre">approxCountDistinct</span></code></a>(col[,&nbsp;rsd])</td>
+<td>Returns a new <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for approximate distinct count of <code class="docutils literal"><span class="pre">col</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.array.html#sql.functions.array" title="sql.functions.array"><code class="xref py py-obj docutils literal"><span class="pre">array</span></code></a>(*cols)</td>
+<td>Creates a new array column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.array_contains.html#sql.functions.array_contains" title="sql.functions.array_contains"><code class="xref py py-obj docutils literal"><span class="pre">array_contains</span></code></a>(col,&nbsp;value)</td>
+<td>Collection function: returns True if the array contains the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.asc.html#sql.functions.asc" title="sql.functions.asc"><code class="xref py py-obj docutils literal"><span class="pre">asc</span></code></a>(col)</td>
+<td>Returns a sort expression based on the ascending order of the given column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.ascii.html#sql.functions.ascii" title="sql.functions.ascii"><code class="xref py py-obj docutils literal"><span class="pre">ascii</span></code></a>(col)</td>
+<td>Computes the numeric value of the first character of the string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.asin.html#sql.functions.asin" title="sql.functions.asin"><code class="xref py py-obj docutils literal"><span class="pre">asin</span></code></a>(col)</td>
+<td>Computes the sine inverse of the given value; the returned angle is in the range-pi/2 through pi/2.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.atan.html#sql.functions.atan" title="sql.functions.atan"><code class="xref py py-obj docutils literal"><span class="pre">atan</span></code></a>(col)</td>
+<td>Computes the tangent inverse of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.atan2.html#sql.functions.atan2" title="sql.functions.atan2"><code class="xref py py-obj docutils literal"><span class="pre">atan2</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns the angle theta from the conversion of rectangular coordinates (x, y) topolar coordinates (r, theta).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.avg.html#sql.functions.avg" title="sql.functions.avg"><code class="xref py py-obj docutils literal"><span class="pre">avg</span></code></a>(col)</td>
+<td>Aggregate function: returns the average of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.base64.html#sql.functions.base64" title="sql.functions.base64"><code class="xref py py-obj docutils literal"><span class="pre">base64</span></code></a>(col)</td>
+<td>Computes the BASE64 encoding of a binary column and returns it as a string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.bin.html#sql.functions.bin" title="sql.functions.bin"><code class="xref py py-obj docutils literal"><span class="pre">bin</span></code></a>(col)</td>
+<td>Returns the string representation of the binary value of the given column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.bitwiseNOT.html#sql.functions.bitwiseNOT" title="sql.functions.bitwiseNOT"><code class="xref py py-obj docutils literal"><span class="pre">bitwiseNOT</span></code></a>(col)</td>
+<td>Computes bitwise not.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.broadcast.html#sql.functions.broadcast" title="sql.functions.broadcast"><code class="xref py py-obj docutils literal"><span class="pre">broadcast</span></code></a>(df)</td>
+<td>Marks a DataFrame as small enough for use in broadcast joins.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.bround.html#sql.functions.bround" title="sql.functions.bround"><code class="xref py py-obj docutils literal"><span class="pre">bround</span></code></a>(col[,&nbsp;scale])</td>
+<td>Round the given value to <cite>scale</cite> decimal places using HALF_EVEN rounding mode if <cite>scale</cite> &gt;= 0 or at integral part when <cite>scale</cite> &lt; 0.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.cbrt.html#sql.functions.cbrt" title="sql.functions.cbrt"><code class="xref py py-obj docutils literal"><span class="pre">cbrt</span></code></a>(col)</td>
+<td>Computes the cube-root of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.ceil.html#sql.functions.ceil" title="sql.functions.ceil"><code class="xref py py-obj docutils literal"><span class="pre">ceil</span></code></a>(col)</td>
+<td>Computes the ceiling of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.coalesce.html#sql.functions.coalesce" title="sql.functions.coalesce"><code class="xref py py-obj docutils literal"><span class="pre">coalesce</span></code></a>(*cols)</td>
+<td>Returns the first column that is not null.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.col.html#sql.functions.col" title="sql.functions.col"><code class="xref py py-obj docutils literal"><span class="pre">col</span></code></a>(col)</td>
+<td>Returns a <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> based on the given column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.collect_list.html#sql.functions.collect_list" title="sql.functions.collect_list"><code class="xref py py-obj docutils literal"><span class="pre">collect_list</span></code></a>(col)</td>
+<td>Aggregate function: returns a list of objects with duplicates.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.collect_set.html#sql.functions.collect_set" title="sql.functions.collect_set"><code class="xref py py-obj docutils literal"><span class="pre">collect_set</span></code></a>(col)</td>
+<td>Aggregate function: returns a set of objects with duplicate elements eliminated.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.column.html#sql.functions.column" title="sql.functions.column"><code class="xref py py-obj docutils literal"><span class="pre">column</span></code></a>(col)</td>
+<td>Returns a <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> based on the given column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.concat.html#sql.functions.concat" title="sql.functions.concat"><code class="xref py py-obj docutils literal"><span class="pre">concat</span></code></a>(*cols)</td>
+<td>Concatenates multiple input string columns together into a single string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.concat_ws.html#sql.functions.concat_ws" title="sql.functions.concat_ws"><code class="xref py py-obj docutils literal"><span class="pre">concat_ws</span></code></a>(sep,&nbsp;*cols)</td>
+<td>Concatenates multiple input string columns together into a single string column, using the given separator.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.conv.html#sql.functions.conv" title="sql.functions.conv"><code class="xref py py-obj docutils literal"><span class="pre">conv</span></code></a>(col,&nbsp;fromBase,&nbsp;toBase)</td>
+<td>Convert a number in a string column from one base to another.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.corr.html#sql.functions.corr" title="sql.functions.corr"><code class="xref py py-obj docutils literal"><span class="pre">corr</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns a new <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for the Pearson Correlation Coefficient for <code class="docutils literal"><span class="pre">col1</span></code> and <code class="docutils literal"><span class="pre">col2</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.cos.html#sql.functions.cos" title="sql.functions.cos"><code class="xref py py-obj docutils literal"><span class="pre">cos</span></code></a>(col)</td>
+<td>Computes the cosine of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.cosh.html#sql.functions.cosh" title="sql.functions.cosh"><code class="xref py py-obj docutils literal"><span class="pre">cosh</span></code></a>(col)</td>
+<td>Computes the hyperbolic cosine of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.count.html#sql.functions.count" title="sql.functions.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>(col)</td>
+<td>Aggregate function: returns the number of items in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.countDistinct.html#sql.functions.countDistinct" title="sql.functions.countDistinct"><code class="xref py py-obj docutils literal"><span class="pre">countDistinct</span></code></a>(col,&nbsp;*cols)</td>
+<td>Returns a new <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for distinct count of <code class="docutils literal"><span class="pre">col</span></code> or <code class="docutils literal"><span class="pre">cols</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.covar_pop.html#sql.functions.covar_pop" title="sql.functions.covar_pop"><code class="xref py py-obj docutils literal"><span class="pre">covar_pop</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns a new <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for the population covariance of <code class="docutils literal"><span class="pre">col1</span></code> and <code class="docutils literal"><span class="pre">col2</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.covar_samp.html#sql.functions.covar_samp" title="sql.functions.covar_samp"><code class="xref py py-obj docutils literal"><span class="pre">covar_samp</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns a new <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> for the sample covariance of <code class="docutils literal"><span class="pre">col1</span></code> and <code class="docutils literal"><span class="pre">col2</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.crc32.html#sql.functions.crc32" title="sql.functions.crc32"><code class="xref py py-obj docutils literal"><span class="pre">crc32</span></code></a>(col)</td>
+<td>Calculates the cyclic redundancy check value  (CRC32) of a binary column and returns the value as a bigint.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.create_map.html#sql.functions.create_map" title="sql.functions.create_map"><code class="xref py py-obj docutils literal"><span class="pre">create_map</span></code></a>(*cols)</td>
+<td>Creates a new map column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.cume_dist.html#sql.functions.cume_dist" title="sql.functions.cume_dist"><code class="xref py py-obj docutils literal"><span class="pre">cume_dist</span></code></a>()</td>
+<td>Window function: returns the cumulative distribution of values within a window partition, i.e.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.current_date.html#sql.functions.current_date" title="sql.functions.current_date"><code class="xref py py-obj docutils literal"><span class="pre">current_date</span></code></a>()</td>
+<td>Returns the current date as a date column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.current_timestamp.html#sql.functions.current_timestamp" title="sql.functions.current_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">current_timestamp</span></code></a>()</td>
+<td>Returns the current timestamp as a timestamp column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.date_add.html#sql.functions.date_add" title="sql.functions.date_add"><code class="xref py py-obj docutils literal"><span class="pre">date_add</span></code></a>(start,&nbsp;days)</td>
+<td>Returns the date that is <cite>days</cite> days after <cite>start</cite></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.date_format.html#sql.functions.date_format" title="sql.functions.date_format"><code class="xref py py-obj docutils literal"><span class="pre">date_format</span></code></a>(date,&nbsp;format)</td>
+<td>Converts a date/timestamp/string to a value of string in the format specified by the date format given by the second argument.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.date_sub.html#sql.functions.date_sub" title="sql.functions.date_sub"><code class="xref py py-obj docutils literal"><span class="pre">date_sub</span></code></a>(start,&nbsp;days)</td>
+<td>Returns the date that is <cite>days</cite> days before <cite>start</cite></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.datediff.html#sql.functions.datediff" title="sql.functions.datediff"><code class="xref py py-obj docutils literal"><span class="pre">datediff</span></code></a>(end,&nbsp;start)</td>
+<td>Returns the number of days from <cite>start</cite> to <cite>end</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.dayofmonth.html#sql.functions.dayofmonth" title="sql.functions.dayofmonth"><code class="xref py py-obj docutils literal"><span class="pre">dayofmonth</span></code></a>(col)</td>
+<td>Extract the day of the month of a given date as integer.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.dayofyear.html#sql.functions.dayofyear" title="sql.functions.dayofyear"><code class="xref py py-obj docutils literal"><span class="pre">dayofyear</span></code></a>(col)</td>
+<td>Extract the day of the year of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.decode.html#sql.functions.decode" title="sql.functions.decode"><code class="xref py py-obj docutils literal"><span class="pre">decode</span></code></a>(col,&nbsp;charset)</td>
+<td>Computes the first argument into a string from a binary using the provided character set (one of &#8216;US-ASCII&#8217;, &#8216;ISO-8859-1&#8217;, &#8216;UTF-8&#8217;, &#8216;UTF-16BE&#8217;, &#8216;UTF-16LE&#8217;, &#8216;UTF-16&#8217;).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.dense_rank.html#sql.functions.dense_rank" title="sql.functions.dense_rank"><code class="xref py py-obj docutils literal"><span class="pre">dense_rank</span></code></a>()</td>
+<td>Window function: returns the rank of rows within a window partition, without any gaps.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.desc.html#sql.functions.desc" title="sql.functions.desc"><code class="xref py py-obj docutils literal"><span class="pre">desc</span></code></a>(col)</td>
+<td>Returns a sort expression based on the descending order of the given column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.encode.html#sql.functions.encode" title="sql.functions.encode"><code class="xref py py-obj docutils literal"><span class="pre">encode</span></code></a>(col,&nbsp;charset)</td>
+<td>Computes the first argument into a binary from a string using the provided character set (one of &#8216;US-ASCII&#8217;, &#8216;ISO-8859-1&#8217;, &#8216;UTF-8&#8217;, &#8216;UTF-16BE&#8217;, &#8216;UTF-16LE&#8217;, &#8216;UTF-16&#8217;).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.exp.html#sql.functions.exp" title="sql.functions.exp"><code class="xref py py-obj docutils literal"><span class="pre">exp</span></code></a>(col)</td>
+<td>Computes the exponential of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.explode.html#sql.functions.explode" title="sql.functions.explode"><code class="xref py py-obj docutils literal"><span class="pre">explode</span></code></a>(col)</td>
+<td>Returns a new row for each element in the given array or map.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.expm1.html#sql.functions.expm1" title="sql.functions.expm1"><code class="xref py py-obj docutils literal"><span class="pre">expm1</span></code></a>(col)</td>
+<td>Computes the exponential of the given value minus one.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.expr.html#sql.functions.expr" title="sql.functions.expr"><code class="xref py py-obj docutils literal"><span class="pre">expr</span></code></a>(str)</td>
+<td>Parses the expression string into the column that it represents</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.factorial.html#sql.functions.factorial" title="sql.functions.factorial"><code class="xref py py-obj docutils literal"><span class="pre">factorial</span></code></a>(col)</td>
+<td>Computes the factorial of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.first.html#sql.functions.first" title="sql.functions.first"><code class="xref py py-obj docutils literal"><span class="pre">first</span></code></a>(col[,&nbsp;ignorenulls])</td>
+<td>Aggregate function: returns the first value in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.floor.html#sql.functions.floor" title="sql.functions.floor"><code class="xref py py-obj docutils literal"><span class="pre">floor</span></code></a>(col)</td>
+<td>Computes the floor of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.format_number.html#sql.functions.format_number" title="sql.functions.format_number"><code class="xref py py-obj docutils literal"><span class="pre">format_number</span></code></a>(col,&nbsp;d)</td>
+<td>Formats the number X to a format like &#8216;#,&#8211;#,&#8211;#.&#8211;&#8217;, rounded to d decimal places, and returns the result as a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.format_string.html#sql.functions.format_string" title="sql.functions.format_string"><code class="xref py py-obj docutils literal"><span class="pre">format_string</span></code></a>(format,&nbsp;*cols)</td>
+<td>Formats the arguments in printf-style and returns the result as a string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.from_unixtime.html#sql.functions.from_unixtime" title="sql.functions.from_unixtime"><code class="xref py py-obj docutils literal"><span class="pre">from_unixtime</span></code></a>(timestamp[,&nbsp;format])</td>
+<td>Converts the number of seconds from unix epoch (1970-01-01 00:00:00 UTC) to a string representing the timestamp of that moment in the current system time zone in the given format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.from_utc_timestamp.html#sql.functions.from_utc_timestamp" title="sql.functions.from_utc_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">from_utc_timestamp</span></code></a>(timestamp,&nbsp;tz)</td>
+<td>Assumes given timestamp is UTC and converts to given timezone.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.get_json_object.html#sql.functions.get_json_object" title="sql.functions.get_json_object"><code class="xref py py-obj docutils literal"><span class="pre">get_json_object</span></code></a>(col,&nbsp;path)</td>
+<td>Extracts json object from a json string based on json path specified, and returns json string of the extracted json object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.greatest.html#sql.functions.greatest" title="sql.functions.greatest"><code class="xref py py-obj docutils literal"><span class="pre">greatest</span></code></a>(*cols)</td>
+<td>Returns the greatest value of the list of column names, skipping null values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.grouping.html#sql.functions.grouping" title="sql.functions.grouping"><code class="xref py py-obj docutils literal"><span class="pre">grouping</span></code></a>(col)</td>
+<td>Aggregate function: indicates whether a specified column in a GROUP BY list is aggregated or not, returns 1 for aggregated or 0 for not aggregated in the result set.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.grouping_id.html#sql.functions.grouping_id" title="sql.functions.grouping_id"><code class="xref py py-obj docutils literal"><span class="pre">grouping_id</span></code></a>(*cols)</td>
+<td>Aggregate function: returns the level of grouping, equals to</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.hash.html#sql.functions.hash" title="sql.functions.hash"><code class="xref py py-obj docutils literal"><span class="pre">hash</span></code></a>(*cols)</td>
+<td>Calculates the hash code of given columns, and returns the result as an int column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.hex.html#sql.functions.hex" title="sql.functions.hex"><code class="xref py py-obj docutils literal"><span class="pre">hex</span></code></a>(col)</td>
+<td>Computes hex value of the given column, which could be StringType, BinaryType, IntegerType or LongType.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.hour.html#sql.functions.hour" title="sql.functions.hour"><code class="xref py py-obj docutils literal"><span class="pre">hour</span></code></a>(col)</td>
+<td>Extract the hours of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.hypot.html#sql.functions.hypot" title="sql.functions.hypot"><code class="xref py py-obj docutils literal"><span class="pre">hypot</span></code></a>(col1,&nbsp;col2)</td>
+<td>Computes <cite>sqrt(a^2 + b^2)</cite> without intermediate overflow or underflow.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.ignore_unicode_prefix.html#sql.functions.ignore_unicode_prefix" title="sql.functions.ignore_unicode_prefix"><code class="xref py py-obj docutils literal"><span class="pre">ignore_unicode_prefix</span></code></a>(f)</td>
+<td>Ignore the &#8216;u&#8217; prefix of string in doc tests, to make it works</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.initcap.html#sql.functions.initcap" title="sql.functions.initcap"><code class="xref py py-obj docutils literal"><span class="pre">initcap</span></code></a>(col)</td>
+<td>Translate the first letter of each word to upper case in the sentence.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.input_file_name.html#sql.functions.input_file_name" title="sql.functions.input_file_name"><code class="xref py py-obj docutils literal"><span class="pre">input_file_name</span></code></a>()</td>
+<td>Creates a string column for the file name of the current Spark task.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.instr.html#sql.functions.instr" title="sql.functions.instr"><code class="xref py py-obj docutils literal"><span class="pre">instr</span></code></a>(str,&nbsp;substr)</td>
+<td>Locate the position of the first occurrence of substr column in the given string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.isnan.html#sql.functions.isnan" title="sql.functions.isnan"><code class="xref py py-obj docutils literal"><span class="pre">isnan</span></code></a>(col)</td>
+<td>An expression that returns true iff the column is NaN.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.isnull.html#sql.functions.isnull" title="sql.functions.isnull"><code class="xref py py-obj docutils literal"><span class="pre">isnull</span></code></a>(col)</td>
+<td>An expression that returns true iff the column is null.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.json_tuple.html#sql.functions.json_tuple" title="sql.functions.json_tuple"><code class="xref py py-obj docutils literal"><span class="pre">json_tuple</span></code></a>(col,&nbsp;*fields)</td>
+<td>Creates a new row for a json column according to the given field names.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.kurtosis.html#sql.functions.kurtosis" title="sql.functions.kurtosis"><code class="xref py py-obj docutils literal"><span class="pre">kurtosis</span></code></a>(col)</td>
+<td>Aggregate function: returns the kurtosis of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.lag.html#sql.functions.lag" title="sql.functions.lag"><code class="xref py py-obj docutils literal"><span class="pre">lag</span></code></a>(col[,&nbsp;count,&nbsp;default])</td>
+<td>Window function: returns the value that is <cite>offset</cite> rows before the current row, and <cite>defaultValue</cite> if there is less than <cite>offset</cite> rows before the current row.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.last.html#sql.functions.last" title="sql.functions.last"><code class="xref py py-obj docutils literal"><span class="pre">last</span></code></a>(col[,&nbsp;ignorenulls])</td>
+<td>Aggregate function: returns the last value in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.last_day.html#sql.functions.last_day" title="sql.functions.last_day"><code class="xref py py-obj docutils literal"><span class="pre">last_day</span></code></a>(date)</td>
+<td>Returns the last day of the month which the given date belongs to.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.lead.html#sql.functions.lead" title="sql.functions.lead"><code class="xref py py-obj docutils literal"><span class="pre">lead</span></code></a>(col[,&nbsp;count,&nbsp;default])</td>
+<td>Window function: returns the value that is <cite>offset</cite> rows after the current row, and <cite>defaultValue</cite> if there is less than <cite>offset</cite> rows after the current row.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.least.html#sql.functions.least" title="sql.functions.least"><code class="xref py py-obj docutils literal"><span class="pre">least</span></code></a>(*cols)</td>
+<td>Returns the least value of the list of column names, skipping null values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.length.html#sql.functions.length" title="sql.functions.length"><code class="xref py py-obj docutils literal"><span class="pre">length</span></code></a>(col)</td>
+<td>Calculates the length of a string or binary expression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.levenshtein.html#sql.functions.levenshtein" title="sql.functions.levenshtein"><code class="xref py py-obj docutils literal"><span class="pre">levenshtein</span></code></a>(left,&nbsp;right)</td>
+<td>Computes the Levenshtein distance of the two given strings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.lit.html#sql.functions.lit" title="sql.functions.lit"><code class="xref py py-obj docutils literal"><span class="pre">lit</span></code></a>(col)</td>
+<td>Creates a <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> of literal value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.locate.html#sql.functions.locate" title="sql.functions.locate"><code class="xref py py-obj docutils literal"><span class="pre">locate</span></code></a>(substr,&nbsp;str[,&nbsp;pos])</td>
+<td>Locate the position of the first occurrence of substr in a string column, after position pos.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.log.html#sql.functions.log" title="sql.functions.log"><code class="xref py py-obj docutils literal"><span class="pre">log</span></code></a>(arg1[,&nbsp;arg2])</td>
+<td>Returns the first argument-based logarithm of the second argument.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.log10.html#sql.functions.log10" title="sql.functions.log10"><code class="xref py py-obj docutils literal"><span class="pre">log10</span></code></a>(col)</td>
+<td>Computes the logarithm of the given value in Base 10.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.log1p.html#sql.functions.log1p" title="sql.functions.log1p"><code class="xref py py-obj docutils literal"><span class="pre">log1p</span></code></a>(col)</td>
+<td>Computes the natural logarithm of the given value plus one.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.log2.html#sql.functions.log2" title="sql.functions.log2"><code class="xref py py-obj docutils literal"><span class="pre">log2</span></code></a>(col)</td>
+<td>Returns the base-2 logarithm of the argument.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.lower.html#sql.functions.lower" title="sql.functions.lower"><code class="xref py py-obj docutils literal"><span class="pre">lower</span></code></a>(col)</td>
+<td>Converts a string column to lower case.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.lpad.html#sql.functions.lpad" title="sql.functions.lpad"><code class="xref py py-obj docutils literal"><span class="pre">lpad</span></code></a>(col,&nbsp;len,&nbsp;pad)</td>
+<td>Left-pad the string column to width <cite>len</cite> with <cite>pad</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.ltrim.html#sql.functions.ltrim" title="sql.functions.ltrim"><code class="xref py py-obj docutils literal"><span class="pre">ltrim</span></code></a>(col)</td>
+<td>Trim the spaces from left end for the specified string value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.max.html#sql.functions.max" title="sql.functions.max"><code class="xref py py-obj docutils literal"><span class="pre">max</span></code></a>(col)</td>
+<td>Aggregate function: returns the maximum value of the expression in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.md5.html#sql.functions.md5" title="sql.functions.md5"><code class="xref py py-obj docutils literal"><span class="pre">md5</span></code></a>(col)</td>
+<td>Calculates the MD5 digest and returns the value as a 32 character hex string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.mean.html#sql.functions.mean" title="sql.functions.mean"><code class="xref py py-obj docutils literal"><span class="pre">mean</span></code></a>(col)</td>
+<td>Aggregate function: returns the average of the values in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.min.html#sql.functions.min" title="sql.functions.min"><code class="xref py py-obj docutils literal"><span class="pre">min</span></code></a>(col)</td>
+<td>Aggregate function: returns the minimum value of the expression in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.minute.html#sql.functions.minute" title="sql.functions.minute"><code class="xref py py-obj docutils literal"><span class="pre">minute</span></code></a>(col)</td>
+<td>Extract the minutes of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.monotonically_increasing_id.html#sql.functions.monotonically_increasing_id" title="sql.functions.monotonically_increasing_id"><code class="xref py py-obj docutils literal"><span class="pre">monotonically_increasing_id</span></code></a>()</td>
+<td>A column that generates monotonically increasing 64-bit integers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.month.html#sql.functions.month" title="sql.functions.month"><code class="xref py py-obj docutils literal"><span class="pre">month</span></code></a>(col)</td>
+<td>Extract the month of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.months_between.html#sql.functions.months_between" title="sql.functions.months_between"><code class="xref py py-obj docutils literal"><span class="pre">months_between</span></code></a>(date1,&nbsp;date2)</td>
+<td>Returns the number of months between date1 and date2.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.nanvl.html#sql.functions.nanvl" title="sql.functions.nanvl"><code class="xref py py-obj docutils literal"><span class="pre">nanvl</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns col1 if it is not NaN, or col2 if col1 is NaN.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.next_day.html#sql.functions.next_day" title="sql.functions.next_day"><code class="xref py py-obj docutils literal"><span class="pre">next_day</span></code></a>(date,&nbsp;dayOfWeek)</td>
+<td>Returns the first date which is later than the value of the date column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.ntile.html#sql.functions.ntile" title="sql.functions.ntile"><code class="xref py py-obj docutils literal"><span class="pre">ntile</span></code></a>(n)</td>
+<td>Window function: returns the ntile group id (from 1 to <cite>n</cite> inclusive) in an ordered window partition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.percent_rank.html#sql.functions.percent_rank" title="sql.functions.percent_rank"><code class="xref py py-obj docutils literal"><span class="pre">percent_rank</span></code></a>()</td>
+<td>Window function: returns the relative rank (i.e.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.posexplode.html#sql.functions.posexplode" title="sql.functions.posexplode"><code class="xref py py-obj docutils literal"><span class="pre">posexplode</span></code></a>(col)</td>
+<td>Returns a new row for each element with position in the given array or map.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.pow.html#sql.functions.pow" title="sql.functions.pow"><code class="xref py py-obj docutils literal"><span class="pre">pow</span></code></a>(col1,&nbsp;col2)</td>
+<td>Returns the value of the first argument raised to the power of the second argument.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.quarter.html#sql.functions.quarter" title="sql.functions.quarter"><code class="xref py py-obj docutils literal"><span class="pre">quarter</span></code></a>(col)</td>
+<td>Extract the quarter of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.rand.html#sql.functions.rand" title="sql.functions.rand"><code class="xref py py-obj docutils literal"><span class="pre">rand</span></code></a>([seed])</td>
+<td>Generates a random column with i.i.d.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.randn.html#sql.functions.randn" title="sql.functions.randn"><code class="xref py py-obj docutils literal"><span class="pre">randn</span></code></a>([seed])</td>
+<td>Generates a column with i.i.d.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.rank.html#sql.functions.rank" title="sql.functions.rank"><code class="xref py py-obj docutils literal"><span class="pre">rank</span></code></a>()</td>
+<td>Window function: returns the rank of rows within a window partition.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.regexp_extract.html#sql.functions.regexp_extract" title="sql.functions.regexp_extract"><code class="xref py py-obj docutils literal"><span class="pre">regexp_extract</span></code></a>(str,&nbsp;pattern,&nbsp;idx)</td>
+<td>Extract a specific(idx) group identified by a java regex, from the specified string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.regexp_replace.html#sql.functions.regexp_replace" title="sql.functions.regexp_replace"><code class="xref py py-obj docutils literal"><span class="pre">regexp_replace</span></code></a>(str,&nbsp;pattern,&nbsp;replacement)</td>
+<td>Replace all substrings of the specified string value that match regexp with rep.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.repeat.html#sql.functions.repeat" title="sql.functions.repeat"><code class="xref py py-obj docutils literal"><span class="pre">repeat</span></code></a>(col,&nbsp;n)</td>
+<td>Repeats a string column n times, and returns it as a new string column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.reverse.html#sql.functions.reverse" title="sql.functions.reverse"><code class="xref py py-obj docutils literal"><span class="pre">reverse</span></code></a>(col)</td>
+<td>Reverses the string column and returns it as a new string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.rint.html#sql.functions.rint" title="sql.functions.rint"><code class="xref py py-obj docutils literal"><span class="pre">rint</span></code></a>(col)</td>
+<td>Returns the double value that is closest in value to the argument and is equal to a mathematical integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.round.html#sql.functions.round" title="sql.functions.round"><code class="xref py py-obj docutils literal"><span class="pre">round</span></code></a>(col[,&nbsp;scale])</td>
+<td>Round the given value to <cite>scale</cite> decimal places using HALF_UP rounding mode if <cite>scale</cite> &gt;= 0 or at integral part when <cite>scale</cite> &lt; 0.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.row_number.html#sql.functions.row_number" title="sql.functions.row_number"><code class="xref py py-obj docutils literal"><span class="pre">row_number</span></code></a>()</td>
+<td>Window function: returns a sequential number starting at 1 within a window partition.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.rpad.html#sql.functions.rpad" title="sql.functions.rpad"><code class="xref py py-obj docutils literal"><span class="pre">rpad</span></code></a>(col,&nbsp;len,&nbsp;pad)</td>
+<td>Right-pad the string column to width <cite>len</cite> with <cite>pad</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.rtrim.html#sql.functions.rtrim" title="sql.functions.rtrim"><code class="xref py py-obj docutils literal"><span class="pre">rtrim</span></code></a>(col)</td>
+<td>Trim the spaces from right end for the specified string value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.second.html#sql.functions.second" title="sql.functions.second"><code class="xref py py-obj docutils literal"><span class="pre">second</span></code></a>(col)</td>
+<td>Extract the seconds of a given date as integer.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.sha1.html#sql.functions.sha1" title="sql.functions.sha1"><code class="xref py py-obj docutils literal"><span class="pre">sha1</span></code></a>(col)</td>
+<td>Returns the hex string result of SHA-1.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.sha2.html#sql.functions.sha2" title="sql.functions.sha2"><code class="xref py py-obj docutils literal"><span class="pre">sha2</span></code></a>(col,&nbsp;numBits)</td>
+<td>Returns the hex string result of SHA-2 family of hash functions (SHA-224, SHA-256, SHA-384, and SHA-512).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.shiftLeft.html#sql.functions.shiftLeft" title="sql.functions.shiftLeft"><code class="xref py py-obj docutils literal"><span class="pre">shiftLeft</span></code></a>(col,&nbsp;numBits)</td>
+<td>Shift the given value numBits left.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.shiftRight.html#sql.functions.shiftRight" title="sql.functions.shiftRight"><code class="xref py py-obj docutils literal"><span class="pre">shiftRight</span></code></a>(col,&nbsp;numBits)</td>
+<td>Shift the given value numBits right.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.shiftRightUnsigned.html#sql.functions.shiftRightUnsigned" title="sql.functions.shiftRightUnsigned"><code class="xref py py-obj docutils literal"><span class="pre">shiftRightUnsigned</span></code></a>(col,&nbsp;numBits)</td>
+<td>Unsigned shift the given value numBits right.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.signum.html#sql.functions.signum" title="sql.functions.signum"><code class="xref py py-obj docutils literal"><span class="pre">signum</span></code></a>(col)</td>
+<td>Computes the signum of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.sin.html#sql.functions.sin" title="sql.functions.sin"><code class="xref py py-obj docutils literal"><span class="pre">sin</span></code></a>(col)</td>
+<td>Computes the sine of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.since.html#sql.functions.since" title="sql.functions.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.sinh.html#sql.functions.sinh" title="sql.functions.sinh"><code class="xref py py-obj docutils literal"><span class="pre">sinh</span></code></a>(col)</td>
+<td>Computes the hyperbolic sine of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.size.html#sql.functions.size" title="sql.functions.size"><code class="xref py py-obj docutils literal"><span class="pre">size</span></code></a>(col)</td>
+<td>Collection function: returns the length of the array or map stored in the column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.skewness.html#sql.functions.skewness" title="sql.functions.skewness"><code class="xref py py-obj docutils literal"><span class="pre">skewness</span></code></a>(col)</td>
+<td>Aggregate function: returns the skewness of the values in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.sort_array.html#sql.functions.sort_array" title="sql.functions.sort_array"><code class="xref py py-obj docutils literal"><span class="pre">sort_array</span></code></a>(col[,&nbsp;asc])</td>
+<td>Collection function: sorts the input array for the given column in ascending order.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.soundex.html#sql.functions.soundex" title="sql.functions.soundex"><code class="xref py py-obj docutils literal"><span class="pre">soundex</span></code></a>(col)</td>
+<td>Returns the SoundEx encoding for a string</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.spark_partition_id.html#sql.functions.spark_partition_id" title="sql.functions.spark_partition_id"><code class="xref py py-obj docutils literal"><span class="pre">spark_partition_id</span></code></a>()</td>
+<td>A column for partition ID of the Spark task.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.split.html#sql.functions.split" title="sql.functions.split"><code class="xref py py-obj docutils literal"><span class="pre">split</span></code></a>(str,&nbsp;pattern)</td>
+<td>Splits str around pattern (pattern is a regular expression).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.sqrt.html#sql.functions.sqrt" title="sql.functions.sqrt"><code class="xref py py-obj docutils literal"><span class="pre">sqrt</span></code></a>(col)</td>
+<td>Computes the square root of the specified float value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.stddev.html#sql.functions.stddev" title="sql.functions.stddev"><code class="xref py py-obj docutils literal"><span class="pre">stddev</span></code></a>(col)</td>
+<td>Aggregate function: returns the unbiased sample standard deviation of the expression in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.stddev_pop.html#sql.functions.stddev_pop" title="sql.functions.stddev_pop"><code class="xref py py-obj docutils literal"><span class="pre">stddev_pop</span></code></a>(col)</td>
+<td>Aggregate function: returns population standard deviation of the expression in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.stddev_samp.html#sql.functions.stddev_samp" title="sql.functions.stddev_samp"><code class="xref py py-obj docutils literal"><span class="pre">stddev_samp</span></code></a>(col)</td>
+<td>Aggregate function: returns the unbiased sample standard deviation of the expression in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.struct.html#sql.functions.struct" title="sql.functions.struct"><code class="xref py py-obj docutils literal"><span class="pre">struct</span></code></a>(*cols)</td>
+<td>Creates a new struct column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.substring.html#sql.functions.substring" title="sql.functions.substring"><code class="xref py py-obj docutils literal"><span class="pre">substring</span></code></a>(str,&nbsp;pos,&nbsp;len)</td>
+<td>Substring starts at <cite>pos</cite> and is of length <cite>len</cite> when str is String type or</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.substring_index.html#sql.functions.substring_index" title="sql.functions.substring_index"><code class="xref py py-obj docutils literal"><span class="pre">substring_index</span></code></a>(str,&nbsp;delim,&nbsp;count)</td>
+<td>Returns the substring from string str before count occurrences of the delimiter delim.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.sum.html#sql.functions.sum" title="sql.functions.sum"><code class="xref py py-obj docutils literal"><span class="pre">sum</span></code></a>(col)</td>
+<td>Aggregate function: returns the sum of all values in the expression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.sumDistinct.html#sql.functions.sumDistinct" title="sql.functions.sumDistinct"><code class="xref py py-obj docutils literal"><span class="pre">sumDistinct</span></code></a>(col)</td>
+<td>Aggregate function: returns the sum of distinct values in the expression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.tan.html#sql.functions.tan" title="sql.functions.tan"><code class="xref py py-obj docutils literal"><span class="pre">tan</span></code></a>(col)</td>
+<td>Computes the tangent of the given value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.tanh.html#sql.functions.tanh" title="sql.functions.tanh"><code class="xref py py-obj docutils literal"><span class="pre">tanh</span></code></a>(col)</td>
+<td>Computes the hyperbolic tangent of the given value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.toDegrees.html#sql.functions.toDegrees" title="sql.functions.toDegrees"><code class="xref py py-obj docutils literal"><span class="pre">toDegrees</span></code></a>(col)</td>
+<td>Converts an angle measured in radians to an approximately equivalent angle measured in degrees.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.toRadians.html#sql.functions.toRadians" title="sql.functions.toRadians"><code class="xref py py-obj docutils literal"><span class="pre">toRadians</span></code></a>(col)</td>
+<td>Converts an angle measured in degrees to an approximately equivalent angle measured in radians.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.to_date.html#sql.functions.to_date" title="sql.functions.to_date"><code class="xref py py-obj docutils literal"><span class="pre">to_date</span></code></a>(col)</td>
+<td>Converts the column of StringType or TimestampType into DateType.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.to_utc_timestamp.html#sql.functions.to_utc_timestamp" title="sql.functions.to_utc_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">to_utc_timestamp</span></code></a>(timestamp,&nbsp;tz)</td>
+<td>Assumes given timestamp is in given timezone and converts to UTC.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.translate.html#sql.functions.translate" title="sql.functions.translate"><code class="xref py py-obj docutils literal"><span class="pre">translate</span></code></a>(srcCol,&nbsp;matching,&nbsp;replace)</td>
+<td>A function translate any character in the <cite>srcCol</cite> by a character in <cite>matching</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.trim.html#sql.functions.trim" title="sql.functions.trim"><code class="xref py py-obj docutils literal"><span class="pre">trim</span></code></a>(col)</td>
+<td>Trim the spaces from both ends for the specified string column.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.trunc.html#sql.functions.trunc" title="sql.functions.trunc"><code class="xref py py-obj docutils literal"><span class="pre">trunc</span></code></a>(date,&nbsp;format)</td>
+<td>Returns date truncated to the unit specified by the format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.udf.html#sql.functions.udf" title="sql.functions.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a>(f[,&nbsp;returnType])</td>
+<td>Creates a <a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-class docutils literal"><span class="pre">Column</span></code></a> expression representing a user defined function (UDF).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.unbase64.html#sql.functions.unbase64" title="sql.functions.unbase64"><code class="xref py py-obj docutils literal"><span class="pre">unbase64</span></code></a>(col)</td>
+<td>Decodes a BASE64 encoded string column and returns it as a binary column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.unhex.html#sql.functions.unhex" title="sql.functions.unhex"><code class="xref py py-obj docutils literal"><span class="pre">unhex</span></code></a>(col)</td>
+<td>Inverse of hex.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.unix_timestamp.html#sql.functions.unix_timestamp" title="sql.functions.unix_timestamp"><code class="xref py py-obj docutils literal"><span class="pre">unix_timestamp</span></code></a>([timestamp,&nbsp;format])</td>
+<td>Convert time string with given pattern (&#8216;yyyy-MM-dd HH:mm:ss&#8217;, by default) to Unix time stamp (in seconds), using the default timezone and the default locale, return null if fail.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.upper.html#sql.functions.upper" title="sql.functions.upper"><code class="xref py py-obj docutils literal"><span class="pre">upper</span></code></a>(col)</td>
+<td>Converts a string column to upper case.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.v.html#sql.functions.v" title="sql.functions.v"><code class="xref py py-obj docutils literal"><span class="pre">v</span></code></a>(name[,&nbsp;doc])</td>
+<td>Create a binary mathfunction by name</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.var_pop.html#sql.functions.var_pop" title="sql.functions.var_pop"><code class="xref py py-obj docutils literal"><span class="pre">var_pop</span></code></a>(col)</td>
+<td>Aggregate function: returns the population variance of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.var_samp.html#sql.functions.var_samp" title="sql.functions.var_samp"><code class="xref py py-obj docutils literal"><span class="pre">var_samp</span></code></a>(col)</td>
+<td>Aggregate function: returns the unbiased variance of the values in a group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.variance.html#sql.functions.variance" title="sql.functions.variance"><code class="xref py py-obj docutils literal"><span class="pre">variance</span></code></a>(col)</td>
+<td>Aggregate function: returns the population variance of the values in a group.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.weekofyear.html#sql.functions.weekofyear" title="sql.functions.weekofyear"><code class="xref py py-obj docutils literal"><span class="pre">weekofyear</span></code></a>(col)</td>
+<td>Extract the week number of a given date as integer.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.when.html#sql.functions.when" title="sql.functions.when"><code class="xref py py-obj docutils literal"><span class="pre">when</span></code></a>(condition,&nbsp;value)</td>
+<td>Evaluates a list of conditions and returns one of multiple possible result expressions.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.window.html#sql.functions.window" title="sql.functions.window"><code class="xref py py-obj docutils literal"><span class="pre">window</span></code></a>(timeColumn,&nbsp;windowDuration[,&nbsp;...])</td>
+<td>Bucketize rows into one or more time windows given a timestamp specifying column.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.year.html#sql.functions.year" title="sql.functions.year"><code class="xref py py-obj docutils literal"><span class="pre">year</span></code></a>(col)</td>
+<td>Extract the year of a given date as integer.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.AutoBatchedSerializer.html#sql.functions.AutoBatchedSerializer" title="sql.functions.AutoBatchedSerializer"><code class="xref py py-obj docutils literal"><span class="pre">AutoBatchedSerializer</span></code></a>(serializer[,&nbsp;bestSize])</td>
+<td>Choose the size of batch automatically based on the size of object</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.Column.html#sql.functions.Column" title="sql.functions.Column"><code class="xref py py-obj docutils literal"><span class="pre">Column</span></code></a>(jc)</td>
+<td>A column in a DataFrame.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.DataFrame.html#sql.functions.DataFrame" title="sql.functions.DataFrame"><code class="xref py py-obj docutils literal"><span class="pre">DataFrame</span></code></a>(jdf,&nbsp;sql_ctx)</td>
+<td>A distributed collection of data grouped into named columns.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.PickleSerializer.html#sql.functions.PickleSerializer" title="sql.functions.PickleSerializer"><code class="xref py py-obj docutils literal"><span class="pre">PickleSerializer</span></code></a>()</td>
+<td>Serializes objects using Python&#8217;s pickle serializer:</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.SparkContext.html#sql.functions.SparkContext" title="sql.functions.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.StringType.html#sql.functions.StringType" title="sql.functions.StringType"><code class="xref py py-obj docutils literal"><span class="pre">StringType</span></code></a></td>
+<td>String data type.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/sql.functions.UserDefinedFunction.html#sql.functions.UserDefinedFunction" title="sql.functions.UserDefinedFunction"><code class="xref py py-obj docutils literal"><span class="pre">UserDefinedFunction</span></code></a>(func,&nbsp;returnType[,&nbsp;name])</td>
+<td>User defined function in Python</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/sql.functions.map.html#sql.functions.map" title="sql.functions.map"><code class="xref py py-obj docutils literal"><span class="pre">map</span></code></a></td>
+<td>alias of <code class="xref py py-class docutils literal"><span class="pre">imap</span></code></td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/sql.functions.abs.html" class="btn btn-neutral float-right" title="sql.functions.abs()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/sql.types.array.typecode.html" class="btn btn-neutral" title="sql.types.array.typecode" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

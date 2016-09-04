@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>streaming.DStream.transformWith</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="streaming.DStream" href="streaming.DStream.html"/>
+        <link rel="next" title="streaming.DStream.union" href="streaming.DStream.union.html"/>
+        <link rel="prev" title="streaming.DStream.transform" href="streaming.DStream.transform.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../streaming.html"><code class="docutils literal"><span class="pre">streaming</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../streaming.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="streaming.DStream.html"><code class="docutils literal"><span class="pre">streaming.DStream</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="streaming.StreamingContext.html"><code class="docutils literal"><span class="pre">streaming.StreamingContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="streaming.StreamingListener.html"><code class="docutils literal"><span class="pre">streaming.StreamingListener</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming.kafka.html"><code class="docutils literal"><span class="pre">streaming.kafka</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming.kinesis.html"><code class="docutils literal"><span class="pre">streaming.kinesis</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../streaming.flume.html"><code class="docutils literal"><span class="pre">streaming.flume</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.streaming.html">pyspark.streaming</a> &raquo;</li>
+        
+          <li><a href="../streaming.html"><code class="docutils literal"><span class="pre">streaming</span></code></a> &raquo;</li>
+        
+          <li><a href="streaming.DStream.html"><code class="docutils literal"><span class="pre">streaming.DStream</span></code></a> &raquo;</li>
+        
+      <li>streaming.DStream.transformWith</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/streaming.DStream.transformWith.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="streaming-dstream-transformwith">
+<h1>streaming.DStream.transformWith<a class="headerlink" href="#streaming-dstream-transformwith" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="streaming.DStream.transformWith">
+<code class="descclassname">DStream.</code><code class="descname">transformWith</code><span class="sig-paren">(</span><em>func</em>, <em>other</em>, <em>keepSerializer=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/streaming/dstream.html#DStream.transformWith"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#streaming.DStream.transformWith" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new DStream in which each RDD is generated by applying a function
+on each RDD of this DStream and &#8216;other&#8217; DStream.</p>
+<p><cite>func</cite> can have two arguments of (<cite>rdd_a</cite>, <cite>rdd_b</cite>) or have three
+arguments of (<cite>time</cite>, <cite>rdd_a</cite>, <cite>rdd_b</cite>)</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="streaming.DStream.union.html" class="btn btn-neutral float-right" title="streaming.DStream.union" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="streaming.DStream.transform.html" class="btn btn-neutral" title="streaming.DStream.transform" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

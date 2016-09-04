@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.mllib.linalg &mdash; PySpark API</title>
+  <title>pyspark.mllib.linalg</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../../index.html"/>
+    <link rel="top" title="" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -204,8 +200,8 @@
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
     <span class="c1"># speed up pickling array in Python 2.7</span>
-<div class="viewcode-block" id="fast_pickle_array"><a class="viewcode-back" href="../../../generated/pyspark.mllib.linalg.fast_pickle_array.html#pyspark.mllib.classification.fast_pickle_array">[docs]</a>    <span class="k">def</span> <span class="nf">fast_pickle_array</span><span class="p">(</span><span class="n">ar</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="p">(</span><span class="n">ar</span><span class="o">.</span><span class="n">typecode</span><span class="p">,</span> <span class="n">ar</span><span class="o">.</span><span class="n">tostring</span><span class="p">())</span></div>
+    <span class="k">def</span> <span class="nf">fast_pickle_array</span><span class="p">(</span><span class="n">ar</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="p">(</span><span class="n">ar</span><span class="o">.</span><span class="n">typecode</span><span class="p">,</span> <span class="n">ar</span><span class="o">.</span><span class="n">tostring</span><span class="p">())</span>
     <span class="n">copy_reg</span><span class="o">.</span><span class="n">pickle</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">fast_pickle_array</span><span class="p">)</span>
 
 
@@ -286,28 +282,28 @@
     <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="VectorUDT"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.VectorUDT.html#pyspark.mllib.classification.VectorUDT">[docs]</a><span class="k">class</span> <span class="nc">VectorUDT</span><span class="p">(</span><span class="n">UserDefinedType</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">VectorUDT</span><span class="p">(</span><span class="n">UserDefinedType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SQL user-defined type (UDT) for Vector.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="VectorUDT.sqlType"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.VectorUDT.sqlType.html#pyspark.mllib.classification.VectorUDT.sqlType">[docs]</a>    <span class="k">def</span> <span class="nf">sqlType</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">sqlType</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">StructType</span><span class="p">([</span>
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">ByteType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;indices&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">)])</span></div>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">)])</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="VectorUDT.module"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.VectorUDT.module.html#pyspark.mllib.classification.VectorUDT.module">[docs]</a>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;pyspark.mllib.linalg&quot;</span></div>
+    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;pyspark.mllib.linalg&quot;</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="VectorUDT.scalaUDT"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.VectorUDT.scalaUDT.html#pyspark.mllib.classification.VectorUDT.scalaUDT">[docs]</a>    <span class="k">def</span> <span class="nf">scalaUDT</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;org.apache.spark.mllib.linalg.VectorUDT&quot;</span></div>
+    <span class="k">def</span> <span class="nf">scalaUDT</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;org.apache.spark.mllib.linalg.VectorUDT&quot;</span>
 
-<div class="viewcode-block" id="VectorUDT.serialize"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.VectorUDT.serialize.html#pyspark.mllib.classification.VectorUDT.serialize">[docs]</a>    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">SparseVector</span><span class="p">):</span>
             <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">indices</span><span class="p">]</span>
             <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
@@ -316,9 +312,9 @@
             <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">]</span>
             <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot serialize </span><span class="si">%r</span><span class="s2"> of type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span></div>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot serialize </span><span class="si">%r</span><span class="s2"> of type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
 
-<div class="viewcode-block" id="VectorUDT.deserialize"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.VectorUDT.deserialize.html#pyspark.mllib.classification.VectorUDT.deserialize">[docs]</a>    <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datum</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datum</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> \
             <span class="s2">&quot;VectorUDT.deserialize given row with length </span><span class="si">%d</span><span class="s2"> but requires 4&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
         <span class="n">tpe</span> <span class="o">=</span> <span class="n">datum</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -327,19 +323,19 @@
         <span class="k">elif</span> <span class="n">tpe</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">DenseVector</span><span class="p">(</span><span class="n">datum</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;do not recognize type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpe</span><span class="p">)</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;do not recognize type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpe</span><span class="p">)</span>
 
-<div class="viewcode-block" id="VectorUDT.simpleString"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.VectorUDT.simpleString.html#pyspark.mllib.classification.VectorUDT.simpleString">[docs]</a>    <span class="k">def</span> <span class="nf">simpleString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;vector&quot;</span></div></div>
+    <span class="k">def</span> <span class="nf">simpleString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;vector&quot;</span>
 
 
-<div class="viewcode-block" id="MatrixUDT"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.MatrixUDT.html#pyspark.mllib.classification.MatrixUDT">[docs]</a><span class="k">class</span> <span class="nc">MatrixUDT</span><span class="p">(</span><span class="n">UserDefinedType</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">MatrixUDT</span><span class="p">(</span><span class="n">UserDefinedType</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    SQL user-defined type (UDT) for Matrix.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="MatrixUDT.sqlType"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.MatrixUDT.sqlType.html#pyspark.mllib.classification.MatrixUDT.sqlType">[docs]</a>    <span class="k">def</span> <span class="nf">sqlType</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">sqlType</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">StructType</span><span class="p">([</span>
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="n">ByteType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;numRows&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span>
@@ -347,17 +343,17 @@
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;colPtrs&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;rowIndices&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
             <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">ArrayType</span><span class="p">(</span><span class="n">DoubleType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">),</span> <span class="bp">True</span><span class="p">),</span>
-            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;isTransposed&quot;</span><span class="p">,</span> <span class="n">BooleanType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">)])</span></div>
+            <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;isTransposed&quot;</span><span class="p">,</span> <span class="n">BooleanType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">)])</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="MatrixUDT.module"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.MatrixUDT.module.html#pyspark.mllib.classification.MatrixUDT.module">[docs]</a>    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;pyspark.mllib.linalg&quot;</span></div>
+    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;pyspark.mllib.linalg&quot;</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="MatrixUDT.scalaUDT"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.MatrixUDT.scalaUDT.html#pyspark.mllib.classification.MatrixUDT.scalaUDT">[docs]</a>    <span class="k">def</span> <span class="nf">scalaUDT</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;org.apache.spark.mllib.linalg.MatrixUDT&quot;</span></div>
+    <span class="k">def</span> <span class="nf">scalaUDT</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;org.apache.spark.mllib.linalg.MatrixUDT&quot;</span>
 
-<div class="viewcode-block" id="MatrixUDT.serialize"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.MatrixUDT.serialize.html#pyspark.mllib.classification.MatrixUDT.serialize">[docs]</a>    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">SparseMatrix</span><span class="p">):</span>
             <span class="n">colPtrs</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">colPtrs</span><span class="p">]</span>
             <span class="n">rowIndices</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">rowIndices</span><span class="p">]</span>
@@ -369,9 +365,9 @@
             <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span>
                     <span class="nb">bool</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot serialize type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span></div>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;cannot serialize type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)))</span>
 
-<div class="viewcode-block" id="MatrixUDT.deserialize"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.MatrixUDT.deserialize.html#pyspark.mllib.classification.MatrixUDT.deserialize">[docs]</a>    <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datum</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datum</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span><span class="p">,</span> \
             <span class="s2">&quot;MatrixUDT.deserialize given row with length </span><span class="si">%d</span><span class="s2"> but requires 7&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span>
         <span class="n">tpe</span> <span class="o">=</span> <span class="n">datum</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -380,20 +376,20 @@
         <span class="k">elif</span> <span class="n">tpe</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">DenseMatrix</span><span class="p">(</span><span class="n">datum</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">datum</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">datum</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">datum</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;do not recognize type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpe</span><span class="p">)</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;do not recognize type </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">tpe</span><span class="p">)</span>
 
-<div class="viewcode-block" id="MatrixUDT.simpleString"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.MatrixUDT.simpleString.html#pyspark.mllib.classification.MatrixUDT.simpleString">[docs]</a>    <span class="k">def</span> <span class="nf">simpleString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;matrix&quot;</span></div></div>
+    <span class="k">def</span> <span class="nf">simpleString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;matrix&quot;</span>
 
 
-<div class="viewcode-block" id="Vector"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.Vector.html#pyspark.mllib.classification.Vector">[docs]</a><span class="k">class</span> <span class="nc">Vector</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Vector"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.Vector.html#mllib.classification.Vector">[docs]</a><span class="k">class</span> <span class="nc">Vector</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="n">__UDT__</span> <span class="o">=</span> <span class="n">VectorUDT</span><span class="p">()</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Abstract class for DenseVector and SparseVector</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="Vector.toArray"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.Vector.toArray.html#pyspark.mllib.classification.Vector.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Vector.toArray"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.Vector.toArray.html#mllib.classification.Vector.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert the vector into an numpy.ndarray</span>
 
@@ -401,7 +397,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="Vector.asML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.Vector.asML.html#pyspark.mllib.classification.Vector.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Vector.asML"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.Vector.asML.html#mllib.classification.Vector.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert this vector to the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -411,7 +407,7 @@
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
 
 
-<div class="viewcode-block" id="DenseVector"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.html#pyspark.mllib.classification.DenseVector">[docs]</a><span class="k">class</span> <span class="nc">DenseVector</span><span class="p">(</span><span class="n">Vector</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.html#mllib.classification.DenseVector">[docs]</a><span class="k">class</span> <span class="nc">DenseVector</span><span class="p">(</span><span class="n">Vector</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A dense vector represented by a value array. We use numpy array for</span>
 <span class="sd">    storage and arithmetics will be delegated to the underlying numpy</span>
@@ -432,7 +428,7 @@
 <span class="sd">    &gt;&gt;&gt; u % 2</span>
 <span class="sd">    DenseVector([1.0, 0.0])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="DenseVector.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.__init__.html#pyspark.mllib.classification.DenseVector.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ar</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.__init__"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.__init__.html#mllib.classification.DenseVector.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ar</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
             <span class="n">ar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
         <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ar</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
@@ -442,7 +438,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">ar</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="DenseVector.parse"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.parse.html#pyspark.mllib.classification.DenseVector.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.parse"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.parse.html#mllib.classification.DenseVector.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parse string representation back into the DenseVector.</span>
 
@@ -466,13 +462,13 @@
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">DenseVector</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">tostring</span><span class="p">(),)</span>
 
-<div class="viewcode-block" id="DenseVector.numNonzeros"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.numNonzeros.html#pyspark.mllib.classification.DenseVector.numNonzeros">[docs]</a>    <span class="k">def</span> <span class="nf">numNonzeros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.numNonzeros"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.numNonzeros.html#mllib.classification.DenseVector.numNonzeros">[docs]</a>    <span class="k">def</span> <span class="nf">numNonzeros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Number of nonzero elements. This scans all active values and count non zeros</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DenseVector.norm"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.norm.html#pyspark.mllib.classification.DenseVector.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.norm"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.norm.html#mllib.classification.DenseVector.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the norm of a DenseVector.</span>
 
@@ -484,7 +480,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DenseVector.dot"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.dot.html#pyspark.mllib.classification.DenseVector.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.dot"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.dot.html#mllib.classification.DenseVector.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the dot product of two Vectors. We support</span>
 <span class="sd">        (Numpy array, list, SparseVector, or SciPy sparse)</span>
@@ -527,7 +523,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">(),</span> <span class="n">other</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DenseVector.squared_distance"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.squared_distance.html#pyspark.mllib.classification.DenseVector.squared_distance">[docs]</a>    <span class="k">def</span> <span class="nf">squared_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.squared_distance"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.squared_distance.html#mllib.classification.DenseVector.squared_distance">[docs]</a>    <span class="k">def</span> <span class="nf">squared_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Squared distance of two Vectors.</span>
 
@@ -565,13 +561,13 @@
         <span class="n">diff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">()</span> <span class="o">-</span> <span class="n">other</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span> <span class="n">diff</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="DenseVector.toArray"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.toArray.html#pyspark.mllib.classification.DenseVector.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.toArray"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.toArray.html#mllib.classification.DenseVector.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an numpy.ndarray</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">array</span></div>
 
-<div class="viewcode-block" id="DenseVector.asML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseVector.asML.html#pyspark.mllib.classification.DenseVector.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DenseVector.asML"><a class="viewcode-back" href="../../../generated/generated/mllib.feature.DenseVector.asML.html#mllib.classification.DenseVector.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert this vector to the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -652,12 +648,12 @@
     <span class="n">__rmod__</span> <span class="o">=</span> <span class="n">_delegate</span><span class="p">(</span><span class="s2">&quot;__rmod__&quot;</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="SparseVector"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.html#pyspark.mllib.classification.SparseVector">[docs]</a><span class="k">class</span> <span class="nc">SparseVector</span><span class="p">(</span><span class="n">Vector</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.html#mllib.classification.SparseVector">[docs]</a><span class="k">class</span> <span class="nc">SparseVector</span><span class="p">(</span><span class="n">Vector</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A simple sparse vector class for passing data to MLlib. Users may</span>
 <span class="sd">    alternatively pass SciPy&#39;s {scipy.sparse} data types.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="SparseVector.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.__init__.html#pyspark.mllib.classification.SparseVector.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.__init__"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.__init__.html#mllib.classification.SparseVector.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a sparse vector, using either a dictionary, a list of</span>
 <span class="sd">        (index, value) pairs, or two separate arrays of indices and</span>
@@ -708,13 +704,13 @@
                         <span class="s2">&quot;Indices </span><span class="si">%s</span><span class="s2"> and </span><span class="si">%s</span><span class="s2"> are not strictly increasing&quot;</span>
                         <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]))</span></div>
 
-<div class="viewcode-block" id="SparseVector.numNonzeros"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.numNonzeros.html#pyspark.mllib.classification.SparseVector.numNonzeros">[docs]</a>    <span class="k">def</span> <span class="nf">numNonzeros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.numNonzeros"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.numNonzeros.html#mllib.classification.SparseVector.numNonzeros">[docs]</a>    <span class="k">def</span> <span class="nf">numNonzeros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Number of nonzero elements. This scans all active values and count non zeros.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SparseVector.norm"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.norm.html#pyspark.mllib.classification.SparseVector.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.norm"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.norm.html#mllib.classification.SparseVector.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the norm of a SparseVector.</span>
 
@@ -732,7 +728,7 @@
             <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">tostring</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tostring</span><span class="p">()))</span>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="SparseVector.parse"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.parse.html#pyspark.mllib.classification.SparseVector.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.parse"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.parse.html#mllib.classification.SparseVector.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Parse string representation back into the SparseVector.</span>
 
@@ -780,7 +776,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unable to parse values from </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">s</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">SparseVector</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SparseVector.dot"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.dot.html#pyspark.mllib.classification.SparseVector.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.dot"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.dot.html#mllib.classification.SparseVector.dot">[docs]</a>    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Dot product with a SparseVector or 1- or 2-dimensional Numpy array.</span>
 
@@ -836,7 +832,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">_convert_to_vector</span><span class="p">(</span><span class="n">other</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="SparseVector.squared_distance"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.squared_distance.html#pyspark.mllib.classification.SparseVector.squared_distance">[docs]</a>    <span class="k">def</span> <span class="nf">squared_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.squared_distance"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.squared_distance.html#mllib.classification.SparseVector.squared_distance">[docs]</a>    <span class="k">def</span> <span class="nf">squared_distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Squared distance from a SparseVector or 1-dimensional NumPy array.</span>
 
@@ -903,7 +899,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">squared_distance</span><span class="p">(</span><span class="n">_convert_to_vector</span><span class="p">(</span><span class="n">other</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="SparseVector.toArray"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.toArray.html#pyspark.mllib.classification.SparseVector.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.toArray"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.toArray.html#mllib.classification.SparseVector.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a copy of this SparseVector as a 1-dimensional NumPy array.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -911,7 +907,7 @@
         <span class="n">arr</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
         <span class="k">return</span> <span class="n">arr</span></div>
 
-<div class="viewcode-block" id="SparseVector.asML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.SparseVector.asML.html#pyspark.mllib.classification.SparseVector.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SparseVector.asML"><a class="viewcode-back" href="../../../generated/generated/mllib.util.SparseVector.asML.html#mllib.classification.SparseVector.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert this vector to the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -985,7 +981,7 @@
         <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="Vectors"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.html#pyspark.mllib.classification.Vectors">[docs]</a><span class="k">class</span> <span class="nc">Vectors</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.html#mllib.classification.Vectors">[docs]</a><span class="k">class</span> <span class="nc">Vectors</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Factory methods for working with vectors. Note that dense vectors</span>
@@ -996,7 +992,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.sparse"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.sparse.html#pyspark.mllib.classification.Vectors.sparse">[docs]</a>    <span class="k">def</span> <span class="nf">sparse</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.sparse"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.sparse.html#mllib.classification.Vectors.sparse">[docs]</a>    <span class="k">def</span> <span class="nf">sparse</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a sparse vector, using either a dictionary, a list of</span>
 <span class="sd">        (index, value) pairs, or two separate arrays of indices and</span>
@@ -1016,7 +1012,7 @@
         <span class="k">return</span> <span class="n">SparseVector</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.dense"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.dense.html#pyspark.mllib.classification.Vectors.dense">[docs]</a>    <span class="k">def</span> <span class="nf">dense</span><span class="p">(</span><span class="o">*</span><span class="n">elements</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.dense"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.dense.html#mllib.classification.Vectors.dense">[docs]</a>    <span class="k">def</span> <span class="nf">dense</span><span class="p">(</span><span class="o">*</span><span class="n">elements</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a dense vector of 64-bit floats from a Python list or numbers.</span>
 
@@ -1031,7 +1027,7 @@
         <span class="k">return</span> <span class="n">DenseVector</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.fromML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.fromML.html#pyspark.mllib.classification.Vectors.fromML">[docs]</a>    <span class="k">def</span> <span class="nf">fromML</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.fromML"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.fromML.html#mllib.classification.Vectors.fromML">[docs]</a>    <span class="k">def</span> <span class="nf">fromML</span><span class="p">(</span><span class="n">vec</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a vector from the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -1049,7 +1045,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Unsupported vector type </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.stringify"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.stringify.html#pyspark.mllib.classification.Vectors.stringify">[docs]</a>    <span class="k">def</span> <span class="nf">stringify</span><span class="p">(</span><span class="n">vector</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.stringify"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.stringify.html#mllib.classification.Vectors.stringify">[docs]</a>    <span class="k">def</span> <span class="nf">stringify</span><span class="p">(</span><span class="n">vector</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts a vector into a string, which can be recognized by</span>
 <span class="sd">        Vectors.parse().</span>
@@ -1062,7 +1058,7 @@
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.squared_distance"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.squared_distance.html#pyspark.mllib.classification.Vectors.squared_distance">[docs]</a>    <span class="k">def</span> <span class="nf">squared_distance</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.squared_distance"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.squared_distance.html#mllib.classification.Vectors.squared_distance">[docs]</a>    <span class="k">def</span> <span class="nf">squared_distance</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Squared distance between two vectors.</span>
 <span class="sd">        a and b can be of type SparseVector, DenseVector, np.ndarray</span>
@@ -1077,14 +1073,14 @@
         <span class="k">return</span> <span class="n">v1</span><span class="o">.</span><span class="n">squared_distance</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.norm"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.norm.html#pyspark.mllib.classification.Vectors.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.norm"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.norm.html#mllib.classification.Vectors.norm">[docs]</a>    <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find norm of the given vector.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_convert_to_vector</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.parse"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.parse.html#pyspark.mllib.classification.Vectors.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.parse"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.parse.html#mllib.classification.Vectors.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Parse a string representation back into the Vector.</span>
 
 <span class="sd">        &gt;&gt;&gt; Vectors.parse(&#39;[2,1,2 ]&#39;)</span>
@@ -1101,7 +1097,7 @@
                 <span class="s2">&quot;Cannot find tokens &#39;[&#39; or &#39;(&#39; from the input string.&quot;</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Vectors.zeros"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.util.Vectors.zeros.html#pyspark.mllib.classification.Vectors.zeros">[docs]</a>    <span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<div class="viewcode-block" id="Vectors.zeros"><a class="viewcode-back" href="../../../generated/generated/mllib.util.Vectors.zeros.html#mllib.classification.Vectors.zeros">[docs]</a>    <span class="k">def</span> <span class="nf">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">DenseVector</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">))</span></div>
 
     <span class="nd">@staticmethod</span>
@@ -1130,25 +1126,25 @@
         <span class="k">return</span> <span class="n">all_equal</span></div>
 
 
-<div class="viewcode-block" id="Matrix"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.distributed.Matrix.html#pyspark.mllib.classification.Matrix">[docs]</a><span class="k">class</span> <span class="nc">Matrix</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Matrix"><a class="viewcode-back" href="../../../generated/generated/mllib.linalg.distributed.Matrix.html#mllib.classification.Matrix">[docs]</a><span class="k">class</span> <span class="nc">Matrix</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="n">__UDT__</span> <span class="o">=</span> <span class="n">MatrixUDT</span><span class="p">()</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents a local matrix.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="Matrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.distributed.Matrix.__init__.html#pyspark.mllib.classification.Matrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="Matrix.__init__"><a class="viewcode-back" href="../../../generated/generated/mllib.linalg.distributed.Matrix.__init__.html#mllib.classification.Matrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">numRows</span> <span class="o">=</span> <span class="n">numRows</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span> <span class="o">=</span> <span class="n">numCols</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span> <span class="o">=</span> <span class="n">isTransposed</span></div>
 
-<div class="viewcode-block" id="Matrix.toArray"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.distributed.Matrix.toArray.html#pyspark.mllib.classification.Matrix.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Matrix.toArray"><a class="viewcode-back" href="../../../generated/generated/mllib.linalg.distributed.Matrix.toArray.html#mllib.classification.Matrix.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns its elements in a NumPy ndarray.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="Matrix.asML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.distributed.Matrix.asML.html#pyspark.mllib.classification.Matrix.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Matrix.asML"><a class="viewcode-back" href="../../../generated/generated/mllib.linalg.distributed.Matrix.asML.html#mllib.classification.Matrix.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert this matrix to the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -1165,15 +1161,15 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">array_like</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="DenseMatrix"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseMatrix.html#pyspark.mllib.classification.DenseMatrix">[docs]</a><span class="k">class</span> <span class="nc">DenseMatrix</span><span class="p">(</span><span class="n">Matrix</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">DenseMatrix</span><span class="p">(</span><span class="n">Matrix</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Column-major dense matrix.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="DenseMatrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseMatrix.__init__.html#pyspark.mllib.classification.DenseMatrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="n">Matrix</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="p">)</span>
         <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_array</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
         <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="n">numRows</span> <span class="o">*</span> <span class="n">numCols</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">values</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">values</span>
 
     <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">DenseMatrix</span><span class="p">,</span> <span class="p">(</span>
@@ -1224,7 +1220,7 @@
         <span class="k">return</span> <span class="s2">&quot;DenseMatrix({0}, {1}, [{2}], {3})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">entries</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span>
 
-<div class="viewcode-block" id="DenseMatrix.toArray"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseMatrix.toArray.html#pyspark.mllib.classification.DenseMatrix.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an numpy.ndarray</span>
 
@@ -1237,9 +1233,9 @@
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asfortranarray</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">)))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span></div>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="DenseMatrix.toSparse"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseMatrix.toSparse.html#pyspark.mllib.classification.DenseMatrix.toSparse">[docs]</a>    <span class="k">def</span> <span class="nf">toSparse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">toSparse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert to SparseMatrix&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">:</span>
             <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">(),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
@@ -1252,9 +1248,9 @@
         <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
         <span class="n">rowIndices</span> <span class="o">=</span> <span class="n">indices</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">numRows</span>
 
-        <span class="k">return</span> <span class="n">SparseMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">SparseMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
 
-<div class="viewcode-block" id="DenseMatrix.asML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.DenseMatrix.asML.html#pyspark.mllib.classification.DenseMatrix.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert this matrix to the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -1263,7 +1259,7 @@
 
 <span class="sd">        .. versionadded:: 2.0.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">newlinalg</span><span class="o">.</span><span class="n">DenseMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">newlinalg</span><span class="o">.</span><span class="n">DenseMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
         <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">indices</span>
@@ -1287,12 +1283,12 @@
 
         <span class="n">self_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">(),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
         <span class="n">other_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">toArray</span><span class="p">(),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">self_values</span> <span class="o">==</span> <span class="n">other_values</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">self_values</span> <span class="o">==</span> <span class="n">other_values</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="SparseMatrix"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.SparseMatrix.html#pyspark.mllib.classification.SparseMatrix">[docs]</a><span class="k">class</span> <span class="nc">SparseMatrix</span><span class="p">(</span><span class="n">Matrix</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SparseMatrix</span><span class="p">(</span><span class="n">Matrix</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Sparse Matrix stored in CSC format.&quot;&quot;&quot;</span>
-<div class="viewcode-block" id="SparseMatrix.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.SparseMatrix.__init__.html#pyspark.mllib.classification.SparseMatrix.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span>
                  <span class="n">isTransposed</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="n">Matrix</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">isTransposed</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_to_array</span><span class="p">(</span><span class="n">colPtrs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -1309,7 +1305,7 @@
                                  <span class="o">%</span> <span class="p">(</span><span class="n">numCols</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowIndices</span><span class="o">.</span><span class="n">size</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Expected rowIndices of length </span><span class="si">%d</span><span class="s2">, got </span><span class="si">%d</span><span class="s2">.&quot;</span>
-                             <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rowIndices</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">size</span><span class="p">))</span></div>
+                             <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rowIndices</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">size</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1419,7 +1415,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="mf">0.0</span>
 
-<div class="viewcode-block" id="SparseMatrix.toArray"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.SparseMatrix.toArray.html#pyspark.mllib.classification.SparseMatrix.toArray">[docs]</a>    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">toArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an numpy.ndarray</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1431,13 +1427,13 @@
                 <span class="n">A</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowIndices</span><span class="p">[</span><span class="n">startptr</span><span class="p">:</span><span class="n">endptr</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">startptr</span><span class="p">:</span><span class="n">endptr</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">A</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rowIndices</span><span class="p">[</span><span class="n">startptr</span><span class="p">:</span><span class="n">endptr</span><span class="p">],</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">startptr</span><span class="p">:</span><span class="n">endptr</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">A</span></div>
+        <span class="k">return</span> <span class="n">A</span>
 
-<div class="viewcode-block" id="SparseMatrix.toDense"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.SparseMatrix.toDense.html#pyspark.mllib.classification.SparseMatrix.toDense">[docs]</a>    <span class="k">def</span> <span class="nf">toDense</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">toDense</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">densevals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">(),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">DenseMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">densevals</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">DenseMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">densevals</span><span class="p">)</span>
 
-<div class="viewcode-block" id="SparseMatrix.asML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.SparseMatrix.asML.html#pyspark.mllib.classification.SparseMatrix.asML">[docs]</a>    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">asML</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert this matrix to the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -1447,30 +1443,30 @@
 <span class="sd">        .. versionadded:: 2.0.0</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">newlinalg</span><span class="o">.</span><span class="n">SparseMatrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">colPtrs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rowIndices</span><span class="p">,</span>
-                                      <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span></div>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span>
 
     <span class="c1"># TODO: More efficient implementation:</span>
     <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">toArray</span><span class="p">())</span></div>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toArray</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">toArray</span><span class="p">())</span>
 
 
-<div class="viewcode-block" id="Matrices"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.Matrices.html#pyspark.mllib.classification.Matrices">[docs]</a><span class="k">class</span> <span class="nc">Matrices</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Matrices</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Matrices.dense"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.Matrices.dense.html#pyspark.mllib.classification.Matrices.dense">[docs]</a>    <span class="k">def</span> <span class="nf">dense</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">dense</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a DenseMatrix</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">DenseMatrix</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">DenseMatrix</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Matrices.sparse"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.Matrices.sparse.html#pyspark.mllib.classification.Matrices.sparse">[docs]</a>    <span class="k">def</span> <span class="nf">sparse</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">sparse</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a SparseMatrix</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">SparseMatrix</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">SparseMatrix</span><span class="p">(</span><span class="n">numRows</span><span class="p">,</span> <span class="n">numCols</span><span class="p">,</span> <span class="n">colPtrs</span><span class="p">,</span> <span class="n">rowIndices</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="Matrices.fromML"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.Matrices.fromML.html#pyspark.mllib.classification.Matrices.fromML">[docs]</a>    <span class="k">def</span> <span class="nf">fromML</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fromML</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a matrix from the new mllib-local representation.</span>
 <span class="sd">        This does NOT copy the data; it copies references.</span>
@@ -1486,14 +1482,14 @@
             <span class="k">return</span> <span class="n">SparseMatrix</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">numRows</span><span class="p">,</span> <span class="n">mat</span><span class="o">.</span><span class="n">numCols</span><span class="p">,</span> <span class="n">mat</span><span class="o">.</span><span class="n">colPtrs</span><span class="p">,</span> <span class="n">mat</span><span class="o">.</span><span class="n">rowIndices</span><span class="p">,</span>
                                 <span class="n">mat</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">mat</span><span class="o">.</span><span class="n">isTransposed</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Unsupported matrix type </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">mat</span><span class="p">))</span></div></div>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Unsupported matrix type </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">mat</span><span class="p">))</span>
 
 
-<div class="viewcode-block" id="QRDecomposition"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.distributed.QRDecomposition.html#pyspark.mllib.classification.QRDecomposition">[docs]</a><span class="k">class</span> <span class="nc">QRDecomposition</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="QRDecomposition"><a class="viewcode-back" href="../../../generated/generated/mllib.linalg.distributed.QRDecomposition.html#mllib.classification.QRDecomposition">[docs]</a><span class="k">class</span> <span class="nc">QRDecomposition</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents QR factors.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="QRDecomposition.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.mllib.linalg.distributed.QRDecomposition.__init__.html#pyspark.mllib.classification.QRDecomposition.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+<div class="viewcode-block" id="QRDecomposition.__init__"><a class="viewcode-back" href="../../../generated/generated/mllib.linalg.distributed.QRDecomposition.__init__.html#mllib.classification.QRDecomposition.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_Q</span> <span class="o">=</span> <span class="n">Q</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_R</span> <span class="o">=</span> <span class="n">R</span></div>
 
@@ -1556,7 +1552,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.streaming.util &mdash; PySpark API</title>
+  <title>pyspark.streaming.util</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../../index.html"/>
+    <link rel="top" title="" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -175,7 +171,7 @@
 <span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkContext</span><span class="p">,</span> <span class="n">RDD</span>
 
 
-<div class="viewcode-block" id="TransformFunction"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.html#pyspark.streaming.kafka.TransformFunction">[docs]</a><span class="k">class</span> <span class="nc">TransformFunction</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="TransformFunction"><a class="viewcode-back" href="../../../generated/generated/streaming.kafka.TransformFunction.html#streaming.kafka.TransformFunction">[docs]</a><span class="k">class</span> <span class="nc">TransformFunction</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This class wraps a function RDD[X] -&gt; RDD[Y] that was passed to</span>
 <span class="sd">    DStream.transform(), allowing it to be called from Java via Py4J&#39;s</span>
@@ -186,18 +182,18 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_emptyRDD</span> <span class="o">=</span> <span class="bp">None</span>
 
-<div class="viewcode-block" id="TransformFunction.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.__init__.html#pyspark.streaming.kafka.TransformFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">deserializers</span><span class="p">):</span>
+<div class="viewcode-block" id="TransformFunction.__init__"><a class="viewcode-back" href="../../../generated/generated/streaming.kafka.TransformFunction.__init__.html#streaming.kafka.TransformFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">deserializers</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">ctx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">func</span> <span class="o">=</span> <span class="n">func</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">deserializers</span> <span class="o">=</span> <span class="n">deserializers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rdd_wrap_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">jrdd</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">ser</span><span class="p">:</span> <span class="n">RDD</span><span class="p">(</span><span class="n">jrdd</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">ser</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="bp">None</span></div>
 
-<div class="viewcode-block" id="TransformFunction.rdd_wrapper"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.rdd_wrapper.html#pyspark.streaming.kafka.TransformFunction.rdd_wrapper">[docs]</a>    <span class="k">def</span> <span class="nf">rdd_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="TransformFunction.rdd_wrapper"><a class="viewcode-back" href="../../../generated/generated/streaming.kafka.TransformFunction.rdd_wrapper.html#streaming.kafka.TransformFunction.rdd_wrapper">[docs]</a>    <span class="k">def</span> <span class="nf">rdd_wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rdd_wrap_func</span> <span class="o">=</span> <span class="n">func</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="TransformFunction.call"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.call.html#pyspark.streaming.kafka.TransformFunction.call">[docs]</a>    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">milliseconds</span><span class="p">,</span> <span class="n">jrdds</span><span class="p">):</span>
+<div class="viewcode-block" id="TransformFunction.call"><a class="viewcode-back" href="../../../generated/generated/streaming.kafka.TransformFunction.call.html#streaming.kafka.TransformFunction.call">[docs]</a>    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">milliseconds</span><span class="p">,</span> <span class="n">jrdds</span><span class="p">):</span>
         <span class="c1"># Clear the failure</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">try</span><span class="p">:</span>
@@ -221,7 +217,7 @@
         <span class="k">except</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="TransformFunction.getLastFailure"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.kafka.TransformFunction.getLastFailure.html#pyspark.streaming.kafka.TransformFunction.getLastFailure">[docs]</a>    <span class="k">def</span> <span class="nf">getLastFailure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TransformFunction.getLastFailure"><a class="viewcode-back" href="../../../generated/generated/streaming.kafka.TransformFunction.getLastFailure.html#streaming.kafka.TransformFunction.getLastFailure">[docs]</a>    <span class="k">def</span> <span class="nf">getLastFailure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">failure</span></div>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -334,7 +330,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

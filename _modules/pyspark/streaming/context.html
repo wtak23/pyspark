@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.streaming.context &mdash; PySpark API</title>
+  <title>pyspark.streaming.context</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../../index.html"/>
+    <link rel="top" title="" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -185,7 +181,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;StreamingContext&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="StreamingContext"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.html#pyspark.streaming.StreamingContext">[docs]</a><span class="k">class</span> <span class="nc">StreamingContext</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.html#streaming.StreamingContext">[docs]</a><span class="k">class</span> <span class="nc">StreamingContext</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Main entry point for Spark Streaming functionality. A StreamingContext</span>
 <span class="sd">    represents the connection to a Spark cluster, and can be used to create</span>
@@ -200,7 +196,7 @@
     <span class="c1"># Reference to a currently active StreamingContext</span>
     <span class="n">_activeContext</span> <span class="o">=</span> <span class="bp">None</span>
 
-<div class="viewcode-block" id="StreamingContext.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.__init__.html#pyspark.streaming.StreamingContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">batchDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">jssc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.__init__"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.__init__.html#streaming.StreamingContext.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">batchDuration</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">jssc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new StreamingContext.</span>
 
@@ -255,7 +251,7 @@
             <span class="n">SparkContext</span><span class="o">.</span><span class="n">_active_spark_context</span><span class="p">,</span> <span class="n">CloudPickleSerializer</span><span class="p">(),</span> <span class="n">gw</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="StreamingContext.getOrCreate"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.getOrCreate.html#pyspark.streaming.StreamingContext.getOrCreate">[docs]</a>    <span class="k">def</span> <span class="nf">getOrCreate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">checkpointPath</span><span class="p">,</span> <span class="n">setupFunc</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.getOrCreate"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.getOrCreate.html#streaming.StreamingContext.getOrCreate">[docs]</a>    <span class="k">def</span> <span class="nf">getOrCreate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">checkpointPath</span><span class="p">,</span> <span class="n">setupFunc</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Either recreate a StreamingContext from checkpoint data or create a new StreamingContext.</span>
 <span class="sd">        If checkpoint data exists in the provided `checkpointPath`, then StreamingContext will be</span>
@@ -290,7 +286,7 @@
         <span class="k">return</span> <span class="n">StreamingContext</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">jssc</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="StreamingContext.getActive"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.getActive.html#pyspark.streaming.StreamingContext.getActive">[docs]</a>    <span class="k">def</span> <span class="nf">getActive</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.getActive"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.getActive.html#streaming.StreamingContext.getActive">[docs]</a>    <span class="k">def</span> <span class="nf">getActive</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return either the currently active StreamingContext (i.e., if there is a context started</span>
 <span class="sd">        but not stopped) or None.</span>
@@ -311,7 +307,7 @@
         <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">_activeContext</span></div>
 
     <span class="nd">@classmethod</span>
-<div class="viewcode-block" id="StreamingContext.getActiveOrCreate"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.getActiveOrCreate.html#pyspark.streaming.StreamingContext.getActiveOrCreate">[docs]</a>    <span class="k">def</span> <span class="nf">getActiveOrCreate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">checkpointPath</span><span class="p">,</span> <span class="n">setupFunc</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.getActiveOrCreate"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.getActiveOrCreate.html#streaming.StreamingContext.getActiveOrCreate">[docs]</a>    <span class="k">def</span> <span class="nf">getActiveOrCreate</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">checkpointPath</span><span class="p">,</span> <span class="n">setupFunc</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Either return the active StreamingContext (i.e. currently started but not stopped),</span>
 <span class="sd">        or recreate a StreamingContext from checkpoint data or create a new StreamingContext</span>
@@ -342,14 +338,14 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span>
 
-<div class="viewcode-block" id="StreamingContext.start"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.start.html#pyspark.streaming.StreamingContext.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.start"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.start.html#streaming.StreamingContext.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Start the execution of the streams.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">StreamingContext</span><span class="o">.</span><span class="n">_activeContext</span> <span class="o">=</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="StreamingContext.awaitTermination"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.awaitTermination.html#pyspark.streaming.StreamingContext.awaitTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.awaitTermination"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.awaitTermination.html#streaming.StreamingContext.awaitTermination">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTermination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Wait for the execution to stop.</span>
 
@@ -360,7 +356,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">awaitTerminationOrTimeout</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">timeout</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="StreamingContext.awaitTerminationOrTimeout"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.awaitTerminationOrTimeout.html#pyspark.streaming.StreamingContext.awaitTerminationOrTimeout">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTerminationOrTimeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.awaitTerminationOrTimeout"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.awaitTerminationOrTimeout.html#streaming.StreamingContext.awaitTerminationOrTimeout">[docs]</a>    <span class="k">def</span> <span class="nf">awaitTerminationOrTimeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Wait for the execution to stop. Return `true` if it&#39;s stopped; or</span>
 <span class="sd">        throw the reported error during the execution; or `false` if the</span>
@@ -370,7 +366,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">awaitTerminationOrTimeout</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">timeout</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="StreamingContext.stop"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.stop.html#pyspark.streaming.StreamingContext.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stopSparkContext</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stopGraceFully</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.stop"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.stop.html#streaming.StreamingContext.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stopSparkContext</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stopGraceFully</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Stop the execution of the streams, with option of ensuring all</span>
 <span class="sd">        received data has been processed.</span>
@@ -384,7 +380,7 @@
         <span class="k">if</span> <span class="n">stopSparkContext</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="StreamingContext.remember"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.remember.html#pyspark.streaming.StreamingContext.remember">[docs]</a>    <span class="k">def</span> <span class="nf">remember</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.remember"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.remember.html#streaming.StreamingContext.remember">[docs]</a>    <span class="k">def</span> <span class="nf">remember</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set each DStreams in this context to remember RDDs it generated</span>
 <span class="sd">        in the last given duration. DStreams remember RDDs only for a</span>
@@ -398,7 +394,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">remember</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jduration</span><span class="p">(</span><span class="n">duration</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="StreamingContext.checkpoint"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.checkpoint.html#pyspark.streaming.StreamingContext.checkpoint">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.checkpoint"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.checkpoint.html#streaming.StreamingContext.checkpoint">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the context to periodically checkpoint the DStream operations for master</span>
 <span class="sd">        fault-tolerance. The graph will be checkpointed every batch interval.</span>
@@ -408,7 +404,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="StreamingContext.socketTextStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.socketTextStream.html#pyspark.streaming.StreamingContext.socketTextStream">[docs]</a>    <span class="k">def</span> <span class="nf">socketTextStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_AND_DISK_2</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.socketTextStream"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.socketTextStream.html#streaming.StreamingContext.socketTextStream">[docs]</a>    <span class="k">def</span> <span class="nf">socketTextStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_AND_DISK_2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an input from TCP source hostname:port. Data is received using</span>
 <span class="sd">        a TCP socket and receive byte is interpreted as UTF8 encoded ``\\n`` delimited</span>
@@ -422,7 +418,7 @@
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">socketTextStream</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">jlevel</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span>
                        <span class="n">UTF8Deserializer</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="StreamingContext.textFileStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.textFileStream.html#pyspark.streaming.StreamingContext.textFileStream">[docs]</a>    <span class="k">def</span> <span class="nf">textFileStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.textFileStream"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.textFileStream.html#streaming.StreamingContext.textFileStream">[docs]</a>    <span class="k">def</span> <span class="nf">textFileStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an input stream that monitors a Hadoop-compatible file system</span>
 <span class="sd">        for new files and reads them as text files. Files must be wrriten to the</span>
@@ -431,7 +427,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">textFileStream</span><span class="p">(</span><span class="n">directory</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span> <span class="n">UTF8Deserializer</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="StreamingContext.binaryRecordsStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.binaryRecordsStream.html#pyspark.streaming.StreamingContext.binaryRecordsStream">[docs]</a>    <span class="k">def</span> <span class="nf">binaryRecordsStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">recordLength</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.binaryRecordsStream"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.binaryRecordsStream.html#streaming.StreamingContext.binaryRecordsStream">[docs]</a>    <span class="k">def</span> <span class="nf">binaryRecordsStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">recordLength</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an input stream that monitors a Hadoop-compatible file system</span>
 <span class="sd">        for new files and reads them as flat binary files with records of</span>
@@ -452,7 +448,7 @@
                 <span class="c1"># reset them to sc.serializer</span>
                 <span class="n">rdds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rdds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_reserialize</span><span class="p">()</span>
 
-<div class="viewcode-block" id="StreamingContext.queueStream"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.queueStream.html#pyspark.streaming.StreamingContext.queueStream">[docs]</a>    <span class="k">def</span> <span class="nf">queueStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rdds</span><span class="p">,</span> <span class="n">oneAtATime</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.queueStream"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.queueStream.html#streaming.StreamingContext.queueStream">[docs]</a>    <span class="k">def</span> <span class="nf">queueStream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rdds</span><span class="p">,</span> <span class="n">oneAtATime</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create an input stream from an queue of RDDs or list. In each batch,</span>
 <span class="sd">        it will process either one or all of the RDDs returned by the queue.</span>
@@ -481,7 +477,7 @@
             <span class="n">jdstream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">queueStream</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="n">oneAtATime</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="n">jdstream</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">rdds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="StreamingContext.transform"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.transform.html#pyspark.streaming.StreamingContext.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dstreams</span><span class="p">,</span> <span class="n">transformFunc</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.transform"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.transform.html#streaming.StreamingContext.transform">[docs]</a>    <span class="k">def</span> <span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dstreams</span><span class="p">,</span> <span class="n">transformFunc</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new DStream in which each RDD is generated by applying</span>
 <span class="sd">        a function on RDDs of the DStreams. The order of the JavaRDDs in</span>
@@ -497,7 +493,7 @@
         <span class="n">jdstream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">jdstreams</span><span class="p">,</span> <span class="n">jfunc</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="n">jdstream</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">serializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="StreamingContext.union"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.union.html#pyspark.streaming.StreamingContext.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">dstreams</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.union"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.union.html#streaming.StreamingContext.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">dstreams</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a unified DStream from multiple DStreams of the same</span>
 <span class="sd">        type and same slide duration.</span>
@@ -514,7 +510,7 @@
         <span class="n">jrest</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="o">.</span><span class="n">_jdstream</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dstreams</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
         <span class="k">return</span> <span class="n">DStream</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jssc</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">_jdstream</span><span class="p">,</span> <span class="n">jrest</span><span class="p">),</span> <span class="bp">self</span><span class="p">,</span> <span class="n">first</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="StreamingContext.addStreamingListener"><a class="viewcode-back" href="../../../generated/generated/pyspark.streaming.StreamingContext.addStreamingListener.html#pyspark.streaming.StreamingContext.addStreamingListener">[docs]</a>    <span class="k">def</span> <span class="nf">addStreamingListener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">streamingListener</span><span class="p">):</span>
+<div class="viewcode-block" id="StreamingContext.addStreamingListener"><a class="viewcode-back" href="../../../generated/generated/streaming.StreamingContext.addStreamingListener.html#streaming.StreamingContext.addStreamingListener">[docs]</a>    <span class="k">def</span> <span class="nf">addStreamingListener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">streamingListener</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add a [[org.apache.spark.streaming.scheduler.StreamingListener]] object for</span>
 <span class="sd">        receiving system events related to streaming.</span>
@@ -554,7 +550,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

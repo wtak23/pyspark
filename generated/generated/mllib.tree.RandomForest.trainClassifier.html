@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.tree.RandomForest.trainClassifier</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="mllib.tree.RandomForest" href="mllib.tree.RandomForest.html"/>
+        <link rel="next" title="mllib.tree.RandomForest.trainRegressor" href="mllib.tree.RandomForest.trainRegressor.html"/>
+        <link rel="prev" title="mllib.tree.RandomForest" href="mllib.tree.RandomForest.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mllib.tree.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../mllib.tree.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.DecisionTree.html"><code class="docutils literal"><span class="pre">mllib.tree.DecisionTree</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.DecisionTreeModel.html"><code class="docutils literal"><span class="pre">mllib.tree.DecisionTreeModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.GradientBoostedTrees.html"><code class="docutils literal"><span class="pre">mllib.tree.GradientBoostedTrees</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.GradientBoostedTreesModel.html"><code class="docutils literal"><span class="pre">mllib.tree.GradientBoostedTreesModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.JavaLoader.html"><code class="docutils literal"><span class="pre">mllib.tree.JavaLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.tree.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.JavaSaveable.html"><code class="docutils literal"><span class="pre">mllib.tree.JavaSaveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.LabeledPoint.html"><code class="docutils literal"><span class="pre">mllib.tree.LabeledPoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.RDD.html"><code class="docutils literal"><span class="pre">mllib.tree.RDD</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mllib.tree.RandomForest.html"><code class="docutils literal"><span class="pre">mllib.tree.RandomForest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.RandomForestModel.html"><code class="docutils literal"><span class="pre">mllib.tree.RandomForestModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.SparkContext.html"><code class="docutils literal"><span class="pre">mllib.tree.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.tree.TreeEnsembleModel.html"><code class="docutils literal"><span class="pre">mllib.tree.TreeEnsembleModel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a> &raquo;</li>
+        
+          <li><a href="mllib.tree.RandomForest.html"><code class="docutils literal"><span class="pre">mllib.tree.RandomForest</span></code></a> &raquo;</li>
+        
+      <li>mllib.tree.RandomForest.trainClassifier</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/mllib.tree.RandomForest.trainClassifier.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mllib-tree-randomforest-trainclassifier">
+<h1>mllib.tree.RandomForest.trainClassifier<a class="headerlink" href="#mllib-tree-randomforest-trainclassifier" title="Permalink to this headline">¶</a></h1>
+<dl class="classmethod">
+<dt id="mllib.tree.RandomForest.trainClassifier">
+<em class="property">classmethod </em><code class="descclassname">RandomForest.</code><code class="descname">trainClassifier</code><span class="sig-paren">(</span><em>data</em>, <em>numClasses</em>, <em>categoricalFeaturesInfo</em>, <em>numTrees</em>, <em>featureSubsetStrategy='auto'</em>, <em>impurity='gini'</em>, <em>maxDepth=4</em>, <em>maxBins=32</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/mllib/tree.html#RandomForest.trainClassifier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.tree.RandomForest.trainClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train a random forest model for binary or multiclass
+classification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> &#8211; Training dataset: RDD of LabeledPoint. Labels should take values
+{0, 1, ..., numClasses-1}.</li>
+<li><strong>numClasses</strong> &#8211; Number of classes for classification.</li>
+<li><strong>categoricalFeaturesInfo</strong> &#8211; Map storing arity of categorical features. An entry (n -&gt; k)
+indicates that feature n is categorical with k categories
+indexed from 0: {0, 1, ..., k-1}.</li>
+<li><strong>numTrees</strong> &#8211; Number of trees in the random forest.</li>
+<li><strong>featureSubsetStrategy</strong> &#8211; Number of features to consider for splits at each node.
+Supported values: &#8220;auto&#8221;, &#8220;all&#8221;, &#8220;sqrt&#8221;, &#8220;log2&#8221;, &#8220;onethird&#8221;.
+If &#8220;auto&#8221; is set, this parameter is set based on numTrees:
+if numTrees == 1, set to &#8220;all&#8221;;
+if numTrees &gt; 1 (forest) set to &#8220;sqrt&#8221;.
+(default: &#8220;auto&#8221;)</li>
+<li><strong>impurity</strong> &#8211; Criterion used for information gain calculation.
+Supported values: &#8220;gini&#8221; or &#8220;entropy&#8221;.
+(default: &#8220;gini&#8221;)</li>
+<li><strong>maxDepth</strong> &#8211; Maximum depth of tree (e.g. depth 0 means 1 leaf node, depth 1
+means 1 internal node + 2 leaf nodes).
+(default: 4)</li>
+<li><strong>maxBins</strong> &#8211; Maximum number of bins used for splitting features.
+(default: 32)</li>
+<li><strong>seed</strong> &#8211; Random seed for bootstrapping and choosing feature subsets.
+Set as None to generate seed based on system time.
+(default: None)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RandomForestModel that can be used for prediction.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.regression</span> <span class="kn">import</span> <span class="n">LabeledPoint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.mllib.tree</span> <span class="kn">import</span> <span class="n">RandomForest</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">]),</span>
+<span class="gp">... </span>    <span class="n">LabeledPoint</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">])</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">RandomForest</span><span class="o">.</span><span class="n">trainClassifier</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{},</span> <span class="mi">3</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">numTrees</span><span class="p">()</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">totalNumNodes</span><span class="p">()</span>
+<span class="go">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+<span class="go">TreeEnsembleModel classifier with 3 trees</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">toDebugString</span><span class="p">())</span>
+<span class="go">TreeEnsembleModel classifier with 3 trees</span>
+
+<span class="go">  Tree 0:</span>
+<span class="go">    Predict: 1.0</span>
+<span class="go">  Tree 1:</span>
+<span class="go">    If (feature 0 &lt;= 1.0)</span>
+<span class="go">     Predict: 0.0</span>
+<span class="go">    Else (feature 0 &gt; 1.0)</span>
+<span class="go">     Predict: 1.0</span>
+<span class="go">  Tree 2:</span>
+<span class="go">    If (feature 0 &lt;= 1.0)</span>
+<span class="go">     Predict: 0.0</span>
+<span class="go">    Else (feature 0 &gt; 1.0)</span>
+<span class="go">     Predict: 1.0</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="mf">2.0</span><span class="p">])</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="mf">0.0</span><span class="p">])</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rdd</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([[</span><span class="mf">3.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">rdd</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+<span class="go">[1.0, 0.0]</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.2.0.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mllib.tree.RandomForest.trainRegressor.html" class="btn btn-neutral float-right" title="mllib.tree.RandomForest.trainRegressor" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mllib.tree.RandomForest.html" class="btn btn-neutral" title="mllib.tree.RandomForest" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

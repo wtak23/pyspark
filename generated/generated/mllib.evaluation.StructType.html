@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.evaluation.StructType</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="mllib.evaluation" href="../mllib.evaluation.html"/>
+        <link rel="next" title="mllib.evaluation.StructType.__init__" href="mllib.evaluation.StructType.__init__.html"/>
+        <link rel="prev" title="mllib.evaluation.StructField.typeName" href="mllib.evaluation.StructField.typeName.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mllib.evaluation.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../mllib.evaluation.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.ArrayType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.BinaryClassificationMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.BinaryClassificationMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.DoubleType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.IntegerType.html"><code class="docutils literal"><span class="pre">mllib.evaluation.IntegerType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.evaluation.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.MulticlassMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.MulticlassMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.MultilabelMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.MultilabelMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.RankingMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.RankingMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.RegressionMetrics.html"><code class="docutils literal"><span class="pre">mllib.evaluation.RegressionMetrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.SQLContext.html"><code class="docutils literal"><span class="pre">mllib.evaluation.SQLContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.evaluation.StructField.html"><code class="docutils literal"><span class="pre">mllib.evaluation.StructField</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">mllib.evaluation.StructType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">mllib.evaluation.StructType</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/mllib.evaluation.StructType.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mllib-evaluation-structtype">
+<h1><a class="reference internal" href="#mllib.evaluation.StructType" title="mllib.evaluation.StructType"><code class="xref py py-class docutils literal"><span class="pre">mllib.evaluation.StructType</span></code></a><a class="headerlink" href="#mllib-evaluation-structtype" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="mllib.evaluation.StructType">
+<em class="property">class </em><code class="descclassname">mllib.evaluation.</code><code class="descname">StructType</code><span class="sig-paren">(</span><em>fields=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/types.html#StructType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.evaluation.StructType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Struct type, consisting of a list of <a class="reference internal" href="mllib.evaluation.StructField.html#mllib.evaluation.StructField" title="mllib.evaluation.StructField"><code class="xref py py-class docutils literal"><span class="pre">StructField</span></code></a>.</p>
+<p>This is the data type representing a <code class="xref py py-class docutils literal"><span class="pre">Row</span></code>.</p>
+<p>Iterating a <a class="reference internal" href="#mllib.evaluation.StructType" title="mllib.evaluation.StructType"><code class="xref py py-class docutils literal"><span class="pre">StructType</span></code></a> will iterate its <code class="xref py py-class docutils literal"><span class="pre">StructField`s.</span>
+<span class="pre">A</span> <span class="pre">contained</span> <span class="pre">:class:`StructField</span></code> can be accessed by name or position.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span><span class="p">[</span><span class="s2">&quot;f1&quot;</span><span class="p">]</span>
+<span class="go">StructField(f1,StringType,true)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">StructField(f1,StringType,true)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="mllib.evaluation.StructType.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>fields=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/types.html#StructType.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.evaluation.StructType.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct2</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span> <span class="o">==</span> <span class="n">struct2</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct2</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;f2&quot;</span><span class="p">,</span> <span class="n">IntegerType</span><span class="p">(),</span> <span class="bp">False</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span> <span class="o">==</span> <span class="n">struct2</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.StructType.__init__.html#mllib.evaluation.StructType.__init__" title="mllib.evaluation.StructType.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([fields])</td>
+<td><div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">struct1</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">([</span><span class="n">StructField</span><span class="p">(</span><span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="n">StringType</span><span class="p">(),</span> <span class="bp">True</span><span class="p">)])</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.StructType.add.html#mllib.evaluation.StructType.add" title="mllib.evaluation.StructType.add"><code class="xref py py-obj docutils literal"><span class="pre">add</span></code></a>(field[,&nbsp;data_type,&nbsp;nullable,&nbsp;metadata])</td>
+<td>Construct a StructType by adding new elements to it to define the schema.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.StructType.fromInternal.html#mllib.evaluation.StructType.fromInternal" title="mllib.evaluation.StructType.fromInternal"><code class="xref py py-obj docutils literal"><span class="pre">fromInternal</span></code></a>(obj)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.StructType.fromJson.html#mllib.evaluation.StructType.fromJson" title="mllib.evaluation.StructType.fromJson"><code class="xref py py-obj docutils literal"><span class="pre">fromJson</span></code></a>(json)</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.StructType.json.html#mllib.evaluation.StructType.json" title="mllib.evaluation.StructType.json"><code class="xref py py-obj docutils literal"><span class="pre">json</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.StructType.jsonValue.html#mllib.evaluation.StructType.jsonValue" title="mllib.evaluation.StructType.jsonValue"><code class="xref py py-obj docutils literal"><span class="pre">jsonValue</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.StructType.needConversion.html#mllib.evaluation.StructType.needConversion" title="mllib.evaluation.StructType.needConversion"><code class="xref py py-obj docutils literal"><span class="pre">needConversion</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.StructType.simpleString.html#mllib.evaluation.StructType.simpleString" title="mllib.evaluation.StructType.simpleString"><code class="xref py py-obj docutils literal"><span class="pre">simpleString</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="mllib.evaluation.StructType.toInternal.html#mllib.evaluation.StructType.toInternal" title="mllib.evaluation.StructType.toInternal"><code class="xref py py-obj docutils literal"><span class="pre">toInternal</span></code></a>(obj)</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="mllib.evaluation.StructType.typeName.html#mllib.evaluation.StructType.typeName" title="mllib.evaluation.StructType.typeName"><code class="xref py py-obj docutils literal"><span class="pre">typeName</span></code></a>()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mllib.evaluation.StructType.__init__.html" class="btn btn-neutral float-right" title="mllib.evaluation.StructType.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mllib.evaluation.StructField.typeName.html" class="btn btn-neutral" title="mllib.evaluation.StructField.typeName" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

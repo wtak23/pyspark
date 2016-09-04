@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyspark.sql.session &mdash; PySpark API</title>
+  <title>pyspark.sql.session</title>
   
 
   
@@ -32,7 +32,7 @@
   
 
   
-    <link rel="top" title="PySpark API" href="../../../index.html"/>
+    <link rel="top" title="" href="../../../index.html"/>
         <link rel="up" title="pyspark" href="../../pyspark.html"/> 
 
   
@@ -61,10 +61,6 @@
           
             
             
-              <div class="version">
-                1
-              </div>
-            
           
 
           
@@ -85,11 +81,11 @@
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html">1. pyspark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">2. pyspark.sql</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">3. pyspark.ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">4. pyspark.mllib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">5. pyspark.streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../generated/pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pyspark.streaming.html">pyspark.streaming</a></li>
 </ul>
 
             
@@ -212,7 +208,7 @@
     <span class="n">RDD</span><span class="o">.</span><span class="n">toDF</span> <span class="o">=</span> <span class="n">toDF</span>
 
 
-<div class="viewcode-block" id="SparkSession"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.html#pyspark.sql.SparkSession">[docs]</a><span class="k">class</span> <span class="nc">SparkSession</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.html#sql.SparkSession">[docs]</a><span class="k">class</span> <span class="nc">SparkSession</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;The entry point to programming Spark with the Dataset and DataFrame API.</span>
 
 <span class="sd">    A SparkSession can be used create :class:`DataFrame`, register :class:`DataFrame` as</span>
@@ -339,7 +335,7 @@
     <span class="n">_instantiatedContext</span> <span class="o">=</span> <span class="bp">None</span>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="SparkSession.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.__init__.html#pyspark.sql.SparkSession.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">jsparkSession</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.__init__.html#sql.SparkSession.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sparkContext</span><span class="p">,</span> <span class="n">jsparkSession</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a new SparkSession.</span>
 
 <span class="sd">        &gt;&gt;&gt; from datetime import datetime</span>
@@ -371,7 +367,7 @@
             <span class="n">SparkSession</span><span class="o">.</span><span class="n">_instantiatedContext</span> <span class="o">=</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SparkSession.newSession"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.newSession.html#pyspark.sql.SparkSession.newSession">[docs]</a>    <span class="k">def</span> <span class="nf">newSession</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.newSession"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.newSession.html#sql.SparkSession.newSession">[docs]</a>    <span class="k">def</span> <span class="nf">newSession</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a new SparkSession as new session, that has separate SQLConf,</span>
 <span class="sd">        registered temporary views and UDFs, but shared SparkContext and</span>
@@ -425,7 +421,7 @@
         <span class="k">return</span> <span class="n">UDFRegistration</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_wrapped</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SparkSession.range"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.range.html#pyspark.sql.SparkSession.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.range"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.range.html#sql.SparkSession.range">[docs]</a>    <span class="k">def</span> <span class="nf">range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a :class:`DataFrame` with single LongType column named `id`,</span>
 <span class="sd">        containing elements in a range from `start` to `end` (exclusive) with</span>
@@ -556,7 +552,7 @@
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="SparkSession.createDataFrame"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.createDataFrame.html#pyspark.sql.SparkSession.createDataFrame">[docs]</a>    <span class="k">def</span> <span class="nf">createDataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.createDataFrame"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.createDataFrame.html#sql.SparkSession.createDataFrame">[docs]</a>    <span class="k">def</span> <span class="nf">createDataFrame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">samplingRatio</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a :class:`DataFrame` from an :class:`RDD`, a list or a :class:`pandas.DataFrame`.</span>
 
@@ -681,7 +677,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SparkSession.sql"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.sql.html#pyspark.sql.SparkSession.sql">[docs]</a>    <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlQuery</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.sql"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.sql.html#sql.SparkSession.sql">[docs]</a>    <span class="k">def</span> <span class="nf">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sqlQuery</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a :class:`DataFrame` representing the result of the given query.</span>
 
 <span class="sd">        :return: :class:`DataFrame`</span>
@@ -694,7 +690,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jsparkSession</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="n">sqlQuery</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrapped</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SparkSession.table"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.table.html#pyspark.sql.SparkSession.table">[docs]</a>    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.table"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.table.html#sql.SparkSession.table">[docs]</a>    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tableName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the specified table as a :class:`DataFrame`.</span>
 
 <span class="sd">        :return: :class:`DataFrame`</span>
@@ -744,7 +740,7 @@
         <span class="k">return</span> <span class="n">StreamingQueryManager</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jsparkSession</span><span class="o">.</span><span class="n">streams</span><span class="p">())</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="SparkSession.stop"><a class="viewcode-back" href="../../../generated/generated/pyspark.sql.SparkSession.stop.html#pyspark.sql.SparkSession.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="SparkSession.stop"><a class="viewcode-back" href="../../../generated/generated/sql.SparkSession.stop.html#sql.SparkSession.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Stop the underlying :class:`SparkContext`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
@@ -826,7 +822,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'1',
+            VERSION:'',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.types.array</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="sql.types" href="../sql.types.html"/>
+        <link rel="next" title="sql.types.array.append" href="sql.types.array.append.html"/>
+        <link rel="prev" title="sql.types.UserDefinedType.typeName" href="sql.types.UserDefinedType.typeName.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../sql.types.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../sql.types.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sql.types.ArrayType.html"><code class="docutils literal"><span class="pre">sql.types.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.AtomicType.html"><code class="docutils literal"><span class="pre">sql.types.AtomicType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.BinaryType.html"><code class="docutils literal"><span class="pre">sql.types.BinaryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.BooleanType.html"><code class="docutils literal"><span class="pre">sql.types.BooleanType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.ByteType.html"><code class="docutils literal"><span class="pre">sql.types.ByteType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.CloudPickleSerializer.html"><code class="docutils literal"><span class="pre">sql.types.CloudPickleSerializer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.DataType.html"><code class="docutils literal"><span class="pre">sql.types.DataType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.DataTypeSingleton.html"><code class="docutils literal"><span class="pre">sql.types.DataTypeSingleton</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.DateConverter.html"><code class="docutils literal"><span class="pre">sql.types.DateConverter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.DateType.html"><code class="docutils literal"><span class="pre">sql.types.DateType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.DatetimeConverter.html"><code class="docutils literal"><span class="pre">sql.types.DatetimeConverter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.DecimalType.html"><code class="docutils literal"><span class="pre">sql.types.DecimalType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.DoubleType.html"><code class="docutils literal"><span class="pre">sql.types.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.FloatType.html"><code class="docutils literal"><span class="pre">sql.types.FloatType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.FractionalType.html"><code class="docutils literal"><span class="pre">sql.types.FractionalType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.IntegerType.html"><code class="docutils literal"><span class="pre">sql.types.IntegerType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.IntegralType.html"><code class="docutils literal"><span class="pre">sql.types.IntegralType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.JavaClass.html"><code class="docutils literal"><span class="pre">sql.types.JavaClass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.LongType.html"><code class="docutils literal"><span class="pre">sql.types.LongType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.MapType.html"><code class="docutils literal"><span class="pre">sql.types.MapType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.NullType.html"><code class="docutils literal"><span class="pre">sql.types.NullType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.NumericType.html"><code class="docutils literal"><span class="pre">sql.types.NumericType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.Row.html"><code class="docutils literal"><span class="pre">sql.types.Row</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.ShortType.html"><code class="docutils literal"><span class="pre">sql.types.ShortType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.StringType.html"><code class="docutils literal"><span class="pre">sql.types.StringType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.StructField.html"><code class="docutils literal"><span class="pre">sql.types.StructField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.StructType.html"><code class="docutils literal"><span class="pre">sql.types.StructType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.TimestampType.html"><code class="docutils literal"><span class="pre">sql.types.TimestampType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.types.UserDefinedType.html"><code class="docutils literal"><span class="pre">sql.types.UserDefinedType</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">sql.types.array</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">sql.types.array</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/sql.types.array.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql-types-array">
+<h1><a class="reference internal" href="#sql.types.array" title="sql.types.array"><code class="xref py py-class docutils literal"><span class="pre">sql.types.array</span></code></a><a class="headerlink" href="#sql-types-array" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="sql.types.array">
+<em class="property">class </em><code class="descclassname">sql.types.</code><code class="descname">array</code><a class="headerlink" href="#sql.types.array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new array whose items are restricted by typecode, and
+initialized from the optional initializer value, which must be a list,
+string or iterable over elements of the appropriate type.</p>
+<p>Arrays represent basic values and behave very much like lists, except
+the type of objects stored in them is constrained.</p>
+<p>Methods:</p>
+<p>append() &#8211; append a new item to the end of the array
+buffer_info() &#8211; return information giving the current memory info
+byteswap() &#8211; byteswap all the items of the array
+count() &#8211; return number of occurrences of an object
+extend() &#8211; extend array by appending multiple elements from an iterable
+fromfile() &#8211; read items from a file object
+fromlist() &#8211; append items from the list
+fromstring() &#8211; append items from the string
+index() &#8211; return index of first occurrence of an object
+insert() &#8211; insert a new item into the array at a provided position
+pop() &#8211; remove and return item (default last)
+read() &#8211; DEPRECATED, use fromfile()
+remove() &#8211; remove first occurrence of an object
+reverse() &#8211; reverse the order of the items in the array
+tofile() &#8211; write all items to a file object
+tolist() &#8211; return the array converted to an ordinary list
+tostring() &#8211; return the array converted to a string
+write() &#8211; DEPRECATED, use tofile()</p>
+<p>Attributes:</p>
+<p>typecode &#8211; the typecode character used to create the array
+itemsize &#8211; the length in bytes of one array item</p>
+<dl class="attribute">
+<dt id="sql.types.array.__init__">
+<code class="descname">__init__</code><a class="headerlink" href="#sql.types.array.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>x.__init__(...) initializes x; see help(type(x)) for signature</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.append.html#sql.types.array.append" title="sql.types.array.append"><code class="xref py py-obj docutils literal"><span class="pre">append</span></code></a>(x)</td>
+<td>Append new value x to the end of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.buffer_info.html#sql.types.array.buffer_info" title="sql.types.array.buffer_info"><code class="xref py py-obj docutils literal"><span class="pre">buffer_info</span></code></a>()&nbsp;-&gt;&nbsp;(address,&nbsp;length)</td>
+<td>Return a tuple (address, length) giving the current memory address and the length in items of the buffer used to hold array&#8217;s contents The length should be multiplied by the itemsize attribute to calculate the buffer length in bytes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.byteswap.html#sql.types.array.byteswap" title="sql.types.array.byteswap"><code class="xref py py-obj docutils literal"><span class="pre">byteswap</span></code></a>()</td>
+<td>Byteswap all items of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.count.html#sql.types.array.count" title="sql.types.array.count"><code class="xref py py-obj docutils literal"><span class="pre">count</span></code></a>(x)</td>
+<td>Return number of occurrences of x in the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.extend.html#sql.types.array.extend" title="sql.types.array.extend"><code class="xref py py-obj docutils literal"><span class="pre">extend</span></code></a>(array&nbsp;or&nbsp;iterable)</td>
+<td>Append items to the end of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.fromfile.html#sql.types.array.fromfile" title="sql.types.array.fromfile"><code class="xref py py-obj docutils literal"><span class="pre">fromfile</span></code></a>(f,&nbsp;n)</td>
+<td>Read n objects from the file object f and append them to the end of the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.fromlist.html#sql.types.array.fromlist" title="sql.types.array.fromlist"><code class="xref py py-obj docutils literal"><span class="pre">fromlist</span></code></a>(list)</td>
+<td>Append items to array from list.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.fromstring.html#sql.types.array.fromstring" title="sql.types.array.fromstring"><code class="xref py py-obj docutils literal"><span class="pre">fromstring</span></code></a>(string)</td>
+<td>Appends items from the string, interpreting it as an array of machine values,as if it had been read from a file using the fromfile() method).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.fromunicode.html#sql.types.array.fromunicode" title="sql.types.array.fromunicode"><code class="xref py py-obj docutils literal"><span class="pre">fromunicode</span></code></a>(ustr)</td>
+<td>Extends this array with data from the unicode string ustr.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.index.html#sql.types.array.index" title="sql.types.array.index"><code class="xref py py-obj docutils literal"><span class="pre">index</span></code></a>(x)</td>
+<td>Return index of first occurrence of x in the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.insert.html#sql.types.array.insert" title="sql.types.array.insert"><code class="xref py py-obj docutils literal"><span class="pre">insert</span></code></a>(i,x)</td>
+<td>Insert a new item x into the array before position i.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.pop.html#sql.types.array.pop" title="sql.types.array.pop"><code class="xref py py-obj docutils literal"><span class="pre">pop</span></code></a>([i])</td>
+<td>Return the i-th element and delete it from the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.read.html#sql.types.array.read" title="sql.types.array.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>(f,&nbsp;n)</td>
+<td>Read n objects from the file object f and append them to the end of the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.remove.html#sql.types.array.remove" title="sql.types.array.remove"><code class="xref py py-obj docutils literal"><span class="pre">remove</span></code></a>(x)</td>
+<td>Remove the first occurrence of x in the array.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.reverse.html#sql.types.array.reverse" title="sql.types.array.reverse"><code class="xref py py-obj docutils literal"><span class="pre">reverse</span></code></a>()</td>
+<td>Reverse the order of the items in the array.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.tofile.html#sql.types.array.tofile" title="sql.types.array.tofile"><code class="xref py py-obj docutils literal"><span class="pre">tofile</span></code></a>(f)</td>
+<td>Write all items (as machine values) to the file object f.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.tolist.html#sql.types.array.tolist" title="sql.types.array.tolist"><code class="xref py py-obj docutils literal"><span class="pre">tolist</span></code></a>(()&nbsp;-&gt;&nbsp;list)</td>
+<td>Convert array to an ordinary list with the same items.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.tostring.html#sql.types.array.tostring" title="sql.types.array.tostring"><code class="xref py py-obj docutils literal"><span class="pre">tostring</span></code></a>(()&nbsp;-&gt;&nbsp;string)</td>
+<td>Convert the array to an array of machine values and return the string representation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.tounicode.html#sql.types.array.tounicode" title="sql.types.array.tounicode"><code class="xref py py-obj docutils literal"><span class="pre">tounicode</span></code></a>(()&nbsp;-&gt;&nbsp;unicode)</td>
+<td>Convert the array to a unicode string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.write.html#sql.types.array.write" title="sql.types.array.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>(f)</td>
+<td>Write all items (as machine values) to the file object f.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="sql.types.array.itemsize.html#sql.types.array.itemsize" title="sql.types.array.itemsize"><code class="xref py py-obj docutils literal"><span class="pre">itemsize</span></code></a></td>
+<td>the size, in bytes, of one array item</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="sql.types.array.typecode.html#sql.types.array.typecode" title="sql.types.array.typecode"><code class="xref py py-obj docutils literal"><span class="pre">typecode</span></code></a></td>
+<td>the typecode character used to create the array</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sql.types.array.append.html" class="btn btn-neutral float-right" title="sql.types.array.append" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql.types.UserDefinedType.typeName.html" class="btn btn-neutral" title="sql.types.UserDefinedType.typeName" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

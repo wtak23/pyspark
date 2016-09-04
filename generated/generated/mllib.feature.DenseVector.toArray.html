@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mllib.feature.DenseVector.toArray</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="mllib.feature.DenseVector" href="mllib.feature.DenseVector.html"/>
+        <link rel="next" title="mllib.feature.DenseVector.values" href="mllib.feature.DenseVector.values.html"/>
+        <link rel="prev" title="mllib.feature.DenseVector.squared_distance" href="mllib.feature.DenseVector.squared_distance.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../mllib.html"><code class="docutils literal"><span class="pre">mllib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.classification.html"><code class="docutils literal"><span class="pre">mllib.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.clustering.html"><code class="docutils literal"><span class="pre">mllib.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.evaluation.html"><code class="docutils literal"><span class="pre">mllib.evaluation</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../mllib.feature.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../mllib.feature.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.ChiSqSelector.html"><code class="docutils literal"><span class="pre">mllib.feature.ChiSqSelector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.ChiSqSelectorModel.html"><code class="docutils literal"><span class="pre">mllib.feature.ChiSqSelectorModel</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="mllib.feature.DenseVector.html"><code class="docutils literal"><span class="pre">mllib.feature.DenseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.ElementwiseProduct.html"><code class="docutils literal"><span class="pre">mllib.feature.ElementwiseProduct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.HashingTF.html"><code class="docutils literal"><span class="pre">mllib.feature.HashingTF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.IDF.html"><code class="docutils literal"><span class="pre">mllib.feature.IDF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.IDFModel.html"><code class="docutils literal"><span class="pre">mllib.feature.IDFModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.JavaLoader.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaLoader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.JavaModelWrapper.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaModelWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.JavaSaveable.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaSaveable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.JavaVectorTransformer.html"><code class="docutils literal"><span class="pre">mllib.feature.JavaVectorTransformer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.LabeledPoint.html"><code class="docutils literal"><span class="pre">mllib.feature.LabeledPoint</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.Normalizer.html"><code class="docutils literal"><span class="pre">mllib.feature.Normalizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.PCA.html"><code class="docutils literal"><span class="pre">mllib.feature.PCA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.PCAModel.html"><code class="docutils literal"><span class="pre">mllib.feature.PCAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.RDD.html"><code class="docutils literal"><span class="pre">mllib.feature.RDD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.SparseVector.html"><code class="docutils literal"><span class="pre">mllib.feature.SparseVector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.StandardScaler.html"><code class="docutils literal"><span class="pre">mllib.feature.StandardScaler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.StandardScalerModel.html"><code class="docutils literal"><span class="pre">mllib.feature.StandardScalerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.Vector.html"><code class="docutils literal"><span class="pre">mllib.feature.Vector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.VectorTransformer.html"><code class="docutils literal"><span class="pre">mllib.feature.VectorTransformer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.Vectors.html"><code class="docutils literal"><span class="pre">mllib.feature.Vectors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.Word2Vec.html"><code class="docutils literal"><span class="pre">mllib.feature.Word2Vec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mllib.feature.Word2VecModel.html"><code class="docutils literal"><span class="pre">mllib.feature.Word2VecModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../mllib.feature.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.fpm.html"><code class="docutils literal"><span class="pre">mllib.fpm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.html"><code class="docutils literal"><span class="pre">mllib.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.linalg.distributed.html"><code class="docutils literal"><span class="pre">mllib.linalg.distributed</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.random.html"><code class="docutils literal"><span class="pre">mllib.random</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.recommendation.html"><code class="docutils literal"><span class="pre">mllib.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.regression.html"><code class="docutils literal"><span class="pre">mllib.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.stat.html"><code class="docutils literal"><span class="pre">mllib.stat</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.tree.html"><code class="docutils literal"><span class="pre">mllib.tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mllib.util.html"><code class="docutils literal"><span class="pre">mllib.util</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.mllib.html">pyspark.mllib</a> &raquo;</li>
+        
+          <li><a href="../mllib.feature.html"><code class="docutils literal"><span class="pre">mllib.feature</span></code></a> &raquo;</li>
+        
+          <li><a href="mllib.feature.DenseVector.html"><code class="docutils literal"><span class="pre">mllib.feature.DenseVector</span></code></a> &raquo;</li>
+        
+      <li>mllib.feature.DenseVector.toArray</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/mllib.feature.DenseVector.toArray.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mllib-feature-densevector-toarray">
+<h1>mllib.feature.DenseVector.toArray<a class="headerlink" href="#mllib-feature-densevector-toarray" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="mllib.feature.DenseVector.toArray">
+<code class="descclassname">DenseVector.</code><code class="descname">toArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/mllib/linalg.html#DenseVector.toArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#mllib.feature.DenseVector.toArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an numpy.ndarray</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mllib.feature.DenseVector.values.html" class="btn btn-neutral float-right" title="mllib.feature.DenseVector.values" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mllib.feature.DenseVector.squared_distance.html" class="btn btn-neutral" title="mllib.feature.DenseVector.squared_distance" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

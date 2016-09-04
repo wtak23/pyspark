@@ -1,0 +1,272 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sql.streaming.ArrayType.jsonValue</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="sql.streaming.ArrayType" href="sql.streaming.ArrayType.html"/>
+        <link rel="next" title="sql.streaming.ArrayType.needConversion" href="sql.streaming.ArrayType.needConversion.html"/>
+        <link rel="prev" title="sql.streaming.ArrayType.json" href="sql.streaming.ArrayType.json.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sql.html"><code class="docutils literal"><span class="pre">sql</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.types.html"><code class="docutils literal"><span class="pre">sql.types</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sql.functions.html"><code class="docutils literal"><span class="pre">sql.functions</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../sql.streaming.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../sql.streaming.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.ABCMeta.html"><code class="docutils literal"><span class="pre">sql.streaming.ABCMeta</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="sql.streaming.ArrayType.html"><code class="docutils literal"><span class="pre">sql.streaming.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.BinaryType.html"><code class="docutils literal"><span class="pre">sql.streaming.BinaryType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.BooleanType.html"><code class="docutils literal"><span class="pre">sql.streaming.BooleanType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.ByteType.html"><code class="docutils literal"><span class="pre">sql.streaming.ByteType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.DataStreamReader.html"><code class="docutils literal"><span class="pre">sql.streaming.DataStreamReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.DataStreamWriter.html"><code class="docutils literal"><span class="pre">sql.streaming.DataStreamWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.DataType.html"><code class="docutils literal"><span class="pre">sql.streaming.DataType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.DateType.html"><code class="docutils literal"><span class="pre">sql.streaming.DateType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.DecimalType.html"><code class="docutils literal"><span class="pre">sql.streaming.DecimalType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.DoubleType.html"><code class="docutils literal"><span class="pre">sql.streaming.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.FloatType.html"><code class="docutils literal"><span class="pre">sql.streaming.FloatType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.IntegerType.html"><code class="docutils literal"><span class="pre">sql.streaming.IntegerType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.LongType.html"><code class="docutils literal"><span class="pre">sql.streaming.LongType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.MapType.html"><code class="docutils literal"><span class="pre">sql.streaming.MapType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.NullType.html"><code class="docutils literal"><span class="pre">sql.streaming.NullType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.OptionUtils.html"><code class="docutils literal"><span class="pre">sql.streaming.OptionUtils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.ProcessingTime.html"><code class="docutils literal"><span class="pre">sql.streaming.ProcessingTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.ShortType.html"><code class="docutils literal"><span class="pre">sql.streaming.ShortType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.StreamingQuery.html"><code class="docutils literal"><span class="pre">sql.streaming.StreamingQuery</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.StreamingQueryManager.html"><code class="docutils literal"><span class="pre">sql.streaming.StreamingQueryManager</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.StringType.html"><code class="docutils literal"><span class="pre">sql.streaming.StringType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.StructField.html"><code class="docutils literal"><span class="pre">sql.streaming.StructField</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.StructType.html"><code class="docutils literal"><span class="pre">sql.streaming.StructType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.TimestampType.html"><code class="docutils literal"><span class="pre">sql.streaming.TimestampType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.streaming.Trigger.html"><code class="docutils literal"><span class="pre">sql.streaming.Trigger</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.sql.html">pyspark.sql</a> &raquo;</li>
+        
+          <li><a href="../sql.streaming.html"><code class="docutils literal"><span class="pre">sql.streaming</span></code></a> &raquo;</li>
+        
+          <li><a href="sql.streaming.ArrayType.html"><code class="docutils literal"><span class="pre">sql.streaming.ArrayType</span></code></a> &raquo;</li>
+        
+      <li>sql.streaming.ArrayType.jsonValue</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/sql.streaming.ArrayType.jsonValue.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql-streaming-arraytype-jsonvalue">
+<h1>sql.streaming.ArrayType.jsonValue<a class="headerlink" href="#sql-streaming-arraytype-jsonvalue" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="sql.streaming.ArrayType.jsonValue">
+<code class="descclassname">ArrayType.</code><code class="descname">jsonValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/sql/types.html#ArrayType.jsonValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sql.streaming.ArrayType.jsonValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sql.streaming.ArrayType.needConversion.html" class="btn btn-neutral float-right" title="sql.streaming.ArrayType.needConversion" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql.streaming.ArrayType.json.html" class="btn btn-neutral" title="sql.streaming.ArrayType.json" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
