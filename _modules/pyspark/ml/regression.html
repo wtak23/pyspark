@@ -186,7 +186,7 @@
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="LinearRegression"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.LinearRegression.html#pyspark.ml.classification.LinearRegression">[docs]</a><span class="k">class</span> <span class="nc">LinearRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span> <span class="n">HasMaxIter</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">LinearRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span> <span class="n">HasMaxIter</span><span class="p">,</span>
                        <span class="n">HasRegParam</span><span class="p">,</span> <span class="n">HasTol</span><span class="p">,</span> <span class="n">HasElasticNetParam</span><span class="p">,</span> <span class="n">HasFitIntercept</span><span class="p">,</span>
                        <span class="n">HasStandardization</span><span class="p">,</span> <span class="n">HasSolver</span><span class="p">,</span> <span class="n">HasWeightCol</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -242,7 +242,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="LinearRegression.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.LinearRegression.__init__.html#pyspark.ml.classification.LinearRegression.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                  <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">elasticNetParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">fitIntercept</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
                  <span class="n">standardization</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">weightCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -255,11 +255,11 @@
             <span class="s2">&quot;org.apache.spark.ml.regression.LinearRegression&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="LinearRegression.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.LinearRegression.setParams.html#pyspark.ml.classification.LinearRegression.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                   <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">elasticNetParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">fitIntercept</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
                   <span class="n">standardization</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">weightCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -269,13 +269,13 @@
 <span class="sd">        Sets params for linear regression.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">java_model</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">LinearRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">LinearRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="LinearRegressionModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.LinearRegressionModel.html#pyspark.ml.classification.LinearRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">LinearRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">LinearRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Model fitted by :class:`LinearRegression`.</span>
 
@@ -319,7 +319,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;hasSummary&quot;</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="LinearRegressionModel.evaluate"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.LinearRegressionModel.evaluate.html#pyspark.ml.classification.LinearRegressionModel.evaluate">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Evaluates the model on a test dataset.</span>
 
@@ -330,10 +330,10 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;dataset must be a DataFrame but got </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">dataset</span><span class="p">))</span>
         <span class="n">java_lr_summary</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;evaluate&quot;</span><span class="p">,</span> <span class="n">dataset</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">LinearRegressionSummary</span><span class="p">(</span><span class="n">java_lr_summary</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">LinearRegressionSummary</span><span class="p">(</span><span class="n">java_lr_summary</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="LinearRegressionSummary"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.LinearRegressionSummary.html#pyspark.ml.classification.LinearRegressionSummary">[docs]</a><span class="k">class</span> <span class="nc">LinearRegressionSummary</span><span class="p">(</span><span class="n">JavaWrapper</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">LinearRegressionSummary</span><span class="p">(</span><span class="n">JavaWrapper</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: Experimental</span>
 
@@ -514,11 +514,11 @@
 
 <span class="sd">        .. seealso:: :py:attr:`LinearRegression.solver`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;pValues&quot;</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;pValues&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="LinearRegressionTrainingSummary"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.LinearRegressionTrainingSummary.html#pyspark.ml.classification.LinearRegressionTrainingSummary">[docs]</a><span class="k">class</span> <span class="nc">LinearRegressionTrainingSummary</span><span class="p">(</span><span class="n">LinearRegressionSummary</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">LinearRegressionTrainingSummary</span><span class="p">(</span><span class="n">LinearRegressionSummary</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: Experimental</span>
 
@@ -549,11 +549,11 @@
 
 <span class="sd">        .. seealso:: :py:attr:`LinearRegression.solver`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;totalIterations&quot;</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;totalIterations&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="IsotonicRegression"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegression.html#pyspark.ml.classification.IsotonicRegression">[docs]</a><span class="k">class</span> <span class="nc">IsotonicRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">IsotonicRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
                          <span class="n">HasWeightCol</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Currently implemented using parallelized pool adjacent violators algorithm.</span>
@@ -596,7 +596,7 @@
               <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toInt</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="IsotonicRegression.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegression.__init__.html#pyspark.ml.classification.IsotonicRegression.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                  <span class="n">weightCol</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isotonic</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">featureIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        __init__(self, featuresCol=&quot;features&quot;, labelCol=&quot;label&quot;, predictionCol=&quot;prediction&quot;, \</span>
@@ -607,10 +607,10 @@
             <span class="s2">&quot;org.apache.spark.ml.regression.IsotonicRegression&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">isotonic</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">featureIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="IsotonicRegression.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegression.setParams.html#pyspark.ml.classification.IsotonicRegression.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                   <span class="n">weightCol</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isotonic</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">featureIndex</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        setParams(self, featuresCol=&quot;features&quot;, labelCol=&quot;label&quot;, predictionCol=&quot;prediction&quot;, \</span>
@@ -618,37 +618,37 @@
 <span class="sd">        Set the params for IsotonicRegression.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">java_model</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">IsotonicRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span>
 
-<div class="viewcode-block" id="IsotonicRegression.setIsotonic"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegression.setIsotonic.html#pyspark.ml.classification.IsotonicRegression.setIsotonic">[docs]</a>    <span class="k">def</span> <span class="nf">setIsotonic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setIsotonic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`isotonic`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">isotonic</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">isotonic</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
-<div class="viewcode-block" id="IsotonicRegression.getIsotonic"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegression.getIsotonic.html#pyspark.ml.classification.IsotonicRegression.getIsotonic">[docs]</a>    <span class="k">def</span> <span class="nf">getIsotonic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getIsotonic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of isotonic or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotonic</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">isotonic</span><span class="p">)</span>
 
-<div class="viewcode-block" id="IsotonicRegression.setFeatureIndex"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegression.setFeatureIndex.html#pyspark.ml.classification.IsotonicRegression.setFeatureIndex">[docs]</a>    <span class="k">def</span> <span class="nf">setFeatureIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setFeatureIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`featureIndex`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">featureIndex</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">featureIndex</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
-<div class="viewcode-block" id="IsotonicRegression.getFeatureIndex"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegression.getFeatureIndex.html#pyspark.ml.classification.IsotonicRegression.getFeatureIndex">[docs]</a>    <span class="k">def</span> <span class="nf">getFeatureIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getFeatureIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of featureIndex or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">featureIndex</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">featureIndex</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="IsotonicRegressionModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.IsotonicRegressionModel.html#pyspark.ml.classification.IsotonicRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">IsotonicRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">IsotonicRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Model fitted by :class:`IsotonicRegression`.</span>
 
@@ -670,10 +670,10 @@
 <span class="sd">        Predictions associated with the boundaries at the same index, monotone because of isotonic</span>
 <span class="sd">        regression.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;predictions&quot;</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;predictions&quot;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="TreeEnsembleParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeEnsembleParams.html#pyspark.ml.classification.TreeEnsembleParams">[docs]</a><span class="k">class</span> <span class="nc">TreeEnsembleParams</span><span class="p">(</span><span class="n">DecisionTreeParams</span><span class="p">):</span>
+<div class="viewcode-block" id="TreeEnsembleParams"><a class="viewcode-back" href="../../../generated/generated/ml.classification.TreeEnsembleParams.html#ml.classification.TreeEnsembleParams">[docs]</a><span class="k">class</span> <span class="nc">TreeEnsembleParams</span><span class="p">(</span><span class="n">DecisionTreeParams</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Mixin for Decision Tree-based ensemble algorithms parameters.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -682,25 +682,25 @@
                             <span class="s2">&quot;used for learning each decision tree, in range (0, 1].&quot;</span><span class="p">,</span>
                             <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toFloat</span><span class="p">)</span>
 
-<div class="viewcode-block" id="TreeEnsembleParams.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeEnsembleParams.__init__.html#pyspark.ml.classification.TreeEnsembleParams.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TreeEnsembleParams.__init__"><a class="viewcode-back" href="../../../generated/generated/ml.classification.TreeEnsembleParams.__init__.html#ml.classification.TreeEnsembleParams.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">TreeEnsembleParams</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="TreeEnsembleParams.setSubsamplingRate"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeEnsembleParams.setSubsamplingRate.html#pyspark.ml.classification.TreeEnsembleParams.setSubsamplingRate">[docs]</a>    <span class="k">def</span> <span class="nf">setSubsamplingRate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TreeEnsembleParams.setSubsamplingRate"><a class="viewcode-back" href="../../../generated/generated/ml.classification.TreeEnsembleParams.setSubsamplingRate.html#ml.classification.TreeEnsembleParams.setSubsamplingRate">[docs]</a>    <span class="k">def</span> <span class="nf">setSubsamplingRate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`subsamplingRate`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">subsamplingRate</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="TreeEnsembleParams.getSubsamplingRate"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeEnsembleParams.getSubsamplingRate.html#pyspark.ml.classification.TreeEnsembleParams.getSubsamplingRate">[docs]</a>    <span class="k">def</span> <span class="nf">getSubsamplingRate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TreeEnsembleParams.getSubsamplingRate"><a class="viewcode-back" href="../../../generated/generated/ml.classification.TreeEnsembleParams.getSubsamplingRate.html#ml.classification.TreeEnsembleParams.getSubsamplingRate">[docs]</a>    <span class="k">def</span> <span class="nf">getSubsamplingRate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of subsamplingRate or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subsamplingRate</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="TreeRegressorParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeRegressorParams.html#pyspark.ml.classification.TreeRegressorParams">[docs]</a><span class="k">class</span> <span class="nc">TreeRegressorParams</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">TreeRegressorParams</span><span class="p">(</span><span class="n">Params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Private class to track supported impurity measures.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -711,25 +711,25 @@
                      <span class="s2">&quot;Supported options: &quot;</span> <span class="o">+</span>
                      <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">supportedImpurities</span><span class="p">),</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
 
-<div class="viewcode-block" id="TreeRegressorParams.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeRegressorParams.__init__.html#pyspark.ml.classification.TreeRegressorParams.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">TreeRegressorParams</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TreeRegressorParams</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="TreeRegressorParams.setImpurity"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeRegressorParams.setImpurity.html#pyspark.ml.classification.TreeRegressorParams.setImpurity">[docs]</a>    <span class="k">def</span> <span class="nf">setImpurity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setImpurity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`impurity`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">impurity</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">impurity</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="TreeRegressorParams.getImpurity"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeRegressorParams.getImpurity.html#pyspark.ml.classification.TreeRegressorParams.getImpurity">[docs]</a>    <span class="k">def</span> <span class="nf">getImpurity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getImpurity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of impurity or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">impurity</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">impurity</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="RandomForestParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestParams.html#pyspark.ml.classification.RandomForestParams">[docs]</a><span class="k">class</span> <span class="nc">RandomForestParams</span><span class="p">(</span><span class="n">TreeEnsembleParams</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomForestParams"><a class="viewcode-back" href="../../../generated/generated/ml.classification.RandomForestParams.html#ml.classification.RandomForestParams">[docs]</a><span class="k">class</span> <span class="nc">RandomForestParams</span><span class="p">(</span><span class="n">TreeEnsembleParams</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Private class to track supported random forest parameters.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -743,47 +743,47 @@
               <span class="s2">&quot;options: &quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">supportedFeatureSubsetStrategies</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; (0.0-1.0], [1-n].&quot;</span><span class="p">,</span>
               <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
 
-<div class="viewcode-block" id="RandomForestParams.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestParams.__init__.html#pyspark.ml.classification.RandomForestParams.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomForestParams.__init__"><a class="viewcode-back" href="../../../generated/generated/ml.classification.RandomForestParams.__init__.html#ml.classification.RandomForestParams.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">RandomForestParams</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="RandomForestParams.setNumTrees"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestParams.setNumTrees.html#pyspark.ml.classification.RandomForestParams.setNumTrees">[docs]</a>    <span class="k">def</span> <span class="nf">setNumTrees</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomForestParams.setNumTrees"><a class="viewcode-back" href="../../../generated/generated/ml.classification.RandomForestParams.setNumTrees.html#ml.classification.RandomForestParams.setNumTrees">[docs]</a>    <span class="k">def</span> <span class="nf">setNumTrees</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`numTrees`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">numTrees</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="RandomForestParams.getNumTrees"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestParams.getNumTrees.html#pyspark.ml.classification.RandomForestParams.getNumTrees">[docs]</a>    <span class="k">def</span> <span class="nf">getNumTrees</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomForestParams.getNumTrees"><a class="viewcode-back" href="../../../generated/generated/ml.classification.RandomForestParams.getNumTrees.html#ml.classification.RandomForestParams.getNumTrees">[docs]</a>    <span class="k">def</span> <span class="nf">getNumTrees</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of numTrees or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">numTrees</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="RandomForestParams.setFeatureSubsetStrategy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestParams.setFeatureSubsetStrategy.html#pyspark.ml.classification.RandomForestParams.setFeatureSubsetStrategy">[docs]</a>    <span class="k">def</span> <span class="nf">setFeatureSubsetStrategy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomForestParams.setFeatureSubsetStrategy"><a class="viewcode-back" href="../../../generated/generated/ml.classification.RandomForestParams.setFeatureSubsetStrategy.html#ml.classification.RandomForestParams.setFeatureSubsetStrategy">[docs]</a>    <span class="k">def</span> <span class="nf">setFeatureSubsetStrategy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`featureSubsetStrategy`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">featureSubsetStrategy</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="RandomForestParams.getFeatureSubsetStrategy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestParams.getFeatureSubsetStrategy.html#pyspark.ml.classification.RandomForestParams.getFeatureSubsetStrategy">[docs]</a>    <span class="k">def</span> <span class="nf">getFeatureSubsetStrategy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RandomForestParams.getFeatureSubsetStrategy"><a class="viewcode-back" href="../../../generated/generated/ml.classification.RandomForestParams.getFeatureSubsetStrategy.html#ml.classification.RandomForestParams.getFeatureSubsetStrategy">[docs]</a>    <span class="k">def</span> <span class="nf">getFeatureSubsetStrategy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of featureSubsetStrategy or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">featureSubsetStrategy</span><span class="p">)</span></div></div>
 
 
-<div class="viewcode-block" id="GBTParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GBTParams.html#pyspark.ml.classification.GBTParams">[docs]</a><span class="k">class</span> <span class="nc">GBTParams</span><span class="p">(</span><span class="n">TreeEnsembleParams</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">GBTParams</span><span class="p">(</span><span class="n">TreeEnsembleParams</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Private class to track supported GBT params.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">supportedLossTypes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;squared&quot;</span><span class="p">,</span> <span class="s2">&quot;absolute&quot;</span><span class="p">]</span></div>
+    <span class="n">supportedLossTypes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;squared&quot;</span><span class="p">,</span> <span class="s2">&quot;absolute&quot;</span><span class="p">]</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="DecisionTreeRegressor"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.DecisionTreeRegressor.html#pyspark.ml.classification.DecisionTreeRegressor">[docs]</a><span class="k">class</span> <span class="nc">DecisionTreeRegressor</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">DecisionTreeRegressor</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
                             <span class="n">DecisionTreeParams</span><span class="p">,</span> <span class="n">TreeRegressorParams</span><span class="p">,</span> <span class="n">HasCheckpointInterval</span><span class="p">,</span>
                             <span class="n">HasSeed</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">,</span> <span class="n">HasVarianceCol</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -828,7 +828,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="DecisionTreeRegressor.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.DecisionTreeRegressor.__init__.html#pyspark.ml.classification.DecisionTreeRegressor.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                  <span class="n">maxDepth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">maxBins</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">minInstancesPerNode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minInfoGain</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
                  <span class="n">maxMemoryInMB</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">cacheNodeIds</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">impurity</span><span class="o">=</span><span class="s2">&quot;variance&quot;</span><span class="p">,</span>
                  <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">varianceCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -845,11 +845,11 @@
                          <span class="n">maxMemoryInMB</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">cacheNodeIds</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                          <span class="n">impurity</span><span class="o">=</span><span class="s2">&quot;variance&quot;</span><span class="p">)</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="DecisionTreeRegressor.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.DecisionTreeRegressor.setParams.html#pyspark.ml.classification.DecisionTreeRegressor.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                   <span class="n">maxDepth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">maxBins</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">minInstancesPerNode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minInfoGain</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
                   <span class="n">maxMemoryInMB</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">cacheNodeIds</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                   <span class="n">impurity</span><span class="o">=</span><span class="s2">&quot;variance&quot;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">varianceCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -861,14 +861,14 @@
 <span class="sd">        Sets params for the DecisionTreeRegressor.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">java_model</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">DecisionTreeRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">DecisionTreeRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="DecisionTreeModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.DecisionTreeModel.html#pyspark.ml.classification.DecisionTreeModel">[docs]</a><span class="k">class</span> <span class="nc">DecisionTreeModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">):</span>
+<div class="viewcode-block" id="DecisionTreeModel"><a class="viewcode-back" href="../../../generated/generated/ml.classification.DecisionTreeModel.html#ml.classification.DecisionTreeModel">[docs]</a><span class="k">class</span> <span class="nc">DecisionTreeModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Abstraction for Decision Tree models.</span>
 
@@ -898,7 +898,7 @@
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="TreeEnsembleModels"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.TreeEnsembleModels.html#pyspark.ml.classification.TreeEnsembleModels">[docs]</a><span class="k">class</span> <span class="nc">TreeEnsembleModels</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">):</span>
+<div class="viewcode-block" id="TreeEnsembleModels"><a class="viewcode-back" href="../../../generated/generated/ml.classification.TreeEnsembleModels.html#ml.classification.TreeEnsembleModels">[docs]</a><span class="k">class</span> <span class="nc">TreeEnsembleModels</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    (private abstraction)</span>
 
@@ -940,7 +940,7 @@
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="DecisionTreeRegressionModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.DecisionTreeRegressionModel.html#pyspark.ml.classification.DecisionTreeRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">DecisionTreeRegressionModel</span><span class="p">(</span><span class="n">DecisionTreeModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
+<div class="viewcode-block" id="DecisionTreeRegressionModel"><a class="viewcode-back" href="../../../generated/generated/ml.classification.DecisionTreeRegressionModel.html#ml.classification.DecisionTreeRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">DecisionTreeRegressionModel</span><span class="p">(</span><span class="n">DecisionTreeModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Model fitted by :class:`DecisionTreeRegressor`.</span>
 
@@ -970,7 +970,7 @@
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="RandomForestRegressor"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestRegressor.html#pyspark.ml.classification.RandomForestRegressor">[docs]</a><span class="k">class</span> <span class="nc">RandomForestRegressor</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span> <span class="n">HasSeed</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">RandomForestRegressor</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span> <span class="n">HasSeed</span><span class="p">,</span>
                             <span class="n">RandomForestParams</span><span class="p">,</span> <span class="n">TreeRegressorParams</span><span class="p">,</span> <span class="n">HasCheckpointInterval</span><span class="p">,</span>
                             <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -1014,7 +1014,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="RandomForestRegressor.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestRegressor.__init__.html#pyspark.ml.classification.RandomForestRegressor.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                  <span class="n">maxDepth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">maxBins</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">minInstancesPerNode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minInfoGain</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
                  <span class="n">maxMemoryInMB</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">cacheNodeIds</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                  <span class="n">impurity</span><span class="o">=</span><span class="s2">&quot;variance&quot;</span><span class="p">,</span> <span class="n">subsamplingRate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">numTrees</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
@@ -1034,11 +1034,11 @@
                          <span class="n">impurity</span><span class="o">=</span><span class="s2">&quot;variance&quot;</span><span class="p">,</span> <span class="n">subsamplingRate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">numTrees</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
                          <span class="n">featureSubsetStrategy</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="RandomForestRegressor.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestRegressor.setParams.html#pyspark.ml.classification.RandomForestRegressor.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                   <span class="n">maxDepth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">maxBins</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">minInstancesPerNode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minInfoGain</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
                   <span class="n">maxMemoryInMB</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">cacheNodeIds</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                   <span class="n">impurity</span><span class="o">=</span><span class="s2">&quot;variance&quot;</span><span class="p">,</span> <span class="n">subsamplingRate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">numTrees</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
@@ -1052,13 +1052,13 @@
 <span class="sd">        Sets params for linear regression.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">java_model</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">RandomForestRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">RandomForestRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="RandomForestRegressionModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.RandomForestRegressionModel.html#pyspark.ml.classification.RandomForestRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">RandomForestRegressionModel</span><span class="p">(</span><span class="n">TreeEnsembleModels</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">RandomForestRegressionModel</span><span class="p">(</span><span class="n">TreeEnsembleModels</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Model fitted by :class:`RandomForestRegressor`.</span>
 
@@ -1084,11 +1084,11 @@
 
 <span class="sd">        .. seealso:: :py:attr:`DecisionTreeRegressionModel.featureImportances`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;featureImportances&quot;</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;featureImportances&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="GBTRegressor"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GBTRegressor.html#pyspark.ml.classification.GBTRegressor">[docs]</a><span class="k">class</span> <span class="nc">GBTRegressor</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span> <span class="n">HasMaxIter</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">GBTRegressor</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span> <span class="n">HasMaxIter</span><span class="p">,</span>
                    <span class="n">GBTParams</span><span class="p">,</span> <span class="n">HasCheckpointInterval</span><span class="p">,</span> <span class="n">HasStepSize</span><span class="p">,</span> <span class="n">HasSeed</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span>
                    <span class="n">JavaMLReadable</span><span class="p">,</span> <span class="n">TreeRegressorParams</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -1139,7 +1139,7 @@
                      <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="GBTRegressor.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GBTRegressor.__init__.html#pyspark.ml.classification.GBTRegressor.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                  <span class="n">maxDepth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">maxBins</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">minInstancesPerNode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minInfoGain</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
                  <span class="n">maxMemoryInMB</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">cacheNodeIds</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">subsamplingRate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
                  <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">lossType</span><span class="o">=</span><span class="s2">&quot;squared&quot;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">stepSize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
@@ -1158,11 +1158,11 @@
                          <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">lossType</span><span class="o">=</span><span class="s2">&quot;squared&quot;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">stepSize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
                          <span class="n">impurity</span><span class="o">=</span><span class="s2">&quot;variance&quot;</span><span class="p">)</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GBTRegressor.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GBTRegressor.setParams.html#pyspark.ml.classification.GBTRegressor.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                   <span class="n">maxDepth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">maxBins</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">minInstancesPerNode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minInfoGain</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
                   <span class="n">maxMemoryInMB</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">cacheNodeIds</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">subsamplingRate</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
                   <span class="n">checkpointInterval</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">lossType</span><span class="o">=</span><span class="s2">&quot;squared&quot;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">stepSize</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
@@ -1176,27 +1176,27 @@
 <span class="sd">        Sets params for Gradient Boosted Tree Regression.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">java_model</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">GBTRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GBTRegressor.setLossType"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GBTRegressor.setLossType.html#pyspark.ml.classification.GBTRegressor.setLossType">[docs]</a>    <span class="k">def</span> <span class="nf">setLossType</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setLossType</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`lossType`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">lossType</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">lossType</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GBTRegressor.getLossType"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GBTRegressor.getLossType.html#pyspark.ml.classification.GBTRegressor.getLossType">[docs]</a>    <span class="k">def</span> <span class="nf">getLossType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getLossType</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of lossType or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lossType</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lossType</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="GBTRegressionModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GBTRegressionModel.html#pyspark.ml.classification.GBTRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">GBTRegressionModel</span><span class="p">(</span><span class="n">TreeEnsembleModels</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">GBTRegressionModel</span><span class="p">(</span><span class="n">TreeEnsembleModels</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Model fitted by :class:`GBTRegressor`.</span>
 
@@ -1222,11 +1222,11 @@
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">trees</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Trees in this ensemble. Warning: These have null parent Estimators.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">DecisionTreeRegressionModel</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;trees&quot;</span><span class="p">))]</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">DecisionTreeRegressionModel</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;trees&quot;</span><span class="p">))]</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="AFTSurvivalRegression"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.html#pyspark.ml.classification.AFTSurvivalRegression">[docs]</a><span class="k">class</span> <span class="nc">AFTSurvivalRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">AFTSurvivalRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
                             <span class="n">HasFitIntercept</span><span class="p">,</span> <span class="n">HasMaxIter</span><span class="p">,</span> <span class="n">HasTol</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: Experimental</span>
@@ -1289,7 +1289,7 @@
                          <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.__init__.html#pyspark.ml.classification.AFTSurvivalRegression.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                  <span class="n">fitIntercept</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1E-6</span><span class="p">,</span> <span class="n">censorCol</span><span class="o">=</span><span class="s2">&quot;censor&quot;</span><span class="p">,</span>
                  <span class="n">quantileProbabilities</span><span class="o">=</span><span class="nb">list</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">]),</span>
                  <span class="n">quantilesCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -1306,11 +1306,11 @@
                          <span class="n">quantileProbabilities</span><span class="o">=</span><span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">],</span>
                          <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1E-6</span><span class="p">)</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.6.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.setParams.html#pyspark.ml.classification.AFTSurvivalRegression.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                   <span class="n">fitIntercept</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1E-6</span><span class="p">,</span> <span class="n">censorCol</span><span class="o">=</span><span class="s2">&quot;censor&quot;</span><span class="p">,</span>
                   <span class="n">quantileProbabilities</span><span class="o">=</span><span class="nb">list</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">]),</span>
                   <span class="n">quantilesCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -1321,55 +1321,55 @@
 <span class="sd">                  quantilesCol=None):</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">java_model</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">AFTSurvivalRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.6.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.setCensorCol"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.setCensorCol.html#pyspark.ml.classification.AFTSurvivalRegression.setCensorCol">[docs]</a>    <span class="k">def</span> <span class="nf">setCensorCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setCensorCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`censorCol`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">censorCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">censorCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.6.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.getCensorCol"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.getCensorCol.html#pyspark.ml.classification.AFTSurvivalRegression.getCensorCol">[docs]</a>    <span class="k">def</span> <span class="nf">getCensorCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getCensorCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of censorCol or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">censorCol</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">censorCol</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.6.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.setQuantileProbabilities"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.setQuantileProbabilities.html#pyspark.ml.classification.AFTSurvivalRegression.setQuantileProbabilities">[docs]</a>    <span class="k">def</span> <span class="nf">setQuantileProbabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setQuantileProbabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`quantileProbabilities`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">quantileProbabilities</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">quantileProbabilities</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.6.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.getQuantileProbabilities"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.getQuantileProbabilities.html#pyspark.ml.classification.AFTSurvivalRegression.getQuantileProbabilities">[docs]</a>    <span class="k">def</span> <span class="nf">getQuantileProbabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getQuantileProbabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of quantileProbabilities or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantileProbabilities</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantileProbabilities</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.6.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.setQuantilesCol"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.setQuantilesCol.html#pyspark.ml.classification.AFTSurvivalRegression.setQuantilesCol">[docs]</a>    <span class="k">def</span> <span class="nf">setQuantilesCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setQuantilesCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`quantilesCol`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">quantilesCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">quantilesCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.6.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegression.getQuantilesCol"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegression.getQuantilesCol.html#pyspark.ml.classification.AFTSurvivalRegression.getQuantilesCol">[docs]</a>    <span class="k">def</span> <span class="nf">getQuantilesCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getQuantilesCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of quantilesCol or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantilesCol</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">quantilesCol</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="AFTSurvivalRegressionModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegressionModel.html#pyspark.ml.classification.AFTSurvivalRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">AFTSurvivalRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">AFTSurvivalRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: Experimental</span>
 
@@ -1403,22 +1403,22 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;scale&quot;</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegressionModel.predictQuantiles"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegressionModel.predictQuantiles.html#pyspark.ml.classification.AFTSurvivalRegressionModel.predictQuantiles">[docs]</a>    <span class="k">def</span> <span class="nf">predictQuantiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">predictQuantiles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Predicted Quantiles</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;predictQuantiles&quot;</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;predictQuantiles&quot;</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="AFTSurvivalRegressionModel.predict"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.AFTSurvivalRegressionModel.predict.html#pyspark.ml.classification.AFTSurvivalRegressionModel.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">features</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Predicted value</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;predict&quot;</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;predict&quot;</span><span class="p">,</span> <span class="n">features</span><span class="p">)</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.html#pyspark.ml.classification.GeneralizedLinearRegression">[docs]</a><span class="k">class</span> <span class="nc">GeneralizedLinearRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
+<span class="k">class</span> <span class="nc">GeneralizedLinearRegression</span><span class="p">(</span><span class="n">JavaEstimator</span><span class="p">,</span> <span class="n">HasLabelCol</span><span class="p">,</span> <span class="n">HasFeaturesCol</span><span class="p">,</span> <span class="n">HasPredictionCol</span><span class="p">,</span>
                                   <span class="n">HasFitIntercept</span><span class="p">,</span> <span class="n">HasMaxIter</span><span class="p">,</span> <span class="n">HasTol</span><span class="p">,</span> <span class="n">HasRegParam</span><span class="p">,</span> <span class="n">HasWeightCol</span><span class="p">,</span>
                                   <span class="n">HasSolver</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -1486,7 +1486,7 @@
                               <span class="s2">&quot;predictor) column name&quot;</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="n">TypeConverters</span><span class="o">.</span><span class="n">toString</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.__init__.html#pyspark.ml.classification.GeneralizedLinearRegression.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                  <span class="n">family</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fitIntercept</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span>
                  <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">weightCol</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;irls&quot;</span><span class="p">,</span> <span class="n">linkPredictionCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1499,11 +1499,11 @@
             <span class="s2">&quot;org.apache.spark.ml.regression.GeneralizedLinearRegression&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_setDefault</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;irls&quot;</span><span class="p">)</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__init__</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@keyword_only</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.setParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.setParams.html#pyspark.ml.classification.GeneralizedLinearRegression.setParams">[docs]</a>    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">setParams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="n">featuresCol</span><span class="o">=</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span>
                   <span class="n">family</span><span class="o">=</span><span class="s2">&quot;gaussian&quot;</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fitIntercept</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">maxIter</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span>
                   <span class="n">regParam</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">weightCol</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;irls&quot;</span><span class="p">,</span> <span class="n">linkPredictionCol</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1513,55 +1513,55 @@
 <span class="sd">        Sets params for generalized linear regression.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setParams</span><span class="o">.</span><span class="n">_input_kwargs</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">java_model</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">GeneralizedLinearRegressionModel</span><span class="p">(</span><span class="n">java_model</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.setFamily"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.setFamily.html#pyspark.ml.classification.GeneralizedLinearRegression.setFamily">[docs]</a>    <span class="k">def</span> <span class="nf">setFamily</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setFamily</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`family`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">family</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.getFamily"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.getFamily.html#pyspark.ml.classification.GeneralizedLinearRegression.getFamily">[docs]</a>    <span class="k">def</span> <span class="nf">getFamily</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getFamily</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of family or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">family</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">family</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.setLinkPredictionCol"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.setLinkPredictionCol.html#pyspark.ml.classification.GeneralizedLinearRegression.setLinkPredictionCol">[docs]</a>    <span class="k">def</span> <span class="nf">setLinkPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setLinkPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`linkPredictionCol`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">linkPredictionCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">linkPredictionCol</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.getLinkPredictionCol"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.getLinkPredictionCol.html#pyspark.ml.classification.GeneralizedLinearRegression.getLinkPredictionCol">[docs]</a>    <span class="k">def</span> <span class="nf">getLinkPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getLinkPredictionCol</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of linkPredictionCol or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linkPredictionCol</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linkPredictionCol</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.setLink"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.setLink.html#pyspark.ml.classification.GeneralizedLinearRegression.setLink">[docs]</a>    <span class="k">def</span> <span class="nf">setLink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setLink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the value of :py:attr:`link`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="n">value</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegression.getLink"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegression.getLink.html#pyspark.ml.classification.GeneralizedLinearRegression.getLink">[docs]</a>    <span class="k">def</span> <span class="nf">getLink</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">getLink</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of link or its default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="GeneralizedLinearRegressionModel"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegressionModel.html#pyspark.ml.classification.GeneralizedLinearRegressionModel">[docs]</a><span class="k">class</span> <span class="nc">GeneralizedLinearRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">GeneralizedLinearRegressionModel</span><span class="p">(</span><span class="n">JavaModel</span><span class="p">,</span> <span class="n">JavaMLWritable</span><span class="p">,</span> <span class="n">JavaMLReadable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: Experimental</span>
 
@@ -1607,7 +1607,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;hasSummary&quot;</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegressionModel.evaluate"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegressionModel.evaluate.html#pyspark.ml.classification.GeneralizedLinearRegressionModel.evaluate">[docs]</a>    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Evaluates the model on a test dataset.</span>
 
@@ -1618,10 +1618,10 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;dataset must be a DataFrame but got </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">dataset</span><span class="p">))</span>
         <span class="n">java_glr_summary</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;evaluate&quot;</span><span class="p">,</span> <span class="n">dataset</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">GeneralizedLinearRegressionSummary</span><span class="p">(</span><span class="n">java_glr_summary</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">GeneralizedLinearRegressionSummary</span><span class="p">(</span><span class="n">java_glr_summary</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="GeneralizedLinearRegressionSummary"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegressionSummary.html#pyspark.ml.classification.GeneralizedLinearRegressionSummary">[docs]</a><span class="k">class</span> <span class="nc">GeneralizedLinearRegressionSummary</span><span class="p">(</span><span class="n">JavaWrapper</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">GeneralizedLinearRegressionSummary</span><span class="p">(</span><span class="n">JavaWrapper</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: Experimental</span>
 
@@ -1680,14 +1680,14 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;residualDegreeOfFreedomNull&quot;</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="GeneralizedLinearRegressionSummary.residuals"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegressionSummary.residuals.html#pyspark.ml.classification.GeneralizedLinearRegressionSummary.residuals">[docs]</a>    <span class="k">def</span> <span class="nf">residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">residualsType</span><span class="o">=</span><span class="s2">&quot;deviance&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">residuals</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">residualsType</span><span class="o">=</span><span class="s2">&quot;deviance&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the residuals of the fitted model by type.</span>
 
 <span class="sd">        :param residualsType: The type of residuals which should be returned.</span>
 <span class="sd">                              Supported options: deviance (default), pearson, working, and response.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;residuals&quot;</span><span class="p">,</span> <span class="n">residualsType</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;residuals&quot;</span><span class="p">,</span> <span class="n">residualsType</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;2.0.0&quot;</span><span class="p">)</span>
@@ -1722,11 +1722,11 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Akaike&#39;s &quot;An Information Criterion&quot;(AIC) for the fitted model.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;aic&quot;</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;aic&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@inherit_doc</span>
-<div class="viewcode-block" id="GeneralizedLinearRegressionTrainingSummary"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.regression.GeneralizedLinearRegressionTrainingSummary.html#pyspark.ml.classification.GeneralizedLinearRegressionTrainingSummary">[docs]</a><span class="k">class</span> <span class="nc">GeneralizedLinearRegressionTrainingSummary</span><span class="p">(</span><span class="n">GeneralizedLinearRegressionSummary</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">GeneralizedLinearRegressionTrainingSummary</span><span class="p">(</span><span class="n">GeneralizedLinearRegressionSummary</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: Experimental</span>
 
@@ -1782,7 +1782,7 @@
 <span class="sd">        If :py:attr:`GeneralizedLinearRegression.fitIntercept` is set to True,</span>
 <span class="sd">        then the last element returned corresponds to the intercept.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;pValues&quot;</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_java</span><span class="p">(</span><span class="s2">&quot;pValues&quot;</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>

@@ -294,7 +294,7 @@
         <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 
-<div class="viewcode-block" id="ignore_unicode_prefix"><a class="viewcode-back" href="../../generated/generated/sql.streaming.ignore_unicode_prefix.html#mllib.classification.ignore_unicode_prefix">[docs]</a><span class="k">def</span> <span class="nf">ignore_unicode_prefix</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="ignore_unicode_prefix"><a class="viewcode-back" href="../../generated/generated/sql.streaming.ignore_unicode_prefix.html#ml.feature.ignore_unicode_prefix">[docs]</a><span class="k">def</span> <span class="nf">ignore_unicode_prefix</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Ignore the &#39;u&#39; prefix of string in doc tests, to make it works</span>
 <span class="sd">    in both python 2 and 3</span>
@@ -320,7 +320,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitionFunc</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">numPartitions</span>
 
 
-<div class="viewcode-block" id="RDD"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.html#mllib.classification.RDD">[docs]</a><span class="k">class</span> <span class="nc">RDD</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.html#ml.feature.RDD">[docs]</a><span class="k">class</span> <span class="nc">RDD</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A Resilient Distributed Dataset (RDD), the basic abstraction in Spark.</span>
@@ -328,7 +328,7 @@
 <span class="sd">    operated on in parallel.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="RDD.__init__"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.__init__.html#mllib.classification.RDD.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jrdd</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">jrdd_deserializer</span><span class="o">=</span><span class="n">AutoBatchedSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">())):</span>
+<div class="viewcode-block" id="RDD.__init__"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.__init__.html#ml.feature.RDD.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jrdd</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="n">jrdd_deserializer</span><span class="o">=</span><span class="n">AutoBatchedSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">())):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span> <span class="o">=</span> <span class="n">jrdd</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="bp">False</span>
@@ -340,7 +340,7 @@
     <span class="k">def</span> <span class="nf">_pickled</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reserialize</span><span class="p">(</span><span class="n">AutoBatchedSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">()))</span>
 
-<div class="viewcode-block" id="RDD.id"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.id.html#mllib.classification.RDD.id">[docs]</a>    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.id"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.id.html#ml.feature.RDD.id">[docs]</a>    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A unique ID for this RDD (within its SparkContext).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -367,7 +367,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span>
 
-<div class="viewcode-block" id="RDD.cache"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.cache.html#mllib.classification.RDD.cache">[docs]</a>    <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.cache"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.cache.html#ml.feature.RDD.cache">[docs]</a>    <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Persist this RDD with the default storage level (C{MEMORY_ONLY}).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -375,7 +375,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_ONLY</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="RDD.persist"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.persist.html#mllib.classification.RDD.persist">[docs]</a>    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_ONLY</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.persist"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.persist.html#ml.feature.RDD.persist">[docs]</a>    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_ONLY</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set this RDD&#39;s storage level to persist its values across operations</span>
 <span class="sd">        after the first time it is computed. This can only be used to assign</span>
@@ -391,7 +391,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">javaStorageLevel</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="RDD.unpersist"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.unpersist.html#mllib.classification.RDD.unpersist">[docs]</a>    <span class="k">def</span> <span class="nf">unpersist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.unpersist"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.unpersist.html#ml.feature.RDD.unpersist">[docs]</a>    <span class="k">def</span> <span class="nf">unpersist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Mark the RDD as non-persistent, and remove all blocks for it from</span>
 <span class="sd">        memory and disk.</span>
@@ -400,7 +400,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">unpersist</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="RDD.checkpoint"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.checkpoint.html#mllib.classification.RDD.checkpoint">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.checkpoint"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.checkpoint.html#ml.feature.RDD.checkpoint">[docs]</a>    <span class="k">def</span> <span class="nf">checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Mark this RDD for checkpointing. It will be saved to a file inside the</span>
 <span class="sd">        checkpoint directory set with L{SparkContext.setCheckpointDir()} and</span>
@@ -412,13 +412,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">is_checkpointed</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">rdd</span><span class="p">()</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.isCheckpointed"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.isCheckpointed.html#mllib.classification.RDD.isCheckpointed">[docs]</a>    <span class="k">def</span> <span class="nf">isCheckpointed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.isCheckpointed"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.isCheckpointed.html#ml.feature.RDD.isCheckpointed">[docs]</a>    <span class="k">def</span> <span class="nf">isCheckpointed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return whether this RDD has been checkpointed or not</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">rdd</span><span class="p">()</span><span class="o">.</span><span class="n">isCheckpointed</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.getCheckpointFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.getCheckpointFile.html#mllib.classification.RDD.getCheckpointFile">[docs]</a>    <span class="k">def</span> <span class="nf">getCheckpointFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.getCheckpointFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.getCheckpointFile.html#ml.feature.RDD.getCheckpointFile">[docs]</a>    <span class="k">def</span> <span class="nf">getCheckpointFile</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the name of the file to which this RDD was checkpointed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -426,7 +426,7 @@
         <span class="k">if</span> <span class="n">checkpointFile</span><span class="o">.</span><span class="n">isDefined</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">checkpointFile</span><span class="o">.</span><span class="n">get</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.map"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.map.html#mllib.classification.RDD.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.map"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.map.html#ml.feature.RDD.map">[docs]</a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by applying a function to each element of this RDD.</span>
 
@@ -438,7 +438,7 @@
             <span class="k">return</span> <span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.flatMap"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.flatMap.html#mllib.classification.RDD.flatMap">[docs]</a>    <span class="k">def</span> <span class="nf">flatMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.flatMap"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.flatMap.html#ml.feature.RDD.flatMap">[docs]</a>    <span class="k">def</span> <span class="nf">flatMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by first applying a function to all elements of this</span>
 <span class="sd">        RDD, and then flattening the results.</span>
@@ -453,7 +453,7 @@
             <span class="k">return</span> <span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mapPartitions"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapPartitions.html#mllib.classification.RDD.mapPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mapPartitions"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapPartitions.html#ml.feature.RDD.mapPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by applying a function to each partition of this RDD.</span>
 
@@ -466,7 +466,7 @@
             <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mapPartitionsWithIndex"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapPartitionsWithIndex.html#mllib.classification.RDD.mapPartitionsWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mapPartitionsWithIndex"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapPartitionsWithIndex.html#ml.feature.RDD.mapPartitionsWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD by applying a function to each partition of this RDD,</span>
 <span class="sd">        while tracking the index of the original partition.</span>
@@ -478,7 +478,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">PipelinedRDD</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mapPartitionsWithSplit"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapPartitionsWithSplit.html#mllib.classification.RDD.mapPartitionsWithSplit">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mapPartitionsWithSplit"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapPartitionsWithSplit.html#ml.feature.RDD.mapPartitionsWithSplit">[docs]</a>    <span class="k">def</span> <span class="nf">mapPartitionsWithSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Deprecated: use mapPartitionsWithIndex instead.</span>
 
@@ -494,7 +494,7 @@
                       <span class="s2">&quot;use mapPartitionsWithIndex instead&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.getNumPartitions"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.getNumPartitions.html#mllib.classification.RDD.getNumPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">getNumPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.getNumPartitions"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.getNumPartitions.html#ml.feature.RDD.getNumPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">getNumPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the number of partitions in RDD</span>
 
@@ -504,7 +504,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">partitions</span><span class="p">()</span><span class="o">.</span><span class="n">size</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.filter"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.filter.html#mllib.classification.RDD.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.filter"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.filter.html#ml.feature.RDD.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD containing only the elements that satisfy a predicate.</span>
 
@@ -516,7 +516,7 @@
             <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.distinct"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.distinct.html#mllib.classification.RDD.distinct">[docs]</a>    <span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.distinct"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.distinct.html#ml.feature.RDD.distinct">[docs]</a>    <span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD containing the distinct elements in this RDD.</span>
 
@@ -527,7 +527,7 @@
                    <span class="o">.</span><span class="n">reduceByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span> \
                    <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RDD.sample"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sample.html#mllib.classification.RDD.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sample"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sample.html#ml.feature.RDD.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a sampled subset of this RDD.</span>
 
@@ -544,7 +544,7 @@
         <span class="k">assert</span> <span class="n">fraction</span> <span class="o">&gt;=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;Negative fraction value: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">fraction</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">RDDSampler</span><span class="p">(</span><span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.randomSplit"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.randomSplit.html#mllib.classification.RDD.randomSplit">[docs]</a>    <span class="k">def</span> <span class="nf">randomSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.randomSplit"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.randomSplit.html#ml.feature.RDD.randomSplit">[docs]</a>    <span class="k">def</span> <span class="nf">randomSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Randomly splits this RDD with the provided weights.</span>
 
@@ -571,7 +571,7 @@
                 <span class="k">for</span> <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cweights</span><span class="p">,</span> <span class="n">cweights</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span></div>
 
     <span class="c1"># this is ported from scala/spark/RDD.scala</span>
-<div class="viewcode-block" id="RDD.takeSample"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.takeSample.html#mllib.classification.RDD.takeSample">[docs]</a>    <span class="k">def</span> <span class="nf">takeSample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.takeSample"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.takeSample.html#ml.feature.RDD.takeSample">[docs]</a>    <span class="k">def</span> <span class="nf">takeSample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a fixed-size sampled subset of this RDD.</span>
 
@@ -659,7 +659,7 @@
             <span class="n">gamma</span> <span class="o">=</span> <span class="o">-</span> <span class="n">log</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span>
             <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">fraction</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">gamma</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">fraction</span><span class="p">))</span>
 
-<div class="viewcode-block" id="RDD.union"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.union.html#mllib.classification.RDD.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.union"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.union.html#ml.feature.RDD.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the union of this RDD and another one.</span>
 
@@ -682,7 +682,7 @@
             <span class="n">rdd</span><span class="o">.</span><span class="n">partitioner</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitioner</span>
         <span class="k">return</span> <span class="n">rdd</span></div>
 
-<div class="viewcode-block" id="RDD.intersection"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.intersection.html#mllib.classification.RDD.intersection">[docs]</a>    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.intersection"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.intersection.html#ml.feature.RDD.intersection">[docs]</a>    <span class="k">def</span> <span class="nf">intersection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the intersection of this RDD and another one. The output will</span>
 <span class="sd">        not contain any duplicate elements, even if the input RDDs did.</span>
@@ -718,7 +718,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-<div class="viewcode-block" id="RDD.repartitionAndSortWithinPartitions"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.repartitionAndSortWithinPartitions.html#mllib.classification.RDD.repartitionAndSortWithinPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">repartitionAndSortWithinPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">,</span>
+<div class="viewcode-block" id="RDD.repartitionAndSortWithinPartitions"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.repartitionAndSortWithinPartitions.html#ml.feature.RDD.repartitionAndSortWithinPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">repartitionAndSortWithinPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">,</span>
                                            <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Repartition the RDD according to the given partitioner and, within each resulting partition,</span>
@@ -741,7 +741,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.sortByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sortByKey.html#mllib.classification.RDD.sortByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sortByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sortByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sortByKey.html#ml.feature.RDD.sortByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sortByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">keyfunc</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sorts this RDD, which is assumed to consist of (key, value) pairs.</span>
 <span class="sd">        # noqa</span>
@@ -798,7 +798,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">partitionBy</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">rangePartitioner</span><span class="p">)</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">sortPartition</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.sortBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sortBy.html#mllib.classification.RDD.sortBy">[docs]</a>    <span class="k">def</span> <span class="nf">sortBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyfunc</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sortBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sortBy.html#ml.feature.RDD.sortBy">[docs]</a>    <span class="k">def</span> <span class="nf">sortBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyfunc</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sorts this RDD by the given keyfunc</span>
 
@@ -810,7 +810,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">keyBy</span><span class="p">(</span><span class="n">keyfunc</span><span class="p">)</span><span class="o">.</span><span class="n">sortByKey</span><span class="p">(</span><span class="n">ascending</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.glom"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.glom.html#mllib.classification.RDD.glom">[docs]</a>    <span class="k">def</span> <span class="nf">glom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.glom"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.glom.html#ml.feature.RDD.glom">[docs]</a>    <span class="k">def</span> <span class="nf">glom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD created by coalescing all elements within each partition</span>
 <span class="sd">        into a list.</span>
@@ -823,7 +823,7 @@
             <span class="k">yield</span> <span class="nb">list</span><span class="p">(</span><span class="n">iterator</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.cartesian"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.cartesian.html#mllib.classification.RDD.cartesian">[docs]</a>    <span class="k">def</span> <span class="nf">cartesian</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.cartesian"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.cartesian.html#ml.feature.RDD.cartesian">[docs]</a>    <span class="k">def</span> <span class="nf">cartesian</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the Cartesian product of this RDD and another one, that is, the</span>
 <span class="sd">        RDD of all pairs of elements C{(a, b)} where C{a} is in C{self} and</span>
@@ -838,7 +838,7 @@
                                              <span class="n">other</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">RDD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">cartesian</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.groupBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.groupBy.html#mllib.classification.RDD.groupBy">[docs]</a>    <span class="k">def</span> <span class="nf">groupBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.groupBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.groupBy.html#ml.feature.RDD.groupBy">[docs]</a>    <span class="k">def</span> <span class="nf">groupBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD of grouped items.</span>
 
@@ -850,7 +850,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span><span class="o">.</span><span class="n">groupByKey</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="RDD.pipe"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.pipe.html#mllib.classification.RDD.pipe">[docs]</a>    <span class="k">def</span> <span class="nf">pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">checkCode</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.pipe"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.pipe.html#ml.feature.RDD.pipe">[docs]</a>    <span class="k">def</span> <span class="nf">pipe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">checkCode</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD created by piping elements to a forked external process.</span>
 
@@ -885,7 +885,7 @@
                     <span class="n">chain</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">pipe</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span> <span class="n">b</span><span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">check_return_code</span><span class="p">()))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.foreach"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.foreach.html#mllib.classification.RDD.foreach">[docs]</a>    <span class="k">def</span> <span class="nf">foreach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.foreach"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.foreach.html#ml.feature.RDD.foreach">[docs]</a>    <span class="k">def</span> <span class="nf">foreach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies a function to all elements of this RDD.</span>
 
@@ -898,7 +898,7 @@
             <span class="k">return</span> <span class="nb">iter</span><span class="p">([])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">processPartition</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  <span class="c1"># Force evaluation</span></div>
 
-<div class="viewcode-block" id="RDD.foreachPartition"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.foreachPartition.html#mllib.classification.RDD.foreachPartition">[docs]</a>    <span class="k">def</span> <span class="nf">foreachPartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.foreachPartition"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.foreachPartition.html#ml.feature.RDD.foreachPartition">[docs]</a>    <span class="k">def</span> <span class="nf">foreachPartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Applies a function to each partition of this RDD.</span>
 
@@ -915,7 +915,7 @@
                 <span class="k">return</span> <span class="nb">iter</span><span class="p">([])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>  <span class="c1"># Force evaluation</span></div>
 
-<div class="viewcode-block" id="RDD.collect"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.collect.html#mllib.classification.RDD.collect">[docs]</a>    <span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.collect"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.collect.html#ml.feature.RDD.collect">[docs]</a>    <span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list that contains all of the elements in this RDD.</span>
 <span class="sd">        Note that this method should only be used if the resulting array is expected</span>
@@ -925,7 +925,7 @@
             <span class="n">port</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">collectAndServe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">rdd</span><span class="p">())</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">_load_from_socket</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="RDD.reduce"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.reduce.html#mllib.classification.RDD.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.reduce"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.reduce.html#ml.feature.RDD.reduce">[docs]</a>    <span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reduces the elements of this RDD using the specified commutative and</span>
 <span class="sd">        associative binary operator. Currently reduces partitions locally.</span>
@@ -953,7 +953,7 @@
             <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">vals</span><span class="p">)</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Can not reduce() empty RDD&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.treeReduce"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.treeReduce.html#mllib.classification.RDD.treeReduce">[docs]</a>    <span class="k">def</span> <span class="nf">treeReduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.treeReduce"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.treeReduce.html#ml.feature.RDD.treeReduce">[docs]</a>    <span class="k">def</span> <span class="nf">treeReduce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reduces the elements of this RDD in a multi-level tree pattern.</span>
 
@@ -990,7 +990,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot reduce empty RDD.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">reduced</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="RDD.fold"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.fold.html#mllib.classification.RDD.fold">[docs]</a>    <span class="k">def</span> <span class="nf">fold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.fold"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.fold.html#ml.feature.RDD.fold">[docs]</a>    <span class="k">def</span> <span class="nf">fold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">op</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Aggregate the elements of each partition, and then the results for all</span>
 <span class="sd">        the partitions, using a given associative function and a neutral &quot;zero value.&quot;</span>
@@ -1022,7 +1022,7 @@
         <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.aggregate"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.aggregate.html#mllib.classification.RDD.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqOp</span><span class="p">,</span> <span class="n">combOp</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.aggregate"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.aggregate.html#ml.feature.RDD.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqOp</span><span class="p">,</span> <span class="n">combOp</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Aggregate the elements of each partition, and then the results for all</span>
 <span class="sd">        the partitions, using a given combine functions and a neutral &quot;zero</span>
@@ -1054,7 +1054,7 @@
         <span class="n">vals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">combOp</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.treeAggregate"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.treeAggregate.html#mllib.classification.RDD.treeAggregate">[docs]</a>    <span class="k">def</span> <span class="nf">treeAggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqOp</span><span class="p">,</span> <span class="n">combOp</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.treeAggregate"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.treeAggregate.html#ml.feature.RDD.treeAggregate">[docs]</a>    <span class="k">def</span> <span class="nf">treeAggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqOp</span><span class="p">,</span> <span class="n">combOp</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Aggregates the elements of this RDD in a multi-level tree</span>
 <span class="sd">        pattern.</span>
@@ -1106,7 +1106,7 @@
 
         <span class="k">return</span> <span class="n">partiallyAggregated</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">combOp</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.max"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.max.html#mllib.classification.RDD.max">[docs]</a>    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.max"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.max.html#ml.feature.RDD.max">[docs]</a>    <span class="k">def</span> <span class="nf">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the maximum item in this RDD.</span>
 
@@ -1122,7 +1122,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="RDD.min"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.min.html#mllib.classification.RDD.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.min"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.min.html#ml.feature.RDD.min">[docs]</a>    <span class="k">def</span> <span class="nf">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Find the minimum item in this RDD.</span>
 
@@ -1138,7 +1138,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="RDD.sum"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sum.html#mllib.classification.RDD.sum">[docs]</a>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sum"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sum.html#ml.feature.RDD.sum">[docs]</a>    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Add up the elements in this RDD.</span>
 
@@ -1147,7 +1147,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)])</span><span class="o">.</span><span class="n">fold</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.count"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.count.html#mllib.classification.RDD.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.count"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.count.html#ml.feature.RDD.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the number of elements in this RDD.</span>
 
@@ -1156,7 +1156,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">i</span><span class="p">)])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.stats"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.stats.html#mllib.classification.RDD.stats">[docs]</a>    <span class="k">def</span> <span class="nf">stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.stats"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.stats.html#ml.feature.RDD.stats">[docs]</a>    <span class="k">def</span> <span class="nf">stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a L{StatCounter} object that captures the mean, variance</span>
 <span class="sd">        and count of the RDD&#39;s elements in one operation.</span>
@@ -1166,7 +1166,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">[</span><span class="n">StatCounter</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">redFunc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.histogram"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.histogram.html#mllib.classification.RDD.histogram">[docs]</a>    <span class="k">def</span> <span class="nf">histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buckets</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.histogram"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.histogram.html#ml.feature.RDD.histogram">[docs]</a>    <span class="k">def</span> <span class="nf">histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buckets</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute a histogram using the provided buckets. The buckets</span>
 <span class="sd">        are all open to the right except for the last which is closed.</span>
@@ -1294,7 +1294,7 @@
 
         <span class="k">return</span> <span class="n">buckets</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">histogram</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">mergeCounters</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mean"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mean.html#mllib.classification.RDD.mean">[docs]</a>    <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mean"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mean.html#ml.feature.RDD.mean">[docs]</a>    <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the mean of this RDD&#39;s elements.</span>
 
@@ -1303,7 +1303,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.variance"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.variance.html#mllib.classification.RDD.variance">[docs]</a>    <span class="k">def</span> <span class="nf">variance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.variance"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.variance.html#ml.feature.RDD.variance">[docs]</a>    <span class="k">def</span> <span class="nf">variance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the variance of this RDD&#39;s elements.</span>
 
@@ -1312,7 +1312,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span><span class="o">.</span><span class="n">variance</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.stdev"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.stdev.html#mllib.classification.RDD.stdev">[docs]</a>    <span class="k">def</span> <span class="nf">stdev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.stdev"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.stdev.html#ml.feature.RDD.stdev">[docs]</a>    <span class="k">def</span> <span class="nf">stdev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the standard deviation of this RDD&#39;s elements.</span>
 
@@ -1321,7 +1321,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span><span class="o">.</span><span class="n">stdev</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.sampleStdev"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sampleStdev.html#mllib.classification.RDD.sampleStdev">[docs]</a>    <span class="k">def</span> <span class="nf">sampleStdev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sampleStdev"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sampleStdev.html#ml.feature.RDD.sampleStdev">[docs]</a>    <span class="k">def</span> <span class="nf">sampleStdev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the sample standard deviation of this RDD&#39;s elements (which</span>
 <span class="sd">        corrects for bias in estimating the standard deviation by dividing by</span>
@@ -1332,7 +1332,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span><span class="o">.</span><span class="n">sampleStdev</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.sampleVariance"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sampleVariance.html#mllib.classification.RDD.sampleVariance">[docs]</a>    <span class="k">def</span> <span class="nf">sampleVariance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sampleVariance"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sampleVariance.html#ml.feature.RDD.sampleVariance">[docs]</a>    <span class="k">def</span> <span class="nf">sampleVariance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the sample variance of this RDD&#39;s elements (which corrects</span>
 <span class="sd">        for bias in estimating the variance by dividing by N-1 instead of N).</span>
@@ -1342,7 +1342,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">()</span><span class="o">.</span><span class="n">sampleVariance</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.countByValue"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countByValue.html#mllib.classification.RDD.countByValue">[docs]</a>    <span class="k">def</span> <span class="nf">countByValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.countByValue"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countByValue.html#ml.feature.RDD.countByValue">[docs]</a>    <span class="k">def</span> <span class="nf">countByValue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the count of each unique value in this RDD as a dictionary of</span>
 <span class="sd">        (value, count) pairs.</span>
@@ -1362,7 +1362,7 @@
             <span class="k">return</span> <span class="n">m1</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">countPartition</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">mergeMaps</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.top"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.top.html#mllib.classification.RDD.top">[docs]</a>    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.top"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.top.html#ml.feature.RDD.top">[docs]</a>    <span class="k">def</span> <span class="nf">top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the top N elements from a RDD.</span>
 
@@ -1386,7 +1386,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">topIterator</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">merge</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.takeOrdered"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.takeOrdered.html#mllib.classification.RDD.takeOrdered">[docs]</a>    <span class="k">def</span> <span class="nf">takeOrdered</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.takeOrdered"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.takeOrdered.html#ml.feature.RDD.takeOrdered">[docs]</a>    <span class="k">def</span> <span class="nf">takeOrdered</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the N elements from a RDD ordered in ascending order or as</span>
 <span class="sd">        specified by the optional key function.</span>
@@ -1405,7 +1405,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="k">lambda</span> <span class="n">it</span><span class="p">:</span> <span class="p">[</span><span class="n">heapq</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">key</span><span class="p">)])</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">merge</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.take"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.take.html#mllib.classification.RDD.take">[docs]</a>    <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.take"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.take.html#ml.feature.RDD.take">[docs]</a>    <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Take the first num elements of the RDD.</span>
 
@@ -1463,7 +1463,7 @@
 
         <span class="k">return</span> <span class="n">items</span><span class="p">[:</span><span class="n">num</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="RDD.first"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.first.html#mllib.classification.RDD.first">[docs]</a>    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.first"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.first.html#ml.feature.RDD.first">[docs]</a>    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the first element in this RDD.</span>
 
@@ -1479,7 +1479,7 @@
             <span class="k">return</span> <span class="n">rs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;RDD is empty&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.isEmpty"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.isEmpty.html#mllib.classification.RDD.isEmpty">[docs]</a>    <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.isEmpty"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.isEmpty.html#ml.feature.RDD.isEmpty">[docs]</a>    <span class="k">def</span> <span class="nf">isEmpty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns true if and only if the RDD contains no elements at all. Note that an RDD</span>
 <span class="sd">        may be empty even when it has at least 1 partition.</span>
@@ -1491,7 +1491,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getNumPartitions</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopDataset"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsNewAPIHadoopDataset.html#mllib.classification.RDD.saveAsNewAPIHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopDataset"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsNewAPIHadoopDataset.html#ml.feature.RDD.saveAsNewAPIHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the new Hadoop OutputFormat API (mapreduce package). Keys/values are</span>
@@ -1507,7 +1507,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopDataset</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">jconf</span><span class="p">,</span>
                                                     <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsNewAPIHadoopFile.html#mllib.classification.RDD.saveAsNewAPIHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="RDD.saveAsNewAPIHadoopFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsNewAPIHadoopFile.html#ml.feature.RDD.saveAsNewAPIHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsNewAPIHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                                <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
@@ -1535,7 +1535,7 @@
                                                        <span class="n">keyClass</span><span class="p">,</span> <span class="n">valueClass</span><span class="p">,</span>
                                                        <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="n">jconf</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsHadoopDataset"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsHadoopDataset.html#mllib.classification.RDD.saveAsHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsHadoopDataset"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsHadoopDataset.html#ml.feature.RDD.saveAsHadoopDataset">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the old Hadoop OutputFormat API (mapred package). Keys/values are</span>
@@ -1551,7 +1551,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsHadoopDataset</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">jconf</span><span class="p">,</span>
                                                     <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsHadoopFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsHadoopFile.html#mllib.classification.RDD.saveAsHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="RDD.saveAsHadoopFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsHadoopFile.html#ml.feature.RDD.saveAsHadoopFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsHadoopFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">outputFormatClass</span><span class="p">,</span> <span class="n">keyClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueClass</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                          <span class="n">keyConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">valueConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                          <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1582,7 +1582,7 @@
                                                  <span class="n">keyConverter</span><span class="p">,</span> <span class="n">valueConverter</span><span class="p">,</span>
                                                  <span class="n">jconf</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsSequenceFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsSequenceFile.html#mllib.classification.RDD.saveAsSequenceFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsSequenceFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsSequenceFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsSequenceFile.html#ml.feature.RDD.saveAsSequenceFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsSequenceFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Output a Python RDD of key-value pairs (of form C{RDD[(K, V)]}) to any Hadoop file</span>
 <span class="sd">        system, using the L{org.apache.hadoop.io.Writable} types that we convert from the</span>
@@ -1598,7 +1598,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonRDD</span><span class="o">.</span><span class="n">saveAsSequenceFile</span><span class="p">(</span><span class="n">pickledRDD</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span>
                                                    <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.saveAsPickleFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsPickleFile.html#mllib.classification.RDD.saveAsPickleFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsPickleFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">batchSize</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsPickleFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsPickleFile.html#ml.feature.RDD.saveAsPickleFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsPickleFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">batchSize</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save this RDD as a SequenceFile of serialized objects. The serializer</span>
 <span class="sd">        used is L{pyspark.serializers.PickleSerializer}, default batch size</span>
@@ -1617,7 +1617,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_reserialize</span><span class="p">(</span><span class="n">ser</span><span class="p">)</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">saveAsObjectFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="RDD.saveAsTextFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsTextFile.html#mllib.classification.RDD.saveAsTextFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTextFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.saveAsTextFile"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.saveAsTextFile.html#ml.feature.RDD.saveAsTextFile">[docs]</a>    <span class="k">def</span> <span class="nf">saveAsTextFile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">compressionCodecClass</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Save this RDD as a text file, using string representations of elements.</span>
 
@@ -1669,7 +1669,7 @@
 
     <span class="c1"># Pair functions</span>
 
-<div class="viewcode-block" id="RDD.collectAsMap"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.collectAsMap.html#mllib.classification.RDD.collectAsMap">[docs]</a>    <span class="k">def</span> <span class="nf">collectAsMap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.collectAsMap"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.collectAsMap.html#ml.feature.RDD.collectAsMap">[docs]</a>    <span class="k">def</span> <span class="nf">collectAsMap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the key-value pairs in this RDD to the master as a dictionary.</span>
 
@@ -1684,7 +1684,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="RDD.keys"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.keys.html#mllib.classification.RDD.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.keys"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.keys.html#ml.feature.RDD.keys">[docs]</a>    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD with the keys of each tuple.</span>
 
@@ -1694,7 +1694,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RDD.values"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.values.html#mllib.classification.RDD.values">[docs]</a>    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.values"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.values.html#ml.feature.RDD.values">[docs]</a>    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD with the values of each tuple.</span>
 
@@ -1704,7 +1704,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RDD.reduceByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.reduceByKey.html#mllib.classification.RDD.reduceByKey">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.reduceByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.reduceByKey.html#ml.feature.RDD.reduceByKey">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge the values for each key using an associative and commutative reduce function.</span>
 
@@ -1722,7 +1722,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">combineByKey</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.reduceByKeyLocally"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.reduceByKeyLocally.html#mllib.classification.RDD.reduceByKeyLocally">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKeyLocally</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.reduceByKeyLocally"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.reduceByKeyLocally.html#ml.feature.RDD.reduceByKeyLocally">[docs]</a>    <span class="k">def</span> <span class="nf">reduceByKeyLocally</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge the values for each key using an associative and commutative reduce function, but</span>
 <span class="sd">        return the results immediately to the master as a dictionary.</span>
@@ -1747,7 +1747,7 @@
             <span class="k">return</span> <span class="n">m1</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">reducePartition</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">mergeMaps</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.countByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countByKey.html#mllib.classification.RDD.countByKey">[docs]</a>    <span class="k">def</span> <span class="nf">countByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.countByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countByKey.html#ml.feature.RDD.countByKey">[docs]</a>    <span class="k">def</span> <span class="nf">countByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Count the number of elements for each key, and return the result to the</span>
 <span class="sd">        master as a dictionary.</span>
@@ -1758,7 +1758,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">countByValue</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.join"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.join.html#mllib.classification.RDD.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.join"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.join.html#ml.feature.RDD.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an RDD containing all pairs of elements with matching keys in</span>
 <span class="sd">        C{self} and C{other}.</span>
@@ -1775,7 +1775,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.leftOuterJoin"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.leftOuterJoin.html#mllib.classification.RDD.leftOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">leftOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.leftOuterJoin"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.leftOuterJoin.html#ml.feature.RDD.leftOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">leftOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a left outer join of C{self} and C{other}.</span>
 
@@ -1792,7 +1792,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_left_outer_join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.rightOuterJoin"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.rightOuterJoin.html#mllib.classification.RDD.rightOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">rightOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.rightOuterJoin"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.rightOuterJoin.html#ml.feature.RDD.rightOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">rightOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a right outer join of C{self} and C{other}.</span>
 
@@ -1809,7 +1809,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_right_outer_join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.fullOuterJoin"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.fullOuterJoin.html#mllib.classification.RDD.fullOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">fullOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.fullOuterJoin"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.fullOuterJoin.html#ml.feature.RDD.fullOuterJoin">[docs]</a>    <span class="k">def</span> <span class="nf">fullOuterJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a right outer join of C{self} and C{other}.</span>
 
@@ -1833,7 +1833,7 @@
     <span class="c1"># TODO: add option to control map-side combining</span>
     <span class="c1"># portable_hash is used as default, because builtin hash of None is different</span>
     <span class="c1"># cross machines.</span>
-<div class="viewcode-block" id="RDD.partitionBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.partitionBy.html#mllib.classification.RDD.partitionBy">[docs]</a>    <span class="k">def</span> <span class="nf">partitionBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.partitionBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.partitionBy.html#ml.feature.RDD.partitionBy">[docs]</a>    <span class="k">def</span> <span class="nf">partitionBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a copy of the RDD partitioned using the specified partitioner.</span>
 
@@ -1904,7 +1904,7 @@
         <span class="k">return</span> <span class="n">rdd</span></div>
 
     <span class="c1"># TODO: add control over map-side aggregation</span>
-<div class="viewcode-block" id="RDD.combineByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.combineByKey.html#mllib.classification.RDD.combineByKey">[docs]</a>    <span class="k">def</span> <span class="nf">combineByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">createCombiner</span><span class="p">,</span> <span class="n">mergeValue</span><span class="p">,</span> <span class="n">mergeCombiners</span><span class="p">,</span>
+<div class="viewcode-block" id="RDD.combineByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.combineByKey.html#ml.feature.RDD.combineByKey">[docs]</a>    <span class="k">def</span> <span class="nf">combineByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">createCombiner</span><span class="p">,</span> <span class="n">mergeValue</span><span class="p">,</span> <span class="n">mergeCombiners</span><span class="p">,</span>
                      <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generic function to combine the elements for each key using a custom</span>
@@ -1951,7 +1951,7 @@
 
         <span class="k">return</span> <span class="n">shuffled</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">_mergeCombiners</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.aggregateByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.aggregateByKey.html#mllib.classification.RDD.aggregateByKey">[docs]</a>    <span class="k">def</span> <span class="nf">aggregateByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqFunc</span><span class="p">,</span> <span class="n">combFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<div class="viewcode-block" id="RDD.aggregateByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.aggregateByKey.html#ml.feature.RDD.aggregateByKey">[docs]</a>    <span class="k">def</span> <span class="nf">aggregateByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">seqFunc</span><span class="p">,</span> <span class="n">combFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
                        <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Aggregate the values of each key, using given combine functions and a neutral</span>
@@ -1968,7 +1968,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">combineByKey</span><span class="p">(</span>
             <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="n">seqFunc</span><span class="p">(</span><span class="n">createZero</span><span class="p">(),</span> <span class="n">v</span><span class="p">),</span> <span class="n">seqFunc</span><span class="p">,</span> <span class="n">combFunc</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.foldByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.foldByKey.html#mllib.classification.RDD.foldByKey">[docs]</a>    <span class="k">def</span> <span class="nf">foldByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.foldByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.foldByKey.html#ml.feature.RDD.foldByKey">[docs]</a>    <span class="k">def</span> <span class="nf">foldByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zeroValue</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Merge the values for each key using an associative function &quot;func&quot;</span>
 <span class="sd">        and a neutral &quot;zeroValue&quot; which may be added to the result an</span>
@@ -1990,7 +1990,7 @@
         <span class="k">return</span> <span class="n">_parse_memory</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_conf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;spark.python.worker.memory&quot;</span><span class="p">,</span> <span class="s2">&quot;512m&quot;</span><span class="p">))</span>
 
     <span class="c1"># TODO: support variant with custom partitioner</span>
-<div class="viewcode-block" id="RDD.groupByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.groupByKey.html#mllib.classification.RDD.groupByKey">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.groupByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.groupByKey.html#ml.feature.RDD.groupByKey">[docs]</a>    <span class="k">def</span> <span class="nf">groupByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">partitionFunc</span><span class="o">=</span><span class="n">portable_hash</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Group the values for each key in the RDD into a single sequence.</span>
 <span class="sd">        Hash-partitions the resulting RDD with numPartitions partitions.</span>
@@ -2035,7 +2035,7 @@
 
         <span class="k">return</span> <span class="n">shuffled</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="n">groupByKey</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">mapValues</span><span class="p">(</span><span class="n">ResultIterable</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.flatMapValues"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.flatMapValues.html#mllib.classification.RDD.flatMapValues">[docs]</a>    <span class="k">def</span> <span class="nf">flatMapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.flatMapValues"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.flatMapValues.html#ml.feature.RDD.flatMapValues">[docs]</a>    <span class="k">def</span> <span class="nf">flatMapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pass each value in the key-value pair RDD through a flatMap function</span>
 <span class="sd">        without changing the keys; this also retains the original RDD&#39;s</span>
@@ -2049,7 +2049,7 @@
         <span class="n">flat_map_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="p">((</span><span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatMap</span><span class="p">(</span><span class="n">flat_map_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.mapValues"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapValues.html#mllib.classification.RDD.mapValues">[docs]</a>    <span class="k">def</span> <span class="nf">mapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.mapValues"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.mapValues.html#ml.feature.RDD.mapValues">[docs]</a>    <span class="k">def</span> <span class="nf">mapValues</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pass each value in the key-value pair RDD through a map function</span>
 <span class="sd">        without changing the keys; this also retains the original RDD&#39;s</span>
@@ -2063,7 +2063,7 @@
         <span class="n">map_values_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">kv</span><span class="p">:</span> <span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">f</span><span class="p">(</span><span class="n">kv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">map_values_fn</span><span class="p">,</span> <span class="n">preservesPartitioning</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.groupWith"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.groupWith.html#mllib.classification.RDD.groupWith">[docs]</a>    <span class="k">def</span> <span class="nf">groupWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.groupWith"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.groupWith.html#ml.feature.RDD.groupWith">[docs]</a>    <span class="k">def</span> <span class="nf">groupWith</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Alias for cogroup but with support for multiple RDDs.</span>
 
@@ -2078,7 +2078,7 @@
         <span class="k">return</span> <span class="n">python_cogroup</span><span class="p">((</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">+</span> <span class="n">others</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span></div>
 
     <span class="c1"># TODO: add variant with custom parittioner</span>
-<div class="viewcode-block" id="RDD.cogroup"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.cogroup.html#mllib.classification.RDD.cogroup">[docs]</a>    <span class="k">def</span> <span class="nf">cogroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.cogroup"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.cogroup.html#ml.feature.RDD.cogroup">[docs]</a>    <span class="k">def</span> <span class="nf">cogroup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        For each key k in C{self} or C{other}, return a resulting RDD that</span>
 <span class="sd">        contains a tuple with the list of values for that key in C{self} as</span>
@@ -2091,7 +2091,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">python_cogroup</span><span class="p">((</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">),</span> <span class="n">numPartitions</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.sampleByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sampleByKey.html#mllib.classification.RDD.sampleByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sampleByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sampleByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sampleByKey.html#ml.feature.RDD.sampleByKey">[docs]</a>    <span class="k">def</span> <span class="nf">sampleByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a subset of this RDD sampled by key (via stratified sampling).</span>
 <span class="sd">        Create a sample of this RDD using variable sampling rates for</span>
@@ -2112,7 +2112,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span>
             <span class="n">RDDStratifiedSampler</span><span class="p">(</span><span class="n">withReplacement</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">func</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.subtractByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.subtractByKey.html#mllib.classification.RDD.subtractByKey">[docs]</a>    <span class="k">def</span> <span class="nf">subtractByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.subtractByKey"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.subtractByKey.html#ml.feature.RDD.subtractByKey">[docs]</a>    <span class="k">def</span> <span class="nf">subtractByKey</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return each (key, value) pair in C{self} that has no pair with matching</span>
 <span class="sd">        key in C{other}.</span>
@@ -2127,7 +2127,7 @@
             <span class="k">return</span> <span class="n">val1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">val2</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cogroup</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">filter_func</span><span class="p">)</span><span class="o">.</span><span class="n">flatMapValues</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="RDD.subtract"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.subtract.html#mllib.classification.RDD.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.subtract"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.subtract.html#ml.feature.RDD.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">numPartitions</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return each value in C{self} that is not contained in C{other}.</span>
 
@@ -2140,7 +2140,7 @@
         <span class="n">rdd</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span><span class="o">.</span><span class="n">subtractByKey</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="RDD.keyBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.keyBy.html#mllib.classification.RDD.keyBy">[docs]</a>    <span class="k">def</span> <span class="nf">keyBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.keyBy"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.keyBy.html#ml.feature.RDD.keyBy">[docs]</a>    <span class="k">def</span> <span class="nf">keyBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates tuples of the elements in this RDD by applying C{f}.</span>
 
@@ -2151,7 +2151,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="RDD.repartition"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.repartition.html#mllib.classification.RDD.repartition">[docs]</a>    <span class="k">def</span> <span class="nf">repartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.repartition"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.repartition.html#ml.feature.RDD.repartition">[docs]</a>    <span class="k">def</span> <span class="nf">repartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">         Return a new RDD that has exactly numPartitions partitions.</span>
 
@@ -2171,7 +2171,7 @@
         <span class="n">jrdd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">repartition</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">RDD</span><span class="p">(</span><span class="n">jrdd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.coalesce"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.coalesce.html#mllib.classification.RDD.coalesce">[docs]</a>    <span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.coalesce"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.coalesce.html#ml.feature.RDD.coalesce">[docs]</a>    <span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a new RDD that is reduced into `numPartitions` partitions.</span>
 
@@ -2183,7 +2183,7 @@
         <span class="n">jrdd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">coalesce</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">,</span> <span class="n">shuffle</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">RDD</span><span class="p">(</span><span class="n">jrdd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.zip"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.zip.html#mllib.classification.RDD.zip">[docs]</a>    <span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.zip"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.zip.html#ml.feature.RDD.zip">[docs]</a>    <span class="k">def</span> <span class="nf">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Zips this RDD with another one, returning key-value pairs with the</span>
 <span class="sd">        first element in each RDD second element in each RDD, etc. Assumes</span>
@@ -2225,7 +2225,7 @@
                                         <span class="n">other</span><span class="o">.</span><span class="n">_jrdd_deserializer</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">RDD</span><span class="p">(</span><span class="n">pairRDD</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="p">,</span> <span class="n">deserializer</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.zipWithIndex"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.zipWithIndex.html#mllib.classification.RDD.zipWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">zipWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.zipWithIndex"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.zipWithIndex.html#ml.feature.RDD.zipWithIndex">[docs]</a>    <span class="k">def</span> <span class="nf">zipWithIndex</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Zips this RDD with its element indices.</span>
 
@@ -2252,7 +2252,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.zipWithUniqueId"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.zipWithUniqueId.html#mllib.classification.RDD.zipWithUniqueId">[docs]</a>    <span class="k">def</span> <span class="nf">zipWithUniqueId</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.zipWithUniqueId"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.zipWithUniqueId.html#ml.feature.RDD.zipWithUniqueId">[docs]</a>    <span class="k">def</span> <span class="nf">zipWithUniqueId</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Zips this RDD with generated unique Long ids.</span>
 
@@ -2272,7 +2272,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitionsWithIndex</span><span class="p">(</span><span class="n">func</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.name"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.name.html#mllib.classification.RDD.name">[docs]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.name"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.name.html#ml.feature.RDD.name">[docs]</a>    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the name of this RDD.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -2281,7 +2281,7 @@
             <span class="k">return</span> <span class="n">n</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="RDD.setName"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.setName.html#mllib.classification.RDD.setName">[docs]</a>    <span class="k">def</span> <span class="nf">setName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.setName"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.setName.html#ml.feature.RDD.setName">[docs]</a>    <span class="k">def</span> <span class="nf">setName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Assign a name to this RDD.</span>
 
@@ -2292,7 +2292,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jrdd</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>
 
-<div class="viewcode-block" id="RDD.toDebugString"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.toDebugString.html#mllib.classification.RDD.toDebugString">[docs]</a>    <span class="k">def</span> <span class="nf">toDebugString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.toDebugString"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.toDebugString.html#ml.feature.RDD.toDebugString">[docs]</a>    <span class="k">def</span> <span class="nf">toDebugString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A description of this RDD and its recursive dependencies for debugging.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -2300,7 +2300,7 @@
         <span class="k">if</span> <span class="n">debug_string</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">debug_string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.getStorageLevel"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.getStorageLevel.html#mllib.classification.RDD.getStorageLevel">[docs]</a>    <span class="k">def</span> <span class="nf">getStorageLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.getStorageLevel"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.getStorageLevel.html#ml.feature.RDD.getStorageLevel">[docs]</a>    <span class="k">def</span> <span class="nf">getStorageLevel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the RDD&#39;s current storage level.</span>
 
@@ -2333,7 +2333,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">getNumPartitions</span><span class="p">()</span>
 
-<div class="viewcode-block" id="RDD.lookup"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.lookup.html#mllib.classification.RDD.lookup">[docs]</a>    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.lookup"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.lookup.html#ml.feature.RDD.lookup">[docs]</a>    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return the list of values in the RDD for key `key`. This operation</span>
 <span class="sd">        is done efficiently if the RDD has a known partitioner by only</span>
@@ -2368,7 +2368,7 @@
         <span class="n">rdd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pickled</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">SerDeUtil</span><span class="o">.</span><span class="n">pythonToJava</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">_jrdd</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
 
-<div class="viewcode-block" id="RDD.countApprox"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countApprox.html#mllib.classification.RDD.countApprox">[docs]</a>    <span class="k">def</span> <span class="nf">countApprox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.countApprox"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countApprox.html#ml.feature.RDD.countApprox">[docs]</a>    <span class="k">def</span> <span class="nf">countApprox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. note:: Experimental</span>
 
@@ -2382,7 +2382,7 @@
         <span class="n">drdd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mapPartitions</span><span class="p">(</span><span class="k">lambda</span> <span class="n">it</span><span class="p">:</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">it</span><span class="p">))])</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">drdd</span><span class="o">.</span><span class="n">sumApprox</span><span class="p">(</span><span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="RDD.sumApprox"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sumApprox.html#mllib.classification.RDD.sumApprox">[docs]</a>    <span class="k">def</span> <span class="nf">sumApprox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.sumApprox"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.sumApprox.html#ml.feature.RDD.sumApprox">[docs]</a>    <span class="k">def</span> <span class="nf">sumApprox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. note:: Experimental</span>
 
@@ -2399,7 +2399,7 @@
         <span class="n">r</span> <span class="o">=</span> <span class="n">jdrdd</span><span class="o">.</span><span class="n">sumApprox</span><span class="p">(</span><span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="p">)</span><span class="o">.</span><span class="n">getFinalValue</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">BoundedFloat</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">r</span><span class="o">.</span><span class="n">confidence</span><span class="p">(),</span> <span class="n">r</span><span class="o">.</span><span class="n">low</span><span class="p">(),</span> <span class="n">r</span><span class="o">.</span><span class="n">high</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="RDD.meanApprox"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.meanApprox.html#mllib.classification.RDD.meanApprox">[docs]</a>    <span class="k">def</span> <span class="nf">meanApprox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.meanApprox"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.meanApprox.html#ml.feature.RDD.meanApprox">[docs]</a>    <span class="k">def</span> <span class="nf">meanApprox</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. note:: Experimental</span>
 
@@ -2416,7 +2416,7 @@
         <span class="n">r</span> <span class="o">=</span> <span class="n">jdrdd</span><span class="o">.</span><span class="n">meanApprox</span><span class="p">(</span><span class="n">timeout</span><span class="p">,</span> <span class="n">confidence</span><span class="p">)</span><span class="o">.</span><span class="n">getFinalValue</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">BoundedFloat</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">r</span><span class="o">.</span><span class="n">confidence</span><span class="p">(),</span> <span class="n">r</span><span class="o">.</span><span class="n">low</span><span class="p">(),</span> <span class="n">r</span><span class="o">.</span><span class="n">high</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="RDD.countApproxDistinct"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countApproxDistinct.html#mllib.classification.RDD.countApproxDistinct">[docs]</a>    <span class="k">def</span> <span class="nf">countApproxDistinct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relativeSD</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.countApproxDistinct"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.countApproxDistinct.html#ml.feature.RDD.countApproxDistinct">[docs]</a>    <span class="k">def</span> <span class="nf">countApproxDistinct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relativeSD</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        .. note:: Experimental</span>
 
@@ -2444,7 +2444,7 @@
         <span class="n">hashRDD</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">portable_hash</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFFF</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">hashRDD</span><span class="o">.</span><span class="n">_to_java_object_rdd</span><span class="p">()</span><span class="o">.</span><span class="n">countApproxDistinct</span><span class="p">(</span><span class="n">relativeSD</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RDD.toLocalIterator"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.toLocalIterator.html#mllib.classification.RDD.toLocalIterator">[docs]</a>    <span class="k">def</span> <span class="nf">toLocalIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RDD.toLocalIterator"><a class="viewcode-back" href="../../generated/generated/streaming.kafka.RDD.toLocalIterator.html#ml.feature.RDD.toLocalIterator">[docs]</a>    <span class="k">def</span> <span class="nf">toLocalIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return an iterator that contains all of the elements in this RDD.</span>
 <span class="sd">        The iterator will consume as much memory as the largest partition in this RDD.</span>

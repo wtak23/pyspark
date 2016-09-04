@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.classification.NaiveBayes</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.classification" href="../ml.classification.html"/>
+        <link rel="next" title="ml.classification.NaiveBayes.__init__" href="ml.classification.NaiveBayes.__init__.html"/>
+        <link rel="prev" title="ml.classification.MultilayerPerceptronClassifier.tol" href="ml.classification.MultilayerPerceptronClassifier.tol.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.classification.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.classification.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.ArrayType.html"><code class="docutils literal"><span class="pre">ml.classification.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.BinaryLogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.BinaryLogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DataFrame.html"><code class="docutils literal"><span class="pre">ml.classification.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DoubleType.html"><code class="docutils literal"><span class="pre">ml.classification.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Estimator.html"><code class="docutils literal"><span class="pre">ml.classification.Estimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTParams.html"><code class="docutils literal"><span class="pre">ml.classification.GBTParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.classification.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.classification.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.classification.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.classification.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.classification.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasSeed.html"><code class="docutils literal"><span class="pre">ml.classification.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasSolver.html"><code class="docutils literal"><span class="pre">ml.classification.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.classification.HasStandardization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasStepSize.html"><code class="docutils literal"><span class="pre">ml.classification.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.classification.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasTol.html"><code class="docutils literal"><span class="pre">ml.classification.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Identifiable.html"><code class="docutils literal"><span class="pre">ml.classification.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.classification.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLReader.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaModel.html"><code class="docutils literal"><span class="pre">ml.classification.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaParams.html"><code class="docutils literal"><span class="pre">ml.classification.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaWrapper.html"><code class="docutils literal"><span class="pre">ml.classification.JavaWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegression.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.MLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLReader.html"><code class="docutils literal"><span class="pre">ml.classification.MLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.MLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.MLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Model.html"><code class="docutils literal"><span class="pre">ml.classification.Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MultilayerPerceptronClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MultilayerPerceptronClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassifier</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.classification.NaiveBayes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.NaiveBayesModel.html"><code class="docutils literal"><span class="pre">ml.classification.NaiveBayesModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRest.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRestModel.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRestParams.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Param.html"><code class="docutils literal"><span class="pre">ml.classification.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Params.html"><code class="docutils literal"><span class="pre">ml.classification.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestParams.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.SparkContext.html"><code class="docutils literal"><span class="pre">ml.classification.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.StorageLevel.html"><code class="docutils literal"><span class="pre">ml.classification.StorageLevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeClassifierParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeClassifierParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeEnsembleModels.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleModels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeEnsembleParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.classification.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.classification.NaiveBayes</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.classification.NaiveBayes.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-classification-naivebayes">
+<h1><a class="reference internal" href="#ml.classification.NaiveBayes" title="ml.classification.NaiveBayes"><code class="xref py py-class docutils literal"><span class="pre">ml.classification.NaiveBayes</span></code></a><a class="headerlink" href="#ml-classification-naivebayes" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.classification.NaiveBayes">
+<em class="property">class </em><code class="descclassname">ml.classification.</code><code class="descname">NaiveBayes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/classification.html#NaiveBayes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.classification.NaiveBayes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Naive Bayes Classifiers.
+It supports both Multinomial and Bernoulli NB. <a class="reference external" href="http://nlp.stanford.edu/IR-book/html/htmledition/naive-bayes-text-classification-1.html">Multinomial NB</a>
+can handle finitely supported discrete data. For example, by converting documents into
+TF-IDF vectors, it can be used for document classification. By making every vector a
+binary (0/1) data, it can also be used as <a class="reference external" href="http://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html">Bernoulli NB</a>.
+The input feature values must be nonnegative.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([</span>
+<span class="gp">... </span>    <span class="n">Row</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])),</span>
+<span class="gp">... </span>    <span class="n">Row</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])),</span>
+<span class="gp">... </span>    <span class="n">Row</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]))])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb</span> <span class="o">=</span> <span class="n">NaiveBayes</span><span class="p">(</span><span class="n">smoothing</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">modelType</span><span class="o">=</span><span class="s2">&quot;multinomial&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">pi</span>
+<span class="go">DenseVector([-0.51..., -0.91...])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">theta</span>
+<span class="go">DenseMatrix(2, 2, [-1.09..., -0.40..., -0.40..., -1.09...], 1)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test0</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]))])</span><span class="o">.</span><span class="n">toDF</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test0</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">prediction</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">probability</span>
+<span class="go">DenseVector([0.42..., 0.57...])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">rawPrediction</span>
+<span class="go">DenseVector([-1.60..., -1.32...])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test1</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">parallelize</span><span class="p">([</span><span class="n">Row</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">Vectors</span><span class="o">.</span><span class="n">sparse</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">]))])</span><span class="o">.</span><span class="n">toDF</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">prediction</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/nb&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nb_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb2</span> <span class="o">=</span> <span class="n">NaiveBayes</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">nb_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb2</span><span class="o">.</span><span class="n">getSmoothing</span><span class="p">()</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model_path</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/nb_model&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model2</span> <span class="o">=</span> <span class="n">NaiveBayesModel</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">pi</span> <span class="o">==</span> <span class="n">model2</span><span class="o">.</span><span class="n">pi</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">theta</span> <span class="o">==</span> <span class="n">model2</span><span class="o">.</span><span class="n">theta</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nb</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">setThresholds</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">10.00</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model3</span> <span class="o">=</span> <span class="n">nb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">model3</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test0</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">prediction</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5.0.</span></p>
+</div>
+<dl class="method">
+<dt id="ml.classification.NaiveBayes.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>featuresCol=&quot;features&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>probabilityCol=&quot;probability&quot;</em>, <em>rawPredictionCol=&quot;rawPrediction&quot;</em>, <em>smoothing=1.0</em>, <em>modelType=&quot;multinomial&quot;</em>, <em>thresholds=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/classification.html#NaiveBayes.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.classification.NaiveBayes.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.__init__.html#ml.classification.NaiveBayes.__init__" title="ml.classification.NaiveBayes.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.copy.html#ml.classification.NaiveBayes.copy" title="ml.classification.NaiveBayes.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.explainParam.html#ml.classification.NaiveBayes.explainParam" title="ml.classification.NaiveBayes.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.explainParams.html#ml.classification.NaiveBayes.explainParams" title="ml.classification.NaiveBayes.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.extractParamMap.html#ml.classification.NaiveBayes.extractParamMap" title="ml.classification.NaiveBayes.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.fit.html#ml.classification.NaiveBayes.fit" title="ml.classification.NaiveBayes.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.getFeaturesCol.html#ml.classification.NaiveBayes.getFeaturesCol" title="ml.classification.NaiveBayes.getFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">getFeaturesCol</span></code></a>()</td>
+<td>Gets the value of featuresCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.getLabelCol.html#ml.classification.NaiveBayes.getLabelCol" title="ml.classification.NaiveBayes.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.getModelType.html#ml.classification.NaiveBayes.getModelType" title="ml.classification.NaiveBayes.getModelType"><code class="xref py py-obj docutils literal"><span class="pre">getModelType</span></code></a>()</td>
+<td>Gets the value of modelType or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.getOrDefault.html#ml.classification.NaiveBayes.getOrDefault" title="ml.classification.NaiveBayes.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.getParam.html#ml.classification.NaiveBayes.getParam" title="ml.classification.NaiveBayes.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.getPredictionCol.html#ml.classification.NaiveBayes.getPredictionCol" title="ml.classification.NaiveBayes.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.getProbabilityCol.html#ml.classification.NaiveBayes.getProbabilityCol" title="ml.classification.NaiveBayes.getProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">getProbabilityCol</span></code></a>()</td>
+<td>Gets the value of probabilityCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.getRawPredictionCol.html#ml.classification.NaiveBayes.getRawPredictionCol" title="ml.classification.NaiveBayes.getRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getRawPredictionCol</span></code></a>()</td>
+<td>Gets the value of rawPredictionCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.getSmoothing.html#ml.classification.NaiveBayes.getSmoothing" title="ml.classification.NaiveBayes.getSmoothing"><code class="xref py py-obj docutils literal"><span class="pre">getSmoothing</span></code></a>()</td>
+<td>Gets the value of smoothing or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.getThresholds.html#ml.classification.NaiveBayes.getThresholds" title="ml.classification.NaiveBayes.getThresholds"><code class="xref py py-obj docutils literal"><span class="pre">getThresholds</span></code></a>()</td>
+<td>Gets the value of thresholds or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.hasDefault.html#ml.classification.NaiveBayes.hasDefault" title="ml.classification.NaiveBayes.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.hasParam.html#ml.classification.NaiveBayes.hasParam" title="ml.classification.NaiveBayes.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.isDefined.html#ml.classification.NaiveBayes.isDefined" title="ml.classification.NaiveBayes.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.isSet.html#ml.classification.NaiveBayes.isSet" title="ml.classification.NaiveBayes.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.load.html#ml.classification.NaiveBayes.load" title="ml.classification.NaiveBayes.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.read.html#ml.classification.NaiveBayes.read" title="ml.classification.NaiveBayes.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.save.html#ml.classification.NaiveBayes.save" title="ml.classification.NaiveBayes.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.setFeaturesCol.html#ml.classification.NaiveBayes.setFeaturesCol" title="ml.classification.NaiveBayes.setFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">setFeaturesCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">featuresCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.setLabelCol.html#ml.classification.NaiveBayes.setLabelCol" title="ml.classification.NaiveBayes.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.setModelType.html#ml.classification.NaiveBayes.setModelType" title="ml.classification.NaiveBayes.setModelType"><code class="xref py py-obj docutils literal"><span class="pre">setModelType</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">modelType</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.setParams.html#ml.classification.NaiveBayes.setParams" title="ml.classification.NaiveBayes.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;featuresCol,&nbsp;labelCol,&nbsp;...])</td>
+<td>Sets params for Naive Bayes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.setPredictionCol.html#ml.classification.NaiveBayes.setPredictionCol" title="ml.classification.NaiveBayes.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.setProbabilityCol.html#ml.classification.NaiveBayes.setProbabilityCol" title="ml.classification.NaiveBayes.setProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">setProbabilityCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">probabilityCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.setRawPredictionCol.html#ml.classification.NaiveBayes.setRawPredictionCol" title="ml.classification.NaiveBayes.setRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setRawPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">rawPredictionCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.setSmoothing.html#ml.classification.NaiveBayes.setSmoothing" title="ml.classification.NaiveBayes.setSmoothing"><code class="xref py py-obj docutils literal"><span class="pre">setSmoothing</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">smoothing</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.setThresholds.html#ml.classification.NaiveBayes.setThresholds" title="ml.classification.NaiveBayes.setThresholds"><code class="xref py py-obj docutils literal"><span class="pre">setThresholds</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">thresholds</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.write.html#ml.classification.NaiveBayes.write" title="ml.classification.NaiveBayes.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.featuresCol.html#ml.classification.NaiveBayes.featuresCol" title="ml.classification.NaiveBayes.featuresCol"><code class="xref py py-obj docutils literal"><span class="pre">featuresCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.labelCol.html#ml.classification.NaiveBayes.labelCol" title="ml.classification.NaiveBayes.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.modelType.html#ml.classification.NaiveBayes.modelType" title="ml.classification.NaiveBayes.modelType"><code class="xref py py-obj docutils literal"><span class="pre">modelType</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.params.html#ml.classification.NaiveBayes.params" title="ml.classification.NaiveBayes.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.predictionCol.html#ml.classification.NaiveBayes.predictionCol" title="ml.classification.NaiveBayes.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.probabilityCol.html#ml.classification.NaiveBayes.probabilityCol" title="ml.classification.NaiveBayes.probabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">probabilityCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.rawPredictionCol.html#ml.classification.NaiveBayes.rawPredictionCol" title="ml.classification.NaiveBayes.rawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">rawPredictionCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.NaiveBayes.smoothing.html#ml.classification.NaiveBayes.smoothing" title="ml.classification.NaiveBayes.smoothing"><code class="xref py py-obj docutils literal"><span class="pre">smoothing</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.NaiveBayes.thresholds.html#ml.classification.NaiveBayes.thresholds" title="ml.classification.NaiveBayes.thresholds"><code class="xref py py-obj docutils literal"><span class="pre">thresholds</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.classification.NaiveBayes.__init__.html" class="btn btn-neutral float-right" title="ml.classification.NaiveBayes.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.classification.MultilayerPerceptronClassifier.tol.html" class="btn btn-neutral" title="ml.classification.MultilayerPerceptronClassifier.tol" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

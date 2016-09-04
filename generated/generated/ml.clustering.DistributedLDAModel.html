@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.clustering.DistributedLDAModel</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.clustering" href="../ml.clustering.html"/>
+        <link rel="next" title="ml.clustering.DistributedLDAModel.__init__" href="ml.clustering.DistributedLDAModel.__init__.html"/>
+        <link rel="prev" title="ml.clustering.DecisionTreeParams.params" href="ml.clustering.DecisionTreeParams.params.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.clustering.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.clustering.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.BisectingKMeans.html"><code class="docutils literal"><span class="pre">ml.clustering.BisectingKMeans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.BisectingKMeansModel.html"><code class="docutils literal"><span class="pre">ml.clustering.BisectingKMeansModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.clustering.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.clustering.DistributedLDAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.GaussianMixture.html"><code class="docutils literal"><span class="pre">ml.clustering.GaussianMixture</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.GaussianMixtureModel.html"><code class="docutils literal"><span class="pre">ml.clustering.GaussianMixtureModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.clustering.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.clustering.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.clustering.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.clustering.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.clustering.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.clustering.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.clustering.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.clustering.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasSeed.html"><code class="docutils literal"><span class="pre">ml.clustering.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasSolver.html"><code class="docutils literal"><span class="pre">ml.clustering.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.clustering.HasStandardization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasStepSize.html"><code class="docutils literal"><span class="pre">ml.clustering.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.clustering.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasTol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.Identifiable.html"><code class="docutils literal"><span class="pre">ml.clustering.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLReader.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLWriter.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaModel.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.KMeans.html"><code class="docutils literal"><span class="pre">ml.clustering.KMeans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.KMeansModel.html"><code class="docutils literal"><span class="pre">ml.clustering.KMeansModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.LDA.html"><code class="docutils literal"><span class="pre">ml.clustering.LDA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.LDAModel.html"><code class="docutils literal"><span class="pre">ml.clustering.LDAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.LocalLDAModel.html"><code class="docutils literal"><span class="pre">ml.clustering.LocalLDAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLReadable.html"><code class="docutils literal"><span class="pre">ml.clustering.MLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLReader.html"><code class="docutils literal"><span class="pre">ml.clustering.MLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLWritable.html"><code class="docutils literal"><span class="pre">ml.clustering.MLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLWriter.html"><code class="docutils literal"><span class="pre">ml.clustering.MLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.Param.html"><code class="docutils literal"><span class="pre">ml.clustering.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.Params.html"><code class="docutils literal"><span class="pre">ml.clustering.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.SparkContext.html"><code class="docutils literal"><span class="pre">ml.clustering.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.clustering.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.clustering.DistributedLDAModel</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.clustering.DistributedLDAModel.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-clustering-distributedldamodel">
+<h1><a class="reference internal" href="#ml.clustering.DistributedLDAModel" title="ml.clustering.DistributedLDAModel"><code class="xref py py-class docutils literal"><span class="pre">ml.clustering.DistributedLDAModel</span></code></a><a class="headerlink" href="#ml-clustering-distributedldamodel" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.clustering.DistributedLDAModel">
+<em class="property">class </em><code class="descclassname">ml.clustering.</code><code class="descname">DistributedLDAModel</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/clustering.html#DistributedLDAModel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.clustering.DistributedLDAModel" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+<p>Distributed model fitted by <a class="reference internal" href="ml.clustering.LDA.html#ml.clustering.LDA" title="ml.clustering.LDA"><code class="xref py py-class docutils literal"><span class="pre">LDA</span></code></a>.
+This type of model is currently only produced by Expectation-Maximization (EM).</p>
+<p>This model stores the inferred topics, the full training dataset, and the topic distribution
+for each training document.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.0.</span></p>
+</div>
+<dl class="method">
+<dt id="ml.clustering.DistributedLDAModel.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>java_model=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ml.clustering.DistributedLDAModel.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize this instance with a Java model object.
+Subclasses should call this constructor, initialize params,
+and then call _transfer_params_from_java.</p>
+<p>This instance can be instantiated without specifying java_model,
+it will be assigned after that, but this scenario only used by
+<a class="reference internal" href="ml.clustering.JavaMLReader.html#ml.clustering.JavaMLReader" title="ml.clustering.JavaMLReader"><code class="xref py py-class docutils literal"><span class="pre">JavaMLReader</span></code></a> to load models.  This is a bit of a
+hack, but it is easiest since a proper fix would require
+MLReader (in pyspark.ml.util) to depend on these wrappers, but
+these wrappers depend on pyspark.ml.util (both directly and via
+other ML classes).</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.__init__.html#ml.clustering.DistributedLDAModel.__init__" title="ml.clustering.DistributedLDAModel.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([java_model])</td>
+<td>Initialize this instance with a Java model object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.copy.html#ml.clustering.DistributedLDAModel.copy" title="ml.clustering.DistributedLDAModel.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.describeTopics.html#ml.clustering.DistributedLDAModel.describeTopics" title="ml.clustering.DistributedLDAModel.describeTopics"><code class="xref py py-obj docutils literal"><span class="pre">describeTopics</span></code></a>([maxTermsPerTopic])</td>
+<td>Return the topics described by their top-weighted terms.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.estimatedDocConcentration.html#ml.clustering.DistributedLDAModel.estimatedDocConcentration" title="ml.clustering.DistributedLDAModel.estimatedDocConcentration"><code class="xref py py-obj docutils literal"><span class="pre">estimatedDocConcentration</span></code></a>()</td>
+<td>Value for <a class="reference internal" href="ml.clustering.LDA.docConcentration.html#ml.clustering.LDA.docConcentration" title="ml.clustering.LDA.docConcentration"><code class="xref py py-attr docutils literal"><span class="pre">LDA.docConcentration</span></code></a> estimated from data.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.explainParam.html#ml.clustering.DistributedLDAModel.explainParam" title="ml.clustering.DistributedLDAModel.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.explainParams.html#ml.clustering.DistributedLDAModel.explainParams" title="ml.clustering.DistributedLDAModel.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.extractParamMap.html#ml.clustering.DistributedLDAModel.extractParamMap" title="ml.clustering.DistributedLDAModel.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.getCheckpointFiles.html#ml.clustering.DistributedLDAModel.getCheckpointFiles" title="ml.clustering.DistributedLDAModel.getCheckpointFiles"><code class="xref py py-obj docutils literal"><span class="pre">getCheckpointFiles</span></code></a>()</td>
+<td>If using checkpointing and <a class="reference internal" href="ml.clustering.LDA.keepLastCheckpoint.html#ml.clustering.LDA.keepLastCheckpoint" title="ml.clustering.LDA.keepLastCheckpoint"><code class="xref py py-attr docutils literal"><span class="pre">LDA.keepLastCheckpoint</span></code></a> is set to true, then there may be saved checkpoint files.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.getOrDefault.html#ml.clustering.DistributedLDAModel.getOrDefault" title="ml.clustering.DistributedLDAModel.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.getParam.html#ml.clustering.DistributedLDAModel.getParam" title="ml.clustering.DistributedLDAModel.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.hasDefault.html#ml.clustering.DistributedLDAModel.hasDefault" title="ml.clustering.DistributedLDAModel.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.hasParam.html#ml.clustering.DistributedLDAModel.hasParam" title="ml.clustering.DistributedLDAModel.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.isDefined.html#ml.clustering.DistributedLDAModel.isDefined" title="ml.clustering.DistributedLDAModel.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.isDistributed.html#ml.clustering.DistributedLDAModel.isDistributed" title="ml.clustering.DistributedLDAModel.isDistributed"><code class="xref py py-obj docutils literal"><span class="pre">isDistributed</span></code></a>()</td>
+<td>Indicates whether this instance is of type DistributedLDAModel</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.isSet.html#ml.clustering.DistributedLDAModel.isSet" title="ml.clustering.DistributedLDAModel.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.load.html#ml.clustering.DistributedLDAModel.load" title="ml.clustering.DistributedLDAModel.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.logLikelihood.html#ml.clustering.DistributedLDAModel.logLikelihood" title="ml.clustering.DistributedLDAModel.logLikelihood"><code class="xref py py-obj docutils literal"><span class="pre">logLikelihood</span></code></a>(dataset)</td>
+<td>Calculates a lower bound on the log likelihood of the entire corpus.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.logPerplexity.html#ml.clustering.DistributedLDAModel.logPerplexity" title="ml.clustering.DistributedLDAModel.logPerplexity"><code class="xref py py-obj docutils literal"><span class="pre">logPerplexity</span></code></a>(dataset)</td>
+<td>Calculate an upper bound bound on perplexity.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.logPrior.html#ml.clustering.DistributedLDAModel.logPrior" title="ml.clustering.DistributedLDAModel.logPrior"><code class="xref py py-obj docutils literal"><span class="pre">logPrior</span></code></a>()</td>
+<td>Log probability of the current parameter estimate:</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.read.html#ml.clustering.DistributedLDAModel.read" title="ml.clustering.DistributedLDAModel.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.save.html#ml.clustering.DistributedLDAModel.save" title="ml.clustering.DistributedLDAModel.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.toLocal.html#ml.clustering.DistributedLDAModel.toLocal" title="ml.clustering.DistributedLDAModel.toLocal"><code class="xref py py-obj docutils literal"><span class="pre">toLocal</span></code></a>()</td>
+<td>Convert this distributed model to a local representation.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.topicsMatrix.html#ml.clustering.DistributedLDAModel.topicsMatrix" title="ml.clustering.DistributedLDAModel.topicsMatrix"><code class="xref py py-obj docutils literal"><span class="pre">topicsMatrix</span></code></a>()</td>
+<td>Inferred topics, where each topic is represented by a distribution over terms.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.trainingLogLikelihood.html#ml.clustering.DistributedLDAModel.trainingLogLikelihood" title="ml.clustering.DistributedLDAModel.trainingLogLikelihood"><code class="xref py py-obj docutils literal"><span class="pre">trainingLogLikelihood</span></code></a>()</td>
+<td>Log likelihood of the observed tokens in the training set,</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.transform.html#ml.clustering.DistributedLDAModel.transform" title="ml.clustering.DistributedLDAModel.transform"><code class="xref py py-obj docutils literal"><span class="pre">transform</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Transforms the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.vocabSize.html#ml.clustering.DistributedLDAModel.vocabSize" title="ml.clustering.DistributedLDAModel.vocabSize"><code class="xref py py-obj docutils literal"><span class="pre">vocabSize</span></code></a>()</td>
+<td>Vocabulary size (number of terms or words in the vocabulary)</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.write.html#ml.clustering.DistributedLDAModel.write" title="ml.clustering.DistributedLDAModel.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.DistributedLDAModel.params.html#ml.clustering.DistributedLDAModel.params" title="ml.clustering.DistributedLDAModel.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.clustering.DistributedLDAModel.__init__.html" class="btn btn-neutral float-right" title="ml.clustering.DistributedLDAModel.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.clustering.DecisionTreeParams.params.html" class="btn btn-neutral" title="ml.clustering.DecisionTreeParams.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

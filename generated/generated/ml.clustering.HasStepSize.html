@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.clustering.HasStepSize</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.clustering" href="../ml.clustering.html"/>
+        <link rel="next" title="ml.clustering.HasStepSize.__init__" href="ml.clustering.HasStepSize.__init__.html"/>
+        <link rel="prev" title="ml.clustering.HasStandardization.standardization" href="ml.clustering.HasStandardization.standardization.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.clustering.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.clustering.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.BisectingKMeans.html"><code class="docutils literal"><span class="pre">ml.clustering.BisectingKMeans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.BisectingKMeansModel.html"><code class="docutils literal"><span class="pre">ml.clustering.BisectingKMeansModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.clustering.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.DistributedLDAModel.html"><code class="docutils literal"><span class="pre">ml.clustering.DistributedLDAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.GaussianMixture.html"><code class="docutils literal"><span class="pre">ml.clustering.GaussianMixture</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.GaussianMixtureModel.html"><code class="docutils literal"><span class="pre">ml.clustering.GaussianMixtureModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.clustering.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.clustering.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.clustering.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.clustering.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.clustering.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.clustering.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.clustering.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.clustering.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasSeed.html"><code class="docutils literal"><span class="pre">ml.clustering.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasSolver.html"><code class="docutils literal"><span class="pre">ml.clustering.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.clustering.HasStandardization</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.clustering.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.clustering.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasTol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.clustering.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.Identifiable.html"><code class="docutils literal"><span class="pre">ml.clustering.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLReader.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaMLWriter.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaMLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.JavaModel.html"><code class="docutils literal"><span class="pre">ml.clustering.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.KMeans.html"><code class="docutils literal"><span class="pre">ml.clustering.KMeans</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.KMeansModel.html"><code class="docutils literal"><span class="pre">ml.clustering.KMeansModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.LDA.html"><code class="docutils literal"><span class="pre">ml.clustering.LDA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.LDAModel.html"><code class="docutils literal"><span class="pre">ml.clustering.LDAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.LocalLDAModel.html"><code class="docutils literal"><span class="pre">ml.clustering.LocalLDAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLReadable.html"><code class="docutils literal"><span class="pre">ml.clustering.MLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLReader.html"><code class="docutils literal"><span class="pre">ml.clustering.MLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLWritable.html"><code class="docutils literal"><span class="pre">ml.clustering.MLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.MLWriter.html"><code class="docutils literal"><span class="pre">ml.clustering.MLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.Param.html"><code class="docutils literal"><span class="pre">ml.clustering.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.Params.html"><code class="docutils literal"><span class="pre">ml.clustering.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.SparkContext.html"><code class="docutils literal"><span class="pre">ml.clustering.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.clustering.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.clustering.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.clustering.HasStepSize</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.clustering.HasStepSize.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-clustering-hasstepsize">
+<h1><a class="reference internal" href="#ml.clustering.HasStepSize" title="ml.clustering.HasStepSize"><code class="xref py py-class docutils literal"><span class="pre">ml.clustering.HasStepSize</span></code></a><a class="headerlink" href="#ml-clustering-hasstepsize" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.clustering.HasStepSize">
+<em class="property">class </em><code class="descclassname">ml.clustering.</code><code class="descname">HasStepSize</code><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasStepSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.clustering.HasStepSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mixin for param stepSize: Step size to be used for each iteration of optimization (&gt;= 0).</p>
+<dl class="method">
+<dt id="ml.clustering.HasStepSize.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/ml/param/shared.html#HasStepSize.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.clustering.HasStepSize.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.__init__.html#ml.clustering.HasStepSize.__init__" title="ml.clustering.HasStepSize.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.HasStepSize.copy.html#ml.clustering.HasStepSize.copy" title="ml.clustering.HasStepSize.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.explainParam.html#ml.clustering.HasStepSize.explainParam" title="ml.clustering.HasStepSize.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.HasStepSize.explainParams.html#ml.clustering.HasStepSize.explainParams" title="ml.clustering.HasStepSize.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.extractParamMap.html#ml.clustering.HasStepSize.extractParamMap" title="ml.clustering.HasStepSize.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.HasStepSize.getOrDefault.html#ml.clustering.HasStepSize.getOrDefault" title="ml.clustering.HasStepSize.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.getParam.html#ml.clustering.HasStepSize.getParam" title="ml.clustering.HasStepSize.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.HasStepSize.getStepSize.html#ml.clustering.HasStepSize.getStepSize" title="ml.clustering.HasStepSize.getStepSize"><code class="xref py py-obj docutils literal"><span class="pre">getStepSize</span></code></a>()</td>
+<td>Gets the value of stepSize or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.hasDefault.html#ml.clustering.HasStepSize.hasDefault" title="ml.clustering.HasStepSize.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.HasStepSize.hasParam.html#ml.clustering.HasStepSize.hasParam" title="ml.clustering.HasStepSize.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.isDefined.html#ml.clustering.HasStepSize.isDefined" title="ml.clustering.HasStepSize.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.HasStepSize.isSet.html#ml.clustering.HasStepSize.isSet" title="ml.clustering.HasStepSize.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.setStepSize.html#ml.clustering.HasStepSize.setStepSize" title="ml.clustering.HasStepSize.setStepSize"><code class="xref py py-obj docutils literal"><span class="pre">setStepSize</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">stepSize</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.clustering.HasStepSize.params.html#ml.clustering.HasStepSize.params" title="ml.clustering.HasStepSize.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.clustering.HasStepSize.stepSize.html#ml.clustering.HasStepSize.stepSize" title="ml.clustering.HasStepSize.stepSize"><code class="xref py py-obj docutils literal"><span class="pre">stepSize</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.clustering.HasStepSize.__init__.html" class="btn btn-neutral float-right" title="ml.clustering.HasStepSize.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.clustering.HasStandardization.standardization.html" class="btn btn-neutral" title="ml.clustering.HasStandardization.standardization" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

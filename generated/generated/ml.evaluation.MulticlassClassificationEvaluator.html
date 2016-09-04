@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.evaluation.MulticlassClassificationEvaluator</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.evaluation" href="../ml.evaluation.html"/>
+        <link rel="next" title="ml.evaluation.MulticlassClassificationEvaluator.__init__" href="ml.evaluation.MulticlassClassificationEvaluator.__init__.html"/>
+        <link rel="prev" title="ml.evaluation.JavaParams.params" href="ml.evaluation.JavaParams.params.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.evaluation.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.evaluation.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.ABCMeta.html"><code class="docutils literal"><span class="pre">ml.evaluation.ABCMeta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.BinaryClassificationEvaluator.html"><code class="docutils literal"><span class="pre">ml.evaluation.BinaryClassificationEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.Evaluator.html"><code class="docutils literal"><span class="pre">ml.evaluation.Evaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.evaluation.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.evaluation.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.evaluation.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.JavaEvaluator.html"><code class="docutils literal"><span class="pre">ml.evaluation.JavaEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.JavaParams.html"><code class="docutils literal"><span class="pre">ml.evaluation.JavaParams</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.evaluation.MulticlassClassificationEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.Param.html"><code class="docutils literal"><span class="pre">ml.evaluation.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.Params.html"><code class="docutils literal"><span class="pre">ml.evaluation.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.RegressionEvaluator.html"><code class="docutils literal"><span class="pre">ml.evaluation.RegressionEvaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.evaluation.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.evaluation.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.evaluation.MulticlassClassificationEvaluator</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.evaluation.MulticlassClassificationEvaluator.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-evaluation-multiclassclassificationevaluator">
+<h1><a class="reference internal" href="#ml.evaluation.MulticlassClassificationEvaluator" title="ml.evaluation.MulticlassClassificationEvaluator"><code class="xref py py-class docutils literal"><span class="pre">ml.evaluation.MulticlassClassificationEvaluator</span></code></a><a class="headerlink" href="#ml-evaluation-multiclassclassificationevaluator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.evaluation.MulticlassClassificationEvaluator">
+<em class="property">class </em><code class="descclassname">ml.evaluation.</code><code class="descname">MulticlassClassificationEvaluator</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/evaluation.html#MulticlassClassificationEvaluator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.evaluation.MulticlassClassificationEvaluator" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+<p>Evaluator for Multiclass Classification, which expects two input
+columns: prediction and label.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scoreAndLabels</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span><span class="n">scoreAndLabels</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">])</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span> <span class="o">=</span> <span class="n">MulticlassClassificationEvaluator</span><span class="p">(</span><span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="go">0.66...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="p">{</span><span class="n">evaluator</span><span class="o">.</span><span class="n">metricName</span><span class="p">:</span> <span class="s2">&quot;accuracy&quot;</span><span class="p">})</span>
+<span class="go">0.66...</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5.0.</span></p>
+</div>
+<dl class="method">
+<dt id="ml.evaluation.MulticlassClassificationEvaluator.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>predictionCol=&quot;prediction&quot;</em>, <em>labelCol=&quot;label&quot;</em>, <em>metricName=&quot;f1&quot;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/evaluation.html#MulticlassClassificationEvaluator.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.evaluation.MulticlassClassificationEvaluator.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.__init__.html#ml.evaluation.MulticlassClassificationEvaluator.__init__" title="ml.evaluation.MulticlassClassificationEvaluator.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;predictionCol,&nbsp;labelCol])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.copy.html#ml.evaluation.MulticlassClassificationEvaluator.copy" title="ml.evaluation.MulticlassClassificationEvaluator.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.evaluate.html#ml.evaluation.MulticlassClassificationEvaluator.evaluate" title="ml.evaluation.MulticlassClassificationEvaluator.evaluate"><code class="xref py py-obj docutils literal"><span class="pre">evaluate</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Evaluates the output with optional parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.explainParam.html#ml.evaluation.MulticlassClassificationEvaluator.explainParam" title="ml.evaluation.MulticlassClassificationEvaluator.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.explainParams.html#ml.evaluation.MulticlassClassificationEvaluator.explainParams" title="ml.evaluation.MulticlassClassificationEvaluator.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.extractParamMap.html#ml.evaluation.MulticlassClassificationEvaluator.extractParamMap" title="ml.evaluation.MulticlassClassificationEvaluator.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.getLabelCol.html#ml.evaluation.MulticlassClassificationEvaluator.getLabelCol" title="ml.evaluation.MulticlassClassificationEvaluator.getLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">getLabelCol</span></code></a>()</td>
+<td>Gets the value of labelCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.getMetricName.html#ml.evaluation.MulticlassClassificationEvaluator.getMetricName" title="ml.evaluation.MulticlassClassificationEvaluator.getMetricName"><code class="xref py py-obj docutils literal"><span class="pre">getMetricName</span></code></a>()</td>
+<td>Gets the value of metricName or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.getOrDefault.html#ml.evaluation.MulticlassClassificationEvaluator.getOrDefault" title="ml.evaluation.MulticlassClassificationEvaluator.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.getParam.html#ml.evaluation.MulticlassClassificationEvaluator.getParam" title="ml.evaluation.MulticlassClassificationEvaluator.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.getPredictionCol.html#ml.evaluation.MulticlassClassificationEvaluator.getPredictionCol" title="ml.evaluation.MulticlassClassificationEvaluator.getPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">getPredictionCol</span></code></a>()</td>
+<td>Gets the value of predictionCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.hasDefault.html#ml.evaluation.MulticlassClassificationEvaluator.hasDefault" title="ml.evaluation.MulticlassClassificationEvaluator.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.hasParam.html#ml.evaluation.MulticlassClassificationEvaluator.hasParam" title="ml.evaluation.MulticlassClassificationEvaluator.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.isDefined.html#ml.evaluation.MulticlassClassificationEvaluator.isDefined" title="ml.evaluation.MulticlassClassificationEvaluator.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.isLargerBetter.html#ml.evaluation.MulticlassClassificationEvaluator.isLargerBetter" title="ml.evaluation.MulticlassClassificationEvaluator.isLargerBetter"><code class="xref py py-obj docutils literal"><span class="pre">isLargerBetter</span></code></a>()</td>
+<td>Indicates whether the metric returned by <code class="xref py py-meth docutils literal"><span class="pre">evaluate()</span></code> should be maximized (True, default) or minimized (False).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.isSet.html#ml.evaluation.MulticlassClassificationEvaluator.isSet" title="ml.evaluation.MulticlassClassificationEvaluator.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.setLabelCol.html#ml.evaluation.MulticlassClassificationEvaluator.setLabelCol" title="ml.evaluation.MulticlassClassificationEvaluator.setLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">setLabelCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">labelCol</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.setMetricName.html#ml.evaluation.MulticlassClassificationEvaluator.setMetricName" title="ml.evaluation.MulticlassClassificationEvaluator.setMetricName"><code class="xref py py-obj docutils literal"><span class="pre">setMetricName</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">metricName</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.setParams.html#ml.evaluation.MulticlassClassificationEvaluator.setParams" title="ml.evaluation.MulticlassClassificationEvaluator.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;predictionCol,&nbsp;labelCol])</td>
+<td>Sets params for multiclass classification evaluator.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.setPredictionCol.html#ml.evaluation.MulticlassClassificationEvaluator.setPredictionCol" title="ml.evaluation.MulticlassClassificationEvaluator.setPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">setPredictionCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">predictionCol</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.labelCol.html#ml.evaluation.MulticlassClassificationEvaluator.labelCol" title="ml.evaluation.MulticlassClassificationEvaluator.labelCol"><code class="xref py py-obj docutils literal"><span class="pre">labelCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.metricName.html#ml.evaluation.MulticlassClassificationEvaluator.metricName" title="ml.evaluation.MulticlassClassificationEvaluator.metricName"><code class="xref py py-obj docutils literal"><span class="pre">metricName</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.params.html#ml.evaluation.MulticlassClassificationEvaluator.params" title="ml.evaluation.MulticlassClassificationEvaluator.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.evaluation.MulticlassClassificationEvaluator.predictionCol.html#ml.evaluation.MulticlassClassificationEvaluator.predictionCol" title="ml.evaluation.MulticlassClassificationEvaluator.predictionCol"><code class="xref py py-obj docutils literal"><span class="pre">predictionCol</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.evaluation.MulticlassClassificationEvaluator.__init__.html" class="btn btn-neutral float-right" title="ml.evaluation.MulticlassClassificationEvaluator.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.evaluation.JavaParams.params.html" class="btn btn-neutral" title="ml.evaluation.JavaParams.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

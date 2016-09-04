@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.classification.SparkContext</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.classification" href="../ml.classification.html"/>
+        <link rel="next" title="ml.classification.SparkContext.__init__" href="ml.classification.SparkContext.__init__.html"/>
+        <link rel="prev" title="ml.classification.RandomForestParams.supportedFeatureSubsetStrategies" href="ml.classification.RandomForestParams.supportedFeatureSubsetStrategies.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.classification.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.classification.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.ArrayType.html"><code class="docutils literal"><span class="pre">ml.classification.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.BinaryLogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.BinaryLogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DataFrame.html"><code class="docutils literal"><span class="pre">ml.classification.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DoubleType.html"><code class="docutils literal"><span class="pre">ml.classification.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Estimator.html"><code class="docutils literal"><span class="pre">ml.classification.Estimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTParams.html"><code class="docutils literal"><span class="pre">ml.classification.GBTParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.classification.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.classification.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.classification.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.classification.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.classification.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasSeed.html"><code class="docutils literal"><span class="pre">ml.classification.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasSolver.html"><code class="docutils literal"><span class="pre">ml.classification.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.classification.HasStandardization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasStepSize.html"><code class="docutils literal"><span class="pre">ml.classification.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.classification.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasTol.html"><code class="docutils literal"><span class="pre">ml.classification.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Identifiable.html"><code class="docutils literal"><span class="pre">ml.classification.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.classification.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLReader.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaModel.html"><code class="docutils literal"><span class="pre">ml.classification.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaParams.html"><code class="docutils literal"><span class="pre">ml.classification.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaWrapper.html"><code class="docutils literal"><span class="pre">ml.classification.JavaWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegression.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.MLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLReader.html"><code class="docutils literal"><span class="pre">ml.classification.MLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.MLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.MLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Model.html"><code class="docutils literal"><span class="pre">ml.classification.Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MultilayerPerceptronClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MultilayerPerceptronClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.NaiveBayes.html"><code class="docutils literal"><span class="pre">ml.classification.NaiveBayes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.NaiveBayesModel.html"><code class="docutils literal"><span class="pre">ml.classification.NaiveBayesModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRest.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRestModel.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRestParams.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Param.html"><code class="docutils literal"><span class="pre">ml.classification.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Params.html"><code class="docutils literal"><span class="pre">ml.classification.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestParams.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestParams</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.classification.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.StorageLevel.html"><code class="docutils literal"><span class="pre">ml.classification.StorageLevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeClassifierParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeClassifierParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeEnsembleModels.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleModels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeEnsembleParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.classification.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.classification.SparkContext</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.classification.SparkContext.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-classification-sparkcontext">
+<h1><a class="reference internal" href="#ml.classification.SparkContext" title="ml.classification.SparkContext"><code class="xref py py-class docutils literal"><span class="pre">ml.classification.SparkContext</span></code></a><a class="headerlink" href="#ml-classification-sparkcontext" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.classification.SparkContext">
+<em class="property">class </em><code class="descclassname">ml.classification.</code><code class="descname">SparkContext</code><span class="sig-paren">(</span><em>master=None</em>, <em>appName=None</em>, <em>sparkHome=None</em>, <em>pyFiles=None</em>, <em>environment=None</em>, <em>batchSize=0</em>, <em>serializer=PickleSerializer()</em>, <em>conf=None</em>, <em>gateway=None</em>, <em>jsc=None</em>, <em>profiler_cls=&lt;class 'pyspark.profiler.BasicProfiler'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.classification.SparkContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main entry point for Spark functionality. A SparkContext represents the
+connection to a Spark cluster, and can be used to create L{RDD} and
+broadcast variables on that cluster.</p>
+<dl class="method">
+<dt id="ml.classification.SparkContext.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>master=None</em>, <em>appName=None</em>, <em>sparkHome=None</em>, <em>pyFiles=None</em>, <em>environment=None</em>, <em>batchSize=0</em>, <em>serializer=PickleSerializer()</em>, <em>conf=None</em>, <em>gateway=None</em>, <em>jsc=None</em>, <em>profiler_cls=&lt;class 'pyspark.profiler.BasicProfiler'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.classification.SparkContext.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new SparkContext. At least the master and app name should be set,
+either through the named parameters here or through C{conf}.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>master</strong> &#8211; Cluster URL to connect to
+(e.g. mesos://host:port, spark://host:port, local[4]).</li>
+<li><strong>appName</strong> &#8211; A name for your job, to display on the cluster web UI.</li>
+<li><strong>sparkHome</strong> &#8211; Location where Spark is installed on cluster nodes.</li>
+<li><strong>pyFiles</strong> &#8211; Collection of .zip or .py files to send to the cluster
+and add to PYTHONPATH.  These can be paths on the local file
+system or HDFS, HTTP, HTTPS, or FTP URLs.</li>
+<li><strong>environment</strong> &#8211; A dictionary of environment variables to set on
+worker nodes.</li>
+<li><strong>batchSize</strong> &#8211; The number of Python objects represented as a single
+Java object. Set 1 to disable batching, 0 to automatically choose
+the batch size based on object sizes, or -1 to use an unlimited
+batch size</li>
+<li><strong>serializer</strong> &#8211; The serializer for RDDs.</li>
+<li><strong>conf</strong> &#8211; A L{SparkConf} object setting Spark properties.</li>
+<li><strong>gateway</strong> &#8211; Use an existing gateway and JVM, otherwise a new JVM
+will be instantiated.</li>
+<li><strong>jsc</strong> &#8211; The JavaSparkContext instance (optional).</li>
+<li><strong>profiler_cls</strong> &#8211; A class of custom Profiler used to do profiling
+(default is pyspark.profiler.BasicProfiler).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.context</span> <span class="kn">import</span> <span class="n">SparkContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="p">(</span><span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span>&gt;&gt;&gt; sc2 = SparkContext(&#39;local&#39;, &#39;test2&#39;) 
+Traceback (most recent call last):
+    ...
+ValueError:...
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.__init__.html#ml.classification.SparkContext.__init__" title="ml.classification.SparkContext.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Create a new SparkContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.accumulator.html#ml.classification.SparkContext.accumulator" title="ml.classification.SparkContext.accumulator"><code class="xref py py-obj docutils literal"><span class="pre">accumulator</span></code></a>(value[,&nbsp;accum_param])</td>
+<td>Create an L{Accumulator} with the given initial value, using a given L{AccumulatorParam} helper object to define how to add values of the data type if provided.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.addFile.html#ml.classification.SparkContext.addFile" title="ml.classification.SparkContext.addFile"><code class="xref py py-obj docutils literal"><span class="pre">addFile</span></code></a>(path)</td>
+<td>Add a file to be downloaded with this Spark job on every node.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.addPyFile.html#ml.classification.SparkContext.addPyFile" title="ml.classification.SparkContext.addPyFile"><code class="xref py py-obj docutils literal"><span class="pre">addPyFile</span></code></a>(path)</td>
+<td>Add a .py or .zip dependency for all tasks to be executed on this SparkContext in the future.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.binaryFiles.html#ml.classification.SparkContext.binaryFiles" title="ml.classification.SparkContext.binaryFiles"><code class="xref py py-obj docutils literal"><span class="pre">binaryFiles</span></code></a>(path[,&nbsp;minPartitions])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.binaryRecords.html#ml.classification.SparkContext.binaryRecords" title="ml.classification.SparkContext.binaryRecords"><code class="xref py py-obj docutils literal"><span class="pre">binaryRecords</span></code></a>(path,&nbsp;recordLength)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.broadcast.html#ml.classification.SparkContext.broadcast" title="ml.classification.SparkContext.broadcast"><code class="xref py py-obj docutils literal"><span class="pre">broadcast</span></code></a>(value)</td>
+<td>Broadcast a read-only variable to the cluster, returning a L{Broadcast&lt;pyspark.broadcast.Broadcast&gt;} object for reading it in distributed functions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.cancelAllJobs.html#ml.classification.SparkContext.cancelAllJobs" title="ml.classification.SparkContext.cancelAllJobs"><code class="xref py py-obj docutils literal"><span class="pre">cancelAllJobs</span></code></a>()</td>
+<td>Cancel all jobs that have been scheduled or are running.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.cancelJobGroup.html#ml.classification.SparkContext.cancelJobGroup" title="ml.classification.SparkContext.cancelJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">cancelJobGroup</span></code></a>(groupId)</td>
+<td>Cancel active jobs for the specified group.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.clearFiles.html#ml.classification.SparkContext.clearFiles" title="ml.classification.SparkContext.clearFiles"><code class="xref py py-obj docutils literal"><span class="pre">clearFiles</span></code></a>()</td>
+<td>Clear the job&#8217;s list of files added by L{addFile} or L{addPyFile} so that they do not get downloaded to any new nodes.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.dump_profiles.html#ml.classification.SparkContext.dump_profiles" title="ml.classification.SparkContext.dump_profiles"><code class="xref py py-obj docutils literal"><span class="pre">dump_profiles</span></code></a>(path)</td>
+<td>Dump the profile stats into directory <cite>path</cite></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.emptyRDD.html#ml.classification.SparkContext.emptyRDD" title="ml.classification.SparkContext.emptyRDD"><code class="xref py py-obj docutils literal"><span class="pre">emptyRDD</span></code></a>()</td>
+<td>Create an RDD that has no partitions or elements.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.getConf.html#ml.classification.SparkContext.getConf" title="ml.classification.SparkContext.getConf"><code class="xref py py-obj docutils literal"><span class="pre">getConf</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.getLocalProperty.html#ml.classification.SparkContext.getLocalProperty" title="ml.classification.SparkContext.getLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">getLocalProperty</span></code></a>(key)</td>
+<td>Get a local property set in this thread, or null if it is missing.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.getOrCreate.html#ml.classification.SparkContext.getOrCreate" title="ml.classification.SparkContext.getOrCreate"><code class="xref py py-obj docutils literal"><span class="pre">getOrCreate</span></code></a>([conf])</td>
+<td>Get or instantiate a SparkContext and register it as a singleton object.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.hadoopFile.html#ml.classification.SparkContext.hadoopFile" title="ml.classification.SparkContext.hadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">hadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
+<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.hadoopRDD.html#ml.classification.SparkContext.hadoopRDD" title="ml.classification.SparkContext.hadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">hadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;valueClass)</td>
+<td>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.newAPIHadoopFile.html#ml.classification.SparkContext.newAPIHadoopFile" title="ml.classification.SparkContext.newAPIHadoopFile"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopFile</span></code></a>(path,&nbsp;inputFormatClass,&nbsp;...)</td>
+<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.newAPIHadoopRDD.html#ml.classification.SparkContext.newAPIHadoopRDD" title="ml.classification.SparkContext.newAPIHadoopRDD"><code class="xref py py-obj docutils literal"><span class="pre">newAPIHadoopRDD</span></code></a>(inputFormatClass,&nbsp;keyClass,&nbsp;...)</td>
+<td>Read a &#8216;new API&#8217; Hadoop InputFormat with arbitrary key and value class, from an arbitrary Hadoop configuration, which is passed in as a Python dict.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.parallelize.html#ml.classification.SparkContext.parallelize" title="ml.classification.SparkContext.parallelize"><code class="xref py py-obj docutils literal"><span class="pre">parallelize</span></code></a>(c[,&nbsp;numSlices])</td>
+<td>Distribute a local Python collection to form an RDD.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.pickleFile.html#ml.classification.SparkContext.pickleFile" title="ml.classification.SparkContext.pickleFile"><code class="xref py py-obj docutils literal"><span class="pre">pickleFile</span></code></a>(name[,&nbsp;minPartitions])</td>
+<td>Load an RDD previously saved using L{RDD.saveAsPickleFile} method.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.range.html#ml.classification.SparkContext.range" title="ml.classification.SparkContext.range"><code class="xref py py-obj docutils literal"><span class="pre">range</span></code></a>(start[,&nbsp;end,&nbsp;step,&nbsp;numSlices])</td>
+<td>Create a new RDD of int containing elements from <cite>start</cite> to <cite>end</cite> (exclusive), increased by <cite>step</cite> every element.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.runJob.html#ml.classification.SparkContext.runJob" title="ml.classification.SparkContext.runJob"><code class="xref py py-obj docutils literal"><span class="pre">runJob</span></code></a>(rdd,&nbsp;partitionFunc[,&nbsp;partitions,&nbsp;...])</td>
+<td>Executes the given partitionFunc on the specified set of partitions, returning the result as an array of elements.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.sequenceFile.html#ml.classification.SparkContext.sequenceFile" title="ml.classification.SparkContext.sequenceFile"><code class="xref py py-obj docutils literal"><span class="pre">sequenceFile</span></code></a>(path[,&nbsp;keyClass,&nbsp;valueClass,&nbsp;...])</td>
+<td>Read a Hadoop SequenceFile with arbitrary key and value Writable class from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.setCheckpointDir.html#ml.classification.SparkContext.setCheckpointDir" title="ml.classification.SparkContext.setCheckpointDir"><code class="xref py py-obj docutils literal"><span class="pre">setCheckpointDir</span></code></a>(dirName)</td>
+<td>Set the directory under which RDDs are going to be checkpointed.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.setJobGroup.html#ml.classification.SparkContext.setJobGroup" title="ml.classification.SparkContext.setJobGroup"><code class="xref py py-obj docutils literal"><span class="pre">setJobGroup</span></code></a>(groupId,&nbsp;description[,&nbsp;...])</td>
+<td>Assigns a group ID to all the jobs started by this thread until the group ID is set to a different value or cleared.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.setLocalProperty.html#ml.classification.SparkContext.setLocalProperty" title="ml.classification.SparkContext.setLocalProperty"><code class="xref py py-obj docutils literal"><span class="pre">setLocalProperty</span></code></a>(key,&nbsp;value)</td>
+<td>Set a local property that affects jobs submitted from this thread, such as the Spark fair scheduler pool.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.setLogLevel.html#ml.classification.SparkContext.setLogLevel" title="ml.classification.SparkContext.setLogLevel"><code class="xref py py-obj docutils literal"><span class="pre">setLogLevel</span></code></a>(logLevel)</td>
+<td>Control our logLevel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.setSystemProperty.html#ml.classification.SparkContext.setSystemProperty" title="ml.classification.SparkContext.setSystemProperty"><code class="xref py py-obj docutils literal"><span class="pre">setSystemProperty</span></code></a>(key,&nbsp;value)</td>
+<td>Set a Java system property, such as spark.executor.memory.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.show_profiles.html#ml.classification.SparkContext.show_profiles" title="ml.classification.SparkContext.show_profiles"><code class="xref py py-obj docutils literal"><span class="pre">show_profiles</span></code></a>()</td>
+<td>Print the profile stats to stdout</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.sparkUser.html#ml.classification.SparkContext.sparkUser" title="ml.classification.SparkContext.sparkUser"><code class="xref py py-obj docutils literal"><span class="pre">sparkUser</span></code></a>()</td>
+<td>Get SPARK_USER for user who is running SparkContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.statusTracker.html#ml.classification.SparkContext.statusTracker" title="ml.classification.SparkContext.statusTracker"><code class="xref py py-obj docutils literal"><span class="pre">statusTracker</span></code></a>()</td>
+<td>Return <code class="xref py py-class docutils literal"><span class="pre">StatusTracker</span></code> object</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.stop.html#ml.classification.SparkContext.stop" title="ml.classification.SparkContext.stop"><code class="xref py py-obj docutils literal"><span class="pre">stop</span></code></a>()</td>
+<td>Shut down the SparkContext.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.textFile.html#ml.classification.SparkContext.textFile" title="ml.classification.SparkContext.textFile"><code class="xref py py-obj docutils literal"><span class="pre">textFile</span></code></a>(name[,&nbsp;minPartitions,&nbsp;use_unicode])</td>
+<td>Read a text file from HDFS, a local file system (available on all nodes), or any Hadoop-supported file system URI, and return it as an RDD of Strings.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.union.html#ml.classification.SparkContext.union" title="ml.classification.SparkContext.union"><code class="xref py py-obj docutils literal"><span class="pre">union</span></code></a>(rdds)</td>
+<td>Build the union of a list of RDDs.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.wholeTextFiles.html#ml.classification.SparkContext.wholeTextFiles" title="ml.classification.SparkContext.wholeTextFiles"><code class="xref py py-obj docutils literal"><span class="pre">wholeTextFiles</span></code></a>(path[,&nbsp;minPartitions,&nbsp;...])</td>
+<td>Read a directory of text files from HDFS, a local file system (available on all nodes), or any  Hadoop-supported file system URI.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.PACKAGE_EXTENSIONS.html#ml.classification.SparkContext.PACKAGE_EXTENSIONS" title="ml.classification.SparkContext.PACKAGE_EXTENSIONS"><code class="xref py py-obj docutils literal"><span class="pre">PACKAGE_EXTENSIONS</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.applicationId.html#ml.classification.SparkContext.applicationId" title="ml.classification.SparkContext.applicationId"><code class="xref py py-obj docutils literal"><span class="pre">applicationId</span></code></a></td>
+<td>A unique identifier for the Spark application.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.defaultMinPartitions.html#ml.classification.SparkContext.defaultMinPartitions" title="ml.classification.SparkContext.defaultMinPartitions"><code class="xref py py-obj docutils literal"><span class="pre">defaultMinPartitions</span></code></a></td>
+<td>Default min number of partitions for Hadoop RDDs when not given by user</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.defaultParallelism.html#ml.classification.SparkContext.defaultParallelism" title="ml.classification.SparkContext.defaultParallelism"><code class="xref py py-obj docutils literal"><span class="pre">defaultParallelism</span></code></a></td>
+<td>Default level of parallelism to use when not given by user (e.g.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.classification.SparkContext.startTime.html#ml.classification.SparkContext.startTime" title="ml.classification.SparkContext.startTime"><code class="xref py py-obj docutils literal"><span class="pre">startTime</span></code></a></td>
+<td>Return the epoch time when the Spark Context was started.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.classification.SparkContext.version.html#ml.classification.SparkContext.version" title="ml.classification.SparkContext.version"><code class="xref py py-obj docutils literal"><span class="pre">version</span></code></a></td>
+<td>The version of Spark on which this application is running.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.classification.SparkContext.__init__.html" class="btn btn-neutral float-right" title="ml.classification.SparkContext.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.classification.RandomForestParams.supportedFeatureSubsetStrategies.html" class="btn btn-neutral" title="ml.classification.RandomForestParams.supportedFeatureSubsetStrategies" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

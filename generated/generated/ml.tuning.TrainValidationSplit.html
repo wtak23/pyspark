@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.tuning.TrainValidationSplit</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.tuning" href="../ml.tuning.html"/>
+        <link rel="next" title="ml.tuning.TrainValidationSplit.__init__" href="ml.tuning.TrainValidationSplit.__init__.html"/>
+        <link rel="prev" title="ml.tuning.SparkContext.version" href="ml.tuning.SparkContext.version.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.tuning.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.tuning.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.CrossValidator.html"><code class="docutils literal"><span class="pre">ml.tuning.CrossValidator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.CrossValidatorModel.html"><code class="docutils literal"><span class="pre">ml.tuning.CrossValidatorModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Estimator.html"><code class="docutils literal"><span class="pre">ml.tuning.Estimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.HasSeed.html"><code class="docutils literal"><span class="pre">ml.tuning.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.JavaParams.html"><code class="docutils literal"><span class="pre">ml.tuning.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Model.html"><code class="docutils literal"><span class="pre">ml.tuning.Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Param.html"><code class="docutils literal"><span class="pre">ml.tuning.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.ParamGridBuilder.html"><code class="docutils literal"><span class="pre">ml.tuning.ParamGridBuilder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Params.html"><code class="docutils literal"><span class="pre">ml.tuning.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.SparkContext.html"><code class="docutils literal"><span class="pre">ml.tuning.SparkContext</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.tuning.TrainValidationSplit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TrainValidationSplitModel.html"><code class="docutils literal"><span class="pre">ml.tuning.TrainValidationSplitModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.tuning.TypeConverters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.ValidatorParams.html"><code class="docutils literal"><span class="pre">ml.tuning.ValidatorParams</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.tuning.TrainValidationSplit</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.tuning.TrainValidationSplit.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-tuning-trainvalidationsplit">
+<h1><a class="reference internal" href="#ml.tuning.TrainValidationSplit" title="ml.tuning.TrainValidationSplit"><code class="xref py py-class docutils literal"><span class="pre">ml.tuning.TrainValidationSplit</span></code></a><a class="headerlink" href="#ml-tuning-trainvalidationsplit" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.tuning.TrainValidationSplit">
+<em class="property">class </em><code class="descclassname">ml.tuning.</code><code class="descname">TrainValidationSplit</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/tuning.html#TrainValidationSplit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.tuning.TrainValidationSplit" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+<p>Validation for hyper-parameter tuning. Randomly splits the input dataset into train and
+validation sets, and uses evaluation metric on the validation set to select the best model.
+Similar to <a class="reference internal" href="ml.tuning.CrossValidator.html#ml.tuning.CrossValidator" title="ml.tuning.CrossValidator"><code class="xref py py-class docutils literal"><span class="pre">CrossValidator</span></code></a>, but only splits the set once.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="kn">import</span> <span class="n">BinaryClassificationEvaluator</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.linalg</span> <span class="kn">import</span> <span class="n">Vectors</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="mf">0.0</span><span class="p">),</span>
+<span class="gp">... </span>     <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.4</span><span class="p">]),</span> <span class="mf">1.0</span><span class="p">),</span>
+<span class="gp">... </span>     <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.5</span><span class="p">]),</span> <span class="mf">0.0</span><span class="p">),</span>
+<span class="gp">... </span>     <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">0.6</span><span class="p">]),</span> <span class="mf">1.0</span><span class="p">),</span>
+<span class="gp">... </span>     <span class="p">(</span><span class="n">Vectors</span><span class="o">.</span><span class="n">dense</span><span class="p">([</span><span class="mf">1.0</span><span class="p">]),</span> <span class="mf">1.0</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">ParamGridBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">addGrid</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">maxIter</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span> <span class="o">=</span> <span class="n">BinaryClassificationEvaluator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tvs</span> <span class="o">=</span> <span class="n">TrainValidationSplit</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">estimatorParamMaps</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span> <span class="n">evaluator</span><span class="o">=</span><span class="n">evaluator</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tvsModel</span> <span class="o">=</span> <span class="n">tvs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">tvsModel</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">))</span>
+<span class="go">0.8333...</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.0.</span></p>
+</div>
+<dl class="method">
+<dt id="ml.tuning.TrainValidationSplit.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>estimator=None</em>, <em>estimatorParamMaps=None</em>, <em>evaluator=None</em>, <em>trainRatio=0.75</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/tuning.html#TrainValidationSplit.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.tuning.TrainValidationSplit.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.__init__.html#ml.tuning.TrainValidationSplit.__init__" title="ml.tuning.TrainValidationSplit.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;estimator,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.copy.html#ml.tuning.TrainValidationSplit.copy" title="ml.tuning.TrainValidationSplit.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with a randomly generated uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.explainParam.html#ml.tuning.TrainValidationSplit.explainParam" title="ml.tuning.TrainValidationSplit.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.explainParams.html#ml.tuning.TrainValidationSplit.explainParams" title="ml.tuning.TrainValidationSplit.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.extractParamMap.html#ml.tuning.TrainValidationSplit.extractParamMap" title="ml.tuning.TrainValidationSplit.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.fit.html#ml.tuning.TrainValidationSplit.fit" title="ml.tuning.TrainValidationSplit.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.getEstimator.html#ml.tuning.TrainValidationSplit.getEstimator" title="ml.tuning.TrainValidationSplit.getEstimator"><code class="xref py py-obj docutils literal"><span class="pre">getEstimator</span></code></a>()</td>
+<td>Gets the value of estimator or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.getEstimatorParamMaps.html#ml.tuning.TrainValidationSplit.getEstimatorParamMaps" title="ml.tuning.TrainValidationSplit.getEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">getEstimatorParamMaps</span></code></a>()</td>
+<td>Gets the value of estimatorParamMaps or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.getEvaluator.html#ml.tuning.TrainValidationSplit.getEvaluator" title="ml.tuning.TrainValidationSplit.getEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">getEvaluator</span></code></a>()</td>
+<td>Gets the value of evaluator or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.getOrDefault.html#ml.tuning.TrainValidationSplit.getOrDefault" title="ml.tuning.TrainValidationSplit.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.getParam.html#ml.tuning.TrainValidationSplit.getParam" title="ml.tuning.TrainValidationSplit.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.getSeed.html#ml.tuning.TrainValidationSplit.getSeed" title="ml.tuning.TrainValidationSplit.getSeed"><code class="xref py py-obj docutils literal"><span class="pre">getSeed</span></code></a>()</td>
+<td>Gets the value of seed or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.getTrainRatio.html#ml.tuning.TrainValidationSplit.getTrainRatio" title="ml.tuning.TrainValidationSplit.getTrainRatio"><code class="xref py py-obj docutils literal"><span class="pre">getTrainRatio</span></code></a>()</td>
+<td>Gets the value of trainRatio or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.hasDefault.html#ml.tuning.TrainValidationSplit.hasDefault" title="ml.tuning.TrainValidationSplit.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.hasParam.html#ml.tuning.TrainValidationSplit.hasParam" title="ml.tuning.TrainValidationSplit.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.isDefined.html#ml.tuning.TrainValidationSplit.isDefined" title="ml.tuning.TrainValidationSplit.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.isSet.html#ml.tuning.TrainValidationSplit.isSet" title="ml.tuning.TrainValidationSplit.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.setEstimator.html#ml.tuning.TrainValidationSplit.setEstimator" title="ml.tuning.TrainValidationSplit.setEstimator"><code class="xref py py-obj docutils literal"><span class="pre">setEstimator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.setEstimatorParamMaps.html#ml.tuning.TrainValidationSplit.setEstimatorParamMaps" title="ml.tuning.TrainValidationSplit.setEstimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">setEstimatorParamMaps</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">estimatorParamMaps</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.setEvaluator.html#ml.tuning.TrainValidationSplit.setEvaluator" title="ml.tuning.TrainValidationSplit.setEvaluator"><code class="xref py py-obj docutils literal"><span class="pre">setEvaluator</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">evaluator</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.setParams.html#ml.tuning.TrainValidationSplit.setParams" title="ml.tuning.TrainValidationSplit.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>setParams(self, estimator=None, estimatorParamMaps=None, evaluator=None, trainRatio=0.75,                  seed=None):</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.setSeed.html#ml.tuning.TrainValidationSplit.setSeed" title="ml.tuning.TrainValidationSplit.setSeed"><code class="xref py py-obj docutils literal"><span class="pre">setSeed</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">seed</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.setTrainRatio.html#ml.tuning.TrainValidationSplit.setTrainRatio" title="ml.tuning.TrainValidationSplit.setTrainRatio"><code class="xref py py-obj docutils literal"><span class="pre">setTrainRatio</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">trainRatio</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.estimator.html#ml.tuning.TrainValidationSplit.estimator" title="ml.tuning.TrainValidationSplit.estimator"><code class="xref py py-obj docutils literal"><span class="pre">estimator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.estimatorParamMaps.html#ml.tuning.TrainValidationSplit.estimatorParamMaps" title="ml.tuning.TrainValidationSplit.estimatorParamMaps"><code class="xref py py-obj docutils literal"><span class="pre">estimatorParamMaps</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.evaluator.html#ml.tuning.TrainValidationSplit.evaluator" title="ml.tuning.TrainValidationSplit.evaluator"><code class="xref py py-obj docutils literal"><span class="pre">evaluator</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.params.html#ml.tuning.TrainValidationSplit.params" title="ml.tuning.TrainValidationSplit.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.seed.html#ml.tuning.TrainValidationSplit.seed" title="ml.tuning.TrainValidationSplit.seed"><code class="xref py py-obj docutils literal"><span class="pre">seed</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.TrainValidationSplit.trainRatio.html#ml.tuning.TrainValidationSplit.trainRatio" title="ml.tuning.TrainValidationSplit.trainRatio"><code class="xref py py-obj docutils literal"><span class="pre">trainRatio</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.tuning.TrainValidationSplit.__init__.html" class="btn btn-neutral float-right" title="ml.tuning.TrainValidationSplit.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.tuning.SparkContext.version.html" class="btn btn-neutral" title="ml.tuning.SparkContext.version" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

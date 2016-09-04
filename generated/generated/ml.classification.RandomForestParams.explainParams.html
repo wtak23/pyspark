@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.classification.RandomForestParams.explainParams</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.classification.RandomForestParams" href="ml.classification.RandomForestParams.html"/>
+        <link rel="next" title="ml.classification.RandomForestParams.extractParamMap" href="ml.classification.RandomForestParams.extractParamMap.html"/>
+        <link rel="prev" title="ml.classification.RandomForestParams.explainParam" href="ml.classification.RandomForestParams.explainParam.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.classification.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.classification.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.ArrayType.html"><code class="docutils literal"><span class="pre">ml.classification.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.BinaryLogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.BinaryLogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DataFrame.html"><code class="docutils literal"><span class="pre">ml.classification.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DecisionTreeRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.DoubleType.html"><code class="docutils literal"><span class="pre">ml.classification.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Estimator.html"><code class="docutils literal"><span class="pre">ml.classification.Estimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.GBTParams.html"><code class="docutils literal"><span class="pre">ml.classification.GBTParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.classification.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.classification.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.classification.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.classification.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.classification.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasSeed.html"><code class="docutils literal"><span class="pre">ml.classification.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasSolver.html"><code class="docutils literal"><span class="pre">ml.classification.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.classification.HasStandardization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasStepSize.html"><code class="docutils literal"><span class="pre">ml.classification.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.classification.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasTol.html"><code class="docutils literal"><span class="pre">ml.classification.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Identifiable.html"><code class="docutils literal"><span class="pre">ml.classification.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.classification.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLReader.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaMLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaModel.html"><code class="docutils literal"><span class="pre">ml.classification.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaParams.html"><code class="docutils literal"><span class="pre">ml.classification.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.JavaWrapper.html"><code class="docutils literal"><span class="pre">ml.classification.JavaWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegression.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.LogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.MLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLReader.html"><code class="docutils literal"><span class="pre">ml.classification.MLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.MLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.MLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Model.html"><code class="docutils literal"><span class="pre">ml.classification.Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MultilayerPerceptronClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.MultilayerPerceptronClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.NaiveBayes.html"><code class="docutils literal"><span class="pre">ml.classification.NaiveBayes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.NaiveBayesModel.html"><code class="docutils literal"><span class="pre">ml.classification.NaiveBayesModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRest.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRestModel.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.OneVsRestParams.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Param.html"><code class="docutils literal"><span class="pre">ml.classification.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.Params.html"><code class="docutils literal"><span class="pre">ml.classification.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.RandomForestClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassifier</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="ml.classification.RandomForestParams.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.SparkContext.html"><code class="docutils literal"><span class="pre">ml.classification.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.StorageLevel.html"><code class="docutils literal"><span class="pre">ml.classification.StorageLevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeClassifierParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeClassifierParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeEnsembleModels.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleModels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TreeEnsembleParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.classification.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.classification.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a> &raquo;</li>
+        
+          <li><a href="ml.classification.RandomForestParams.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestParams</span></code></a> &raquo;</li>
+        
+      <li>ml.classification.RandomForestParams.explainParams</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.classification.RandomForestParams.explainParams.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-classification-randomforestparams-explainparams">
+<h1>ml.classification.RandomForestParams.explainParams<a class="headerlink" href="#ml-classification-randomforestparams-explainparams" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="ml.classification.RandomForestParams.explainParams">
+<code class="descclassname">RandomForestParams.</code><code class="descname">explainParams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ml.classification.RandomForestParams.explainParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the documentation of all params with their optionally
+default values and user-supplied values.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.0.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.classification.RandomForestParams.extractParamMap.html" class="btn btn-neutral float-right" title="ml.classification.RandomForestParams.extractParamMap" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.classification.RandomForestParams.explainParam.html" class="btn btn-neutral" title="ml.classification.RandomForestParams.explainParam" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.classification</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../index.html"/>
+        <link rel="up" title="pyspark.ml" href="../pyspark.ml.html"/>
+        <link rel="next" title="ml.classification.inherit_doc()" href="generated/ml.classification.inherit_doc.html"/>
+        <link rel="prev" title="ml.feature.Word2VecModel.params" href="generated/ml.feature.Word2VecModel.params.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.classification</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.inherit_doc.html"><code class="docutils literal"><span class="pre">ml.classification.inherit_doc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.keyword_only.html"><code class="docutils literal"><span class="pre">ml.classification.keyword_only()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.since.html"><code class="docutils literal"><span class="pre">ml.classification.since()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.udf.html"><code class="docutils literal"><span class="pre">ml.classification.udf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.when.html"><code class="docutils literal"><span class="pre">ml.classification.when()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.ArrayType.html"><code class="docutils literal"><span class="pre">ml.classification.ArrayType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.BinaryLogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.BinaryLogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.BinaryLogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.DataFrame.html"><code class="docutils literal"><span class="pre">ml.classification.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.DecisionTreeClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.DecisionTreeClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.DecisionTreeModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.DecisionTreeRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.DecisionTreeRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.DoubleType.html"><code class="docutils literal"><span class="pre">ml.classification.DoubleType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.Estimator.html"><code class="docutils literal"><span class="pre">ml.classification.Estimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.GBTClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.GBTClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.GBTClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.GBTParams.html"><code class="docutils literal"><span class="pre">ml.classification.GBTParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.classification.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.classification.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.classification.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.classification.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.classification.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.classification.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.classification.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasSeed.html"><code class="docutils literal"><span class="pre">ml.classification.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasSolver.html"><code class="docutils literal"><span class="pre">ml.classification.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.classification.HasStandardization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasStepSize.html"><code class="docutils literal"><span class="pre">ml.classification.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.classification.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasTol.html"><code class="docutils literal"><span class="pre">ml.classification.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.classification.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.Identifiable.html"><code class="docutils literal"><span class="pre">ml.classification.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.classification.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaMLReader.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaMLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.JavaMLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaModel.html"><code class="docutils literal"><span class="pre">ml.classification.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaParams.html"><code class="docutils literal"><span class="pre">ml.classification.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.JavaWrapper.html"><code class="docutils literal"><span class="pre">ml.classification.JavaWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.LogisticRegression.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.LogisticRegressionModel.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.LogisticRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.LogisticRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.classification.LogisticRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.MLReadable.html"><code class="docutils literal"><span class="pre">ml.classification.MLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.MLReader.html"><code class="docutils literal"><span class="pre">ml.classification.MLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.MLWritable.html"><code class="docutils literal"><span class="pre">ml.classification.MLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.MLWriter.html"><code class="docutils literal"><span class="pre">ml.classification.MLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.Model.html"><code class="docutils literal"><span class="pre">ml.classification.Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.MultilayerPerceptronClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.MultilayerPerceptronClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.MultilayerPerceptronClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.NaiveBayes.html"><code class="docutils literal"><span class="pre">ml.classification.NaiveBayes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.NaiveBayesModel.html"><code class="docutils literal"><span class="pre">ml.classification.NaiveBayesModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.OneVsRest.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.OneVsRestModel.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.OneVsRestParams.html"><code class="docutils literal"><span class="pre">ml.classification.OneVsRestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.Param.html"><code class="docutils literal"><span class="pre">ml.classification.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.Params.html"><code class="docutils literal"><span class="pre">ml.classification.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.RandomForestClassificationModel.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassificationModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.RandomForestClassifier.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestClassifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.RandomForestParams.html"><code class="docutils literal"><span class="pre">ml.classification.RandomForestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.SparkContext.html"><code class="docutils literal"><span class="pre">ml.classification.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.StorageLevel.html"><code class="docutils literal"><span class="pre">ml.classification.StorageLevel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.TreeClassifierParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeClassifierParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.TreeEnsembleModels.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleModels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.TreeEnsembleParams.html"><code class="docutils literal"><span class="pre">ml.classification.TreeEnsembleParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="generated/ml.classification.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.classification.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.classification</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/ml.classification.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ml.classification">
+<span id="ml-classification"></span><h1><a class="reference internal" href="#module-ml.classification" title="ml.classification"><code class="xref py py-mod docutils literal"><span class="pre">ml.classification</span></code></a><a class="headerlink" href="#module-ml.classification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.inherit_doc.html#ml.classification.inherit_doc" title="ml.classification.inherit_doc"><code class="xref py py-obj docutils literal"><span class="pre">inherit_doc</span></code></a>(cls)</td>
+<td>A decorator that makes a class inherit documentation from its parents.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.keyword_only.html#ml.classification.keyword_only" title="ml.classification.keyword_only"><code class="xref py py-obj docutils literal"><span class="pre">keyword_only</span></code></a>(func)</td>
+<td>A decorator that forces keyword arguments in the wrapped method and saves actual input keyword arguments in <cite>_input_kwargs</cite>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.since.html#ml.classification.since" title="ml.classification.since"><code class="xref py py-obj docutils literal"><span class="pre">since</span></code></a>(version)</td>
+<td>A decorator that annotates a function to append the version of Spark the function was added.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.udf.html#ml.classification.udf" title="ml.classification.udf"><code class="xref py py-obj docutils literal"><span class="pre">udf</span></code></a>(f[,&nbsp;returnType])</td>
+<td>Creates a <code class="xref py py-class docutils literal"><span class="pre">Column</span></code> expression representing a user defined function (UDF).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.when.html#ml.classification.when" title="ml.classification.when"><code class="xref py py-obj docutils literal"><span class="pre">when</span></code></a>(condition,&nbsp;value)</td>
+<td>Evaluates a list of conditions and returns one of multiple possible result expressions.</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.ArrayType.html#ml.classification.ArrayType" title="ml.classification.ArrayType"><code class="xref py py-obj docutils literal"><span class="pre">ArrayType</span></code></a>(elementType[,&nbsp;containsNull])</td>
+<td>Array data type.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.BinaryLogisticRegressionSummary.html#ml.classification.BinaryLogisticRegressionSummary" title="ml.classification.BinaryLogisticRegressionSummary"><code class="xref py py-obj docutils literal"><span class="pre">BinaryLogisticRegressionSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.BinaryLogisticRegressionTrainingSummary.html#ml.classification.BinaryLogisticRegressionTrainingSummary" title="ml.classification.BinaryLogisticRegressionTrainingSummary"><code class="xref py py-obj docutils literal"><span class="pre">BinaryLogisticRegressionTrainingSummary</span></code></a>([...])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.DataFrame.html#ml.classification.DataFrame" title="ml.classification.DataFrame"><code class="xref py py-obj docutils literal"><span class="pre">DataFrame</span></code></a>(jdf,&nbsp;sql_ctx)</td>
+<td>A distributed collection of data grouped into named columns.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.DecisionTreeClassificationModel.html#ml.classification.DecisionTreeClassificationModel" title="ml.classification.DecisionTreeClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeClassificationModel</span></code></a>([java_model])</td>
+<td>Model fitted by DecisionTreeClassifier.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.DecisionTreeClassifier.html#ml.classification.DecisionTreeClassifier" title="ml.classification.DecisionTreeClassifier"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Decision_tree_learning">Decision tree</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.DecisionTreeModel.html#ml.classification.DecisionTreeModel" title="ml.classification.DecisionTreeModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeModel</span></code></a>([java_model])</td>
+<td>Abstraction for Decision Tree models.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.DecisionTreeParams.html#ml.classification.DecisionTreeParams" title="ml.classification.DecisionTreeParams"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeParams</span></code></a>()</td>
+<td>Mixin for Decision Tree parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.DecisionTreeRegressionModel.html#ml.classification.DecisionTreeRegressionModel" title="ml.classification.DecisionTreeRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">DecisionTreeRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by <code class="xref py py-class docutils literal"><span class="pre">DecisionTreeRegressor</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.DoubleType.html#ml.classification.DoubleType" title="ml.classification.DoubleType"><code class="xref py py-obj docutils literal"><span class="pre">DoubleType</span></code></a></td>
+<td>Double data type, representing double precision floats.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.Estimator.html#ml.classification.Estimator" title="ml.classification.Estimator"><code class="xref py py-obj docutils literal"><span class="pre">Estimator</span></code></a>()</td>
+<td>Abstract class for estimators that fit models to data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.GBTClassificationModel.html#ml.classification.GBTClassificationModel" title="ml.classification.GBTClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">GBTClassificationModel</span></code></a>([java_model])</td>
+<td>Model fitted by GBTClassifier.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.GBTClassifier.html#ml.classification.GBTClassifier" title="ml.classification.GBTClassifier"><code class="xref py py-obj docutils literal"><span class="pre">GBTClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Gradient_boosting">Gradient-Boosted Trees (GBTs)</a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.GBTParams.html#ml.classification.GBTParams" title="ml.classification.GBTParams"><code class="xref py py-obj docutils literal"><span class="pre">GBTParams</span></code></a>()</td>
+<td>Private class to track supported GBT params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasCheckpointInterval.html#ml.classification.HasCheckpointInterval" title="ml.classification.HasCheckpointInterval"><code class="xref py py-obj docutils literal"><span class="pre">HasCheckpointInterval</span></code></a>()</td>
+<td>Mixin for param checkpointInterval: set checkpoint interval (&gt;= 1) or disable checkpoint (-1).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasElasticNetParam.html#ml.classification.HasElasticNetParam" title="ml.classification.HasElasticNetParam"><code class="xref py py-obj docutils literal"><span class="pre">HasElasticNetParam</span></code></a>()</td>
+<td>Mixin for param elasticNetParam: the ElasticNet mixing parameter, in range [0, 1].</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasFeaturesCol.html#ml.classification.HasFeaturesCol" title="ml.classification.HasFeaturesCol"><code class="xref py py-obj docutils literal"><span class="pre">HasFeaturesCol</span></code></a>()</td>
+<td>Mixin for param featuresCol: features column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasFitIntercept.html#ml.classification.HasFitIntercept" title="ml.classification.HasFitIntercept"><code class="xref py py-obj docutils literal"><span class="pre">HasFitIntercept</span></code></a>()</td>
+<td>Mixin for param fitIntercept: whether to fit an intercept term.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasHandleInvalid.html#ml.classification.HasHandleInvalid" title="ml.classification.HasHandleInvalid"><code class="xref py py-obj docutils literal"><span class="pre">HasHandleInvalid</span></code></a>()</td>
+<td>Mixin for param handleInvalid: how to handle invalid entries.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasInputCol.html#ml.classification.HasInputCol" title="ml.classification.HasInputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCol</span></code></a>()</td>
+<td>Mixin for param inputCol: input column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasInputCols.html#ml.classification.HasInputCols" title="ml.classification.HasInputCols"><code class="xref py py-obj docutils literal"><span class="pre">HasInputCols</span></code></a>()</td>
+<td>Mixin for param inputCols: input column names.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasLabelCol.html#ml.classification.HasLabelCol" title="ml.classification.HasLabelCol"><code class="xref py py-obj docutils literal"><span class="pre">HasLabelCol</span></code></a>()</td>
+<td>Mixin for param labelCol: label column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasMaxIter.html#ml.classification.HasMaxIter" title="ml.classification.HasMaxIter"><code class="xref py py-obj docutils literal"><span class="pre">HasMaxIter</span></code></a>()</td>
+<td>Mixin for param maxIter: max number of iterations (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasNumFeatures.html#ml.classification.HasNumFeatures" title="ml.classification.HasNumFeatures"><code class="xref py py-obj docutils literal"><span class="pre">HasNumFeatures</span></code></a>()</td>
+<td>Mixin for param numFeatures: number of features.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasOutputCol.html#ml.classification.HasOutputCol" title="ml.classification.HasOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">HasOutputCol</span></code></a>()</td>
+<td>Mixin for param outputCol: output column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasPredictionCol.html#ml.classification.HasPredictionCol" title="ml.classification.HasPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasPredictionCol</span></code></a>()</td>
+<td>Mixin for param predictionCol: prediction column name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasProbabilityCol.html#ml.classification.HasProbabilityCol" title="ml.classification.HasProbabilityCol"><code class="xref py py-obj docutils literal"><span class="pre">HasProbabilityCol</span></code></a>()</td>
+<td>Mixin for param probabilityCol: Column name for predicted class conditional probabilities.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasRawPredictionCol.html#ml.classification.HasRawPredictionCol" title="ml.classification.HasRawPredictionCol"><code class="xref py py-obj docutils literal"><span class="pre">HasRawPredictionCol</span></code></a>()</td>
+<td>Mixin for param rawPredictionCol: raw prediction (a.k.a.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasRegParam.html#ml.classification.HasRegParam" title="ml.classification.HasRegParam"><code class="xref py py-obj docutils literal"><span class="pre">HasRegParam</span></code></a>()</td>
+<td>Mixin for param regParam: regularization parameter (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasSeed.html#ml.classification.HasSeed" title="ml.classification.HasSeed"><code class="xref py py-obj docutils literal"><span class="pre">HasSeed</span></code></a>()</td>
+<td>Mixin for param seed: random seed.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasSolver.html#ml.classification.HasSolver" title="ml.classification.HasSolver"><code class="xref py py-obj docutils literal"><span class="pre">HasSolver</span></code></a>()</td>
+<td>Mixin for param solver: the solver algorithm for optimization.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasStandardization.html#ml.classification.HasStandardization" title="ml.classification.HasStandardization"><code class="xref py py-obj docutils literal"><span class="pre">HasStandardization</span></code></a>()</td>
+<td>Mixin for param standardization: whether to standardize the training features before fitting the model.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasStepSize.html#ml.classification.HasStepSize" title="ml.classification.HasStepSize"><code class="xref py py-obj docutils literal"><span class="pre">HasStepSize</span></code></a>()</td>
+<td>Mixin for param stepSize: Step size to be used for each iteration of optimization (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasThresholds.html#ml.classification.HasThresholds" title="ml.classification.HasThresholds"><code class="xref py py-obj docutils literal"><span class="pre">HasThresholds</span></code></a>()</td>
+<td>Mixin for param thresholds: Thresholds in multi-class classification to adjust the probability of predicting each class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasTol.html#ml.classification.HasTol" title="ml.classification.HasTol"><code class="xref py py-obj docutils literal"><span class="pre">HasTol</span></code></a>()</td>
+<td>Mixin for param tol: the convergence tolerance for iterative algorithms (&gt;= 0).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.HasVarianceCol.html#ml.classification.HasVarianceCol" title="ml.classification.HasVarianceCol"><code class="xref py py-obj docutils literal"><span class="pre">HasVarianceCol</span></code></a>()</td>
+<td>Mixin for param varianceCol: column name for the biased sample variance of prediction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.HasWeightCol.html#ml.classification.HasWeightCol" title="ml.classification.HasWeightCol"><code class="xref py py-obj docutils literal"><span class="pre">HasWeightCol</span></code></a>()</td>
+<td>Mixin for param weightCol: weight column name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.Identifiable.html#ml.classification.Identifiable" title="ml.classification.Identifiable"><code class="xref py py-obj docutils literal"><span class="pre">Identifiable</span></code></a>()</td>
+<td>Object with a unique ID.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.JavaEstimator.html#ml.classification.JavaEstimator" title="ml.classification.JavaEstimator"><code class="xref py py-obj docutils literal"><span class="pre">JavaEstimator</span></code></a>([java_obj])</td>
+<td>Base class for :py:class:<a href="#id1"><span class="problematic" id="id2">`</span></a>Estimator`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.JavaMLReadable.html#ml.classification.JavaMLReadable" title="ml.classification.JavaMLReadable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLReadable</span></code></a></td>
+<td>(Private) Mixin for instances that provide JavaMLReader.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.JavaMLReader.html#ml.classification.JavaMLReader" title="ml.classification.JavaMLReader"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLReader</span></code></a>(clazz)</td>
+<td>(Private) Specialization of <a class="reference internal" href="generated/ml.classification.MLReader.html#ml.classification.MLReader" title="ml.classification.MLReader"><code class="xref py py-class docutils literal"><span class="pre">MLReader</span></code></a> for <a class="reference internal" href="generated/ml.classification.JavaParams.html#ml.classification.JavaParams" title="ml.classification.JavaParams"><code class="xref py py-class docutils literal"><span class="pre">JavaParams</span></code></a> types</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.JavaMLWritable.html#ml.classification.JavaMLWritable" title="ml.classification.JavaMLWritable"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLWritable</span></code></a></td>
+<td>(Private) Mixin for ML instances that provide <a class="reference internal" href="generated/ml.classification.JavaMLWriter.html#ml.classification.JavaMLWriter" title="ml.classification.JavaMLWriter"><code class="xref py py-class docutils literal"><span class="pre">JavaMLWriter</span></code></a>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.JavaMLWriter.html#ml.classification.JavaMLWriter" title="ml.classification.JavaMLWriter"><code class="xref py py-obj docutils literal"><span class="pre">JavaMLWriter</span></code></a>(instance)</td>
+<td>(Private) Specialization of <a class="reference internal" href="generated/ml.classification.MLWriter.html#ml.classification.MLWriter" title="ml.classification.MLWriter"><code class="xref py py-class docutils literal"><span class="pre">MLWriter</span></code></a> for <a class="reference internal" href="generated/ml.classification.JavaParams.html#ml.classification.JavaParams" title="ml.classification.JavaParams"><code class="xref py py-class docutils literal"><span class="pre">JavaParams</span></code></a> types</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.JavaModel.html#ml.classification.JavaModel" title="ml.classification.JavaModel"><code class="xref py py-obj docutils literal"><span class="pre">JavaModel</span></code></a>([java_model])</td>
+<td>Base class for :py:class:<a href="#id3"><span class="problematic" id="id4">`</span></a>Model`s that wrap Java/Scala implementations.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.JavaParams.html#ml.classification.JavaParams" title="ml.classification.JavaParams"><code class="xref py py-obj docutils literal"><span class="pre">JavaParams</span></code></a>([java_obj])</td>
+<td>Utility class to help create wrapper classes from Java/Scala implementations of pipeline components.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.JavaWrapper.html#ml.classification.JavaWrapper" title="ml.classification.JavaWrapper"><code class="xref py py-obj docutils literal"><span class="pre">JavaWrapper</span></code></a>([java_obj])</td>
+<td>Wrapper class for a Java companion object</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.LogisticRegression.html#ml.classification.LogisticRegression" title="ml.classification.LogisticRegression"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegression</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Logistic regression.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.LogisticRegressionModel.html#ml.classification.LogisticRegressionModel" title="ml.classification.LogisticRegressionModel"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionModel</span></code></a>([java_model])</td>
+<td>Model fitted by LogisticRegression.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.LogisticRegressionSummary.html#ml.classification.LogisticRegressionSummary" title="ml.classification.LogisticRegressionSummary"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.LogisticRegressionTrainingSummary.html#ml.classification.LogisticRegressionTrainingSummary" title="ml.classification.LogisticRegressionTrainingSummary"><code class="xref py py-obj docutils literal"><span class="pre">LogisticRegressionTrainingSummary</span></code></a>([java_obj])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.MLReadable.html#ml.classification.MLReadable" title="ml.classification.MLReadable"><code class="xref py py-obj docutils literal"><span class="pre">MLReadable</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.MLReader.html#ml.classification.MLReader" title="ml.classification.MLReader"><code class="xref py py-obj docutils literal"><span class="pre">MLReader</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.MLWritable.html#ml.classification.MLWritable" title="ml.classification.MLWritable"><code class="xref py py-obj docutils literal"><span class="pre">MLWritable</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.MLWriter.html#ml.classification.MLWriter" title="ml.classification.MLWriter"><code class="xref py py-obj docutils literal"><span class="pre">MLWriter</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.Model.html#ml.classification.Model" title="ml.classification.Model"><code class="xref py py-obj docutils literal"><span class="pre">Model</span></code></a>()</td>
+<td>Abstract class for models that are fitted by estimators.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.MultilayerPerceptronClassificationModel.html#ml.classification.MultilayerPerceptronClassificationModel" title="ml.classification.MultilayerPerceptronClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">MultilayerPerceptronClassificationModel</span></code></a>([...])</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.MultilayerPerceptronClassifier.html#ml.classification.MultilayerPerceptronClassifier" title="ml.classification.MultilayerPerceptronClassifier"><code class="xref py py-obj docutils literal"><span class="pre">MultilayerPerceptronClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.NaiveBayes.html#ml.classification.NaiveBayes" title="ml.classification.NaiveBayes"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayes</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td>Naive Bayes Classifiers.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.NaiveBayesModel.html#ml.classification.NaiveBayesModel" title="ml.classification.NaiveBayesModel"><code class="xref py py-obj docutils literal"><span class="pre">NaiveBayesModel</span></code></a>([java_model])</td>
+<td>Model fitted by NaiveBayes.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.OneVsRest.html#ml.classification.OneVsRest" title="ml.classification.OneVsRest"><code class="xref py py-obj docutils literal"><span class="pre">OneVsRest</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.OneVsRestModel.html#ml.classification.OneVsRestModel" title="ml.classification.OneVsRestModel"><code class="xref py py-obj docutils literal"><span class="pre">OneVsRestModel</span></code></a>(models)</td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.OneVsRestParams.html#ml.classification.OneVsRestParams" title="ml.classification.OneVsRestParams"><code class="xref py py-obj docutils literal"><span class="pre">OneVsRestParams</span></code></a>()</td>
+<td>Parameters for OneVsRest and OneVsRestModel.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.Param.html#ml.classification.Param" title="ml.classification.Param"><code class="xref py py-obj docutils literal"><span class="pre">Param</span></code></a>(parent,&nbsp;name,&nbsp;doc[,&nbsp;typeConverter])</td>
+<td>A param with self-contained documentation.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.Params.html#ml.classification.Params" title="ml.classification.Params"><code class="xref py py-obj docutils literal"><span class="pre">Params</span></code></a>()</td>
+<td>Components that take parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.RandomForestClassificationModel.html#ml.classification.RandomForestClassificationModel" title="ml.classification.RandomForestClassificationModel"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestClassificationModel</span></code></a>([java_model])</td>
+<td>Model fitted by RandomForestClassifier.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.RandomForestClassifier.html#ml.classification.RandomForestClassifier" title="ml.classification.RandomForestClassifier"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestClassifier</span></code></a>(*args,&nbsp;**kwargs)</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Random_forest">Random Forest</a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.RandomForestParams.html#ml.classification.RandomForestParams" title="ml.classification.RandomForestParams"><code class="xref py py-obj docutils literal"><span class="pre">RandomForestParams</span></code></a>()</td>
+<td>Private class to track supported random forest parameters.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.SparkContext.html#ml.classification.SparkContext" title="ml.classification.SparkContext"><code class="xref py py-obj docutils literal"><span class="pre">SparkContext</span></code></a>([master,&nbsp;appName,&nbsp;sparkHome,&nbsp;...])</td>
+<td>Main entry point for Spark functionality.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.StorageLevel.html#ml.classification.StorageLevel" title="ml.classification.StorageLevel"><code class="xref py py-obj docutils literal"><span class="pre">StorageLevel</span></code></a>(useDisk,&nbsp;useMemory,&nbsp;useOffHeap,&nbsp;...)</td>
+<td>Flags for controlling the storage of an RDD.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.TreeClassifierParams.html#ml.classification.TreeClassifierParams" title="ml.classification.TreeClassifierParams"><code class="xref py py-obj docutils literal"><span class="pre">TreeClassifierParams</span></code></a>()</td>
+<td>Private class to track supported impurity measures.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.TreeEnsembleModels.html#ml.classification.TreeEnsembleModels" title="ml.classification.TreeEnsembleModels"><code class="xref py py-obj docutils literal"><span class="pre">TreeEnsembleModels</span></code></a>([java_model])</td>
+<td>(private abstraction)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/ml.classification.TreeEnsembleParams.html#ml.classification.TreeEnsembleParams" title="ml.classification.TreeEnsembleParams"><code class="xref py py-obj docutils literal"><span class="pre">TreeEnsembleParams</span></code></a>()</td>
+<td>Mixin for Decision Tree-based ensemble algorithms parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/ml.classification.TypeConverters.html#ml.classification.TypeConverters" title="ml.classification.TypeConverters"><code class="xref py py-obj docutils literal"><span class="pre">TypeConverters</span></code></a></td>
+<td><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DeveloperApi</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generated/ml.classification.inherit_doc.html" class="btn btn-neutral float-right" title="ml.classification.inherit_doc()" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="generated/ml.feature.Word2VecModel.params.html" class="btn btn-neutral" title="ml.feature.Word2VecModel.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

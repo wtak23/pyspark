@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.feature.QuantileDiscretizer</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.feature" href="../ml.feature.html"/>
+        <link rel="next" title="ml.feature.QuantileDiscretizer.__init__" href="ml.feature.QuantileDiscretizer.__init__.html"/>
+        <link rel="prev" title="ml.feature.PolynomialExpansion.params" href="ml.feature.PolynomialExpansion.params.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.feature.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.feature.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Binarizer.html"><code class="docutils literal"><span class="pre">ml.feature.Binarizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Bucketizer.html"><code class="docutils literal"><span class="pre">ml.feature.Bucketizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.ChiSqSelector.html"><code class="docutils literal"><span class="pre">ml.feature.ChiSqSelector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.ChiSqSelectorModel.html"><code class="docutils literal"><span class="pre">ml.feature.ChiSqSelectorModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.CountVectorizer.html"><code class="docutils literal"><span class="pre">ml.feature.CountVectorizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.CountVectorizerModel.html"><code class="docutils literal"><span class="pre">ml.feature.CountVectorizerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.DCT.html"><code class="docutils literal"><span class="pre">ml.feature.DCT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.feature.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.ElementwiseProduct.html"><code class="docutils literal"><span class="pre">ml.feature.ElementwiseProduct</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.feature.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.feature.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.feature.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.feature.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.feature.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.feature.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.feature.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.feature.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasSeed.html"><code class="docutils literal"><span class="pre">ml.feature.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasSolver.html"><code class="docutils literal"><span class="pre">ml.feature.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.feature.HasStandardization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasStepSize.html"><code class="docutils literal"><span class="pre">ml.feature.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.feature.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasTol.html"><code class="docutils literal"><span class="pre">ml.feature.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.feature.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.HashingTF.html"><code class="docutils literal"><span class="pre">ml.feature.HashingTF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.IDF.html"><code class="docutils literal"><span class="pre">ml.feature.IDF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.IDFModel.html"><code class="docutils literal"><span class="pre">ml.feature.IDFModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.IndexToString.html"><code class="docutils literal"><span class="pre">ml.feature.IndexToString</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.feature.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.feature.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.feature.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.JavaModel.html"><code class="docutils literal"><span class="pre">ml.feature.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.JavaTransformer.html"><code class="docutils literal"><span class="pre">ml.feature.JavaTransformer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.MaxAbsScaler.html"><code class="docutils literal"><span class="pre">ml.feature.MaxAbsScaler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.MaxAbsScalerModel.html"><code class="docutils literal"><span class="pre">ml.feature.MaxAbsScalerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.MinMaxScaler.html"><code class="docutils literal"><span class="pre">ml.feature.MinMaxScaler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.MinMaxScalerModel.html"><code class="docutils literal"><span class="pre">ml.feature.MinMaxScalerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.NGram.html"><code class="docutils literal"><span class="pre">ml.feature.NGram</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Normalizer.html"><code class="docutils literal"><span class="pre">ml.feature.Normalizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.OneHotEncoder.html"><code class="docutils literal"><span class="pre">ml.feature.OneHotEncoder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.PCA.html"><code class="docutils literal"><span class="pre">ml.feature.PCA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.PCAModel.html"><code class="docutils literal"><span class="pre">ml.feature.PCAModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Param.html"><code class="docutils literal"><span class="pre">ml.feature.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Params.html"><code class="docutils literal"><span class="pre">ml.feature.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.PolynomialExpansion.html"><code class="docutils literal"><span class="pre">ml.feature.PolynomialExpansion</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.feature.QuantileDiscretizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.RFormula.html"><code class="docutils literal"><span class="pre">ml.feature.RFormula</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.RFormulaModel.html"><code class="docutils literal"><span class="pre">ml.feature.RFormulaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.RegexTokenizer.html"><code class="docutils literal"><span class="pre">ml.feature.RegexTokenizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.SQLTransformer.html"><code class="docutils literal"><span class="pre">ml.feature.SQLTransformer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.StandardScaler.html"><code class="docutils literal"><span class="pre">ml.feature.StandardScaler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.StandardScalerModel.html"><code class="docutils literal"><span class="pre">ml.feature.StandardScalerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.StopWordsRemover.html"><code class="docutils literal"><span class="pre">ml.feature.StopWordsRemover</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.StringIndexer.html"><code class="docutils literal"><span class="pre">ml.feature.StringIndexer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.StringIndexerModel.html"><code class="docutils literal"><span class="pre">ml.feature.StringIndexerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Tokenizer.html"><code class="docutils literal"><span class="pre">ml.feature.Tokenizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.feature.TypeConverters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.VectorAssembler.html"><code class="docutils literal"><span class="pre">ml.feature.VectorAssembler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.VectorIndexer.html"><code class="docutils literal"><span class="pre">ml.feature.VectorIndexer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.VectorIndexerModel.html"><code class="docutils literal"><span class="pre">ml.feature.VectorIndexerModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.VectorSlicer.html"><code class="docutils literal"><span class="pre">ml.feature.VectorSlicer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Word2Vec.html"><code class="docutils literal"><span class="pre">ml.feature.Word2Vec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.feature.Word2VecModel.html"><code class="docutils literal"><span class="pre">ml.feature.Word2VecModel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.feature.QuantileDiscretizer</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.feature.QuantileDiscretizer.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-feature-quantilediscretizer">
+<h1><a class="reference internal" href="#ml.feature.QuantileDiscretizer" title="ml.feature.QuantileDiscretizer"><code class="xref py py-class docutils literal"><span class="pre">ml.feature.QuantileDiscretizer</span></code></a><a class="headerlink" href="#ml-feature-quantilediscretizer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.feature.QuantileDiscretizer">
+<em class="property">class </em><code class="descclassname">ml.feature.</code><code class="descname">QuantileDiscretizer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/feature.html#QuantileDiscretizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.feature.QuantileDiscretizer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Experimental</p>
+</div>
+<p><cite>QuantileDiscretizer</cite> takes a column with continuous features and outputs a column with binned
+categorical features. The number of bins can be set using the <a class="reference internal" href="ml.feature.QuantileDiscretizer.numBuckets.html#ml.feature.QuantileDiscretizer.numBuckets" title="ml.feature.QuantileDiscretizer.numBuckets"><code class="xref py py-attr docutils literal"><span class="pre">numBuckets</span></code></a> parameter.
+The bin ranges are chosen using an approximate algorithm (see the documentation for
+<a class="reference internal" href="sql.DataFrameStatFunctions.approxQuantile.html#sql.DataFrameStatFunctions.approxQuantile" title="sql.DataFrameStatFunctions.approxQuantile"><code class="xref py py-meth docutils literal"><span class="pre">approxQuantile()</span></code></a> for a detailed description).
+The precision of the approximation can be controlled with the
+<a class="reference internal" href="ml.feature.QuantileDiscretizer.relativeError.html#ml.feature.QuantileDiscretizer.relativeError" title="ml.feature.QuantileDiscretizer.relativeError"><code class="xref py py-attr docutils literal"><span class="pre">relativeError</span></code></a> parameter.
+The lower and upper bin bounds will be <cite>-Infinity</cite> and <cite>+Infinity</cite>, covering all real values.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">createDataFrame</span><span class="p">([(</span><span class="mf">0.1</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.4</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.2</span><span class="p">,),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,)],</span> <span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qds</span> <span class="o">=</span> <span class="n">QuantileDiscretizer</span><span class="p">(</span><span class="n">numBuckets</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">inputCol</span><span class="o">=</span><span class="s2">&quot;values&quot;</span><span class="p">,</span> <span class="n">outputCol</span><span class="o">=</span><span class="s2">&quot;buckets&quot;</span><span class="p">,</span> <span class="n">relativeError</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qds</span><span class="o">.</span><span class="n">getRelativeError</span><span class="p">()</span>
+<span class="go">0.01</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucketizer</span> <span class="o">=</span> <span class="n">qds</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">splits</span> <span class="o">=</span> <span class="n">bucketizer</span><span class="o">.</span><span class="n">getSplits</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">-inf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%2.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">round</span><span class="p">(</span><span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">0.4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucketed</span> <span class="o">=</span> <span class="n">bucketizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucketed</span><span class="o">.</span><span class="n">buckets</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quantileDiscretizerPath</span> <span class="o">=</span> <span class="n">temp_path</span> <span class="o">+</span> <span class="s2">&quot;/quantile-discretizer&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qds</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">quantileDiscretizerPath</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loadedQds</span> <span class="o">=</span> <span class="n">QuantileDiscretizer</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">quantileDiscretizerPath</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loadedQds</span><span class="o">.</span><span class="n">getNumBuckets</span><span class="p">()</span> <span class="o">==</span> <span class="n">qds</span><span class="o">.</span><span class="n">getNumBuckets</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 2.0.0.</span></p>
+</div>
+<dl class="method">
+<dt id="ml.feature.QuantileDiscretizer.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>self</em>, <em>numBuckets=2</em>, <em>inputCol=None</em>, <em>outputCol=None</em>, <em>relativeError=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/feature.html#QuantileDiscretizer.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.feature.QuantileDiscretizer.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.__init__.html#ml.feature.QuantileDiscretizer.__init__" title="ml.feature.QuantileDiscretizer.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>(self[,&nbsp;numBuckets,&nbsp;inputCol,&nbsp;...])</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.copy.html#ml.feature.QuantileDiscretizer.copy" title="ml.feature.QuantileDiscretizer.copy"><code class="xref py py-obj docutils literal"><span class="pre">copy</span></code></a>([extra])</td>
+<td>Creates a copy of this instance with the same uid and some extra params.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.explainParam.html#ml.feature.QuantileDiscretizer.explainParam" title="ml.feature.QuantileDiscretizer.explainParam"><code class="xref py py-obj docutils literal"><span class="pre">explainParam</span></code></a>(param)</td>
+<td>Explains a single param and returns its name, doc, and optional default value and user-supplied value in a string.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.explainParams.html#ml.feature.QuantileDiscretizer.explainParams" title="ml.feature.QuantileDiscretizer.explainParams"><code class="xref py py-obj docutils literal"><span class="pre">explainParams</span></code></a>()</td>
+<td>Returns the documentation of all params with their optionally default values and user-supplied values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.extractParamMap.html#ml.feature.QuantileDiscretizer.extractParamMap" title="ml.feature.QuantileDiscretizer.extractParamMap"><code class="xref py py-obj docutils literal"><span class="pre">extractParamMap</span></code></a>([extra])</td>
+<td>Extracts the embedded default param values and user-supplied values, and then merges them with extra values from input into a flat param map, where the latter value is used if there exist conflicts, i.e., with ordering: default param values &lt; user-supplied values &lt; extra.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.fit.html#ml.feature.QuantileDiscretizer.fit" title="ml.feature.QuantileDiscretizer.fit"><code class="xref py py-obj docutils literal"><span class="pre">fit</span></code></a>(dataset[,&nbsp;params])</td>
+<td>Fits a model to the input dataset with optional parameters.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.getInputCol.html#ml.feature.QuantileDiscretizer.getInputCol" title="ml.feature.QuantileDiscretizer.getInputCol"><code class="xref py py-obj docutils literal"><span class="pre">getInputCol</span></code></a>()</td>
+<td>Gets the value of inputCol or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.getNumBuckets.html#ml.feature.QuantileDiscretizer.getNumBuckets" title="ml.feature.QuantileDiscretizer.getNumBuckets"><code class="xref py py-obj docutils literal"><span class="pre">getNumBuckets</span></code></a>()</td>
+<td>Gets the value of numBuckets or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.getOrDefault.html#ml.feature.QuantileDiscretizer.getOrDefault" title="ml.feature.QuantileDiscretizer.getOrDefault"><code class="xref py py-obj docutils literal"><span class="pre">getOrDefault</span></code></a>(param)</td>
+<td>Gets the value of a param in the user-supplied param map or its default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.getOutputCol.html#ml.feature.QuantileDiscretizer.getOutputCol" title="ml.feature.QuantileDiscretizer.getOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">getOutputCol</span></code></a>()</td>
+<td>Gets the value of outputCol or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.getParam.html#ml.feature.QuantileDiscretizer.getParam" title="ml.feature.QuantileDiscretizer.getParam"><code class="xref py py-obj docutils literal"><span class="pre">getParam</span></code></a>(paramName)</td>
+<td>Gets a param by its name.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.getRelativeError.html#ml.feature.QuantileDiscretizer.getRelativeError" title="ml.feature.QuantileDiscretizer.getRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">getRelativeError</span></code></a>()</td>
+<td>Gets the value of relativeError or its default value.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.hasDefault.html#ml.feature.QuantileDiscretizer.hasDefault" title="ml.feature.QuantileDiscretizer.hasDefault"><code class="xref py py-obj docutils literal"><span class="pre">hasDefault</span></code></a>(param)</td>
+<td>Checks whether a param has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.hasParam.html#ml.feature.QuantileDiscretizer.hasParam" title="ml.feature.QuantileDiscretizer.hasParam"><code class="xref py py-obj docutils literal"><span class="pre">hasParam</span></code></a>(paramName)</td>
+<td>Tests whether this instance contains a param with a given (string) name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.isDefined.html#ml.feature.QuantileDiscretizer.isDefined" title="ml.feature.QuantileDiscretizer.isDefined"><code class="xref py py-obj docutils literal"><span class="pre">isDefined</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user or has a default value.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.isSet.html#ml.feature.QuantileDiscretizer.isSet" title="ml.feature.QuantileDiscretizer.isSet"><code class="xref py py-obj docutils literal"><span class="pre">isSet</span></code></a>(param)</td>
+<td>Checks whether a param is explicitly set by user.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.load.html#ml.feature.QuantileDiscretizer.load" title="ml.feature.QuantileDiscretizer.load"><code class="xref py py-obj docutils literal"><span class="pre">load</span></code></a>(path)</td>
+<td>Reads an ML instance from the input path, a shortcut of <cite>read().load(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.read.html#ml.feature.QuantileDiscretizer.read" title="ml.feature.QuantileDiscretizer.read"><code class="xref py py-obj docutils literal"><span class="pre">read</span></code></a>()</td>
+<td>Returns an MLReader instance for this class.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.save.html#ml.feature.QuantileDiscretizer.save" title="ml.feature.QuantileDiscretizer.save"><code class="xref py py-obj docutils literal"><span class="pre">save</span></code></a>(path)</td>
+<td>Save this ML instance to the given path, a shortcut of <cite>write().save(path)</cite>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.setInputCol.html#ml.feature.QuantileDiscretizer.setInputCol" title="ml.feature.QuantileDiscretizer.setInputCol"><code class="xref py py-obj docutils literal"><span class="pre">setInputCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">inputCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.setNumBuckets.html#ml.feature.QuantileDiscretizer.setNumBuckets" title="ml.feature.QuantileDiscretizer.setNumBuckets"><code class="xref py py-obj docutils literal"><span class="pre">setNumBuckets</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">numBuckets</span></code>.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.setOutputCol.html#ml.feature.QuantileDiscretizer.setOutputCol" title="ml.feature.QuantileDiscretizer.setOutputCol"><code class="xref py py-obj docutils literal"><span class="pre">setOutputCol</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">outputCol</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.setParams.html#ml.feature.QuantileDiscretizer.setParams" title="ml.feature.QuantileDiscretizer.setParams"><code class="xref py py-obj docutils literal"><span class="pre">setParams</span></code></a>(self[,&nbsp;numBuckets,&nbsp;inputCol,&nbsp;...])</td>
+<td>Set the params for the QuantileDiscretizer</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.setRelativeError.html#ml.feature.QuantileDiscretizer.setRelativeError" title="ml.feature.QuantileDiscretizer.setRelativeError"><code class="xref py py-obj docutils literal"><span class="pre">setRelativeError</span></code></a>(value)</td>
+<td>Sets the value of <code class="xref py py-attr docutils literal"><span class="pre">relativeError</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.write.html#ml.feature.QuantileDiscretizer.write" title="ml.feature.QuantileDiscretizer.write"><code class="xref py py-obj docutils literal"><span class="pre">write</span></code></a>()</td>
+<td>Returns an MLWriter instance for this ML instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.inputCol.html#ml.feature.QuantileDiscretizer.inputCol" title="ml.feature.QuantileDiscretizer.inputCol"><code class="xref py py-obj docutils literal"><span class="pre">inputCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.numBuckets.html#ml.feature.QuantileDiscretizer.numBuckets" title="ml.feature.QuantileDiscretizer.numBuckets"><code class="xref py py-obj docutils literal"><span class="pre">numBuckets</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.outputCol.html#ml.feature.QuantileDiscretizer.outputCol" title="ml.feature.QuantileDiscretizer.outputCol"><code class="xref py py-obj docutils literal"><span class="pre">outputCol</span></code></a></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.params.html#ml.feature.QuantileDiscretizer.params" title="ml.feature.QuantileDiscretizer.params"><code class="xref py py-obj docutils literal"><span class="pre">params</span></code></a></td>
+<td>Returns all params ordered by name.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.feature.QuantileDiscretizer.relativeError.html#ml.feature.QuantileDiscretizer.relativeError" title="ml.feature.QuantileDiscretizer.relativeError"><code class="xref py py-obj docutils literal"><span class="pre">relativeError</span></code></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.feature.QuantileDiscretizer.__init__.html" class="btn btn-neutral float-right" title="ml.feature.QuantileDiscretizer.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.feature.PolynomialExpansion.params.html" class="btn btn-neutral" title="ml.feature.PolynomialExpansion.params" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -185,14 +185,14 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Param&#39;</span><span class="p">,</span> <span class="s1">&#39;Params&#39;</span><span class="p">,</span> <span class="s1">&#39;TypeConverters&#39;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="Param"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Param.html#pyspark.ml.Param">[docs]</a><span class="k">class</span> <span class="nc">Param</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Param"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Param.html#ml.Param">[docs]</a><span class="k">class</span> <span class="nc">Param</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A param with self-contained documentation.</span>
 
 <span class="sd">    .. versionadded:: 1.3.0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Param.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Param.__init__.html#pyspark.ml.Param.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Param.__init__"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Param.__init__.html#ml.Param.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">typeConverter</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">Identifiable</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Parent must be an Identifiable but got type </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">parent</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">uid</span>
@@ -225,7 +225,7 @@
             <span class="k">return</span> <span class="bp">False</span></div>
 
 
-<div class="viewcode-block" id="TypeConverters"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.html#pyspark.ml.TypeConverters">[docs]</a><span class="k">class</span> <span class="nc">TypeConverters</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.html#ml.TypeConverters">[docs]</a><span class="k">class</span> <span class="nc">TypeConverters</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. note:: DeveloperApi</span>
 
@@ -254,14 +254,14 @@
         <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">)</span> <span class="ow">or</span> <span class="n">vtype</span> <span class="ow">in</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">unicode_</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">string_</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">str_</span><span class="p">]</span>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.identity"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.identity.html#pyspark.ml.TypeConverters.identity">[docs]</a>    <span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.identity"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.identity.html#ml.TypeConverters.identity">[docs]</a>    <span class="k">def</span> <span class="nf">identity</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Dummy converter that just returns value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">value</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toList"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toList.html#pyspark.ml.TypeConverters.toList">[docs]</a>    <span class="k">def</span> <span class="nf">toList</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toList"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toList.html#ml.TypeConverters.toList">[docs]</a>    <span class="k">def</span> <span class="nf">toList</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to a list, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -275,7 +275,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to list&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toListFloat"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toListFloat.html#pyspark.ml.TypeConverters.toListFloat">[docs]</a>    <span class="k">def</span> <span class="nf">toListFloat</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toListFloat"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toListFloat.html#ml.TypeConverters.toListFloat">[docs]</a>    <span class="k">def</span> <span class="nf">toListFloat</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to list of floats, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -286,7 +286,7 @@
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to list of floats&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toListInt"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toListInt.html#pyspark.ml.TypeConverters.toListInt">[docs]</a>    <span class="k">def</span> <span class="nf">toListInt</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toListInt"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toListInt.html#ml.TypeConverters.toListInt">[docs]</a>    <span class="k">def</span> <span class="nf">toListInt</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to list of ints, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -297,7 +297,7 @@
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to list of ints&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toListString"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toListString.html#pyspark.ml.TypeConverters.toListString">[docs]</a>    <span class="k">def</span> <span class="nf">toListString</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toListString"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toListString.html#ml.TypeConverters.toListString">[docs]</a>    <span class="k">def</span> <span class="nf">toListString</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to list of strings, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -308,7 +308,7 @@
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to list of strings&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toVector"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toVector.html#pyspark.ml.TypeConverters.toVector">[docs]</a>    <span class="k">def</span> <span class="nf">toVector</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toVector"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toVector.html#ml.TypeConverters.toVector">[docs]</a>    <span class="k">def</span> <span class="nf">toVector</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to a MLlib Vector, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -321,7 +321,7 @@
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to vector&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toFloat"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toFloat.html#pyspark.ml.TypeConverters.toFloat">[docs]</a>    <span class="k">def</span> <span class="nf">toFloat</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toFloat"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toFloat.html#ml.TypeConverters.toFloat">[docs]</a>    <span class="k">def</span> <span class="nf">toFloat</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to a float, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -331,7 +331,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to float&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toInt"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toInt.html#pyspark.ml.TypeConverters.toInt">[docs]</a>    <span class="k">def</span> <span class="nf">toInt</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toInt"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toInt.html#ml.TypeConverters.toInt">[docs]</a>    <span class="k">def</span> <span class="nf">toInt</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to an int, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -341,7 +341,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to int&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toString"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toString.html#pyspark.ml.TypeConverters.toString">[docs]</a>    <span class="k">def</span> <span class="nf">toString</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toString"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toString.html#ml.TypeConverters.toString">[docs]</a>    <span class="k">def</span> <span class="nf">toString</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to a string, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -355,7 +355,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Could not convert </span><span class="si">%s</span><span class="s2"> to string type&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span></div>
 
     <span class="nd">@staticmethod</span>
-<div class="viewcode-block" id="TypeConverters.toBoolean"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.TypeConverters.toBoolean.html#pyspark.ml.TypeConverters.toBoolean">[docs]</a>    <span class="k">def</span> <span class="nf">toBoolean</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<div class="viewcode-block" id="TypeConverters.toBoolean"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.TypeConverters.toBoolean.html#ml.TypeConverters.toBoolean">[docs]</a>    <span class="k">def</span> <span class="nf">toBoolean</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Convert a value to a boolean, if possible.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -365,7 +365,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Boolean Param requires value of type bool. Found </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span></div></div>
 
 
-<div class="viewcode-block" id="Params"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.html#pyspark.ml.Params">[docs]</a><span class="k">class</span> <span class="nc">Params</span><span class="p">(</span><span class="n">Identifiable</span><span class="p">):</span>
+<div class="viewcode-block" id="Params"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.html#ml.Params">[docs]</a><span class="k">class</span> <span class="nc">Params</span><span class="p">(</span><span class="n">Identifiable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Components that take parameters. This also provides an internal</span>
 <span class="sd">    param map to store parameter values attached to the instance.</span>
@@ -375,7 +375,7 @@
 
     <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">ABCMeta</span>
 
-<div class="viewcode-block" id="Params.__init__"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.__init__.html#pyspark.ml.Params.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.__init__"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.__init__.html#ml.Params.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Params</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
         <span class="c1">#: internal param map for user-supplied values param map</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_paramMap</span> <span class="o">=</span> <span class="p">{}</span>
@@ -414,7 +414,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_params</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.explainParam"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.explainParam.html#pyspark.ml.Params.explainParam">[docs]</a>    <span class="k">def</span> <span class="nf">explainParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.explainParam"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.explainParam.html#ml.Params.explainParam">[docs]</a>    <span class="k">def</span> <span class="nf">explainParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Explains a single param and returns its name, doc, and optional</span>
 <span class="sd">        default value and user-supplied value in a string.</span>
@@ -432,7 +432,7 @@
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span> <span class="n">valueStr</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.explainParams"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.explainParams.html#pyspark.ml.Params.explainParams">[docs]</a>    <span class="k">def</span> <span class="nf">explainParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.explainParams"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.explainParams.html#ml.Params.explainParams">[docs]</a>    <span class="k">def</span> <span class="nf">explainParams</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the documentation of all params with their optionally</span>
 <span class="sd">        default values and user-supplied values.</span>
@@ -440,7 +440,7 @@
         <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">explainParam</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">])</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.getParam"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.getParam.html#pyspark.ml.Params.getParam">[docs]</a>    <span class="k">def</span> <span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paramName</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.getParam"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.getParam.html#ml.Params.getParam">[docs]</a>    <span class="k">def</span> <span class="nf">getParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paramName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets a param by its name.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -451,7 +451,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot find param with name </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">paramName</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.isSet"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.isSet.html#pyspark.ml.Params.isSet">[docs]</a>    <span class="k">def</span> <span class="nf">isSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.isSet"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.isSet.html#ml.Params.isSet">[docs]</a>    <span class="k">def</span> <span class="nf">isSet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks whether a param is explicitly set by user.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -459,7 +459,7 @@
         <span class="k">return</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_paramMap</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.hasDefault"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.hasDefault.html#pyspark.ml.Params.hasDefault">[docs]</a>    <span class="k">def</span> <span class="nf">hasDefault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.hasDefault"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.hasDefault.html#ml.Params.hasDefault">[docs]</a>    <span class="k">def</span> <span class="nf">hasDefault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks whether a param has a default value.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -467,7 +467,7 @@
         <span class="k">return</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultParamMap</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.isDefined"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.isDefined.html#pyspark.ml.Params.isDefined">[docs]</a>    <span class="k">def</span> <span class="nf">isDefined</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.isDefined"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.isDefined.html#ml.Params.isDefined">[docs]</a>    <span class="k">def</span> <span class="nf">isDefined</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Checks whether a param is explicitly set by user or has</span>
 <span class="sd">        a default value.</span>
@@ -475,7 +475,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">isSet</span><span class="p">(</span><span class="n">param</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">hasDefault</span><span class="p">(</span><span class="n">param</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.hasParam"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.hasParam.html#pyspark.ml.Params.hasParam">[docs]</a>    <span class="k">def</span> <span class="nf">hasParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paramName</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.hasParam"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.hasParam.html#ml.Params.hasParam">[docs]</a>    <span class="k">def</span> <span class="nf">hasParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paramName</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Tests whether this instance contains a param with a given</span>
 <span class="sd">        (string) name.</span>
@@ -487,7 +487,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;hasParam(): paramName must be a string&quot;</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.getOrDefault"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.getOrDefault.html#pyspark.ml.Params.getOrDefault">[docs]</a>    <span class="k">def</span> <span class="nf">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.getOrDefault"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.getOrDefault.html#ml.Params.getOrDefault">[docs]</a>    <span class="k">def</span> <span class="nf">getOrDefault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Gets the value of a param in the user-supplied param map or its</span>
 <span class="sd">        default value. Raises an error if neither is set.</span>
@@ -499,7 +499,7 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_defaultParamMap</span><span class="p">[</span><span class="n">param</span><span class="p">]</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.extractParamMap"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.extractParamMap.html#pyspark.ml.Params.extractParamMap">[docs]</a>    <span class="k">def</span> <span class="nf">extractParamMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.extractParamMap"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.extractParamMap.html#ml.Params.extractParamMap">[docs]</a>    <span class="k">def</span> <span class="nf">extractParamMap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Extracts the embedded default param values and user-supplied</span>
 <span class="sd">        values, and then merges them with extra values from input into</span>
@@ -518,7 +518,7 @@
         <span class="k">return</span> <span class="n">paramMap</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.4.0&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="Params.copy"><a class="viewcode-back" href="../../../generated/generated/pyspark.ml.tuning.Params.copy.html#pyspark.ml.Params.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Params.copy"><a class="viewcode-back" href="../../../generated/generated/ml.tuning.Params.copy.html#ml.Params.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Creates a copy of this instance with the same uid and some</span>
 <span class="sd">        extra params. The default implementation creates a</span>

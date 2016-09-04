@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.tuning.SparkContext.hadoopFile</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.tuning.SparkContext" href="ml.tuning.SparkContext.html"/>
+        <link rel="next" title="ml.tuning.SparkContext.hadoopRDD" href="ml.tuning.SparkContext.hadoopRDD.html"/>
+        <link rel="prev" title="ml.tuning.SparkContext.getOrCreate" href="ml.tuning.SparkContext.getOrCreate.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.tuning.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.tuning.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.CrossValidator.html"><code class="docutils literal"><span class="pre">ml.tuning.CrossValidator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.CrossValidatorModel.html"><code class="docutils literal"><span class="pre">ml.tuning.CrossValidatorModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Estimator.html"><code class="docutils literal"><span class="pre">ml.tuning.Estimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.HasSeed.html"><code class="docutils literal"><span class="pre">ml.tuning.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.JavaParams.html"><code class="docutils literal"><span class="pre">ml.tuning.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Model.html"><code class="docutils literal"><span class="pre">ml.tuning.Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Param.html"><code class="docutils literal"><span class="pre">ml.tuning.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.ParamGridBuilder.html"><code class="docutils literal"><span class="pre">ml.tuning.ParamGridBuilder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Params.html"><code class="docutils literal"><span class="pre">ml.tuning.Params</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="ml.tuning.SparkContext.html"><code class="docutils literal"><span class="pre">ml.tuning.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TrainValidationSplit.html"><code class="docutils literal"><span class="pre">ml.tuning.TrainValidationSplit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TrainValidationSplitModel.html"><code class="docutils literal"><span class="pre">ml.tuning.TrainValidationSplitModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.tuning.TypeConverters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.ValidatorParams.html"><code class="docutils literal"><span class="pre">ml.tuning.ValidatorParams</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a> &raquo;</li>
+        
+          <li><a href="ml.tuning.SparkContext.html"><code class="docutils literal"><span class="pre">ml.tuning.SparkContext</span></code></a> &raquo;</li>
+        
+      <li>ml.tuning.SparkContext.hadoopFile</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.tuning.SparkContext.hadoopFile.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-tuning-sparkcontext-hadoopfile">
+<h1>ml.tuning.SparkContext.hadoopFile<a class="headerlink" href="#ml-tuning-sparkcontext-hadoopfile" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="ml.tuning.SparkContext.hadoopFile">
+<code class="descclassname">SparkContext.</code><code class="descname">hadoopFile</code><span class="sig-paren">(</span><em>path</em>, <em>inputFormatClass</em>, <em>keyClass</em>, <em>valueClass</em>, <em>keyConverter=None</em>, <em>valueConverter=None</em>, <em>conf=None</em>, <em>batchSize=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyspark/context.html#SparkContext.hadoopFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.tuning.SparkContext.hadoopFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read an &#8216;old&#8217; Hadoop InputFormat with arbitrary key and value class from HDFS,
+a local file system (available on all nodes), or any Hadoop-supported file system URI.
+The mechanism is the same as for sc.sequenceFile.</p>
+<p>A Hadoop configuration can be passed in as a Python dict. This will be converted into a
+Configuration in Java.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> &#8211; path to Hadoop file</li>
+<li><strong>inputFormatClass</strong> &#8211; fully qualified classname of Hadoop InputFormat
+(e.g. &#8220;org.apache.hadoop.mapred.TextInputFormat&#8221;)</li>
+<li><strong>keyClass</strong> &#8211; fully qualified classname of key Writable class
+(e.g. &#8220;org.apache.hadoop.io.Text&#8221;)</li>
+<li><strong>valueClass</strong> &#8211; fully qualified classname of value Writable class
+(e.g. &#8220;org.apache.hadoop.io.LongWritable&#8221;)</li>
+<li><strong>keyConverter</strong> &#8211; (None by default)</li>
+<li><strong>valueConverter</strong> &#8211; (None by default)</li>
+<li><strong>conf</strong> &#8211; Hadoop configuration, passed in as a dict
+(None by default)</li>
+<li><strong>batchSize</strong> &#8211; The number of Python objects represented as a single
+Java object. (default 0, choose batchSize automatically)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.tuning.SparkContext.hadoopRDD.html" class="btn btn-neutral float-right" title="ml.tuning.SparkContext.hadoopRDD" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.tuning.SparkContext.getOrCreate.html" class="btn btn-neutral" title="ml.tuning.SparkContext.getOrCreate" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

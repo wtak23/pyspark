@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.regression.DecisionTreeRegressor.setCheckpointInterval</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.regression.DecisionTreeRegressor" href="ml.regression.DecisionTreeRegressor.html"/>
+        <link rel="next" title="ml.regression.DecisionTreeRegressor.setFeaturesCol" href="ml.regression.DecisionTreeRegressor.setFeaturesCol.html"/>
+        <link rel="prev" title="ml.regression.DecisionTreeRegressor.setCacheNodeIds" href="ml.regression.DecisionTreeRegressor.setCacheNodeIds.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.regression.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.regression.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.AFTSurvivalRegression.html"><code class="docutils literal"><span class="pre">ml.regression.AFTSurvivalRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.AFTSurvivalRegressionModel.html"><code class="docutils literal"><span class="pre">ml.regression.AFTSurvivalRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.DataFrame.html"><code class="docutils literal"><span class="pre">ml.regression.DataFrame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.DecisionTreeModel.html"><code class="docutils literal"><span class="pre">ml.regression.DecisionTreeModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.DecisionTreeParams.html"><code class="docutils literal"><span class="pre">ml.regression.DecisionTreeParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.DecisionTreeRegressionModel.html"><code class="docutils literal"><span class="pre">ml.regression.DecisionTreeRegressionModel</span></code></a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="ml.regression.DecisionTreeRegressor.html"><code class="docutils literal"><span class="pre">ml.regression.DecisionTreeRegressor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.GBTParams.html"><code class="docutils literal"><span class="pre">ml.regression.GBTParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.GBTRegressionModel.html"><code class="docutils literal"><span class="pre">ml.regression.GBTRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.GBTRegressor.html"><code class="docutils literal"><span class="pre">ml.regression.GBTRegressor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.GeneralizedLinearRegression.html"><code class="docutils literal"><span class="pre">ml.regression.GeneralizedLinearRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.GeneralizedLinearRegressionModel.html"><code class="docutils literal"><span class="pre">ml.regression.GeneralizedLinearRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.GeneralizedLinearRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.regression.GeneralizedLinearRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.GeneralizedLinearRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.regression.GeneralizedLinearRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasCheckpointInterval.html"><code class="docutils literal"><span class="pre">ml.regression.HasCheckpointInterval</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasElasticNetParam.html"><code class="docutils literal"><span class="pre">ml.regression.HasElasticNetParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasFeaturesCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasFeaturesCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasFitIntercept.html"><code class="docutils literal"><span class="pre">ml.regression.HasFitIntercept</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasHandleInvalid.html"><code class="docutils literal"><span class="pre">ml.regression.HasHandleInvalid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasInputCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasInputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasInputCols.html"><code class="docutils literal"><span class="pre">ml.regression.HasInputCols</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasLabelCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasLabelCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasMaxIter.html"><code class="docutils literal"><span class="pre">ml.regression.HasMaxIter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasNumFeatures.html"><code class="docutils literal"><span class="pre">ml.regression.HasNumFeatures</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasOutputCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasOutputCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasPredictionCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasProbabilityCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasProbabilityCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasRawPredictionCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasRawPredictionCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasRegParam.html"><code class="docutils literal"><span class="pre">ml.regression.HasRegParam</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasSeed.html"><code class="docutils literal"><span class="pre">ml.regression.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasSolver.html"><code class="docutils literal"><span class="pre">ml.regression.HasSolver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasStandardization.html"><code class="docutils literal"><span class="pre">ml.regression.HasStandardization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasStepSize.html"><code class="docutils literal"><span class="pre">ml.regression.HasStepSize</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasThresholds.html"><code class="docutils literal"><span class="pre">ml.regression.HasThresholds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasTol.html"><code class="docutils literal"><span class="pre">ml.regression.HasTol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasVarianceCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasVarianceCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.HasWeightCol.html"><code class="docutils literal"><span class="pre">ml.regression.HasWeightCol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.Identifiable.html"><code class="docutils literal"><span class="pre">ml.regression.Identifiable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.IsotonicRegression.html"><code class="docutils literal"><span class="pre">ml.regression.IsotonicRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.IsotonicRegressionModel.html"><code class="docutils literal"><span class="pre">ml.regression.IsotonicRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.JavaEstimator.html"><code class="docutils literal"><span class="pre">ml.regression.JavaEstimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.JavaMLReadable.html"><code class="docutils literal"><span class="pre">ml.regression.JavaMLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.JavaMLReader.html"><code class="docutils literal"><span class="pre">ml.regression.JavaMLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.JavaMLWritable.html"><code class="docutils literal"><span class="pre">ml.regression.JavaMLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.JavaMLWriter.html"><code class="docutils literal"><span class="pre">ml.regression.JavaMLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.JavaModel.html"><code class="docutils literal"><span class="pre">ml.regression.JavaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.JavaWrapper.html"><code class="docutils literal"><span class="pre">ml.regression.JavaWrapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.LinearRegression.html"><code class="docutils literal"><span class="pre">ml.regression.LinearRegression</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.LinearRegressionModel.html"><code class="docutils literal"><span class="pre">ml.regression.LinearRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.LinearRegressionSummary.html"><code class="docutils literal"><span class="pre">ml.regression.LinearRegressionSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.LinearRegressionTrainingSummary.html"><code class="docutils literal"><span class="pre">ml.regression.LinearRegressionTrainingSummary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.MLReadable.html"><code class="docutils literal"><span class="pre">ml.regression.MLReadable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.MLReader.html"><code class="docutils literal"><span class="pre">ml.regression.MLReader</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.MLWritable.html"><code class="docutils literal"><span class="pre">ml.regression.MLWritable</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.MLWriter.html"><code class="docutils literal"><span class="pre">ml.regression.MLWriter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.Param.html"><code class="docutils literal"><span class="pre">ml.regression.Param</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.Params.html"><code class="docutils literal"><span class="pre">ml.regression.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.RandomForestParams.html"><code class="docutils literal"><span class="pre">ml.regression.RandomForestParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.RandomForestRegressionModel.html"><code class="docutils literal"><span class="pre">ml.regression.RandomForestRegressionModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.RandomForestRegressor.html"><code class="docutils literal"><span class="pre">ml.regression.RandomForestRegressor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.SparkContext.html"><code class="docutils literal"><span class="pre">ml.regression.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.TreeEnsembleModels.html"><code class="docutils literal"><span class="pre">ml.regression.TreeEnsembleModels</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.TreeEnsembleParams.html"><code class="docutils literal"><span class="pre">ml.regression.TreeEnsembleParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.TreeRegressorParams.html"><code class="docutils literal"><span class="pre">ml.regression.TreeRegressorParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.regression.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.regression.TypeConverters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a> &raquo;</li>
+        
+          <li><a href="ml.regression.DecisionTreeRegressor.html"><code class="docutils literal"><span class="pre">ml.regression.DecisionTreeRegressor</span></code></a> &raquo;</li>
+        
+      <li>ml.regression.DecisionTreeRegressor.setCheckpointInterval</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.regression.DecisionTreeRegressor.setCheckpointInterval.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-regression-decisiontreeregressor-setcheckpointinterval">
+<h1>ml.regression.DecisionTreeRegressor.setCheckpointInterval<a class="headerlink" href="#ml-regression-decisiontreeregressor-setcheckpointinterval" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="ml.regression.DecisionTreeRegressor.setCheckpointInterval">
+<code class="descclassname">DecisionTreeRegressor.</code><code class="descname">setCheckpointInterval</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#ml.regression.DecisionTreeRegressor.setCheckpointInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of <a class="reference internal" href="ml.regression.DecisionTreeRegressor.checkpointInterval.html#ml.regression.DecisionTreeRegressor.checkpointInterval" title="ml.regression.DecisionTreeRegressor.checkpointInterval"><code class="xref py py-attr docutils literal"><span class="pre">checkpointInterval</span></code></a>.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.regression.DecisionTreeRegressor.setFeaturesCol.html" class="btn btn-neutral float-right" title="ml.regression.DecisionTreeRegressor.setFeaturesCol" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.regression.DecisionTreeRegressor.setCacheNodeIds.html" class="btn btn-neutral" title="ml.regression.DecisionTreeRegressor.setCacheNodeIds" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

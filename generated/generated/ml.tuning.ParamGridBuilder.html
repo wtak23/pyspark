@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ml.tuning.ParamGridBuilder</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon-umich.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="" href="../../index.html"/>
+        <link rel="up" title="ml.tuning" href="../ml.tuning.html"/>
+        <link rel="next" title="ml.tuning.ParamGridBuilder.__init__" href="ml.tuning.ParamGridBuilder.__init__.html"/>
+        <link rel="prev" title="ml.tuning.Param.__init__" href="ml.tuning.Param.__init__.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySpark API
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyspark.html"><code class="docutils literal"><span class="pre">pyspark</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.sql.html">pyspark.sql</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../pyspark.ml.html">pyspark.ml</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html"><code class="docutils literal"><span class="pre">ml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.param.html"><code class="docutils literal"><span class="pre">ml.param</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.feature.html"><code class="docutils literal"><span class="pre">ml.feature</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.classification.html"><code class="docutils literal"><span class="pre">ml.classification</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.clustering.html"><code class="docutils literal"><span class="pre">ml.clustering</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.linalg.html"><code class="docutils literal"><span class="pre">ml.linalg</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.recommendation.html"><code class="docutils literal"><span class="pre">ml.recommendation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.regression.html"><code class="docutils literal"><span class="pre">ml.regression</span></code></a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../ml.tuning.html#functions">Functions</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../ml.tuning.html#classes">Classes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.CrossValidator.html"><code class="docutils literal"><span class="pre">ml.tuning.CrossValidator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.CrossValidatorModel.html"><code class="docutils literal"><span class="pre">ml.tuning.CrossValidatorModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Estimator.html"><code class="docutils literal"><span class="pre">ml.tuning.Estimator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.HasSeed.html"><code class="docutils literal"><span class="pre">ml.tuning.HasSeed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.JavaParams.html"><code class="docutils literal"><span class="pre">ml.tuning.JavaParams</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Model.html"><code class="docutils literal"><span class="pre">ml.tuning.Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Param.html"><code class="docutils literal"><span class="pre">ml.tuning.Param</span></code></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">ml.tuning.ParamGridBuilder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.Params.html"><code class="docutils literal"><span class="pre">ml.tuning.Params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.SparkContext.html"><code class="docutils literal"><span class="pre">ml.tuning.SparkContext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TrainValidationSplit.html"><code class="docutils literal"><span class="pre">ml.tuning.TrainValidationSplit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TrainValidationSplitModel.html"><code class="docutils literal"><span class="pre">ml.tuning.TrainValidationSplitModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.TypeConverters.html"><code class="docutils literal"><span class="pre">ml.tuning.TypeConverters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml.tuning.ValidatorParams.html"><code class="docutils literal"><span class="pre">ml.tuning.ValidatorParams</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml.evaluation.html"><code class="docutils literal"><span class="pre">ml.evaluation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.mllib.html">pyspark.mllib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyspark.streaming.html">pyspark.streaming</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySpark API</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../pyspark.ml.html">pyspark.ml</a> &raquo;</li>
+        
+          <li><a href="../ml.tuning.html"><code class="docutils literal"><span class="pre">ml.tuning</span></code></a> &raquo;</li>
+        
+      <li><code class="docutils literal"><span class="pre">ml.tuning.ParamGridBuilder</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/generated/generated/ml.tuning.ParamGridBuilder.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-tuning-paramgridbuilder">
+<h1><a class="reference internal" href="#ml.tuning.ParamGridBuilder" title="ml.tuning.ParamGridBuilder"><code class="xref py py-class docutils literal"><span class="pre">ml.tuning.ParamGridBuilder</span></code></a><a class="headerlink" href="#ml-tuning-paramgridbuilder" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="ml.tuning.ParamGridBuilder">
+<em class="property">class </em><code class="descclassname">ml.tuning.</code><code class="descname">ParamGridBuilder</code><a class="reference internal" href="../../_modules/ml/tuning.html#ParamGridBuilder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.tuning.ParamGridBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builder for a param grid used in grid search-based model selection.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyspark.ml.classification</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">ParamGridBuilder</span><span class="p">()</span> \
+<span class="gp">... </span>    <span class="o">.</span><span class="n">baseOn</span><span class="p">({</span><span class="n">lr</span><span class="o">.</span><span class="n">labelCol</span><span class="p">:</span> <span class="s1">&#39;l&#39;</span><span class="p">})</span> \
+<span class="gp">... </span>    <span class="o">.</span><span class="n">baseOn</span><span class="p">([</span><span class="n">lr</span><span class="o">.</span><span class="n">predictionCol</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">])</span> \
+<span class="gp">... </span>    <span class="o">.</span><span class="n">addGrid</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">regParam</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span> \
+<span class="gp">... </span>    <span class="o">.</span><span class="n">addGrid</span><span class="p">(</span><span class="n">lr</span><span class="o">.</span><span class="n">maxIter</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> \
+<span class="gp">... </span>    <span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="n">lr</span><span class="o">.</span><span class="n">regParam</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">maxIter</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">labelCol</span><span class="p">:</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">predictionCol</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="n">lr</span><span class="o">.</span><span class="n">regParam</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">maxIter</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">labelCol</span><span class="p">:</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">predictionCol</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="n">lr</span><span class="o">.</span><span class="n">regParam</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">maxIter</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">labelCol</span><span class="p">:</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">predictionCol</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">},</span>
+<span class="gp">... </span>    <span class="p">{</span><span class="n">lr</span><span class="o">.</span><span class="n">regParam</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">maxIter</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">labelCol</span><span class="p">:</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="n">lr</span><span class="o">.</span><span class="n">predictionCol</span><span class="p">:</span> <span class="s1">&#39;p&#39;</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">output</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">expected</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">all</span><span class="p">([</span><span class="n">m</span> <span class="ow">in</span> <span class="n">expected</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">output</span><span class="p">])</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.0.</span></p>
+</div>
+<dl class="method">
+<dt id="ml.tuning.ParamGridBuilder.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ml/tuning.html#ParamGridBuilder.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ml.tuning.ParamGridBuilder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.ParamGridBuilder.__init__.html#ml.tuning.ParamGridBuilder.__init__" title="ml.tuning.ParamGridBuilder.__init__"><code class="xref py py-obj docutils literal"><span class="pre">__init__</span></code></a>()</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.ParamGridBuilder.addGrid.html#ml.tuning.ParamGridBuilder.addGrid" title="ml.tuning.ParamGridBuilder.addGrid"><code class="xref py py-obj docutils literal"><span class="pre">addGrid</span></code></a>(param,&nbsp;values)</td>
+<td>Sets the given parameters in this grid to fixed values.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="ml.tuning.ParamGridBuilder.baseOn.html#ml.tuning.ParamGridBuilder.baseOn" title="ml.tuning.ParamGridBuilder.baseOn"><code class="xref py py-obj docutils literal"><span class="pre">baseOn</span></code></a>(*args)</td>
+<td>Sets the given parameters in this grid to fixed values.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="ml.tuning.ParamGridBuilder.build.html#ml.tuning.ParamGridBuilder.build" title="ml.tuning.ParamGridBuilder.build"><code class="xref py py-obj docutils literal"><span class="pre">build</span></code></a>()</td>
+<td>Builds and returns all combinations of parameters specified by the param grid.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ml.tuning.ParamGridBuilder.__init__.html" class="btn btn-neutral float-right" title="ml.tuning.ParamGridBuilder.__init__" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml.tuning.Param.__init__.html" class="btn btn-neutral" title="ml.tuning.Param.__init__" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

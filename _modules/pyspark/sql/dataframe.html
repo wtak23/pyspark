@@ -189,7 +189,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DataFrame&quot;</span><span class="p">,</span> <span class="s2">&quot;DataFrameNaFunctions&quot;</span><span class="p">,</span> <span class="s2">&quot;DataFrameStatFunctions&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="DataFrame"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.html#mllib.recommendation.DataFrame">[docs]</a><span class="k">class</span> <span class="nc">DataFrame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.html#ml.classification.DataFrame">[docs]</a><span class="k">class</span> <span class="nc">DataFrame</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A distributed collection of data grouped into named columns.</span>
 
 <span class="sd">    A :class:`DataFrame` is equivalent to a relational table in Spark SQL,</span>
@@ -216,7 +216,7 @@
 <span class="sd">    .. versionadded:: 1.3</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="DataFrame.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.__init__.html#mllib.recommendation.DataFrame.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jdf</span><span class="p">,</span> <span class="n">sql_ctx</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.__init__.html#ml.classification.DataFrame.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jdf</span><span class="p">,</span> <span class="n">sql_ctx</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span> <span class="o">=</span> <span class="n">jdf</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span> <span class="o">=</span> <span class="n">sql_ctx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span> <span class="o">=</span> <span class="n">sql_ctx</span> <span class="ow">and</span> <span class="n">sql_ctx</span><span class="o">.</span><span class="n">_sc</span>
@@ -250,7 +250,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.toJSON"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toJSON.html#mllib.recommendation.DataFrame.toJSON">[docs]</a>    <span class="k">def</span> <span class="nf">toJSON</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.toJSON"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toJSON.html#ml.classification.DataFrame.toJSON">[docs]</a>    <span class="k">def</span> <span class="nf">toJSON</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_unicode</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Converts a :class:`DataFrame` into a :class:`RDD` of string.</span>
 
 <span class="sd">        Each row is turned into a JSON document as one element in the returned RDD.</span>
@@ -262,7 +262,7 @@
         <span class="k">return</span> <span class="n">RDD</span><span class="p">(</span><span class="n">rdd</span><span class="o">.</span><span class="n">toJavaRDD</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sc</span><span class="p">,</span> <span class="n">UTF8Deserializer</span><span class="p">(</span><span class="n">use_unicode</span><span class="p">))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.registerTempTable"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.registerTempTable.html#mllib.recommendation.DataFrame.registerTempTable">[docs]</a>    <span class="k">def</span> <span class="nf">registerTempTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.registerTempTable"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.registerTempTable.html#ml.classification.DataFrame.registerTempTable">[docs]</a>    <span class="k">def</span> <span class="nf">registerTempTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Registers this RDD as a temporary table using the given name.</span>
 
 <span class="sd">        The lifetime of this temporary table is tied to the :class:`SQLContext`</span>
@@ -279,7 +279,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">createOrReplaceTempView</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.createTempView"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.createTempView.html#mllib.recommendation.DataFrame.createTempView">[docs]</a>    <span class="k">def</span> <span class="nf">createTempView</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.createTempView"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.createTempView.html#ml.classification.DataFrame.createTempView">[docs]</a>    <span class="k">def</span> <span class="nf">createTempView</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates a temporary view with this DataFrame.</span>
 
 <span class="sd">        The lifetime of this temporary table is tied to the :class:`SparkSession`</span>
@@ -301,7 +301,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">createTempView</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.createOrReplaceTempView"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.createOrReplaceTempView.html#mllib.recommendation.DataFrame.createOrReplaceTempView">[docs]</a>    <span class="k">def</span> <span class="nf">createOrReplaceTempView</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.createOrReplaceTempView"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.createOrReplaceTempView.html#ml.classification.DataFrame.createOrReplaceTempView">[docs]</a>    <span class="k">def</span> <span class="nf">createOrReplaceTempView</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Creates or replaces a temporary view with this DataFrame.</span>
 
 <span class="sd">        The lifetime of this temporary table is tied to the :class:`SparkSession`</span>
@@ -359,7 +359,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.printSchema"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.printSchema.html#mllib.recommendation.DataFrame.printSchema">[docs]</a>    <span class="k">def</span> <span class="nf">printSchema</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.printSchema"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.printSchema.html#ml.classification.DataFrame.printSchema">[docs]</a>    <span class="k">def</span> <span class="nf">printSchema</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Prints out the schema in the tree format.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.printSchema()</span>
@@ -371,7 +371,7 @@
         <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">schema</span><span class="p">()</span><span class="o">.</span><span class="n">treeString</span><span class="p">())</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.explain"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.explain.html#mllib.recommendation.DataFrame.explain">[docs]</a>    <span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extended</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.explain"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.explain.html#ml.classification.DataFrame.explain">[docs]</a>    <span class="k">def</span> <span class="nf">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extended</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Prints the (logical and physical) plans to the console for debugging purpose.</span>
 
 <span class="sd">        :param extended: boolean, default ``False``. If ``False``, prints only the physical plan.</span>
@@ -396,7 +396,7 @@
             <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">queryExecution</span><span class="p">()</span><span class="o">.</span><span class="n">simpleString</span><span class="p">())</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.isLocal"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.isLocal.html#mllib.recommendation.DataFrame.isLocal">[docs]</a>    <span class="k">def</span> <span class="nf">isLocal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.isLocal"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.isLocal.html#ml.classification.DataFrame.isLocal">[docs]</a>    <span class="k">def</span> <span class="nf">isLocal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns ``True`` if the :func:`collect` and :func:`take` methods can be run locally</span>
 <span class="sd">        (without any Spark executors).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -417,7 +417,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">isStreaming</span><span class="p">()</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.show"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.show.html#mllib.recommendation.DataFrame.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.show"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.show.html#ml.classification.DataFrame.show">[docs]</a>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">truncate</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Prints the first ``n`` rows to the console.</span>
 
 <span class="sd">        :param n: Number of rows to show.</span>
@@ -439,7 +439,7 @@
         <span class="k">return</span> <span class="s2">&quot;DataFrame[</span><span class="si">%s</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dtypes</span><span class="p">))</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.count"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.count.html#mllib.recommendation.DataFrame.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.count"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.count.html#ml.classification.DataFrame.count">[docs]</a>    <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the number of rows in this :class:`DataFrame`.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.count()</span>
@@ -449,7 +449,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.collect"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.collect.html#mllib.recommendation.DataFrame.collect">[docs]</a>    <span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.collect"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.collect.html#ml.classification.DataFrame.collect">[docs]</a>    <span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns all the records as a list of :class:`Row`.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.collect()</span>
@@ -461,7 +461,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.toLocalIterator"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toLocalIterator.html#mllib.recommendation.DataFrame.toLocalIterator">[docs]</a>    <span class="k">def</span> <span class="nf">toLocalIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.toLocalIterator"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toLocalIterator.html#ml.classification.DataFrame.toLocalIterator">[docs]</a>    <span class="k">def</span> <span class="nf">toLocalIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns an iterator that contains all of the rows in this :class:`DataFrame`.</span>
 <span class="sd">        The iterator will consume as much memory as the largest partition in this DataFrame.</span>
@@ -475,7 +475,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.limit"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.limit.html#mllib.recommendation.DataFrame.limit">[docs]</a>    <span class="k">def</span> <span class="nf">limit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.limit"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.limit.html#ml.classification.DataFrame.limit">[docs]</a>    <span class="k">def</span> <span class="nf">limit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Limits the result count to the number specified.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.limit(1).collect()</span>
@@ -488,7 +488,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.take"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.take.html#mllib.recommendation.DataFrame.take">[docs]</a>    <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.take"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.take.html#ml.classification.DataFrame.take">[docs]</a>    <span class="k">def</span> <span class="nf">take</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the first ``num`` rows as a :class:`list` of :class:`Row`.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.take(2)</span>
@@ -500,7 +500,7 @@
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">_load_from_socket</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">BatchedSerializer</span><span class="p">(</span><span class="n">PickleSerializer</span><span class="p">())))</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.foreach"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.foreach.html#mllib.recommendation.DataFrame.foreach">[docs]</a>    <span class="k">def</span> <span class="nf">foreach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.foreach"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.foreach.html#ml.classification.DataFrame.foreach">[docs]</a>    <span class="k">def</span> <span class="nf">foreach</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Applies the ``f`` function to all :class:`Row` of this :class:`DataFrame`.</span>
 
 <span class="sd">        This is a shorthand for ``df.rdd.foreach()``.</span>
@@ -512,7 +512,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">rdd</span><span class="o">.</span><span class="n">foreach</span><span class="p">(</span><span class="n">f</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.foreachPartition"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.foreachPartition.html#mllib.recommendation.DataFrame.foreachPartition">[docs]</a>    <span class="k">def</span> <span class="nf">foreachPartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.foreachPartition"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.foreachPartition.html#ml.classification.DataFrame.foreachPartition">[docs]</a>    <span class="k">def</span> <span class="nf">foreachPartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Applies the ``f`` function to each partition of this :class:`DataFrame`.</span>
 
 <span class="sd">        This a shorthand for ``df.rdd.foreachPartition()``.</span>
@@ -525,7 +525,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">rdd</span><span class="o">.</span><span class="n">foreachPartition</span><span class="p">(</span><span class="n">f</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.cache"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.cache.html#mllib.recommendation.DataFrame.cache">[docs]</a>    <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.cache"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.cache.html#ml.classification.DataFrame.cache">[docs]</a>    <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Persists with the default storage level (C{MEMORY_ONLY}).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_cached</span> <span class="o">=</span> <span class="bp">True</span>
@@ -533,7 +533,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.persist"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.persist.html#mllib.recommendation.DataFrame.persist">[docs]</a>    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_ONLY</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.persist"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.persist.html#ml.classification.DataFrame.persist">[docs]</a>    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storageLevel</span><span class="o">=</span><span class="n">StorageLevel</span><span class="o">.</span><span class="n">MEMORY_ONLY</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets the storage level to persist its values across operations</span>
 <span class="sd">        after the first time it is computed. This can only be used to assign</span>
 <span class="sd">        a new storage level if the RDD does not have a storage level set yet.</span>
@@ -545,7 +545,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.unpersist"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.unpersist.html#mllib.recommendation.DataFrame.unpersist">[docs]</a>    <span class="k">def</span> <span class="nf">unpersist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocking</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.unpersist"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.unpersist.html#ml.classification.DataFrame.unpersist">[docs]</a>    <span class="k">def</span> <span class="nf">unpersist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocking</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Marks the :class:`DataFrame` as non-persistent, and remove all blocks for it from</span>
 <span class="sd">        memory and disk.</span>
 
@@ -556,7 +556,7 @@
         <span class="k">return</span> <span class="bp">self</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.coalesce"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.coalesce.html#mllib.recommendation.DataFrame.coalesce">[docs]</a>    <span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.coalesce"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.coalesce.html#ml.classification.DataFrame.coalesce">[docs]</a>    <span class="k">def</span> <span class="nf">coalesce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a new :class:`DataFrame` that has exactly `numPartitions` partitions.</span>
 
@@ -571,7 +571,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">coalesce</span><span class="p">(</span><span class="n">numPartitions</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.repartition"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.repartition.html#mllib.recommendation.DataFrame.repartition">[docs]</a>    <span class="k">def</span> <span class="nf">repartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.repartition"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.repartition.html#ml.classification.DataFrame.repartition">[docs]</a>    <span class="k">def</span> <span class="nf">repartition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numPartitions</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a new :class:`DataFrame` partitioned by the given partitioning expressions. The</span>
 <span class="sd">        resulting DataFrame is hash partitioned.</span>
@@ -632,7 +632,7 @@
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;numPartitions should be an int or Column&quot;</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.distinct"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.distinct.html#mllib.recommendation.DataFrame.distinct">[docs]</a>    <span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.distinct"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.distinct.html#ml.classification.DataFrame.distinct">[docs]</a>    <span class="k">def</span> <span class="nf">distinct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` containing the distinct rows in this :class:`DataFrame`.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.distinct().count()</span>
@@ -641,7 +641,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">distinct</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.sample"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sample.html#mllib.recommendation.DataFrame.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.sample"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sample.html#ml.classification.DataFrame.sample">[docs]</a>    <span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">withReplacement</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a sampled subset of this :class:`DataFrame`.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.sample(False, 0.5, 42).count()</span>
@@ -653,7 +653,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">rdd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.sampleBy"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sampleBy.html#mllib.recommendation.DataFrame.sampleBy">[docs]</a>    <span class="k">def</span> <span class="nf">sampleBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.sampleBy"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sampleBy.html#ml.classification.DataFrame.sampleBy">[docs]</a>    <span class="k">def</span> <span class="nf">sampleBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a stratified sample without replacement based on the</span>
 <span class="sd">        fraction given on each stratum.</span>
@@ -689,7 +689,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">sampleBy</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jmap</span><span class="p">(</span><span class="n">fractions</span><span class="p">),</span> <span class="n">seed</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.randomSplit"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.randomSplit.html#mllib.recommendation.DataFrame.randomSplit">[docs]</a>    <span class="k">def</span> <span class="nf">randomSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.randomSplit"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.randomSplit.html#ml.classification.DataFrame.randomSplit">[docs]</a>    <span class="k">def</span> <span class="nf">randomSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Randomly splits this :class:`DataFrame` with the provided weights.</span>
 
 <span class="sd">        :param weights: list of doubles as weights with which to split the DataFrame. Weights will</span>
@@ -732,7 +732,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.alias"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.alias.html#mllib.recommendation.DataFrame.alias">[docs]</a>    <span class="k">def</span> <span class="nf">alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.alias"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.alias.html#ml.classification.DataFrame.alias">[docs]</a>    <span class="k">def</span> <span class="nf">alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alias</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` with an alias set.</span>
 
 <span class="sd">        &gt;&gt;&gt; from pyspark.sql.functions import *</span>
@@ -747,7 +747,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.join"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.join.html#mllib.recommendation.DataFrame.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.join"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.join.html#ml.classification.DataFrame.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Joins with another :class:`DataFrame`, using the given join expression.</span>
 
 <span class="sd">        :param other: Right side of the join</span>
@@ -802,7 +802,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.6</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.sortWithinPartitions"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sortWithinPartitions.html#mllib.recommendation.DataFrame.sortWithinPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">sortWithinPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.sortWithinPartitions"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sortWithinPartitions.html#ml.classification.DataFrame.sortWithinPartitions">[docs]</a>    <span class="k">def</span> <span class="nf">sortWithinPartitions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` with each partition sorted by the specified column(s).</span>
 
 <span class="sd">        :param cols: list of :class:`Column` or column names to sort by.</span>
@@ -823,7 +823,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.sort"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sort.html#mllib.recommendation.DataFrame.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.sort"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.sort.html#ml.classification.DataFrame.sort">[docs]</a>    <span class="k">def</span> <span class="nf">sort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` sorted by the specified column(s).</span>
 
 <span class="sd">        :param cols: list of :class:`Column` or column names to sort by.</span>
@@ -887,7 +887,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jseq</span><span class="p">(</span><span class="n">jcols</span><span class="p">)</span>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.3.1&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.describe"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.describe.html#mllib.recommendation.DataFrame.describe">[docs]</a>    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.describe"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.describe.html#ml.classification.DataFrame.describe">[docs]</a>    <span class="k">def</span> <span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Computes statistics for numeric columns.</span>
 
 <span class="sd">        This include count, mean, stddev, min, and max. If no columns are</span>
@@ -924,7 +924,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.head"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.head.html#mllib.recommendation.DataFrame.head">[docs]</a>    <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.head"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.head.html#ml.classification.DataFrame.head">[docs]</a>    <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the first ``n`` rows.</span>
 
 <span class="sd">        Note that this method should only be used if the resulting array is expected</span>
@@ -946,7 +946,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.first"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.first.html#mllib.recommendation.DataFrame.first">[docs]</a>    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.first"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.first.html#ml.classification.DataFrame.first">[docs]</a>    <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the first row as a :class:`Row`.</span>
 
 <span class="sd">        &gt;&gt;&gt; df.first()</span>
@@ -996,7 +996,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.select"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.select.html#mllib.recommendation.DataFrame.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.select"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.select.html#ml.classification.DataFrame.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Projects a set of expressions and returns a new :class:`DataFrame`.</span>
 
 <span class="sd">        :param cols: list of column names (string) or expressions (:class:`Column`).</span>
@@ -1014,7 +1014,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.selectExpr"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.selectExpr.html#mllib.recommendation.DataFrame.selectExpr">[docs]</a>    <span class="k">def</span> <span class="nf">selectExpr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">expr</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.selectExpr"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.selectExpr.html#ml.classification.DataFrame.selectExpr">[docs]</a>    <span class="k">def</span> <span class="nf">selectExpr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">expr</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Projects a set of SQL expressions and returns a new :class:`DataFrame`.</span>
 
 <span class="sd">        This is a variant of :func:`select` that accepts SQL expressions.</span>
@@ -1029,7 +1029,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.filter"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.filter.html#mllib.recommendation.DataFrame.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.filter"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.filter.html#ml.classification.DataFrame.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Filters rows using the given condition.</span>
 
 <span class="sd">        :func:`where` is an alias for :func:`filter`.</span>
@@ -1057,7 +1057,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.groupBy"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.groupBy.html#mllib.recommendation.DataFrame.groupBy">[docs]</a>    <span class="k">def</span> <span class="nf">groupBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.groupBy"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.groupBy.html#ml.classification.DataFrame.groupBy">[docs]</a>    <span class="k">def</span> <span class="nf">groupBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Groups the :class:`DataFrame` using the specified columns,</span>
 <span class="sd">        so we can run aggregation on them. See :class:`GroupedData`</span>
 <span class="sd">        for all the available aggregate functions.</span>
@@ -1081,7 +1081,7 @@
         <span class="k">return</span> <span class="n">GroupedData</span><span class="p">(</span><span class="n">jgd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.rollup"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.rollup.html#mllib.recommendation.DataFrame.rollup">[docs]</a>    <span class="k">def</span> <span class="nf">rollup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.rollup"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.rollup.html#ml.classification.DataFrame.rollup">[docs]</a>    <span class="k">def</span> <span class="nf">rollup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a multi-dimensional rollup for the current :class:`DataFrame` using</span>
 <span class="sd">        the specified columns, so we can run aggregation on them.</span>
@@ -1102,7 +1102,7 @@
         <span class="k">return</span> <span class="n">GroupedData</span><span class="p">(</span><span class="n">jgd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.cube"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.cube.html#mllib.recommendation.DataFrame.cube">[docs]</a>    <span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.cube"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.cube.html#ml.classification.DataFrame.cube">[docs]</a>    <span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a multi-dimensional cube for the current :class:`DataFrame` using</span>
 <span class="sd">        the specified columns, so we can run aggregation on them.</span>
@@ -1125,7 +1125,7 @@
         <span class="k">return</span> <span class="n">GroupedData</span><span class="p">(</span><span class="n">jgd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.agg"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.agg.html#mllib.recommendation.DataFrame.agg">[docs]</a>    <span class="k">def</span> <span class="nf">agg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.agg"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.agg.html#ml.classification.DataFrame.agg">[docs]</a>    <span class="k">def</span> <span class="nf">agg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Aggregate on the entire :class:`DataFrame` without groups</span>
 <span class="sd">        (shorthand for ``df.groupBy.agg()``).</span>
 
@@ -1138,7 +1138,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">groupBy</span><span class="p">()</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="o">*</span><span class="n">exprs</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.union"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.union.html#mllib.recommendation.DataFrame.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.union"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.union.html#ml.classification.DataFrame.union">[docs]</a>    <span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return a new :class:`DataFrame` containing union of rows in this</span>
 <span class="sd">        frame and another frame.</span>
 
@@ -1148,7 +1148,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_jdf</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.unionAll"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.unionAll.html#mllib.recommendation.DataFrame.unionAll">[docs]</a>    <span class="k">def</span> <span class="nf">unionAll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.unionAll"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.unionAll.html#ml.classification.DataFrame.unionAll">[docs]</a>    <span class="k">def</span> <span class="nf">unionAll</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return a new :class:`DataFrame` containing union of rows in this</span>
 <span class="sd">        frame and another frame.</span>
 
@@ -1157,7 +1157,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">other</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.intersect"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.intersect.html#mllib.recommendation.DataFrame.intersect">[docs]</a>    <span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.intersect"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.intersect.html#ml.classification.DataFrame.intersect">[docs]</a>    <span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return a new :class:`DataFrame` containing rows only in</span>
 <span class="sd">        both this frame and another frame.</span>
 
@@ -1166,7 +1166,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_jdf</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.subtract"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.subtract.html#mllib.recommendation.DataFrame.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.subtract"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.subtract.html#ml.classification.DataFrame.subtract">[docs]</a>    <span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Return a new :class:`DataFrame` containing rows in this frame</span>
 <span class="sd">        but not in another frame.</span>
 
@@ -1175,7 +1175,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="p">,</span> <span class="s2">&quot;except&quot;</span><span class="p">)(</span><span class="n">other</span><span class="o">.</span><span class="n">_jdf</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.dropDuplicates"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.dropDuplicates.html#mllib.recommendation.DataFrame.dropDuplicates">[docs]</a>    <span class="k">def</span> <span class="nf">dropDuplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.dropDuplicates"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.dropDuplicates.html#ml.classification.DataFrame.dropDuplicates">[docs]</a>    <span class="k">def</span> <span class="nf">dropDuplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a new :class:`DataFrame` with duplicate rows removed,</span>
 <span class="sd">        optionally only considering certain columns.</span>
 
@@ -1208,7 +1208,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.3.1&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.dropna"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.dropna.html#mllib.recommendation.DataFrame.dropna">[docs]</a>    <span class="k">def</span> <span class="nf">dropna</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.dropna"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.dropna.html#ml.classification.DataFrame.dropna">[docs]</a>    <span class="k">def</span> <span class="nf">dropna</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` omitting rows with null values.</span>
 <span class="sd">        :func:`DataFrame.dropna` and :func:`DataFrameNaFunctions.drop` are aliases of each other.</span>
 
@@ -1243,7 +1243,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">na</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">thresh</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jseq</span><span class="p">(</span><span class="n">subset</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="s2">&quot;1.3.1&quot;</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.fillna"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.fillna.html#mllib.recommendation.DataFrame.fillna">[docs]</a>    <span class="k">def</span> <span class="nf">fillna</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.fillna"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.fillna.html#ml.classification.DataFrame.fillna">[docs]</a>    <span class="k">def</span> <span class="nf">fillna</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Replace null values, alias for ``na.fill()``.</span>
 <span class="sd">        :func:`DataFrame.fillna` and :func:`DataFrameNaFunctions.fill` are aliases of each other.</span>
 
@@ -1296,7 +1296,7 @@
             <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">na</span><span class="p">()</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jseq</span><span class="p">(</span><span class="n">subset</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.replace"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.replace.html#mllib.recommendation.DataFrame.replace">[docs]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_replace</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.replace"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.replace.html#ml.classification.DataFrame.replace">[docs]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_replace</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` replacing a value with another value.</span>
 <span class="sd">        :func:`DataFrame.replace` and :func:`DataFrameNaFunctions.replace` are</span>
 <span class="sd">        aliases of each other.</span>
@@ -1374,7 +1374,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">na</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jseq</span><span class="p">(</span><span class="n">subset</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jmap</span><span class="p">(</span><span class="n">rep_dict</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.approxQuantile"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.approxQuantile.html#mllib.recommendation.DataFrame.approxQuantile">[docs]</a>    <span class="k">def</span> <span class="nf">approxQuantile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">relativeError</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.approxQuantile"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.approxQuantile.html#ml.classification.DataFrame.approxQuantile">[docs]</a>    <span class="k">def</span> <span class="nf">approxQuantile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">relativeError</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the approximate quantiles of a numerical column of a</span>
 <span class="sd">        DataFrame.</span>
@@ -1423,7 +1423,7 @@
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">jaq</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.corr"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.corr.html#mllib.recommendation.DataFrame.corr">[docs]</a>    <span class="k">def</span> <span class="nf">corr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.corr"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.corr.html#ml.classification.DataFrame.corr">[docs]</a>    <span class="k">def</span> <span class="nf">corr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculates the correlation of two columns of a DataFrame as a double value.</span>
 <span class="sd">        Currently only supports the Pearson Correlation Coefficient.</span>
@@ -1445,7 +1445,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.cov"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.cov.html#mllib.recommendation.DataFrame.cov">[docs]</a>    <span class="k">def</span> <span class="nf">cov</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.cov"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.cov.html#ml.classification.DataFrame.cov">[docs]</a>    <span class="k">def</span> <span class="nf">cov</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Calculate the sample covariance for the given columns, specified by their names, as a</span>
 <span class="sd">        double value. :func:`DataFrame.cov` and :func:`DataFrameStatFunctions.cov` are aliases.</span>
@@ -1460,7 +1460,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.crosstab"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.crosstab.html#mllib.recommendation.DataFrame.crosstab">[docs]</a>    <span class="k">def</span> <span class="nf">crosstab</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.crosstab"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.crosstab.html#ml.classification.DataFrame.crosstab">[docs]</a>    <span class="k">def</span> <span class="nf">crosstab</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Computes a pair-wise frequency table of the given columns. Also known as a contingency</span>
 <span class="sd">        table. The number of distinct values for each column should be less than 1e4. At most 1e6</span>
@@ -1482,7 +1482,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jdf</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.freqItems"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.freqItems.html#mllib.recommendation.DataFrame.freqItems">[docs]</a>    <span class="k">def</span> <span class="nf">freqItems</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">support</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.freqItems"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.freqItems.html#ml.classification.DataFrame.freqItems">[docs]</a>    <span class="k">def</span> <span class="nf">freqItems</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">support</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Finding frequent items for columns, possibly with false positives. Using the</span>
 <span class="sd">        frequent element count algorithm described in</span>
@@ -1507,7 +1507,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.withColumn"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.withColumn.html#mllib.recommendation.DataFrame.withColumn">[docs]</a>    <span class="k">def</span> <span class="nf">withColumn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colName</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.withColumn"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.withColumn.html#ml.classification.DataFrame.withColumn">[docs]</a>    <span class="k">def</span> <span class="nf">withColumn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colName</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns a new :class:`DataFrame` by adding a column or replacing the</span>
 <span class="sd">        existing column that has the same name.</span>
@@ -1523,7 +1523,7 @@
 
     <span class="nd">@ignore_unicode_prefix</span>
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.withColumnRenamed"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.withColumnRenamed.html#mllib.recommendation.DataFrame.withColumnRenamed">[docs]</a>    <span class="k">def</span> <span class="nf">withColumnRenamed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">existing</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.withColumnRenamed"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.withColumnRenamed.html#ml.classification.DataFrame.withColumnRenamed">[docs]</a>    <span class="k">def</span> <span class="nf">withColumnRenamed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">existing</span><span class="p">,</span> <span class="n">new</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` by renaming an existing column.</span>
 
 <span class="sd">        :param existing: string, name of the existing column to rename.</span>
@@ -1536,7 +1536,7 @@
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.4</span><span class="p">)</span>
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="DataFrame.drop"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.drop.html#mllib.recommendation.DataFrame.drop">[docs]</a>    <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.drop"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.drop.html#ml.classification.DataFrame.drop">[docs]</a>    <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new :class:`DataFrame` that drops the specified column.</span>
 
 <span class="sd">        :param col: a string name of the column to drop, or a</span>
@@ -1563,7 +1563,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@ignore_unicode_prefix</span>
-<div class="viewcode-block" id="DataFrame.toDF"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toDF.html#mllib.recommendation.DataFrame.toDF">[docs]</a>    <span class="k">def</span> <span class="nf">toDF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.toDF"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toDF.html#ml.classification.DataFrame.toDF">[docs]</a>    <span class="k">def</span> <span class="nf">toDF</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new class:`DataFrame` that with new specified column names</span>
 
 <span class="sd">        :param cols: list of new column names (string)</span>
@@ -1575,7 +1575,7 @@
         <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jdf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sql_ctx</span><span class="p">)</span></div>
 
     <span class="nd">@since</span><span class="p">(</span><span class="mf">1.3</span><span class="p">)</span>
-<div class="viewcode-block" id="DataFrame.toPandas"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toPandas.html#mllib.recommendation.DataFrame.toPandas">[docs]</a>    <span class="k">def</span> <span class="nf">toPandas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrame.toPandas"><a class="viewcode-back" href="../../../generated/generated/sql.functions.DataFrame.toPandas.html#ml.classification.DataFrame.toPandas">[docs]</a>    <span class="k">def</span> <span class="nf">toPandas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the contents of this :class:`DataFrame` as Pandas ``pandas.DataFrame``.</span>
 
 <span class="sd">        Note that this method should only be used if the resulting Pandas&#39;s DataFrame is expected</span>
@@ -1618,66 +1618,66 @@
     <span class="k">return</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">PythonUtils</span><span class="o">.</span><span class="n">toScalaMap</span><span class="p">(</span><span class="n">jm</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="DataFrameNaFunctions"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.html#mllib.recommendation.DataFrameNaFunctions">[docs]</a><span class="k">class</span> <span class="nc">DataFrameNaFunctions</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameNaFunctions"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.html#ml.classification.DataFrameNaFunctions">[docs]</a><span class="k">class</span> <span class="nc">DataFrameNaFunctions</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Functionality for working with missing data in :class:`DataFrame`.</span>
 
 <span class="sd">    .. versionadded:: 1.4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="DataFrameNaFunctions.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.__init__.html#mllib.recommendation.DataFrameNaFunctions.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameNaFunctions.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.__init__.html#ml.classification.DataFrameNaFunctions.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span></div>
 
-<div class="viewcode-block" id="DataFrameNaFunctions.drop"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.drop.html#mllib.recommendation.DataFrameNaFunctions.drop">[docs]</a>    <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameNaFunctions.drop"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.drop.html#ml.classification.DataFrameNaFunctions.drop">[docs]</a>    <span class="k">def</span> <span class="nf">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="n">how</span><span class="p">,</span> <span class="n">thresh</span><span class="o">=</span><span class="n">thresh</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="n">subset</span><span class="p">)</span></div>
 
     <span class="n">drop</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">dropna</span><span class="o">.</span><span class="n">__doc__</span>
 
-<div class="viewcode-block" id="DataFrameNaFunctions.fill"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.fill.html#mllib.recommendation.DataFrameNaFunctions.fill">[docs]</a>    <span class="k">def</span> <span class="nf">fill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameNaFunctions.fill"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.fill.html#ml.classification.DataFrameNaFunctions.fill">[docs]</a>    <span class="k">def</span> <span class="nf">fill</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="n">subset</span><span class="p">)</span></div>
 
     <span class="n">fill</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">fillna</span><span class="o">.</span><span class="n">__doc__</span>
 
-<div class="viewcode-block" id="DataFrameNaFunctions.replace"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.replace.html#mllib.recommendation.DataFrameNaFunctions.replace">[docs]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_replace</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameNaFunctions.replace"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameNaFunctions.replace.html#ml.classification.DataFrameNaFunctions.replace">[docs]</a>    <span class="k">def</span> <span class="nf">replace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_replace</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">subset</span><span class="p">)</span></div>
 
     <span class="n">replace</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">replace</span><span class="o">.</span><span class="n">__doc__</span></div>
 
 
-<div class="viewcode-block" id="DataFrameStatFunctions"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.html#mllib.recommendation.DataFrameStatFunctions">[docs]</a><span class="k">class</span> <span class="nc">DataFrameStatFunctions</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.html#ml.classification.DataFrameStatFunctions">[docs]</a><span class="k">class</span> <span class="nc">DataFrameStatFunctions</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Functionality for statistic functions with :class:`DataFrame`.</span>
 
 <span class="sd">    .. versionadded:: 1.4</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="DataFrameStatFunctions.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.__init__.html#mllib.recommendation.DataFrameStatFunctions.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions.__init__"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.__init__.html#ml.classification.DataFrameStatFunctions.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span></div>
 
-<div class="viewcode-block" id="DataFrameStatFunctions.approxQuantile"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.approxQuantile.html#mllib.recommendation.DataFrameStatFunctions.approxQuantile">[docs]</a>    <span class="k">def</span> <span class="nf">approxQuantile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">relativeError</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions.approxQuantile"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.approxQuantile.html#ml.classification.DataFrameStatFunctions.approxQuantile">[docs]</a>    <span class="k">def</span> <span class="nf">approxQuantile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">relativeError</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">approxQuantile</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">probabilities</span><span class="p">,</span> <span class="n">relativeError</span><span class="p">)</span></div>
 
     <span class="n">approxQuantile</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">approxQuantile</span><span class="o">.</span><span class="n">__doc__</span>
 
-<div class="viewcode-block" id="DataFrameStatFunctions.corr"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.corr.html#mllib.recommendation.DataFrameStatFunctions.corr">[docs]</a>    <span class="k">def</span> <span class="nf">corr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions.corr"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.corr.html#ml.classification.DataFrameStatFunctions.corr">[docs]</a>    <span class="k">def</span> <span class="nf">corr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
 
     <span class="n">corr</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">corr</span><span class="o">.</span><span class="n">__doc__</span>
 
-<div class="viewcode-block" id="DataFrameStatFunctions.cov"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.cov.html#mllib.recommendation.DataFrameStatFunctions.cov">[docs]</a>    <span class="k">def</span> <span class="nf">cov</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions.cov"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.cov.html#ml.classification.DataFrameStatFunctions.cov">[docs]</a>    <span class="k">def</span> <span class="nf">cov</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span></div>
 
     <span class="n">cov</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">cov</span><span class="o">.</span><span class="n">__doc__</span>
 
-<div class="viewcode-block" id="DataFrameStatFunctions.crosstab"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.crosstab.html#mllib.recommendation.DataFrameStatFunctions.crosstab">[docs]</a>    <span class="k">def</span> <span class="nf">crosstab</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions.crosstab"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.crosstab.html#ml.classification.DataFrameStatFunctions.crosstab">[docs]</a>    <span class="k">def</span> <span class="nf">crosstab</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span></div>
 
     <span class="n">crosstab</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">crosstab</span><span class="o">.</span><span class="n">__doc__</span>
 
-<div class="viewcode-block" id="DataFrameStatFunctions.freqItems"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.freqItems.html#mllib.recommendation.DataFrameStatFunctions.freqItems">[docs]</a>    <span class="k">def</span> <span class="nf">freqItems</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">support</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions.freqItems"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.freqItems.html#ml.classification.DataFrameStatFunctions.freqItems">[docs]</a>    <span class="k">def</span> <span class="nf">freqItems</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">support</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">freqItems</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">support</span><span class="p">)</span></div>
 
     <span class="n">freqItems</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">freqItems</span><span class="o">.</span><span class="n">__doc__</span>
 
-<div class="viewcode-block" id="DataFrameStatFunctions.sampleBy"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.sampleBy.html#mllib.recommendation.DataFrameStatFunctions.sampleBy">[docs]</a>    <span class="k">def</span> <span class="nf">sampleBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="viewcode-block" id="DataFrameStatFunctions.sampleBy"><a class="viewcode-back" href="../../../generated/generated/sql.DataFrameStatFunctions.sampleBy.html#ml.classification.DataFrameStatFunctions.sampleBy">[docs]</a>    <span class="k">def</span> <span class="nf">sampleBy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">sampleBy</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">fractions</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span></div>
 
     <span class="n">sampleBy</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="o">.</span><span class="n">sampleBy</span><span class="o">.</span><span class="n">__doc__</span></div>
